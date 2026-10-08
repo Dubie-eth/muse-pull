@@ -1,9 +1,9 @@
 {
- "updated_at": "2026-10-08T15:28:52.562Z",
+ "updated_at": "2026-10-08T15:30:52.520Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
-  "xai": false
+  "xai": true
  },
  "scout_queue": [
   {
@@ -5691,7 +5691,10 @@
    "source": "onchain",
    "tx_hash": "0x5a5520a1317e7e9fc589615372d30eed89b125c4b6021c0337a44a89c02a12c0",
    "block": 83394159,
-   "detail": "new contract deployed in block 83394159"
+   "detail": "new contract deployed in block 83394159",
+   "investigated": true,
+   "investigated_at": "2026-10-08T15:30:20Z",
+   "investigation": "see investigation-queue.json — block-contracts-20261008-1530a/b, verdict: skip (non-token contracts)"
   },
   {
    "found_at": "2026-10-08T15:28:20.939Z",
@@ -5702,7 +5705,21 @@
    "source": "onchain",
    "tx_hash": "0xe8a0ecdbff8a419d185a1a6a9772466391ebd538ebe8b68a0abb0d1165e6f588",
    "block": 83394239,
-   "detail": "new contract deployed in block 83394239"
+   "detail": "new contract deployed in block 83394239",
+   "investigated": true,
+   "investigated_at": "2026-10-08T15:30:20Z",
+   "investigation": "see investigation-queue.json — block-contracts-20261008-1530a/b, verdict: skip (non-token contracts)"
+  },
+  {
+   "found_at": "2026-10-08T15:29:30.721Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x0159c076831ed04265ed1f7455dbe5889b292ee1",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x60d2cf3f024db3e647e36dde9293c6e2621cd21758ed74d36a47b8092140bca6",
+   "block": 83394542,
+   "detail": "new contract deployed in block 83394542"
   }
  ],
  "investigations": [
@@ -6438,7 +6455,9 @@
    },
    "notes": "the lookalike-pool cluster now totals FOURTEEN (SOUL, LOSERCORE, Clumsy, BEARY, ZQRA, OG, NEMA, TURF, DOOM FLY, EVALUATOR, TRUSTPAY, Lucky, VCAT, BANKEREUM): near-identical $92-134k h1 volumes, ~$7k reserves, $207-307k FDV, buys AND sells working, launched within ~50 min — coordinated-farm seeding pattern holding across hours. buys/sells working (not honeypots) but uniformity + timing = one launcher/circle. same corrupt pair_address fields (64-hex, no onchain verification possible). needs-snug for the 4 new momentum members with the coordination red flag attached. whuf x3: sells-dominant/tiny, the 1% pool's FDV field ($3) flags bad scout data — skip. AROS: $2.3k vol, skip. PULP/ETH: $67.7k vol on $0.00 reserve = pull/wash artifact or bad data; name-collides with PaperDAO/PULP on Robinhood — skip.",
    "social_scored_at": "2026-10-08T15:24:13Z",
-   "social_grade": "D (19/100)"
+   "social_grade": "D (19/100)",
+   "snug_processed_at": "2026-10-08T15:15:00Z",
+   "snug_broken_down": true
   },
   {
    "investigated_at": "2026-10-08T15:24:13.178Z",
@@ -6577,6 +6596,40 @@
    "money_flow": "organic",
    "verdict": "skip",
    "notes": "re-flag of an already-investigated non-token app/infra contract (batch-8). nothing tradeable, no new signal. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T15:30:20Z",
+   "key": "block-contracts-20261008-1530a",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "contract": "0x8b30e296ecebb03731621e6df313e7e4b5034106",
+    "block": 83394159,
+    "tx_hash": "0x5a5520a1317e7e9fc589615372d30eed89b125c4b6021c0337a44a89c02a12c0"
+   },
+   "velocity": "n/a — non-token contract (no name()/symbol()), 3059 bytes, 0 Transfer logs in the 3000-block window covering deploy (block 83394159).",
+   "social_signal": "weak",
+   "money_flow": "organic",
+   "verdict": "skip",
+   "notes": "bare contract deployment, nothing tradeable, no mint/token activity. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T15:30:20Z",
+   "key": "block-contracts-20261008-1530b",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "contract": "0x6dda359ce34939f96f91fb05789aeece80637b6d",
+    "block": 83394239,
+    "tx_hash": "0xe8a0ecdbff8a419d185a1a6a9772466391ebd538ebe8b68a0abb0d1165e6f588"
+   },
+   "velocity": "n/a — non-token contract (no name()/symbol()), 16475 bytes, 0 Transfer logs in the 3000-block window covering deploy (block 83394239).",
+   "social_signal": "weak",
+   "money_flow": "organic",
+   "verdict": "skip",
+   "notes": "bare contract deployment, nothing tradeable, no mint/token activity. skip."
   }
  ],
  "scores": [
@@ -7949,6 +8002,41 @@
     "note": "10th identical-momentum pool instance (40-min window, corrupt pair addresses = unverifiable, zero buzz)"
    },
    "processed_note": "flock-decision run 2026-10-08 11:14 EDT: score 25 -> skip (coordinated farm, 10th lookalike of the day; walk away)"
+  },
+  {
+   "broken_down_at": "2026-10-08T15:15:00Z",
+   "candidate": {
+    "name": "TRUSTPAY/Lucky/VCAT/BANKEREUM momentum cluster",
+    "chain": "base",
+    "type": "pair",
+    "from_batch": "newpairs-batch-7"
+   },
+   "investigation": {
+    "velocity": "scout-reported: BANKEREUM $127.2k h1, Lucky $109.8k h1, VCAT $99.1k h1, TRUSTPAY $92.2k h1 - all ~$7.1-7.3k reserves, $207-268k FDV, 53-61 buys/38-46 sells, +33-43% m5",
+    "social_signal": "weak",
+    "money_flow": "mixed",
+    "verdict": "needs-snug",
+    "notes": "the lookalike-pool cluster now totals FOURTEEN (SOUL, LOSERCORE, Clumsy, BEARY, ZQRA, OG, NEMA, TURF, DOOM FLY, EVALUATOR, TRUSTPAY, Lucky, VCAT, BANKEREUM): near-identical $92-134k h1 volumes, ~$7k reserves, $207-307k FDV, buys AND sells working, launched within ~50 min - coordinated-farm seeding pattern holding across hours. buys/sells working (not honeypots) but uniformity + timing = one launcher/circle. same corrupt pair_address fields (64-hex, no onchain verification possible). needs-snug for the 4 new momentum members with the coordination red flag attached."
+   },
+   "social_grade": "D",
+   "social_total": 19,
+   "durability": "weak",
+   "comps": "Fourteenth wave of today's identical-momentum lookalike cluster (SOUL, LOSERCORE, Clumsy, BEARY, ZQRA, OG, NEMA, TURF, DOOM FLY, EVALUATOR all skipped earlier today at cluster sizes 5, 6, and 10): every wave shares the same manufactured-volume fingerprint - $92-134k h1, ~$7k reserves, $207-307k FDV, 53-61 buys / 38-46 sells, launched within a ~50-min window. The cluster was walked away from at 5 members and again at 10; adding 4 more instances of the same mold does not change the durability read. Comparable patterns today all dumped or were wash artifacts: FOMO -86% in 5 min, nox/GUNCAT/AHM/COOK/PLAY $0-reserve + $100k+ volume pull/wash artifacts, pump-fun 'DEV LAST 130k' duplicate-name clusters. No precedent of a lookalike pool in this family building durable value.",
+   "risks": "COORDINATION RED FLAG at 14 members: near-identical pools launched within the same ~50-minute window = one launcher or a coordinated farm seeding lookalike pools across Base. Fresh web search returns ZERO buzz for TRUSTPAY, Lucky, VCAT, or BANKEREUM on Base - no X accounts, no projects, no KOL calls; the only search hits are older unrelated tokens (Trustpay TPH on KardiaChain, Trust Pay TPAY on BSC, 2021-era Lucky Cat coins) - name-confusion dust on top of no identity at all. Corrupt pair_address fields (64-hex, no contract code on Base) mean the 'momentum' is scout-reported only and unverifiable onchain - buys/sells 'working' cannot be independently confirmed. The same scan window carried bad scout data (whuf/USDC 1% pool reported FDV $3) and pull/wash artifacts (PULP/ETH $67.7k vol on $0.00 reserve) - the data environment is polluted. D grade = manufactured social shape.",
+   "recommendation": "skip",
+   "reason": "Durability rule: D/F = likely skip regardless of other factors. This is the fourteenth wave of a farm pattern already skipped at 5, 6, and 10 members - louder, not stronger. Anonymous teams, zero social identity, unverifiable onchain data, and name-collision noise add up to a volume farm, not four opportunities. Walk away.",
+   "score": {
+    "v": 10,
+    "s": 6,
+    "vit": 6,
+    "o": 6,
+    "total": 28,
+    "decision": "skip",
+    "note": "14th wave of the identical-momentum farm cluster; corrupt pair addresses = unverifiable; zero buzz; walk away"
+   },
+   "processed": true,
+   "processed_at": "2026-10-08T15:30:00Z",
+   "processed_note": "flock-decision run 2026-10-08 11:29 EDT: score 28 -> skip (14th wave of coordinated farm cluster, D social, unverifiable onchain data; walk away)"
   }
  ],
  "scouts": [
@@ -7961,10 +8049,10 @@
   "pons-family"
  ],
  "last_activity": {
-  "scout": "2026-10-08T15:28:20.939Z",
-  "hymn": "2026-10-08T15:35:00Z",
+  "scout": "2026-10-08T15:29:30.721Z",
+  "hymn": "2026-10-08T15:30:20Z",
   "scorer": "2026-10-08T15:28:00Z",
-  "snug": "2026-10-08T15:13:19Z",
-  "cardigan": "2026-10-08T15:13:19Z"
+  "snug": "2026-10-08T15:15:00Z",
+  "cardigan": "2026-10-08T15:15:00Z"
  }
 }

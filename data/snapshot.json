@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-08T15:32:53.259Z",
+ "updated_at": "2026-10-08T15:34:56.778Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
@@ -5733,7 +5733,10 @@
    "source": "onchain",
    "tx_hash": "0x8bc60b136416ab2b539c77dc359025d5a45c7120e18f4cff66438d10c2184407",
    "block": 83394878,
-   "detail": "new contract deployed in block 83394878"
+   "detail": "new contract deployed in block 83394878",
+   "investigated": true,
+   "investigated_at": "2026-10-08T15:33:00.311572+00:00",
+   "investigation": "see investigation-queue.json — verdict: skip (SuperMario64/Mario64 name-squat copycat; ~79% in burn + farm-nexus whale 0x8366a39C)"
   },
   {
    "found_at": "2026-10-08T15:31:49.214Z",
@@ -5744,7 +5747,10 @@
    "source": "onchain",
    "tx_hash": "0xeaf48f41b302db6da3d9a81c9ad53cea925be7cf42a8cf4af80660af8caf41c7",
    "block": 83394944,
-   "detail": "new contract deployed in block 83394944"
+   "detail": "new contract deployed in block 83394944",
+   "investigated": true,
+   "investigated_at": "2026-10-08T15:34:01.584318+00:00",
+   "investigation": "see investigation-queue.json — verdict: skip (block-contracts-batch-16: 3 farm clones, no velocity, no social)"
   },
   {
    "found_at": "2026-10-08T15:32:32.979Z",
@@ -5755,7 +5761,10 @@
    "source": "onchain",
    "tx_hash": "0x4641ae3c6f7c26dfd68fa4f6d1e6996e72e314b89c507024da7e62e2a671aedc",
    "block": 83395087,
-   "detail": "new contract deployed in block 83395087"
+   "detail": "new contract deployed in block 83395087",
+   "investigated": true,
+   "investigated_at": "2026-10-08T15:34:01.584318+00:00",
+   "investigation": "see investigation-queue.json — verdict: skip (block-contracts-batch-16: 3 farm clones, no velocity, no social)"
   },
   {
    "found_at": "2026-10-08T15:32:46.545Z",
@@ -5766,7 +5775,36 @@
    "source": "onchain",
    "tx_hash": "0xb553ea146593bc1d2082dbf9e90efeaf16f0654c32f63a3518cacc00aa7aeb2b",
    "block": 83395150,
-   "detail": "new contract deployed in block 83395150"
+   "detail": "new contract deployed in block 83395150",
+   "investigated": true,
+   "investigated_at": "2026-10-08T15:34:01.584318+00:00",
+   "investigation": "see investigation-queue.json — verdict: skip (block-contracts-batch-16: 3 farm clones, no velocity, no social)"
+  },
+  {
+   "found_at": "2026-10-08T15:33:05.116Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x5671c0e5ee9183432b30672894ab262c994292df",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xd05f3fa5d345c4ad432b23c26d23de26ab66905e3888887e7ae5b44098cf252c",
+   "block": 83395232,
+   "detail": "new contract deployed in block 83395232",
+   "investigated": true,
+   "investigated_at": "2026-10-08T15:34:49.303527+00:00",
+   "investigation": "see investigation-queue.json — verdict: skip (block-contracts-batch-17: CRAWLNET farm clone, no velocity, no social)"
+  },
+  {
+   "found_at": "2026-10-08T15:34:48.157Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x22081b20fe55f3466aacad36be586ababfdc07f9",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x315ade0dcea7a2caaab04ac27182956c6467bedc35e42f0152718094f29bcc5d",
+   "block": 83395652,
+   "detail": "new contract deployed in block 83395652",
+   "investigated": false
   }
  ],
  "investigations": [
@@ -6694,6 +6732,50 @@
    "money_flow": "organic",
    "verdict": "skip",
    "notes": "bare contract deployment, nothing tradeable, no mint/token activity. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T15:33:00.311572+00:00",
+   "key": "block-contracts-batch-15",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "contract": "0x22c083513365c2cb76f62244091d7d57f244db40",
+    "note": "1 block-watcher contract deployment 2026-10-08T15:31Z (block 83394878)"
+   },
+   "velocity": "294 transfers/79 addr-slots in ~26k blocks since deploy (block 83394878 -> tip 83421305); top-heavy fill, not sudden-spike organic velocity",
+   "social_signal": "forced",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "notes": "name() = 'SuperMario64', symbol = 'Mario64' (10322-byte code) — FIFTH name-squat of the established Super Mario 64 token today (copycats in pumpfun-batch-4 with 2 holders, Mario64 copycat #2 with 35 txns, Robinhood Pumpoween family). holder concentration: 0x000000000000000000000000000000000000dead 66.66% + farm-nexus whale 0x8366a39cc670b4001a1121b8f6a443a643e40951 12.79% = ~79% in burn + the same whale nexus from PaperDAO/PULP/SOCKET/SPY/IBM today; real float ~21% across 77 holders. rides the real Super Mario 64's tweet momentum; zero independent project or buzz. farm copycat per standing precedent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T15:34:01.584318+00:00",
+   "key": "block-contracts-batch-16",
+   "candidate": {
+    "type": "collection",
+    "chain": "robinhood",
+    "note": "3 block-watcher contract deployments 2026-10-08T15:31-15:33Z"
+   },
+   "velocity": "no sudden jumps: Crypto Wizard 79 transfers/23 holders, Capybara-clone 31/25, Socket-clone 150/76 — churn-scale fills on farm templates, not breakouts",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "notes": "per-contract: 0x772dd2fe3a07ba49705884b7523ea5fefb811c72 (block 83394944): Crypto Wizard/CWIZ, 3857-byte code = same serial-launcher family as Cyber Duck clones (batch-2); 79 transfers/23 holders, top1 46.18% — farm clone. 0x8b45bff691f16fd50ad72370eccd1bbe46bf2367 (block 83395087): Capybara With A Gun/CAPYBARA, 1764-byte code = the CAPYBARA template family (6 clones today); 31/25, top1 67.67%. 0x0399c13c27a82b813bde02a48db9b81a542ceb0d (block 83395150): Socket/SOCKET, 3854-byte code = 7th SOCKET clone today, same farm-nexus whale circle as SOCKET/SOCKET-token and Socket/SOCKET (0x8366a39C nexus); 150/76, top1 60.52%. zero socials on all three; serial-launcher farm output per standing precedent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T15:34:49.303527+00:00",
+   "key": "block-contracts-batch-17",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "contract": "0x5671c0e5ee9183432b30672894ab262c994292df",
+    "note": "1 block-watcher contract deployment 2026-10-08T15:33Z (block 83395232)"
+   },
+   "velocity": "none — 24 transfers/11 holders, no sudden jumps",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "notes": "CRAWLNET/CRAWL, 3553-byte code = the 3553-byte serial-launcher template family (BUNKER/STONKROBBERS/BIDEN/SINTEL/BEBIR batch-1, +4 more in batch-2). 24 transfers/11 holders, top1 74.85%. zero socials. farm clone per standing precedent. skip."
   }
  ],
  "scores": [
@@ -8113,8 +8195,8 @@
   "pons-family"
  ],
  "last_activity": {
-  "scout": "2026-10-08T15:32:46.545Z",
-  "hymn": "2026-10-08T15:31:07Z",
+  "scout": "2026-10-08T15:34:48.157Z",
+  "hymn": "2026-10-08T15:34:49.303527+00:00",
   "scorer": "2026-10-08T15:28:00Z",
   "snug": "2026-10-08T15:15:00Z",
   "cardigan": "2026-10-08T15:15:00Z"

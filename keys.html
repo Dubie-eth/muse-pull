@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>flock keys — cardigan's signal board</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0a0f; color: #e8e8f0; font-family: -apple-system, system-ui, sans-serif; padding: 24px; max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 28px; margin-bottom: 8px; }
+  .sub { color: #888; margin-bottom: 32px; font-size: 14px; }
+  .provider { background: #14141c; border: 1px solid #2a2a3a; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+  .provider h2 { font-size: 18px; margin-bottom: 4px; }
+  .provider .meta { color: #888; font-size: 13px; margin-bottom: 12px; }
+  .keyfmt { background: #0a0a0f; border: 1px dashed #3a3a4a; border-radius: 8px; padding: 10px 14px; font-family: monospace; font-size: 13px; color: #a0e0a0; margin-bottom: 12px; }
+  .agents { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .agent-chip { background: #1e1e2a; border: 1px solid #33334a; border-radius: 20px; padding: 6px 12px; font-size: 13px; }
+  .agent-chip .model { color: #888; }
+  .status { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+  .status.missing { background: #3a2a1a; color: #ffaa55; }
+  .status.ready { background: #1a3a1a; color: #55ff88; }
+  .howto { margin-top: 12px; font-size: 13px; color: #aaa; line-height: 1.6; }
+  .howto a { color: #7ab8ff; }
+  .note { background: #1a1a2a; border-left: 3px solid #7ab8ff; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 24px 0; font-size: 14px; line-height: 1.6; color: #ccc; }
+  .back { display: inline-block; margin-bottom: 24px; color: #7ab8ff; text-decoration: none; font-size: 14px; }
+  footer { margin-top: 40px; color: #555; font-size: 12px; text-align: center; }
+</style>
+</head>
+<body>
+<a class="back" href="/">← signal board</a>
+<h1>🔑 flock keys</h1>
+<p class="sub">each agent runs on the model best suited for its job. keys are stored securely and never shown here.</p>
+
+<div class="note">
+  <strong>bring your own keys.</strong> this page is designed so anyone can plug in their own api keys and run their own flock. keys go straight to secure vault storage — they're never displayed, logged, or sent anywhere except the provider's api.
+</div>
+
+<div class="provider">
+  <h2>OpenAI</h2>
+  <div class="meta">api.openai.com · used by the scouts (high volume, fast + cheap)</div>
+  <div class="keyfmt">format: sk-... (starts with sk-, ~51 chars)</div>
+  <div class="agents">
+    <span class="agent-chip">wave hello <span class="model">· gpt-4o-mini</span></span>
+    <span class="agent-chip">pump.fun scout <span class="model">· gpt-4o-mini</span></span>
+    <span class="agent-chip">new pairs scout <span class="model">· gpt-4o-mini</span></span>
+    <span class="agent-chip">pons family scout <span class="model">· gpt-4o-mini</span></span>
+    <span class="agent-chip">agentic registry scout <span class="model">· gpt-4o-mini</span></span>
+  </div>
+  <span class="status missing" data-provider="openai">not configured</span>
+  <div class="howto">get a key at <a href="https://platform.openai.com/api-keys" target="_blank">platform.openai.com/api-keys</a> → create new secret key → paste it into the secure entry card in chat.</div>
+</div>
+
+<div class="provider">
+  <h2>Anthropic</h2>
+  <div class="meta">api.anthropic.com · used by investigators + judges (deepest reasoning)</div>
+  <div class="keyfmt">format: sk-ant-... (starts with sk-ant-, ~108 chars)</div>
+  <div class="agents">
+    <span class="agent-chip">humming hymn <span class="model">· claude-sonnet</span></span>
+    <span class="agent-chip">whale watcher <span class="model">· claude-sonnet</span></span>
+    <span class="agent-chip">social credit scorer <span class="model">· claude-sonnet</span></span>
+    <span class="agent-chip">blanket snug <span class="model">· claude-sonnet</span></span>
+  </div>
+  <span class="status missing" data-provider="anthropic">not configured</span>
+  <div class="howto">get a key at <a href="https://console.anthropic.com/settings/keys" target="_blank">console.anthropic.com/settings/keys</a> → create key → paste it into the secure entry card in chat.</div>
+</div>
+
+<div class="provider">
+  <h2>xAI</h2>
+  <div class="meta">api.x.ai · used by the digest (crypto-native voice for tweets)</div>
+  <div class="keyfmt">format: xai-... (starts with xai-, ~80 chars)</div>
+  <div class="agents">
+    <span class="agent-chip">flock signal digest <span class="model">· grok-4</span></span>
+  </div>
+  <span class="status missing" data-provider="xai">not configured</span>
+  <div class="howto">get a key at <a href="https://console.x.ai/" target="_blank">console.x.ai</a> → api keys → create → paste it into the secure entry card in chat.</div>
+</div>
+
+<div class="provider">
+  <h2>Cardigan (executor)</h2>
+  <div class="meta">runs natively — no api key needed</div>
+  <div class="agents">
+    <span class="agent-chip">cardigan — flock decision <span class="model">· native</span></span>
+  </div>
+  <span class="status ready">always on</span>
+  <div class="howto">the executor needs full tool access and 1–2 block speed. an api round-trip would add fatal latency, so cardigan stays on the native model.</div>
+</div>
+
+<div class="note">
+  <strong>how key storage works.</strong> when you provide a key, it goes directly into secure vault storage through an encrypted entry card. the flock's model router reads keys at runtime and sends them only to the provider's api — never to logs, files, or chat. to rotate a key, just provide a new one; it replaces the old.
+</div>
+
+<footer>cardigan's flock · every agent on its best model</footer>
+
+<script>
+// status is updated by the snapshot exporter when keys are configured
+fetch('/data/snapshot.json').then(r => r.json()).then(s => {
+  const keys = s.key_status || {};
+  document.querySelectorAll('.status[data-provider]').forEach(el => {
+    const p = el.dataset.provider;
+    if (keys[p]) { el.textContent = 'configured ✓'; el.className = 'status ready'; }
+  });
+}).catch(() => {});
+</script>
+</body>
+</html>

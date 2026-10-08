@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-08T19:20:56.586Z",
+ "updated_at": "2026-10-08T19:29:27.626Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
@@ -293808,7 +293808,84 @@
    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83549690 (tx 0xbb23c4d71ae12dea8fbfbe1cb2cac796b46c291d861a952627453b11ed2718f3); name=Pitbull symbol=PITTY. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T19:21:15.435Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "thin holder data (4 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (4 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 4,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:15:08.254Z",
@@ -293824,7 +293901,114 @@
    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83549690 (tx 0xbb23c4d71ae12dea8fbfbe1cb2cac796b46c291d861a952627453b11ed2718f3); name=AMD  Robinhood Token symbol=AMD. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T19:21:17.937Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "top-10 real-wallet holders own 0.68% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "3268283720000000000000",
+       "addrsSeen": 49,
+       "top10EoaBps": 68,
+       "top1EoaBps": 60,
+       "top10": [
+        {
+         "addr": "0x0b5748af9a52e09cd7bb2d66b2318b3b22c21295",
+         "bal": "19644459999999997616"
+        },
+        {
+         "addr": "0x8f612edf9bb0e3ca8719341ed7c896fc46e54b66",
+         "bal": "2604963210790413081"
+        },
+        {
+         "addr": "0x1c9723cf865ec683ac4df64d72b027a207999787",
+         "bal": "130794505132786453"
+        },
+        {
+         "addr": "0x21c46d844817fae47f2b8b67dd4b8ecb82e48fc9",
+         "bal": "81903251233401805"
+        },
+        {
+         "addr": "0x53ab262f010d007775825720e6c3623c822fac2d",
+         "bal": "62607478119319397"
+        },
+        {
+         "addr": "0x2ccc152ad68419f777531e6a40a52325e2a80ee2",
+         "bal": "11394237036741295"
+        },
+        {
+         "addr": "0x273604bf98efbfcf032aaa360ba4df5d122d2a62",
+         "bal": "304670779084167"
+        },
+        {
+         "addr": "0xc3566988206c84474262b0f46ea35050fd6cb8a4",
+         "bal": "2"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:15:09.345Z",
@@ -293838,7 +294022,84 @@
    "detail": "new contract deployed in block 83442808",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T18:39:56.544Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "thin holder data (0 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (0 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 0,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:15:13.394Z",
@@ -293854,7 +294115,81 @@
    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83549742 (tx 0x3d523cea0b0595f22b63278c32aea6c9f878bb55501b08849d2fff293ea6658d); name=Super Cat symbol=SC. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T19:21:31.196Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 11,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:15:17.040Z",
@@ -293870,7 +294205,84 @@
    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83549777 (tx 0xde0694670626179827c107f9dbea798b38858f28c6c914b2137093dc87402ae6); name=Vanta symbol=VANTA. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T19:21:34.548Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "thin holder data (2 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (2 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 2,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:15:18.456Z",
@@ -293886,7 +294298,84 @@
    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83549954 (tx 0xda374118ba582a49b05c453192ef14c5f4532ac06ce1d621471250175448079f); name=Mule Protocol symbol=Mule. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T19:21:36.163Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "thin holder data (7 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (7 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 7,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:15:20.182Z",
@@ -293902,7 +294391,84 @@
    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83550095 (tx 0x2a1f632e4882dbf7236817cd728f8934e61aabddc30be2ab1d3392459ffe3be7); name=Bauls symbol=BAULS. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T19:21:38.699Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "thin holder data (5 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (5 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 5,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:15:22.630Z",
@@ -293918,7 +294484,93 @@
    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83550145 (tx 0x7f6d903c983ba820840919b7bb9f2a63a705686034f663c04e6f6912bf24d7c2); name=Humcomb symbol=HUMCOMB. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T19:21:40.623Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "thin holder data (4 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (4 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 1.12% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 4,
+       "top10EoaBps": 112,
+       "top1EoaBps": 83,
+       "top10": [
+        {
+         "addr": "0x790b015795f6a113a0e12835edfac6bdd7f8282f",
+         "bal": "8358044098364009680112748"
+        },
+        {
+         "addr": "0x417b7992367643db6fd93759d05eb009293cf8c7",
+         "bal": "2846043583937511685397926"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:15:24.342Z",
@@ -293934,7 +294586,122 @@
    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83550709 (tx 0x8eec4d7856252c4fce23a808618f5e1ac19ce18d39afe44c9d5f7beb3eafd6b2); name=Whipsaw.Markets symbol=WHIP. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T19:21:42.815Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "top-10 real-wallet holders own 18.42% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 58,
+       "top10EoaBps": 1842,
+       "top1EoaBps": 352,
+       "top10": [
+        {
+         "addr": "0x7af4253a4704e6d2aeeaf3455c22b7742473c241",
+         "bal": "35207258706977890205599327"
+        },
+        {
+         "addr": "0x71c762a1c9e5ee7da0fff564d55ce5a6ad2862a5",
+         "bal": "27286521532769597171800019"
+        },
+        {
+         "addr": "0x5f6be9e4541290baecec5556b4d9c20b7ed46e0c",
+         "bal": "20314228431081509657396927"
+        },
+        {
+         "addr": "0x4041a047c16fe3e7be6d9cda8e8af51c9afcab4f",
+         "bal": "19459826458811328477161039"
+        },
+        {
+         "addr": "0x9060aac1902800b762d006e96bc70ebff06a39d6",
+         "bal": "19186136188189168168840727"
+        },
+        {
+         "addr": "0x5cf8081f34f43e33a09633af5d3066a31db5bf56",
+         "bal": "14066091265530691218496554"
+        },
+        {
+         "addr": "0x6bd2b5cd474cf3dd618e7b604296d802231a613d",
+         "bal": "14041116810926238925489735"
+        },
+        {
+         "addr": "0x10135e120c8c633771afaca794dbe9aad871076d",
+         "bal": "13785996561014364478830874"
+        },
+        {
+         "addr": "0x19bccc9d85a6b19f3cdddfe667c66973c64e8bb7",
+         "bal": "10495294481393052978968869"
+        },
+        {
+         "addr": "0xe27b9a41352c69d8ee3444075607b07ee9978805",
+         "bal": "10436236401480100020583240"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:15:25.364Z",
@@ -293950,7 +294717,84 @@
    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83550926 (tx 0x25d8663c42ed4ba554b3a6e36c078404d6ab3cb0bdfc75b4158629da76bc6a4b); name=Yeet symbol=YEET. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T19:21:56.135Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "thin holder data (2 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (2 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 2,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:15:27.545Z",
@@ -293966,7 +294810,89 @@
    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83551058 (tx 0xa97082051f0bb8e596eba3a43ff6e6453125bc1c803c836f28a25583e38ce845); name=Deltaneutral symbol=DELTA. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T19:21:58.354Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "thin holder data (3 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (3 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 3,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [
+        {
+         "addr": "0x02b464262e88d0d3b93eede39909a2128502f61d",
+         "bal": "1984139926"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:15:29.182Z",
@@ -293982,7 +294908,84 @@
    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83551140 (tx 0xd24c8989726960b8465d8734dd771e739af692405315bd517111467962340944); name=UseWhoosh symbol=WHOOSH. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T19:22:00.393Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "thin holder data (4 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (4 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 4,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:15:33.017Z",
@@ -293998,7 +295001,84 @@
    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83551359 (tx 0x725cabc3ba8e48406305afff98d3ab1945c817732551b8e8e00e74a15b3b9f84); name=Wipeout symbol=Wipeout. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T19:22:02.218Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "thin holder data (5 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (5 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 5,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:15:57.442Z",
@@ -294012,7 +295092,97 @@
    "detail": "new contract deployed in block 83443032",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T18:39:41.078Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "thin holder data (6 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (6 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.05% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 6,
+       "top10EoaBps": 5,
+       "top1EoaBps": 3,
+       "top10": [
+        {
+         "addr": "0xf407d636cb62f3afbd1cf86f4a0659d64082fac6",
+         "bal": "311559431356256477670035"
+        },
+        {
+         "addr": "0xa52b0667fa5eba01d06e789854813b20fe74387e",
+         "bal": "266203255488666336310159"
+        },
+        {
+         "addr": "0x03d0c07adaa58ee9e408a86980a6cb67a57b163b",
+         "bal": "7688238559587856976289"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:16:00.884Z",
@@ -294026,7 +295196,75 @@
    "detail": "new contract deployed in block 83443052",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T18:39:37.942Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "totalSupply unreadable or 0; concentration check skipped",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "totalSupply unreadable or 0; concentration check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:16:28.723Z",
@@ -294040,7 +295278,92 @@
    "detail": "new contract deployed in block 83443231",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-08T18:39:35.463Z",
+   "gate_reasons": [
+    "pool value ~0.0000 ETH < 0.5 ETH floor"
+   ],
+   "gate_warnings": [
+    "thin holder data (0 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": false,
+      "reasons": [
+       "pool value ~0.0000 ETH < 0.5 ETH floor"
+      ],
+      "warnings": [],
+      "notes": [
+       "EOA-held LP ~0.00% (<=10%)"
+      ],
+      "detail": {
+       "pair": "0xeed5708fbebe437a5de6ab02f55eebb51b14d8a2",
+       "wethReserveEth": 5.11752435799e-7,
+       "poolValueEth": 0.000001023504871598,
+       "lpSupply": "121382529935731252",
+       "eoaLpPct": 0,
+       "lpHolderScanComplete": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (0 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000",
+       "addrsSeen": 0,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:16:43.401Z",
@@ -294054,7 +295377,84 @@
    "detail": "new contract deployed in block 83443360",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T18:39:34.341Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "thin holder data (0 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (0 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 0,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:16:54.116Z",
@@ -294068,7 +295468,75 @@
    "detail": "new contract deployed in block 83443420",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T18:39:33.403Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "totalSupply unreadable or 0; concentration check skipped",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "totalSupply unreadable or 0; concentration check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:17:46.692Z",
@@ -294082,7 +295550,75 @@
    "detail": "new contract deployed in block 83443778",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T18:39:30.497Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "totalSupply unreadable or 0; concentration check skipped",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "totalSupply unreadable or 0; concentration check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:18:03.752Z",
@@ -294096,7 +295632,75 @@
    "detail": "new contract deployed in block 83443933",
    "investigated": true,
    "investigated_at": "2026-10-08T19:18:19.825Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T18:39:27.800Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "totalSupply unreadable or 0; concentration check skipped",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "totalSupply unreadable or 0; concentration check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:18:22.587Z",
@@ -294110,7 +295714,77 @@
    "detail": "new contract deployed in block 83444111",
    "investigated": true,
    "investigated_at": "2026-10-08T19:19:33.857Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T18:39:27.253Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "totalSupply unreadable or 0; concentration check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "owner() -> 0xe708340c4174d36fb87bf46e49d84427bd70ff97; no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": "0xe708340c4174d36fb87bf46e49d84427bd70ff97"
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "totalSupply unreadable or 0; concentration check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "actor not on denylist; nonce normal"
+      ],
+      "detail": {
+       "actor": "0xe708340c4174d36fb87bf46e49d84427bd70ff97",
+       "actorNonce": 3
+      }
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:18:23.611Z",
@@ -294124,7 +295798,75 @@
    "detail": "new contract deployed in block 83444119",
    "investigated": true,
    "investigated_at": "2026-10-08T19:19:33.857Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T18:39:23.286Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "totalSupply unreadable or 0; concentration check skipped",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "totalSupply unreadable or 0; concentration check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:18:25.697Z",
@@ -294138,7 +295880,16 @@
    "detail": "new contract deployed in block 83444139",
    "investigated": true,
    "investigated_at": "2026-10-08T19:19:33.857Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-08T18:39:22.374Z",
+   "gate_reasons": [
+    "no contract code at address"
+   ],
+   "gate_warnings": [],
+   "gate_detail": {
+    "checks": {}
+   }
   },
   {
    "found_at": "2026-10-08T19:18:34.252Z",
@@ -294162,7 +295913,94 @@
    "receiver_is_contract": false,
    "investigated": true,
    "investigated_at": "2026-10-08T19:19:33.857Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-08T19:00:06.226Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "EIP-1967 implementation slot set (UUPS-style); upgrade power lives in implementation — covered by owner-powers check"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "top-10 real-wallet holders own 1.76% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "40332266993390466976955",
+       "addrsSeen": 1472,
+       "top10EoaBps": 176,
+       "top1EoaBps": 110,
+       "top10": [
+        {
+         "addr": "0x07ae8551be970cb1cca11dd7a11f47ae82e70e67",
+         "bal": "444523645989402678952"
+        },
+        {
+         "addr": "0xfbcc34e25937282a3d0fbde054a9a49e9968c51a",
+         "bal": "206650292470239175792"
+        },
+        {
+         "addr": "0xa54dc4425190570cb5c841adf445bbecf3b249f5",
+         "bal": "62244599339846244398"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:18:34.252Z",
@@ -294186,7 +296024,130 @@
    "receiver_is_contract": false,
    "investigated": true,
    "investigated_at": "2026-10-08T19:19:33.857Z",
-   "investigation": "see investigation-queue.json"
+   "investigation": "see investigation-queue.json",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-08T18:59:24.836Z",
+   "gate_reasons": [
+    "pool value ~0.0676 ETH < 0.5 ETH floor"
+   ],
+   "gate_warnings": [
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_warn": true,
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": false,
+      "reasons": [
+       "pool value ~0.0676 ETH < 0.5 ETH floor"
+      ],
+      "warnings": [],
+      "notes": [
+       "EOA-held LP ~0.00% (<=10%)"
+      ],
+      "detail": {
+       "pair": "0x0579fa41416101b66e202f66bf3b0de5101f5b9f",
+       "wethReserveEth": 0.033796064160226735,
+       "poolValueEth": 0.06759212832045347,
+       "lpSupply": "5466646066",
+       "eoaLpPct": 0,
+       "lpHolderScanComplete": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "top-10 real-wallet holders own 5.18% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 247,
+       "top10EoaBps": 518,
+       "top1EoaBps": 182,
+       "top10": [
+        {
+         "addr": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+         "bal": "18270157915542684681811226"
+        },
+        {
+         "addr": "0x88d25c861938a91af4ad57ad964a8fcc6c6351d3",
+         "bal": "9283738812904328967119218"
+        },
+        {
+         "addr": "0x2dbaf98620ac5bbe3441f756feff82702d095b1a",
+         "bal": "9115701444541298015725494"
+        },
+        {
+         "addr": "0x1887fa9edadeab7562b01cc3f4fa246ace2c3cdd",
+         "bal": "8450079580733772411972100"
+        },
+        {
+         "addr": "0x7a41ea709a89b2a5e7c6b1f52ab305349140af60",
+         "bal": "4691063035026325333285702"
+        },
+        {
+         "addr": "0x5fe2606b0e2d6a3d34228107a8e48023026f4fdb",
+         "bal": "1008714268793563660718193"
+        },
+        {
+         "addr": "0xaa4dfdb453d8fe3a83c9f9ead0711222bcd638dd",
+         "bal": "477879327759060314301967"
+        },
+        {
+         "addr": "0xbe593ff484972073df23c201a64c36e3383eacdd",
+         "bal": "209779754765760715253057"
+        },
+        {
+         "addr": "0xbcfc80d12c84e9149d36563cfadf5632da696409",
+         "bal": "177988013592723954243050"
+        },
+        {
+         "addr": "0xc216bfa5da000965e820845c32e6fd88db275743",
+         "bal": "172301753893063072272708"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   }
   },
   {
    "found_at": "2026-10-08T19:18:56.599Z",
@@ -294471,6 +296432,597 @@
    "tx_hash": "0x149446aa02b84e25f5f3879cd1fde847a7ed0031b10d479445ad70dc1975e0a9",
    "block": 83445380,
    "detail": "new contract deployed in block 83445380"
+  },
+  {
+   "found_at": "2026-10-08T19:20:59.078Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xe44cf88975013be1a98ced6e0e524e5f201b5c18",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xf698bf3922007ddf3e6d8c4b7fd15f5eef383e4dacd5943ff0b167d9ea8d22b9",
+   "block": 83445409,
+   "detail": "new contract deployed in block 83445409"
+  },
+  {
+   "found_at": "2026-10-08T19:21:02.360Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x8e20c892f66733c5333c5a58cd96a1b86ddbe7ae",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x77e39200db21d54dc1d2eaf5ad0f707ad1af96c0986264c006d93417f8cc5ce9",
+   "block": 83445437,
+   "detail": "new contract deployed in block 83445437"
+  },
+  {
+   "found_at": "2026-10-08T19:21:06.040Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xb3dcfd3403bf6fbf225ed233887a4a9b03789efa",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xb168dbd1f84a6abb5d702099adbadb28e7666fd0f89b6e88fef93571a09cb47c",
+   "block": 83445467,
+   "detail": "new contract deployed in block 83445467"
+  },
+  {
+   "found_at": "2026-10-08T19:21:09.693Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x0bb3eba94b0b8c763800ce2287de972c59307601",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x93f2cc5b10652a537b91764c2b8da7ccb242288a9faf6c89bdcd86df35aec0de",
+   "block": 83445498,
+   "detail": "new contract deployed in block 83445498"
+  },
+  {
+   "found_at": "2026-10-08T19:21:12.922Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x90e2f1a8bd27e3fd2cbdaa08fd00bb921282f4d7",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x56eef5605f98a1efea8aa632436db25f793dd5d42e7f862aeb5e9eb3447e71c1",
+   "block": 83445526,
+   "detail": "new contract deployed in block 83445526"
+  },
+  {
+   "found_at": "2026-10-08T19:21:16.937Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xa0db162015c66557088c3fb7dffbcf56e31a1410",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x3f7a07a3e53110a7c099e84184df351e60f842702dace01343cb7c58c692ba20",
+   "block": 83445556,
+   "detail": "new contract deployed in block 83445556"
+  },
+  {
+   "found_at": "2026-10-08T19:21:22.596Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x38c7d447366629a8533da914d615691dac512e74",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x01c16fc22b7f83d37af246c370c28215458f83ca834fde3c507fe75a361e8ebc",
+   "block": 83445585,
+   "detail": "new contract deployed in block 83445585"
+  },
+  {
+   "found_at": "2026-10-08T19:21:27.197Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x72b12971478af5e1b540f0695a58112cf29ca25d",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xccd8882fe832b4334683853664a026ef80c1ab26ee37c3fde8f066fc500e1fb1",
+   "block": 83445615,
+   "detail": "new contract deployed in block 83445615"
+  },
+  {
+   "found_at": "2026-10-08T19:21:27.604Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x5128b2c4a0fb1639ecacf001918979a3a86e7a5d",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xe0676dc3ee0b0a18a14558411abcb32838d52573e2824b0fe6b766403886cfd3",
+   "block": 83445616,
+   "detail": "new contract deployed in block 83445616"
+  },
+  {
+   "found_at": "2026-10-08T19:21:30.877Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x9db13a9a34e4b5a220a981d247596734482c5b91",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xe6d1c94685efff747da4b521fd809ab2200341fa8aff092e36be2a9e06bb18b5",
+   "block": 83445644,
+   "detail": "new contract deployed in block 83445644"
+  },
+  {
+   "found_at": "2026-10-08T19:21:35.384Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xc04f825e9abe5e27ca43adb115720d78991f0f0b",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x85f54a0327d157f032cacd47415177eb4e91bf7bb67d60bd4fa8ddb62fd5542b",
+   "block": 83445673,
+   "detail": "new contract deployed in block 83445673"
+  },
+  {
+   "found_at": "2026-10-08T19:21:39.470Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x689da7f786192dfc03efaf0f80b6a161790757f3",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xce8b3ee3b0cea673e43b7b32de27bd47661088b788c45ef297c025e29a6a0cc1",
+   "block": 83445702,
+   "detail": "new contract deployed in block 83445702"
+  },
+  {
+   "found_at": "2026-10-08T19:21:43.614Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x254837ed2f2e53d1bfed221b181e11b7bcef0d45",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xd5db337453ba70f7d4d0147987f9755372cf741874b0b8ce4afaf37a9fecee57",
+   "block": 83445732,
+   "detail": "new contract deployed in block 83445732"
+  },
+  {
+   "found_at": "2026-10-08T19:21:49.984Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x8450ad2767dc75ffdd2d0d847b75ac65fbb4a714",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x0f6ef0838fa3738badd47d6317293b0c928137b14420126250d4756e8d3b3f24",
+   "block": 83445762,
+   "detail": "new contract deployed in block 83445762"
+  },
+  {
+   "found_at": "2026-10-08T19:21:53.367Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x8361d88a9081bcb84d044bdf4918af0529ee4fa3",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xf1518ff705d1542ba122ba83cf012a64750351ccaed56eca757d9c14f422fc62",
+   "block": 83445792,
+   "detail": "new contract deployed in block 83445792"
+  },
+  {
+   "found_at": "2026-10-08T19:22:02.689Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xab418a099f3bbd863dee5a704bf10e1c4aaa342c",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xe220ec9846116b08a8c212a776077ef374293321837375ea4cc1aba382428624",
+   "block": 83445865,
+   "detail": "new contract deployed in block 83445865"
+  },
+  {
+   "found_at": "2026-10-08T19:22:19.444Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xafbb6409dc3057abbec36736210a1dad916bd87c",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x6d24458443f54345d791a597a3bccfb4375ba4feb6331c3d0bccf5cab2b5c948",
+   "block": 83445998,
+   "detail": "new contract deployed in block 83445998"
+  },
+  {
+   "found_at": "2026-10-08T19:23:29.409Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x4de0ae45fcce76a5bfa748c6a5792b054382efdb",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x8b9866c0e4f48b5738ce83c7f56e3a24233eff770ca90469eb5cf21d6119b321",
+   "block": 83446717,
+   "detail": "new contract deployed in block 83446717"
+  },
+  {
+   "found_at": "2026-10-08T19:23:31.451Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x43dc31983178aaee25fda0308df5a959c18d31a8",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xe2c4e27f1cddaed863f23ae46dd5d84628f82df76ec61b17b64385cef8f40ff9",
+   "block": 83446738,
+   "detail": "new contract deployed in block 83446738"
+  },
+  {
+   "found_at": "2026-10-08T19:23:39.853Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xbf307eb97089a478cb58630b60016fc5572d18ad",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x4fe2cd4203e0f285e5408df853952a82189fc7237fae0a0167323259cc24d716",
+   "block": 83446816,
+   "detail": "new contract deployed in block 83446816"
+  },
+  {
+   "found_at": "2026-10-08T19:24:03.154Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xb0599d8c548f73450ea48227bc01ef187d7be5ea",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xaad0b7bdfc849410caf97426b453ed33dc6d044d24b8a299ff91f9960c41b1cb",
+   "block": 83447063,
+   "detail": "new contract deployed in block 83447063"
+  },
+  {
+   "found_at": "2026-10-08T19:25:07.981Z",
+   "scout": "new-pairs",
+   "type": "pair",
+   "pair": "WETH / boar",
+   "dex": "0x8bceaa40… v2",
+   "chain": "robinhood",
+   "volume": "7.98 WETH",
+   "detail": "V2 pair created block 83552159 via factory 0x8bceaa40…. 15 swaps since creation (14 buys / 1 sells), ~7.98 WETH volume, reserves 49.03 WETH / 6217737.5k boar",
+   "contract": "0x312dd25f6029a5da6c4c397ca67b346092d74d97"
+  },
+  {
+   "found_at": "2026-10-08T19:25:07.981Z",
+   "scout": "new-pairs",
+   "type": "pair",
+   "pair": "WETH / AIDEN",
+   "dex": "0x0d1ebb17… v2",
+   "chain": "robinhood",
+   "volume": "0.0021 WETH",
+   "detail": "V2 pair created block 83552617 via factory 0x0d1ebb17…. 4 swaps since creation (3 buys / 1 sells), ~0.0021 WETH volume, reserves 1.92 WETH / 1107035.9k AIDEN",
+   "contract": "0x03ac13efee544e842a0ebe1f769931ff663c4866"
+  },
+  {
+   "found_at": "2026-10-08T19:25:07.981Z",
+   "scout": "new-pairs",
+   "type": "pair",
+   "pair": "WETH / CREDITS",
+   "dex": "0x8bceaa40… v2",
+   "chain": "robinhood",
+   "volume": "3.98 WETH",
+   "detail": "V2 pair created block 83555944 via factory 0x8bceaa40…. 5 swaps since creation (5 buys / 0 sells), ~3.98 WETH volume, reserves 54.65 WETH / 6050630.2k CREDITS. FLAGS: no sells observed yet",
+   "contract": "0x43fa22f2b95d7753ed3feee2ac3d16f6e5269745"
+  },
+  {
+   "found_at": "2026-10-08T19:25:07.981Z",
+   "scout": "new-pairs",
+   "type": "pair",
+   "pair": "WETH / BIGC",
+   "dex": "0x8bceaa40… v2",
+   "chain": "robinhood",
+   "volume": "0.40 WETH",
+   "detail": "V2 pair created block 83556769 via factory 0x8bceaa40…. 9 swaps since creation (9 buys / 0 sells), ~0.40 WETH volume, reserves 1.58 WETH / 634.3k BIGC. FLAGS: no sells observed yet",
+   "contract": "0x1d28efdbe6253fdbbbf7ea22eb5403aa402100aa"
+  },
+  {
+   "found_at": "2026-10-08T19:25:14.552Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xb45b15ef0e950547d11c3337fc5fdbb67de7a24a",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x5117be7ef46a8b05982cd397176e8fb060183fed84a7078e47ba182ab6871bb8",
+   "block": 83447396,
+   "detail": "new contract deployed in block 83447396"
+  },
+  {
+   "found_at": "2026-10-08T19:25:17.668Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x2dfb2643d2729eb5249f558f266770fe4d805dbc",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xd1d45d00430c0e59936f3e56be538c842b43e74386bc9c955018ef18ce3acd3e",
+   "block": 83447422,
+   "detail": "new contract deployed in block 83447422"
+  },
+  {
+   "found_at": "2026-10-08T19:25:31.698Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "HeldAt HELDAT",
+   "muse": "",
+   "contract": "0xfe6a5e85d827fda310102bf918e00fbdf5fac834",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0xb1f42cd2c2f44a47ef6303fbb6d9d9891702da494718c994bee61adfc816144c",
+   "block": 83551966,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83551966 (tx 0xb1f42cd2c2f44a47ef6303fbb6d9d9891702da494718c994bee61adfc816144c); name=HeldAt symbol=HELDAT. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-08T19:25:32.515Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Ghost Chain Evolution GHOST",
+   "muse": "",
+   "contract": "0xb288864eba248ae31b5d790e5058382152516b5e",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x7577531da80f977d851adb9a5e3174547fc1d383d0f19abf8e31761b22e3b6ca",
+   "block": 83552600,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83552600 (tx 0x7577531da80f977d851adb9a5e3174547fc1d383d0f19abf8e31761b22e3b6ca); name=Ghost Chain Evolution symbol=GHOST. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-08T19:25:34.532Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Blobly BLOB",
+   "muse": "",
+   "contract": "0xdebb3d1d7f08809d2553bc8768d4efd594e6f252",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0xbdf99e13583d292290a2ddd4a5324f9456620ff90bc7aae6d82229786dc41461",
+   "block": 83554340,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83554340 (tx 0xbdf99e13583d292290a2ddd4a5324f9456620ff90bc7aae6d82229786dc41461); name=Blobly symbol=BLOB. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-08T19:25:35.159Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "DEATHBOX DTX",
+   "muse": "",
+   "contract": "0x42ac162bcd4e38df839354d149d9cc7b94c110b9",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0xfccaba4a0839a863fed9d3933ee8fa0f438689b6c395ba8bb773d7bef0459f6f",
+   "block": 83554441,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83554441 (tx 0xfccaba4a0839a863fed9d3933ee8fa0f438689b6c395ba8bb773d7bef0459f6f); name=DEATHBOX symbol=DTX. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-08T19:25:35.780Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "inus inus",
+   "muse": "",
+   "contract": "0x44391497345e5f5fc29a10caf27cd6b47db19756",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0xdbce62e226b84e828d439999b7ccf0b90abd2672d998ad8c7e4c393a4dabe300",
+   "block": 83554976,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83554976 (tx 0xdbce62e226b84e828d439999b7ccf0b90abd2672d998ad8c7e4c393a4dabe300); name=inus symbol=inus. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-08T19:25:36.475Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Card Flow CRDFLW",
+   "muse": "",
+   "contract": "0x2b513c36c6fab99bd218589ac9d7c17ba6584ca7",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x255adbd5f87acf7b2448f022cac1166e9e2e39ace836f602d67bea830791a31a",
+   "block": 83555258,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83555258 (tx 0x255adbd5f87acf7b2448f022cac1166e9e2e39ace836f602d67bea830791a31a); name=Card Flow symbol=CRDFLW. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-08T19:25:37.790Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "The Mister Turtle TURTLE",
+   "muse": "",
+   "contract": "0x7d6b7ec8fa6f0443a76877e9b53319f1ac658a10",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0xfe7cc493d853052d4b688b42aa5c8e3128e8c3c331f2c2d6f744e52f9b99083e",
+   "block": 83555691,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83555691 (tx 0xfe7cc493d853052d4b688b42aa5c8e3128e8c3c331f2c2d6f744e52f9b99083e); name=The Mister Turtle symbol=TURTLE. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-08T19:25:38.694Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Grok Bot Room GBR",
+   "muse": "",
+   "contract": "0xd66dccb2ea7aaa4e70533dc5554887d1b2934390",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x416e975b18ac64e7fc200b2e2f50d113844f05224455b29b32a1cf3b6b5f5387",
+   "block": 83555775,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83555775 (tx 0x416e975b18ac64e7fc200b2e2f50d113844f05224455b29b32a1cf3b6b5f5387); name=Grok Bot Room symbol=GBR. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-08T19:25:39.341Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "100 100",
+   "muse": "",
+   "contract": "0x8abc90a8ef365ce3d8ad4afbc211a969fb6678d1",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0xc0b92aa2cf6e8467a404dcdb6c8a92d25595e5b66af34849999a0beebe5ed9e4",
+   "block": 83556031,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83556031 (tx 0xc0b92aa2cf6e8467a404dcdb6c8a92d25595e5b66af34849999a0beebe5ed9e4); name=100 symbol=100. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-08T19:25:40.701Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "rasyn RASYN",
+   "muse": "",
+   "contract": "0x443578f9912b10811b830a7a738c47da5f4b9742",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0xf7274d2da7993a6d34e434f5b721fc73a89709fbe4dc59ce56deabe86ea0dcc6",
+   "block": 83556731,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83556731 (tx 0xf7274d2da7993a6d34e434f5b721fc73a89709fbe4dc59ce56deabe86ea0dcc6); name=rasyn symbol=RASYN. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-08T19:25:41.366Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Vibepad v",
+   "muse": "",
+   "contract": "0x508f5b83b6a65ea6549e44c26d1ecfb97f7d403f",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x3052cabcd03108fd81d23de461366f4bc9d2be87e85d6f2106c60a0c09988706",
+   "block": 83556968,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83556968 (tx 0x3052cabcd03108fd81d23de461366f4bc9d2be87e85d6f2106c60a0c09988706); name=Vibepad symbol=v. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-08T19:25:42.079Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Derrax World DRX",
+   "muse": "",
+   "contract": "0xc27e5364a787d3b447350f40786c3ecd7b57aea9",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x11ae3ea99afc163f2075b1191e92580fcd70e119e56036fee8846aab98704aca",
+   "block": 83556971,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83556971 (tx 0x11ae3ea99afc163f2075b1191e92580fcd70e119e56036fee8846aab98704aca); name=Derrax World symbol=DRX. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-08T19:25:42.529Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x79d5f22aac7a0f5c34209a220f12407742187e1c",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xf5369bd1efbe6c7a63ceaa229a21cbc5f7df14bfa4e9050aba559feeda9966c8",
+   "block": 83447605,
+   "detail": "new contract deployed in block 83447605"
+  },
+  {
+   "found_at": "2026-10-08T19:25:42.838Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "rasyn RASYN",
+   "muse": "",
+   "contract": "0x5ba29891a4d2b042d8d34509aa15778ebf28bc3d",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0xf9ce09076425fdc5da10bb0541460291eacd3dc320257b16a8f75814d29896d8",
+   "block": 83557151,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83557151 (tx 0xf9ce09076425fdc5da10bb0541460291eacd3dc320257b16a8f75814d29896d8); name=rasyn symbol=RASYN. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-08T19:25:43.484Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Robinhood Chain Chain",
+   "muse": "",
+   "contract": "0x088841cdedb93d1c75ec73b58725981ecdfed3cd",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x71fad84df20ad63de7df544597a21eed290701b73c4a17f5bdc0a8f65ecdf4bb",
+   "block": 83557623,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83557623 (tx 0x71fad84df20ad63de7df544597a21eed290701b73c4a17f5bdc0a8f65ecdf4bb); name=Robinhood Chain symbol=Chain. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-08T19:25:44.830Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "HeMachiMan MACHI",
+   "muse": "",
+   "contract": "0x1d3d1bf144bea5c1e45f24999dbfa41339dcf400",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x8150c6064a3e8035c7daf490273afec8d9ee930484a81b3a36ab605f504253a7",
+   "block": 83557854,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83557854 (tx 0x8150c6064a3e8035c7daf490273afec8d9ee930484a81b3a36ab605f504253a7); name=HeMachiMan symbol=MACHI. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-08T19:25:45.501Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "foment FOMENT",
+   "muse": "",
+   "contract": "0x8a7cf5fb17e70e0273e296af5777e848f5cfb842",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0xd0ff68e87468e25f4417ce54ce23c2993770a3b1291e336b9288076eaced6649",
+   "block": 83558186,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83558186 (tx 0xd0ff68e87468e25f4417ce54ce23c2993770a3b1291e336b9288076eaced6649); name=foment symbol=FOMENT. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-08T19:25:57.305Z",
+   "scout": "whale-watcher",
+   "type": "whale-convergence",
+   "token": "WETH",
+   "contract": "0x0bd7d308f8e1639fab988df18a8011f41eacad73",
+   "chain": "robinhood",
+   "tx_hash": "0xb75c094ce39f1a7660e3472798d9ff1498612ae604ccc4e5a3f794d798621283",
+   "detail": "CONVERGENCE: 2 whale EOA wallets accumulating WETH (0x0bd7d308f8e1639fab988df18a8011f41eacad73) on robinhood within one scan window; combined $41,195 received. Largest: whale 0xfbcc34e25937282a3d0fbde054a9a49e9968c51a (~$506,630 assets) received $16,038 in tx 0xb75c094ce39f1a7660e3472798d9ff1498612ae604ccc4e5a3f794d798621283",
+   "converging_whales": 2,
+   "converging_wallets": [
+    "0xfbcc34e25937282a3d0fbde054a9a49e9968c51a",
+    "0xc216bfa5da000965e820845c32e6fd88db275743"
+   ],
+   "combined_amount_usd": 41195.43,
+   "whale": "0xfbcc34e25937282a3d0fbde054a9a49e9968c51a",
+   "whale_assets_usd": 506629.56,
+   "amount_usd": 16038.37,
+   "convergence": true,
+   "receiver_is_contract": false
+  },
+  {
+   "found_at": "2026-10-08T19:25:57.305Z",
+   "scout": "whale-watcher",
+   "type": "whale-convergence",
+   "token": "BONER",
+   "contract": "0x98096d17e191b3da1d5f99a6d7b3584351b11e18",
+   "chain": "robinhood",
+   "tx_hash": "0xf3fc90d18264107e219723ce5e9b357e567a38860de2e9cc73621ef85bfe2697",
+   "detail": "CONVERGENCE: 2 whale EOA wallets accumulating BONER (0x98096d17e191b3da1d5f99a6d7b3584351b11e18) on robinhood within one scan window; combined $24,273 received. Largest: whale 0x43f25e482f1e438bb32badd7741b9cddacffe825 (~$172,803 assets) received $16,714 in tx 0xf3fc90d18264107e219723ce5e9b357e567a38860de2e9cc73621ef85bfe2697",
+   "converging_whales": 2,
+   "converging_wallets": [
+    "0x43f25e482f1e438bb32badd7741b9cddacffe825",
+    "0xc216bfa5da000965e820845c32e6fd88db275743"
+   ],
+   "combined_amount_usd": 24273.23,
+   "whale": "0x43f25e482f1e438bb32badd7741b9cddacffe825",
+   "whale_assets_usd": 172803.44,
+   "amount_usd": 16713.74,
+   "convergence": true,
+   "receiver_is_contract": false
+  },
+  {
+   "found_at": "2026-10-08T19:26:27.804Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x56502725b6595612f4a324df804303baf5bd673e",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x4c80d0b855163b9a0104a4ae99e550b030dcd452ac2d5bd5f1f13892a2a699ff",
+   "block": 83447994,
+   "detail": "new contract deployed in block 83447994"
+  },
+  {
+   "found_at": "2026-10-08T19:26:42.216Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xe00776343cfb4f4a1233c11693488d4dd58177a3",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x9cc4434df5b86de23f728ea1d4eafacd4314fed51309231ad8a94e8ba30717dc",
+   "block": 83448123,
+   "detail": "new contract deployed in block 83448123"
+  },
+  {
+   "found_at": "2026-10-08T19:29:23.058Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x9597df7be0186f02fd834644a980bf5c8bb4e65f",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x972da80e088630d8b00743d916dca0825a8faf885231fc516b51f4a0a1dba544",
+   "block": 83449740,
+   "detail": "new contract deployed in block 83449740"
   }
  ],
  "investigations": [
@@ -300449,7 +303001,9 @@
    "social_signal": "weak",
    "money_flow": "bot",
    "verdict": "skip",
-   "notes": "single-wallet bundle pattern, no socials, no muse attribution. skip."
+   "notes": "single-wallet bundle pattern, no socials, no muse attribution. skip.",
+   "social_scored_at": "2026-10-08T19:27:20Z",
+   "social_grade": "F (7/100)"
   },
   {
    "investigated_at": "2026-10-08T19:20:00Z",
@@ -300463,7 +303017,9 @@
    "social_signal": "weak",
    "money_flow": "bot",
    "verdict": "skip",
-   "notes": "no project/social proof on any; STREAMIN socials belong to the Solana token of the same name (farmed-name trap again). Orion clone #3, Octobear launcher-family. skip all."
+   "notes": "no project/social proof on any; STREAMIN socials belong to the Solana token of the same name (farmed-name trap again). Orion clone #3, Octobear launcher-family. skip all.",
+   "social_scored_at": "2026-10-08T19:27:20Z",
+   "social_grade": "F (7/100)"
   },
   {
    "investigated_at": "2026-10-08T19:20:00Z",
@@ -300477,7 +303033,9 @@
    "social_signal": "weak",
    "money_flow": "mixed",
    "verdict": "skip",
-   "notes": "CRAWL carries the scout's no-sells honeypot flag. ZERO is the only one with non-trivial reserves (~49 WETH) but 16 buys/1 sell and no socials = possible single-sided seeding; watch-worthy, skip for now with requeue-if-volume note. RRAC tiny. SCHIP/IHOOD dust. web search: no buzz. skip all."
+   "notes": "CRAWL carries the scout's no-sells honeypot flag. ZERO is the only one with non-trivial reserves (~49 WETH) but 16 buys/1 sell and no socials = possible single-sided seeding; watch-worthy, skip for now with requeue-if-volume note. RRAC tiny. SCHIP/IHOOD dust. web search: no buzz. skip all.",
+   "social_scored_at": "2026-10-08T19:27:20Z",
+   "social_grade": "F (8/100)"
   },
   {
    "investigated_at": "2026-10-08T19:20:00Z",
@@ -300491,7 +303049,9 @@
    "social_signal": "weak",
    "money_flow": "whale",
    "verdict": "skip",
-   "notes": "CASHCAT is the established organic July meme (the $98M-volume CASHCAT that drove Robinhood Chain's record DEX day) — NOT a launch, so skip for the launch pipeline. but this is a genuine smart-money signal: whale EOAs accumulating the chain's flagship meme at presumably depressed levels (harmonicsprotrader showed CASHCAT -12% 24h today). signal recorded for the decision stage (whale-moves.json convergence bonus); worth dubie's eye as a sentiment read, not a mint candidate."
+   "notes": "CASHCAT is the established organic July meme (the $98M-volume CASHCAT that drove Robinhood Chain's record DEX day) — NOT a launch, so skip for the launch pipeline. but this is a genuine smart-money signal: whale EOAs accumulating the chain's flagship meme at presumably depressed levels (harmonicsprotrader showed CASHCAT -12% 24h today). signal recorded for the decision stage (whale-moves.json convergence bonus); worth dubie's eye as a sentiment read, not a mint candidate.",
+   "social_scored_at": "2026-10-08T19:27:20Z",
+   "social_grade": "C (46/100)"
   },
   {
    "investigated_at": "2026-10-08T19:25:00Z",
@@ -300505,7 +303065,9 @@
    "social_signal": "weak",
    "money_flow": "bot",
    "verdict": "skip",
-   "notes": "AMD joins NVDA/SPY/IBM as the fourth unofficial stock-token mimic today — coordinated farm impersonating Robinhood's official stock tokens; scam-watch for dubie. Whipsaw is the third WHIP clone today (duplicate-name spam). no socials, no muse attribution. skip all."
+   "notes": "AMD joins NVDA/SPY/IBM as the fourth unofficial stock-token mimic today — coordinated farm impersonating Robinhood's official stock tokens; scam-watch for dubie. Whipsaw is the third WHIP clone today (duplicate-name spam). no socials, no muse attribution. skip all.",
+   "social_scored_at": "2026-10-08T19:27:20Z",
+   "social_grade": "F (8/100)"
   },
   {
    "investigated_at": "2026-10-08T19:25:00Z",
@@ -300519,7 +303081,9 @@
    "social_signal": "weak",
    "money_flow": "bot",
    "verdict": "skip",
-   "notes": "the PAXOS and CRH farms are now the highest-holder-count tokens of the day — but both are name-squat/brand-impersonation farms iterating clones (PAXOS x7, CRH x3 direct-deploy + ~18 pons + clone pools). holder counts on farm clones are NOT organic signal. the real pons-V2-graduated CRH (pair 0x8840…ff9b, ~$500K 24h) is a separate older contract. scam-watch: Paxos impersonation (regulated trust company). skip all clones."
+   "notes": "the PAXOS and CRH farms are now the highest-holder-count tokens of the day — but both are name-squat/brand-impersonation farms iterating clones (PAXOS x7, CRH x3 direct-deploy + ~18 pons + clone pools). holder counts on farm clones are NOT organic signal. the real pons-V2-graduated CRH (pair 0x8840…ff9b, ~$500K 24h) is a separate older contract. scam-watch: Paxos impersonation (regulated trust company). skip all clones.",
+   "social_scored_at": "2026-10-08T19:27:20Z",
+   "social_grade": "F (9/100)"
   },
   {
    "investigated_at": "2026-10-08T19:25:00Z",
@@ -300533,7 +303097,9 @@
    "social_signal": "weak",
    "money_flow": "mixed",
    "verdict": "skip",
-   "notes": "KENZO + GFRG carry the scout's no-sells honeypot flag (buys-only on fresh pools). FORTNITE: dust + brand-mimic name. no buzz. skip all."
+   "notes": "KENZO + GFRG carry the scout's no-sells honeypot flag (buys-only on fresh pools). FORTNITE: dust + brand-mimic name. no buzz. skip all.",
+   "social_scored_at": "2026-10-08T19:27:20Z",
+   "social_grade": "F (7/100)"
   },
   {
    "investigated_at": "2026-10-08T19:28:00Z",
@@ -300547,7 +303113,9 @@
    "social_signal": "weak",
    "money_flow": "bot",
    "verdict": "skip",
-   "notes": "bundle-concentrated, no socials. skip."
+   "notes": "bundle-concentrated, no socials. skip.",
+   "social_scored_at": "2026-10-08T19:27:20Z",
+   "social_grade": "F (6/100)"
   },
   {
    "investigated_at": "2026-10-08T19:28:00Z",
@@ -300561,7 +303129,78 @@
    "social_signal": "weak",
    "money_flow": "whale",
    "verdict": "skip",
-   "notes": "WETH accumulation = position/liquidity management, not a launch signal. CASHCAT whale interest repeating (two convergence windows in 6 min, ~$13.4k combined) — consistent with the earlier sentiment read on the chain's flagship meme; signal in whale-moves.json. skip for the launch pipeline."
+   "notes": "WETH accumulation = position/liquidity management, not a launch signal. CASHCAT whale interest repeating (two convergence windows in 6 min, ~$13.4k combined) — consistent with the earlier sentiment read on the chain's flagship meme; signal in whale-moves.json. skip for the launch pipeline.",
+   "social_scored_at": "2026-10-08T19:27:20Z",
+   "social_grade": "C (45/100)"
+  },
+  {
+   "investigated_at": "2026-10-08T19:28:53.897Z",
+   "key": "robinhood|0x08ae99c53e4c1981027706723e0661c702195780",
+   "candidate": {
+    "pair": "0x08ae99c53e4c1981027706723e0661c702195780",
+    "token": "0xb01053a8746b8901c0bf4a0b40881066f7f30483",
+    "name": "Profit Cat",
+    "symbol": "PROF",
+    "chain": "robinhood",
+    "scout": "new-pairs",
+    "found_at": "2026-10-08T18:14:23.185Z",
+    "detail": "V2 pair created block 83512685 via factory 0x8bceaa40…. 37 swaps since creation (26 buys / 11 sells), ~1.20 WETH volume, reserves 1.86 WETH / 537.7k PROF",
+    "gate_status": "gate_pass",
+    "gate_checked_at": null,
+    "gate_reasons": "[]",
+    "gate_warnings": null
+   },
+   "velocity": "scout: 37 swaps (26b/11s), ~1.20 WETH vol. now: 68 swaps (+31 in ~76min, ~0.4/min), only 3 unique swappers; 71 token transfers; 22 holders; top1 12.55%; token age ~44.5k blocks (~76min). no velocity spike.",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "notes": "no X/web mentions of this contract; name-only hits (Simons Cat, Cash Cat) are unrelated tokens — not attributed (farmed-name rule). 3 swappers churning a fresh pair; shared farm contract 0xf69cd0fe7280773bb9b7c93ab68420d07290afa9 holds 7.81% and also accumulates the CDEAD/NOVC launches minutes apart. no whale, no smart money.",
+   "verdict": "skip"
+  },
+  {
+   "investigated_at": "2026-10-08T19:28:53.897Z",
+   "key": "robinhood|0xa02fb383815c7a4edf0e8f913b9f05aa51a03ca4",
+   "candidate": {
+    "pair": "0xa02fb383815c7a4edf0e8f913b9f05aa51a03ca4",
+    "token": "0x8579612eb3c4a32e1042e2b3f20d6b97051b624b",
+    "name": "ClarityDead",
+    "symbol": "CDEAD",
+    "chain": "robinhood",
+    "scout": "new-pairs",
+    "found_at": "2026-10-08T18:14:23.185Z",
+    "detail": "V2 pair created block 83515418 via factory 0x8bceaa40…. 4 swaps since creation (4 buys / 0 sells), ~0.22 WETH volume, reserves 30.34 WETH / 9324296.7k CDEAD. FLAGS: no sells observed yet",
+    "gate_status": "gate_pass",
+    "gate_checked_at": null,
+    "gate_reasons": "[]",
+    "gate_warnings": null
+   },
+   "velocity": "scout: 4 swaps (4b/0s, no sells), ~0.22 WETH vol. now: 90 swaps (+86 in ~72min), only 3 unique swappers; 93 token transfers; 13 holders; top1 56.14% single contract. churn, not demand.",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "notes": "no X/web mentions of this contract; DEAD-ticker hits are unrelated tokens — not attributed. contract 0xf69cd0fe7280773bb9b7c93ab68420d07290afa9 (7.6KB code, 0 ETH) holds 56.14% of supply; deployer-seeded 30.34 WETH reserves; buys-only at scout then churn. concentrated farm pattern.",
+   "verdict": "skip"
+  },
+  {
+   "investigated_at": "2026-10-08T19:28:53.897Z",
+   "key": "robinhood|0x2ff463ff295e096ecfbe610591aa862eb709ad97",
+   "candidate": {
+    "pair": "0x2ff463ff295e096ecfbe610591aa862eb709ad97",
+    "token": "0x3d483ce666dd275e4a92cb586daca393a4fa8e0b",
+    "name": "Nova Cat",
+    "symbol": "NOVC",
+    "chain": "robinhood",
+    "scout": "new-pairs",
+    "found_at": "2026-10-08T18:24:58.009Z",
+    "detail": "V2 pair created block 83520054 via factory 0x8bceaa40…. 27 swaps since creation (24 buys / 3 sells), ~1.16 WETH volume, reserves 1.99 WETH / 504.4k NOVC",
+    "gate_status": "gate_pass",
+    "gate_checked_at": null,
+    "gate_reasons": "[]",
+    "gate_warnings": null
+   },
+   "velocity": "scout: 27 swaps (24b/3s), ~1.16 WETH vol. now: 74 swaps (+47 in ~64min), only 3 unique swappers; 77 token transfers; 22 holders; top1 11.97%; token age ~37k blocks (~64min). no velocity spike.",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "notes": "no X/web mentions of this contract; Novacoin/NOXCAT hits are unrelated — not attributed. 3 swappers churning; same farm contract 0xf69cd0fe7280773bb9b7c93ab68420d07290afa9 in top holders (9.9%); launched ~12min after PROF/CDEAD by the same operator. no organic demand.",
+   "verdict": "skip"
   }
  ],
  "scores": [
@@ -304550,6 +307189,195 @@
    "grade": "F",
    "scored_at": "2026-10-08T19:16:50Z",
    "notes": "8 deploys: The Altruist x4-5 (0xb182588d, 0xe4c45929, 0xcc979197, 0x957661bf, +0x56f8972e — all 8703b serial-launcher template family, 8-10 tx each, near-zero activity; Altruist name also farmed on pons today). Zero socials, no project behind any. F = serial-launcher template debris. Verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-08T19:27:20Z",
+   "candidate": {
+    "type": "collection",
+    "chain": "robinhood",
+    "key": "pons-batch-13-r2",
+    "note": "1 pons-family launch 2026-10-08T19:07Z"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 7,
+   "grade": "F",
+   "notes": "Official OFFICIAL (0xc64a7ba8f6852fe0): single-wallet bundle (52 transfers/4 holders, top1 99.95%), no project, no socials, no muse attribution. F = no footprint. Verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-08T19:27:20Z",
+   "candidate": {
+    "type": "collection",
+    "chain": "robinhood",
+    "key": "block-contracts-batch-22-r2",
+    "note": "28 block-watcher deployments 2026-10-08T19:07-19:13Z"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 7,
+   "grade": "F",
+   "notes": "28 block-watcher deploys, farm iteration continues. STREAMIN/STREAM (51 tx/25 holders, top1 85.66%): web buzz for 'STREAMIN' belongs to a DIFFERENT token on Solana (TG caller mentions, dexape) - classic farmed-name misattribution trap; no Robinhood project found. Orion/ORION (33/25/69.79%): third Orion clone today, concentrated. Basis Dex/BASIS: project-sounding name, web search finds nothing, concentrated. Octobear: 8703b launcher family. 24 more dead. F = manufacturing line + misattribution risk. Verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-08T19:27:20Z",
+   "candidate": {
+    "type": "collection",
+    "chain": "robinhood",
+    "key": "newpairs-batch-9-r2",
+    "note": "5 new-pairs V2 2026-10-08T19:06Z"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 3,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 8,
+   "grade": "F",
+   "notes": "5 new-pairs V2, all thin and socially dead. ZERO: largest of the set (17 swaps, ~8.14 WETH, 49.01 WETH reserves) but 16 buys/1 sell = possible single-sided seeding; watch-worthy, not actionable. CRAWL carries the scout's no-sells honeypot flag. RRAC tiny, SCHIP/IHOOD dust. No buzz anywhere. F = thin farm fills, honeypot flag on CRAWL. Verdict skip stands; ZERO requeue-if-volume."
+  },
+  {
+   "scored_at": "2026-10-08T19:27:20Z",
+   "candidate": {
+    "type": "collection",
+    "chain": "robinhood",
+    "key": "whale-convergence-batch-2",
+    "note": "1 whale-watcher convergence handoff, 2026-10-08T19:12Z"
+   },
+   "scores": {
+    "website": 4,
+    "twitter_growth": 8,
+    "organic_activity": 10,
+    "kol_involvement": 6,
+    "ticker_spread": 7,
+    "team_engagement": 4,
+    "fomo_signals": 7
+   },
+   "total": 46,
+   "grade": "C",
+   "notes": "NOT A LAUNCH CANDIDATE - sentiment signal only, not a scam flag. 2 whale EOAs (largest 0x5fe2606b, ~$98.8k assets) accumulating CASHCAT (~$5,217 combined) - the established organic July meme (drove Robinhood Chain's $98M record DEX day); accumulation at depressed levels (-12% 24h) is a genuine smart-money sentiment read, recorded for the decision stage (whale-moves.json convergence bonus). C = real social legitimacy of the underlying asset; zero launch footprint. Verdict skip for the launch pipeline stands."
+  },
+  {
+   "scored_at": "2026-10-08T19:27:20Z",
+   "candidate": {
+    "type": "collection",
+    "chain": "robinhood",
+    "key": "pons-batch-14-r2",
+    "note": "20 pons-family launches 2026-10-08T19:13-19:20Z"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 3,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 8,
+   "grade": "F",
+   "notes": "SCAM FLAG: AMD ' Robinhood Token' AMD (0x86923f96303d656e4aa86d9d42d1e57ad2023fdc, 55/13/36.06%) is the FOURTH unofficial stock-token mimic today (after NVDA/SPY/IBM) - coordinated farm impersonating Robinhood's official stock tokens. Whipsaw.Markets WHIP (88/31/68.43%): third WHIP clone today, duplicate-name spam, still concentrated. Temrush (39/1/100%), Super Cat (19/1/100%), Elon Muske/MUSKE (14/2/98.99% elon brand-mimic), Mule Protocol (8/3/99.99%) = bundle-concentrated wash fills. Zero socials, zero muse attribution. F = mimic-scam + wash-farm. Verdict skip stands; flag the AMD mimic to dubie."
+  },
+  {
+   "scored_at": "2026-10-08T19:27:20Z",
+   "candidate": {
+    "type": "collection",
+    "chain": "robinhood",
+    "key": "block-contracts-batch-23-r2",
+    "note": "6 block-watcher deployments 2026-10-08T19:13-19:20Z — farm iteration continues"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 3,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 9,
+   "grade": "F",
+   "notes": "SCAM FLAG: Paxos/PAXOS (0xf061e156..., 5027 tx/635 holders/top1 62.56%) is the 7th Paxos clone today - brand-impersonation of a regulated trust company; ComputersRH Coin/CRH (0x9d7305ef..., 4204/743/60.51%) is the 3rd direct-deploy CRH clone riding the name of the tracked pons-V2-graduated CRH (pair 0x8840...ff9b, ~$500K 24h, a different older contract) - farmed-name trap. Orion/ORION 4th clone, Pump Ape concentrated. Holder counts on farm clones are manufactured, NOT organic signal. F = impersonation/name-squat farm. Verdict skip stands; scam-watch for dubie."
+  },
+  {
+   "scored_at": "2026-10-08T19:27:20Z",
+   "candidate": {
+    "type": "collection",
+    "chain": "robinhood",
+    "key": "newpairs-batch-10-r2",
+    "note": "3 new-pairs V2 2026-10-08T19:1xZ"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 7,
+   "grade": "F",
+   "notes": "SCAM FLAG: KENZO (19 buys/0 sells, ~1.79 WETH) + GFRG (19 buys/0 sells, ~0.85 WETH) carry the scout's no-sells honeypot flags - buys-only on fresh pools, do not touch. FORTNITE: dust (~0.0036 WETH) + brand-mimic name. No buzz anywhere. F = honeypot flags + dust. Verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-08T19:27:20Z",
+   "candidate": {
+    "type": "collection",
+    "chain": "robinhood",
+    "key": "block-contracts-batch-24-r2",
+    "note": "4 block-watcher deployments 2026-10-08T19:18Z"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 6,
+   "grade": "F",
+   "notes": "UN555/UN555 (0x6c8d726a934266f79e29c8de74292cc772bb708d): 132 transfers but 4 holders with top1 97.76% = bundle-concentrated wash fill. 3 more deploys with 0 transfers. Zero socials. F = bundle farm debris. Verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-08T19:27:20Z",
+   "candidate": {
+    "type": "collection",
+    "chain": "robinhood",
+    "key": "whale-convergence-batch-3",
+    "note": "2 whale-watcher convergence handoffs, 2026-10-08T19:18Z"
+   },
+   "scores": {
+    "website": 4,
+    "twitter_growth": 8,
+    "organic_activity": 10,
+    "kol_involvement": 6,
+    "ticker_spread": 7,
+    "team_engagement": 4,
+    "fomo_signals": 6
+   },
+   "total": 45,
+   "grade": "C",
+   "notes": "NOT A LAUNCH CANDIDATE - sentiment/positioning signal only, not a scam flag. WETH (2 whale EOAs, ~$21.7k received): base-asset positioning/liquidity management, not a launch signal. CASHCAT (2 whale EOAs, ~$8,155): SECOND convergence event today (first: $5,217 at 19:12Z) - whale interest in the chain's flagship established meme repeating twice in 6 min (~$13.4k combined), consistent with the sentiment read in batch-2; signal in whale-moves.json. C = real social legitimacy of the underlying asset; zero launch footprint. Verdict skip for the launch pipeline stands."
   }
  ],
  "decisions": [
@@ -307653,7 +310481,7 @@
   }
  ],
  "tracking": {
-  "updated_at": "2026-10-08T19:19:16.607Z",
+  "updated_at": "2026-10-08T19:29:14.338Z",
   "records": [
    {
     "id": "solana:2nuqbwhuiqwwcokksaikndzmrpv1kk17zmapn46apump",
@@ -307693,7 +310521,7 @@
     "mcap_now_usd": 46219.91,
     "fdv_now_usd": 46219.91,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T19:19:16.605Z",
+    "mcap_updated_at": "2026-10-08T19:29:14.336Z",
     "mcap_at_scan": 46219.91,
     "mcap_scan_stale_min": 174,
     "mcap_scan_note": null,
@@ -307740,7 +310568,7 @@
     "mcap_now_usd": 3150.05,
     "fdv_now_usd": 3150.05,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T19:19:16.606Z",
+    "mcap_updated_at": "2026-10-08T19:29:14.337Z",
     "mcap_at_scan": 3150.05,
     "mcap_scan_stale_min": 171,
     "mcap_scan_note": null,
@@ -307834,7 +310662,7 @@
     "mcap_now_usd": 1885,
     "fdv_now_usd": 1885,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T19:19:16.606Z",
+    "mcap_updated_at": "2026-10-08T19:29:14.337Z",
     "mcap_at_scan": 1901.9281563655575,
     "mcap_scan_stale_min": 89,
     "mcap_scan_note": null,
@@ -308508,9 +311336,9 @@
   "whale-watcher"
  ],
  "last_activity": {
-  "scout": "2026-10-08T19:20:55.747Z",
-  "hymn": "2026-10-08T19:28:00Z",
-  "scorer": "2026-10-08T19:16:50Z",
+  "scout": "2026-10-08T19:29:23.058Z",
+  "hymn": "2026-10-08T19:28:53.897Z",
+  "scorer": "2026-10-08T19:27:20Z",
   "snug": "2026-10-08T18:28:15Z",
   "cardigan": "2026-10-08T18:28:15Z"
  },
@@ -308523,7 +311351,7 @@
   "note": "no buys executed yet — pipeline watching"
  },
  "paper_trades": {
-  "as_of": "2026-10-08T19:17:10.302Z",
+  "as_of": "2026-10-08T19:27:08.941Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -308542,7 +311370,7 @@
     "seeded": true,
     "score": 66,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01177,
+    "last_price_usd": 0.01178,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -308553,8 +311381,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00024369016536118337,
-    "unrealized_pnl_pct": 2.4369016536118338
+    "unrealized_pnl_eth": 0.0002523933855526539,
+    "unrealized_pnl_pct": 2.523933855526539
    },
    {
     "id": "pt-muzwwuzb-27",
@@ -308565,7 +311393,7 @@
     "seeded": true,
     "score": 63,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01177,
+    "last_price_usd": 0.01178,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -308576,8 +311404,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00024369016536118337,
-    "unrealized_pnl_pct": 2.4369016536118338
+    "unrealized_pnl_eth": 0.0002523933855526539,
+    "unrealized_pnl_pct": 2.523933855526539
    }
   ],
   "closed_recent": [],

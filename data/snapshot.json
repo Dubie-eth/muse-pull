@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-08T17:07:04.276Z",
+ "updated_at": "2026-10-08T17:08:53.772Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
@@ -26367,6 +26367,39 @@
    "tx_hash": "0xdaa1f5070162ae671b5198af2469e5eee68d48c16c8a0dcbd612cffe766aa276",
    "block": 83435942,
    "detail": "new contract deployed in block 83435942"
+  },
+  {
+   "found_at": "2026-10-08T17:07:09.630Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xb965f4869748cdbb84056af50751da05d2370bf8",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x566eb549c68c7e70f23ad4f3c884283a13f1070d9477019e4f3cd34d551b118f",
+   "block": 83436111,
+   "detail": "new contract deployed in block 83436111"
+  },
+  {
+   "found_at": "2026-10-08T17:07:59.869Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x914db5fe4f340136a66fb9ee7afb6e056a2ce012",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xbfa3a182b1022b2cdf7362eac7dadd75b4a463b21b615ff62fe56a982f07ca1e",
+   "block": 83436503,
+   "detail": "new contract deployed in block 83436503"
+  },
+  {
+   "found_at": "2026-10-08T17:08:24.865Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xb71961b13e62a99d84390e945aeac48c376bec82",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x9aa4e4eff1a7229cfa02f1832064229c931631541f9eadd8557da57634f0e90b",
+   "block": 83436683,
+   "detail": "new contract deployed in block 83436683"
   }
  ],
  "investigations": [
@@ -27995,6 +28028,48 @@
    "notes": "0xbce59d8d Orion/ORION (1764-byte = serial-launcher family clone), 0xedf37f44 Downtober (8702-byte launcher family clone) — dead clones. 0x08b85335 (1729b, no name/symbol), 0xabd38a5e (6984b, no name/symbol), 0xc4c19e72 (4361b, no name/symbol) — non-token contracts. skip.",
    "social_scored_at": "2026-10-08T17:10:00Z",
    "social_grade": "F (6/100)"
+  },
+  {
+   "investigated_at": "2026-10-08T17:05:00Z",
+   "key": "whale-moves-batch-10",
+   "candidate": {
+    "type": "collection",
+    "chain": "robinhood",
+    "note": "264 whale-watcher whale-move entries, window 2026-10-08T16:55-17:02Z (arrived mid-run); joined against whale-moves.json"
+   },
+   "velocity": "NVDA-clone 0xd0601ce1 now 6768+ txs/10k blocks (sustained extreme); SPY-clone 3616/10k; SPCX-clone-3 0x4a0e65a3 1977/10k; META 0xc0d6457c 1695/30k blocks, 192 senders/88 holders; GME 0x1b0e319c 977/30k, 218 holders; PROLOGUE 0xb9972ca7 134 txs/32 holders.",
+   "social_signal": "weak",
+   "money_flow": "whale",
+   "verdict": "skip",
+   "notes": "no new promising candidates in this window. STOCK-MIMIC SHELF EXPANSION (all unofficial pons-factory impersonations of Robinhood stock-token branding): single whale 0x1a18a8b9 (~$7.47M assets) bought the whole shelf — NVDA-clone $102,233.32 in ONE EOA receive (block 83469442), AAPL $8,289.64+$21,549.58, CRCL $18,348.09, SPCX-3 $8,467.06, LLY $6,837.61, MSTR $4,156.12, META $2,699.51, GME $2,896.68 — ~$175k into impersonation tokens from one wallet. new mimics: META 0xc0d6457c ('Meta Platforms • Robinhood Token') = farm-nexus 0x8366a39C holds 55.0% + next 26.3% (concentrated farm fill); GME 0x1b0e319c ('GameStop • Robinhood Token') top1 0x00000000 96.3% (undistributed supply). whale money is real but tokens are impersonation vehicles — scam-watch, NOT buy candidates. PONS (legit platform token 0x39dbed3a): TWO real whale-EOA buys totaling $58,535.32 (0xc55d386d $30,247.55 + 0xed9ab5bc $28,287.77) — genuine accumulation into the established launchpad token, but not a launch — market intel, skip. PROLOGUE 0xb9972ca7: 32 holders, top3 = 25.0%/24.9%/24.5% (75% in 3 wallets, buyer 0x7302ce39 is one of them) — bundle concentration, no socials, skip. rest: WETH contract-routing noise + CAPYBARA DEX flow, skip per standing precedent."
+  },
+  {
+   "investigated_at": "2026-10-08T17:05:00Z",
+   "key": "newpairs-batch-8",
+   "candidate": {
+    "type": "collection",
+    "chain": "robinhood",
+    "note": "2 new-pairs entries: WETH/MEME (fake) + WETH/NBUN (dropped in scout write race)"
+   },
+   "velocity": "fake-MEME pair 83460890: 28 swaps (26 buys/2 sells), ~12.12 WETH volume, reserves 0.00000063 WETH / 1.26B MEME — WETH side DRAINED. token 0xc35f9ea4ed97c5cf6a34dabc8974b17432eb8908: 32 transfers, 5 senders, 14 holders, top3 34%/27.3%/15.4%.",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "notes": "fake-MEME 'A MEME COIN' 0xc35f9ea4ed97c5cf6a34dabc8974b17432eb8908 is a NAME-SQUAT RUG on the legit MEME 0x385f4f8a — cloned name/symbol, WETH side of its V2 pair pulled despite net buy flow (classic pull). 5 senders / concentrated holders = farm. scam-watch: holders must not confuse with the real MEME. NBUN entry: dropped by a scout-queue write race (only the MEME entry survived, re-verified 16:52Z) — no token address captured; $1.13 WETH volume, too small to chase retroactively."
+  },
+  {
+   "investigated_at": "2026-10-08T17:05:00Z",
+   "key": "block-contracts-batch-16",
+   "candidate": {
+    "type": "collection",
+    "chain": "robinhood",
+    "note": "5 block-watcher deployments 2026-10-08T16:56-17:02Z (blocks 83432647-83434356)"
+   },
+   "velocity": "CRH-2 259 txs/51 senders/134 holders; CRH-1 77 txs/10 senders/57 holders; TartSwap 4; rest 0.",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "notes": "ComputersRH Coin/CRH launched TWICE (0xb0f35e9e + 0x5b5df1b7, both 3854-byte): bundle-concentrated (top1 55.9% / 50.0%), no socials — farm clone pattern, skip. TartSwap/TART (0x3bbb9f9f, 4655b): 4 txs, dead. 0xcc8eb844: 0 code (selfdestructed). 0x62e2d45e: 597-byte non-token contract. skip."
   }
  ],
  "scores": [
@@ -30632,8 +30707,8 @@
   "whale-watcher"
  ],
  "last_activity": {
-  "scout": "2026-10-08T17:06:47.239Z",
-  "hymn": "2026-10-08T16:58:00Z",
+  "scout": "2026-10-08T17:08:24.865Z",
+  "hymn": "2026-10-08T17:05:00Z",
   "scorer": "2026-10-08T17:10:00Z",
   "snug": "2026-10-08T17:04:51Z",
   "cardigan": "2026-10-08T17:04:51Z"

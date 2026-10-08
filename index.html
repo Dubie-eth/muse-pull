@@ -61,6 +61,9 @@
 <h2 style="margin-bottom:12px">💰 Live Orders &amp; PnL</h2>
 <div class="orders" id="orders"></div>
 
+<h2 style="margin-bottom:12px">🎯 Grade Scorecard</h2>
+<div class="wallet-card" style="margin-bottom:32px" id="scorecard"></div>
+
 <h2 style="margin-bottom:12px">Live Pipeline</h2>
 <div class="flow" id="flow"></div>
 
@@ -122,6 +125,30 @@ async function load() {
       ordersHtml = '<p style="color:#8b949e">challenge data loading…</p>';
     }
     document.getElementById('orders').innerHTML = ordersHtml;
+
+    // grade scorecard: how did our grades do at 5m / 30m / 1h / 1d ticks
+    const tk = d.tracking || {};
+    const recs = (tk.records || []).filter(r => r.baseline_price_usd);
+    const tickCell = (r, key) => {
+      const t = r.ticks && r.ticks[key];
+      return t ? `<span class="${pnlCls(t.pct)}">${pnlTxt(t.pct)}</span>` : '<span style="color:#8b949e">…</span>';
+    };
+    const accTable = (acc, title) => {
+      const rows = Object.entries(acc || {}).sort().map(([k, v]) =>
+        `<tr><td><b>${esc(k)}</b></td><td>${v.priced ?? 0}/${v.n ?? 0}</td>` +
+        ['m5', 'm30', 'h1', 'd1'].map(key =>
+          `<td class="${pnlCls(v[key])}">${pnlTxt(v[key])}</td>`).join('') + '</tr>').join('');
+      return rows ? `<h3 style="font-size:0.9rem;margin:12px 0 6px;color:#8b949e">${title}</h3><table style="width:100%;font-size:0.8rem;border-collapse:collapse"><tr style="color:#8b949e"><th align="left"></th><th align="left">priced</th><th align="left">5m</th><th align="left">30m</th><th align="left">1h</th><th align="left">1d</th></tr>${rows}</table>` : '';
+    };
+    const tickRows = recs.map(r =>
+      `<tr><td><b>${esc(r.symbol || r.name || '')}</b></td><td><span class="grade-${esc(r.grade || '')}">${esc(r.grade || '?')}</span></td><td>${esc(r.recommendation || '')}</td>` +
+      ['m5', 'm30', 'h1', 'd1'].map(key => `<td>${tickCell(r, key)}</td>`).join('') +
+      `<td>${linksFor(r)}</td></tr>`).join('');
+    document.getElementById('scorecard').innerHTML =
+      `<div style="font-size:0.8rem;color:#8b949e;margin-bottom:8px">${recs.length} tickers tracked · baseline = price at decision (or first sighting${tk.records?.some(r => r.late_start) ? ', late-start flagged' : ''}) · updated ${esc(tk.updated_at || '—')}</div>` +
+      accTable(tk.grade_accuracy, 'avg return by social grade') +
+      accTable(tk.rec_accuracy, 'avg return by recommendation') +
+      (tickRows ? `<h3 style="font-size:0.9rem;margin:12px 0 6px;color:#8b949e">per-ticker ticks</h3><div style="overflow-x:auto"><table style="width:100%;font-size:0.8rem;border-collapse:collapse;min-width:560px"><tr style="color:#8b949e"><th align="left">ticker</th><th align="left">grade</th><th align="left">call</th><th align="left">5m</th><th align="left">30m</th><th align="left">1h</th><th align="left">1d</th><th align="left">links</th></tr>${tickRows}</table></div>` : '<p style="color:#8b949e">no priced tickers yet</p>');
 
     // flow diagram
     const stages = [

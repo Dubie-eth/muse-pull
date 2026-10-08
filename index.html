@@ -114,13 +114,14 @@ async function load() {
     let ordersHtml = '';
     if (ch) {
       const wlink = `https://robinhoodchain.blockscout.com/address/${ch.wallet}`;
-      ordersHtml += `<div class="wallet-card"><h2>🏦 Challenge wallet</h2><div class="addr"><a href="${wlink}" target="_blank" style="color:#58a6ff">${esc(ch.wallet)}</a></div><div class="bal">${ch.eth_balance != null ? ch.eth_balance.toFixed(4) + ' ETH' : '—'}</div><div class="meta" style="font-size:0.8rem;color:#8b949e">${esc(ch.note || '')}</div></div>`;
+      ordersHtml += `<div class="wallet-card"><h2>🏦 Challenge wallet</h2><div class="addr"><a href="${wlink}" target="_blank" style="color:#58a6ff">${esc(ch.wallet)}</a></div><div class="bal">${ch.eth_balance != null ? ch.eth_balance.toFixed(4) + ' ETH' : '—'}${ch.weth_balance ? ' + ' + ch.weth_balance.toFixed(4) + ' WETH' : ''}</div><div class="meta" style="font-size:0.8rem;color:#8b949e">${esc(ch.note || '')}</div></div>`;
       const open = ch.open_positions || [];
+      const fmtAmt = v => v == null ? null : Number(v).toLocaleString(undefined, { maximumFractionDigits: 2 });
       ordersHtml += `<div class="wallet-card"><h2>📈 Open positions (${open.length})</h2>` + (open.length ? open.map(p =>
-        `<div class="item"><span class="tag promising">${esc(p.symbol || p.name || '')}</span><span class="${pnlCls(p.pnl_pct)}">${pnlTxt(p.pnl_pct)}</span><br><span style="color:#8b949e">entry $${p.entry_price_usd ?? '—'} → now $${p.current_price_usd ?? '—'}</span>${linksFor(p)}<br><time>${esc(p.entered_at || '')}</time></div>`).join('') : '<p style="color:#8b949e">none yet</p>') + `</div>`;
+        `<div class="item"><span class="tag promising">${esc(p.symbol || p.name || '')}</span> <span class="${pnlCls(p.pnl_pct)}">${pnlTxt(p.pnl_pct)}</span><br><span style="color:#8b949e">${p.amount_tokens != null ? fmtAmt(p.amount_tokens) + ' ' + esc(p.symbol || '') + ' · ' : ''}${p.amount_eth_in != null ? p.amount_eth_in + ' ETH in · ' : ''}entry $${p.entry_price_usd ?? '—'} → now $${p.current_price_usd ?? '—'}</span>${linksFor(p)}<br><time>${esc(p.entered_at || '')}</time></div>`).join('') : '<p style="color:#8b949e">none yet</p>') + `</div>`;
       const closed = ch.closed_trades || [];
       ordersHtml += `<div class="wallet-card"><h2>📕 Closed trades (${closed.length})</h2><div style="margin-bottom:8px">realized: <span class="${pnlCls(ch.realized_pnl_pct_total)}">${pnlTxt(ch.realized_pnl_pct_total)}</span></div>` + (closed.length ? closed.map(t =>
-        `<div class="item"><span class="tag">${esc(t.symbol || t.name || '')}</span><span class="${pnlCls(t.pnl_pct)}">${pnlTxt(t.pnl_pct)}</span>${linksFor(t)}</div>`).join('') : '<p style="color:#8b949e">none yet</p>') + `</div>`;
+        `<div class="item"><span class="tag">${esc(t.symbol || t.name || '')}</span> <span class="${pnlCls(t.pnl_pct)}">${pnlTxt(t.pnl_pct)}</span><br><span style="color:#8b949e">${t.amount_tokens != null ? fmtAmt(t.amount_tokens) + ' ' + esc(t.symbol || '') + ' · ' : ''}${t.amount_eth_in != null ? t.amount_eth_in + ' ETH in · ' : ''}exit $${t.exit_price_usd ?? '—'}</span>${linksFor(t)}</div>`).join('') : '<p style="color:#8b949e">none yet</p>') + `</div>`;
     } else {
       ordersHtml = '<p style="color:#8b949e">challenge data loading…</p>';
     }

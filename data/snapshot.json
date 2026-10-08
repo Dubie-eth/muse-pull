@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-08T18:26:53.387Z",
+ "updated_at": "2026-10-08T18:28:52.713Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
@@ -46041,6 +46041,17 @@
    "volume": "1.50 WETH",
    "detail": "V2 pair created block 83520831 via factory 0x8bceaa40…. 4 swaps since creation (4 buys / 0 sells), ~1.50 WETH volume, reserves 52.69 WETH / 6464949.2k CHOP. FLAGS: no sells observed yet",
    "contract": "0xb6e514a99f5cb127c562ee0c9aced152ce6e328b"
+  },
+  {
+   "found_at": "2026-10-08T18:27:57.895Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x38caecc456d45a86a813d4f168e816d749fa0dc6",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xb7fe9a5e6adf1cca5ad203c6de2c4184bab14f8b5ddae007300f9dd86e1ccfb2",
+   "block": 83438204,
+   "detail": "new contract deployed in block 83438204"
   }
  ],
  "investigations": [
@@ -48713,7 +48724,9 @@
    "verdict": "promising",
    "notes": "onchain: A Meme Coin/MEME 0x385f4f8ae47651ce5f58f5265395a669f8281e18, 44-byte minimal-proxy code, totalSupply() reverts (non-standard). holder spread multi-whale, not single-bundle: top1 0x8366a39c 18.55%, then 12.73/6.5/5.63/5.41/5.3/4.55/3.92%. whale tx 0xd0e45c08: 0xdd16b0a6c71a897c2ad17c4754c80d7db4e68446 (~$2.09M assets) ran a 1348-byte router call to 0x65050a9b... and received 715,955,753 MEME (~716M) from 0x8366a39c. social: ESTABLISHED token — Binance Spot MEMEUSDT, KuCoin Alpha (listed ~8d ago, 1.5% buy/sell tax), Bybit, Hyperliquid; X @amemecoinrh; Sept media coverage; ~$13-16M mcap, 29K holders (itrusty), pool age 28d. narrative: AMC = A Meme Coin, monetizes the AMC/Robinhood tokenized-stock dispute. caveats: deep drawdown (~$150M Sept peak -> ~$13-16M now; -37% 1wk, -56% 1mo); largest buy counterparty is 0x8366a39c, the cross-token farm-nexus whale (top-holds SPY/IBM/SOCKET/PULP/PAXOS today). verdict: classic whale dip-accumulation on a liquid CEX-listed token — needs social grading + snug durability (falling-knife risk).",
    "social_scored_at": "2026-10-08T18:20:17Z",
-   "social_grade": "C (55/100)"
+   "social_grade": "C (55/100)",
+   "snug_processed_at": "2026-10-08T18:28:15Z",
+   "snug_broken_down": true
   },
   {
    "investigated_at": "2026-10-08T18:17:17.235Z",
@@ -48732,7 +48745,11 @@
    },
    "notes": "PAXOS (0xf061e156): 5013 tx/629 holders but top1 0x8366a39c 63.01% — brand-mimic (Paxos) farm bundle, skip. Offchain (0x4de0ae45): 2500 tx/415 holders, top1 0x8366a39c 39.28% — farm nexus, skip. UN555: 132 tx/4 holders, top1 97.76% — extreme bundle, skip. Gem Trench Academy/GTA: 61 tx/27 holders, top1 76.13% — concentrated, skip. Pump Ape (60.75% top1), Orion-1 (63.18% top1), Pirate Frog (47.99% top1), digzfun (99.99% top1) — all concentrated, skip. 45 zero-activity + 2 selfdestructed + rest non-token app contracts — skip per precedent. ORION-2 (0x30d6c3d0) -> needs-snug: 4985 tx/~2h, 633 holders, FLAT organic spread (top1 2.49%, tail 1-2%) — most organic fresh-token distribution in today batches; no farm-nexus holder. caveats: duplicate Orion name (second Orion deployed same window, 29 tx), name collides with existing Orion Money/ORN tokens, no social buzz found — needs durability vetting.",
    "social_scored_at": "2026-10-08T18:20:17Z",
-   "social_grade": "F (6/100)"
+   "social_grade": "F (6/100)",
+   "snug_override_processed": {
+    "Orion/ORION 0x30d6c3d03c2e950bb05d10a6ae26b38c4e42b1fe": "2026-10-08T18:28:15Z"
+   },
+   "snug_broken_down": true
   },
   {
    "investigated_at": "2026-10-08T18:17:17.235Z",
@@ -48801,7 +48818,9 @@
    "social_signal": "weak",
    "money_flow": "organic",
    "verdict": "skip",
-   "notes": "generic meme name, fresh deploy, no X buzz, no notable holder base or momentum. skip."
+   "notes": "generic meme name, fresh deploy, no X buzz, no notable holder base or momentum. skip.",
+   "social_scored_at": "2026-10-08T18:27:13Z",
+   "social_grade": "F (5/100)"
   },
   {
    "investigated_at": "2026-10-08T18:22:37.871Z",
@@ -48818,7 +48837,9 @@
    "social_signal": "weak",
    "money_flow": "organic",
    "verdict": "skip",
-   "notes": "fresh deploy, single mint to deployer, no trades, no holders, no social. skip."
+   "notes": "fresh deploy, single mint to deployer, no trades, no holders, no social. skip.",
+   "social_scored_at": "2026-10-08T18:27:13Z",
+   "social_grade": "F (5/100)"
   },
   {
    "investigated_at": "2026-10-08T18:25:50.357Z",
@@ -48835,7 +48856,9 @@
    "social_signal": "strong",
    "money_flow": "whale",
    "verdict": "needs-snug",
-   "notes": "2 whale EOAs accumulated $72,864 MSTR within one 5-min window; largest 0x1a18a8b96eac3f980133a18402d04194f1faa4e7 (~$7.26M assets) received $46,254. Real whale flow into a stock-backed blue chip. Defer durability/pricing judgment to Blanket Snug."
+   "notes": "2 whale EOAs accumulated $72,864 MSTR within one 5-min window; largest 0x1a18a8b96eac3f980133a18402d04194f1faa4e7 (~$7.26M assets) received $46,254. Real whale flow into a stock-backed blue chip. Defer durability/pricing judgment to Blanket Snug.",
+   "snug_processed_at": "2026-10-08T18:28:15Z",
+   "snug_broken_down": true
   },
   {
    "investigated_at": "2026-10-08T18:25:50.357Z",
@@ -48869,7 +48892,9 @@
    "social_signal": "strong",
    "money_flow": "whale",
    "verdict": "needs-snug",
-   "notes": "2 whale EOAs accumulated $50,442 NVDA within one 5-min window; same $7.26M whale 0x1a18a8b96eac3f980133a18402d04194f1faa4e7 received $29,323 (converging on both MSTR and NVDA = broad equity appetite). Defer durability judgment to Blanket Snug."
+   "notes": "2 whale EOAs accumulated $50,442 NVDA within one 5-min window; same $7.26M whale 0x1a18a8b96eac3f980133a18402d04194f1faa4e7 received $29,323 (converging on both MSTR and NVDA = broad equity appetite). Defer durability judgment to Blanket Snug.",
+   "snug_processed_at": "2026-10-08T18:28:15Z",
+   "snug_broken_down": true
   },
   {
    "investigated_at": "2026-10-08T18:25:50.357Z",
@@ -52030,6 +52055,56 @@
    },
    "scored_at": "2026-10-08T18:20:17Z",
    "social_note": "n/a - quote-currency flow, not a launch candidate to grade"
+  },
+  {
+   "scored_at": "2026-10-08T18:27:13Z",
+   "candidate": {
+    "key": "block-contracts-20261008-hymn-a",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "contract": "0x9f9e16289631a3f87facdf17fbff9af257485351",
+    "name": "Dumbass",
+    "symbol": "DUMBASS",
+    "note": "re-flag of the same contract scored F (5/100) at 2026-10-08T17:15:30Z"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Re-flag of the identical contract (0x9f9e1628..., Dumbass/DUMBASS, 3553-byte) scored F (5/100) at 2026-10-08T17:15:30Z. Verification: still plain ERC20 (6.6B supply), tiny early distribution (9 transfers/9 receivers from 3 senders), no velocity spike, no X buzz, no holders of note, no project. Web search returns zero project/socials for this token. Farm clone per standing precedent. Verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-08T18:27:13Z",
+   "candidate": {
+    "key": "block-contracts-20261008-hymn-b",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "contract": "0x5bbab8772ba21a8193ea99b14fcac6e4c33e2e07",
+    "name": "TartSwap",
+    "symbol": "TART",
+    "note": "re-flag of the same contract scored F (5/100) at 2026-10-08T16:56:13Z"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Re-flag of the identical contract (0x5bbab877..., TartSwap/TART, 4655-byte) scored F (5/100) at 2026-10-08T16:56:13Z. Verification: still exactly 1 Transfer (mint to deployer), zero distribution, zero holders beyond deployer, no X buzz. NAME-SQUAT confirmed on today's fresh web check: the REAL TartSwap is a live BSC DEX (contract 0x7AB8d02CBb51Ff7223fDe700eAaa2a91Bf750314, tartswap.com, $9.8M mcap, CoinGecko/CMC listed) — this Robinhood clone borrows its name/symbol with no connection. Scam-watch item for dubie (same flag as the 16:56Z score; no new victims signal). Verdict skip stands."
   }
  ],
  "decisions": [
@@ -53086,6 +53161,108 @@
     "note": "snug rec=watch (C social 55, uncertain durability); dev attribution unresolved, single-wallet pre-mine 60.5%, 5th CRH clone today from farm template family; 0 whale moves on contract 0x9d7305ef...; no execution"
    },
    "processed_note": "flock-decision run 2026-10-08 14:20 EDT: skip, NOT scored (gate_status anomaly). snug rec=watch; unresolved dev attribution + 60.5% single-wallet concentration + serial CRH clone = not buyable."
+  },
+  {
+   "broken_down_at": "2026-10-08T18:28:15Z",
+   "candidate": {
+    "type": "whale-convergence",
+    "scout": "whale-watcher",
+    "token": "MEME",
+    "contract": "0x385f4f8ae47651ce5f58f5265395a669f8281e18",
+    "chain": "robinhood",
+    "tx_hash": "0xd0e45c089dc7fbf58a4cccae91983bff41ba713d820811dfca5dc77a72f2ef49",
+    "name": "A Meme Coin / MEME (whale convergence)"
+   },
+   "investigation": {
+    "velocity": "whale-inflow spike: 4 whale EOA wallets received combined $2,150,396 of MEME in one scan window; 4016 onchain transfers in last 100k blocks (~3h), 221 net-positive holders in window. not a mint (established token, no mint velocity).",
+    "social_signal": "strong",
+    "money_flow": "whale",
+    "verdict": "promising",
+    "notes": "onchain: A Meme Coin/MEME 0x385f4f8ae47651ce5f58f5265395a669f8281e18, 44-byte minimal-proxy code, totalSupply() reverts (non-standard). holder spread multi-whale, not single-bundle: top1 0x8366a39c 18.55%, then 12.73/6.5/5.63/5.41/5.3/4.55/3.92%. whale tx 0xd0e45c08: 0xdd16b0a6c71a897c2ad17c4754c80d7db4e68446 (~$2.09M assets) ran a 1348-byte router call to 0x65050a9b... and received 715,955,753 MEME (~716M) from 0x8366a39c. social: ESTABLISHED token — Binance Spot MEMEUSDT, KuCoin Alpha (listed ~8d ago, 1.5% buy/sell tax), Bybit, Hyperliquid; X @amemecoinrh; Sept media coverage; ~$13-16M mcap, 29K holders (itrusty), pool age 28d. narrative: AMC = A Meme Coin, monetizes the AMC/Robinhood tokenized-stock dispute. caveats: deep drawdown (~$150M Sept peak -> ~$13-16M now; -37% 1wk, -56% 1mo); largest buy counterparty is 0x8366a39c, the cross-token farm-nexus whale (top-holds SPY/IBM/SOCKET/PULP/PAXOS today). verdict: classic whale dip-accumulation on a liquid CEX-listed token — needs social grading + snug durability (falling-knife risk)."
+   },
+   "social_grade": "C (55/100)",
+   "social_total": 55,
+   "durability": "uncertain",
+   "comps": "Culture-war meme tokens (the original AMC = A Meme Coin spike: $3M->$150M in hours, then -55% in 24h per Sept press) historically round-trip their first parabola and then bleed on hype decay; the -37% 1wk / -56% 1mo drawdown here matches the post-spike decay phase of comparable narrative-driven memecoins that never built a standalone community loop.",
+   "risks": "Falling-knife timing: deep drawdown with no fresh catalyst. Largest whale-inflow counterparty is 0x8366a39c, the same farm-nexus whale anchoring today's SPY/IBM/SOCKET/PULP impersonation farm tokens - mixed money-flow signal. Not a fresh launch: outside the <=0.01 ETH fast-executor mint lane, so this is a buy timing question, not a launch. Virality lifecycle: narrative has legs (ape-vs-Aron feud keeps producing content) but mainstream pickup is fading.",
+   "recommendation": "watch",
+   "reason": "Whale dip-accumulation on a liquid, CEX-listed name with a real narrative - but falling-knife timing + farm-nexus counterparty keep it a watch, not a buy. Worth a bid only on sustained reversal (higher-high structure + social pickup), not on the convergence signal alone."
+  },
+  {
+   "broken_down_at": "2026-10-08T18:28:15Z",
+   "candidate": {
+    "type": "collection",
+    "chain": "robinhood",
+    "note": "56 block-watcher contract deployments 2026-10-08T18:04-18:11Z",
+    "override_name": "Orion/ORION 0x30d6c3d03c2e950bb05d10a6ae26b38c4e42b1fe"
+   },
+   "investigation": {
+    "velocity": "per-contract Transfer logs since deploy: ORION-2 4985 tx/70k blocks (~2h); PAXOS 5013; Offchain 2541; UN555 132; GTA 61; Pump Ape 26; Orion-1 29; Pirate Frog 72; digzfun 4; 45 contracts 0 transfers; 2 no-code (selfdestructed).",
+    "social_signal": "weak",
+    "money_flow": "bot",
+    "verdict": "skip",
+    "notes": "PAXOS (0xf061e156): 5013 tx/629 holders but top1 0x8366a39c 63.01% — brand-mimic (Paxos) farm bundle, skip. Offchain (0x4de0ae45): 2500 tx/415 holders, top1 0x8366a39c 39.28% — farm nexus, skip. UN555: 132 tx/4 holders, top1 97.76% — extreme bundle, skip. Gem Trench Academy/GTA: 61 tx/27 holders, top1 76.13% — concentrated, skip. Pump Ape (60.75% top1), Orion-1 (63.18% top1), Pirate Frog (47.99% top1), digzfun (99.99% top1) — all concentrated, skip. 45 zero-activity + 2 selfdestructed + rest non-token app contracts — skip per precedent. ORION-2 (0x30d6c3d0) -> needs-snug: 4985 tx/~2h, 633 holders, FLAT organic spread (top1 2.49%, tail 1-2%) — most organic fresh-token distribution in today batches; no farm-nexus holder. caveats: duplicate Orion name (second Orion deployed same window, 29 tx), name collides with existing Orion Money/ORN tokens, no social buzz found — needs durability vetting.",
+    "verdict_override_for": "Orion/ORION 0x30d6c3d03c2e950bb05d10a6ae26b38c4e42b1fe"
+   },
+   "social_grade": "D (22/100)",
+   "social_total": 22,
+   "durability": "weak",
+   "comps": "Heat-without-story fresh tokens (today's Islands batch: -56% off ATH with matched sell pressure; FOMO +780%/5min then -86%) fade within hours once the initial fill curve ends, because there is no social infrastructure to catch the fall.",
+   "risks": "D-grade social = likely skip per standing rule. Zero social footprint found (no site, no X, no team, no KOL). Name collides with established Orion Money/ORN brands + a second 'Orion' deployed the same window (Orion-1) = confusion/impersonation risk. Template origin: 1764-byte code = same size as today's CAPYBARA serial-launcher spam family. Prior run showed top-2 senders did 236 of 354 transfers = distributor-style churn under the flat spread.",
+   "recommendation": "skip",
+   "reason": "Real onchain heat (4985 tx/~2h, flat 633-holder spread) but no story: D social grade, zero project presence, name collision, and CAPYBARA-family template origin. Watch-only; requeue if a real project/social surface ever appears."
+  },
+  {
+   "broken_down_at": "2026-10-08T18:28:15Z",
+   "candidate": {
+    "type": "whale-convergence",
+    "chain": "robinhood",
+    "scout": "whale-watcher",
+    "token": "MSTR",
+    "contract": "0xec262a75e413fafd0df80480274532c79d42da09",
+    "tx_hash": "0x504b78d679b06f5fb9cffb4ae7f12824f01e06778e271b9610c9319027782d9c"
+   },
+   "investigation": {
+    "velocity": "flat - established xStock (tokenized Strategy stock), no mint velocity; whale accumulation only.",
+    "social_signal": "strong",
+    "money_flow": "whale",
+    "verdict": "needs-snug",
+    "notes": "2 whale EOAs accumulated $72,864 MSTR within one 5-min window; largest 0x1a18a8b96eac3f980133a18402d04194f1faa4e7 (~$7.26M assets) received $46,254. Real whale flow into a stock-backed blue chip. Defer durability/pricing judgment to Blanket Snug."
+   },
+   "social_grade": "n/a (not scored)",
+   "social_total": null,
+   "durability": "weak",
+   "comps": "Whale buys into impersonation tokens historically follow the pump-then-dump of the mimic wave: real whales aping mimic brands either get burned (mistaken identity) or are farm-linked; the earlier ROBINHOOD/CHAIN, NVDA, SPY, IBM mimics in this same family showed coordinated-farm fills that fade fast.",
+   "risks": "CRITICAL CONTRACT MATCH: 0xec262a75e413fafd0df80480274532c79d42da09 matches the MSTR-mimic flagged earlier today in whale-moves-batch-9's stock-mimic cluster = SKIP + SCAM-WATCH (farm-nexus 0x8366a39C holds 12.1%). The investigator's 'established xStock' label is wrong for this contract - it is an UNOFFICIAL impersonation of the Strategy xStock brand. Not a launch, not a mint, no project; the same $7.26M whale also buys official-looking stock tokens, so these mimic buys may be mistaken identity.",
+   "recommendation": "skip",
+   "reason": "Not a launch and not the official stock token - this contract is the documented MSTR brand-mimic from today's scam-watch list. Whale accumulation is real but the token is an impersonation vehicle; flag for dubie's scam watch, never a buy.",
+   "social_note": "no dedicated social score; social scoring is a launch-mint metric, and this is a whale-move on an established/mimic token, not a launch."
+  },
+  {
+   "broken_down_at": "2026-10-08T18:28:15Z",
+   "candidate": {
+    "type": "whale-convergence",
+    "chain": "robinhood",
+    "scout": "whale-watcher",
+    "token": "NVDA",
+    "contract": "0xd0601ce157db5bdc3162bbac2a2c8af5320d9eec",
+    "tx_hash": "0x8cc854947614743f1756e4c41a55c968fd247890fd40d426c3dfd05def340062"
+   },
+   "investigation": {
+    "velocity": "flat - established xStock (tokenized Nvidia stock), no mint velocity; whale accumulation only.",
+    "social_signal": "strong",
+    "money_flow": "whale",
+    "verdict": "needs-snug",
+    "notes": "2 whale EOAs accumulated $50,442 NVDA within one 5-min window; same $7.26M whale 0x1a18a8b96eac3f980133a18402d04194f1faa4e7 received $29,323 (converging on both MSTR and NVDA = broad equity appetite). Defer durability judgment to Blanket Snug."
+   },
+   "social_grade": "n/a (not scored)",
+   "social_total": null,
+   "durability": "weak",
+   "comps": "NVDA-mimic wave today: two separate NVDA impersonations deployed within hours (0xd90e7b32 + 0xd0601ce1) - the farm-respawn pattern documented in the Wazz Pons-V2 coordinated-fraud coverage; impersonation tokens ride official-brand trust and collapse once the scam vector is exposed.",
+   "risks": "CRITICAL CONTRACT MATCH: 0xd0601ce157db5bdc3162bbac2a2c8af5320d9eec matches the NVDA-mimic investigated in whale-convergence-nvda-mimic = UNOFFICIAL 283-byte pons-proxy impersonating Robinhood's NVDA stock token (SECOND NVDA mimic today). Holder concentration: top1 37.37% + top2 22.29% (~60% in two wallets); 9311 transfers / 283 holders (~33 tx/holder) = wash pattern, not retail adoption; farm-nexus 0x8366a39c #4 holder at 7.77%. The investigator's 'established xStock' label is wrong for this contract. SCAM-WATCH item.",
+   "recommendation": "skip",
+   "reason": "Not a launch and not the official NVDA stock token - this contract is the documented NVDA brand-mimic from today's scam-watch list (second such clone today). Whale buys may be mistaken identity; flag for dubie's scam watch, never a buy.",
+   "social_note": "no dedicated social score; social scoring is a launch-mint metric, and this is a whale-move on a mimic token, not a launch."
   }
  ],
  "tracking": {
@@ -53569,11 +53746,11 @@
   "whale-watcher"
  ],
  "last_activity": {
-  "scout": "2026-10-08T18:24:58.009Z",
+  "scout": "2026-10-08T18:27:57.895Z",
   "hymn": "2026-10-08T18:25:50.357Z",
-  "scorer": "2026-10-08T18:20:17Z",
-  "snug": "2026-10-08T18:17:01.486269Z",
-  "cardigan": "2026-10-08T18:17:01.486269Z"
+  "scorer": "2026-10-08T18:27:13Z",
+  "snug": "2026-10-08T18:28:15Z",
+  "cardigan": "2026-10-08T18:28:15Z"
  },
  "challenge": {
   "wallet": "0xa554e642ac0fe1bbeeea26df17644ad8fce00ecc",

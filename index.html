@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flock Signal Board</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+  h1 { font-size: 1.8rem; margin-bottom: 4px; }
+  .subtitle { color: #8b949e; margin-bottom: 24px; }
+  .updated { color: #8b949e; font-size: 0.85rem; margin-bottom: 20px; }
+  .flow { display: flex; align-items: stretch; gap: 8px; overflow-x: auto; margin-bottom: 32px; padding-bottom: 8px; }
+  .stage { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; min-width: 200px; flex: 1; }
+  .stage h2 { font-size: 1rem; margin-bottom: 8px; color: #58a6ff; }
+  .stage .count { font-size: 2rem; font-weight: bold; margin: 8px 0; }
+  .stage .meta { font-size: 0.8rem; color: #8b949e; }
+  .stage.active { border-color: #3fb950; box-shadow: 0 0 12px rgba(63,185,80,0.3); }
+  .arrow { display: flex; align-items: center; color: #58a6ff; font-size: 1.5rem; }
+  .scouts { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; margin-bottom: 8px; }
+  .scout { background: #0d1117; border: 1px solid #21262d; border-radius: 6px; padding: 8px; font-size: 0.8rem; }
+  .scout .n { font-weight: bold; }
+  .scout .c { color: #3fb950; font-size: 1.2rem; }
+  .queues { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .queue { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; }
+  .queue h2 { font-size: 1rem; margin-bottom: 12px; color: #58a6ff; }
+  .item { background: #0d1117; border: 1px solid #21262d; border-radius: 6px; padding: 10px; margin-bottom: 8px; font-size: 0.85rem; }
+  .item .tag { display: inline-block; background: #1f6feb; color: white; border-radius: 4px; padding: 2px 6px; font-size: 0.7rem; margin-right: 6px; }
+  .item .tag.skip { background: #6e7681; }
+  .item .tag.promising { background: #3fb950; }
+  .item .tag.warn { background: #d29922; }
+  .item time { color: #8b949e; font-size: 0.75rem; }
+  .grade-A { color: #3fb950; font-weight: bold; }
+  .grade-B { color: #a371f7; font-weight: bold; }
+  .grade-C { color: #d29922; font-weight: bold; }
+  .grade-D, .grade-F { color: #f85149; font-weight: bold; }
+</style>
+</head>
+<body>
+<h1>🐸 Flock Signal Board</h1>
+<p class="subtitle">network of muses working together · $1m challenge</p>
+<p class="updated" id="updated">loading…</p>
+
+<h2 style="margin-bottom:12px">Live Pipeline</h2>
+<div class="flow" id="flow"></div>
+
+<h2 style="margin-bottom:12px">Queue Details</h2>
+<div class="queues">
+  <div class="queue"><h2>🔍 Scout Queue</h2><div id="scout-items"></div></div>
+  <div class="queue"><h2>🔬 Investigations</h2><div id="invest-items"></div></div>
+  <div class="queue"><h2>📊 Social Scores</h2><div id="score-items"></div></div>
+  <div class="queue"><h2>✅ Decisions</h2><div id="decision-items"></div></div>
+</div>
+
+<script>
+async function load() {
+  try {
+    const r = await fetch('data/snapshot.json?t=' + Date.now());
+    const d = await r.json();
+    document.getElementById('updated').textContent = 'last updated: ' + new Date(d.updated_at).toLocaleString();
+
+    // flow diagram
+    const stages = [
+      { name: 'Scouts', count: d.scout_queue.length, meta: d.scouts.join(', ') || 'scanning…', key: 'scout' },
+      { name: 'Humming Hymn', count: d.investigations.length, meta: 'investigates', key: 'hymn' },
+      { name: 'Social Scorer', count: d.scores.length, meta: 'grades A–F', key: 'scorer' },
+      { name: 'Blanket Snug', count: d.decisions.length, meta: 'durability', key: 'snug' },
+      { name: 'Cardigan', count: d.decisions.filter(x => x.recommendation === 'mint' || x.recommendation === 'buy').length, meta: 'decides + executes', key: 'cardigan' },
+    ];
+    const now = Date.now();
+    document.getElementById('flow').innerHTML = stages.map((s, i) => {
+      const active = d.last_activity[s.key] && (now - new Date(d.last_activity[s.key]).getTime() < 5 * 60 * 1000);
+      return (i > 0 ? '<div class="arrow">→</div>' : '') +
+        `<div class="stage${active ? ' active' : ''}"><h2>${s.name}</h2><div class="count">${s.count}</div><div class="meta">${s.meta}</div></div>`;
+    }).join('');
+
+    // queue details
+    const esc = s => String(s ?? '').replace(/</g, '&lt;');
+    document.getElementById('scout-items').innerHTML = d.scout_queue.slice(-10).reverse().map(x =>
+      `<div class="item"><span class="tag">${esc(x.scout || x.type)}</span>${esc(x.name || x.contract || x.detail || '')}<br><time>${esc(x.found_at)}</time></div>`).join('') || '<p style="color:#8b949e">empty</p>';
+    document.getElementById('invest-items').innerHTML = d.investigations.slice(-10).reverse().map(x =>
+      `<div class="item"><span class="tag ${x.verdict === 'skip' ? 'skip' : x.verdict === 'promising' ? 'promising' : 'warn'}">${esc(x.verdict)}</span>${esc(x.candidate?.name || x.candidate?.contract || '')}<br><span style="color:#8b949e">social: ${esc(x.social_signal)} · money: ${esc(x.money_flow)}</span><br><time>${esc(x.investigated_at)}</time></div>`).join('') || '<p style="color:#8b949e">empty</p>';
+    document.getElementById('score-items').innerHTML = d.scores.slice(-10).reverse().map(x =>
+      `<div class="item"><span class="grade-${x.grade}">${esc(x.grade)}</span> (${x.total}/100) ${esc(x.candidate?.name || '')}<br><time>${esc(x.scored_at)}</time></div>`).join('') || '<p style="color:#8b949e">empty</p>';
+    document.getElementById('decision-items').innerHTML = d.decisions.slice(-10).reverse().map(x =>
+      `<div class="item"><span class="tag ${x.recommendation === 'skip' ? 'skip' : 'promising'}">${esc(x.recommendation)}</span>${esc(x.reason || '')}<br><time>${esc(x.broken_down_at)}</time></div>`).join('') || '<p style="color:#8b949e">empty</p>';
+  } catch (e) {
+    document.getElementById('updated').textContent = 'waiting for first data snapshot…';
+  }
+}
+load();
+setInterval(load, 30000);
+</script>
+</body>
+</html>

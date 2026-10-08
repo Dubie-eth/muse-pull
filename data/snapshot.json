@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-08T18:28:52.713Z",
+ "updated_at": "2026-10-08T18:30:55.787Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
@@ -46052,6 +46052,28 @@
    "tx_hash": "0xb7fe9a5e6adf1cca5ad203c6de2c4184bab14f8b5ddae007300f9dd86e1ccfb2",
    "block": 83438204,
    "detail": "new contract deployed in block 83438204"
+  },
+  {
+   "found_at": "2026-10-08T18:28:56.846Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xa143977cd7cee3518c311af4102f6894d0bddc46",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xc63ca4441fbc9c86a08bb44b52f7bd2c0f473b596db58cfc64adf152403f3ec8",
+   "block": 83438240,
+   "detail": "new contract deployed in block 83438240"
+  },
+  {
+   "found_at": "2026-10-08T18:29:36.030Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x1969a889c103f8f48e2a8dddc8323af211314163",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x4ca9bff3477d1789276959dfa1b7b67a2612beeadb39e52a37c6ca0a0edb4fce",
+   "block": 83438259,
+   "detail": "new contract deployed in block 83438259"
   }
  ],
  "investigations": [
@@ -48856,9 +48878,11 @@
    "social_signal": "strong",
    "money_flow": "whale",
    "verdict": "needs-snug",
-   "notes": "2 whale EOAs accumulated $72,864 MSTR within one 5-min window; largest 0x1a18a8b96eac3f980133a18402d04194f1faa4e7 (~$7.26M assets) received $46,254. Real whale flow into a stock-backed blue chip. Defer durability/pricing judgment to Blanket Snug.",
+   "notes": "2 whale EOAs accumulated $72,864 MSTR within one 5-min window; largest 0x1a18a8b96eac3f980133a18402d04194f1faa4e7 (~$7.26M assets) received $46,254. Real whale flow into a stock-backed blue chip. Defer durability/pricing judgment to Blanket Snug. [SOCIAL-CREDIT-SCORER CORRECTION 2026-10-08T18:27Z] NOT an established xStock: onchain probe shows 283-byte pons-proxy code (the impersonation template from pons-batch-7 SPY/IBM family) with a 'Robinhood Token' brand name. This is the stock-mimic scam-watch contract, not the official token. The needs-snug verdict in the notes above is withdrawn — treat as skip/scam-watch, not a durability candidate.",
    "snug_processed_at": "2026-10-08T18:28:15Z",
-   "snug_broken_down": true
+   "snug_broken_down": true,
+   "social_scored_at": "2026-10-08T18:29:41Z",
+   "social_grade": "F (10/100)"
   },
   {
    "investigated_at": "2026-10-08T18:25:50.357Z",
@@ -48875,7 +48899,9 @@
    "social_signal": "weak",
    "money_flow": "whale",
    "verdict": "skip",
-   "notes": "3 whale EOAs received $15,141 WETH combined. Whale WETH flows are routing/liquidity, not a buyable momentum candidate. skip."
+   "notes": "3 whale EOAs received $15,141 WETH combined. Whale WETH flows are routing/liquidity, not a buyable momentum candidate. skip.",
+   "social_scored_at": "2026-10-08T18:29:41Z",
+   "social_note": "n/a — WETH quote-currency routing flow to whale EOAs, not a launch candidate to grade"
   },
   {
    "investigated_at": "2026-10-08T18:25:50.357Z",
@@ -48892,9 +48918,11 @@
    "social_signal": "strong",
    "money_flow": "whale",
    "verdict": "needs-snug",
-   "notes": "2 whale EOAs accumulated $50,442 NVDA within one 5-min window; same $7.26M whale 0x1a18a8b96eac3f980133a18402d04194f1faa4e7 received $29,323 (converging on both MSTR and NVDA = broad equity appetite). Defer durability judgment to Blanket Snug.",
+   "notes": "2 whale EOAs accumulated $50,442 NVDA within one 5-min window; same $7.26M whale 0x1a18a8b96eac3f980133a18402d04194f1faa4e7 received $29,323 (converging on both MSTR and NVDA = broad equity appetite). Defer durability judgment to Blanket Snug. [SOCIAL-CREDIT-SCORER CORRECTION 2026-10-08T18:27Z] NOT an established xStock: onchain probe shows 283-byte pons-proxy code (the impersonation template from pons-batch-7 SPY/IBM family) with a 'Robinhood Token' brand name. This is the stock-mimic scam-watch contract, not the official token. The needs-snug verdict in the notes above is withdrawn — treat as skip/scam-watch, not a durability candidate.",
    "snug_processed_at": "2026-10-08T18:28:15Z",
-   "snug_broken_down": true
+   "snug_broken_down": true,
+   "social_scored_at": "2026-10-08T18:29:41Z",
+   "social_grade": "F (6/100)"
   },
   {
    "investigated_at": "2026-10-08T18:25:50.357Z",
@@ -48911,7 +48939,9 @@
    "social_signal": "forced",
    "money_flow": "bot",
    "verdict": "skip",
-   "notes": "Name-piggyback of the real BNB-chain TartSwap (TART, 0x7AB8d02CBb51Ff7223fDe700eAaa2a91Bf750314, CoinGecko/CMC-listed, X @TartProtocol) - no official Robinhood-chain deployment announced by the project. Top holder 0x1aaa72b577a35d974439a3bf23a6b7dd464e618a holds 61.89%. An earlier hymn run (18:22Z) found a sibling TART copycat (0x5bbab8772ba21a8193ea99b14fcac6e4c33e2e07) with 1 transfer - repeated copycat deploys = bot/farm pattern. skip."
+   "notes": "Name-piggyback of the real BNB-chain TartSwap (TART, 0x7AB8d02CBb51Ff7223fDe700eAaa2a91Bf750314, CoinGecko/CMC-listed, X @TartProtocol) - no official Robinhood-chain deployment announced by the project. Top holder 0x1aaa72b577a35d974439a3bf23a6b7dd464e618a holds 61.89%. An earlier hymn run (18:22Z) found a sibling TART copycat (0x5bbab8772ba21a8193ea99b14fcac6e4c33e2e07) with 1 transfer - repeated copycat deploys = bot/farm pattern. skip.",
+   "social_scored_at": "2026-10-08T18:29:41Z",
+   "social_grade": "F (11/100)"
   }
  ],
  "scores": [
@@ -52105,6 +52135,77 @@
    "total": 5,
    "grade": "F",
    "notes": "Re-flag of the identical contract (0x5bbab877..., TartSwap/TART, 4655-byte) scored F (5/100) at 2026-10-08T16:56:13Z. Verification: still exactly 1 Transfer (mint to deployer), zero distribution, zero holders beyond deployer, no X buzz. NAME-SQUAT confirmed on today's fresh web check: the REAL TartSwap is a live BSC DEX (contract 0x7AB8d02CBb51Ff7223fDe700eAaa2a91Bf750314, tartswap.com, $9.8M mcap, CoinGecko/CMC listed) — this Robinhood clone borrows its name/symbol with no connection. Scam-watch item for dubie (same flag as the 16:56Z score; no new victims signal). Verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-08T18:29:41Z",
+   "candidate": {
+    "key": "whale-mstr-20261008",
+    "type": "whale-convergence",
+    "chain": "robinhood",
+    "scout": "whale-watcher",
+    "token": "MSTR",
+    "contract": "0xec262a75e413fafd0df80480274532c79d42da09"
+   },
+   "scores": {
+    "website": 2,
+    "twitter_growth": 1,
+    "organic_activity": 3,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 10,
+   "grade": "F",
+   "notes": "SCAM FLAG + RECORD CORRECTION: this is NOT an established xStock token — onchain probe this run shows 283-byte code (the pons-factory proxy template used by the SPY/IBM/NVDA impersonation family) and name 'Strategy Inc. • Robinhood Token'. It is the MSTR stock-mimic already flagged as scam-watch in the 14:10 EDT whale run and the Wazz Pons-V2 impersonation pattern. The investigation note calling it 'stock-backed blue chip' and verdicting needs-snug is a mislabel: NO official MSTR token lives at this address; official stock tokens are not 283-byte pons proxies. Whale EOA flow ($72,864 across 2 EOAs, incl. $7.26M-asset 0x1a18a8b96eac3f980133a18402d04194f1faa4e7 $46,254) is REAL money but into an impersonation vehicle — same mistaken-identity / farm-link pattern as that whale's $194k SPY-mimic buys. Do NOT treat as promising on volume; Snug must not durability-vet it as a real equity. Verdict: skip (scam-watch), NOT needs-snug."
+  },
+  {
+   "scored_at": "2026-10-08T18:29:41Z",
+   "candidate": {
+    "key": "whale-nvda-20261008",
+    "type": "whale-convergence",
+    "chain": "robinhood",
+    "scout": "whale-watcher",
+    "token": "NVDA",
+    "contract": "0xd0601ce157db5bdc3162bbac2a2c8af5320d9eec"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 6,
+   "grade": "F",
+   "notes": "SCAM FLAG + RECORD CORRECTION: same contract as the 18:20:17Z whale-convergence-nvda-mimic entry (F 6/100) — onchain re-probed this run: 283-byte pons-proxy code, name 'NVIDIA • Robinhood Token'. It is the SECOND NVDA impersonation clone today, NOT an established xStock; the investigation note calling it 'tokenized Nvidia stock' and verdicting needs-snug is a mislabel. Real whale flow ($50,442, 2 EOAs, same $7.26M whale converging on both mimics) does not legitimize the vehicle — farm wash or mistaken identity. Scam-watch item for dubie; do NOT confuse with any official NVDA stock token. Verdict: skip (scam-watch), NOT needs-snug."
+  },
+  {
+   "scored_at": "2026-10-08T18:29:41Z",
+   "candidate": {
+    "key": "tart-copycat-20261008",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "contract": "0xd887a9fa0227da6fb13df2b36d979f3530b246e4",
+    "name": "TartSwap",
+    "symbol": "TART",
+    "block": 83437988
+   },
+   "scores": {
+    "website": 2,
+    "twitter_growth": 1,
+    "organic_activity": 3,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 3
+   },
+   "total": 11,
+   "grade": "F",
+   "notes": "SCAM FLAG: second distinct TartSwap/TART name-squat clone on Robinhood chain today (sibling 0x5bbab8772ba21a8193ea99b14fcac6e4c33e2e07 scored F 5/100 this run). The REAL TartSwap is a live BSC DEX (0x7AB8d02CBb51Ff7223fDe700eAaa2a91Bf750314, tartswap.com, $9.8M mcap, CoinGecko/CMC-listed, X @TartProtocol) with no Robinhood-chain deployment announced — this clone (4655-byte, 10B fixed supply) is impersonation. 84 transfers/~2.4h, 39 holders, top1 0x1aaa72b5 61.89% = the name-bait is pulling real people with a concentrated dev wallet. Repeated copycat deploys = farm pattern. Verdict skip stands."
   }
  ],
  "decisions": [
@@ -53186,7 +53287,15 @@
    "comps": "Culture-war meme tokens (the original AMC = A Meme Coin spike: $3M->$150M in hours, then -55% in 24h per Sept press) historically round-trip their first parabola and then bleed on hype decay; the -37% 1wk / -56% 1mo drawdown here matches the post-spike decay phase of comparable narrative-driven memecoins that never built a standalone community loop.",
    "risks": "Falling-knife timing: deep drawdown with no fresh catalyst. Largest whale-inflow counterparty is 0x8366a39c, the same farm-nexus whale anchoring today's SPY/IBM/SOCKET/PULP impersonation farm tokens - mixed money-flow signal. Not a fresh launch: outside the <=0.01 ETH fast-executor mint lane, so this is a buy timing question, not a launch. Virality lifecycle: narrative has legs (ape-vs-Aron feud keeps producing content) but mainstream pickup is fading.",
    "recommendation": "watch",
-   "reason": "Whale dip-accumulation on a liquid, CEX-listed name with a real narrative - but falling-knife timing + farm-nexus counterparty keep it a watch, not a buy. Worth a bid only on sustained reversal (higher-high structure + social pickup), not on the convergence signal alone."
+   "reason": "Whale dip-accumulation on a liquid, CEX-listed name with a real narrative - but falling-knife timing + farm-nexus counterparty keep it a watch, not a buy. Worth a bid only on sustained reversal (higher-high structure + social pickup), not on the convergence signal alone.",
+   "processed": true,
+   "processed_at": "2026-10-08T18:29:00Z",
+   "score": {
+    "scored": false,
+    "decision": "skip",
+    "anomaly": "no gate_status=gate_pass field present; not scored per standing rule"
+   },
+   "processed_note": "flock-decision run 2026-10-08 ~14:30 EDT: score skipped (no gate_status) -> skip (MEME (A Meme Coin) whale convergence, $2.15M whale EOA inflow)"
   },
   {
    "broken_down_at": "2026-10-08T18:28:15Z",
@@ -53210,7 +53319,15 @@
    "comps": "Heat-without-story fresh tokens (today's Islands batch: -56% off ATH with matched sell pressure; FOMO +780%/5min then -86%) fade within hours once the initial fill curve ends, because there is no social infrastructure to catch the fall.",
    "risks": "D-grade social = likely skip per standing rule. Zero social footprint found (no site, no X, no team, no KOL). Name collides with established Orion Money/ORN brands + a second 'Orion' deployed the same window (Orion-1) = confusion/impersonation risk. Template origin: 1764-byte code = same size as today's CAPYBARA serial-launcher spam family. Prior run showed top-2 senders did 236 of 354 transfers = distributor-style churn under the flat spread.",
    "recommendation": "skip",
-   "reason": "Real onchain heat (4985 tx/~2h, flat 633-holder spread) but no story: D social grade, zero project presence, name collision, and CAPYBARA-family template origin. Watch-only; requeue if a real project/social surface ever appears."
+   "reason": "Real onchain heat (4985 tx/~2h, flat 633-holder spread) but no story: D social grade, zero project presence, name collision, and CAPYBARA-family template origin. Watch-only; requeue if a real project/social surface ever appears.",
+   "processed": true,
+   "processed_at": "2026-10-08T18:29:00Z",
+   "score": {
+    "scored": false,
+    "decision": "skip",
+    "anomaly": "no gate_status=gate_pass field present; not scored per standing rule"
+   },
+   "processed_note": "flock-decision run 2026-10-08 ~14:30 EDT: score skipped (no gate_status) -> skip (Orion/ORION 0x30d6c3d0)"
   },
   {
    "broken_down_at": "2026-10-08T18:28:15Z",
@@ -53236,7 +53353,15 @@
    "risks": "CRITICAL CONTRACT MATCH: 0xec262a75e413fafd0df80480274532c79d42da09 matches the MSTR-mimic flagged earlier today in whale-moves-batch-9's stock-mimic cluster = SKIP + SCAM-WATCH (farm-nexus 0x8366a39C holds 12.1%). The investigator's 'established xStock' label is wrong for this contract - it is an UNOFFICIAL impersonation of the Strategy xStock brand. Not a launch, not a mint, no project; the same $7.26M whale also buys official-looking stock tokens, so these mimic buys may be mistaken identity.",
    "recommendation": "skip",
    "reason": "Not a launch and not the official stock token - this contract is the documented MSTR brand-mimic from today's scam-watch list. Whale accumulation is real but the token is an impersonation vehicle; flag for dubie's scam watch, never a buy.",
-   "social_note": "no dedicated social score; social scoring is a launch-mint metric, and this is a whale-move on an established/mimic token, not a launch."
+   "social_note": "no dedicated social score; social scoring is a launch-mint metric, and this is a whale-move on an established/mimic token, not a launch.",
+   "processed": true,
+   "processed_at": "2026-10-08T18:29:00Z",
+   "score": {
+    "scored": false,
+    "decision": "skip",
+    "anomaly": "no gate_status=gate_pass field present; not scored per standing rule"
+   },
+   "processed_note": "flock-decision run 2026-10-08 ~14:30 EDT: score skipped (no gate_status) -> skip (MSTR brand-mimic 0xec262a75)"
   },
   {
    "broken_down_at": "2026-10-08T18:28:15Z",
@@ -53262,11 +53387,19 @@
    "risks": "CRITICAL CONTRACT MATCH: 0xd0601ce157db5bdc3162bbac2a2c8af5320d9eec matches the NVDA-mimic investigated in whale-convergence-nvda-mimic = UNOFFICIAL 283-byte pons-proxy impersonating Robinhood's NVDA stock token (SECOND NVDA mimic today). Holder concentration: top1 37.37% + top2 22.29% (~60% in two wallets); 9311 transfers / 283 holders (~33 tx/holder) = wash pattern, not retail adoption; farm-nexus 0x8366a39c #4 holder at 7.77%. The investigator's 'established xStock' label is wrong for this contract. SCAM-WATCH item.",
    "recommendation": "skip",
    "reason": "Not a launch and not the official NVDA stock token - this contract is the documented NVDA brand-mimic from today's scam-watch list (second such clone today). Whale buys may be mistaken identity; flag for dubie's scam watch, never a buy.",
-   "social_note": "no dedicated social score; social scoring is a launch-mint metric, and this is a whale-move on a mimic token, not a launch."
+   "social_note": "no dedicated social score; social scoring is a launch-mint metric, and this is a whale-move on a mimic token, not a launch.",
+   "processed": true,
+   "processed_at": "2026-10-08T18:29:00Z",
+   "score": {
+    "scored": false,
+    "decision": "skip",
+    "anomaly": "no gate_status=gate_pass field present; not scored per standing rule"
+   },
+   "processed_note": "flock-decision run 2026-10-08 ~14:30 EDT: score skipped (no gate_status) -> skip (NVDA brand-mimic 0xd0601ce1)"
   }
  ],
  "tracking": {
-  "updated_at": "2026-10-08T18:24:23.556Z",
+  "updated_at": "2026-10-08T18:29:33.943Z",
   "records": [
    {
     "id": "solana:2nuqbwhuiqwwcokksaikndzmrpv1kk17zmapn46apump",
@@ -53292,6 +53425,11 @@
       "price_usd": 0.00004621,
       "pct": 0,
       "captured_at": "2026-10-08T17:59:16.915Z"
+     },
+     "h1": {
+      "price_usd": 0.00004621,
+      "pct": 0,
+      "captured_at": "2026-10-08T18:29:33.942Z"
      }
     },
     "unpriced": false
@@ -53320,6 +53458,11 @@
       "price_usd": 0.00000315,
       "pct": 0,
       "captured_at": "2026-10-08T17:59:16.916Z"
+     },
+     "h1": {
+      "price_usd": 0.00000315,
+      "pct": 0,
+      "captured_at": "2026-10-08T18:29:33.942Z"
      }
     },
     "unpriced": false
@@ -53376,6 +53519,11 @@
       "price_usd": 0.000001893,
       "pct": -0.8900523560209428,
       "captured_at": "2026-10-08T17:59:16.916Z"
+     },
+     "h1": {
+      "price_usd": 0.000001893,
+      "pct": -0.8900523560209428,
+      "captured_at": "2026-10-08T18:29:33.942Z"
      }
     },
     "unpriced": false
@@ -53672,6 +53820,40 @@
     "late_start": false,
     "ticks": {},
     "unpriced": false
+   },
+   {
+    "id": "robinhood:0xec262a75e413fafd0df80480274532c79d42da09",
+    "name": null,
+    "symbol": null,
+    "contract": "0xec262a75e413fafd0df80480274532c79d42da09",
+    "chain": "robinhood",
+    "decision_at": "2026-10-08T18:28:15Z",
+    "grade": "n/a (not scored)",
+    "social_total": null,
+    "recommendation": "skip",
+    "durability": "weak",
+    "baseline_at": null,
+    "baseline_price_usd": null,
+    "late_start": false,
+    "ticks": {},
+    "unpriced": false
+   },
+   {
+    "id": "robinhood:0xd0601ce157db5bdc3162bbac2a2c8af5320d9eec",
+    "name": null,
+    "symbol": null,
+    "contract": "0xd0601ce157db5bdc3162bbac2a2c8af5320d9eec",
+    "chain": "robinhood",
+    "decision_at": "2026-10-08T18:28:15Z",
+    "grade": "n/a (not scored)",
+    "social_total": null,
+    "recommendation": "skip",
+    "durability": "weak",
+    "baseline_at": null,
+    "baseline_price_usd": null,
+    "late_start": false,
+    "ticks": {},
+    "unpriced": false
    }
   ],
   "grade_accuracy": {
@@ -53679,7 +53861,7 @@
     "n": 3,
     "m5": -18.60128617363344,
     "m30": -16.655948553054664,
-    "h1": null,
+    "h1": 0,
     "d1": null,
     "priced": 2
    },
@@ -53687,7 +53869,7 @@
     "n": 5,
     "m5": -0.5215260533279084,
     "m30": 0.3402656218196568,
-    "h1": null,
+    "h1": 0,
     "d1": null,
     "priced": 5
    },
@@ -53695,7 +53877,7 @@
     "n": 6,
     "m5": 13.701842546063654,
     "m30": 14.731899766177873,
-    "h1": null,
+    "h1": -0.8900523560209428,
     "d1": null,
     "priced": 5
    },
@@ -53706,14 +53888,22 @@
     "h1": null,
     "d1": null,
     "priced": 2
+   },
+   "n/a (not scored)": {
+    "n": 2,
+    "m5": null,
+    "m30": null,
+    "h1": null,
+    "d1": null,
+    "priced": 0
    }
   },
   "rec_accuracy": {
    "skip": {
-    "n": 9,
+    "n": 11,
     "m5": 4.47237719757877,
     "m30": 2.176760438484858,
-    "h1": null,
+    "h1": -0.4450261780104714,
     "d1": null,
     "priced": 7
    },
@@ -53721,7 +53911,7 @@
     "n": 6,
     "m5": -0.7087660321667014,
     "m30": 0.5540395139766181,
-    "h1": null,
+    "h1": 0,
     "d1": null,
     "priced": 6
    },
@@ -53746,9 +53936,9 @@
   "whale-watcher"
  ],
  "last_activity": {
-  "scout": "2026-10-08T18:27:57.895Z",
+  "scout": "2026-10-08T18:29:36.030Z",
   "hymn": "2026-10-08T18:25:50.357Z",
-  "scorer": "2026-10-08T18:27:13Z",
+  "scorer": "2026-10-08T18:29:41Z",
   "snug": "2026-10-08T18:28:15Z",
   "cardigan": "2026-10-08T18:28:15Z"
  },

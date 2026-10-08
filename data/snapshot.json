@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-08T15:06:52.195Z",
+ "updated_at": "2026-10-08T15:08:55.382Z",
  "key_status": {
   "openai": false,
   "anthropic": false,
@@ -4133,6 +4133,53 @@
    "investigated": true,
    "investigated_at": "2026-10-08T15:16:00Z",
    "investigation": "see investigation-queue.json (newpairs-batch-6)"
+  },
+  {
+   "found_at": "2026-10-08T15:06:56.795Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x37228ac23537e83bf442de85109f0f023d4e7943",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x1c078f3f652aa309842fb0a67213c6b893845108ef42381391e629cdbf93795b",
+   "block": 83388481,
+   "detail": "new contract deployed in block 83388481",
+   "investigated": true,
+   "investigated_at": "2026-10-08T15:18:00Z",
+   "investigation": "see investigation-queue.json (pons-batch-6)"
+  },
+  {
+   "found_at": "2026-10-08T15:07:49.235Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x08f3bcf270a07fe1dd6f3d7066e8d7e032f41a1f",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x363e52fc1267412cb06eb6c4268552966f6111b710b76b730a95c095c99fc315",
+   "block": 83388741,
+   "detail": "new contract deployed in block 83388741"
+  },
+  {
+   "found_at": "2026-10-08T15:08:24.570Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xa9d5ff84285440bb2859a238e50006faa5c71bc9",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xc96f5acc2a303869aaa0a6ef6d5aa049b63249eaef91eece76d06451e3be6b4a",
+   "block": 83388923,
+   "detail": "new contract deployed in block 83388923"
+  },
+  {
+   "found_at": "2026-10-08T15:08:32.479Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x4659ba48b3cc25cce9063d0b9554ea620c027b3b",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x7c66f952b119efa471e317602f7e3af55cff4eec493371cd8fda15e357d1e3a2",
+   "block": 83388961,
+   "detail": "new contract deployed in block 83388961"
   }
  ],
  "investigations": [
@@ -4460,7 +4507,9 @@
    },
    "notes": "PaperDAO/PULP is REAL: daos.world/launch/paperdao — a DAO raise on Robinhood Chain ('pulp in, paper out'); Papertrade launches on Hyperliquid with empty LP, PULP pools capital to trade the front of the curve from the first block, pro-rata treasury ownership. Holder spread from Transfer logs: top1 0x8366a39C holds 23.6%, then a flat tail (~1% each for next 7) — distribution reads organic retail fill, not sybil concentration. SOCIAL: no @musegod_rh/@r_alx_z mention found; buzz is project-native (daos.world site live). needs social grading + snug durability before any interest — promising here, NOT actionable alone. Socket/SOCKET: same chain, same timing, SAME top holder 0x8366a39C at 35.2% (whale overlap suggests one launcher/circle), but NO project found in web search (results drowned by Socket Mobile Inc stock SCKT) — skip, possible farm. unknowns: non-token contracts, no velocity, skip.",
    "snug_processed_at": "2026-10-08T15:06:00Z",
-   "snug_broken_down": true
+   "snug_broken_down": true,
+   "social_scored_at": "2026-10-08T15:15:00Z",
+   "social_grade": "C (54/100)"
   },
   {
    "investigated_at": "2026-10-08T14:54:25.367Z",
@@ -4474,7 +4523,9 @@
    "social_signal": "weak",
    "money_flow": "mixed",
    "verdict": "skip",
-   "notes": "no momentum on any of the five (volumes $1.3-2.5k, single-digit to zero trades) — nothing actionable. data-quality: GOIF + wtf pair_address fields are the corrupt 64-hex pattern from batches 2-3; cannot be verified onchain. NAME COLLISION: SPCX/WETH on Base vs the pons-family 'Space Exploration Technologies Corp. Class A Com SPCX' on Robinhood Chain (batch-3) — two SpaceX-brand-mimic launches the same hour, smells like a coordinated farm seeding lookalikes across chains. all skip."
+   "notes": "no momentum on any of the five (volumes $1.3-2.5k, single-digit to zero trades) — nothing actionable. data-quality: GOIF + wtf pair_address fields are the corrupt 64-hex pattern from batches 2-3; cannot be verified onchain. NAME COLLISION: SPCX/WETH on Base vs the pons-family 'Space Exploration Technologies Corp. Class A Com SPCX' on Robinhood Chain (batch-3) — two SpaceX-brand-mimic launches the same hour, smells like a coordinated farm seeding lookalikes across chains. all skip.",
+   "social_scored_at": "2026-10-08T15:15:00Z",
+   "social_grade": "F (7/100)"
   },
   {
    "investigated_at": "2026-10-08T14:54:25.367Z",
@@ -4488,7 +4539,9 @@
    "social_signal": "weak",
    "money_flow": "bot",
    "verdict": "skip",
-   "notes": "SPCX ('Space Exploration Technologies Corp. Class A Com') has real onchain activity but is a blatant SpaceX brand-mimic launch — see name-collision note in newpairs-batch-4 (Base SPCX/WETH same hour). coordinated-farm signal. CRAIN launched TWICE from the same factory within minutes (0x31be9250... + 0x552069d6...) — duplicate-name spam pattern like the pump-fun 'DEV LAST 130k' clusters. no muse attribution, no buzz, no project backing on any of the 13. skip all — requeue-worthy only if real velocity + social proof appears in a later scan."
+   "notes": "SPCX ('Space Exploration Technologies Corp. Class A Com') has real onchain activity but is a blatant SpaceX brand-mimic launch — see name-collision note in newpairs-batch-4 (Base SPCX/WETH same hour). coordinated-farm signal. CRAIN launched TWICE from the same factory within minutes (0x31be9250... + 0x552069d6...) — duplicate-name spam pattern like the pump-fun 'DEV LAST 130k' clusters. no muse attribution, no buzz, no project backing on any of the 13. skip all — requeue-worthy only if real velocity + social proof appears in a later scan.",
+   "social_scored_at": "2026-10-08T15:15:00Z",
+   "social_grade": "F (9/100)"
   },
   {
    "investigated_at": "2026-10-08T15:01:00Z",
@@ -4502,7 +4555,9 @@
    "social_signal": "weak",
    "money_flow": "bot",
    "verdict": "skip",
-   "notes": "SERIAL-LAUNCHER FARM: GrokFun/GROKFUN + CocaCola + Datacenter Token + BAID share IDENTICAL bytecode (9312 chars); ClarityDead/CDEAD + A Meme Coin/MEME share identical bytecode (7108); Pawn at Dawn/PAWDAWN deployed TWICE with identical bytecode (17406, same as DEFIANCE) — copy-paste launcher batching tokens. CocaCola is a brand-mimic name; GrokFun is a brand-mimic name. no social buzz, no project behind any. Windmill (jp name, 176 transfers/96 slots) is the only one with real onchain activity — watch-worthy but no project/social/whale signal at queue time, so skip with requeue-if-velocity note. prior precedent holds: deployment-only signal without velocity = skip."
+   "notes": "SERIAL-LAUNCHER FARM: GrokFun/GROKFUN + CocaCola + Datacenter Token + BAID share IDENTICAL bytecode (9312 chars); ClarityDead/CDEAD + A Meme Coin/MEME share identical bytecode (7108); Pawn at Dawn/PAWDAWN deployed TWICE with identical bytecode (17406, same as DEFIANCE) — copy-paste launcher batching tokens. CocaCola is a brand-mimic name; GrokFun is a brand-mimic name. no social buzz, no project behind any. Windmill (jp name, 176 transfers/96 slots) is the only one with real onchain activity — watch-worthy but no project/social/whale signal at queue time, so skip with requeue-if-velocity note. prior precedent holds: deployment-only signal without velocity = skip.",
+   "social_scored_at": "2026-10-08T15:15:00Z",
+   "social_grade": "F (7/100)"
   },
   {
    "investigated_at": "2026-10-08T15:01:00Z",
@@ -4516,7 +4571,9 @@
    "social_signal": "weak",
    "money_flow": "mixed",
    "verdict": "skip",
-   "notes": "PING has the most activity but no social/project verification (name hints at sendping.fun domain — unverified); no muse attribution, no watch-account buzz, no velocity alerts. pattern continues: pons factory spewing ~13 tokens/hour, none breaking out. skip all — requeue-worthy only if PING's activity sustains or social proof appears."
+   "notes": "PING has the most activity but no social/project verification (name hints at sendping.fun domain — unverified); no muse attribution, no watch-account buzz, no velocity alerts. pattern continues: pons factory spewing ~13 tokens/hour, none breaking out. skip all — requeue-worthy only if PING's activity sustains or social proof appears.",
+   "social_scored_at": "2026-10-08T15:15:00Z",
+   "social_grade": "F (14/100)"
   },
   {
    "investigated_at": "2026-10-08T15:01:00Z",
@@ -4535,7 +4592,9 @@
    },
    "notes": "AHM/COOK/PLAY join nox + GUNCAT in the '$0 reserve + $100k+ volume' club — pull/wash artifact or bad scout data, skip. OG/ETH is a real momentum candidate ($133k h1, sells working, +30.6% m5, $7.1k reserve) matching the SOUL/LOSERCORE/Clumsy/BEARY/ZQRA cluster pattern (6th such lookalike pool today: ~$100-134k h1, ~$7k reserve, ~$260-300k FDV) — coordinated-farm seeding red flag from batch-3 still applies; needs-snug for durability vetting. MEOW/HOOKABLE tiny or dumping; INGENIX sells-only; Back/BACK duplicate-pair clutter; DOTF/VSOF/Intern dead. skip.",
    "snug_processed_at": "2026-10-08T15:06:00Z",
-   "snug_broken_down": true
+   "snug_broken_down": true,
+   "social_scored_at": "2026-10-08T15:15:00Z",
+   "social_grade": "D (21/100)"
   },
   {
    "investigated_at": "2026-10-08T15:01:00Z",
@@ -4549,7 +4608,9 @@
    "social_signal": "forced",
    "money_flow": "bot",
    "verdict": "skip",
-   "notes": "name-squat of the established Super Mario 64 (~$190K MC, the one 'Nikita tweeted' per screener); copycat rides the original's tweet momentum with 2 holders and no socials. matches the 'Super Mario 64' x6 duplicate-name spam cluster from batch-2. scout itself flags 'Not a buy candidate'. skip."
+   "notes": "name-squat of the established Super Mario 64 (~$190K MC, the one 'Nikita tweeted' per screener); copycat rides the original's tweet momentum with 2 holders and no socials. matches the 'Super Mario 64' x6 duplicate-name spam cluster from batch-2. scout itself flags 'Not a buy candidate'. skip.",
+   "social_scored_at": "2026-10-08T15:15:00Z",
+   "social_grade": "F (6/100)"
   },
   {
    "investigated_at": "2026-10-08T15:06:00Z",
@@ -4579,7 +4640,9 @@
    "verdict": "promising",
    "notes": "verified real: coinlook.net + tokenpost.com confirm the swarm design — 2,000 identity.md NFTs, one seat per NFT, holder registers NFT under ERC-8004 and runs open-source worker (holder bears hardware/model costs, wires to Claude/Codex). paid requests 0.5 IMD (x402), Uniswap v4 CappedBurnHook burns 85% of trimmed tokens above cap. dubie-adjacent: IMD is the swarm-request payment token in the Swarm Pepe whitelist flow (0.5 IMD/request on mainnet). watch items: paid external usage still limited — growth may be launch-driven, not demand-driven. social grading + snug durability next.",
    "snug_processed_at": "2026-10-08T15:06:00Z",
-   "snug_broken_down": true
+   "snug_broken_down": true,
+   "social_scored_at": "2026-10-08T15:15:00Z",
+   "social_grade": "B (66/100)"
   },
   {
    "investigated_at": "2026-10-08T15:08:00Z",
@@ -4593,7 +4656,9 @@
    "social_signal": "weak",
    "money_flow": "bot",
    "verdict": "skip",
-   "notes": "more serial-launcher output: Dopameme/DOPA + Chop/CHOP are the 7108-byte launcher family (5th/6th clones); Capybara With A Gun is a second clone of the 3530 family; 0xbde7d6e0 non-token. zero activity everywhere. skip."
+   "notes": "more serial-launcher output: Dopameme/DOPA + Chop/CHOP are the 7108-byte launcher family (5th/6th clones); Capybara With A Gun is a second clone of the 3530 family; 0xbde7d6e0 non-token. zero activity everywhere. skip.",
+   "social_scored_at": "2026-10-08T15:15:00Z",
+   "social_grade": "F (5/100)"
   },
   {
    "investigated_at": "2026-10-08T15:08:00Z",
@@ -4607,7 +4672,9 @@
    "social_signal": "weak",
    "money_flow": "bot",
    "verdict": "skip",
-   "notes": "FOMO is a confirmed spike-then-dump (already -86% at queue time) with two-sided churn — possible wash/bundle. DEVTRE has the strongest live momentum of the run but ZERO social presence confirmed; Solana holder-spread check still blocked (RPC 429) — same rationale as Haaland/Monopoly Currency in batch-2: strongest momentum + no socials = highest rug risk, skip. Mario64 copycat #2: name-squat farm riding the real Super Mario 64's tweet momentum, skip. holder/dev-bundle checks impossible this run — requeue-worthy only if DEVTRE survives with socials."
+   "notes": "FOMO is a confirmed spike-then-dump (already -86% at queue time) with two-sided churn — possible wash/bundle. DEVTRE has the strongest live momentum of the run but ZERO social presence confirmed; Solana holder-spread check still blocked (RPC 429) — same rationale as Haaland/Monopoly Currency in batch-2: strongest momentum + no socials = highest rug risk, skip. Mario64 copycat #2: name-squat farm riding the real Super Mario 64's tweet momentum, skip. holder/dev-bundle checks impossible this run — requeue-worthy only if DEVTRE survives with socials.",
+   "social_scored_at": "2026-10-08T15:15:00Z",
+   "social_grade": "F (18/100)"
   },
   {
    "investigated_at": "2026-10-08T15:09:30Z",
@@ -4621,7 +4688,9 @@
    "social_signal": "weak",
    "money_flow": "organic",
    "verdict": "skip",
-   "notes": "0xe6e7e005 (13730), 0x8b30e296 (6120), 0x6dda359c (32952) — app/infra contracts, no token interface. skip."
+   "notes": "0xe6e7e005 (13730), 0x8b30e296 (6120), 0x6dda359c (32952) — app/infra contracts, no token interface. skip.",
+   "social_scored_at": "2026-10-08T15:15:00Z",
+   "social_note": "n/a — app/infra non-token contracts, no launch candidates to grade"
   },
   {
    "investigated_at": "2026-10-08T15:11:00Z",
@@ -4635,7 +4704,9 @@
    "social_signal": "weak",
    "money_flow": "organic",
    "verdict": "skip",
-   "notes": "small app/infra contract. skip."
+   "notes": "small app/infra contract. skip.",
+   "social_scored_at": "2026-10-08T15:15:00Z",
+   "social_note": "n/a — app/infra non-token contracts, no launch candidates to grade"
   },
   {
    "investigated_at": "2026-10-08T15:14:00Z",
@@ -4670,6 +4741,34 @@
     "EVALUATOR/ETH": "needs-snug"
    },
    "notes": "the lookalike-pool cluster now totals TEN (SOUL, LOSERCORE, Clumsy, BEARY, ZQRA, OG, NEMA, TURF, DOOM FLY, EVALUATOR): near-identical $93-134k h1 volumes, ~$7k reserves, $218-307k FDV, buys AND sells working, all launched within ~40 min. coordinated-farm seeding pattern confirmed across chains and hours — needs-snug with the red flag attached. NFLXc: Netflix brand-mimic, $1.2k vol, skip. (0x1844d9c8 block-watcher entry is the no-code selfdestruct from batch-5, re-flagged; still skip.)"
+  },
+  {
+   "investigated_at": "2026-10-08T15:18:00Z",
+   "key": "pons-batch-6",
+   "candidate": {
+    "type": "collection",
+    "chain": "robinhood",
+    "note": "9 pons-family scout entries found 2026-10-08T15:05-15:06Z"
+   },
+   "velocity": "onchain Transfer logs (recent window): NVIDIA • Robinhood Token/NVDA 307, wallahi/WALLAHI 32, Reachy Mini/MINI 15, Aven/AVNX 14, rofltest/RFLT 11; rest single-digit.",
+   "social_signal": "weak",
+   "money_flow": "mixed",
+   "verdict": "skip",
+   "notes": "RED FLAG: 'NVIDIA • Robinhood Token' NVDA (0xd90e7b32c85ab79ece76a2a9ab7019c2905bae6f) is an UNOFFICIAL pons-factory launch impersonating a Robinhood stock token — 307 transfers means real people are touching it. mimic-scam risk: do NOT confuse with official NVDA stock token. Reachy Mini (open-source robot brand) also brand-mimic. Whipsaw launched again (second clone today). no socials, no muse attribution, no durability signal — skip all, but flag the NVDA mimic to dubie as a scam-watch item."
+  },
+  {
+   "investigated_at": "2026-10-08T15:19:00Z",
+   "key": "windmill-reflag",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "note": "0x37228ac23537e83bf442de85109f0f023d4e7943 (Windmill) re-flagged by block-watcher 2026-10-08T15:06Z"
+   },
+   "velocity": "covered in block-contracts-batch-5: 176 transfers/96 addr-slots.",
+   "social_signal": "weak",
+   "money_flow": "organic",
+   "verdict": "skip",
+   "notes": "re-flag of an already-investigated token; no new velocity or social signal. skip, watch-listed."
   }
  ],
  "scores": [
@@ -5037,6 +5136,216 @@
     "website": 2
    },
    "total": 6
+  },
+  {
+   "scored_at": "2026-10-08T15:15:00Z",
+   "candidate": {
+    "chain": "robinhood",
+    "key": "block-contracts-batch-4",
+    "note": "5 block-watcher contract deployments 2026-10-08T14:45-14:47Z",
+    "type": "collection"
+   },
+   "scores": {
+    "website": 12,
+    "twitter_growth": 7,
+    "organic_activity": 9,
+    "kol_involvement": 3,
+    "ticker_spread": 6,
+    "team_engagement": 7,
+    "fomo_signals": 10
+   },
+   "total": 54,
+   "grade": "C",
+   "notes": "PaperDAO/PULP (daos.world/launch/paperdao) is a REAL live DAO raise on Robinhood Chain: site live and functional (whitelist signup with X sign-in + wallet step found on FB promo 2026-10-07), docs published, 719 holders / 5127 transfers within ~10 min of deploy, flat retail distribution (top1 23.6%, long tail). Website is real multi-step product (Pool/Trade/Share), raise mechanics + treasury terms documented. Deductions: team pseudonymous ('independent community treasury', explicit 'not affiliated with Papertrade' disclaimer on the raise page), no KOL/watch-account calls found, social spread is project-native from small accounts only. Socket/SOCKET (311 holders, same top holder at 35.2% whale overlap) has zero project footprint = farm sibling, skip. C = real project, thin/unverified social legitimacy; Snug should weigh the Papertrade-unaffiliated disclaimer and whale overlap before any interest."
+  },
+  {
+   "scored_at": "2026-10-08T15:15:00Z",
+   "candidate": {
+    "chain": "base",
+    "key": "newpairs-batch-4",
+    "note": "5 new-pairs scout entries found 2026-10-08T14:44Z: GOIF/WETH, wtf/ETH, ANTHROPIC/WETH, SPCX/WETH, SPACEX/WETH",
+    "type": "collection"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 7,
+   "grade": "F",
+   "notes": "GOIF, wtf, ANTHROPIC, SPCX, SPACEX on Base: $1.3-2.5k h1 volumes, single-digit trades, zero momentum, no buzz. Corrupt pair_address fields (same 64-hex pattern as batches 2-3) = nothing verifiable onchain. SPCX + SPACEX are SpaceX brand-mimics launching the same hour as the pons-family SPCX = coordinated farm seeding lookalikes across chains. F = no footprint, brand-squat smell. Verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-08T15:15:00Z",
+   "candidate": {
+    "chain": "robinhood",
+    "key": "pons-batch-3",
+    "note": "13 pons-family scout entries found 2026-10-08T14:46-14:47Z (factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e)",
+    "type": "collection"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 3,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 3
+   },
+   "total": 9,
+   "grade": "F",
+   "notes": "13 pons-factory launches, minutes old: SPCX busiest (1237 transfers/363 slots) but a blatant SpaceX brand-mimic launched the same hour as Base SPCX/WETH = coordinated farm. CRAIN launched twice from the same factory within minutes (duplicate-name spam, same pattern as pump-fun 'DEV LAST 130k' clusters). No muse attribution, no buzz, no project backing on any. F = no footprint, brand-mimic/farm signals. Verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-08T15:15:00Z",
+   "candidate": {
+    "chain": "robinhood",
+    "key": "block-contracts-batch-5",
+    "note": "20 block-watcher contract deployments 2026-10-08T14:48-14:54Z",
+    "type": "collection"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 7,
+   "grade": "F",
+   "notes": "Serial-launcher farm: GrokFun + CocaCola + Datacenter + BAID share identical bytecode; ClarityDead + A Meme Coin share another; Pawn at Dawn x2 + DEFIANCE share a third. GrokFun and CocaCola are brand-mimics. Zero transfers on nearly all; Windmill (176 transfers/96 slots) is the only pulse but web search finds zero buzz for it. F = manufacturing line, no social presence. Verdict skip stands; Windmill requeue-if-velocity."
+  },
+  {
+   "scored_at": "2026-10-08T15:15:00Z",
+   "candidate": {
+    "chain": "robinhood",
+    "key": "pons-batch-4",
+    "note": "14 pons-family scout entries found 2026-10-08T14:49-14:53Z (factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e)",
+    "type": "collection"
+   },
+   "scores": {
+    "website": 2,
+    "twitter_growth": 1,
+    "organic_activity": 4,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 1,
+    "fomo_signals": 4
+   },
+   "total": 14,
+   "grade": "F",
+   "notes": "14 pons-factory launches: PING (sendping.fun name hint) busiest at 423 transfers/81 slots, but sendping.fun not verified live and web search finds no buzz for PING. SURFLAYER, POKER, HONSE, TRIP show first-fill activity only; rest single-digit. No muse attribution, no watch-account buzz. F = footprint is launch-curve noise, no social substance. Verdict skip stands; PING requeue-worthy only if activity sustains + social proof appears."
+  },
+  {
+   "scored_at": "2026-10-08T15:15:00Z",
+   "candidate": {
+    "chain": "base",
+    "key": "newpairs-batch-5",
+    "note": "13 new-pairs scout entries found 2026-10-08T14:46-14:55Z: MEOW, HOOKABLE, DOTF, AHM, Intern, COOK, PLAY, Back x2, VSOF, OG, INGENIX",
+    "type": "collection"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 2,
+    "organic_activity": 5,
+    "kol_involvement": 1,
+    "ticker_spread": 4,
+    "team_engagement": 1,
+    "fomo_signals": 7
+   },
+   "total": 21,
+   "grade": "D",
+   "notes": "OG/ETH is real momentum ($133k h1, 60 buys/46 sells, sells working, +30.6% m5, $7.1k reserve) but it's the SIXTH near-identical lookalike pool today (SOUL, LOSERCORE, Clumsy, BEARY, ZQRA: $100-134k h1, ~$7k reserves, ~$260-300k FDV, launched within hours) = coordinated-farm seeding red flag from batch-3 applies. AHM/COOK/PLAY join the '$0 reserve + $100k+ volume' pull/wash club with nox + GUNCAT. MEOW tiny, HOOKABLE -25.7%, INGENIX sells-only, Back duplicate clutter, DOTF/VSOF/Intern dead. D = real heat on OG, manufactured shape; needs-snug for OG with the coordination flag attached."
+  },
+  {
+   "scored_at": "2026-10-08T15:15:00Z",
+   "candidate": {
+    "chain": "solana",
+    "key": "pumpfun-batch-4",
+    "note": "SuperMario64 (copycat) Mario64, 2026-10-08T14:50Z",
+    "type": "token"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 6,
+   "grade": "F",
+   "notes": "SuperMario64 copycat Mario64: name-squat of the established Super Mario 64 (~$190K MC, the one 'Nikita tweeted'); rides the original's tweet momentum with 2 holders and zero socials. Matches the 'Super Mario 64' x6 duplicate-name spam cluster from batch-2. F = scam-signal name-squat farm. Verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-08T15:15:00Z",
+   "candidate": {
+    "chain": "ethereum",
+    "key": "imd-swarm-network",
+    "note": "IMD identity.md agent swarm — 2,000 NFT seats, ERC-8004, open-source workers",
+    "type": "project"
+   },
+   "scores": {
+    "website": 12,
+    "twitter_growth": 10,
+    "organic_activity": 11,
+    "kol_involvement": 7,
+    "ticker_spread": 7,
+    "team_engagement": 9,
+    "fomo_signals": 10
+   },
+   "total": 66,
+   "grade": "B",
+   "notes": "Verified real: 2,000 identity.md NFT seats (one seat per ERC-8004-registered NFT), holder-run open-source workers, 0.5 IMD per paid request via x402 on mainnet, Uniswap v4 POOL4 CappedBurnHook burns 85% of trimmed tokens above cap, 1:1 bridge across ETH/Base/Robinhood Chain, supply already down ~29% (10M -> ~7.1M) since Fren Pet era. Third-party coverage is genuine: coinlook.net + tokenpost.com + weex.com deep dives, IG 44K-follower carousel, Threads video of a third-party founder building pepesfamily.fun ($1.26M all-time volume) on the IMD base pair. Onchain velocity: 370+ active nodes, +200%/week to ~$59.17M mcap. Deductions: no @musegod_rh/@r_alx_z attention, paid external usage still limited (growth may be launch-driven), tokenpost notes docs don't show recurring production work for outside protocols. B = strong social legitimacy with demand-side questions; Snug should weigh the launch-driven-vs-demand-driven growth."
+  },
+  {
+   "scored_at": "2026-10-08T15:15:00Z",
+   "candidate": {
+    "chain": "robinhood",
+    "key": "block-contracts-batch-7",
+    "note": "4 block-watcher contract deployments 2026-10-08T14:58-15:00Z",
+    "type": "collection"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "More serial-launcher output: Dopameme/DOPA + Chop/CHOP (7108-byte family, 5th/6th clones), Capybara With A Gun (3530 family, 2nd clone), one non-token. Zero activity, zero buzz. F = manufacturing line. Verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-08T15:15:00Z",
+   "candidate": {
+    "chain": "solana",
+    "key": "pumpfun-batch-5",
+    "note": "3 pump-fun scout entries found 2026-10-08T15:00Z: FOMO, DEVTRE ALWAYS UP, Super Mario 64 (copycat #2)",
+    "type": "collection"
+   },
+   "scores": {
+    "website": 2,
+    "twitter_growth": 2,
+    "organic_activity": 4,
+    "kol_involvement": 1,
+    "ticker_spread": 3,
+    "team_engagement": 1,
+    "fomo_signals": 5
+   },
+   "total": 18,
+   "grade": "F",
+   "notes": "FOMO: bonded+migrated in ~3 min then -86% in 5 min with two-sided churn = confirmed spike-then-dump, possible wash/bundle. DEVTRE: +780%/5min with 91 txns but ZERO social presence confirmed = strongest momentum + no socials = highest rug risk (same rationale as Haaland/Monopoly Currency). Mario64 copycat #2: 4th name-squat today riding the real Super Mario 64's tweet momentum. Web search for DEVTRE returned no project socials. F = dump artifact + momentum-without-socials + name-squat farm. Verdict skip stands; DEVTRE requeue-worthy only if it survives with socials."
   }
  ],
  "decisions": [
@@ -5316,7 +5625,19 @@
    "comps": "DAO-raise trading-pool tokens are experimental - thin precedent, and what exists lives or dies on the operator's edge plus treasury transparency. PULP's holder spread (top 23.6%, then a flat ~1% tail across 719 holders in 10 min) reads like an organic retail fill, closer to a fair-launch fill pattern than the bundled/sniper distributions seen in today's serial-launcher batches. But 'pool capital to trade the front of the curve from an empty LP' has no durable-value precedent to lean on - this is a strategy bet, not an asset bet.",
    "risks": "Mechanism is high-variance by design: Papertrade launches on Hyperliquid with EMPTY LP and the DAO trades 'the front of the curve from the first block' - front-of-curve trading is where most retail capital dies. Team history unknown - no deliverables cited. Top holder 23.6% (flat tail after, but that whale is a third of the float). Same launch window shares the SAME top holder 0x8366a39C at 35.2% on Socket/SOCKET, which was skipped as possible-farm - farm-adjacent environment even if PULP itself looks organic. No watch-account or musegod buzz. LP-lock concept does not apply (Hyperliquid perps-style exposure, not a locked V2 pair) - the risk is strategy failure, not a rug pull, but the floor is still zero.",
    "recommendation": "watch",
-   "reason": "The first genuinely real launch candidate in today's block-watcher batches: live site, a stated mechanism, 719 holders in 10 min with an organic-looking flat distribution. But the pipeline's executor needs durability to justify an entry, and a DAO-pooled front-of-curve trading strategy with an unknown team is a strategy bet, not a durability bet. Watch for treasury reporting, sustained community, and proof the Papertrade mechanism actually returns capital before any interest. Social grade provisional B pending the social scorer's pass."
+   "reason": "The first genuinely real launch candidate in today's block-watcher batches: live site, a stated mechanism, 719 holders in 10 min with an organic-looking flat distribution. But the pipeline's executor needs durability to justify an entry, and a DAO-pooled front-of-curve trading strategy with an unknown team is a strategy bet, not a durability bet. Watch for treasury reporting, sustained community, and proof the Papertrade mechanism actually returns capital before any interest. Social grade provisional B pending the social scorer's pass.",
+   "score": {
+    "v": 14,
+    "s": 19,
+    "vit": 13,
+    "o": 12,
+    "total": 58,
+    "decision": "watch",
+    "note": "virality: uncertain (stated mechanism, unproven team); entry/exit not set (below 60); DAO raise — no <=0.01 ETH fast-exec path defined"
+   },
+   "processed": true,
+   "processed_at": "2026-10-08T15:07:45Z",
+   "processed_note": "flock-decision run 2026-10-08 11:06 EDT: score 58 -> watch (virality: uncertain (stated mechanism, unproven team); entry/exit not set (below 60); DAO raise — no <=0.01 ETH fast-exec path defined)"
   },
   {
    "broken_down_at": "2026-10-08T15:06:00Z",
@@ -5339,7 +5660,19 @@
    "comps": "Sixth lookalike pool today in the identical-momentum cluster (SOUL, LOSERCORE, Clumsy, BEARY, ZQRA, OG) - all $100-134k h1, ~$7k reserve, ~$260-300k FDV, 53-77 buys / 40-53 sells. The fingerprint matches the pump-fun 'DEV LAST 130k' duplicate-name clusters and prior Base volume farms: manufactured volume screens, not six opportunities. Comparable clusters dump as soon as the seeding wallets rotate.",
    "risks": "COORDINATION RED FLAG: five-plus near-identical pools launched the same hour with uniform stats - one launcher or a coordinated farm. Same scan window carries $0-reserve + $100k+ volume artifacts (AHM/COOK/PLAY), which poisons the whole batch's data quality - if the scout feeds lookalikes, nothing here is independently verifiable. Buys/sells working (not a honeypot) is the only positive. No buzz, no team, no social identity. D grade = manufactured until proven otherwise.",
    "recommendation": "skip",
-   "reason": "Durability rule: D/F = likely skip regardless of other factors. The identical-pool cluster pattern plus the polluted scout data in the same scan window make this a volume farm, not an opportunity. The batch-3 cluster (Clumsy/BEARY/ZQRA) was already skipped on this exact fingerprint; OG is the sixth instance of the same mold. Walk away. Social grade provisional D pending the social scorer's pass."
+   "reason": "Durability rule: D/F = likely skip regardless of other factors. The identical-pool cluster pattern plus the polluted scout data in the same scan window make this a volume farm, not an opportunity. The batch-3 cluster (Clumsy/BEARY/ZQRA) was already skipped on this exact fingerprint; OG is the sixth instance of the same mold. Walk away. Social grade provisional D pending the social scorer's pass.",
+   "score": {
+    "v": 10,
+    "s": 6,
+    "vit": 6,
+    "o": 6,
+    "total": 28,
+    "decision": "skip",
+    "note": "6th identical-momentum pool of the day (volume-farm fingerprint), D social; walk away"
+   },
+   "processed": true,
+   "processed_at": "2026-10-08T15:07:45Z",
+   "processed_note": "flock-decision run 2026-10-08 11:06 EDT: score 28 -> skip (6th identical-momentum pool of the day (volume-farm fingerprint), D social; walk away)"
   },
   {
    "broken_down_at": "2026-10-08T15:06:00Z",
@@ -5362,7 +5695,19 @@
    "comps": "The comparable precedent is ERC-8004 agent-registry networks that built real holder infra (the ACK reputation project also in today's queue has a genuine multi-chain footprint). IMD's swarm is the most documented example: 2,000 NFT seats, 370+ active nodes 5 days after the NFT gate, live burn mechanics. But token-side, +200%/week to $59M on a Sept 25 snapshot with 'paid external usage still limited' reads launch-driven, not demand-driven - the durability of the price is unproven while the network itself is proven.",
    "risks": "Valuation risk: $59.17M mcap (Sept 25 snapshot, 2 weeks old) on limited proven external demand - growth attributed to the NFT-gate launch window, not sustained usage revenue. Not a fresh mint - the pipeline's fast-executor path (free or <=0.01 ETH mints) has no entry here; the token is already liquid at a mid cap, and 2,000 NFT seats are a separate market. Holder bears hardware/model costs, so node count != revenue. dubie-adjacency (IMD is the Swarm Pepe request token) is context, not a thesis.",
    "recommendation": "watch",
-   "reason": "Verified real infrastructure and the strongest project-level durability signal in this run - 370+ active nodes, open-source workers, live burn mechanics. But it is platform intel, not a pipeline candidate: no fresh mint, no <=0.01 ETH entry, and the token's own durability is launch-driven until paid demand is proven. Keep on the watchlist as ecosystem context (especially given the Swarm Pepe IMD flow) and revisit if external paid usage grows or seat markets open. Social grade provisional B pending the social scorer's pass."
+   "reason": "Verified real infrastructure and the strongest project-level durability signal in this run - 370+ active nodes, open-source workers, live burn mechanics. But it is platform intel, not a pipeline candidate: no fresh mint, no <=0.01 ETH entry, and the token's own durability is launch-driven until paid demand is proven. Keep on the watchlist as ecosystem context (especially given the Swarm Pepe IMD flow) and revisit if external paid usage grows or seat markets open. Social grade provisional B pending the social scorer's pass.",
+   "score": {
+    "v": 14,
+    "s": 19,
+    "vit": 12,
+    "o": 13,
+    "total": 58,
+    "decision": "watch",
+    "note": "virality: uncertain (370+ nodes proven, price action launch-driven); not a pipeline entry — $59M liquid token, no <=0.01 ETH mint path; ecosystem context for the IMD-funded Swarm Pepe flow"
+   },
+   "processed": true,
+   "processed_at": "2026-10-08T15:07:45Z",
+   "processed_note": "flock-decision run 2026-10-08 11:06 EDT: score 58 -> watch (virality: uncertain (370+ nodes proven, price action launch-driven); not a pipeline entry — $59M liquid token, no <=0.01 ETH mint path; ecosystem context for the IMD-funded Swarm Pepe flow)"
   }
  ],
  "scouts": [
@@ -5375,9 +5720,9 @@
   "pons-family"
  ],
  "last_activity": {
-  "scout": "2026-10-08T15:06:05.932Z",
-  "hymn": "2026-10-08T15:16:00Z",
-  "scorer": "2026-10-08T14:51:23Z",
+  "scout": "2026-10-08T15:08:32.479Z",
+  "hymn": "2026-10-08T15:19:00Z",
+  "scorer": "2026-10-08T15:15:00Z",
   "snug": "2026-10-08T15:06:00Z",
   "cardigan": "2026-10-08T15:06:00Z"
  }

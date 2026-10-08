@@ -1,37 +1,11 @@
 {
- "updated_at": "2026-10-08T21:18:54.063Z",
+ "updated_at": "2026-10-08T21:20:53.296Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-08T21:15:17.437Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "water WATER",
-   "muse": "",
-   "contract": "0x1c3d8c8375e4ba59c2fe1c1d791a9089b22c464c",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x1d3ac42b9d92311919bc392fbc2ac8fe6279cd23d6e8d58dafa2570a685ce392",
-   "block": 83618530,
-   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83618530 (tx 0x1d3ac42b9d92311919bc392fbc2ac8fe6279cd23d6e8d58dafa2570a685ce392); name=water symbol=WATER. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
-  },
-  {
-   "found_at": "2026-10-08T21:15:19.283Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "T Rowe Price Group Inc TROW",
-   "muse": "",
-   "contract": "0x0440c232558e19d6b9e2f5b1ee7682f8f49dd485",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x1b63ce0c811d928cb3420de677e86d6f67e92ff2aa1cf6cccdf6f0c8446cb85a",
-   "block": 83618565,
-   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83618565 (tx 0x1b63ce0c811d928cb3420de677e86d6f67e92ff2aa1cf6cccdf6f0c8446cb85a); name=T Rowe Price Group Inc symbol=TROW. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
-  },
   {
    "found_at": "2026-10-08T21:15:20.751Z",
    "scout": "pons-family",
@@ -589,9 +563,31 @@
    "tx_hash": "0xf1518ff705d1542ba122ba83cf012a64750351ccaed56eca757d9c14f422fc62",
    "block": 83445792,
    "detail": "new contract deployed in block 83445792"
+  },
+  {
+   "found_at": "2026-10-08T21:19:01.117Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xab418a099f3bbd863dee5a704bf10e1c4aaa342c",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xe220ec9846116b08a8c212a776077ef374293321837375ea4cc1aba382428624",
+   "block": 83445865,
+   "detail": "new contract deployed in block 83445865"
+  },
+  {
+   "found_at": "2026-10-08T21:19:30.150Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xafbb6409dc3057abbec36736210a1dad916bd87c",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x6d24458443f54345d791a597a3bccfb4375ba4feb6331c3d0bccf5cab2b5c948",
+   "block": 83445998,
+   "detail": "new contract deployed in block 83445998"
   }
  ],
- "scout_queue_total": 3379,
+ "scout_queue_total": 3381,
  "investigations": [
   {
    "candidate": {
@@ -8722,6 +8718,967 @@
    "social_grade": "F (9/100)",
    "snug_broken_down": true,
    "snug_processed_at": "2026-10-08T20:31:00Z"
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0xfe6a5e85d827fda310102bf918e00fbdf5fac834",
+    "name_hint": "HeldAt HELDAT",
+    "scout": "pons-family",
+    "type": "token",
+    "chain": "robinhood",
+    "block": 83551966,
+    "found_at": "2026-10-08T19:25:31.698Z",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83551966 (tx 0xb1f42cd2c2f44a47ef6303fbb6d9d9891702da494718c994bee61adfc816144c); name=HeldAt symbol=HELDAT. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:21:40.923Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "V4 liquidity lookup failed (fetch failed); gate used V2 figures only",
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "holder scan hit rate limits; concentration is partial data",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "HeldAt",
+     "onchain_symbol": "HELDAT",
+     "has_code": true,
+     "transfers_in_window": 5,
+     "holders_positive": 2,
+     "top1_pct": 99.99,
+     "top_holders": [
+      {
+       "addr": "0xf6e7e8fbb3044899c83cb8b05734b273f58704a5",
+       "pct": 99.99
+      },
+      {
+       "addr": "0xd0ae037645e08ac253f214f7fba035b1cfc72881",
+       "pct": 0
+      }
+     ],
+     "blocks_span": 69661,
+     "error": null
+    }
+   },
+   "velocity": "5 transfers since launch (~123 min ago, block 83551966); 2 holders; top1 99.99% — no velocity, supply undeployed",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "pons launch HeldAt/HELDAT, ~2h old. deployer holds ~100%; no distribution, no X buzz (@r_alx_z/@musegod_rh silent). gate_warn thin-data consistent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0xb288864eba248ae31b5d790e5058382152516b5e",
+    "name_hint": "Ghost Chain Evolution GHOST",
+    "scout": "pons-family",
+    "type": "token",
+    "chain": "robinhood",
+    "block": 83552600,
+    "found_at": "2026-10-08T19:25:32.515Z",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83552600 (tx 0x7577531da80f977d851adb9a5e3174547fc1d383d0f19abf8e31761b22e3b6ca); name=Ghost Chain Evolution symbol=GHOST. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:27:11.152Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "Ghost Chain Evolution",
+     "onchain_symbol": "GHOST",
+     "has_code": true,
+     "transfers_in_window": 6,
+     "holders_positive": 1,
+     "top1_pct": 100,
+     "top_holders": [
+      {
+       "addr": "0x516b15c274f62601ed0d2f9e147f789171072000",
+       "pct": 100
+      }
+     ],
+     "blocks_span": 69046,
+     "error": null
+    }
+   },
+   "velocity": "6 transfers since launch (~121 min ago, block 83552600); 1 holders; top1 100% — no velocity, supply undeployed",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "pons launch Ghost Chain Evolution/GHOST, ~2h old. deployer holds ~100%; no distribution, no X buzz (@r_alx_z/@musegod_rh silent). gate_warn thin-data consistent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0xdebb3d1d7f08809d2553bc8768d4efd594e6f252",
+    "name_hint": "Blobly BLOB",
+    "scout": "pons-family",
+    "type": "token",
+    "chain": "robinhood",
+    "block": 83554340,
+    "found_at": "2026-10-08T19:25:34.532Z",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83554340 (tx 0xbdf99e13583d292290a2ddd4a5324f9456620ff90bc7aae6d82229786dc41461); name=Blobly symbol=BLOB. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:28:02.080Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "Blobly",
+     "onchain_symbol": "BLOB",
+     "has_code": true,
+     "transfers_in_window": 6,
+     "holders_positive": 1,
+     "top1_pct": 100,
+     "top_holders": [
+      {
+       "addr": "0xc312f71b3036b7550e3f2d33a2fa1da1960f73a6",
+       "pct": 100
+      }
+     ],
+     "blocks_span": 67320,
+     "error": null
+    }
+   },
+   "velocity": "6 transfers since launch (~118 min ago, block 83554340); 1 holders; top1 100% — no velocity, supply undeployed",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "pons launch Blobly/BLOB, ~2h old. deployer holds ~100%; no distribution, no X buzz (@r_alx_z/@musegod_rh silent). gate_warn thin-data consistent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0x42ac162bcd4e38df839354d149d9cc7b94c110b9",
+    "name_hint": "DEATHBOX DTX",
+    "scout": "pons-family",
+    "type": "token",
+    "chain": "robinhood",
+    "block": 83554441,
+    "found_at": "2026-10-08T19:25:35.159Z",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83554441 (tx 0xfccaba4a0839a863fed9d3933ee8fa0f438689b6c395ba8bb773d7bef0459f6f); name=DEATHBOX symbol=DTX. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:28:52.161Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "DEATHBOX",
+     "onchain_symbol": "DTX",
+     "has_code": true,
+     "transfers_in_window": 1,
+     "holders_positive": 1,
+     "top1_pct": 100,
+     "top_holders": [
+      {
+       "addr": "0x3b3cdfbd537dac173f2b788d9acc8d746b7060a2",
+       "pct": 100
+      }
+     ],
+     "blocks_span": 67239,
+     "error": null
+    }
+   },
+   "velocity": "1 transfers since launch (~118 min ago, block 83554441); 1 holders; top1 100% — no velocity, supply undeployed",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "pons launch DEATHBOX/DTX, ~2h old. deployer holds ~100%; no distribution, no X buzz (@r_alx_z/@musegod_rh silent). gate_warn thin-data consistent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0x44391497345e5f5fc29a10caf27cd6b47db19756",
+    "name_hint": "inus inus",
+    "scout": "pons-family",
+    "type": "token",
+    "chain": "robinhood",
+    "block": 83554976,
+    "found_at": "2026-10-08T19:25:35.780Z",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83554976 (tx 0xdbce62e226b84e828d439999b7ccf0b90abd2672d998ad8c7e4c393a4dabe300); name=inus symbol=inus. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:29:15.066Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "inus",
+     "onchain_symbol": "inus",
+     "has_code": true,
+     "transfers_in_window": 9,
+     "holders_positive": 1,
+     "top1_pct": 100,
+     "top_holders": [
+      {
+       "addr": "0x5aa630965d2fea04952f0990dfc0126eebbb2030",
+       "pct": 100
+      }
+     ],
+     "blocks_span": 66728,
+     "error": null
+    }
+   },
+   "velocity": "9 transfers since launch (~117 min ago, block 83554976); 1 holders; top1 100% — no velocity, supply undeployed",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "pons launch inus/inus, ~2h old. deployer holds ~100%; no distribution, no X buzz (@r_alx_z/@musegod_rh silent). gate_warn thin-data consistent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0x2b513c36c6fab99bd218589ac9d7c17ba6584ca7",
+    "name_hint": "Card Flow CRDFLW",
+    "scout": "pons-family",
+    "type": "token",
+    "chain": "robinhood",
+    "block": 83555258,
+    "found_at": "2026-10-08T19:25:36.475Z",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83555258 (tx 0x255adbd5f87acf7b2448f022cac1166e9e2e39ace836f602d67bea830791a31a); name=Card Flow symbol=CRDFLW. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:29:27.184Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "Card Flow",
+     "onchain_symbol": "CRDFLW",
+     "has_code": true,
+     "transfers_in_window": 59,
+     "holders_positive": 4,
+     "top1_pct": 99.96,
+     "top_holders": [
+      {
+       "addr": "0x31990c15c9dc78d77775b439847bfe690b35fe34",
+       "pct": 99.96
+      },
+      {
+       "addr": "0xef8e3e70660d7799587e2e808a0034747b5bc59f",
+       "pct": 0.03
+      },
+      {
+       "addr": "0x4224b12808e805dd2928b8ac1b936b03934f147a",
+       "pct": 0
+      },
+      {
+       "addr": "0x8f10b468b06c6fd214b65f87778827f7d113f996",
+       "pct": 0
+      }
+     ],
+     "blocks_span": 66465,
+     "error": null
+    }
+   },
+   "velocity": "59 transfers since launch (~117 min ago, block 83555258); 4 holders; top1 99.96% — no velocity, supply undeployed",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "pons launch Card Flow/CRDFLW, ~2h old. deployer holds ~100%; no distribution, no X buzz (@r_alx_z/@musegod_rh silent). gate_warn thin-data consistent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0x7d6b7ec8fa6f0443a76877e9b53319f1ac658a10",
+    "name_hint": "The Mister Turtle TURTLE",
+    "scout": "pons-family",
+    "type": "token",
+    "chain": "robinhood",
+    "block": 83555691,
+    "found_at": "2026-10-08T19:25:37.790Z",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83555691 (tx 0xfe7cc493d853052d4b688b42aa5c8e3128e8c3c331f2c2d6f744e52f9b99083e); name=The Mister Turtle symbol=TURTLE. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:29:38.782Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (4 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "The Mister Turtle",
+     "onchain_symbol": "TURTLE",
+     "has_code": true,
+     "transfers_in_window": 45,
+     "holders_positive": 3,
+     "top1_pct": 97.23,
+     "top_holders": [
+      {
+       "addr": "0x9af0f7b1e688f6a21c87709252144404919562c4",
+       "pct": 97.23
+      },
+      {
+       "addr": "0x0bef522e493236a650217208528f70ab0dcb65b5",
+       "pct": 2.76
+      },
+      {
+       "addr": "0x000000000000000000000000000000000000dead",
+       "pct": 0
+      }
+     ],
+     "blocks_span": 66047,
+     "error": null
+    }
+   },
+   "velocity": "45 transfers since launch (~116 min ago, block 83555691); 3 holders; top1 97.23% — no velocity, supply undeployed",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "pons launch The Mister Turtle/TURTLE, ~2h old. deployer holds ~100%; no distribution, no X buzz (@r_alx_z/@musegod_rh silent). gate_warn thin-data consistent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0xd66dccb2ea7aaa4e70533dc5554887d1b2934390",
+    "name_hint": "Grok Bot Room GBR",
+    "scout": "pons-family",
+    "type": "token",
+    "chain": "robinhood",
+    "block": 83555775,
+    "found_at": "2026-10-08T19:25:38.694Z",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83555775 (tx 0x416e975b18ac64e7fc200b2e2f50d113844f05224455b29b32a1cf3b6b5f5387); name=Grok Bot Room symbol=GBR. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:29:53.238Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "Grok Bot Room",
+     "onchain_symbol": "GBR",
+     "has_code": true,
+     "transfers_in_window": 6,
+     "holders_positive": 2,
+     "top1_pct": 99.99,
+     "top_holders": [
+      {
+       "addr": "0x2b36c75625aac447dcb7a66150354ad89847552c",
+       "pct": 99.99
+      },
+      {
+       "addr": "0xbeedae5a91e0d7eb9253d68fec049f246e923512",
+       "pct": 0
+      }
+     ],
+     "blocks_span": 65973,
+     "error": null
+    }
+   },
+   "velocity": "6 transfers since launch (~116 min ago, block 83555775); 2 holders; top1 99.99% — no velocity, supply undeployed",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "pons launch Grok Bot Room/GBR, ~2h old. deployer holds ~100%; no distribution, no X buzz (@r_alx_z/@musegod_rh silent). gate_warn thin-data consistent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0x8abc90a8ef365ce3d8ad4afbc211a969fb6678d1",
+    "name_hint": "100 100",
+    "scout": "pons-family",
+    "type": "token",
+    "chain": "robinhood",
+    "block": 83556031,
+    "found_at": "2026-10-08T19:25:39.341Z",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83556031 (tx 0xc0b92aa2cf6e8467a404dcdb6c8a92d25595e5b66af34849999a0beebe5ed9e4); name=100 symbol=100. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:29:59.967Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "100",
+     "onchain_symbol": "100",
+     "has_code": true,
+     "transfers_in_window": 3,
+     "holders_positive": 2,
+     "top1_pct": 99.99,
+     "top_holders": [
+      {
+       "addr": "0xd8f70dcece2b6ffd6b254333c326d75c8508be76",
+       "pct": 99.99
+      },
+      {
+       "addr": "0xf0176abd7a3546e702b3b3ec56c01e57ecb38465",
+       "pct": 0
+      }
+     ],
+     "blocks_span": 65737,
+     "error": null
+    }
+   },
+   "velocity": "3 transfers since launch (~116 min ago, block 83556031); 2 holders; top1 99.99% — no velocity, supply undeployed",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "pons launch 100/100, ~2h old. deployer holds ~100%; no distribution, no X buzz (@r_alx_z/@musegod_rh silent). gate_warn thin-data consistent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0x443578f9912b10811b830a7a738c47da5f4b9742",
+    "name_hint": "rasyn RASYN",
+    "scout": "pons-family",
+    "type": "token",
+    "chain": "robinhood",
+    "block": 83556731,
+    "found_at": "2026-10-08T19:25:40.701Z",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83556731 (tx 0xf7274d2da7993a6d34e434f5b721fc73a89709fbe4dc59ce56deabe86ea0dcc6); name=rasyn symbol=RASYN. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:30:13.322Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "rasyn",
+     "onchain_symbol": "RASYN",
+     "has_code": true,
+     "transfers_in_window": 45,
+     "holders_positive": 4,
+     "top1_pct": 99.76,
+     "top_holders": [
+      {
+       "addr": "0x8b061f6e604dfd425303628a95272429bc9c7f5b",
+       "pct": 99.76
+      },
+      {
+       "addr": "0x000000000000000000000000000000000000dead",
+       "pct": 0.23
+      },
+      {
+       "addr": "0xf9192e77667aad9bb00d23a333f4c2853f54e131",
+       "pct": 0
+      },
+      {
+       "addr": "0x2fef7f4e2b2a46ec05fb6730aad2af7bd3b689ac",
+       "pct": 0
+      }
+     ],
+     "blocks_span": 65046,
+     "error": null
+    }
+   },
+   "velocity": "45 transfers since launch (~114 min ago, block 83556731); 4 holders; top1 99.76% — no velocity, supply undeployed",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "pons launch rasyn/RASYN, ~2h old. deployer holds ~100%; no distribution, no X buzz (@r_alx_z/@musegod_rh silent). gate_warn thin-data consistent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0x508f5b83b6a65ea6549e44c26d1ecfb97f7d403f",
+    "name_hint": "Vibepad v",
+    "scout": "pons-family",
+    "type": "token",
+    "chain": "robinhood",
+    "block": 83556968,
+    "found_at": "2026-10-08T19:25:41.366Z",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83556968 (tx 0x3052cabcd03108fd81d23de461366f4bc9d2be87e85d6f2106c60a0c09988706); name=Vibepad symbol=v. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:30:25.844Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "Vibepad",
+     "onchain_symbol": "v",
+     "has_code": true,
+     "transfers_in_window": 6,
+     "holders_positive": 1,
+     "top1_pct": 100,
+     "top_holders": [
+      {
+       "addr": "0xc227f04d4c3c85a5eed7ffb4c3969d945e8ba315",
+       "pct": 100
+      }
+     ],
+     "blocks_span": 64829,
+     "error": null
+    }
+   },
+   "velocity": "6 transfers since launch (~114 min ago, block 83556968); 1 holders; top1 100% — no velocity, supply undeployed",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "pons launch Vibepad/v, ~2h old. deployer holds ~100%; no distribution, no X buzz (@r_alx_z/@musegod_rh silent). gate_warn thin-data consistent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0xc27e5364a787d3b447350f40786c3ecd7b57aea9",
+    "name_hint": "Derrax World DRX",
+    "scout": "pons-family",
+    "type": "token",
+    "chain": "robinhood",
+    "block": 83556971,
+    "found_at": "2026-10-08T19:25:42.079Z",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83556971 (tx 0x11ae3ea99afc163f2075b1191e92580fcd70e119e56036fee8846aab98704aca); name=Derrax World symbol=DRX. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:30:54.142Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "Derrax World",
+     "onchain_symbol": "DRX",
+     "has_code": true,
+     "transfers_in_window": 21,
+     "holders_positive": 2,
+     "top1_pct": 99.99,
+     "top_holders": [
+      {
+       "addr": "0x72f71fc329cad588b5a924cba5f38ae1a0a51bf3",
+       "pct": 99.99
+      },
+      {
+       "addr": "0x8e89837fe077bd6caa9d63c19305d0f2fe84fde7",
+       "pct": 0
+      }
+     ],
+     "blocks_span": 64959,
+     "error": null
+    }
+   },
+   "velocity": "21 transfers since launch (~114 min ago, block 83556971); 2 holders; top1 99.99% — no velocity, supply undeployed",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "pons launch Derrax World/DRX, ~2h old. deployer holds ~100%; no distribution, no X buzz (@r_alx_z/@musegod_rh silent). gate_warn thin-data consistent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0x5ba29891a4d2b042d8d34509aa15778ebf28bc3d",
+    "name_hint": "rasyn RASYN",
+    "scout": "pons-family",
+    "type": "token",
+    "chain": "robinhood",
+    "block": 83557151,
+    "found_at": "2026-10-08T19:25:42.838Z",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83557151 (tx 0xf9ce09076425fdc5da10bb0541460291eacd3dc320257b16a8f75814d29896d8); name=rasyn symbol=RASYN. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:31:07.484Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "rasyn",
+     "onchain_symbol": "RASYN",
+     "has_code": true,
+     "transfers_in_window": 3,
+     "holders_positive": 1,
+     "top1_pct": 100,
+     "top_holders": [
+      {
+       "addr": "0x3a60616bc3ee928d972c987e72a3a4d879500fdd",
+       "pct": 100
+      }
+     ],
+     "blocks_span": 64930,
+     "error": null
+    }
+   },
+   "velocity": "3 transfers since launch (~114 min ago, block 83557151); 1 holders; top1 100% — no velocity, supply undeployed",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "pons launch rasyn/RASYN, ~2h old. deployer holds ~100%; no distribution, no X buzz (@r_alx_z/@musegod_rh silent). gate_warn thin-data consistent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0x088841cdedb93d1c75ec73b58725981ecdfed3cd",
+    "name_hint": "Robinhood Chain Chain",
+    "scout": "pons-family",
+    "type": "token",
+    "chain": "robinhood",
+    "block": 83557623,
+    "found_at": "2026-10-08T19:25:43.484Z",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83557623 (tx 0x71fad84df20ad63de7df544597a21eed290701b73c4a17f5bdc0a8f65ecdf4bb); name=Robinhood Chain symbol=Chain. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:31:23.795Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (4 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "Robinhood Chain",
+     "onchain_symbol": "Chain",
+     "has_code": true,
+     "transfers_in_window": 22,
+     "holders_positive": 7,
+     "top1_pct": 99.99,
+     "top_holders": [
+      {
+       "addr": "0x5c0da5654228ca45f16707e948f848d3b35860f6",
+       "pct": 99.99
+      },
+      {
+       "addr": "0xcb373b34726803443ffab953449c60e6d3141dfa",
+       "pct": 0
+      },
+      {
+       "addr": "0x1e9cec1a621ea64eda3db12d4a844124f30eb6f0",
+       "pct": 0
+      },
+      {
+       "addr": "0xd42affab5fc01117c03e929187ed6885ad67d6a4",
+       "pct": 0
+      },
+      {
+       "addr": "0xd657bf12b59dfde3573c521abc3b111b62dfe3c5",
+       "pct": 0
+      }
+     ],
+     "blocks_span": 64670,
+     "error": null
+    }
+   },
+   "velocity": "22 transfers since launch (~113 min ago, block 83557623); 7 holders; top1 99.99% — no velocity, supply undeployed",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "pons launch Robinhood Chain/Chain, ~2h old. deployer holds ~100%; no distribution, no X buzz (@r_alx_z/@musegod_rh silent). gate_warn thin-data consistent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0x1d3d1bf144bea5c1e45f24999dbfa41339dcf400",
+    "name_hint": "HeMachiMan MACHI",
+    "scout": "pons-family",
+    "type": "token",
+    "chain": "robinhood",
+    "block": 83557854,
+    "found_at": "2026-10-08T19:25:44.830Z",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83557854 (tx 0x8150c6064a3e8035c7daf490273afec8d9ee930484a81b3a36ab605f504253a7); name=HeMachiMan symbol=MACHI. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:32:10.775Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "HeMachiMan",
+     "onchain_symbol": "MACHI",
+     "has_code": true,
+     "transfers_in_window": 4,
+     "holders_positive": 1,
+     "top1_pct": 100,
+     "top_holders": [
+      {
+       "addr": "0xf243a3d143020001554c6a8a454537b0bbfedf55",
+       "pct": 100
+      }
+     ],
+     "blocks_span": 64638,
+     "error": null
+    }
+   },
+   "velocity": "4 transfers since launch (~112 min ago, block 83557854); 1 holders; top1 100% — no velocity, supply undeployed",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "pons launch HeMachiMan/MACHI, ~2h old. deployer holds ~100%; no distribution, no X buzz (@r_alx_z/@musegod_rh silent). gate_warn thin-data consistent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0x8a7cf5fb17e70e0273e296af5777e848f5cfb842",
+    "name_hint": "foment FOMENT",
+    "scout": "pons-family",
+    "type": "token",
+    "chain": "robinhood",
+    "block": 83558186,
+    "found_at": "2026-10-08T19:25:45.501Z",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83558186 (tx 0xd0ff68e87468e25f4417ce54ce23c2993770a3b1291e336b9288076eaced6649); name=foment symbol=FOMENT. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:32:25.106Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "foment",
+     "onchain_symbol": "FOMENT",
+     "has_code": true,
+     "transfers_in_window": 3,
+     "holders_positive": 1,
+     "top1_pct": 100,
+     "top_holders": [
+      {
+       "addr": "0x0b332a0d6cb9c2e02fa55e59fcef93bfb9c41fac",
+       "pct": 100
+      }
+     ],
+     "blocks_span": 64388,
+     "error": null
+    }
+   },
+   "velocity": "3 transfers since launch (~112 min ago, block 83558186); 1 holders; top1 100% — no velocity, supply undeployed",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "pons launch foment/FOMENT, ~2h old. deployer holds ~100%; no distribution, no X buzz (@r_alx_z/@musegod_rh silent). gate_warn thin-data consistent. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0x2dfb2643d2729eb5249f558f266770fe4d805dbc",
+    "name_hint": null,
+    "scout": "block-watcher",
+    "type": "contract",
+    "chain": "robinhood",
+    "block": 83447422,
+    "found_at": "2026-10-08T19:25:17.668Z",
+    "detail": "new contract deployed in block 83447422",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T18:21:26.359Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped"
+    ],
+    "findings": {
+     "onchain_name": null,
+     "onchain_symbol": null,
+     "has_code": true,
+     "transfers_in_window": 0,
+     "holders_positive": 0,
+     "top1_pct": null,
+     "top_holders": [],
+     "blocks_span": 174180,
+     "error": null
+    }
+   },
+   "velocity": "0 transfers; no name()/symbol() — not a token contract",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "bare contract deployment (no ERC-20 name/symbol), zero transfers — nothing to trade. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0x56502725b6595612f4a324df804303baf5bd673e",
+    "name_hint": null,
+    "scout": "block-watcher",
+    "type": "contract",
+    "chain": "robinhood",
+    "block": 83447994,
+    "found_at": "2026-10-08T19:26:27.804Z",
+    "detail": "new contract deployed in block 83447994",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:11:58.012Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": null,
+     "onchain_symbol": null,
+     "has_code": true,
+     "transfers_in_window": 0,
+     "holders_positive": 0,
+     "top1_pct": null,
+     "top_holders": [],
+     "blocks_span": 174684,
+     "error": null
+    }
+   },
+   "velocity": "0 transfers; no name()/symbol() — not a token contract",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "bare contract deployment (no ERC-20 name/symbol), zero transfers — nothing to trade. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0x9597df7be0186f02fd834644a980bf5c8bb4e65f",
+    "name_hint": null,
+    "scout": "block-watcher",
+    "type": "contract",
+    "chain": "robinhood",
+    "block": 83449740,
+    "found_at": "2026-10-08T19:29:23.058Z",
+    "detail": "new contract deployed in block 83449740",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:12:02.985Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": null,
+     "onchain_symbol": null,
+     "has_code": true,
+     "transfers_in_window": 0,
+     "holders_positive": 0,
+     "top1_pct": null,
+     "top_holders": [],
+     "blocks_span": 172954,
+     "error": null
+    }
+   },
+   "velocity": "0 transfers; no name()/symbol() — not a token contract",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "bare contract deployment (no ERC-20 name/symbol), zero transfers — nothing to trade. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0x0bd7d308f8e1639fab988df18a8011f41eacad73",
+    "name_hint": null,
+    "scout": "whale-watcher",
+    "type": "whale-convergence",
+    "chain": "robinhood",
+    "block": null,
+    "found_at": "2026-10-08T19:25:57.305Z",
+    "detail": "CONVERGENCE: 2 whale EOA wallets accumulating WETH (0x0bd7d308f8e1639fab988df18a8011f41eacad73) on robinhood within one scan window; combined $41,195 received. Largest: whale 0xfbcc34e25937282a3d0fbde054a9a49e9968c51a (~$506,630 assets) received $16,038 in tx 0xb75c094ce39f1a7660e3472798d9ff1498612ae604ccc4e5a3f794d798621283",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T19:00:06.226Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": "WETH",
+     "onchain_symbol": "WETH",
+     "has_code": true,
+     "transfers_in_window": 0,
+     "holders_positive": 0,
+     "top1_pct": null,
+     "top_holders": [],
+     "blocks_span": 21156,
+     "error": null
+    }
+   },
+   "velocity": "3,805 WETH transfers in last 2,000 blocks (~20 min) — canonical Robinhood WETH, baseline flow",
+   "social_signal": "weak",
+   "money_flow": "whale",
+   "verdict": "skip",
+   "investigator": "humming-hymn",
+   "note": "whale-watcher flagged 2 whale EOAs accumulating $41,195 WETH, but the target is canonical WETH itself — whales wrapping/receiving ETH, not a token trade signal. convergence flag is a false positive for trading. skip."
+  },
+  {
+   "investigated_at": "2026-10-08T21:19:27.805Z",
+   "candidate": {
+    "contract": "0x98096d17e191b3da1d5f99a6d7b3584351b11e18",
+    "name_hint": null,
+    "scout": "whale-watcher",
+    "type": "whale-convergence",
+    "chain": "robinhood",
+    "block": null,
+    "found_at": "2026-10-08T19:25:57.305Z",
+    "detail": "CONVERGENCE: 2 whale EOA wallets accumulating BONER (0x98096d17e191b3da1d5f99a6d7b3584351b11e18) on robinhood within one scan window; combined $24,273 received. Largest: whale 0x43f25e482f1e438bb32badd7741b9cddacffe825 (~$172,803 assets) received $16,714 in tx 0xf3fc90d18264107e219723ce5e9b357e567a38860de2e9cc73621ef85bfe2697",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T20:32:48.871Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "V4: pool discovery found 1029 pools; state reads capped at 500 (totalEth is a lower bound)"
+    ],
+    "findings": {
+     "onchain_name": "Boner Coin",
+     "onchain_symbol": "BONER",
+     "has_code": true,
+     "transfers_in_window": 670,
+     "holders_positive": 67,
+     "top1_pct": 41.69,
+     "top_holders": [
+      {
+       "addr": "0xca5feb4cfaf2e8b33d8042b61c04833e388c8eaf",
+       "pct": 41.69
+      },
+      {
+       "addr": "0xbcbbc230d3331a8ce4df68d3b402a04338534745",
+       "pct": 14.7
+      },
+      {
+       "addr": "0x845db51c71077fd7a1352955bcdd8dc689ecbd7e",
+       "pct": 10.39
+      },
+      {
+       "addr": "0x9cbdcbcf8b59914c2bf3ef9adf5c73978043a37c",
+       "pct": 8.44
+      },
+      {
+       "addr": "0x3098d7588bfffe46ea62f8a51fc86487669a1ae3",
+       "pct": 8.2
+      }
+     ],
+     "blocks_span": 21190,
+     "error": null
+    }
+   },
+   "velocity": "670 transfers / ~34-min window; 67 net-positive window holders; 24h volume ~$2.9-3.2M per trackers; price ~$0.045-0.06, mcap ~$46-66M (sources 1-6d old); steady high activity, no sudden spike — established market",
+   "social_signal": "strong",
+   "money_flow": "whale",
+   "verdict": "promising",
+   "investigator": "humming-hymn",
+   "note": "exact-contract match to tracked market (bitget/coindataflow list 0x9809…11e18). Long.xyz launch Aug 2026, paired with tokenized HIMS; mainstream coverage last 48h (trader $3.8k→$1M story, TokenPost/Webull/Defiant), influencer eric holds. whale-watcher: 2 whale EOAs accumulated $24,273 combined (largest 0x43f25e48 ~$172k assets took $16,714). top1 41.69% likely BONER/HIMS pool. risks: played narrative, down ~16%/24h per 2-day-old data, $50-60M mcap = late-entry risk. needs social-credit grade."
   }
  ],
  "scores": [
@@ -13502,6 +14459,1198 @@
    "total": 16,
    "grade": "F",
    "notes": "V2 pair, 14 buys/1 sell (~7.98 WETH), 15 distinct buyers, 13 holders, top1 40.7%. real sell observed (not honeypot-leaning). BUT: zero verifiable social footprint for THIS token — no website, no X account, no KOLs, no team engagement found. 'boar' sits in a cloned name family on Robinhood chain (HoodBoar/HOODBOAR exists at 0x297D1fFDdD5FbDCd133110370AA251Ee772B67E3, plus 'ABOAR - Allegra Boar' on token lists) — farmed-name risk: do NOT attribute HoodBoar legitimacy to this pair; exact token contract unverified (RPC degraded). score is social-legitimacy only; onchain momentum is real but identity-unverified. needs X/website identity proof before any trust."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "collection",
+    "chain": "robinhood",
+    "key": "block-contracts-batch-8",
+    "note": "3 block-watcher contract deployments 2026-10-08T15:01-15:02Z"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Three non-token app/infra contracts (0xe6e7e005 13730b, 0x8b30e296 6120b, 0x6dda359c 32952b) — no name()/symbol(), nothing tradeable. Zero social footprint. F = infra debris, not a launch."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "block-contracts-batch-9",
+    "note": "0x0159c076831ed04265ed1f7455dbe5889b292ee1 deployed block 83394542",
+    "contract": "0x0159c076831ed04265ed1f7455dbe5889b292ee1",
+    "block": 83394542
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "1190-byte non-token contract (no name()/symbol()), no transfers. Infra debris; F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "block-contracts-batch-16c",
+    "note": "0xe6e7e005fccc5e5fead353b40356f883e53daf18 re-flagged 2026-10-08T15:26Z (block 83393682)",
+    "contract": "0xe6e7e005fccc5e5fead353b40356f883e53daf18",
+    "block": 83393682
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Re-flag of the non-token app/infra contract already covered in block-contracts-batch-8 (13730b). Nothing tradeable, no new signal. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "block-contracts-20261008-1530a",
+    "note": "1 block-watcher contract deployment, block 83394159",
+    "contract": "0x8b30e296ecebb03731621e6df313e7e4b5034106",
+    "block": 83394159
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Bare non-token deploy (3059b), 0 Transfer logs in the 3000-block window covering deploy. Infra debris; F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "block-contracts-20261008-1530b",
+    "note": "1 block-watcher contract deployment, block 83394239",
+    "contract": "0x6dda359ce34939f96f91fb05789aeece80637b6d",
+    "block": 83394239
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Bare non-token deploy (16475b), 0 Transfer logs in the 3000-block window covering deploy. Infra debris; F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "block-contracts-20261008-1535c",
+    "note": "1 block-watcher contract deployment, block 83394542",
+    "contract": "0x0159c076831ed04265ed1f7455dbe5889b292ee1",
+    "block": 83394542
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Bare non-token deploy (594b), 0 Transfer logs in the 3000-block window covering deploy. Infra debris; F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "block-contract-0xa5e21af3",
+    "note": "1 block-watcher contract deployment, block 83417442",
+    "contract": "0xa5e21af3e4685a8a6f1c8ee2b665060a29f2256a",
+    "block": 83417442
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "3336-byte non-token (name()/symbol() revert), 0 transfers since deploy. Infra; F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "block-contracts-batch-17-non-token",
+    "note": "22 block-watcher contract deployments 2026-10-08T17:15-17:31Z (blocks 83438801-83442301)"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "22 infra/factory/vault/stub deploys (262B-34.2KB), none expose ERC-20 metadata onchain. Not mint candidates. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "block-contracts-batch-18-empty",
+    "note": "4 block-watcher contract deployments 2026-10-08T17:16-17:22Z"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "4 deploys return 0x code at latest — self-destructed, failed, or never-realized. Nothing to score. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "block-contract-0x0034",
+    "note": "0x00344844739b38678e30f47405cbd19ff001f52a deployed block 83442766 (re-entry)",
+    "contract": "0x00344844739b38678e30f47405cbd19ff001f52a",
+    "block": 83442766
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Duplicate of the already-scored contract (F 5/100, 18:05Z): same non-token deploy (block 83442766), zero Transfer events across ~30k blocks, no token, no name, nothing to search. F consistent."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "whale-move",
+    "chain": "robinhood",
+    "key": "whale-weth-defi-flow-17h15",
+    "note": "114 whale-move handoffs 2026-10-08T17:15:34Z, $1.618M total, max single $1.218M",
+    "contract": "0x0bd7d308f8e1639fab988df18a8011f41eacad73",
+    "name": "WETH"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Surveillance, not a launch: 100% contract receivers = DEX/pool/router flow per standing rule; the watcher's 'CONVERGENCE: 11 whale wallets accumulating' label describes the same routing cluster. No candidate socials to grade. F = absence of launch footprint, not scam evidence."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "whale-move",
+    "chain": "robinhood",
+    "key": "whale-pons-treasury-flow-17h15",
+    "note": "13 whale-move handoffs 2026-10-08T17:15:34Z, $659.5K total; largest $517,849.43 to 0x8366a39c",
+    "contract": "0x39dbed3a2bd333467115de45665cc57f813c4571",
+    "name": "PONS"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Surveillance, not a launch: all 13 receivers are contracts; the $517K PONS move went to 0x8366a39cc670b4001a1121b8f6a443a643e40951 (~$104.5M assets, holds WETH/PONS/ORBIO + many tokens) = treasury/LP-manager rebalancing, not buy pressure on a candidate. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "whale-move",
+    "chain": "robinhood",
+    "key": "whale-equity-eoa-accumulation-17h15",
+    "note": "17 EOA-receiver whale moves 2026-10-08T17:15:34Z across tokenized stocks on Robinhood chain",
+    "contract": "multiple tokenized equities",
+    "name": "NVDA/CRCL/MSTR/SPCX/META/AI/SPY/COST/QQQ"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 1,
+    "ticker_spread": 2,
+    "team_engagement": 1,
+    "fomo_signals": 3
+   },
+   "total": 12,
+   "grade": "F",
+   "notes": "Smart-money equity rotation recorded for the whale ledger, NOT a mint-pipeline candidate: 0x36cd75f8d0dc (~$112K assets) bought NVDA $42.3K + MSTR $77.6K + META $44.6K + COST $18.6K + QQQ $46.8K (~$230K tech-equity basket in one window); 0x1a18a8b96eac (~$7.28M) bought CRCL $61.0K + MSTR $57.4K + NVDA $6.2K + SPCX $6.0K; 0x9f736f87e629 5x ~$15.05K SPY ladder (~$75.3K, uniform = DCA/limit ladder); 0xc39b02dc117d AI $20.9K. F = no launch to grade socially (not a scam flag); official-vs-mimic contract verification recommended before any touch given today's stock-token mimic farms."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "whale-convergence",
+    "chain": "robinhood",
+    "key": "whale-weth-20261008",
+    "note": "3 whale EOAs received $15,141 WETH combined, 2026-10-08T18:25Z",
+    "contract": "0x0bd7d308f8e1639fab988df18a8011f41eacad73",
+    "token": "WETH"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Surveillance: whale WETH flows are gas/liquidity positioning (flat velocity), not a buyable momentum candidate. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-fec1db2c-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0xfec1db2c1f6d343babec820f4856e9b05d28bb27"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-855396ca-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0x855396ca1fac41412ac662bb18e4af3ec8318d97"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-6569d7fd-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0x6569d7fddf4836edf83d184647b63f17f575a128"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-165a840d-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0x165a840d13130c6fa816fddd0a22c293cde52e02"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-9c17e875-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0x9c17e875ae78d577813245f18b26235d1596b0b5"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-ee39cc15-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0xee39cc15e7558f5d7eeae5bcf1092bd41c1bac06"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-8e665024-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0x8e665024e39cc87c76141525e539751a459a09e0"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-0576aeab-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0x0576aeab7ec037be5794ba9e9530166e28923f60"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-7991e730-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0x7991e730928957aa98585af84b6fb71c7080766b"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-cb65e082-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0xcb65e082f9924efc2baec8b9f4b9070b1a80c8aa"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-b23db46a-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0xb23db46ae528be499f8147f6820e5937e87040f8"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-7e93b74f-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0x7e93b74feb7c40fee07d8424fd807a02d26e469b"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-139ed705-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0x139ed70553aef2b6c57e7e3ab2f68de8875654e5"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-6fa9ae37-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0x6fa9ae372994f2d12bbd81caddca4476f781bfe8"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-362cf1e2-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0x362cf1e22b5b63ee70a0734f49e0e564a34ace44"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-f4681dfd-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0xf4681dfd5eb5434f4589f6c2df6fbcd96eb29cd9"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-cb2292f4-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0xcb2292f4f59b086315c91d085b15f5d58ded0217"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-20495823-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0x20495823e222e6104b28fb415f8bed979df1da32"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-491e835d-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0x491e835daf2f52e235007f8eb0fbeaedfe2bd562"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-f17bf5c6-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0xf17bf5c6032d57924cd9ed8828ed261846b2f4e4"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": "dead-contract-3238bbc7-20261008",
+    "note": "byte-identical 1,557-byte contract deployed ~3s apart by deployer 0x302ded5271",
+    "contract": "0x3238bbc7d6bc695afa7e5ec3e056a6e0381f1e94"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "One of 21 byte-identical 1557-byte contracts deployed ~3s apart by the same deployer 0x302ded5271 — serial-launcher farm burst, zero transfers. Zero social footprint. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83445409",
+    "contract": "0xe44cf88975013be1a98ced6e0e524e5f201b5c18",
+    "block": 83445409
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83445437",
+    "contract": "0x8e20c892f66733c5333c5a58cd96a1b86ddbe7ae",
+    "block": 83445437
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83445467",
+    "contract": "0xb3dcfd3403bf6fbf225ed233887a4a9b03789efa",
+    "block": 83445467
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83445498",
+    "contract": "0x0bb3eba94b0b8c763800ce2287de972c59307601",
+    "block": 83445498
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83445526",
+    "contract": "0x90e2f1a8bd27e3fd2cbdaa08fd00bb921282f4d7",
+    "block": 83445526
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83445556",
+    "contract": "0xa0db162015c66557088c3fb7dffbcf56e31a1410",
+    "block": 83445556
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83445585",
+    "contract": "0x38c7d447366629a8533da914d615691dac512e74",
+    "block": 83445585
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83445615",
+    "contract": "0x72b12971478af5e1b540f0695a58112cf29ca25d",
+    "block": 83445615
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83445644",
+    "contract": "0x9db13a9a34e4b5a220a981d247596734482c5b91",
+    "block": 83445644
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83445673",
+    "contract": "0xc04f825e9abe5e27ca43adb115720d78991f0f0b",
+    "block": 83445673
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83445702",
+    "contract": "0x689da7f786192dfc03efaf0f80b6a161790757f3",
+    "block": 83445702
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83445732",
+    "contract": "0x254837ed2f2e53d1bfed221b181e11b7bcef0d45",
+    "block": 83445732
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83445762",
+    "contract": "0x8450ad2767dc75ffdd2d0d847b75ac65fbb4a714",
+    "block": 83445762
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83445792",
+    "contract": "0x8361d88a9081bcb84d044bdf4918af0529ee4fa3",
+    "block": 83445792
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83445865",
+    "contract": "0xab418a099f3bbd863dee5a704bf10e1c4aaa342c",
+    "block": 83445865
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83446738",
+    "contract": "0x43dc31983178aaee25fda0308df5a959c18d31a8",
+    "block": 83446738
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83446816",
+    "contract": "0xbf307eb97089a478cb58630b60016fc5572d18ad",
+    "block": 83446816
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
+  },
+  {
+   "scored_at": "2026-10-08T21:20:12Z",
+   "candidate": {
+    "type": "contract",
+    "chain": "robinhood",
+    "key": null,
+    "note": "new contract deployed in block 83447063",
+    "contract": "0xb0599d8c548f73450ea48227bc01ef187d7be5ea",
+    "block": 83447063
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Non-token deploy (name()/symbol() unreadable), 0 transfers / 0 holders in 30k-block window. Infra debris. F."
   }
  ],
  "decisions": [
@@ -17046,7 +19195,7 @@
   }
  ],
  "tracking": {
-  "updated_at": "2026-10-08T21:14:23.329Z",
+  "updated_at": "2026-10-08T21:19:19.675Z",
   "records": [
    {
     "id": "solana:2nuqbwhuiqwwcokksaikndzmrpv1kk17zmapn46apump",
@@ -17086,7 +19235,7 @@
     "mcap_now_usd": 46219.91,
     "fdv_now_usd": 46219.91,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T21:14:23.324Z",
+    "mcap_updated_at": "2026-10-08T21:19:19.673Z",
     "mcap_at_scan": 46219.91,
     "mcap_scan_stale_min": 174,
     "mcap_scan_note": null,
@@ -17133,7 +19282,7 @@
     "mcap_now_usd": 3150.05,
     "fdv_now_usd": 3150.05,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T21:14:23.327Z",
+    "mcap_updated_at": "2026-10-08T21:19:19.674Z",
     "mcap_at_scan": 3150.05,
     "mcap_scan_stale_min": 171,
     "mcap_scan_note": null,
@@ -17177,14 +19326,14 @@
     "first_seen_at": "2026-10-08T14:45:47.275Z",
     "watched_duration_min": 20,
     "watched_display": "20m",
-    "mcap_now_usd": 129057,
-    "fdv_now_usd": 129057,
+    "mcap_now_usd": 129069,
+    "fdv_now_usd": 129069,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T21:14:23.327Z",
-    "mcap_at_scan": 100044.18604651163,
+    "mcap_updated_at": "2026-10-08T21:19:19.674Z",
+    "mcap_at_scan": 100053.48837209302,
     "mcap_scan_stale_min": 163,
     "mcap_scan_note": null,
-    "mcap_at_decision": 100044.18604651163,
+    "mcap_at_decision": 100053.48837209302,
     "mcap_decision_stale_min": 143,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -17227,7 +19376,7 @@
     "mcap_now_usd": 1885,
     "fdv_now_usd": 1885,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T21:14:23.327Z",
+    "mcap_updated_at": "2026-10-08T21:19:19.674Z",
     "mcap_at_scan": 1901.9281563655575,
     "mcap_scan_stale_min": 89,
     "mcap_scan_note": null,
@@ -17271,14 +19420,14 @@
     "first_seen_at": "2026-10-08T16:24:24.311Z",
     "watched_duration_min": 10,
     "watched_display": "10m",
-    "mcap_now_usd": 22189,
-    "fdv_now_usd": 22189,
+    "mcap_now_usd": 26947,
+    "fdv_now_usd": 26947,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T21:14:23.327Z",
-    "mcap_at_scan": 11944.844905320108,
+    "mcap_updated_at": "2026-10-08T21:19:19.674Z",
+    "mcap_at_scan": 11943.10244988864,
     "mcap_scan_stale_min": 65,
     "mcap_scan_note": null,
-    "mcap_at_decision": 11944.844905320108,
+    "mcap_at_decision": 11943.10244988864,
     "mcap_decision_stale_min": 55,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -17378,14 +19527,14 @@
     "first_seen_at": "2026-10-08T16:44:33.260Z",
     "watched_duration_min": 16,
     "watched_display": "16m",
-    "mcap_now_usd": 2309430,
-    "fdv_now_usd": 2294398,
+    "mcap_now_usd": 2514169,
+    "fdv_now_usd": 2294397,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T21:14:23.327Z",
-    "mcap_at_scan": 2288238.295855602,
+    "mcap_updated_at": "2026-10-08T21:19:19.674Z",
+    "mcap_at_scan": 2491098.5775940306,
     "mcap_scan_stale_min": 44,
     "mcap_scan_note": null,
-    "mcap_at_decision": 2288238.295855602,
+    "mcap_at_decision": 2491098.5775940306,
     "mcap_decision_stale_min": 28,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -17428,7 +19577,7 @@
     "mcap_now_usd": 10809,
     "fdv_now_usd": 10809,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T21:14:23.327Z",
+    "mcap_updated_at": "2026-10-08T21:19:19.674Z",
     "mcap_at_scan": 20457.033333333333,
     "mcap_scan_stale_min": 44,
     "mcap_scan_note": null,
@@ -17475,7 +19624,7 @@
     "mcap_now_usd": 11887035,
     "fdv_now_usd": 11887035,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T21:14:23.327Z",
+    "mcap_updated_at": "2026-10-08T21:19:19.674Z",
     "mcap_at_scan": 11496804.053030305,
     "mcap_scan_stale_min": 94,
     "mcap_scan_note": null,
@@ -17541,14 +19690,14 @@
     "first_seen_at": "2026-10-08T14:32:53.814Z",
     "watched_duration_min": 177,
     "watched_display": "2h57m",
-    "mcap_now_usd": 40030520,
-    "fdv_now_usd": 40030520,
+    "mcap_now_usd": 40185733,
+    "fdv_now_usd": 40185733,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T21:14:23.327Z",
-    "mcap_at_scan": 39108858.37170663,
+    "mcap_updated_at": "2026-10-08T21:19:19.674Z",
+    "mcap_at_scan": 39102713.24539007,
     "mcap_scan_stale_min": 186,
     "mcap_scan_note": null,
-    "mcap_at_decision": 39108858.37170663,
+    "mcap_at_decision": 39102713.24539007,
     "mcap_decision_stale_min": 9,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -17591,7 +19740,7 @@
     "mcap_now_usd": 10722,
     "fdv_now_usd": 10722,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T21:14:23.327Z",
+    "mcap_updated_at": "2026-10-08T21:19:19.674Z",
     "mcap_at_scan": 155529.01119402985,
     "mcap_scan_stale_min": 19,
     "mcap_scan_note": null,
@@ -17638,7 +19787,7 @@
     "mcap_now_usd": 235351,
     "fdv_now_usd": 235351,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T21:14:23.327Z",
+    "mcap_updated_at": "2026-10-08T21:19:19.674Z",
     "mcap_at_scan": 232820.3440860215,
     "mcap_scan_stale_min": 14,
     "mcap_scan_note": null,
@@ -17685,7 +19834,7 @@
     "mcap_now_usd": 126230,
     "fdv_now_usd": 126230,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T21:14:23.327Z",
+    "mcap_updated_at": "2026-10-08T21:19:19.674Z",
     "mcap_at_scan": 126230,
     "mcap_scan_stale_min": 40,
     "mcap_scan_note": null,
@@ -17732,7 +19881,7 @@
     "mcap_now_usd": 65799,
     "fdv_now_usd": 65799,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T21:14:23.327Z",
+    "mcap_updated_at": "2026-10-08T21:19:19.674Z",
     "mcap_at_scan": 65799,
     "mcap_scan_stale_min": 54,
     "mcap_scan_note": null,
@@ -17779,7 +19928,7 @@
     "mcap_now_usd": 4955669,
     "fdv_now_usd": 4955669,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T21:14:23.327Z",
+    "mcap_updated_at": "2026-10-08T21:19:19.674Z",
     "mcap_at_scan": 4906318.210644332,
     "mcap_scan_stale_min": 160,
     "mcap_scan_note": null,
@@ -17823,14 +19972,14 @@
     "first_seen_at": "2026-10-08T15:06:05.432Z",
     "watched_duration_min": 202,
     "watched_display": "3h22m",
-    "mcap_now_usd": 17870655,
-    "fdv_now_usd": 17870655,
+    "mcap_now_usd": 16983567,
+    "fdv_now_usd": 17873232,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-08T21:14:23.327Z",
-    "mcap_at_scan": 17865244.334558822,
+    "mcap_updated_at": "2026-10-08T21:19:19.674Z",
+    "mcap_at_scan": 16976222.11957791,
     "mcap_scan_stale_min": 208,
     "mcap_scan_note": null,
-    "mcap_at_decision": 17865244.334558822,
+    "mcap_at_decision": 16976222.11957791,
     "mcap_decision_stale_min": 6,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -17960,9 +20109,9 @@
   "whale-watcher"
  ],
  "last_activity": {
-  "scout": "2026-10-08T21:18:51.748Z",
-  "hymn": "2026-10-08T20:19:21.552Z",
-  "scorer": "2026-10-08T20:28:49Z",
+  "scout": "2026-10-08T21:19:30.150Z",
+  "hymn": "2026-10-08T21:19:27.805Z",
+  "scorer": "2026-10-08T21:20:12Z",
   "snug": "2026-10-08T20:31:00Z",
   "cardigan": "2026-10-08T20:31:00Z"
  },

@@ -1,22 +1,11 @@
 {
- "updated_at": "2026-10-08T23:50:54.348Z",
+ "updated_at": "2026-10-08T23:52:56.968Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-08T23:41:20.878Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0x94feeed31ce8903b15d14c888f88ea03cecdfcf6",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0xa13c51640ebffcbab79fbeb9cbf70dde0aee240da50d3f75ce797322ddc50193",
-   "block": 83656553,
-   "detail": "new contract deployed in block 83656553"
-  },
   {
    "found_at": "2026-10-08T23:41:46.069Z",
    "scout": "block-watcher",
@@ -598,9 +587,33 @@
    "tx_hash": "0x4d11d3956da572a144d2fe864ddb1a444980887f5fa41ff81ab65cddd19c1caa",
    "block": 83660213,
    "detail": "new contract deployed in block 83660213"
+  },
+  {
+   "found_at": "2026-10-08T23:51:05.732Z",
+   "scout": "whale-watcher",
+   "type": "whale-convergence",
+   "token": "PONS",
+   "contract": "0x39dbed3a2bd333467115de45665cc57f813c4571",
+   "chain": "robinhood",
+   "tx_hash": "0xa05160cd774d3ebf7d32b37e3c9661b47d92a33a51875c4c5d750497dbc709c5",
+   "detail": "CONVERGENCE: 5 whale EOA wallets accumulating PONS (0x39dbed3a2bd333467115de45665cc57f813c4571) on robinhood within one scan window; combined $1,954,509 received. Largest: whale 0x09671d2a9a43bf70cd282318f75c9c9f122a0440 (~$1,069,500 assets) received $1,069,500 in tx 0xa05160cd774d3ebf7d32b37e3c9661b47d92a33a51875c4c5d750497dbc709c5",
+   "converging_whales": 5,
+   "converging_wallets": [
+    "0xa64723bfdc2805c4ad09c509983cfd85362298ba",
+    "0x4cc3627264cfc3b100d13eaa6c2c813285685be4",
+    "0x98a3c6c89f58dc7029bc5d304abda44fcd373987",
+    "0x09671d2a9a43bf70cd282318f75c9c9f122a0440",
+    "0xc0e17ad342afabd36b3971f8305ff147006962ae"
+   ],
+   "combined_amount_usd": 1954509.16,
+   "whale": "0x09671d2a9a43bf70cd282318f75c9c9f122a0440",
+   "whale_assets_usd": 1069500.11,
+   "amount_usd": 1069500,
+   "convergence": true,
+   "receiver_is_contract": false
   }
  ],
- "scout_queue_total": 3846,
+ "scout_queue_total": 3847,
  "investigations": [
   {
    "candidate": {
@@ -14832,7 +14845,9 @@
    "verdict": "needs-snug",
    "notes": "MEME/'A Meme Coin': $12M mcap, $483k liquidity (uniswap 0x46525dc1...), price $0.012 (-10.76% 24h, +0.55% 1h). 3 whale EOAs converged $63,129 (largest 0xe34207a2... $251k assets took $46,785 in tx 0xdef42f8c...). Contract has owner() 0xeb7c... with no dangerous selectors; top-10 EOA holders only 0.84% — healthy distribution. Social: shill posts ('touching 8-12m MC', 'take off is sooon') AND fraud accusations ('true fraud', 'pure insider dump' in CN, 'sell your MEME, it only goes lower'). @musegod_rh/@r_alx_z silent on it. Borderline: real whale money on a real market, but downtrend + FUD + sell-pressure parity. Needs social grading + durability breakdown.",
    "social_scored_at": "2026-10-08T23:50:11Z",
-   "social_grade": "C (55/100)"
+   "social_grade": "C (55/100)",
+   "snug_processed_at": "2026-10-08T23:51:46.730353+00:00",
+   "snug_broken_down": true
   },
   {
    "investigated_at": "2026-10-08T23:48:05.201Z",
@@ -31674,6 +31689,41 @@
    "gate_warnings": [
     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
    ]
+  },
+  {
+   "broken_down_at": "2026-10-08T23:51:46.730353+00:00",
+   "candidate": {
+    "contract": "0x385f4f8ae47651ce5f58f5265395a669f8281e18",
+    "scout": "whale-watcher",
+    "chain": "robinhood",
+    "found_at": "2026-10-08T20:52:47.471Z",
+    "type": "whale-convergence",
+    "name": "MEME",
+    "detail": "CONVERGENCE: 3 whale EOA wallets accumulating MEME (0x385f4f8ae47651ce5f58f5265395a669f8281e18) on robinhood within one scan window; combined $63,129 received. Largest: whale 0xe34207a261ff91edf99282b1590ca7047296ed37 (~$251,180 assets) received $46,785 in tx 0xdef42f8c412c0b23bac8dac7964f4b868c6bd3d6decb9c718dd64c4f5b1a8dec",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T18:58:45.597Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped"
+    ]
+   },
+   "investigation": {
+    "key": null,
+    "verdict": "needs-snug",
+    "velocity": "24h 919 buys/914 sells, vol $269k; 1h 6b/21s; 5m 1b/2s — activity real but sell pressure matches buys",
+    "social_signal": "mixed",
+    "money_flow": "whale",
+    "investigated_at": "2026-10-08T23:48:05.201Z",
+    "social_grade": "C (55/100)",
+    "notes": "MEME/'A Meme Coin': $12M mcap, $483k liquidity (uniswap 0x46525dc1...), price $0.012 (-10.76% 24h, +0.55% 1h). 3 whale EOAs converged $63,129 (largest 0xe34207a2... $251k assets took $46,785 in tx 0xdef42f8c...). Contract has owner() 0xeb7c... with no dangerous selectors; top-10 EOA holders only 0.84% — healthy distribution. Social: shill posts ('touching 8-12m MC', 'take off is sooon') AND fraud accusations ('true fraud', 'pure insider dump' in CN, 'sell your MEME, it only goes lower'). @musegod_rh/@r_alx_z silent on it. Borderline: real whale money on a real market, but downtrend + FUD + sell-pressure parity. Needs social grading + durability breakdown."
+   },
+   "social_grade": "C",
+   "social_total": 55,
+   "durability": "uncertain",
+   "comps": "Same token's own September launch ($3M->$150M in hours on the tokenized-AMC narrative, then -55% in 24h, cryptobriefing launch-week coverage) is the archetype: explosive event-driven spike, hard mean reversion, long fade. CEX-listed culture coins (Binance Spot, KuCoin Alpha, Bybit, Hyperliquid here) reliably hold a liquidity floor from listings but keep bleeding for weeks after peak. This re-sight window is indistinguishable from the 23:34Z window already broken down at 23:41Z — same $63.1k 3-whale convergence, same -10.7% 24h print. Prior MEME breakdowns today never exceeded 'watch' and each re-flag printed weaker (B/68 -> C/59 -> C/55 social grade; mcap $16M -> $12M).",
+   "risks": "Falling knife: $150M Sept peak -> ~$12M now (-10.76% 24h, ~-56% 1mo); 919 buys vs 914 sells means sell pressure matches whale bids — convergence is dip-catching, not one-way accumulation. Concentration: top-5 onchain ~75% of tracked supply on a $483k-liquidity book (thin enough to break). Farm-nexus overlap: 0x8366a39C is top-2 holder (14.46%), same wallet circle top-holding today's SPY/IBM/NVDA mimic-scam tokens + Socket/PaperDAO farm tokens. 1.5% buy/sell tax; anonymous team; LP-lock unverified (gate warning: no V2 WETH pair on known factory). Social grade degraded all day (68->55): narrative fading, not building; FUD ('pure insider dump', CN fraud claims) now sits alongside the shill flow.",
+   "recommendation": "watch",
+   "reason": "Sixth MEME durability breakdown today and this re-sight adds nothing new over the 23:41Z breakdown: identical convergence window (3 EOA whales, $63,129 in-window, largest receiver ~$251k assets), identical social C/55, identical ~$12M mcap, identical balanced buy/sell flow. The genuine positives stand (official X @amemecoinrh, CEX listings, press, Vlad Tenev follow, sells working, healthy top-10 EOA dispersion) but durability stays uncertain: lower-lows trend, ~75% top-5 concentration, farm-nexus whale as top-2 holder, 1.5% tax, anon team, unverified LP lock, narrative decay. Consistent with all five prior MEME breakdowns (watch only): watch for a price base + stabilization before any interest, do not buy this dip-convergence now."
   }
  ],
  "tracking": {
@@ -32873,11 +32923,11 @@
   "whale-watcher"
  ],
  "last_activity": {
-  "scout": "2026-10-08T23:50:04.964Z",
+  "scout": "2026-10-08T23:51:05.732Z",
   "hymn": "2026-10-08T23:48:05.201Z",
   "scorer": "2026-10-08T23:50:11Z",
-  "snug": "2026-10-08T23:41:07.316066+00:00",
-  "cardigan": "2026-10-08T23:41:07.316066+00:00"
+  "snug": "2026-10-08T23:51:46.730353+00:00",
+  "cardigan": "2026-10-08T23:51:46.730353+00:00"
  },
  "challenge": {
   "wallet": "0xa554e642ac0fe1bbeeea26df17644ad8fce00ecc",
@@ -32917,8 +32967,8 @@
     "tx_hash": "0x9dd64a59b56f07d62b92d7900ad2c79f2d5f1bb3d007ca08a7dd03c743ffdb8e",
     "entered_at": "2026-10-08T21:51:09.592Z",
     "entry_price_usd": 0.0423,
-    "current_price_usd": 0.04439,
-    "pnl_pct": 4.940898345153669,
+    "current_price_usd": 0.04426,
+    "pnl_pct": 4.633569739952727,
     "amount_tokens": 289.1701,
     "amount_eth_in": 0.005,
     "score": 69,
@@ -32967,7 +33017,7 @@
   "realized_pnl_pct_total": 0
  },
  "paper_trades": {
-  "as_of": "2026-10-08T23:47:11.466Z",
+  "as_of": "2026-10-08T23:52:20.195Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -32986,7 +33036,7 @@
     "seeded": true,
     "score": 66,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01202,
+    "last_price_usd": 0.01212,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -32997,8 +33047,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.000461270670147953,
-    "unrealized_pnl_pct": 4.61270670147953
+    "unrealized_pnl_eth": 0.0005483028720626626,
+    "unrealized_pnl_pct": 5.483028720626626
    },
    {
     "id": "pt-muzwwuzb-27",
@@ -33009,7 +33059,7 @@
     "seeded": true,
     "score": 63,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01202,
+    "last_price_usd": 0.01212,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -33020,8 +33070,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.000461270670147953,
-    "unrealized_pnl_pct": 4.61270670147953
+    "unrealized_pnl_eth": 0.0005483028720626626,
+    "unrealized_pnl_pct": 5.483028720626626
    },
    {
     "id": "pt-mv02u5pe-52",
@@ -33032,7 +33082,7 @@
     "seeded": false,
     "score": 69,
     "entry_price_usd": 0.04243,
-    "last_price_usd": 0.04439,
+    "last_price_usd": 0.04426,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -33043,8 +33093,8 @@
     "mcap_at_scan": 42788142.46528106,
     "mcap_at_decision": 42788142.46528106,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0004619373085081291,
-    "unrealized_pnl_pct": 4.619373085081291
+    "unrealized_pnl_eth": 0.00043129860947442865,
+    "unrealized_pnl_pct": 4.312986094744287
    },
    {
     "id": "pt-mv03ww45-53",
@@ -33055,7 +33105,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3543,
+    "last_price_usd": 0.3537,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -33066,8 +33116,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.000183960908306986,
-    "unrealized_pnl_pct": 1.8396090830698597
+    "unrealized_pnl_eth": 0.00016671457315320604,
+    "unrealized_pnl_pct": 1.6671457315320604
    },
    {
     "id": "pt-mv03wwab-54",

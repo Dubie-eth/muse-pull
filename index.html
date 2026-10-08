@@ -34,6 +34,22 @@
   .grade-B { color: #a371f7; font-weight: bold; }
   .grade-C { color: #d29922; font-weight: bold; }
   .grade-D, .grade-F { color: #f85149; font-weight: bold; }
+  .links { margin-top: 6px; }
+  .links a { color: #58a6ff; text-decoration: none; font-size: 0.75rem; margin-right: 10px; }
+  .links a:hover { text-decoration: underline; }
+  .orders { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-bottom: 32px; }
+  .wallet-card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 16px; }
+  .wallet-card h2 { font-size: 1rem; margin-bottom: 12px; color: #58a6ff; }
+  .wallet-card .addr { font-family: monospace; font-size: 0.8rem; word-break: break-all; }
+  .wallet-card .bal { font-size: 1.4rem; font-weight: bold; margin: 8px 0; }
+  .pnl-up { color: #3fb950; font-weight: bold; }
+  .pnl-down { color: #f85149; font-weight: bold; }
+  @media (max-width: 600px) {
+    .flow { flex-wrap: nowrap; }
+    .stage { min-width: 150px; padding: 12px; }
+    .stage .count { font-size: 1.5rem; }
+    body { padding: 12px; }
+  }
 </style>
 </head>
 <body>
@@ -41,6 +57,9 @@
 <div style="margin-bottom: 20px;"><a href="/keys.html" style="color: #58a6ff; text-decoration: none; font-size: 0.9rem;">🔑 agent keys & models →</a></div>
 <p class="subtitle">network of muses working together · $1m challenge</p>
 <p class="updated" id="updated">loading…</p>
+
+<h2 style="margin-bottom:12px">💰 Live Orders &amp; PnL</h2>
+<div class="orders" id="orders"></div>
 
 <h2 style="margin-bottom:12px">Live Pipeline</h2>
 <div class="flow" id="flow"></div>
@@ -54,11 +73,55 @@
 </div>
 
 <script>
+// per-ticker links for anything that reached the decision stage
+function linksFor(c) {
+  const links = [];
+  const addr = c.contract || c.mint || '';
+  const chain = String(c.chain || '').toLowerCase();
+  if (/^0x[a-fA-F0-9]{40}$/.test(addr)) {
+    if (chain === 'robinhood') {
+      links.push(['explorer', `https://robinhoodchain.blockscout.com/address/${addr}`]);
+      links.push(['dexscreener', `https://dexscreener.com/robinhood/${addr}`]);
+    } else if (chain === 'base') {
+      links.push(['basescan', `https://basescan.org/address/${addr}`]);
+      links.push(['dexscreener', `https://dexscreener.com/base/${addr}`]);
+    }
+  } else if (addr && chain === 'solana') {
+    links.push(['pump.fun', `https://pump.fun/coin/${addr}`]);
+    links.push(['dexscreener', `https://dexscreener.com/solana/${addr}`]);
+    links.push(['solscan', `https://solscan.io/token/${addr}`]);
+  }
+  const q = encodeURIComponent(c.symbol || c.name || addr);
+  if (q) links.push(['x search', `https://x.com/search?q=${q}`]);
+  if (!links.length) return '';
+  return `<div class="links">${links.map(([t, u]) => `<a href="${u}" target="_blank" rel="noopener">${t} ↗</a>`).join('')}</div>`;
+}
+
 async function load() {
   try {
     const r = await fetch('data/snapshot.json?t=' + Date.now());
     const d = await r.json();
     document.getElementById('updated').textContent = 'last updated: ' + new Date(d.updated_at).toLocaleString();
+
+    // challenge orders & pnl
+    const esc = s => String(s ?? '').replace(/</g, '&lt;');
+    const pnlCls = v => v == null ? '' : (v >= 0 ? 'pnl-up' : 'pnl-down');
+    const pnlTxt = v => v == null ? '—' : (v >= 0 ? '+' : '') + v.toFixed(1) + '%';
+    const ch = d.challenge;
+    let ordersHtml = '';
+    if (ch) {
+      const wlink = `https://robinhoodchain.blockscout.com/address/${ch.wallet}`;
+      ordersHtml += `<div class="wallet-card"><h2>🏦 Challenge wallet</h2><div class="addr"><a href="${wlink}" target="_blank" style="color:#58a6ff">${esc(ch.wallet)}</a></div><div class="bal">${ch.eth_balance != null ? ch.eth_balance.toFixed(4) + ' ETH' : '—'}</div><div class="meta" style="font-size:0.8rem;color:#8b949e">${esc(ch.note || '')}</div></div>`;
+      const open = ch.open_positions || [];
+      ordersHtml += `<div class="wallet-card"><h2>📈 Open positions (${open.length})</h2>` + (open.length ? open.map(p =>
+        `<div class="item"><span class="tag promising">${esc(p.symbol || p.name || '')}</span><span class="${pnlCls(p.pnl_pct)}">${pnlTxt(p.pnl_pct)}</span><br><span style="color:#8b949e">entry $${p.entry_price_usd ?? '—'} → now $${p.current_price_usd ?? '—'}</span>${linksFor(p)}<br><time>${esc(p.entered_at || '')}</time></div>`).join('') : '<p style="color:#8b949e">none yet</p>') + `</div>`;
+      const closed = ch.closed_trades || [];
+      ordersHtml += `<div class="wallet-card"><h2>📕 Closed trades (${closed.length})</h2><div style="margin-bottom:8px">realized: <span class="${pnlCls(ch.realized_pnl_pct_total)}">${pnlTxt(ch.realized_pnl_pct_total)}</span></div>` + (closed.length ? closed.map(t =>
+        `<div class="item"><span class="tag">${esc(t.symbol || t.name || '')}</span><span class="${pnlCls(t.pnl_pct)}">${pnlTxt(t.pnl_pct)}</span>${linksFor(t)}</div>`).join('') : '<p style="color:#8b949e">none yet</p>') + `</div>`;
+    } else {
+      ordersHtml = '<p style="color:#8b949e">challenge data loading…</p>';
+    }
+    document.getElementById('orders').innerHTML = ordersHtml;
 
     // flow diagram
     const stages = [
@@ -82,9 +145,9 @@ async function load() {
     document.getElementById('invest-items').innerHTML = d.investigations.slice(-10).reverse().map(x =>
       `<div class="item"><span class="tag ${x.verdict === 'skip' ? 'skip' : x.verdict === 'promising' ? 'promising' : 'warn'}">${esc(x.verdict)}</span>${esc(x.candidate?.name || x.candidate?.contract || '')}<br><span style="color:#8b949e">social: ${esc(x.social_signal)} · money: ${esc(x.money_flow)}</span><br><time>${esc(x.investigated_at)}</time></div>`).join('') || '<p style="color:#8b949e">empty</p>';
     document.getElementById('score-items').innerHTML = d.scores.slice(-10).reverse().map(x =>
-      `<div class="item"><span class="grade-${x.grade}">${esc(x.grade)}</span> (${x.total}/100) ${esc(x.candidate?.name || '')}<br><time>${esc(x.scored_at)}</time></div>`).join('') || '<p style="color:#8b949e">empty</p>';
+      `<div class="item"><span class="grade-${x.grade}">${esc(x.grade)}</span> (${x.total}/100) ${esc(x.candidate?.name || '')}${linksFor(x.candidate || {})}<br><time>${esc(x.scored_at)}</time></div>`).join('') || '<p style="color:#8b949e">empty</p>';
     document.getElementById('decision-items').innerHTML = d.decisions.slice(-10).reverse().map(x =>
-      `<div class="item"><span class="tag ${x.recommendation === 'skip' ? 'skip' : 'promising'}">${esc(x.recommendation)}</span>${esc(x.reason || '')}<br><time>${esc(x.broken_down_at)}</time></div>`).join('') || '<p style="color:#8b949e">empty</p>';
+      `<div class="item"><span class="tag ${x.recommendation === 'skip' ? 'skip' : 'promising'}">${esc(x.recommendation)}</span>${esc(x.candidate?.symbol || x.candidate?.name || '')} <span style="color:#8b949e">${esc(x.candidate?.contract || x.candidate?.mint || '')}</span><br>${esc(x.reason || '')}${linksFor(x.candidate || {})}<br><time>${esc(x.broken_down_at)}</time></div>`).join('') || '<p style="color:#8b949e">empty</p>';
   } catch (e) {
     document.getElementById('updated').textContent = 'waiting for first data snapshot…';
   }

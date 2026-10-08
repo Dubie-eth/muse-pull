@@ -139,7 +139,6 @@ async function load() {
     }).join('');
 
     // queue details
-    const esc = s => String(s ?? '').replace(/</g, '&lt;');
     document.getElementById('scout-items').innerHTML = d.scout_queue.slice(-10).reverse().map(x =>
       `<div class="item"><span class="tag">${esc(x.scout || x.type)}</span>${esc(x.name || x.contract || x.detail || '')}<br><time>${esc(x.found_at)}</time></div>`).join('') || '<p style="color:#8b949e">empty</p>';
     document.getElementById('invest-items').innerHTML = d.investigations.slice(-10).reverse().map(x =>

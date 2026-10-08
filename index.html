@@ -152,7 +152,7 @@ async function load() {
 
     // flow diagram
     const stages = [
-      { name: 'Scouts', count: d.scout_queue.length, meta: d.scouts.join(', ') || 'scanning…', key: 'scout' },
+      { name: 'Scouts', count: d.scout_queue_total || d.scout_queue.length, meta: d.scouts.join(', ') || 'scanning…', key: 'scout' },
       { name: 'Humming Hymn', count: d.investigations.length, meta: 'investigates', key: 'hymn' },
       { name: 'Social Scorer', count: d.scores.length, meta: 'grades A–F', key: 'scorer' },
       { name: 'Blanket Snug', count: d.decisions.length, meta: 'durability', key: 'snug' },

@@ -1,44 +1,11 @@
 {
- "updated_at": "2026-10-09T02:10:52.059Z",
+ "updated_at": "2026-10-09T02:12:53.612Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-09T01:46:36.054Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xa7a78f64a33709b359323154692c681519695821",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0x2e182ca20b633245343edab4f02d09e5102dedf7ca556e5d1506953098910ac5",
-   "block": 83694264,
-   "detail": "new contract deployed in block 83694264"
-  },
-  {
-   "found_at": "2026-10-09T01:47:29.242Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0x78e5192005ff7f31fdc34b4ca8f8ea03b9b70d2e",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0x8c2834a873f08cf7c0453ec3d6179288ef3c1e6a900f691e585ee4f837975a35",
-   "block": 83694693,
-   "detail": "new contract deployed in block 83694693"
-  },
-  {
-   "found_at": "2026-10-09T01:47:37.934Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xdf4ca4e1698260ea18aec40347be88310e4e93f4",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0xa64ba5f1cd3856daba7174a0bf76d71346a092c62d767813bf65ca912d2a222f",
-   "block": 83694750,
-   "detail": "new contract deployed in block 83694750"
-  },
   {
    "found_at": "2026-10-09T01:47:39.954Z",
    "scout": "block-watcher",
@@ -855,9 +822,42 @@
    "tx_hash": "0x69110553b8f1c8ca67dc8961d5bd1f1896960c591f84170b747fe36f8d838879",
    "block": 83659191,
    "detail": "new contract deployed in block 83659191"
+  },
+  {
+   "found_at": "2026-10-09T02:11:10.043Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x6372a72e95e748ca808d05f7476d6cfde587c5d3",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x741c55495a8a7f38f5c57424acfb0ec18731386dab5c03b667a7eaacfc845993",
+   "block": 83659344,
+   "detail": "new contract deployed in block 83659344"
+  },
+  {
+   "found_at": "2026-10-09T02:12:19.464Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x99f01bc4173c70dcf4f966327c28300c5546c1f5",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xdc15a1f5522c1f31243821e0cf37605d386e4e849256c6b2371cdc18c94717e0",
+   "block": 83659593,
+   "detail": "new contract deployed in block 83659593"
+  },
+  {
+   "found_at": "2026-10-09T02:12:42.840Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x98ec6e06482765795c21b3ef39faa3be1674a87b",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xfb6f808405bff793f6b75b1d568eddf62fded8e0974d67abecaba847395ca05b",
+   "block": 83659687,
+   "detail": "new contract deployed in block 83659687"
   }
  ],
- "scout_queue_total": 4217,
+ "scout_queue_total": 4220,
  "investigations": [
   {
    "candidate": {
@@ -24481,6 +24481,4438 @@
    "notes": "Endow/ENDW pons launch: no DexScreener pair, no X buzz, no holder growth. no signal to grade.",
    "social_scored_at": "2026-10-09T02:07:39Z",
    "social_grade": "F (5/100)"
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:24:05.525Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Signals SIGNALS",
+    "muse": "",
+    "contract": "0xe0f3b7e7c301703908757fd7a99740d1b00e766b",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xee875184e2794542dbea17fe35580169d16e800bcfea445e94beae842f942678",
+    "block": 83624255,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83624255 (tx 0xee875184e2794542dbea17fe35580169d16e800bcfea445e94beae842f942678); name=Signals symbol=SIGNALS. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:52:14.004Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 51 transfers / 19 holders in ~4h since launch; single creator mint to 0xdeff3660, no DEX pool, no liquidity. pons farm spray (Signals SIGNALS).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "Signals SIGNALS — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:24:12.484Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "KENZO KENZO",
+    "muse": "",
+    "contract": "0xe59806178512650b12b5fe4c7362eef4011e1eec",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x7547b50e2c6ebbe92addb32245f5147411e75387e6cf56bfa1c1933c4b3b6a71",
+    "block": 83624513,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83624513 (tx 0x7547b50e2c6ebbe92addb32245f5147411e75387e6cf56bfa1c1933c4b3b6a71); name=KENZO symbol=KENZO. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:52:16.746Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 15 transfers / 9 holders in ~4h since launch; single creator mint to 0xe45ca810, no DEX pool, no liquidity. pons farm spray (KENZO KENZO).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "KENZO KENZO — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:24:23.983Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "QuantumVault.Trade QVAULT",
+    "muse": "",
+    "contract": "0xe51205ef8e810fbde30bb9608c5cc6eea4aad68a",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x618e71dbdb5505944f26ca25060c78dd5b8aa36e2b7ba5ade0dd356ba7454d61",
+    "block": 83625331,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83625331 (tx 0x618e71dbdb5505944f26ca25060c78dd5b8aa36e2b7ba5ade0dd356ba7454d61); name=QuantumVault.Trade symbol=QVAULT. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:52:18.306Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 176 transfers / 55 holders in ~4h since launch; single creator mint to 0xd545526a, no DEX pool, no liquidity. pons farm spray (QuantumVault.Trade QVAULT).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "QuantumVault.Trade QVAULT — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:24:53.282Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x2dfb2643d2729eb5249f558f266770fe4d805dbc",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0xd1d45d00430c0e59936f3e56be538c842b43e74386bc9c955018ef18ce3acd3e",
+    "block": 83447422,
+    "detail": "new contract deployed in block 83447422",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:52:22.995Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "owner() -> 0x81b655d4eeecf41ffc9aa6397ad52d0d9e014803; no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": "0x81b655d4eeecf41ffc9aa6397ad52d0d9e014803"
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "actor not on denylist; nonce normal"
+       ],
+       "detail": {
+        "actor": "0x81b655d4eeecf41ffc9aa6397ad52d0d9e014803",
+        "actorNonce": 72
+       }
+      }
+     }
+    }
+   },
+   "velocity": "zero transfers since deploy — dead contract / scout noise, nothing to investigate",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "unnamed — block-watcher entry with no onchain activity at all."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:24:53.556Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Poloworix POLO",
+    "muse": "",
+    "contract": "0xa630964d32a9f68c894e94fbecd33e53aecdb62e",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x7197efff3f2a1cb0a98fd95784260c1c4780edf86da4a08c48c78fd1dd915602",
+    "block": 83625919,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83625919 (tx 0x7197efff3f2a1cb0a98fd95784260c1c4780edf86da4a08c48c78fd1dd915602); name=Poloworix symbol=POLO. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:52:24.988Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 9 transfers / 6 holders in ~4h since launch; single creator mint to 0xadcf7d15, no DEX pool, no liquidity. pons farm spray (Poloworix POLO).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "Poloworix POLO — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:25:02.199Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Foundry FNDRY",
+    "muse": "",
+    "contract": "0x5ed9804422e6f5c7e6234f4fbd27caecc81e8e43",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x6c01edcfa5a1f04f3bcd604fb15bf558bc5633a9c2781d57b7660c56dc504ef2",
+    "block": 83626115,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83626115 (tx 0x6c01edcfa5a1f04f3bcd604fb15bf558bc5633a9c2781d57b7660c56dc504ef2); name=Foundry symbol=FNDRY. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:52:32.604Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 1 transfers / 1 holders in ~4h since launch; single creator mint to 0x6d5e51f5, no DEX pool, no liquidity. pons farm spray (Foundry FNDRY).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "Foundry FNDRY — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:25:33.951Z",
+    "scout": "new-pairs",
+    "type": "pair",
+    "pair": "WETH / PMPF",
+    "dex": "0x8bceaa40… v2",
+    "chain": "robinhood",
+    "volume": "2.31 WETH",
+    "detail": "V2 pair created block 83622736 via factory 0x8bceaa40…. 58 swaps since creation (41 buys / 17 sells), ~2.31 WETH volume, reserves 2.09 WETH / 480.9k PMPF",
+    "contract": "0x89866313329a83982ab0e2e398fba8988fd0bf77",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:57:24.130Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "dangerous selectors present (mint(address)) but no owner() — power unattributable",
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "dangerous selectors present (mint(address)) but no owner() — power unattributable"
+       ],
+       "notes": [],
+       "detail": {
+        "selectors": {
+         "mint": [
+          "mint(address)"
+         ],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "360265303183934848",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "zero transfers since deploy — dead contract / scout noise, nothing to investigate",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "unnamed — new-pairs entry with no onchain activity at all."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:25:37.463Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Feevcat FEEVCAT",
+    "muse": "",
+    "contract": "0x798b913477fb6363242c8ff6296a0d3d99363e85",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xf4dcf8c1e820b28ddc8735652d25ddbc664283c5df010448b9c5cb935ccc9af7",
+    "block": 83627586,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83627586 (tx 0xf4dcf8c1e820b28ddc8735652d25ddbc664283c5df010448b9c5cb935ccc9af7); name=Feevcat symbol=FEEVCAT. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:57:30.036Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 1 transfers / 1 holders in ~4h since launch; single creator mint to 0xaf960581, no DEX pool, no liquidity. pons farm spray (Feevcat FEEVCAT).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "Feevcat FEEVCAT — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:27:08.454Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x56502725b6595612f4a324df804303baf5bd673e",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x4c80d0b855163b9a0104a4ae99e550b030dcd452ac2d5bd5f1f13892a2a699ff",
+    "block": 83447994,
+    "detail": "new contract deployed in block 83447994",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:11:58.012Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "zero transfers since deploy — dead contract / scout noise, nothing to investigate",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "unnamed — block-watcher entry with no onchain activity at all."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:28:19.368Z",
+    "scout": "whale-watcher",
+    "type": "whale-convergence",
+    "token": "AMC",
+    "contract": "0x05a3d1cd21d0c88145e82600e62e7e496e0f222b",
+    "chain": "robinhood",
+    "tx_hash": "0xd2d3f9ce9b034ec1bb9601497e29f8f441c6c4116f74a81952751af0b0602783",
+    "detail": "CONVERGENCE: 2 whale EOA wallets accumulating AMC (0x05a3d1cd21d0c88145e82600e62e7e496e0f222b) on robinhood within one scan window; combined $10,435 received. Largest: whale 0x9f736f87e6293ac1bd9142e257dbfac8b7acf1ae (~$312,150 assets) received $3,886 in tx 0xd2d3f9ce9b034ec1bb9601497e29f8f441c6c4116f74a81952751af0b0602783",
+    "converging_whales": 2,
+    "converging_wallets": [
+     "0x9f736f87e6293ac1bd9142e257dbfac8b7acf1ae",
+     "0x1a18a8b96eac3f980133a18402d04194f1faa4e7"
+    ],
+    "combined_amount_usd": 10434.59,
+    "whale": "0x9f736f87e6293ac1bd9142e257dbfac8b7acf1ae",
+    "whale_assets_usd": 312149.72,
+    "amount_usd": 3885.52,
+    "convergence": true,
+    "receiver_is_contract": false,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:57:36.260Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "V4: pool discovery found 2257 pools; state reads capped at 500 (totalEth is a lower bound)",
+     "V4: floor check decided early: 1 pool(s) read, V4 total >= 0.5 ETH (lower bound 4.464 ETH)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "V4: pool discovery found 2257 pools; state reads capped at 500 (totalEth is a lower bound)",
+        "V4: floor check decided early: 1 pool(s) read, V4 total >= 0.5 ETH (lower bound 4.464 ETH)"
+       ],
+       "notes": [
+        "combined pool value ~4.464 ETH (V2 0.000 + V4 4.464) >= 0.5 ETH floor",
+        "no V2 pair; V4 liquidity positions are NFTs (no LP-token lock analog) — LP-lock check N/A"
+       ],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 2257,
+        "v4PricedCount": 1,
+        "v4ValueEth": 4.464093081109201,
+        "v4Capped": true,
+        "v4FloorReachedEarly": true,
+        "v4Pools": [
+         {
+          "poolId": "0x0c1ecdde3234c1a6d228a7d2ee52d6852a3ffaf2f7aa6bdef222e097c34197b1",
+          "valueEth": 4.4641,
+          "refVia": "v4-ref-pool 0x31f86240…"
+         }
+        ],
+        "combinedValueEth": 4.464093081109201
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "672230604380000000000000",
+        "addrsSeen": 16,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [
+         {
+          "addr": "0x8e2a9d954e7c88a00d3571eeab3d5e733a309426",
+          "bal": "594193399725893402"
+         },
+         {
+          "addr": "0x956c4e24c928b83d769ac565115e2869f9acb920",
+          "bal": "2165447201566"
+         }
+        ],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "established market, not a launch: $1.72M 24h vol (1261 buys / 1626 sells), -8% 24h, $374k V4/USDG liquidity, $1.93M mcap; 43 token transfers / 23 holders in last 200k blocks",
+   "social_signal": "strong",
+   "money_flow": "mixed",
+   "verdict": "skip",
+   "notes": "WHALE SIGNAL DEBUNKED: the 2-whale 'convergence' is a pass-through distribution chain, not accumulation. 0xcfaece21 -> 0x1a18a8b9 -> 0x9f736f87 in EXACT-amount forwards (1335.2, 1125.3, 6761.0, 1453.3 AMC), then 0x9f736f87 fragments to payout wallets (0x7ddbd395 x9, 0xfb07273d, 0x203bffa6). Zero of the whale txs touch the V4 pool — no market buys. Token itself verified as Robinhood's OFFICIAL tokenized AMC: $2.87 onchain vs $2.88 NYSE (finnhub), real $374k liquidity, center of the Sept-2026 Aron/Tenev feud. But: it's a stock token (tracks equity, regulatory overhang from Aron's legal threats), tape is net negative (sells>buys, -8% 24h), no fresh catalyst, and the entry thesis is false. Not a pipeline candidate. RECOMMENDATION: whale-watcher should discount exact-amount multi-hop forwarding (peeling chains) as accumulation."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:34:14.668Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Normie NORMIE",
+    "muse": "",
+    "contract": "0xf3e9df908a9e32fbe2e690b052d0db13927e11a8",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x00f0415ff0715070288cd4ce994c38d4ad21c7f7736e0d4719d1a498df8a9fbb",
+    "block": 83627960,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83627960 (tx 0x00f0415ff0715070288cd4ce994c38d4ad21c7f7736e0d4719d1a498df8a9fbb); name=Normie symbol=NORMIE. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:58:35.762Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 17 transfers / 14 holders in ~4h since launch; single creator mint to 0x4196335b, no DEX pool, no liquidity. pons farm spray (Normie NORMIE).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "Normie NORMIE — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:34:21.436Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "T Rowe Price Group Inc TROW",
+    "muse": "",
+    "contract": "0x72e19edaa6a0bd08f33a5ab1bfd1b7bd7f8945aa",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x8559479fd82b6c5208a3ffda2754b8329a78becb687c03a835c155aaac8c23a2",
+    "block": 83627982,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83627982 (tx 0x8559479fd82b6c5208a3ffda2754b8329a78becb687c03a835c155aaac8c23a2); name=T Rowe Price Group Inc symbol=TROW. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:58:40.935Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 7 transfers / 5 holders in ~4h since launch; single creator mint to 0x1106a396, no DEX pool, no liquidity. pons farm spray (T Rowe Price Group Inc TROW).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "T. Rowe Price impersonation farm cluster — scam-watch, never a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:34:25.013Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "KENZO KENZO",
+    "muse": "",
+    "contract": "0x824778261fea50c110b93e5266a2d05411b19e14",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x129bfe8d93cea3194742d8b84a07385a3833b6229ac4419edc0f1e21f74fdfe8",
+    "block": 83628024,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83628024 (tx 0x129bfe8d93cea3194742d8b84a07385a3833b6229ac4419edc0f1e21f74fdfe8); name=KENZO symbol=KENZO. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:58:52.015Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 10 transfers / 8 holders in ~4h since launch; single creator mint to 0x8b4932f0, no DEX pool, no liquidity. pons farm spray (KENZO KENZO).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "KENZO KENZO — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:34:41.859Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "T Rowe Price Group Inc PKNZ",
+    "muse": "",
+    "contract": "0x1777df27662214616c41d1f7b645128e59262636",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xae8a498b6d3bfdc7e4933afbdf74adbba766ae5ddf5559a862ed95872a4f0382",
+    "block": 83628407,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83628407 (tx 0xae8a498b6d3bfdc7e4933afbdf74adbba766ae5ddf5559a862ed95872a4f0382); name=T Rowe Price Group Inc symbol=PKNZ. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:59:09.782Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 28 transfers / 16 holders in ~4h since launch; single creator mint to 0x36d1f209, no DEX pool, no liquidity. pons farm spray (T Rowe Price Group Inc PKNZ).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "T. Rowe Price impersonation farm cluster — scam-watch, never a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:34:55.448Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "T Rowe Price Group Inc TKNZ",
+    "muse": "",
+    "contract": "0x5d6ca2ef84b2a55f46e44297980ca10038fbd247",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x941f922327e318f170add23337504cf7b36eddde0aaa354c70f70441e68b2923",
+    "block": 83628569,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83628569 (tx 0x941f922327e318f170add23337504cf7b36eddde0aaa354c70f70441e68b2923); name=T Rowe Price Group Inc symbol=TKNZ. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:59:19.801Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "V4: floor check decided early: 1 pool(s) read, V4 total >= 0.5 ETH (lower bound 1.953 ETH)",
+     "thin holder data (7 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "V4: floor check decided early: 1 pool(s) read, V4 total >= 0.5 ETH (lower bound 1.953 ETH)"
+       ],
+       "notes": [
+        "combined pool value ~1.953 ETH (V2 0.000 + V4 1.953) >= 0.5 ETH floor",
+        "no V2 pair; V4 liquidity positions are NFTs (no LP-token lock analog) — LP-lock check N/A"
+       ],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 14,
+        "v4PricedCount": 1,
+        "v4ValueEth": 1.9527273071793612,
+        "v4FloorReachedEarly": true,
+        "v4Pools": [
+         {
+          "poolId": "0xdbc33e0446e98f82534a616fe6b4f268a5961a7807b6177faf7ac83bb6ccc72a",
+          "valueEth": 1.9527,
+          "refVia": "v4-ref-pool 0xbac3aa3b…"
+         }
+        ],
+        "combinedValueEth": 1.9527273071793612
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (7 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.06% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 7,
+        "top10EoaBps": 6,
+        "top1EoaBps": 6,
+        "top10": [
+         {
+          "addr": "0x674a627ed61491b57b67f8a010d5d5771fa5354a",
+          "bal": "684757647615947695411716"
+         }
+        ],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "rugged: -91% in 6h to $3.5k mcap ($4.8k liq); 2995 transfers/459 holders but 688 buys/602 sells in 6h WHILE cratering = bot wash on a dead token. No recovery since.",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "notes": "T. Rowe Price brand-impersonation farm token (one of 10+ same-day TROW/TKNZ/PKNZ clones). SCAM-WATCH for dubie: impersonates a real asset manager. Farmed-name trap avoided — volume matched to this exact contract; the other TKNZ clones are dead (<=48 transfers)."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:35:03.322Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "T Rowe Price Group Inc TKNZ",
+    "muse": "",
+    "contract": "0xbd65ea399c7cc20112143350fd2b6266653dff1d",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x1b4995ef3ea3a1bc7a447240f936c9a41ba7e2ebba1dfd96deb515994734794f",
+    "block": 83628858,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83628858 (tx 0x1b4995ef3ea3a1bc7a447240f936c9a41ba7e2ebba1dfd96deb515994734794f); name=T Rowe Price Group Inc symbol=TKNZ. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:59:30.470Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 13 transfers / 9 holders in ~4h since launch; single creator mint to 0xc00f16ce, no DEX pool, no liquidity. pons farm spray (T Rowe Price Group Inc TKNZ).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "T. Rowe Price impersonation farm cluster — scam-watch, never a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:35:06.287Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "T Rowe Price Group Inc TROW",
+    "muse": "",
+    "contract": "0x8a729f5e28e26b56ff6b88222fe1a49c24ca8283",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x42b81b85b2322ac01839fd1926ceab6380f709eb2962d42c92b346c21ac47b9a",
+    "block": 83629122,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83629122 (tx 0x42b81b85b2322ac01839fd1926ceab6380f709eb2962d42c92b346c21ac47b9a); name=T Rowe Price Group Inc symbol=TROW. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:59:34.028Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 17 transfers / 10 holders in ~4h since launch; single creator mint to 0x158f48a9, no DEX pool, no liquidity. pons farm spray (T Rowe Price Group Inc TROW).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "T. Rowe Price impersonation farm cluster — scam-watch, never a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:35:15.740Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "TKNZ TKNZ",
+    "muse": "",
+    "contract": "0xf5b21feedf96fa5877ebdf62be9d6090200acb0d",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x4290aa49d1c71a70cbf1ab93d9a673ae76e35e0b1ec3a13381c1c031cd7c6669",
+    "block": 83629318,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83629318 (tx 0x4290aa49d1c71a70cbf1ab93d9a673ae76e35e0b1ec3a13381c1c031cd7c6669); name=TKNZ symbol=TKNZ. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:59:38.004Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 48 transfers / 14 holders in ~4h since launch; single creator mint to 0xdebf3fe7, no DEX pool, no liquidity. pons farm spray (TKNZ TKNZ).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "TKNZ TKNZ — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:35:27.798Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "T Rowe Price Group Inc TKNZ",
+    "muse": "",
+    "contract": "0x044ae4fb5b8dc45013074bb2939799e5fecfc639",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x912551cb60faa9ac162b3f2492721b30f4066365e4c91cf39f8de57e4de71667",
+    "block": 83629335,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83629335 (tx 0x912551cb60faa9ac162b3f2492721b30f4066365e4c91cf39f8de57e4de71667); name=T Rowe Price Group Inc symbol=TKNZ. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:02:07.916Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 3 transfers / 2 holders in ~4h since launch; single creator mint to 0x8a5896c7, no DEX pool, no liquidity. pons farm spray (T Rowe Price Group Inc TKNZ).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "T. Rowe Price impersonation farm cluster — scam-watch, never a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:35:31.939Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "T Rowe Price Group Inc TKNZ",
+    "muse": "",
+    "contract": "0x92b88e39e200e158fa7d7f8bb3aa31fdeae15ab1",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xba738bca773cf509a9751f4e94844ef3ce4718b925cdfe724a789765d3bf749e",
+    "block": 83629426,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83629426 (tx 0xba738bca773cf509a9751f4e94844ef3ce4718b925cdfe724a789765d3bf749e); name=T Rowe Price Group Inc symbol=TKNZ. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:02:13.836Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 1 transfers / 1 holders in ~4h since launch; single creator mint to 0x2c8be953, no DEX pool, no liquidity. pons farm spray (T Rowe Price Group Inc TKNZ).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "T. Rowe Price impersonation farm cluster — scam-watch, never a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:35:55.516Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "kavern KAVERN",
+    "muse": "",
+    "contract": "0xb6752ff55912139ce28a698e70730b7098c3854d",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xb4c842baac7487c990cd42b390181c94599733427c5ea45b22cf40ebae6744b1",
+    "block": 83629461,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83629461 (tx 0xb4c842baac7487c990cd42b390181c94599733427c5ea45b22cf40ebae6744b1); name=kavern symbol=KAVERN. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:02:18.290Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "distribution only: 147 transfers / 26 holders in ~5h, no DEX pool, no liquidity",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "notes": "kavern KAVERN — pons farm spray, no market."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:35:59.317Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Trusty The Ram TRUSTY",
+    "muse": "",
+    "contract": "0x3c6fe6ea599616661ce0f7db1825e1ea526b721d",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xf531ecc7b761d12c555abb513b1a5cbd4bb8fd2de8621855cfcbb3994e45ebcb",
+    "block": 83629546,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83629546 (tx 0xf531ecc7b761d12c555abb513b1a5cbd4bb8fd2de8621855cfcbb3994e45ebcb); name=Trusty The Ram symbol=TRUSTY. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:02:22.904Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "distribution only: 630 transfers / 128 holders in ~5h, no DEX pool, no liquidity — airdrop-style seeding with zero price discovery",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "notes": "Trusty The Ram TRUSTY — pons farm spray; 128 holders but no market. Revisit only if a pool appears."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:09.097Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "T Rowe Price Group Inc TRPIS",
+    "muse": "",
+    "contract": "0x573d82c3574d82ee15d3d1a7b6585d3386399679",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xc3a022dd1577949e484c08b6c73c078b7872ca7a932b9ef7193d34f03c2d4046",
+    "block": 83629631,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83629631 (tx 0xc3a022dd1577949e484c08b6c73c078b7872ca7a932b9ef7193d34f03c2d4046); name=T Rowe Price Group Inc symbol=TRPIS. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:02:27.339Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 23 transfers / 10 holders in ~4h since launch; single creator mint to 0xf55fda21, no DEX pool, no liquidity. pons farm spray (T Rowe Price Group Inc TRPIS).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "T. Rowe Price impersonation farm cluster — scam-watch, never a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:12.000Z",
+    "scout": "new-pairs",
+    "type": "pair",
+    "pair": "WETH / INFF",
+    "dex": "0x8bceaa40… v2",
+    "chain": "robinhood",
+    "volume": "1.85 WETH",
+    "detail": "V2 pair created block 83630147 via factory 0x8bceaa40…. 47 swaps since creation (35 buys / 12 sells), ~1.85 WETH volume, reserves 2.07 WETH / 483.9k INFF",
+    "contract": "0xc279ea0dbf77634b3db609917dfebb8f122698be",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:02:31.648Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "dangerous selectors present (mint(address)) but no owner() — power unattributable",
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "dangerous selectors present (mint(address)) but no owner() — power unattributable"
+       ],
+       "notes": [],
+       "detail": {
+        "selectors": {
+         "mint": [
+          "mint(address)"
+         ],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "334522114742856167",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "zero transfers since deploy — dead contract / scout noise, nothing to investigate",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "unnamed — new-pairs entry with no onchain activity at all."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:14.598Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "T Rowe Price Group Inc TKNZ",
+    "muse": "",
+    "contract": "0xbec943613fdebe49b866821ca192d19eecf3b5fa",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x82a1dc55784d32e58d792e8c59f17f8c2e242d1dc2e435ff634c4d01dd2cefac",
+    "block": 83629676,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83629676 (tx 0x82a1dc55784d32e58d792e8c59f17f8c2e242d1dc2e435ff634c4d01dd2cefac); name=T Rowe Price Group Inc symbol=TKNZ. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:02:36.206Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 27 transfers / 10 holders in ~4h since launch; single creator mint to 0x6f69f6f3, no DEX pool, no liquidity. pons farm spray (T Rowe Price Group Inc TKNZ).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "T. Rowe Price impersonation farm cluster — scam-watch, never a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:16.871Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "DAY DAY",
+    "muse": "",
+    "contract": "0x201372768348adfcdbb4f8183ba527a8f335cfb8",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x5dd8e1d42513916067838cbc9704c53fc334c5f185e4beaff3cc1e025f196c88",
+    "block": 83629723,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83629723 (tx 0x5dd8e1d42513916067838cbc9704c53fc334c5f185e4beaff3cc1e025f196c88); name=DAY symbol=DAY. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:02:41.072Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 10 transfers / 7 holders in ~4h since launch; single creator mint to 0x0e44074a, no DEX pool, no liquidity. pons farm spray (DAY DAY).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "DAY DAY — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:18.046Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "T. Rowe Price Active Crypto ETF TKNZ",
+    "muse": "",
+    "contract": "0x873fc44dd13ccd8c727bc51ee894214e91137240",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x5c7321e6f40fb56f9b2c30848445b6319dada15df5dfe3e7185ead206a609a99",
+    "block": 83629738,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83629738 (tx 0x5c7321e6f40fb56f9b2c30848445b6319dada15df5dfe3e7185ead206a609a99); name=T. Rowe Price Active Crypto ETF symbol=TKNZ. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:02:45.326Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 93 transfers / 29 holders in ~4h since launch; single creator mint to 0xa49aead2, no DEX pool, no liquidity. pons farm spray (T. Rowe Price Active Crypto ET).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "T. Rowe Price impersonation farm cluster — scam-watch, never a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:22.250Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "T. Rowe Price Active Crypto ETF TKNZ",
+    "muse": "",
+    "contract": "0xfbc5b314431c6cab6fb195aba567d5f46d8d05a4",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x504c510411fb9ae484d380ce96a04afda6257b89bdab239d670f0cd83eabd909",
+    "block": 83630318,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83630318 (tx 0x504c510411fb9ae484d380ce96a04afda6257b89bdab239d670f0cd83eabd909); name=T. Rowe Price Active Crypto ETF symbol=TKNZ. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:07:28.948Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 80 transfers / 31 holders in ~4h since launch; single creator mint to 0x69393e81, no DEX pool, no liquidity. pons farm spray (T. Rowe Price Active Crypto ET).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "T. Rowe Price impersonation farm cluster — scam-watch, never a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:23.480Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Kitefi KITEFI",
+    "muse": "",
+    "contract": "0xdb27ba002a5a44e3b227df0064e04d115cc69f2b",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xa3486e9b29b96810d8c14a58796e3eec13b890ac234cf1e3aab00be8f5ecd571",
+    "block": 83630325,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83630325 (tx 0xa3486e9b29b96810d8c14a58796e3eec13b890ac234cf1e3aab00be8f5ecd571); name=Kitefi symbol=KITEFI. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:07:36.280Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 3 transfers / 2 holders in ~4h since launch; single creator mint to 0x4c4b81c7, no DEX pool, no liquidity. pons farm spray (Kitefi KITEFI).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "Kitefi KITEFI — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:24.814Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "T Rowe Price Digital Assets TKNZ",
+    "muse": "",
+    "contract": "0x4f8e29a41ce3baa41d5f17317687b53fff30e766",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x994df9e1af5d4552e0d5bdfa6d09bf0d33801b8d09fa0ec54afcd96805ee44ff",
+    "block": 83630331,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83630331 (tx 0x994df9e1af5d4552e0d5bdfa6d09bf0d33801b8d09fa0ec54afcd96805ee44ff); name=T Rowe Price Digital Assets symbol=TKNZ. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:07:40.894Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 4 transfers / 3 holders in ~4h since launch; single creator mint to 0xa02400bb, no DEX pool, no liquidity. pons farm spray (T Rowe Price Digital Assets TK).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "T. Rowe Price impersonation farm cluster — scam-watch, never a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:26.794Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "T. Rowe Price Active Crypto ETF TKNZ",
+    "muse": "",
+    "contract": "0xb1c4678f28b25b823bd961f463b76e888473664c",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x44653d35078373be7eed61bdf23611f3b605b1b0e966b732f36fe50f1efbe740",
+    "block": 83630488,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83630488 (tx 0x44653d35078373be7eed61bdf23611f3b605b1b0e966b732f36fe50f1efbe740); name=T. Rowe Price Active Crypto ETF symbol=TKNZ. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:07:45.773Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 23 transfers / 12 holders in ~4h since launch; single creator mint to 0xa837c9bd, no DEX pool, no liquidity. pons farm spray (T. Rowe Price Active Crypto ET).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "T. Rowe Price impersonation farm cluster — scam-watch, never a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:38.752Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "HACHIKO INU HACHIKO",
+    "muse": "",
+    "contract": "0xb5e526a4e1ed7fa2ebd1501c997a7fe4efdd1025",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xc64b1acaab0016d7db8efd7ac304e03a25a1b003b5f4e4a6ffcf795d22cad2a6",
+    "block": 83630956,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83630956 (tx 0xc64b1acaab0016d7db8efd7ac304e03a25a1b003b5f4e4a6ffcf795d22cad2a6); name=HACHIKO INU symbol=HACHIKO. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:07:50.970Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 12 transfers / 8 holders in ~4h since launch; single creator mint to 0xf7b2e086, no DEX pool, no liquidity. pons farm spray (HACHIKO INU HACHIKO).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "HACHIKO INU HACHIKO — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:39.999Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "etf coin ETF",
+    "muse": "",
+    "contract": "0x814176ee7e37a60a2a17d2c1984d36dfa090fc69",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xbef941e4ba2fba30e0359d1bd6717d1773df72c3ed58ef4dfae82a3dadc4c2ea",
+    "block": 83631172,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83631172 (tx 0xbef941e4ba2fba30e0359d1bd6717d1773df72c3ed58ef4dfae82a3dadc4c2ea); name=etf coin symbol=ETF. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:07:56.490Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 23 transfers / 13 holders in ~4h since launch; single creator mint to 0x47df13a4, no DEX pool, no liquidity. pons farm spray (etf coin ETF).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "etf coin ETF — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:41.520Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "memes MEMES",
+    "muse": "",
+    "contract": "0x5fcd1d79bfd2c2056126b5d6f0b39383fbc27389",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xcf9288f491543596a6a0eb6ac645f87a37727f0d3a0aad05e893e13e4ef70d2f",
+    "block": 83631204,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83631204 (tx 0xcf9288f491543596a6a0eb6ac645f87a37727f0d3a0aad05e893e13e4ef70d2f); name=memes symbol=MEMES. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:08:01.794Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 13 transfers / 9 holders in ~4h since launch; single creator mint to 0x1a1a5d4d, no DEX pool, no liquidity. pons farm spray (memes MEMES).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "memes MEMES — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:43.456Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Eat, Trade, Fart ETF",
+    "muse": "",
+    "contract": "0x699f0d47d1ec5db84e3d84a5790769c7be13942d",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xcd68da387237d1a47bd70eab2af6f0cae4a6fc813b37dbb2d16e9346aa775a76",
+    "block": 83631307,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83631307 (tx 0xcd68da387237d1a47bd70eab2af6f0cae4a6fc813b37dbb2d16e9346aa775a76); name=Eat, Trade, Fart symbol=ETF. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:08:07.600Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 35 transfers / 11 holders in ~4h since launch; single creator mint to 0x66e9487e, no DEX pool, no liquidity. pons farm spray (Eat, Trade, Fart ETF).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "Eat, Trade, Fart ETF — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:45.184Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Extra Thick Fund ETF",
+    "muse": "",
+    "contract": "0xef896e9f60adfab7ad02751dcaa2146ea98b10f5",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xf9fd6331aad01e268d311fc71f8df8ec879c3928cad8779d5f626a9286814bf0",
+    "block": 83631316,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83631316 (tx 0xf9fd6331aad01e268d311fc71f8df8ec879c3928cad8779d5f626a9286814bf0); name=Extra Thick Fund symbol=ETF. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:08:11.875Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 14 transfers / 6 holders in ~4h since launch; single creator mint to 0xf9533da9, no DEX pool, no liquidity. pons farm spray (Extra Thick Fund ETF).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "Extra Thick Fund ETF — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:48.108Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Glacipop GLACIPOP",
+    "muse": "",
+    "contract": "0x47aae4197bac743aa497d98278891382c2d69ca4",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x42a105f55150c075e13f0b6b5ff9e86ee658511a0ce7805c00819ee931f88874",
+    "block": 83631336,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83631336 (tx 0x42a105f55150c075e13f0b6b5ff9e86ee658511a0ce7805c00819ee931f88874); name=Glacipop symbol=GLACIPOP. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:08:16.649Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 1 transfers / 1 holders in ~4h since launch; single creator mint to 0x9db10a04, no DEX pool, no liquidity. pons farm spray (Glacipop GLACIPOP).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "Glacipop GLACIPOP — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:49.775Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Ovis Vector OVIS",
+    "muse": "",
+    "contract": "0x2a57395a12216eb8ff331f867553fd4f828ea338",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x5c72bb6448a5eab3f4832e93d3abc3cfff4a4de261e2197d91410e39383ce5fb",
+    "block": 83631532,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83631532 (tx 0x5c72bb6448a5eab3f4832e93d3abc3cfff4a4de261e2197d91410e39383ce5fb); name=Ovis Vector symbol=OVIS. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:08:22.371Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 35 transfers / 19 holders in ~4h since launch; single creator mint to 0xefeb05b6, no DEX pool, no liquidity. pons farm spray (Ovis Vector OVIS).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "Ovis Vector OVIS — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:51.157Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Extra Thick Fund ETF",
+    "muse": "",
+    "contract": "0xd3f44863c6609388c3840f1df857bd2472e99210",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xb83d89c4b59cb692a5fdd37a38755b4e32c85b4258431eacf293d80c4d445ada",
+    "block": 83631534,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83631534 (tx 0xb83d89c4b59cb692a5fdd37a38755b4e32c85b4258431eacf293d80c4d445ada); name=Extra Thick Fund symbol=ETF. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:08:27.616Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "distribution only: 119 transfers / 40 holders in ~5h, no DEX pool, no liquidity",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "notes": "Extra Thick Fund ETF — pons farm spray, no market."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:52.558Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "T Rowe Price Group Inc TKNZ",
+    "muse": "",
+    "contract": "0x099f8859ba7ebbb596bc66771f3fee03f0a69e87",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xdac35dea89e7ad738f83df4adaa84075a12e58cb734c425f77b17fefe2b0499e",
+    "block": 83631599,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83631599 (tx 0xdac35dea89e7ad738f83df4adaa84075a12e58cb734c425f77b17fefe2b0499e); name=T Rowe Price Group Inc symbol=TKNZ. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:08:32.785Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 61 transfers / 25 holders in ~4h since launch; single creator mint to 0xa9e39f16, no DEX pool, no liquidity. pons farm spray (T Rowe Price Group Inc TKNZ).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "T. Rowe Price impersonation farm cluster — scam-watch, never a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:53.622Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Sumbead SUMBEAD",
+    "muse": "",
+    "contract": "0x6716fd1c5cb0aab037504f57f2cb19255c02252b",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x847b84cb248692233f11792fcbf9aa7fa25e0cc94d9411f34a9cdbee12076f9f",
+    "block": 83631602,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83631602 (tx 0x847b84cb248692233f11792fcbf9aa7fa25e0cc94d9411f34a9cdbee12076f9f); name=Sumbead symbol=SUMBEAD. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:08:40.620Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 1 transfers / 1 holders in ~4h since launch; single creator mint to 0xa3168ab7, no DEX pool, no liquidity. pons farm spray (Sumbead SUMBEAD).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "Sumbead SUMBEAD — pons farm spray, no traction."
+  },
+  {
+   "investigated_at": "2026-10-09T02:12:47.338Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:36:54.843Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "T Rowe Price Group Inc TROW",
+    "muse": "",
+    "contract": "0xa37a1bad9417d551427c4f181cbde3e933804d09",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xdcc744882221b32b6c1587c068aaa6f58720ef236c26dbf4175ffdf142a1f41e",
+    "block": 83631666,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83631666 (tx 0xdcc744882221b32b6c1587c068aaa6f58720ef236c26dbf4175ffdf142a1f41e); name=T Rowe Price Group Inc symbol=TROW. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T02:08:45.590Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 3 transfers / 2 holders in ~4h since launch; single creator mint to 0x37ab49f7, no DEX pool, no liquidity. pons farm spray (T Rowe Price Group Inc TROW).",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "T. Rowe Price impersonation farm cluster — scam-watch, never a candidate."
   }
  ],
  "scores": [
@@ -45206,8 +49638,8 @@
   "whale-watcher"
  ],
  "last_activity": {
-  "scout": "2026-10-09T02:10:39.753Z",
-  "hymn": "2026-10-09T02:00:18.188Z",
+  "scout": "2026-10-09T02:12:42.840Z",
+  "hymn": "2026-10-09T02:12:47.338Z",
   "scorer": "2026-10-09T02:07:39Z",
   "snug": "2026-10-09T01:59:08.285754+00:00",
   "cardigan": "2026-10-09T01:59:08.285754+00:00"
@@ -45236,8 +49668,8 @@
     "tx_hash": "0xcd209345f031f3ae4337c6feea42e3d8e01ac92d777205864e60ab2dd0bea993",
     "entered_at": "2026-10-08T20:58:38.421Z",
     "entry_price_usd": 0.011554,
-    "current_price_usd": 0.01206,
-    "pnl_pct": 4.379435693266396,
+    "current_price_usd": 0.01205,
+    "pnl_pct": 4.292885580751254,
     "amount_tokens": 1055.8207,
     "amount_eth_in": 0.005,
     "score": 62,
@@ -45313,7 +49745,7 @@
     "tx_hash": "0x750f3d68427ad7be0a12ca6aaf1ab7d1829802294b36090161aaf08025799dbd",
     "entered_at": "2026-10-08T20:15:30.720Z",
     "entry_price_usd": 0.01156,
-    "current_price_usd": 0.01206,
+    "current_price_usd": 0.01205,
     "pnl_pct": 0,
     "amount_tokens": 1055.2497206937642,
     "amount_eth_in": 0.005,
@@ -45336,7 +49768,7 @@
   "realized_pnl_pct_total": 0
  },
  "paper_trades": {
-  "as_of": "2026-10-09T02:07:12.391Z",
+  "as_of": "2026-10-09T02:12:28.165Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -45401,7 +49833,7 @@
     "seeded": false,
     "score": 69,
     "entry_price_usd": 0.04243,
-    "last_price_usd": 0.04157,
+    "last_price_usd": 0.04093,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -45412,8 +49844,8 @@
     "mcap_at_scan": 42788142.46528106,
     "mcap_at_decision": 42788142.46528106,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0002026867782229558,
-    "unrealized_pnl_pct": -2.0268677822295578
+    "unrealized_pnl_eth": -0.0003535234503888762,
+    "unrealized_pnl_pct": -3.5352345038887623
    },
    {
     "id": "pt-mv03ww45-53",
@@ -45424,7 +49856,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3533,
+    "last_price_usd": 0.3536,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -45435,8 +49867,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00015521701638401941,
-    "unrealized_pnl_pct": 1.5521701638401941
+    "unrealized_pnl_eth": 0.0001638401839609105,
+    "unrealized_pnl_pct": 1.638401839609105
    },
    {
     "id": "pt-mv03wwab-54",
@@ -45447,7 +49879,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 80.94,
-    "last_price_usd": 81.33,
+    "last_price_usd": 81.42,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -45458,8 +49890,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 5819198,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00004818383988139274,
-    "unrealized_pnl_pct": 0.4818383988139274
+    "unrealized_pnl_eth": 0.00005930318754633124,
+    "unrealized_pnl_pct": 0.5930318754633124
    },
    {
     "id": "pt-mv0blxia-72",
@@ -45470,7 +49902,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.3533,
+    "last_price_usd": 0.3536,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -45481,8 +49913,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.000011334655709833719,
-    "unrealized_pnl_pct": 0.11334655709833719
+    "unrealized_pnl_eth": 0.000019835647492207897,
+    "unrealized_pnl_pct": 0.19835647492207897
    }
   ],
   "closed_recent": [],

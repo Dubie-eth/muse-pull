@@ -1,37 +1,11 @@
 {
- "updated_at": "2026-10-09T18:56:57.272Z",
+ "updated_at": "2026-10-09T18:58:54.661Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-09T18:45:18.940Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "MINT MNTD",
-   "muse": "",
-   "contract": "0x6e173449aeef92e7ccc0ab2b6306e0e1bfd36551",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x0c729ab92a3bcba80b2a38904ce247999b0118bcfdd778a9f4d56a5618314783",
-   "block": 84377081,
-   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84377081 (tx 0x0c729ab92a3bcba80b2a38904ce247999b0118bcfdd778a9f4d56a5618314783); name=MINT symbol=MNTD. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
-  },
-  {
-   "found_at": "2026-10-09T18:45:59.096Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "OpenNet OPENET",
-   "muse": "",
-   "contract": "0xe0a5aeb3ea600f92b8f06be1d0faa70cbe4bf304",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x5bf083a744e67ed31c162f73906ff18d0e9733fd75071ce7ee516c6d0a7778dd",
-   "block": 84377180,
-   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84377180 (tx 0x5bf083a744e67ed31c162f73906ff18d0e9733fd75071ce7ee516c6d0a7778dd); name=OpenNet symbol=OPENET. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
-  },
   {
    "found_at": "2026-10-09T18:46:02.243Z",
    "scout": "pons-family",
@@ -645,9 +619,31 @@
    "tx_hash": "0x40ecc453b1caf8361aee635a33f9ed07813c9942f3b16f6fdf25168355146553",
    "block": 84383566,
    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84383566 (tx 0x40ecc453b1caf8361aee635a33f9ed07813c9942f3b16f6fdf25168355146553); name=Hood Phoenix symbol=HOODPX. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-09T18:57:16.855Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xc3f3aa26cf8f862e3e135bf08be9cf33c416bf8c",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x161d039c1ba6f8cdeecb0622e249fe3d26f4abf4e2363ba1045719c97ca242f3",
+   "block": 84384815,
+   "detail": "new contract deployed in block 84384815"
+  },
+  {
+   "found_at": "2026-10-09T18:58:24.951Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x683fc87dcba01b712dec7bd98454c973ad01b2e3",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x396066a8a4cd148471df0891606cc61fcecf7b3fd65d124ac10a2f657f9b6250",
+   "block": 84385217,
+   "detail": "new contract deployed in block 84385217"
   }
  ],
- "scout_queue_total": 613,
+ "scout_queue_total": 615,
  "investigations": [
   {
    "candidate": {
@@ -129308,6 +129304,900 @@
    "verdict_note": "Factory pons token with no V2/V4 liquidity anywhere (gate: LP checks skipped, combined pool value 0 ETH), no secondary transfers at all, zero organic X buzz, no whale/smart-money accumulation. Uninvestable: no price discovery, no exit.",
    "social_scored_at": "2026-10-09T18:46:24.800937+00:00",
    "social_grade": "F (0/100)"
+  },
+  {
+   "investigated_at": "2026-10-09T18:57:45.044Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "name": "Robin Hook HOOK",
+    "type": "token",
+    "contract": "0x5b146a9257c837c2d24a87742dbdea6459fa540a",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T17:37:44.480Z",
+    "tx_hash": "0xf1aaff09eff9d010d7792af0d171907d5dd5b2ed0142496168bf23c91245ff72",
+    "block": 84338086,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84338086 (tx 0xf1aaff09eff9d010d7792af0d171907d5dd5b2ed0142496168bf23c91245ff72); name=Robin Hook symbol=HOOK. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T18:43:53.834Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (3 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T18:43:53.834Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "thin holder data (3 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "onchain_meta": {
+    "name": "Robin Hook",
+    "symbol": "HOOK",
+    "decimals": 18,
+    "supply": 1000000000,
+    "codeBytes": 3248
+   },
+   "dex": null,
+   "pair_info": null,
+   "enrich_error": null,
+   "velocity": "no live DexScreener market (unlisted/dead)",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "solana_pulse": {
+    "sol_usd": 109.23,
+    "sol_24h_change_pct": 1.23,
+    "source": "CoinGecko simple/price, 2026-10-09T18:46Z",
+    "pumpfun_feed": "quiet: pump-fun scout silent ~5h (last seen 13:53Z, 0 coins in last 3h bucket); no fresh launch-feed signal",
+    "x_news": "no Solana outage/FUD in last ~2h. @Pumpfun touting trader wins (hdegroott +$340k/2wk). Bundle-callout bots busy ($HI 88%, $Meta 93% bundled at launch) — scam-heavy waters but meta active. $GOON +400% 24h per PeepRadars. No @solana market-moving news.",
+    "stance": "neutral-to-slightly-cautious for Solana memecoins: SOL flat at $109 (+1.2% 24h), launch feed quiet on our monitor, scam/bundle chatter heavy. NOT risk-off — no dump, no exploit, network fine."
+   },
+   "verdict": "skip",
+   "verdict_note": "no live DexScreener market (unlisted/dead) | token: Robin Hook (HOOK) supply=1000000000 | pons-factory clone: bulk factory spew pattern, no pair, 0-3 holder addresses, no social | gate warnings: no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped; thin holder data (3 addresses in 12k-block window); no owner(); deployer undiscoverable via RPC — denylist ch"
+  },
+  {
+   "investigated_at": "2026-10-09T18:57:54.341Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "type": "contract",
+    "contract": "0x6a09206c5fcb5d14f9873cab6353555c4b69375f",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "found_at": "2026-10-09T17:42:35.747Z",
+    "tx_hash": "0x915f55f5f3bc6b7c1e3b82601b2dec36b55d5a2c412f0dce568feea01211a521",
+    "block": 84340983,
+    "detail": "new contract deployed in block 84340983",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T18:44:40.409Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T18:44:40.409Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "totalSupply unreadable or 0; concentration check skipped",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "onchain_meta": {
+    "name": null,
+    "symbol": null,
+    "decimals": null,
+    "supply": null,
+    "codeBytes": 1588
+   },
+   "dex": null,
+   "pair_info": null,
+   "enrich_error": null,
+   "velocity": "no live DexScreener market (unlisted/dead)",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "solana_pulse": {
+    "sol_usd": 109.23,
+    "sol_24h_change_pct": 1.23,
+    "source": "CoinGecko simple/price, 2026-10-09T18:46Z",
+    "pumpfun_feed": "quiet: pump-fun scout silent ~5h (last seen 13:53Z, 0 coins in last 3h bucket); no fresh launch-feed signal",
+    "x_news": "no Solana outage/FUD in last ~2h. @Pumpfun touting trader wins (hdegroott +$340k/2wk). Bundle-callout bots busy ($HI 88%, $Meta 93% bundled at launch) — scam-heavy waters but meta active. $GOON +400% 24h per PeepRadars. No @solana market-moving news.",
+    "stance": "neutral-to-slightly-cautious for Solana memecoins: SOL flat at $109 (+1.2% 24h), launch feed quiet on our monitor, scam/bundle chatter heavy. NOT risk-off — no dump, no exploit, network fine."
+   },
+   "verdict": "skip",
+   "verdict_note": "no live DexScreener market (unlisted/dead) | contract 1588B code, no name()/symbol() | bare contract deployment, no pair, no supply, no activity | gate warnings: no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped; totalSupply unreadable or 0; concentration check skipped; no owner(); deployer undiscoverable via RPC — denyl"
+  },
+  {
+   "investigated_at": "2026-10-09T18:58:03.639Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "type": "contract",
+    "contract": "0xbe338fa2c3ce03c198658922e800ba6546eed7c5",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "found_at": "2026-10-09T17:42:44.674Z",
+    "tx_hash": "0xabd27a5a8d86421e71d2983eedb31957a380aa2ea693f1329453aa284a08f95f",
+    "block": 84341008,
+    "detail": "new contract deployed in block 84341008",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T18:44:51.095Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T18:44:51.095Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "totalSupply unreadable or 0; concentration check skipped",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "onchain_meta": {
+    "name": null,
+    "symbol": null,
+    "decimals": null,
+    "supply": null,
+    "codeBytes": 7875
+   },
+   "dex": null,
+   "pair_info": null,
+   "enrich_error": null,
+   "velocity": "no live DexScreener market (unlisted/dead)",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "solana_pulse": {
+    "sol_usd": 109.23,
+    "sol_24h_change_pct": 1.23,
+    "source": "CoinGecko simple/price, 2026-10-09T18:46Z",
+    "pumpfun_feed": "quiet: pump-fun scout silent ~5h (last seen 13:53Z, 0 coins in last 3h bucket); no fresh launch-feed signal",
+    "x_news": "no Solana outage/FUD in last ~2h. @Pumpfun touting trader wins (hdegroott +$340k/2wk). Bundle-callout bots busy ($HI 88%, $Meta 93% bundled at launch) — scam-heavy waters but meta active. $GOON +400% 24h per PeepRadars. No @solana market-moving news.",
+    "stance": "neutral-to-slightly-cautious for Solana memecoins: SOL flat at $109 (+1.2% 24h), launch feed quiet on our monitor, scam/bundle chatter heavy. NOT risk-off — no dump, no exploit, network fine."
+   },
+   "verdict": "skip",
+   "verdict_note": "no live DexScreener market (unlisted/dead) | contract 7875B code, no name()/symbol() | bare contract deployment, no pair, no supply, no activity | gate warnings: no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped; totalSupply unreadable or 0; concentration check skipped; no owner(); deployer undiscoverable via RPC — denyl"
+  },
+  {
+   "investigated_at": "2026-10-09T18:58:05.688Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "name": "Jevvis JEVVIS",
+    "type": "token",
+    "contract": "0xfc52470ce0b8592094121d20b47328e8d4a12023",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T17:43:41.720Z",
+    "tx_hash": "0xbbc6ce22439fd3a00ade2a1817a19df349d3912f9aa6f9d305d817b611404c8c",
+    "block": 84338653,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84338653 (tx 0xbbc6ce22439fd3a00ade2a1817a19df349d3912f9aa6f9d305d817b611404c8c); name=Jevvis symbol=JEVVIS. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T18:45:03.631Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T18:45:03.631Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "thin holder data (0 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "onchain_meta": {
+    "name": "Jevvis",
+    "symbol": "JEVVIS",
+    "decimals": 18,
+    "supply": 1000000000,
+    "codeBytes": 3248
+   },
+   "dex": null,
+   "pair_info": null,
+   "enrich_error": null,
+   "velocity": "no live DexScreener market (unlisted/dead)",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "solana_pulse": {
+    "sol_usd": 109.23,
+    "sol_24h_change_pct": 1.23,
+    "source": "CoinGecko simple/price, 2026-10-09T18:46Z",
+    "pumpfun_feed": "quiet: pump-fun scout silent ~5h (last seen 13:53Z, 0 coins in last 3h bucket); no fresh launch-feed signal",
+    "x_news": "no Solana outage/FUD in last ~2h. @Pumpfun touting trader wins (hdegroott +$340k/2wk). Bundle-callout bots busy ($HI 88%, $Meta 93% bundled at launch) — scam-heavy waters but meta active. $GOON +400% 24h per PeepRadars. No @solana market-moving news.",
+    "stance": "neutral-to-slightly-cautious for Solana memecoins: SOL flat at $109 (+1.2% 24h), launch feed quiet on our monitor, scam/bundle chatter heavy. NOT risk-off — no dump, no exploit, network fine."
+   },
+   "verdict": "skip",
+   "verdict_note": "no live DexScreener market (unlisted/dead) | token: Jevvis (JEVVIS) supply=1000000000 | pons-factory clone: bulk factory spew pattern, no pair, 0-3 holder addresses, no social | gate warnings: no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped; thin holder data (0 addresses in 12k-block window); no owner(); deployer undiscoverable via RPC — denylist ch"
+  },
+  {
+   "investigated_at": "2026-10-09T18:58:06.943Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "name": "Nexus Core NXCR",
+    "type": "token",
+    "contract": "0xe3661c5955e024376d2876137b10032537fc46a8",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T17:43:43.607Z",
+    "tx_hash": "0x785105b3e3e00b5331bfa89342a66ece9f7e68f8851f9cef7767bdbf9a423f35",
+    "block": 84338695,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84338695 (tx 0x785105b3e3e00b5331bfa89342a66ece9f7e68f8851f9cef7767bdbf9a423f35); name=Nexus Core symbol=NXCR. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T18:45:19.663Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T18:45:19.663Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "thin holder data (0 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "onchain_meta": {
+    "name": "Nexus Core",
+    "symbol": "NXCR",
+    "decimals": 18,
+    "supply": 1000000000,
+    "codeBytes": 3248
+   },
+   "dex": null,
+   "pair_info": null,
+   "enrich_error": null,
+   "velocity": "no live DexScreener market (unlisted/dead)",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "solana_pulse": {
+    "sol_usd": 109.23,
+    "sol_24h_change_pct": 1.23,
+    "source": "CoinGecko simple/price, 2026-10-09T18:46Z",
+    "pumpfun_feed": "quiet: pump-fun scout silent ~5h (last seen 13:53Z, 0 coins in last 3h bucket); no fresh launch-feed signal",
+    "x_news": "no Solana outage/FUD in last ~2h. @Pumpfun touting trader wins (hdegroott +$340k/2wk). Bundle-callout bots busy ($HI 88%, $Meta 93% bundled at launch) — scam-heavy waters but meta active. $GOON +400% 24h per PeepRadars. No @solana market-moving news.",
+    "stance": "neutral-to-slightly-cautious for Solana memecoins: SOL flat at $109 (+1.2% 24h), launch feed quiet on our monitor, scam/bundle chatter heavy. NOT risk-off — no dump, no exploit, network fine."
+   },
+   "verdict": "skip",
+   "verdict_note": "no live DexScreener market (unlisted/dead) | token: Nexus Core (NXCR) supply=1000000000 | pons-factory clone: bulk factory spew pattern, no pair, 0-3 holder addresses, no social | gate warnings: no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped; thin holder data (0 addresses in 12k-block window); no owner(); deployer undiscoverable via RPC — denylist ch"
+  },
+  {
+   "investigated_at": "2026-10-09T18:58:08.669Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "name": "Octopus OCTO",
+    "type": "token",
+    "contract": "0x224b0c768dac47712ba0716f23ae94d170c4d75e",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T17:43:45.622Z",
+    "tx_hash": "0x5667027ecd4f7881e6edba3a1c93c6356993b23bb8d541dcd95b046c009d7343",
+    "block": 84338717,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84338717 (tx 0x5667027ecd4f7881e6edba3a1c93c6356993b23bb8d541dcd95b046c009d7343); name=Octopus symbol=OCTO. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T18:45:34.927Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T18:45:34.927Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "thin holder data (0 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "onchain_meta": {
+    "name": "Octopus",
+    "symbol": "OCTO",
+    "decimals": 18,
+    "supply": 1000000000,
+    "codeBytes": 3248
+   },
+   "dex": null,
+   "pair_info": null,
+   "enrich_error": null,
+   "velocity": "no live DexScreener market (unlisted/dead)",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "solana_pulse": {
+    "sol_usd": 109.23,
+    "sol_24h_change_pct": 1.23,
+    "source": "CoinGecko simple/price, 2026-10-09T18:46Z",
+    "pumpfun_feed": "quiet: pump-fun scout silent ~5h (last seen 13:53Z, 0 coins in last 3h bucket); no fresh launch-feed signal",
+    "x_news": "no Solana outage/FUD in last ~2h. @Pumpfun touting trader wins (hdegroott +$340k/2wk). Bundle-callout bots busy ($HI 88%, $Meta 93% bundled at launch) — scam-heavy waters but meta active. $GOON +400% 24h per PeepRadars. No @solana market-moving news.",
+    "stance": "neutral-to-slightly-cautious for Solana memecoins: SOL flat at $109 (+1.2% 24h), launch feed quiet on our monitor, scam/bundle chatter heavy. NOT risk-off — no dump, no exploit, network fine."
+   },
+   "verdict": "skip",
+   "verdict_note": "no live DexScreener market (unlisted/dead) | token: Octopus (OCTO) supply=1000000000 | pons-factory clone: bulk factory spew pattern, no pair, 0-3 holder addresses, no social | gate warnings: no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped; thin holder data (0 addresses in 12k-block window); no owner(); deployer undiscoverable via RPC — denylist ch"
+  },
+  {
+   "investigated_at": "2026-10-09T18:58:09.872Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "name": "qBOT qBOT",
+    "type": "token",
+    "contract": "0x2ab21f71882c3dc7a746b3b0401e15e19558a6b8",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T17:43:47.411Z",
+    "tx_hash": "0x9fedd90b0469d7486477f20ca55c98f5400c56a44bb9ccc09e6bdcb792554ff3",
+    "block": 84338899,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84338899 (tx 0x9fedd90b0469d7486477f20ca55c98f5400c56a44bb9ccc09e6bdcb792554ff3); name=qBOT symbol=qBOT. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T18:45:47.074Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T18:45:47.074Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "thin holder data (0 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "onchain_meta": {
+    "name": "qBOT",
+    "symbol": "qBOT",
+    "decimals": 18,
+    "supply": 1000000000,
+    "codeBytes": 3248
+   },
+   "dex": null,
+   "pair_info": null,
+   "enrich_error": null,
+   "velocity": "no live DexScreener market (unlisted/dead)",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "solana_pulse": {
+    "sol_usd": 109.23,
+    "sol_24h_change_pct": 1.23,
+    "source": "CoinGecko simple/price, 2026-10-09T18:46Z",
+    "pumpfun_feed": "quiet: pump-fun scout silent ~5h (last seen 13:53Z, 0 coins in last 3h bucket); no fresh launch-feed signal",
+    "x_news": "no Solana outage/FUD in last ~2h. @Pumpfun touting trader wins (hdegroott +$340k/2wk). Bundle-callout bots busy ($HI 88%, $Meta 93% bundled at launch) — scam-heavy waters but meta active. $GOON +400% 24h per PeepRadars. No @solana market-moving news.",
+    "stance": "neutral-to-slightly-cautious for Solana memecoins: SOL flat at $109 (+1.2% 24h), launch feed quiet on our monitor, scam/bundle chatter heavy. NOT risk-off — no dump, no exploit, network fine."
+   },
+   "verdict": "skip",
+   "verdict_note": "no live DexScreener market (unlisted/dead) | token: qBOT (qBOT) supply=1000000000 | pons-factory clone: bulk factory spew pattern, no pair, 0-3 holder addresses, no social | gate warnings: no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped; thin holder data (0 addresses in 12k-block window); no owner(); deployer undiscoverable via RPC — denylist ch"
+  },
+  {
+   "investigated_at": "2026-10-09T18:58:11.700Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "name": "kpopcoin KPOP",
+    "type": "token",
+    "contract": "0xd2c2f942f23adc0fcab4f06eef52273d87d4a725",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T17:43:48.658Z",
+    "tx_hash": "0xe494276ca40d79e1479789dcb2ab15ede98cd6171ee31f754f6398dd9f6f933f",
+    "block": 84339331,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84339331 (tx 0xe494276ca40d79e1479789dcb2ab15ede98cd6171ee31f754f6398dd9f6f933f); name=kpopcoin symbol=KPOP. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T18:45:58.936Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T18:45:58.936Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "thin holder data (0 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "onchain_meta": {
+    "name": "kpopcoin",
+    "symbol": "KPOP",
+    "decimals": 18,
+    "supply": 1000000000,
+    "codeBytes": 3248
+   },
+   "dex": null,
+   "pair_info": null,
+   "enrich_error": null,
+   "velocity": "no live DexScreener market (unlisted/dead)",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "solana_pulse": {
+    "sol_usd": 109.23,
+    "sol_24h_change_pct": 1.23,
+    "source": "CoinGecko simple/price, 2026-10-09T18:46Z",
+    "pumpfun_feed": "quiet: pump-fun scout silent ~5h (last seen 13:53Z, 0 coins in last 3h bucket); no fresh launch-feed signal",
+    "x_news": "no Solana outage/FUD in last ~2h. @Pumpfun touting trader wins (hdegroott +$340k/2wk). Bundle-callout bots busy ($HI 88%, $Meta 93% bundled at launch) — scam-heavy waters but meta active. $GOON +400% 24h per PeepRadars. No @solana market-moving news.",
+    "stance": "neutral-to-slightly-cautious for Solana memecoins: SOL flat at $109 (+1.2% 24h), launch feed quiet on our monitor, scam/bundle chatter heavy. NOT risk-off — no dump, no exploit, network fine."
+   },
+   "verdict": "skip",
+   "verdict_note": "no live DexScreener market (unlisted/dead) | token: kpopcoin (KPOP) supply=1000000000 | pons-factory clone: bulk factory spew pattern, no pair, 0-3 holder addresses, no social | gate warnings: no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped; thin holder data (0 addresses in 12k-block window); no owner(); deployer undiscoverable via RPC — denylist ch"
+  },
+  {
+   "investigated_at": "2026-10-09T18:58:12.839Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "name": "VELLO VELLO",
+    "type": "token",
+    "contract": "0x6289850b6692dbcbfe4311c57d50c4e3e3603012",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T17:43:50.335Z",
+    "tx_hash": "0x698e661322a20a0bfda15ca01463a543adc7eb23563595a0e2d0593b5bba0ac4",
+    "block": 84339485,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84339485 (tx 0x698e661322a20a0bfda15ca01463a543adc7eb23563595a0e2d0593b5bba0ac4); name=VELLO symbol=VELLO. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T18:46:12.468Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T18:46:12.468Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "thin holder data (0 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "onchain_meta": {
+    "name": "VELLO",
+    "symbol": "VELLO",
+    "decimals": 18,
+    "supply": 1000000000,
+    "codeBytes": 3248
+   },
+   "dex": null,
+   "pair_info": null,
+   "enrich_error": null,
+   "velocity": "no live DexScreener market (unlisted/dead)",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "solana_pulse": {
+    "sol_usd": 109.23,
+    "sol_24h_change_pct": 1.23,
+    "source": "CoinGecko simple/price, 2026-10-09T18:46Z",
+    "pumpfun_feed": "quiet: pump-fun scout silent ~5h (last seen 13:53Z, 0 coins in last 3h bucket); no fresh launch-feed signal",
+    "x_news": "no Solana outage/FUD in last ~2h. @Pumpfun touting trader wins (hdegroott +$340k/2wk). Bundle-callout bots busy ($HI 88%, $Meta 93% bundled at launch) — scam-heavy waters but meta active. $GOON +400% 24h per PeepRadars. No @solana market-moving news.",
+    "stance": "neutral-to-slightly-cautious for Solana memecoins: SOL flat at $109 (+1.2% 24h), launch feed quiet on our monitor, scam/bundle chatter heavy. NOT risk-off — no dump, no exploit, network fine."
+   },
+   "verdict": "skip",
+   "verdict_note": "no live DexScreener market (unlisted/dead) | token: VELLO (VELLO) supply=1000000000 | pons-factory clone: bulk factory spew pattern, no pair, 0-3 holder addresses, no social | gate warnings: no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped; thin holder data (0 addresses in 12k-block window); no owner(); deployer undiscoverable via RPC — denylist ch"
+  },
+  {
+   "investigated_at": "2026-10-09T18:58:13.745Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "name": "Colony Crawl COLONY",
+    "type": "token",
+    "contract": "0x0481f9b1fc974400fbe9c4a22005126e754c1c17",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T17:43:53.973Z",
+    "tx_hash": "0x75ebe0d911dc29b14962755f72b03967216070a274dfbcc3f727ad642a3236d1",
+    "block": 84339597,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84339597 (tx 0x75ebe0d911dc29b14962755f72b03967216070a274dfbcc3f727ad642a3236d1); name=Colony Crawl symbol=COLONY. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T18:46:23.696Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T18:46:23.696Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "thin holder data (0 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "onchain_meta": {
+    "name": "Colony Crawl",
+    "symbol": "COLONY",
+    "decimals": 18,
+    "supply": 1000000000,
+    "codeBytes": 3248
+   },
+   "dex": null,
+   "pair_info": null,
+   "enrich_error": null,
+   "velocity": "no live DexScreener market (unlisted/dead)",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "solana_pulse": {
+    "sol_usd": 109.23,
+    "sol_24h_change_pct": 1.23,
+    "source": "CoinGecko simple/price, 2026-10-09T18:46Z",
+    "pumpfun_feed": "quiet: pump-fun scout silent ~5h (last seen 13:53Z, 0 coins in last 3h bucket); no fresh launch-feed signal",
+    "x_news": "no Solana outage/FUD in last ~2h. @Pumpfun touting trader wins (hdegroott +$340k/2wk). Bundle-callout bots busy ($HI 88%, $Meta 93% bundled at launch) — scam-heavy waters but meta active. $GOON +400% 24h per PeepRadars. No @solana market-moving news.",
+    "stance": "neutral-to-slightly-cautious for Solana memecoins: SOL flat at $109 (+1.2% 24h), launch feed quiet on our monitor, scam/bundle chatter heavy. NOT risk-off — no dump, no exploit, network fine."
+   },
+   "verdict": "skip",
+   "verdict_note": "no live DexScreener market (unlisted/dead) | token: Colony Crawl (COLONY) supply=1000000000 | pons-factory clone: bulk factory spew pattern, no pair, 0-3 holder addresses, no social | gate warnings: no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped; thin holder data (0 addresses in 12k-block window); no owner(); deployer undiscoverable via RPC — denylist ch"
+  },
+  {
+   "investigated_at": "2026-10-09T18:58:14.973Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "name": "Nexus Core NXCR",
+    "type": "token",
+    "contract": "0x297a604d7aa7c3c0b5a30de577c87fa8e7be4461",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T17:43:55.282Z",
+    "tx_hash": "0x33aef3ced1300b3cef16ff005aa9eecfc4ea055bceb108c43f6d880085b18a89",
+    "block": 84339850,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84339850 (tx 0x33aef3ced1300b3cef16ff005aa9eecfc4ea055bceb108c43f6d880085b18a89); name=Nexus Core symbol=NXCR. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T18:46:33.532Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T18:46:33.532Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "thin holder data (0 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "onchain_meta": {
+    "name": "Nexus Core",
+    "symbol": "NXCR",
+    "decimals": 18,
+    "supply": 1000000000,
+    "codeBytes": 3248
+   },
+   "dex": null,
+   "pair_info": null,
+   "enrich_error": null,
+   "velocity": "no live DexScreener market (unlisted/dead)",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "solana_pulse": {
+    "sol_usd": 109.23,
+    "sol_24h_change_pct": 1.23,
+    "source": "CoinGecko simple/price, 2026-10-09T18:46Z",
+    "pumpfun_feed": "quiet: pump-fun scout silent ~5h (last seen 13:53Z, 0 coins in last 3h bucket); no fresh launch-feed signal",
+    "x_news": "no Solana outage/FUD in last ~2h. @Pumpfun touting trader wins (hdegroott +$340k/2wk). Bundle-callout bots busy ($HI 88%, $Meta 93% bundled at launch) — scam-heavy waters but meta active. $GOON +400% 24h per PeepRadars. No @solana market-moving news.",
+    "stance": "neutral-to-slightly-cautious for Solana memecoins: SOL flat at $109 (+1.2% 24h), launch feed quiet on our monitor, scam/bundle chatter heavy. NOT risk-off — no dump, no exploit, network fine."
+   },
+   "verdict": "skip",
+   "verdict_note": "no live DexScreener market (unlisted/dead) | token: Nexus Core (NXCR) supply=1000000000 | pons-factory clone: bulk factory spew pattern, no pair, 0-3 holder addresses, no social | gate warnings: no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped; thin holder data (0 addresses in 12k-block window); no owner(); deployer undiscoverable via RPC — denylist ch"
+  },
+  {
+   "investigated_at": "2026-10-09T18:58:15.757Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "name": "KOTH KOTH",
+    "type": "token",
+    "contract": "0x7a6df0f6ed0721e536ac05a434ebff4e30b4a4c0",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T17:44:00.100Z",
+    "tx_hash": "0xdac434f7800e307c766f7717463c1d8bec81cf31a8ff7651dc7ec7addf41dbbd",
+    "block": 84340614,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84340614 (tx 0xdac434f7800e307c766f7717463c1d8bec81cf31a8ff7651dc7ec7addf41dbbd); name=KOTH symbol=KOTH. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T18:54:56.195Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T18:54:56.195Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "thin holder data (0 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "onchain_meta": {
+    "name": "KOTH",
+    "symbol": "KOTH",
+    "decimals": 18,
+    "supply": 1000000000,
+    "codeBytes": 3248
+   },
+   "dex": null,
+   "pair_info": null,
+   "enrich_error": null,
+   "velocity": "no live DexScreener market (unlisted/dead)",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "solana_pulse": {
+    "sol_usd": 109.23,
+    "sol_24h_change_pct": 1.23,
+    "source": "CoinGecko simple/price, 2026-10-09T18:46Z",
+    "pumpfun_feed": "quiet: pump-fun scout silent ~5h (last seen 13:53Z, 0 coins in last 3h bucket); no fresh launch-feed signal",
+    "x_news": "no Solana outage/FUD in last ~2h. @Pumpfun touting trader wins (hdegroott +$340k/2wk). Bundle-callout bots busy ($HI 88%, $Meta 93% bundled at launch) — scam-heavy waters but meta active. $GOON +400% 24h per PeepRadars. No @solana market-moving news.",
+    "stance": "neutral-to-slightly-cautious for Solana memecoins: SOL flat at $109 (+1.2% 24h), launch feed quiet on our monitor, scam/bundle chatter heavy. NOT risk-off — no dump, no exploit, network fine."
+   },
+   "verdict": "skip",
+   "verdict_note": "no live DexScreener market (unlisted/dead) | token: KOTH (KOTH) supply=1000000000 | pons-factory clone: bulk factory spew pattern, no pair, 0-3 holder addresses, no social | gate warnings: no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped; thin holder data (0 addresses in 12k-block window); no owner(); deployer undiscoverable via RPC — denylist ch"
+  },
+  {
+   "investigated_at": "2026-10-09T18:58:16.929Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "name": "Partyline PARTYLINE",
+    "type": "token",
+    "contract": "0xd6a98cb10edf5baa857838ff3871422e9cf7f7d8",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T17:44:01.216Z",
+    "tx_hash": "0x8afeb9ec36ca91f73f75efdf5f88ffa552453611205e901ce8ac408637b6d964",
+    "block": 84340734,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84340734 (tx 0x8afeb9ec36ca91f73f75efdf5f88ffa552453611205e901ce8ac408637b6d964); name=Partyline symbol=PARTYLINE. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T18:55:06.691Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T18:55:06.691Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "thin holder data (0 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "onchain_meta": {
+    "name": "Partyline",
+    "symbol": "PARTYLINE",
+    "decimals": 18,
+    "supply": 1000000000,
+    "codeBytes": 3248
+   },
+   "dex": null,
+   "pair_info": null,
+   "enrich_error": null,
+   "velocity": "no live DexScreener market (unlisted/dead)",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "solana_pulse": {
+    "sol_usd": 109.23,
+    "sol_24h_change_pct": 1.23,
+    "source": "CoinGecko simple/price, 2026-10-09T18:46Z",
+    "pumpfun_feed": "quiet: pump-fun scout silent ~5h (last seen 13:53Z, 0 coins in last 3h bucket); no fresh launch-feed signal",
+    "x_news": "no Solana outage/FUD in last ~2h. @Pumpfun touting trader wins (hdegroott +$340k/2wk). Bundle-callout bots busy ($HI 88%, $Meta 93% bundled at launch) — scam-heavy waters but meta active. $GOON +400% 24h per PeepRadars. No @solana market-moving news.",
+    "stance": "neutral-to-slightly-cautious for Solana memecoins: SOL flat at $109 (+1.2% 24h), launch feed quiet on our monitor, scam/bundle chatter heavy. NOT risk-off — no dump, no exploit, network fine."
+   },
+   "verdict": "skip",
+   "verdict_note": "no live DexScreener market (unlisted/dead) | token: Partyline (PARTYLINE) supply=1000000000 | pons-factory clone: bulk factory spew pattern, no pair, 0-3 holder addresses, no social | gate warnings: no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped; thin holder data (0 addresses in 12k-block window); no owner(); deployer undiscoverable via RPC — denylist ch"
+  },
+  {
+   "investigated_at": "2026-10-09T18:58:17.794Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "name": "NetSniff SNIFF",
+    "type": "token",
+    "contract": "0xd9ec280628895db619031efe42a0432f44aefb71",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T17:44:03.084Z",
+    "tx_hash": "0x4a7935998cae9dc77b8b8396a3e96da609edf4cbeb19220cdd5dc0cb22cbca46",
+    "block": 84341090,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84341090 (tx 0x4a7935998cae9dc77b8b8396a3e96da609edf4cbeb19220cdd5dc0cb22cbca46); name=NetSniff symbol=SNIFF. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T18:55:17.624Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T18:55:17.624Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "thin holder data (0 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "onchain_meta": {
+    "name": "NetSniff",
+    "symbol": "SNIFF",
+    "decimals": 18,
+    "supply": 1000000000,
+    "codeBytes": 3248
+   },
+   "dex": null,
+   "pair_info": null,
+   "enrich_error": null,
+   "velocity": "no live DexScreener market (unlisted/dead)",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "solana_pulse": {
+    "sol_usd": 109.23,
+    "sol_24h_change_pct": 1.23,
+    "source": "CoinGecko simple/price, 2026-10-09T18:46Z",
+    "pumpfun_feed": "quiet: pump-fun scout silent ~5h (last seen 13:53Z, 0 coins in last 3h bucket); no fresh launch-feed signal",
+    "x_news": "no Solana outage/FUD in last ~2h. @Pumpfun touting trader wins (hdegroott +$340k/2wk). Bundle-callout bots busy ($HI 88%, $Meta 93% bundled at launch) — scam-heavy waters but meta active. $GOON +400% 24h per PeepRadars. No @solana market-moving news.",
+    "stance": "neutral-to-slightly-cautious for Solana memecoins: SOL flat at $109 (+1.2% 24h), launch feed quiet on our monitor, scam/bundle chatter heavy. NOT risk-off — no dump, no exploit, network fine."
+   },
+   "verdict": "skip",
+   "verdict_note": "no live DexScreener market (unlisted/dead) | token: NetSniff (SNIFF) supply=1000000000 | pons-factory clone: bulk factory spew pattern, no pair, 0-3 holder addresses, no social | gate warnings: no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped; thin holder data (0 addresses in 12k-block window); no owner(); deployer undiscoverable via RPC — denylist ch"
+  },
+  {
+   "investigated_at": "2026-10-09T18:58:18.778Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "name": "tithe TITHE",
+    "type": "token",
+    "contract": "0x4d6159becd0fbcc79d466c92a0b3eacc8a647d4b",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T17:44:05.340Z",
+    "tx_hash": "0x21859e578382973b79bb4620545fb00434497413f4181a606659bf324297ceea",
+    "block": 84341831,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84341831 (tx 0x21859e578382973b79bb4620545fb00434497413f4181a606659bf324297ceea); name=tithe symbol=TITHE. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T18:55:30.055Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T18:55:30.055Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "thin holder data (0 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "onchain_meta": {
+    "name": "tithe",
+    "symbol": "TITHE",
+    "decimals": 18,
+    "supply": 1000000000,
+    "codeBytes": 3248
+   },
+   "dex": null,
+   "pair_info": null,
+   "enrich_error": null,
+   "velocity": "no live DexScreener market (unlisted/dead)",
+   "social_signal": "weak",
+   "money_flow": "bot",
+   "solana_pulse": {
+    "sol_usd": 109.23,
+    "sol_24h_change_pct": 1.23,
+    "source": "CoinGecko simple/price, 2026-10-09T18:46Z",
+    "pumpfun_feed": "quiet: pump-fun scout silent ~5h (last seen 13:53Z, 0 coins in last 3h bucket); no fresh launch-feed signal",
+    "x_news": "no Solana outage/FUD in last ~2h. @Pumpfun touting trader wins (hdegroott +$340k/2wk). Bundle-callout bots busy ($HI 88%, $Meta 93% bundled at launch) — scam-heavy waters but meta active. $GOON +400% 24h per PeepRadars. No @solana market-moving news.",
+    "stance": "neutral-to-slightly-cautious for Solana memecoins: SOL flat at $109 (+1.2% 24h), launch feed quiet on our monitor, scam/bundle chatter heavy. NOT risk-off — no dump, no exploit, network fine."
+   },
+   "verdict": "skip",
+   "verdict_note": "no live DexScreener market (unlisted/dead) | token: tithe (TITHE) supply=1000000000 | pons-factory clone: bulk factory spew pattern, no pair, 0-3 holder addresses, no social | gate warnings: no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped; thin holder data (0 addresses in 12k-block window); no owner(); deployer undiscoverable via RPC — denylist ch"
+  },
+  {
+   "investigated_at": "2026-10-09T18:58:20.001Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "type": "pair",
+    "contract": "0x77565ae9015a3e46da4185ac5f87a09b5d665fa5",
+    "chain": "robinhood",
+    "scout": "new-pairs",
+    "found_at": "2026-10-09T17:45:28.669Z",
+    "detail": "V2 pair created block 84341512 via factory 0x8bceaa40…. 4 swaps since creation (4 buys / 0 sells), ~1.19 WETH volume, reserves 51.67 WETH / 5235683.8k POKE. FLAGS: no sells observed yet",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T18:56:09.431Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "dangerous selectors present (mint(address)) but no owner() — power unattributable",
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T18:56:09.431Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "dangerous selectors present (mint(address)) but no owner() — power unattributable",
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "thin holder data (0 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "onchain_meta": {
+    "name": "PokePaired",
+    "symbol": "POKE",
+    "decimals": 18,
+    "supply": 5399999999.999999,
+    "codeBytes": 3553
+   },
+   "dex": {
+    "priceUsd": "0.000000000001042",
+    "liqUsd": 0,
+    "txns5m": {
+     "buys": 0,
+     "sells": 0
+    },
+    "txns1h": {
+     "buys": 5,
+     "sells": 1
+    },
+    "vol5m": 0,
+    "vol1h": 1786.8,
+    "url": "https://dexscreener.com/robinhood/0x77565ae9015a3e46da4185ac5f87a09b5d665fa5"
+   },
+   "pair_info": {
+    "pair": "0x77565ae9015a3e46da4185ac5f87a09b5d665fa5",
+    "token": "0xe929cc7f4fefa0f23251e8e9e4f03edc3cceb147"
+   },
+   "enrich_error": null,
+   "velocity": "V2 pair 0x77565ae9… token=0xe929cc7f4fefa0f23251e8e9e4f03edc3cceb147",
+   "social_signal": "weak",
+   "money_flow": "mixed",
+   "solana_pulse": {
+    "sol_usd": 109.23,
+    "sol_24h_change_pct": 1.23,
+    "source": "CoinGecko simple/price, 2026-10-09T18:46Z",
+    "pumpfun_feed": "quiet: pump-fun scout silent ~5h (last seen 13:53Z, 0 coins in last 3h bucket); no fresh launch-feed signal",
+    "x_news": "no Solana outage/FUD in last ~2h. @Pumpfun touting trader wins (hdegroott +$340k/2wk). Bundle-callout bots busy ($HI 88%, $Meta 93% bundled at launch) — scam-heavy waters but meta active. $GOON +400% 24h per PeepRadars. No @solana market-moving news.",
+    "stance": "neutral-to-slightly-cautious for Solana memecoins: SOL flat at $109 (+1.2% 24h), launch feed quiet on our monitor, scam/bundle chatter heavy. NOT risk-off — no dump, no exploit, network fine."
+   },
+   "verdict": "skip",
+   "verdict_note": "V2 pair 0x77565ae9… token=0xe929cc7f4fefa0f23251e8e9e4f03edc3cceb147 | no live DexScreener market (unlisted/dead) | token: PokePaired (POKE) supply=5399999999.999999 | HONEYPOT FLAG: buys with zero sells observed since creation | gate: dangerous selectors (mint(address)) present but power unattributable (no owner()) | gate warnings: dangerous selectors present (mint(address)) but no owner() — power unattributable; no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped; thin holder data (0 addres"
   }
  ],
  "scores": [
@@ -227958,7 +228848,9 @@
    "recommendation": "skip",
    "reason": "F social grade is a likely-skip signal per standing rule; combined with brand impersonation, zero traction since launch (1 transfer in ~7.4h), no pairs, no holders, and an unattributable anonymous deployer, durability is weak. No mint, no buy.",
    "processed": true,
-   "processed_note": "flock-decision run 2026-10-09 13:33 EDT: social grade F = hard skip per standing rule, no execution"
+   "processed_note": "hard skip: social grade F (D/F dump-or-dead per backtest rule); no score, no execution",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T17:32:10.673459+00:00",
@@ -228073,7 +228965,9 @@
    "recommendation": "skip",
    "reason": "F social grade rules it out per standing rule; unattributable mint power is a severe unresolved risk; and with only 4 swaps in its life and no verifiable price or liquidity, there is nothing durable to invest in. No mint, no buy.",
    "processed": true,
-   "processed_note": "flock-decision run 2026-10-09 13:33 EDT: social grade F = hard skip per standing rule, no execution"
+   "processed_note": "hard skip: social grade F (D/F dump-or-dead per backtest rule); no score, no execution",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T17:32:10.673459+00:00",
@@ -228185,7 +229079,9 @@
    "recommendation": "skip",
    "reason": "Real volume but a real rug: liquidity drained to $17, price collapsing 77.7% in 6 hours, and F-grade forced bot social. Per standing rule D/F grades are a likely skip regardless of other factors — here the other factors (dump in progress, no liquidity) agree. No mint, no buy; not even a watch — this one is spent.",
    "processed": true,
-   "processed_note": "flock-decision run 2026-10-09 13:33 EDT: social grade F = hard skip per standing rule, no execution"
+   "processed_note": "hard skip: social grade F (D/F dump-or-dead per backtest rule); no score, no execution",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "processed": true,
@@ -229068,7 +229964,16 @@
    "reason": "B grade (70) + mainstream press coverage + real narrative (HIMS float squeeze) + $2.9-3.2M daily volume on an established market; strongest durable meme in this batch.",
    "gate_status": null,
    "gate_warnings": null,
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "scored 68 (buy (60-79)); virality sustained; BLOCKED",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT",
+   "cardigan_score": 68,
+   "score_detail": "BONER/Boner Coin 0x98096d17: vol 28 (24h $2.9-3.2M steady, no spike, buy/sell mix unknown); sent B=15; vit 25 (mom 5 capped - no accel data, pickup 7 HIMS-squeeze meme, talking 8 Bloomberg/Cointelegraph/Defiant, legs 5 recurring squeeze cycles); mcap $46-70M -> tilt -10; 2-whale EOA conv +10",
+   "virality_lifecycle": "sustained",
+   "entry_exit": "entry: market (no overheat data); TP1 +50% take 1/3, TP2 +100% take 1/3, TP3 +300% (sustained), stop -40%, trail 25, 15% moon bag rides exempt from trail",
+   "execution": "BLOCKED: real-money execution paused pending dubie rule choice (broad auto-buy vs narrow mint-only) + executor wallet 0.002918 ETH < 0.01 ETH position minimum. nothing submitted."
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229105,7 +230010,16 @@
    "reason": "B grade (77) — strongest social legitimacy scored on Robinhood chain to date + Bithumb listing tailwind + $3.36M liquidity + 3-whale dip-buying ($23k, incl $5.6M-asset whale +$87k); durable breakout-meme profile.",
    "gate_status": null,
    "gate_warnings": null,
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "scored 65 (buy (60-79)); virality sustained; BLOCKED",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT",
+   "cardigan_score": 65,
+   "score_detail": "CASHCAT 0x020bfc65: vol 24 ($882k vol / $3.36M liq = 0.26 churn-heavy, deep liq); sent B=15; vit 26 (mom 5 capped - buy/sell 0.514<0.55, pickup 8 Bithumb listing tailwind, talking 7, legs 6 site+lore+CEX); mcap $111.6M -> tilt -10; 3-whale EOA conv +10",
+   "virality_lifecycle": "sustained",
+   "entry_exit": "entry: market; TP1 +50% take 1/3, TP2 +100% take 1/3, TP3 +300% (sustained), stop -40%, trail 25, 15% moon bag rides",
+   "execution": "BLOCKED: real-money execution paused pending dubie rule choice + executor wallet 0.002918 ETH < minimum. nothing submitted."
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229131,7 +230045,11 @@
    "reason": "D grade + batch-mint pattern + mixed-to-low token quality; agent-identity platforms are real but this mint cluster shows no durable signal.",
    "gate_status": "gate_skipped",
    "gate_warnings": [],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "ANOMALY: gate_status=gate_skipped (not gate_pass) -> not scored per safety rule; skipped",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229157,7 +230075,11 @@
    "reason": "C grade + unverifiable holder spread (RPC 429) — strongest organic candidate of its scan but no durability evidence until bundle check clears.",
    "gate_status": "gate_skipped",
    "gate_warnings": [],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "ANOMALY: gate_status=gate_skipped (not gate_pass) -> not scored per safety rule; skipped",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229183,7 +230105,11 @@
    "reason": "D grade + coordinated-farm coordination flag; momentum is manufactured, not earned.",
    "gate_status": "gate_skipped",
    "gate_warnings": [],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "ANOMALY: gate_status=gate_skipped (not gate_pass) -> not scored per safety rule; skipped",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229209,7 +230135,11 @@
    "reason": "B grade, verified-real swarm with a working burn mechanic and 370+ nodes; strong durability but this is an ecosystem to track, not a buy trigger.",
    "gate_status": "gate_skipped",
    "gate_warnings": [],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "ANOMALY: gate_status=gate_skipped (not gate_pass) -> not scored per safety rule; skipped",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229244,7 +230174,11 @@
     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
    ],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "hard skip: social grade F (D/F dump-or-dead per backtest rule); no score, no execution",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229279,7 +230213,11 @@
     "thin holder data (0 addresses in 12k-block window)",
     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
    ],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "hard skip: social grade D (D/F dump-or-dead per backtest rule); no score, no execution",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229313,7 +230251,11 @@
     "thin holder data (0 addresses in 12k-block window)",
     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
    ],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "ANOMALY: gate_status=gate_failed -> not scored per safety rule; skipped",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229346,7 +230288,16 @@
     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
    ],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "scored 51 (watch/skip (51, vit_core 7 < 15, scam-watch family flag)); virality flash; NONE",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT",
+   "cardigan_score": 51,
+   "score_detail": "PLTR-mimic 0x894e1ec2: vol 30 ($1.28M/$386k liq=3.3, two-sided); sent C=10; vit 11 (mom 4 capped, pickup 3, talking 2, legs 2); mcap n/a -> tilt 0 noted; no EOA conv bonus. blanket-snug: brand-impersonation scam-watch family -> skip",
+   "virality_lifecycle": "flash",
+   "entry_exit": "none (skip)",
+   "execution": "NONE: scam-watch family flag + weak vitality; no buy."
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229379,7 +230330,11 @@
     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
    ],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "hard skip: social grade F (D/F dump-or-dead per backtest rule); no score, no execution",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229415,7 +230370,11 @@
     "thin holder data (0 addresses in 12k-block window)",
     "actor 0xbedc6b8863ced24568967cdb08460fceefb5c4ae on rug denylist: Gacha Galaxy name-squat lookalike (GG, 0x29fa895542e31ce3497c9e72c74205e62dd1e75c) — EOA owner() holding mint + pause powers; known scam, social score F (8/100)"
    ],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "ANOMALY: gate_status=gate_failed -> not scored per safety rule; skipped",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229450,7 +230409,16 @@
     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
    ],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "scored 41 (skip (<50)); virality uncertain; NONE",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT",
+   "cardigan_score": 41,
+   "score_detail": "ORBIO 0xaa07a0e9: vol 15 (0 DexScreener pairs, thin); sent B=15; vit 21 (mom 4 capped, pickup 7, talking 5, legs 5); mcap ~$83M (chaincatcher Sep) -> tilt -10; no EOA conv bonus (whale receivers were contracts). scout mislabel caveat: same factory tx attributed to Quarry QRY -> CA unverified, blocks any buy",
+   "virality_lifecycle": "uncertain",
+   "entry_exit": "none (skip)",
+   "execution": "NONE: score <50 + contract-attribution unverified."
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229487,7 +230455,16 @@
     "thin holder data (0 addresses in 12k-block window)",
     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
    ],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "scored 63 (buy (60-79)); virality flash; BLOCKED",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT",
+   "cardigan_score": 63,
+   "score_detail": "CRH 0x9d7305ef: vol 28 ($462k/$69k liq=6.7, real two-sided); sent C=10; vit 15 (mom 8: buy/sell 0.58>=0.55 & vol/liq 6.7>=1.5, pickup 3 niche, talking 2 no buzz, legs 2 +1024% flash shape); FDV ~$570K -> tilt +10; no conv bonus. RISK: 60.5% top holder unknown attribution (gate_warn) -> prefer smaller size per standing rule",
+   "virality_lifecycle": "flash",
+   "entry_exit": "entry: market (momentum hot but real flow); FLASH plan: TP1 +30% take 1/3, TP2 +60% take 1/3, +100% exit rest except 15% moon bag rides, stop -20%, trail 15; half-size bias due to 60.5% holder concentration",
+   "execution": "BLOCKED: real-money execution paused pending dubie rule choice + executor wallet 0.002918 ETH < minimum. nothing submitted."
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229575,7 +230552,11 @@
    "reason": "F grade + micro-activity + concentrated holders; no durability signal.",
    "gate_status": null,
    "gate_warnings": null,
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "hard skip: social grade F (D/F dump-or-dead per backtest rule); no score, no execution",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229663,7 +230644,11 @@
    "reason": "F grade + one-sided tape + 48% top holder; skip.",
    "gate_status": null,
    "gate_warnings": null,
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "hard skip: social grade F (D/F dump-or-dead per backtest rule); no score, no execution",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229698,7 +230683,11 @@
    "reason": "D grade + farmed-name family with a confirmed wash-trap sibling; velocity without trust is a trap.",
    "gate_status": null,
    "gate_warnings": null,
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "hard skip: social grade D (D/F dump-or-dead per backtest rule); no score, no execution",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229742,7 +230731,16 @@
     "V4: floor check decided early: 1 pool(s) read, V4 total >= 0.5 ETH (lower bound 1693.024 ETH)",
     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
    ],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "scored 75 (buy (60-79) mechanically, but pipeline-fit declined); virality sustained (equity); NONE",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT",
+   "cardigan_score": 75,
+   "score_detail": "SPCX 0x4a0e65a3: vol 26 ($1.45M/$6M liq=0.24, balanced book); sent B=15; vit 24 (mom 4 capped - buy/sell 0.496<0.55, pickup 6 SpaceX brand, talking 8 IPO+MEXC coverage, legs 6 equity durable); mcap $10.02M -> tilt 0; 3-whale EOA conv ($199k) +10",
+   "virality_lifecycle": "sustained (equity)",
+   "entry_exit": "watch: canonical SpaceX equity token - TP ladder N/A for equity peg; track, do not chase as launch play (per investigator pipeline-fit note)",
+   "execution": "NONE: equity exposure, not a launch-pipeline buy; no execution."
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229883,7 +230881,16 @@
     "thin holder data (4 addresses in 12k-block window)",
     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
    ],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "scored 36 (skip (<50)); virality uncertain; NONE",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT",
+   "cardigan_score": 36,
+   "score_detail": "MORTAL 0xc11bfe9d: vol 16 ($51K vol, thin 7 swaps/20k blocks); sent C=10; vit 10 (mom 3, pickup 3, talking 2, legs 2; -58%, no buzz); mcap ~$42M FDV -> tilt 0; no conv bonus",
+   "virality_lifecycle": "uncertain",
+   "entry_exit": "none (skip)",
+   "execution": "NONE: score <50."
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229921,7 +230928,11 @@
    "reason": "D grade + no signal; surveillance artifact, not a candidate.",
    "gate_status": null,
    "gate_warnings": null,
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "hard skip: social grade D (D/F dump-or-dead per backtest rule); no score, no execution",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229959,7 +230970,11 @@
    "reason": "D grade + no signal; surveillance artifact.",
    "gate_status": null,
    "gate_warnings": null,
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "hard skip: social grade D (D/F dump-or-dead per backtest rule); no score, no execution",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -229997,7 +231012,11 @@
    "reason": "D grade + no signal; surveillance artifact.",
    "gate_status": null,
    "gate_warnings": null,
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "hard skip: social grade D (D/F dump-or-dead per backtest rule); no score, no execution",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -230110,7 +231129,11 @@
    "reason": "F grade + no activity; dead launch.",
    "gate_status": null,
    "gate_warnings": null,
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "hard skip: social grade F (D/F dump-or-dead per backtest rule); no score, no execution",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -230226,7 +231249,11 @@
    "reason": "F grade + near-zero activity; abandoned.",
    "gate_status": null,
    "gate_warnings": null,
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "hard skip: social grade F (D/F dump-or-dead per backtest rule); no score, no execution",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -230339,7 +231366,11 @@
    "reason": "F grade + active liquidity pull; rug in progress.",
    "gate_status": null,
    "gate_warnings": null,
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "hard skip: social grade F (D/F dump-or-dead per backtest rule); no score, no execution",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -230378,7 +231409,11 @@
    "reason": "F grade; steady tape with zero social proof = churn, not demand.",
    "gate_status": null,
    "gate_warnings": null,
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "hard skip: social grade F (D/F dump-or-dead per backtest rule); no score, no execution",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -230417,7 +231452,11 @@
     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
    ],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "hard skip: social grade F (D/F dump-or-dead per backtest rule); no score, no execution",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -230454,7 +231493,11 @@
    "reason": "F grade + wash-like churn + 69% top-10 concentration; manufactured activity.",
    "gate_status": null,
    "gate_warnings": null,
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "hard skip: social grade F (D/F dump-or-dead per backtest rule); no score, no execution",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -230487,7 +231530,11 @@
    "gate_warnings": [
     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
    ],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "ANOMALY: gate_status=gate_failed -> not scored per safety rule; skipped",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -230520,7 +231567,11 @@
    "gate_warnings": [
     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
    ],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "ANOMALY: gate_status=gate_failed -> not scored per safety rule; skipped",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -230546,7 +231597,11 @@
    "reason": "Established token with real whale dip-accumulation and verified social infra, but deep drawdown + farm-nexus counterparty + FUD keep durability uncertain; track the whale tape, no buy on the drawdown yet. Consolidated from 7 sightings (verdicts ['promising', 'promising', 'needs-snug', 'needs-snug', 'needs-snug', 'needs-snug', 'needs-snug']). latest social-credit re-grade: C (52/100) at 2026-10-09T17:42:44.205434+00:00",
    "gate_status": "gate_skipped",
    "gate_warnings": [],
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "ANOMALY: gate_status=gate_skipped (not gate_pass) -> not scored per safety rule; skipped",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT"
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -230582,7 +231637,16 @@
    "reason": "A grade (82) social legitimacy + revenue-backed buyback/burn engine + sustained multi-whale EOA dip-accumulation across 4 convergence windows; strongest durable buy signal in this batch. Consolidated from 2 sightings (verdicts ['promising', 'promising']). latest social-credit re-grade: C (57/100) at 2026-10-09T17:42:44.205434+00:00",
    "gate_status": null,
    "gate_warnings": null,
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "scored 71 (buy (60-79)); virality sustained; BLOCKED",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT",
+   "cardigan_score": 71,
+   "score_detail": "PONS 0x39dbed3a: vol 26 ($1.92M vol, sell-dominant 1484/1789, deep); sent A=20 (entry field; NOTE: reason text cites a C re-grade 17:42Z today - discrepancy flagged); vit 25 (mom 5 capped - buy/sell 0.453<0.55, pickup 6, talking 7 OKX/Bitget, legs 7 buyback/burn engine); mcap $236.9M -> tilt -10; multi-whale EOA conv +10",
+   "virality_lifecycle": "sustained",
+   "entry_exit": "entry: market (dip, not overheated); TP1 +50% take 1/3, TP2 +100% take 1/3, TP3 +300% (sustained), stop -40%, trail 25, 15% moon bag rides",
+   "execution": "BLOCKED: real-money execution paused pending dubie rule choice + executor wallet 0.002918 ETH < 0.01 ETH position minimum. nothing submitted."
   },
   {
    "broken_down_at": "2026-10-09T18:52:04.059291+00:00",
@@ -230619,7 +231683,16 @@
    "reason": "Conflicting verification across runs (B official vs F scam-flag on the same contract) — durability cannot be judged until the drainer-page flag is resolved; skip, do not accumulate. Consolidated from 2 sightings (verdicts ['promising', 'promising']). latest social-credit re-grade: C (47/100) at 2026-10-09T17:16:09.567420+00:00",
    "gate_status": null,
    "gate_warnings": null,
-   "snug_worker": "blanket-snug"
+   "snug_worker": "blanket-snug",
+   "processed_at": "2026-10-09T18:57:43.074315+00:00",
+   "processed": true,
+   "processed_note": "scored 63 (buy (60-79)); virality sustained (equity); BLOCKED",
+   "decision_run": "cardigan-flock-decision 2026-10-09 14:51 EDT",
+   "cardigan_score": 63,
+   "score_detail": "CRCL 0xdf0992e4: vol 30 ($7.78M/$6.7M liq=1.16, deep); sent C=10; vit 23 (mom 4 capped - buy/sell 0.457<0.55, pickup 6, talking 7, legs 6 equity durable); mcap >$50M (NYSE CRCL) -> tilt -10; 3-whale EOA conv (~$380k) +10",
+   "virality_lifecycle": "sustained (equity)",
+   "entry_exit": "entry: market; sustained plan TP1 +50%/TP2 +100%/TP3 +300%, stop -40%, trail 25, moon bag 15% - note equity-peg: TP ladder is stretch, sized as equity exposure",
+   "execution": "BLOCKED: real-money execution paused pending dubie rule choice + executor wallet 0.002918 ETH < minimum. nothing submitted."
   }
  ],
  "tracking": {
@@ -358099,8 +359172,8 @@
   "whale-watcher"
  ],
  "last_activity": {
-  "scout": "2026-10-09T18:56:08.395Z",
-  "hymn": "2026-10-09T18:41:07.456Z",
+  "scout": "2026-10-09T18:58:24.951Z",
+  "hymn": "2026-10-09T18:58:20.001Z",
   "scorer": "2026-10-09T18:46:24.800937+00:00",
   "snug": "2026-10-09T18:52:04.059291+00:00",
   "cardigan": "2026-10-09T18:52:04.059291+00:00"
@@ -358229,7 +359302,7 @@
   "realized_pnl_pct_total": 0
  },
  "paper_trades": {
-  "as_of": "2026-10-09T18:52:15.881Z",
+  "as_of": "2026-10-09T18:57:10.529Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -358248,7 +359321,7 @@
     "seeded": true,
     "score": 66,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01202,
+    "last_price_usd": 0.01201,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -358259,8 +359332,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.000461270670147953,
-    "unrealized_pnl_pct": 4.61270670147953
+    "unrealized_pnl_eth": 0.00045256744995648247,
+    "unrealized_pnl_pct": 4.525674499564825
    },
    {
     "id": "pt-muzwwuzb-27",
@@ -358271,7 +359344,7 @@
     "seeded": true,
     "score": 63,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01202,
+    "last_price_usd": 0.01201,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -358282,8 +359355,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.000461270670147953,
-    "unrealized_pnl_pct": 4.61270670147953
+    "unrealized_pnl_eth": 0.00045256744995648247,
+    "unrealized_pnl_pct": 4.525674499564825
    },
    {
     "id": "pt-mv02u5pe-52",
@@ -358317,7 +359390,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3437,
+    "last_price_usd": 0.3439,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -358328,8 +359401,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00012072434607645843,
-    "unrealized_pnl_pct": -1.2072434607645843
+    "unrealized_pnl_eth": -0.00011497556769186512,
+    "unrealized_pnl_pct": -1.1497556769186512
    },
    {
     "id": "pt-mv03wwab-54",
@@ -358363,7 +359436,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.3437,
+    "last_price_usd": 0.3439,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -358374,8 +359447,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0002606970813261544,
-    "unrealized_pnl_pct": -2.6069708132615443
+    "unrealized_pnl_eth": -0.0002550297534712387,
+    "unrealized_pnl_pct": -2.550297534712387
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -358386,7 +359459,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.3437,
+    "last_price_usd": 0.3439,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -358397,8 +359470,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00025517436915225455,
-    "unrealized_pnl_pct": -2.5517436915225455
+    "unrealized_pnl_eth": -0.00024950382761553815,
+    "unrealized_pnl_pct": -2.4950382761553813
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -358409,7 +359482,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.3437,
+    "last_price_usd": 0.3439,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -358420,8 +359493,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0002717237475233514,
-    "unrealized_pnl_pct": -2.7172374752335138
+    "unrealized_pnl_eth": -0.0002660628361166151,
+    "unrealized_pnl_pct": -2.6606283611661508
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -358432,7 +359505,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.3437,
+    "last_price_usd": 0.3439,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -358443,8 +359516,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0002772277227722764,
-    "unrealized_pnl_pct": -2.7722772277227636
+    "unrealized_pnl_eth": -0.0002715700141442712,
+    "unrealized_pnl_pct": -2.7157001414427118
    }
   ],
   "closed_recent": [],

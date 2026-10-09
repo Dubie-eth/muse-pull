@@ -1,33 +1,11 @@
 {
- "updated_at": "2026-10-09T01:58:52.595Z",
+ "updated_at": "2026-10-09T02:01:00.731Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-09T01:42:47.740Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xb2ffdf9c635335d560627188216203f41a9b0155",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0xc78a68e513b8cbbf0b4705f8e353a08626d9b5ddd6bbeeee2a7d80c7b9713e8e",
-   "block": 83693179,
-   "detail": "new contract deployed in block 83693179"
-  },
-  {
-   "found_at": "2026-10-09T01:42:48.612Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0x6b1f595e21bfb70dbf5ea9b862799d1059ca4c93",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0xe308a40b1c5e3b9b8390dce74fa34b7d69a3921b82c972e455b8709e26639738",
-   "block": 83693179,
-   "detail": "new contract deployed in block 83693179"
-  },
   {
    "found_at": "2026-10-09T01:42:51.099Z",
    "scout": "block-watcher",
@@ -393,7 +371,208 @@
    "whale_assets_usd": 160808.45,
    "amount_usd": 34968.37,
    "convergence": true,
-   "receiver_is_contract": false
+   "receiver_is_contract": false,
+   "investigated": true,
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "investigation": {
+    "investigated_at": "2026-10-09T02:00:18.188Z",
+    "candidate": {
+     "found_at": "2026-10-08T21:22:54.233Z",
+     "scout": "whale-watcher",
+     "type": "whale-convergence",
+     "token": "PONS",
+     "contract": "0x39dbed3a2bd333467115de45665cc57f813c4571",
+     "chain": "robinhood",
+     "tx_hash": "0x4d6869e019363a6559fc653cf0c6aac3321cf18b6a6467b433ad2676e368000e",
+     "detail": "CONVERGENCE: 3 whale EOA wallets accumulating PONS (0x39dbed3a2bd333467115de45665cc57f813c4571) on robinhood within one scan window; combined $71,945 received. Largest: whale 0x98a3c6c89f58dc7029bc5d304abda44fcd373987 (~$4,321,566 assets) received $34,645 in tx 0x4d6869e019363a6559fc653cf0c6aac3321cf18b6a6467b433ad2676e368000e",
+     "converging_whales": 3,
+     "converging_wallets": [
+      "0x50f450c51a3ef814e8ddaaf3fae15d6a9c25fe76",
+      "0x98a3c6c89f58dc7029bc5d304abda44fcd373987",
+      "0x2dbaf98620ac5bbe3441f756feff82702d095b1a"
+     ],
+     "combined_amount_usd": 71944.76,
+     "whale": "0x98a3c6c89f58dc7029bc5d304abda44fcd373987",
+     "whale_assets_usd": 4321565.88,
+     "amount_usd": 34645.06,
+     "convergence": true,
+     "receiver_is_contract": false,
+     "gate_status": "gate_pass",
+     "gate_checked_at": "2026-10-09T01:35:25.708Z",
+     "gate_reasons": [],
+     "gate_warnings": [
+      "V4: pool discovery found 1921 pools; state reads capped at 500 (totalEth is a lower bound)",
+      "V4: floor check decided early: 58 pool(s) read, V4 total >= 0.5 ETH (lower bound 17.895 ETH)",
+      "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+     ],
+     "gate_warn": true,
+     "gate_detail": {
+      "checks": {
+       "owner-powers": {
+        "pass": true,
+        "reasons": [],
+        "warnings": [],
+        "notes": [
+         "no owner(); no dangerous selectors in bytecode"
+        ],
+        "detail": {
+         "selectors": {
+          "mint": [],
+          "pause": [],
+          "blacklist": [],
+          "fee": []
+         },
+         "owner": null
+        }
+       },
+       "proxy": {
+        "pass": true,
+        "reasons": [],
+        "warnings": [],
+        "notes": [
+         "no proxy admin/beacon slots set; not an upgradeable proxy"
+        ],
+        "detail": {}
+       },
+       "lp-liquidity": {
+        "pass": true,
+        "reasons": [],
+        "warnings": [
+         "V4: pool discovery found 1921 pools; state reads capped at 500 (totalEth is a lower bound)",
+         "V4: floor check decided early: 58 pool(s) read, V4 total >= 0.5 ETH (lower bound 17.895 ETH)"
+        ],
+        "notes": [
+         "combined pool value ~23.821 ETH (V2 5.926 + V4 17.895) >= 0.5 ETH floor",
+         "EOA-held LP ~0.00% (<=10%)"
+        ],
+        "detail": {
+         "pair": "0x8018ee3ad3c0321be0e69536733cd28e29564dd4",
+         "wethReserveEth": 2.963208535775057,
+         "v2Readable": true,
+         "poolValueEth": 5.926417071550114,
+         "v4PoolCount": 1921,
+         "v4PricedCount": 7,
+         "v4ValueEth": 17.89454058747248,
+         "v4Capped": true,
+         "v4FloorReachedEarly": true,
+         "v4Pools": [
+          {
+           "poolId": "0xc4db99050d1f8749fbd20721da135af1753bb0e8d79b098e2de13ce79c945a7f",
+           "valueEth": 17.882,
+           "refVia": "v4-ref-pool 0xae400546…"
+          },
+          {
+           "poolId": "0x14216dcd460fa1fd910314322d6dd028c646ec995b6b28deb641d1827fb0cd85",
+           "valueEth": 0.0085,
+           "refVia": "v4-ref-pool 0xbac3aa3b…"
+          },
+          {
+           "poolId": "0x2e7ba084e848fb5af806efaeccfc9676a1a4c459f696e852b53c1a4f650c39b6",
+           "valueEth": 0.003,
+           "refVia": "v4-ref-pool 0xbac3aa3b…"
+          },
+          {
+           "poolId": "0xda652f3afbadac9b72b5b05f84714e7fc64340397d25ca5b7d71fd463e5ed0b6",
+           "valueEth": 0.0009,
+           "refVia": "v4-ref-pool 0xbac3aa3b…"
+          },
+          {
+           "poolId": "0xffe5427d8f50e83e349ca2e85a27ddf838634a588e95966a9457fb6c10f639d0",
+           "valueEth": 0.0001,
+           "refVia": "v4-ref-pool 0xbac3aa3b…"
+          },
+          {
+           "poolId": "0x1732d7e7025d29c0cd007fdd2b362ad7ded0e49fa37484539bbe797972597a77",
+           "valueEth": 0.0001,
+           "refVia": "v4-ref-pool 0xbac3aa3b…"
+          },
+          {
+           "poolId": "0xbf15741e187a6a81312056c71cf4c11dea8eeae1bc43d53e8640d4d87ac87edc",
+           "valueEth": 0,
+           "refVia": "v4-ref-pool 0xbac3aa3b…"
+          }
+         ],
+         "combinedValueEth": 23.820957659022596,
+         "lpSupply": "344935630984054",
+         "eoaLpPct": 0,
+         "lpHolderScanComplete": true
+        }
+       },
+       "concentration": {
+        "pass": true,
+        "reasons": [],
+        "warnings": [],
+        "notes": [
+         "top-10 real-wallet holders own 13.20% of supply (<=30%); no concentration trigger"
+        ],
+        "detail": {
+         "supply": "1000000000000000000000000000",
+         "addrsSeen": 294,
+         "top10EoaBps": 1320,
+         "top1EoaBps": 431,
+         "top10": [
+          {
+           "addr": "0xb995b91882f5990e5ab3cc4700b66b20a66c4c79",
+           "bal": "43183843186297952500000000"
+          },
+          {
+           "addr": "0xa64723bfdc2805c4ad09c509983cfd85362298ba",
+           "bal": "31967884907338025000000000"
+          },
+          {
+           "addr": "0xc0e17ad342afabd36b3971f8305ff147006962ae",
+           "bal": "14799665332960321127819503"
+          },
+          {
+           "addr": "0x0823f50a6caeb5f70a8a43b6521a3a4c3b6e312a",
+           "bal": "12456737809651130707429391"
+          },
+          {
+           "addr": "0x2dbaf98620ac5bbe3441f756feff82702d095b1a",
+           "bal": "11340062932008663438696514"
+          },
+          {
+           "addr": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+           "bal": "10848054829467934426122078"
+          },
+          {
+           "addr": "0xcaad7987d6cbb1519a4629fa48d02262506e9850",
+           "bal": "2823516330018026069053004"
+          },
+          {
+           "addr": "0x82797a749189f3b99556191d395bfbef709a44c4",
+           "bal": "1877003183211730375243063"
+          },
+          {
+           "addr": "0xeafb792d51cb02ffaa849747fcc4f559a6bb4ee7",
+           "bal": "1660801390093689492750063"
+          },
+          {
+           "addr": "0xf8191d98ae98d2f7abdfb63a9b0b812b93c873aa",
+           "bal": "1074981913687130893987835"
+          }
+         ],
+         "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+        }
+       },
+       "deployer-history": {
+        "pass": true,
+        "reasons": [],
+        "warnings": [
+         "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+        ],
+        "notes": [],
+        "detail": {}
+       }
+      }
+     }
+    },
+    "velocity": "flat — PONS -7.5% 24h, h1 9 buys vs 22 sells; $35k whale flow is noise on $240M mcap",
+    "social_signal": "strong",
+    "money_flow": "mixed",
+    "verdict": "skip",
+    "notes": "whale-convergence claim debunked by receipt decode: single custody chain 0x4cf2615d -> whaleA (98,088 PONS) -> whaleB (88,936 PONS), not 2+ independent accumulators. platform token, sell pressure, negative fee narrative."
+   }
   },
   {
    "found_at": "2026-10-09T01:49:00.185Z",
@@ -635,9 +814,51 @@
    "amount_usd": 2422.12,
    "convergence": true,
    "receiver_is_contract": false
+  },
+  {
+   "found_at": "2026-10-09T02:00:31.979Z",
+   "scout": "whale-watcher",
+   "type": "whale-convergence",
+   "token": "MSTR",
+   "contract": "0xec262a75e413fafd0df80480274532c79d42da09",
+   "chain": "robinhood",
+   "tx_hash": "0x0e2b8be34a3beb24aca67d508e77a4bf05ab41ce77d8a1b2059530108b66be4b",
+   "detail": "CONVERGENCE (backfill 83779338-83782279): 2 whale EOA wallets accumulating MSTR (0xec262a75e413fafd0df80480274532c79d42da09) on robinhood; combined $10,049 received. Largest: whale 0x9f736f87e6293ac1bd9142e257dbfac8b7acf1ae (~$376,944 assets) received $2,694 in tx 0x0e2b8be34a3beb24aca67d508e77a4bf05ab41ce77d8a1b2059530108b66be4b",
+   "converging_whales": 2,
+   "converging_wallets": [
+    "0x9f736f87e6293ac1bd9142e257dbfac8b7acf1ae",
+    "0x1a18a8b96eac3f980133a18402d04194f1faa4e7"
+   ],
+   "combined_amount_usd": 10049.48,
+   "whale": "0x9f736f87e6293ac1bd9142e257dbfac8b7acf1ae",
+   "whale_assets_usd": 376943.98,
+   "amount_usd": 2693.66,
+   "convergence": true,
+   "receiver_is_contract": false
+  },
+  {
+   "found_at": "2026-10-09T02:00:31.979Z",
+   "scout": "whale-watcher",
+   "type": "whale-convergence",
+   "token": "PONS",
+   "contract": "0x39dbed3a2bd333467115de45665cc57f813c4571",
+   "chain": "robinhood",
+   "tx_hash": "0xcab301b91ad369384dd479e644295e1b069ae01f20094137912d636c5c62dc4b",
+   "detail": "CONVERGENCE (backfill 83779338-83782279): 2 whale EOA wallets accumulating PONS (0x39dbed3a2bd333467115de45665cc57f813c4571) on robinhood; combined $5,652 received. Largest: whale 0xb995b91882f5990e5ab3cc4700b66b20a66c4c79 (~$16,695,082 assets) received $2,902 in tx 0xcab301b91ad369384dd479e644295e1b069ae01f20094137912d636c5c62dc4b",
+   "converging_whales": 2,
+   "converging_wallets": [
+    "0x2dbaf98620ac5bbe3441f756feff82702d095b1a",
+    "0xb995b91882f5990e5ab3cc4700b66b20a66c4c79"
+   ],
+   "combined_amount_usd": 5651.79,
+   "whale": "0xb995b91882f5990e5ab3cc4700b66b20a66c4c79",
+   "whale_assets_usd": 16695081.77,
+   "amount_usd": 2901.84,
+   "convergence": true,
+   "receiver_is_contract": false
   }
  ],
- "scout_queue_total": 4192,
+ "scout_queue_total": 4194,
  "investigations": [
   {
    "candidate": {
@@ -21941,7 +22162,9 @@
     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
    ],
    "social_scored_at": "2026-10-09T01:52:38Z",
-   "social_grade": "B (71/100)"
+   "social_grade": "B (71/100)",
+   "snug_processed_at": "2026-10-09T01:59:08.285754+00:00",
+   "snug_broken_down": true
   },
   {
    "investigated_at": "2026-10-09T01:46:30.997Z",
@@ -21982,6 +22205,2239 @@
    ],
    "social_scored_at": "2026-10-09T01:52:38Z",
    "social_grade": "F (8/100)"
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:17:54.192Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0xf17bf5c6032d57924cd9ed8828ed261846b2f4e4",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x5c9b91dd783893a8efcfa9f459dc666afcc2b974816a100a02d237f4cf873c74",
+    "block": 83445351,
+    "detail": "new contract deployed in block 83445351",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:25:54.366Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:17:57.396Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x3238bbc7d6bc695afa7e5ec3e056a6e0381f1e94",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x149446aa02b84e25f5f3879cd1fde847a7ed0031b10d479445ad70dc1975e0a9",
+    "block": 83445380,
+    "detail": "new contract deployed in block 83445380",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:26:19.124Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:18:01.466Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0xe44cf88975013be1a98ced6e0e524e5f201b5c18",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0xf698bf3922007ddf3e6d8c4b7fd15f5eef383e4dacd5943ff0b167d9ea8d22b9",
+    "block": 83445409,
+    "detail": "new contract deployed in block 83445409",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:26:27.034Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:18:04.936Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x8e20c892f66733c5333c5a58cd96a1b86ddbe7ae",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x77e39200db21d54dc1d2eaf5ad0f707ad1af96c0986264c006d93417f8cc5ce9",
+    "block": 83445437,
+    "detail": "new contract deployed in block 83445437",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:26:32.245Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:18:08.345Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0xb3dcfd3403bf6fbf225ed233887a4a9b03789efa",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0xb168dbd1f84a6abb5d702099adbadb28e7666fd0f89b6e88fef93571a09cb47c",
+    "block": 83445467,
+    "detail": "new contract deployed in block 83445467",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:26:36.905Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:18:12.939Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x0bb3eba94b0b8c763800ce2287de972c59307601",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x93f2cc5b10652a537b91764c2b8da7ccb242288a9faf6c89bdcd86df35aec0de",
+    "block": 83445498,
+    "detail": "new contract deployed in block 83445498",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:26:41.517Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:18:16.638Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x90e2f1a8bd27e3fd2cbdaa08fd00bb921282f4d7",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x56eef5605f98a1efea8aa632436db25f793dd5d42e7f862aeb5e9eb3447e71c1",
+    "block": 83445526,
+    "detail": "new contract deployed in block 83445526",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:26:47.388Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:18:20.492Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0xa0db162015c66557088c3fb7dffbcf56e31a1410",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x3f7a07a3e53110a7c099e84184df351e60f842702dace01343cb7c58c692ba20",
+    "block": 83445556,
+    "detail": "new contract deployed in block 83445556",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:26:52.466Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:18:25.011Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x38c7d447366629a8533da914d615691dac512e74",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x01c16fc22b7f83d37af246c370c28215458f83ca834fde3c507fe75a361e8ebc",
+    "block": 83445585,
+    "detail": "new contract deployed in block 83445585",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:26:58.839Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:18:28.257Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x72b12971478af5e1b540f0695a58112cf29ca25d",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0xccd8882fe832b4334683853664a026ef80c1ab26ee37c3fde8f066fc500e1fb1",
+    "block": 83445615,
+    "detail": "new contract deployed in block 83445615",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:27:04.801Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:18:32.550Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x9db13a9a34e4b5a220a981d247596734482c5b91",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0xe6d1c94685efff747da4b521fd809ab2200341fa8aff092e36be2a9e06bb18b5",
+    "block": 83445644,
+    "detail": "new contract deployed in block 83445644",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:27:21.606Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:18:35.361Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0xc04f825e9abe5e27ca43adb115720d78991f0f0b",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x85f54a0327d157f032cacd47415177eb4e91bf7bb67d60bd4fa8ddb62fd5542b",
+    "block": 83445673,
+    "detail": "new contract deployed in block 83445673",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:27:29.317Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:18:39.464Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x689da7f786192dfc03efaf0f80b6a161790757f3",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0xce8b3ee3b0cea673e43b7b32de27bd47661088b788c45ef297c025e29a6a0cc1",
+    "block": 83445702,
+    "detail": "new contract deployed in block 83445702",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:27:35.074Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:18:44.049Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x254837ed2f2e53d1bfed221b181e11b7bcef0d45",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0xd5db337453ba70f7d4d0147987f9755372cf741874b0b8ce4afaf37a9fecee57",
+    "block": 83445732,
+    "detail": "new contract deployed in block 83445732",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:27:40.986Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:18:48.109Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x8450ad2767dc75ffdd2d0d847b75ac65fbb4a714",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x0f6ef0838fa3738badd47d6317293b0c928137b14420126250d4756e8d3b3f24",
+    "block": 83445762,
+    "detail": "new contract deployed in block 83445762",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:27:48.358Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:18:51.748Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x8361d88a9081bcb84d044bdf4918af0529ee4fa3",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0xf1518ff705d1542ba122ba83cf012a64750351ccaed56eca757d9c14f422fc62",
+    "block": 83445792,
+    "detail": "new contract deployed in block 83445792",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:27:53.726Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:19:01.117Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0xab418a099f3bbd863dee5a704bf10e1c4aaa342c",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0xe220ec9846116b08a8c212a776077ef374293321837375ea4cc1aba382428624",
+    "block": 83445865,
+    "detail": "new contract deployed in block 83445865",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:28:00.777Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "owner() -> 0x81b655d4eeecf41ffc9aa6397ad52d0d9e014803; no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": "0x81b655d4eeecf41ffc9aa6397ad52d0d9e014803"
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "actor not on denylist; nonce normal"
+       ],
+       "detail": {
+        "actor": "0x81b655d4eeecf41ffc9aa6397ad52d0d9e014803",
+        "actorNonce": 72
+       }
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:21:21.180Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x4de0ae45fcce76a5bfa748c6a5792b054382efdb",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x8b9866c0e4f48b5738ce83c7f56e3a24233eff770ca90469eb5cf21d6119b321",
+    "block": 83446717,
+    "detail": "new contract deployed in block 83446717",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:28:09.279Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "V4: floor check decided early: 7 pool(s) read, V4 total >= 0.5 ETH (lower bound 39.575 ETH)",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "V4: floor check decided early: 7 pool(s) read, V4 total >= 0.5 ETH (lower bound 39.575 ETH)"
+       ],
+       "notes": [
+        "combined pool value ~39.575 ETH (V2 0.000 + V4 39.575) >= 0.5 ETH floor",
+        "no V2 pair; V4 liquidity positions are NFTs (no LP-token lock analog) — LP-lock check N/A"
+       ],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 7,
+        "v4PricedCount": 6,
+        "v4ValueEth": 39.57502941515514,
+        "v4FloorReachedEarly": true,
+        "v4Pools": [
+         {
+          "poolId": "0x488f1ee3b3c9bf057bf8ff3501588cf2ff6e4691049e0b6915d0397a5aa06d1a",
+          "valueEth": 39.5675,
+          "refVia": "weth"
+         },
+         {
+          "poolId": "0x25948ac57175241f0230663888000fef266fb7fe945aab8cd1e5418311b6e185",
+          "valueEth": 0.0051,
+          "refVia": "v4-ref-pool 0xbac3aa3b…"
+         },
+         {
+          "poolId": "0x7085045a309ec3bd9d00c84cf84346bd53e081df727d8ba7eef1e2270eb24825",
+          "valueEth": 0.001,
+          "refVia": "v4-ref-pool 0xbac3aa3b…"
+         },
+         {
+          "poolId": "0x93ff6beaba5fb01a3cfca0b0502cde5f0ac902d86880f4c59597ef7603568377",
+          "valueEth": 0.0009,
+          "refVia": "v4-ref-pool 0xbac3aa3b…"
+         },
+         {
+          "poolId": "0x7288cc5b670f8ba6bc6e279f1bb861b89e010fc0ebea8b66427171a362b7ee1e",
+          "valueEth": 0.0006,
+          "refVia": "v4-ref-pool 0xbac3aa3b…"
+         },
+         {
+          "poolId": "0xb05c7334003a16c43b28f82124111ba6e62b39da507ba28ca4484433e4a6914f",
+          "valueEth": 0,
+          "refVia": "v4-ref-pool 0xbac3aa3b…"
+         }
+        ],
+        "combinedValueEth": 39.57502941515514
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead — 8,828 transfers/1,104 holders in ~10h but m5/h1 buys=sells=0; +297% 24h then -53.9% in 6h",
+   "social_signal": "forced",
+   "money_flow": "bot",
+   "verdict": "skip",
+   "notes": "Offchain/OFFCHAIN V4 pool: $2.1M 24h volume on $73k liquidity (wash), largest EOA holder 0.34% (no smart-money concentration), single promo tweet. frenzy over, no durable signal."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:21:25.462Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x43dc31983178aaee25fda0308df5a959c18d31a8",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0xe2c4e27f1cddaed863f23ae46dd5d84628f82df76ec61b17b64385cef8f40ff9",
+    "block": 83446738,
+    "detail": "new contract deployed in block 83446738",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:34:07.029Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "owner() -> 0x81b655d4eeecf41ffc9aa6397ad52d0d9e014803; no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": "0x81b655d4eeecf41ffc9aa6397ad52d0d9e014803"
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "actor not on denylist; nonce normal"
+       ],
+       "detail": {
+        "actor": "0x81b655d4eeecf41ffc9aa6397ad52d0d9e014803",
+        "actorNonce": 72
+       }
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:22:39.527Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0xb0599d8c548f73450ea48227bc01ef187d7be5ea",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0xaad0b7bdfc849410caf97426b453ed33dc6d044d24b8a299ff91f9960c41b1cb",
+    "block": 83447063,
+    "detail": "new contract deployed in block 83447063",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:35:11.017Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "owner() -> 0x81b655d4eeecf41ffc9aa6397ad52d0d9e014803; no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": "0x81b655d4eeecf41ffc9aa6397ad52d0d9e014803"
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "actor not on denylist; nonce normal"
+       ],
+       "detail": {
+        "actor": "0x81b655d4eeecf41ffc9aa6397ad52d0d9e014803",
+        "actorNonce": 72
+       }
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not an ERC-20 (totalSupply/symbol/name all unreadable onchain)",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "generic contract deployment, no token interface, no pairs, no holders, no social surface. not a candidate."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:22:54.233Z",
+    "scout": "whale-watcher",
+    "type": "whale-convergence",
+    "token": "PONS",
+    "contract": "0x39dbed3a2bd333467115de45665cc57f813c4571",
+    "chain": "robinhood",
+    "tx_hash": "0x4d6869e019363a6559fc653cf0c6aac3321cf18b6a6467b433ad2676e368000e",
+    "detail": "CONVERGENCE: 3 whale EOA wallets accumulating PONS (0x39dbed3a2bd333467115de45665cc57f813c4571) on robinhood within one scan window; combined $71,945 received. Largest: whale 0x98a3c6c89f58dc7029bc5d304abda44fcd373987 (~$4,321,566 assets) received $34,645 in tx 0x4d6869e019363a6559fc653cf0c6aac3321cf18b6a6467b433ad2676e368000e",
+    "converging_whales": 3,
+    "converging_wallets": [
+     "0x50f450c51a3ef814e8ddaaf3fae15d6a9c25fe76",
+     "0x98a3c6c89f58dc7029bc5d304abda44fcd373987",
+     "0x2dbaf98620ac5bbe3441f756feff82702d095b1a"
+    ],
+    "combined_amount_usd": 71944.76,
+    "whale": "0x98a3c6c89f58dc7029bc5d304abda44fcd373987",
+    "whale_assets_usd": 4321565.88,
+    "amount_usd": 34645.06,
+    "convergence": true,
+    "receiver_is_contract": false,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:35:25.708Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "V4: pool discovery found 1921 pools; state reads capped at 500 (totalEth is a lower bound)",
+     "V4: floor check decided early: 58 pool(s) read, V4 total >= 0.5 ETH (lower bound 17.895 ETH)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "V4: pool discovery found 1921 pools; state reads capped at 500 (totalEth is a lower bound)",
+        "V4: floor check decided early: 58 pool(s) read, V4 total >= 0.5 ETH (lower bound 17.895 ETH)"
+       ],
+       "notes": [
+        "combined pool value ~23.821 ETH (V2 5.926 + V4 17.895) >= 0.5 ETH floor",
+        "EOA-held LP ~0.00% (<=10%)"
+       ],
+       "detail": {
+        "pair": "0x8018ee3ad3c0321be0e69536733cd28e29564dd4",
+        "wethReserveEth": 2.963208535775057,
+        "v2Readable": true,
+        "poolValueEth": 5.926417071550114,
+        "v4PoolCount": 1921,
+        "v4PricedCount": 7,
+        "v4ValueEth": 17.89454058747248,
+        "v4Capped": true,
+        "v4FloorReachedEarly": true,
+        "v4Pools": [
+         {
+          "poolId": "0xc4db99050d1f8749fbd20721da135af1753bb0e8d79b098e2de13ce79c945a7f",
+          "valueEth": 17.882,
+          "refVia": "v4-ref-pool 0xae400546…"
+         },
+         {
+          "poolId": "0x14216dcd460fa1fd910314322d6dd028c646ec995b6b28deb641d1827fb0cd85",
+          "valueEth": 0.0085,
+          "refVia": "v4-ref-pool 0xbac3aa3b…"
+         },
+         {
+          "poolId": "0x2e7ba084e848fb5af806efaeccfc9676a1a4c459f696e852b53c1a4f650c39b6",
+          "valueEth": 0.003,
+          "refVia": "v4-ref-pool 0xbac3aa3b…"
+         },
+         {
+          "poolId": "0xda652f3afbadac9b72b5b05f84714e7fc64340397d25ca5b7d71fd463e5ed0b6",
+          "valueEth": 0.0009,
+          "refVia": "v4-ref-pool 0xbac3aa3b…"
+         },
+         {
+          "poolId": "0xffe5427d8f50e83e349ca2e85a27ddf838634a588e95966a9457fb6c10f639d0",
+          "valueEth": 0.0001,
+          "refVia": "v4-ref-pool 0xbac3aa3b…"
+         },
+         {
+          "poolId": "0x1732d7e7025d29c0cd007fdd2b362ad7ded0e49fa37484539bbe797972597a77",
+          "valueEth": 0.0001,
+          "refVia": "v4-ref-pool 0xbac3aa3b…"
+         },
+         {
+          "poolId": "0xbf15741e187a6a81312056c71cf4c11dea8eeae1bc43d53e8640d4d87ac87edc",
+          "valueEth": 0,
+          "refVia": "v4-ref-pool 0xbac3aa3b…"
+         }
+        ],
+        "combinedValueEth": 23.820957659022596,
+        "lpSupply": "344935630984054",
+        "eoaLpPct": 0,
+        "lpHolderScanComplete": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "top-10 real-wallet holders own 13.20% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 294,
+        "top10EoaBps": 1320,
+        "top1EoaBps": 431,
+        "top10": [
+         {
+          "addr": "0xb995b91882f5990e5ab3cc4700b66b20a66c4c79",
+          "bal": "43183843186297952500000000"
+         },
+         {
+          "addr": "0xa64723bfdc2805c4ad09c509983cfd85362298ba",
+          "bal": "31967884907338025000000000"
+         },
+         {
+          "addr": "0xc0e17ad342afabd36b3971f8305ff147006962ae",
+          "bal": "14799665332960321127819503"
+         },
+         {
+          "addr": "0x0823f50a6caeb5f70a8a43b6521a3a4c3b6e312a",
+          "bal": "12456737809651130707429391"
+         },
+         {
+          "addr": "0x2dbaf98620ac5bbe3441f756feff82702d095b1a",
+          "bal": "11340062932008663438696514"
+         },
+         {
+          "addr": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+          "bal": "10848054829467934426122078"
+         },
+         {
+          "addr": "0xcaad7987d6cbb1519a4629fa48d02262506e9850",
+          "bal": "2823516330018026069053004"
+         },
+         {
+          "addr": "0x82797a749189f3b99556191d395bfbef709a44c4",
+          "bal": "1877003183211730375243063"
+         },
+         {
+          "addr": "0xeafb792d51cb02ffaa849747fcc4f559a6bb4ee7",
+          "bal": "1660801390093689492750063"
+         },
+         {
+          "addr": "0xf8191d98ae98d2f7abdfb63a9b0b812b93c873aa",
+          "bal": "1074981913687130893987835"
+         }
+        ],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "flat — PONS -7.5% 24h, h1 9 buys vs 22 sells; $35k whale flow is noise on $240M mcap",
+   "social_signal": "strong",
+   "money_flow": "mixed",
+   "verdict": "skip",
+   "notes": "whale-convergence claim debunked by receipt decode: single custody chain 0x4cf2615d -> whaleA (98,088 PONS) -> whaleB (88,936 PONS), not 2+ independent accumulators. platform token, sell pressure, negative fee narrative."
+  },
+  {
+   "investigated_at": "2026-10-09T02:00:18.188Z",
+   "candidate": {
+    "found_at": "2026-10-08T21:23:47.876Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Endow ENDW",
+    "muse": "",
+    "contract": "0x013963586a333b55c7b9142aa3a36451f63a36a1",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0x57ef7c715588a6cd9bf6be437a970d8a972a8dbb6e6cf8a0985a268f5c4bcfbf",
+    "block": 83622729,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83622729 (tx 0x57ef7c715588a6cd9bf6be437a970d8a972a8dbb6e6cf8a0985a268f5c4bcfbf); name=Endow symbol=ENDW. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:37:29.768Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "dead on arrival — 11 transfers / 8 recipients / 1 mint-receiver in ~5h since pons launch",
+   "social_signal": "weak",
+   "money_flow": "n/a",
+   "verdict": "skip",
+   "notes": "Endow/ENDW pons launch: no DexScreener pair, no X buzz, no holder growth. no signal to grade."
   }
  ],
  "scores": [
@@ -40348,7 +42804,7 @@
     "total": 70,
     "decision": "cautious-buy (exec BLOCKED - wallet empty)"
    },
-   "processed_note": "flock-decision run 2026-10-08 18:18 EDT: 24+20+26=70, +10 whale-convergence, -10 mcap tilt ($236.9M) -> 70 cautious-buy. Entry/exit: entry ~$0.3485, TP1 +50% (1/3), TP2 +100% (1/3), TP3 +300% (final 1/3, sustained legs), SL -40%, 15% moon bag after final TP. NOT EXECUTED: challenge wallet holds 0.00092 ETH - fast-executor safety gate aborted (V3 fee-500 round-trip loss 41.6%/27.3%; V2 quote passed 1.26% but forward sim failed on funds). | 21:53 EDT tick: no fresh whale moves since last run; social rescored to B (71/100) at 21:52 — score would revise to 65 (cautious-buy), re-arm still blocked: challenge wallet 0.002918 ETH < 0.005 half-size minimum."
+   "processed_note": "flock-decision run 2026-10-08 18:18 EDT: 24+20+26=70, +10 whale-convergence, -10 mcap tilt ($236.9M) -> 70 cautious-buy. Entry/exit: entry ~$0.3485, TP1 +50% (1/3), TP2 +100% (1/3), TP3 +300% (final 1/3, sustained legs), SL -40%, 15% moon bag after final TP. NOT EXECUTED: challenge wallet holds 0.00092 ETH - fast-executor safety gate aborted (V3 fee-500 round-trip loss 41.6%/27.3%; V2 quote passed 1.26% but forward sim failed on funds). | 21:53 EDT tick: no fresh whale moves since last run; social rescored to B (71/100) at 21:52 — score would revise to 65 (cautious-buy), re-arm still blocked: challenge wallet 0.002918 ETH < 0.005 half-size minimum. | 21:56 EDT tick: fresh PONS convergence (11+8 clips 21:3x-21:47 EDT) — still no unprocessed entries anywhere; wallet 0.002918 ETH < 0.005 half-size minimum, exec remains BLOCKED. GLD convergence (29 clips) = official gold-peg stock token, no thesis, skip. MEME clips (4) = dip-convergence, watch."
   },
   {
    "broken_down_at": "2026-10-08T22:14:57.752862Z",
@@ -41154,10 +43610,79 @@
     "outcome": "NOT EXECUTED — challenge wallet 0xa554e642Ac0FE1bbEEea26df17644AD8fce00ecc holds 0.00092 ETH (2026-10-09T01:36Z), below 0.01 ETH position + gas. execution needs dubie to fund the wallet. V3 route reverted on quote (pools exist, quoter reverts), V2 pool too thin (0.034 WETH); V4 route viable when funded.",
     "needs_dubie": "fund challenge wallet 0xa554e642Ac0FE1bbEEea26df17644AD8fce00ecc with ETH on Robinhood chain (0.01 ETH position + gas buffer); then the buy can run on next tick or manual approval"
    }
+  },
+  {
+   "broken_down_at": "2026-10-09T01:59:08.285754+00:00",
+   "candidate": {
+    "scout": "whale-watcher",
+    "type": "whale-convergence",
+    "pair": null,
+    "name": null,
+    "contract": "0x39dbed3a2bd333467115de45665cc57f813c4571",
+    "chain": "robinhood",
+    "found_at": "2026-10-08T21:22:54.233Z",
+    "detail": "CONVERGENCE: 3 whale EOA wallets accumulating PONS (0x39dbed3a2bd333467115de45665cc57f813c4571) on robinhood within one scan window; combined $71,945 received. Largest: whale 0x98a3c6c89f58dc7029bc5d304abda44fcd373987 (~$4,321,566 assets) received $34,645 in tx 0x4d6869e019363a6559fc653cf0c6aac3321c",
+    "token": "PONS",
+    "converging_whales": 3,
+    "combined_amount_usd": 71944.76,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T01:35:25.708Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "V4: pool discovery found 1921 pools; state reads capped at 500 (totalEth is a lower bound)",
+     "V4: floor check decided early: 58 pool(s) read, V4 total >= 0.5 ETH (lower bound 17.895 ETH)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "investigation": {
+    "investigated_at": "2026-10-09T01:46:30.997Z",
+    "verdict": "promising",
+    "velocity": "whale convergence: 3 whale EOAs accumulating PONS within one scan window, combined $71,945 received (largest: 0x98a3c6c89f58dc7029bc5d304abda44fcd373987, ~$4.32M assets, $34,645). onchain: 981 transfers in recent window, 105 active holders, top1 23.4% — real two-sided market on the launchpad token (~$265-290M mcap).",
+    "social_signal": "strong — $PONS has broad mainstream pickup: Motley Fool, KuCoin blog, Memeburn, LBank zone, Binance Square discussion (buyback+burn narrative, $188M cumulative fees). current chatter is downtrend-focused (PONS -50% /30d, -19.9% /7d, fee revenue slowing 78% off Aug-31 peak). @r_alx_z/@musegod_rh: no fresh posts found in this window.",
+    "money_flow": "whale — 3 distinct whale EOAs (receiver_is_contract=false, not excluded), largest a $4.32M-assets wallet; accumulation of the launchpad token on a -50% drawdown while protocol fees keep funding buybacks. attributed smart-money accumulation.",
+    "note": "gate carried warnings (V4 pool-discovery cap; no owner()/deployer via RPC) — factored in, none blocking. dip-buying by 3 whales on a revenue-backed launchpad token is the strongest organic signal in this batch.",
+    "social_scored_at": "2026-10-09T01:52:38Z",
+    "social_grade": "B (71/100)"
+   },
+   "social_grade": "B",
+   "social_total": 71,
+   "durability": "strong",
+   "comps": "Launchpad-token class (PUMP, RAY): live and die with memecoin mint volume, but revenue-backed ones with buyback+burn held floors through cycle troughs far better than pure memes. PONS is the Robinhood-chain instance: docs-listed reference token, spot-listed on OKX/Bybit/KuCoin/Gate with $30-70M daily volume, Uniswap Labs bought a stake for long-term alignment, Wintermute $3M+ and DRW/Cumberland $6.76M positions onchain. Contrast with today's queue of copycats/name-squats (fade -50%+ in hours): PONS survived multiple cycles with growing institutional rails (Binance Alpha, Coinbase full spot from Oct 7, Upbit Oct 8).",
+   "risks": "Demand-side, not existential: fee revenue is 78% off the Aug-31 peak, so the buyback narrative weakens if memecoin-mint volume evaporates. Team is pseudonymous (Pons Labs, not an official Robinhood product). Token is -50%/30d, -19.9%/7d and current chatter is downtrend-focused. No @musegod_rh/@r_alx_z attention. Gate warnings (V4 pool-discovery capped at 500 reads; no owner()/deployer discoverable via RPC) are tooling limits, factored in and non-blocking. Position sizing should respect the cycle beta.",
+   "recommendation": "buy",
+   "reason": "B-grade social legitimacy on a verified, revenue-backed launchpad flagship at a -50% drawdown, with 3 distinct whale EOAs accumulating $71.9k in one scan window (largest a $4.32M-asset wallet taking $34.6k) while protocol fees keep funding buybacks. Strong durability on fundamentals; the risk is cycle beta, not fraud. Fits standing auto-buy rails (0.01 ETH cap, TP1 +50%/TP2 +100%/TP3 +200%, stop-loss -30%, ~15% moon bag rides the final TP).",
+   "virality": "sustained: legs not flash — months of real product, revenue, listings, and ongoing mainstream press; whale dip-buying into the buyback narrative is accumulation, not a viral spike.",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-09T01:35:25.708Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "V4: pool discovery found 1921 pools; state reads capped at 500 (totalEth is a lower bound)",
+    "V4: floor check decided early: 58 pool(s) read, V4 total >= 0.5 ETH (lower bound 17.895 ETH)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "processed": true,
+   "decision": null,
+   "score": {
+    "v": 22,
+    "s": 15,
+    "vit": 28,
+    "breakdown": "volume 22/40 (981 transfers/window, ~$1.92M 24h vol, two-sided 1484 buys/1789 sells, deep but not buy-dominant); sentiment 15/20 (B 71/100); vitality 28/40 (momentum 5/11 capped: buy/sell 0.453<0.55; pickup 9/11; already-talking 8/11; legs 6/7)",
+    "vitality_core": 23,
+    "mcap_tilt": -10,
+    "mcap_note": "~$265-290M mcap = large band (-10)",
+    "whale_convergence_bonus": 10,
+    "conv_note": "3 distinct whale EOA wallets, $71,945 combined (largest $4.32M-assets wallet took $34.6k); dip-accumulation on -50% drawdown",
+    "total": 65,
+    "decision": "cautious-buy (BLOCKED - wallet below half-size minimum)",
+    "virality": "sustained (revenue-backed launchpad flagship, buyback+burn, tier-1 listings; whale dip-buying = accumulation not spike)",
+    "entry_exit": "Entry ~current ($0.3485 ref); TP1 +50% (1/3), TP2 +100% (1/3), TP3 +200% (final 1/3; could extend +300% on sustained legs), SL -30%, 15% moon bag after final TP, trailing stop trail_pct 25. NOT EXECUTED: challenge wallet 0.002918 ETH < 0.005 half-size minimum."
+   },
+   "processed_at": "2026-10-09T01:58:00Z",
+   "processed_note": "flock-decision run 2026-10-08 21:56 EDT: score 65 -> cautious-buy band (22+15+28-10+10), but NOT EXECUTED: challenge wallet 0.002918 ETH < 0.005 half-size minimum (same block as entry-53 re-arm). Re-arm when funded >=0.005 ETH. Matches entry-53 thesis (PONS revenue-backed dip-accumulation)."
   }
  ],
  "tracking": {
-  "updated_at": "2026-10-09T01:54:21.340Z",
+  "updated_at": "2026-10-09T01:59:15.534Z",
   "records": [
    {
     "id": "solana:2nuqbwhuiqwwcokksaikndzmrpv1kk17zmapn46apump",
@@ -41197,7 +43722,7 @@
     "mcap_now_usd": 46219.91,
     "fdv_now_usd": 46219.91,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.328Z",
+    "mcap_updated_at": "2026-10-09T01:59:15.508Z",
     "mcap_at_scan": 46219.91,
     "mcap_scan_stale_min": 174,
     "mcap_scan_note": null,
@@ -41244,7 +43769,7 @@
     "mcap_now_usd": 3150.05,
     "fdv_now_usd": 3150.05,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.331Z",
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
     "mcap_at_scan": 3150.05,
     "mcap_scan_stale_min": 171,
     "mcap_scan_note": null,
@@ -41288,14 +43813,14 @@
     "first_seen_at": "2026-10-08T14:45:47.275Z",
     "watched_duration_min": 20,
     "watched_display": "20m",
-    "mcap_now_usd": 161873,
-    "fdv_now_usd": 161873,
+    "mcap_now_usd": 166468,
+    "fdv_now_usd": 166468,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.331Z",
-    "mcap_at_scan": 100045.1174289246,
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
+    "mcap_at_scan": 100040.86538461538,
     "mcap_scan_stale_min": 163,
     "mcap_scan_note": null,
-    "mcap_at_decision": 100045.1174289246,
+    "mcap_at_decision": 100040.86538461538,
     "mcap_decision_stale_min": 143,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -41338,7 +43863,7 @@
     "mcap_now_usd": 1992,
     "fdv_now_usd": 1992,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.331Z",
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
     "mcap_at_scan": 1902.36,
     "mcap_scan_stale_min": 89,
     "mcap_scan_note": null,
@@ -41385,7 +43910,7 @@
     "mcap_now_usd": 15571,
     "fdv_now_usd": 15571,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.331Z",
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
     "mcap_at_scan": 11940.766859344894,
     "mcap_scan_stale_min": 65,
     "mcap_scan_note": null,
@@ -41489,14 +44014,14 @@
     "first_seen_at": "2026-10-08T16:44:33.260Z",
     "watched_duration_min": 16,
     "watched_display": "16m",
-    "mcap_now_usd": 2515237,
-    "fdv_now_usd": 2295372,
+    "mcap_now_usd": 2310832,
+    "fdv_now_usd": 2295791,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.331Z",
-    "mcap_at_scan": 2491151.9768168535,
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
+    "mcap_at_scan": 2288242.9942557695,
     "mcap_scan_stale_min": 44,
     "mcap_scan_note": null,
-    "mcap_at_decision": 2491151.9768168535,
+    "mcap_at_decision": 2288242.9942557695,
     "mcap_decision_stale_min": 28,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -41539,7 +44064,7 @@
     "mcap_now_usd": 10809,
     "fdv_now_usd": 10809,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.331Z",
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
     "mcap_at_scan": 20457.033333333333,
     "mcap_scan_stale_min": 44,
     "mcap_scan_note": null,
@@ -41583,14 +44108,14 @@
     "first_seen_at": "2026-10-08T15:54:51.408Z",
     "watched_duration_min": 70,
     "watched_display": "1h10m",
-    "mcap_now_usd": 12152326,
-    "fdv_now_usd": 12152326,
+    "mcap_now_usd": 12154853,
+    "fdv_now_usd": 12154853,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.331Z",
-    "mcap_at_scan": 11492199.649382716,
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
+    "mcap_at_scan": 11494589.380246915,
     "mcap_scan_stale_min": 94,
     "mcap_scan_note": null,
-    "mcap_at_decision": 11492199.649382716,
+    "mcap_at_decision": 11494589.380246915,
     "mcap_decision_stale_min": 24,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -41652,14 +44177,14 @@
     "first_seen_at": "2026-10-08T14:32:53.814Z",
     "watched_duration_min": 177,
     "watched_display": "2h57m",
-    "mcap_now_usd": 39613136,
-    "fdv_now_usd": 39613136,
+    "mcap_now_usd": 39616244,
+    "fdv_now_usd": 39616244,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.331Z",
-    "mcap_at_scan": 39109538.92444231,
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
+    "mcap_at_scan": 39103227.89064748,
     "mcap_scan_stale_min": 186,
     "mcap_scan_note": null,
-    "mcap_at_decision": 39109538.92444231,
+    "mcap_at_decision": 39103227.89064748,
     "mcap_decision_stale_min": 9,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -41702,7 +44227,7 @@
     "mcap_now_usd": 10722,
     "fdv_now_usd": 10722,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.331Z",
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
     "mcap_at_scan": 155529.01119402985,
     "mcap_scan_stale_min": 19,
     "mcap_scan_note": null,
@@ -41746,14 +44271,14 @@
     "first_seen_at": "2026-10-08T17:45:18.068Z",
     "watched_duration_min": 11,
     "watched_display": "11m",
-    "mcap_now_usd": 232720,
+    "mcap_now_usd": 235730,
     "fdv_now_usd": 235730,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.331Z",
-    "mcap_at_scan": 229293.0655957162,
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
+    "mcap_at_scan": 232258.74163319948,
     "mcap_scan_stale_min": 14,
     "mcap_scan_note": null,
-    "mcap_at_decision": 229293.0655957162,
+    "mcap_at_decision": 232258.74163319948,
     "mcap_decision_stale_min": 3,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -41796,7 +44321,7 @@
     "mcap_now_usd": 126230,
     "fdv_now_usd": 126230,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.331Z",
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
     "mcap_at_scan": 126230,
     "mcap_scan_stale_min": 40,
     "mcap_scan_note": null,
@@ -41843,7 +44368,7 @@
     "mcap_now_usd": 65799,
     "fdv_now_usd": 65799,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.331Z",
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
     "mcap_at_scan": 65799,
     "mcap_scan_stale_min": 54,
     "mcap_scan_note": null,
@@ -41887,14 +44412,14 @@
     "first_seen_at": "2026-10-08T15:54:51.408Z",
     "watched_duration_min": 153,
     "watched_display": "2h33m",
-    "mcap_now_usd": 4880638,
-    "fdv_now_usd": 4927124,
+    "mcap_now_usd": 4926417,
+    "fdv_now_usd": 4926417,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.331Z",
-    "mcap_at_scan": 4829804.7235332895,
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
+    "mcap_at_scan": 4873500.626293246,
     "mcap_scan_stale_min": 160,
     "mcap_scan_note": null,
-    "mcap_at_decision": 4829804.7235332895,
+    "mcap_at_decision": 4873500.626293246,
     "mcap_decision_stale_min": 6,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -41934,14 +44459,14 @@
     "first_seen_at": "2026-10-08T15:06:05.432Z",
     "watched_duration_min": 202,
     "watched_display": "3h22m",
-    "mcap_now_usd": 17912403,
-    "fdv_now_usd": 17912403,
+    "mcap_now_usd": 17442938,
+    "fdv_now_usd": 17918593,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.331Z",
-    "mcap_at_scan": 17831396.78434835,
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
+    "mcap_at_scan": 17358073.968569707,
     "mcap_scan_stale_min": 208,
     "mcap_scan_note": null,
-    "mcap_at_decision": 17831396.78434835,
+    "mcap_at_decision": 17358073.968569707,
     "mcap_decision_stale_min": 6,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -42025,14 +44550,14 @@
     "first_seen_at": "2026-10-08T19:25:57.305Z",
     "watched_duration_min": 119,
     "watched_display": "1h59m",
-    "mcap_now_usd": 42210643,
-    "fdv_now_usd": 42210643,
+    "mcap_now_usd": 42149290,
+    "fdv_now_usd": 42149290,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.339Z",
-    "mcap_at_scan": 42790651.83534707,
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
+    "mcap_at_scan": 42789279.21945433,
     "mcap_scan_stale_min": 123,
     "mcap_scan_note": null,
-    "mcap_at_decision": 42790651.83534707,
+    "mcap_at_decision": 42789279.21945433,
     "mcap_decision_stale_min": 4,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -42072,13 +44597,13 @@
     "first_seen_at": "2026-10-08T15:54:51.408Z",
     "watched_duration_min": 380,
     "watched_display": "6h20m",
-    "mcap_now_usd": 239820599,
-    "fdv_now_usd": 239704446,
+    "mcap_now_usd": 239937565,
+    "fdv_now_usd": 239821355,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.339Z",
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
     "mcap_at_scan": null,
     "mcap_scan_note": "no price within 6h of first_seen (nearest 384m away)",
-    "mcap_at_decision": 236897615.50878683,
+    "mcap_at_decision": 236878870.82861188,
     "mcap_decision_stale_min": 4,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -42121,7 +44646,7 @@
     "mcap_now_usd": 5845339,
     "fdv_now_usd": 6584504,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.339Z",
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
     "mcap_at_scan": null,
     "mcap_scan_note": "no price within 6h of first_seen (nearest 384m away)",
     "mcap_at_decision": 5818739.867912926,
@@ -42167,7 +44692,7 @@
     "mcap_now_usd": 1934350,
     "fdv_now_usd": 1934350,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.339Z",
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
     "mcap_at_scan": null,
     "mcap_scan_note": "no price within 6h of first_seen (nearest 404m away)",
     "mcap_at_decision": 1934350,
@@ -42210,13 +44735,13 @@
     "first_seen_at": "2026-10-08T15:54:51.408Z",
     "watched_duration_min": 444,
     "watched_display": "7h24m",
-    "mcap_now_usd": 112171118,
-    "fdv_now_usd": 112171118,
+    "mcap_now_usd": 112196195,
+    "fdv_now_usd": 112196195,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.339Z",
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
     "mcap_at_scan": null,
     "mcap_scan_note": "no price within 6h of first_seen (nearest 444m away)",
-    "mcap_at_decision": 112171118,
+    "mcap_at_decision": 112196195,
     "mcap_decision_stale_min": 1,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -42256,14 +44781,14 @@
     "first_seen_at": "2026-10-08T20:39:53.422Z",
     "watched_duration_min": 170,
     "watched_display": "2h50m",
-    "mcap_now_usd": 7817,
-    "fdv_now_usd": 7817,
+    "mcap_now_usd": 7796,
+    "fdv_now_usd": 7796,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.339Z",
-    "mcap_at_scan": 9031.155322415558,
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
+    "mcap_at_scan": 9031.158434894161,
     "mcap_scan_stale_min": 174,
     "mcap_scan_note": null,
-    "mcap_at_decision": 9031.155322415558,
+    "mcap_at_decision": 9031.158434894161,
     "mcap_decision_stale_min": 4,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -42306,7 +44831,7 @@
     "mcap_now_usd": 6877943,
     "fdv_now_usd": 7086795,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.339Z",
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
     "mcap_at_scan": null,
     "mcap_scan_note": "no price within 6h of first_seen (nearest 432m away)",
     "mcap_at_decision": 6863826.572819304,
@@ -42349,13 +44874,13 @@
     "first_seen_at": "2026-10-08T16:35:49.605Z",
     "watched_duration_min": 458,
     "watched_display": "7h38m",
-    "mcap_now_usd": 8222863,
-    "fdv_now_usd": 8222863,
+    "mcap_now_usd": 8221629,
+    "fdv_now_usd": 8221629,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.339Z",
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
     "mcap_at_scan": null,
     "mcap_scan_note": "no price within 6h of first_seen (nearest 458m away)",
-    "mcap_at_decision": 8163724.277689149,
+    "mcap_at_decision": 8163566.648305085,
     "mcap_decision_stale_min": 0,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -42395,13 +44920,13 @@
     "first_seen_at": "2026-10-08T15:54:51.408Z",
     "watched_duration_min": 499,
     "watched_display": "8h19m",
-    "mcap_now_usd": 89281623,
-    "fdv_now_usd": 89281623,
+    "mcap_now_usd": 88037858,
+    "fdv_now_usd": 88037858,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.339Z",
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
     "mcap_at_scan": null,
     "mcap_scan_note": "no price within 6h of first_seen (nearest 499m away)",
-    "mcap_at_decision": 96611301.99878131,
+    "mcap_at_decision": 96603275.93371531,
     "mcap_decision_stale_min": 0,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -42436,13 +44961,13 @@
     "first_seen_at": "2026-10-08T15:11:14.378Z",
     "watched_duration_min": 584,
     "watched_display": "9h44m",
-    "mcap_now_usd": 19266233,
-    "fdv_now_usd": 19266233,
+    "mcap_now_usd": 19259986,
+    "fdv_now_usd": 19259986,
     "mcap_source": "marketCap",
-    "mcap_updated_at": "2026-10-09T01:54:21.339Z",
+    "mcap_updated_at": "2026-10-09T01:59:15.509Z",
     "mcap_at_scan": null,
     "mcap_scan_note": "no price within 6h of first_seen (nearest 588m away)",
-    "mcap_at_decision": 19259786.956273325,
+    "mcap_at_decision": 19259738.075870503,
     "mcap_decision_stale_min": 4,
     "mcap_decision_note": null,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply"
@@ -42568,11 +45093,11 @@
   "whale-watcher"
  ],
  "last_activity": {
-  "scout": "2026-10-09T01:58:44.981Z",
-  "hymn": "2026-10-09T01:46:30.997Z",
+  "scout": "2026-10-09T02:00:31.979Z",
+  "hymn": "2026-10-09T02:00:18.188Z",
   "scorer": "2026-10-09T01:52:38Z",
-  "snug": "2026-10-09T01:31:50.193327+00:00",
-  "cardigan": "2026-10-09T01:31:50.193327+00:00"
+  "snug": "2026-10-09T01:59:08.285754+00:00",
+  "cardigan": "2026-10-09T01:59:08.285754+00:00"
  },
  "challenge": {
   "wallet": "0xa554e642ac0fe1bbeeea26df17644ad8fce00ecc",

@@ -39,6 +39,11 @@
   .callout .when { color:var(--dim); font-size:12px; margin-left:8px; }
   .callout .txt { margin-top:6px; font-size:15px; line-height:1.45; white-space:pre-wrap; word-break:break-word; }
   .callout .st { display:inline-block; margin-top:8px; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; padding:3px 10px; border-radius:999px; }
+  .callout .frow { display:flex; gap:10px; align-items:center; }
+  .callout img.thumb { width:56px; height:56px; border-radius:10px; object-fit:cover; flex:none; border:1px solid var(--line); }
+  .callout .fren { font-size:13px; color:var(--dim); margin-top:2px; }
+  .callout .flink { font-size:12px; margin-top:6px; }
+  .callout .flink a { color:var(--acc); text-decoration:none; margin-right:10px; }
   .st.minted { background:#123f2a; color:var(--green); }
   .st.queued { background:#3a2c10; color:var(--fire); }
   .wall { margin-top:18px; }
@@ -257,13 +262,24 @@ function renderFeed(callouts) {
   const el = document.getElementById('feed');
   if (!callouts.length) { el.innerHTML = '<div class="empty">waiting for callouts…</div>'; return; }
   el.innerHTML = callouts.map((c) => {
-    const key = 'n' + c.n;
+    const key = c.key || ('n' + c.n);
     const fresh = !seenCallouts.has(key) && !firstLoad;
     seenCallouts.add(key);
     const cls = (c.status === 'minted' || c.status === 'transferred') ? 'minted' : 'queued';
+    const who = esc(c.by || short(c.address) || 'someone');
+    const frenLine = c.edition ? `festive fren #${c.edition}${c.design ? ' · ' + esc(c.design) : ''}` : '';
+    const txt = c.text ? `<div class="txt">${esc(c.text)}</div>`
+      : (c.tweetUrl ? `<div class="txt"><a href="${esc(c.tweetUrl)}" target="_blank" rel="noopener" style="color:var(--acc)">entry on x ↗</a></div>` : '');
     return `<div class="callout${fresh ? ' fresh' : ''}">
-      <span class="who">${esc(c.by)}</span><span class="when">${esc(tstr(c.at))}</span>
-      <div class="txt">${esc(c.text)}</div>
+      <div class="frow">
+        ${c.image ? `<img class="thumb" src="${esc(c.image)}" alt="fren #${c.edition || ''}" loading="lazy">` : ''}
+        <div>
+          <span class="who">${who}</span><span class="when">${esc(tstr(c.at))}</span>
+          ${frenLine ? `<div class="fren">${frenLine}</div>` : ''}
+        </div>
+      </div>
+      ${txt}
+      <div class="flink">${c.tokenUrl ? `<a href="${esc(c.tokenUrl)}" target="_blank" rel="noopener">nft ↗</a>` : ''}${c.tweetUrl && c.text ? `<a href="${esc(c.tweetUrl)}" target="_blank" rel="noopener">entry tweet ↗</a>` : ''}</div>
       <span class="st ${cls}">${esc(c.status || 'seen')}</span>
     </div>`;
   }).join('');

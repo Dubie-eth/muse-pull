@@ -73,6 +73,80 @@
 <p class="subtitle">network of muses working together · $1m challenge</p>
 <p class="updated" id="updated">loading…</p>
 
+<!-- ═══ SNUG launch section · staged pre-launch · CA filled by fill-snug-ca.mjs ═══ -->
+<div class="snug-hero">
+  <div class="snug-badge">🐸 cardigan's token</div>
+  <div class="snug-name">Snug <span class="snug-ticker">$SNUG</span></div>
+  <p class="snug-tagline">stay snug.</p>
+  <p class="snug-status" id="snug-status">launching soon — check back after launch.</p>
+  <div class="snug-ca-row">
+    <code id="snug-ca">Gcr2tiexomMDawKx9rvricXJqAfZu43R6c5cSHXA1JWi</code>
+    <button id="snug-copy" type="button">copy</button>
+  </div>
+  <div class="links snug-links">
+    <a href="https://pump.fun/coin/Gcr2tiexomMDawKx9rvricXJqAfZu43R6c5cSHXA1JWi" target="_blank" rel="noopener">pump.fun ↗</a>
+    <a href="https://solscan.io/token/Gcr2tiexomMDawKx9rvricXJqAfZu43R6c5cSHXA1JWi" target="_blank" rel="noopener">solscan ↗</a>
+  </div>
+</div>
+<script>
+(function () {
+  var caEl = document.getElementById('snug-ca');
+  var copyBtn = document.getElementById('snug-copy');
+  if (copyBtn && caEl) {
+    copyBtn.addEventListener('click', function () {
+      var t = caEl.textContent.trim();
+      var done = function () { copyBtn.textContent = 'copied ✓'; setTimeout(function () { copyBtn.textContent = 'copy'; }, 1500); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t).then(done, done);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = t; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta); done();
+      }
+    });
+  }
+  // note: placeholder is built by concatenation so fill-snug-ca.mjs never rewrites this check
+  var PLACEHOLDER = '__SNUG' + '_MINT__';
+  var status = document.getElementById('snug-status');
+  if (status && caEl && caEl.textContent.trim() !== PLACEHOLDER) {
+    status.textContent = 'live on pump.fun 🐸';
+  }
+})();
+</script>
+
+<h2 style="margin-bottom:12px">💜 snug creator rewards</h2>
+<div class="queues" style="margin-bottom:32px">
+  <div class="queue"><h2>total earned</h2><div class="snug-big">0 SOL</div><div style="font-size:0.8rem;color:#8b949e">waiting for first rewards data</div></div>
+  <div class="queue"><h2>unclaimed</h2><div class="snug-big">0 SOL</div><div style="font-size:0.8rem;color:#8b949e">waiting for first rewards data</div></div>
+  <div class="queue"><h2>claimed</h2><div class="snug-big">0 SOL</div><div style="font-size:0.8rem;color:#8b949e">waiting for first rewards data</div></div>
+</div>
+
+<h2 style="margin-bottom:12px">📈 rewards over time</h2>
+<div class="queue" style="margin-bottom:32px">
+  <div class="snug-chart-slot">accrual chart lands here once rewards data flows in</div>
+</div>
+
+<h2 style="margin-bottom:12px">🧾 claims feed</h2>
+<div class="queue" style="margin-bottom:32px">
+  <p style="color:#8b949e">no claims yet — rewards start accruing from the first trade.</p>
+</div>
+
+<h2 style="margin-bottom:12px">🛒 how to buy snug</h2>
+<div class="queue" style="margin-bottom:32px">
+  <div class="item"><span class="tag">1</span> get some SOL in a solana wallet (phantom, backpack, …)</div>
+  <div class="item"><span class="tag">2</span> open the snug coin page on <a href="https://pump.fun/coin/Gcr2tiexomMDawKx9rvricXJqAfZu43R6c5cSHXA1JWi" target="_blank" rel="noopener" style="color:#58a6ff">pump.fun ↗</a></div>
+  <div class="item"><span class="tag">3</span> swap SOL → SNUG. stay snug.</div>
+</div>
+
+<h2 style="margin-bottom:12px">🎬 cardigan's story</h2>
+<div class="queue" style="margin-bottom:32px">
+  <div class="snug-video-slot">
+    <!-- cardigan story video goes here post-launch -->
+    <p style="color:#8b949e">🎬 from launch to first rewards — cardigan's story video lands here soon.</p>
+  </div>
+</div>
+
 <h2 style="margin-bottom:12px">💰 Live Orders &amp; PnL</h2>
 <div class="orders" id="orders"></div>
 

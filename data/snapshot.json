@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-09T17:31:39.111Z",
+ "updated_at": "2026-10-09T17:33:07.532Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
@@ -204926,6 +204926,339 @@
    "processed": true,
    "processed_at": "2026-10-09T17:23:04.675036+00:00",
    "decision_run": "cardigan-flock-decision 2026-10-09T17:20Z"
+  },
+  {
+   "broken_down_at": "2026-10-09T17:32:10.673459+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "name": "injective pad INJ",
+    "symbol": null,
+    "addr": "0x89e26aab58001d20fd58a45017105819b3c23fee",
+    "spotted_at": null,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83881810 (tx 0xc51966509c7742e3526a626f3a8323c3aaaf634d5cd40fc2a861532e7249d056); name=injective pad symbol=INJ. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T11:38:28.774Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "investigation": {
+    "investigated_at": "2026-10-09T11:56:54Z",
+    "verdict": "needs-snug",
+    "verdict_note": "Brand-mimic alert: 'injective pad' / ticker INJ impersonates the real Injective protocol (all X mentions of INJ are the real project — Stockdrop news, native INJ live on Robinhood — none reference this pons token). No pairs on DexScreener, no holders, no organic signal. Flagged for Blanket Snug's durability/impersonation breakdown rather than killed outright.",
+    "velocity": "No velocity data — pons launch detail only (block 83881810); no pair/swap activity reported.",
+    "social_signal": "weak",
+    "money_flow": "bot"
+   },
+   "social_grade": "F",
+   "social_total": 0,
+   "durability": "weak",
+   "comps": "Brand-mimic pons launches copying major protocol tickers (INJ/Injective here, ~$820M mcap native L1) are a well-worn pattern: they farm confused search traffic, have no original team, and historically die at zero or are dumped by the deployer once bots provide exit liquidity. Comps on Robinhood pons factory show near-zero hold value for such mimics.",
+   "risks": "Brand impersonation of a major protocol (real INJ is live on Robinhood — trademark/fraud exposure); social grade F (0/100) with no organic footprint; exactly 1 Transfer event since launch (the mint to deployer 0x9c255a3b...); no pairs on DexScreener; no holders; deployer undiscoverable via RPC; thin holder data; no LP or liquidity checks possible. All X mentions of INJ reference the real project, none this token.",
+   "recommendation": "skip",
+   "reason": "F social grade is a likely-skip signal per standing rule; combined with brand impersonation, zero traction since launch (1 transfer in ~7.4h), no pairs, no holders, and an unattributable anonymous deployer, durability is weak. No mint, no buy."
+  },
+  {
+   "broken_down_at": "2026-10-09T17:32:10.673459+00:00",
+   "candidate": {
+    "scout": "new-pairs",
+    "chain": "robinhood",
+    "name": null,
+    "symbol": null,
+    "addr": "0x24ab13748999bcfd818a2238f9d3db612990da99",
+    "spotted_at": null,
+    "detail": "V2 pair created block 83886641 via factory 0x8bceaa40…. 4 swaps since creation (3 buys / 1 sells), ~0.24 WETH volume, reserves 1.16 WETH / 7730806674.0k TikTok",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T11:51:41.682Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "dangerous selectors present (mint(address)) but no owner() — power unattributable",
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "dangerous selectors present (mint(address)) but no owner() — power unattributable"
+       ],
+       "notes": [],
+       "detail": {
+        "selectors": {
+         "mint": [
+          "mint(address)"
+         ],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "3000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "investigation": {
+    "investigated_at": "2026-10-09T12:02:14Z",
+    "verdict": "needs-snug",
+    "verdict_note": "Brand impersonation: the reserve symbol is 'TikTok', copying the TikTok app brand — ceiling for brand mimics is needs-snug. There is a real V2 pair with minimal swaps and mint(address) with no owner() (unattributable power). Needs a judge to weigh impersonation risk before anyone touches it.",
+    "velocity": "V2 pair, only 4 swaps (3 buys / 1 sell, ~0.24 WETH) since creation; DexScreener: []; near-zero activity, no price/liquidity verifiable.",
+    "social_signal": "weak",
+    "money_flow": "bot"
+   },
+   "social_grade": "F",
+   "social_total": 1,
+   "durability": "weak",
+   "comps": "Brand-mimic memecoins copying consumer-app brands (reserve symbol 'TikTok') follow a familiar arc: brief novelty attention from bots, then stall at birth when no organic community arrives. Similar RH-chain app-brand mimics show flat-to-zero hold value and no secondary liquidity.",
+   "risks": "Brand impersonation (TikTok app); mint(address) selector present with no owner() — unattributable mint power, the deployer could mint at will; near-zero activity (4 swaps, 3 buys/1 sell, ~0.24 WETH since creation, block 83886641); no holder data; LP-lock and liquidity checks skipped; social grade F with no footprint.",
+   "recommendation": "skip",
+   "reason": "F social grade rules it out per standing rule; unattributable mint power is a severe unresolved risk; and with only 4 swaps in its life and no verifiable price or liquidity, there is nothing durable to invest in. No mint, no buy."
+  },
+  {
+   "broken_down_at": "2026-10-09T17:32:10.673459+00:00",
+   "candidate": {
+    "scout": "block-watcher",
+    "chain": "robinhood",
+    "name": null,
+    "symbol": null,
+    "addr": "0xa9f5ec49ac456fcb1ffc2968ad9eeed72b8a9263",
+    "spotted_at": null,
+    "detail": "new contract deployed in block 83891460",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T11:57:06.018Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "investigation": {
+    "investigated_at": "2026-10-09T12:02:14Z",
+    "verdict": "needs-snug",
+    "verdict_note": "'Owl Nighter' OWLNIGHT is the one candidate with real activity ($1.28M/24h volume, thousands of txns) but the flags are severe: liquidity drained to $17.12, price down 77.7% in 6 hours after a +145% day, and social is forced bot spam ('reward page'/allocation phishing shills plus @_0xGems win claims). Real volume plus real dump/pull risk — needs a durability judge, not an auto-approve.",
+    "velocity": "Pair created ~05:14 UTC 2026-10-09 (Uniswap V3); h24 volume $1,282,527 with 2334 buys / 2481 sells, price +145% h24 but -77.7% h6; liquidity collapsed to $17.12 vs fdv $27,417 — massive dump/liquidity-pull in progress.",
+    "social_signal": "forced",
+    "money_flow": "mixed"
+   },
+   "social_grade": "F",
+   "social_total": 1,
+   "durability": "weak",
+   "comps": "Post-rug memecoins with real early volume that then suffered liquidity pulls (here: liquidity collapsed to $17.12 vs fdv $27,417) essentially never recover — comps on RH chain show volume does not return and price floors at ~zero. The $1.28M/24h volume is history, not a moat; current trajectory is terminal.",
+   "risks": "Active liquidity pull/dump in progress (price -77.7% in 6h after a +145% day, liquidity $17.12 vs $27,417 fdv); social is forced bot spam ('reward page'/allocation phishing shills, @_0xGems win claims) — grade F; deployer undiscoverable via RPC; money flow mixed; no organic community to defend the price.",
+   "recommendation": "skip",
+   "reason": "Real volume but a real rug: liquidity drained to $17, price collapsing 77.7% in 6 hours, and F-grade forced bot social. Per standing rule D/F grades are a likely skip regardless of other factors — here the other factors (dump in progress, no liquidity) agree. No mint, no buy; not even a watch — this one is spent."
   }
  ],
  "tracking": {
@@ -323820,8 +324153,8 @@
   "scout": "2026-10-09T17:31:28.054Z",
   "hymn": "2026-10-09T17:07:35.265888+00:00",
   "scorer": "2026-10-09T17:16:09.567420+00:00",
-  "snug": "2026-10-09T17:20:24.619882+00:00",
-  "cardigan": "2026-10-09T17:20:24.619882+00:00"
+  "snug": "2026-10-09T17:32:10.673459+00:00",
+  "cardigan": "2026-10-09T17:32:10.673459+00:00"
  },
  "challenge": {
   "wallet": "0xa554e642ac0fe1bbeeea26df17644ad8fce00ecc",
@@ -323947,7 +324280,7 @@
   "realized_pnl_pct_total": 0
  },
  "paper_trades": {
-  "as_of": "2026-10-09T17:27:15.456Z",
+  "as_of": "2026-10-09T17:32:11.768Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -324012,7 +324345,7 @@
     "seeded": false,
     "score": 69,
     "entry_price_usd": 0.04243,
-    "last_price_usd": 0.04172,
+    "last_price_usd": 0.04171,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -324023,8 +324356,8 @@
     "mcap_at_scan": 42788142.46528106,
     "mcap_at_decision": 42788142.46528106,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00016733443318406871,
-    "unrealized_pnl_pct": -1.673344331840687
+    "unrealized_pnl_eth": -0.00016969125618666148,
+    "unrealized_pnl_pct": -1.6969125618666148
    },
    {
     "id": "pt-mv03ww45-53",
@@ -324035,7 +324368,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3445,
+    "last_price_usd": 0.3446,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -324046,8 +324379,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00009772923253808629,
-    "unrealized_pnl_pct": -0.977292325380863
+    "unrealized_pnl_eth": -0.00009485484334578853,
+    "unrealized_pnl_pct": -0.9485484334578853
    },
    {
     "id": "pt-mv03wwab-54",
@@ -324081,7 +324414,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.3445,
+    "last_price_usd": 0.3446,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -324092,8 +324425,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00023802776990648923,
-    "unrealized_pnl_pct": -2.380277699064892
+    "unrealized_pnl_eth": -0.00023519410597902968,
+    "unrealized_pnl_pct": -2.3519410597902968
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -324104,7 +324437,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.3445,
+    "last_price_usd": 0.3446,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -324115,8 +324448,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00023249220300538775,
-    "unrealized_pnl_pct": -2.3249220300538775
+    "unrealized_pnl_eth": -0.00022965693223702898,
+    "unrealized_pnl_pct": -2.29656932237029
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -324127,7 +324460,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.3445,
+    "last_price_usd": 0.3446,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -324138,8 +324471,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0002490801018964062,
-    "unrealized_pnl_pct": -2.4908010189640617
+    "unrealized_pnl_eth": -0.00024624964619303634,
+    "unrealized_pnl_pct": -2.4624964619303635
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -324150,7 +324483,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.3445,
+    "last_price_usd": 0.3446,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -324161,8 +324494,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0002545968882602545,
-    "unrealized_pnl_pct": -2.545968882602545
+    "unrealized_pnl_eth": -0.00025176803394625025,
+    "unrealized_pnl_pct": -2.5176803394625025
    }
   ],
   "closed_recent": [],

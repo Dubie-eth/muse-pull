@@ -1,24 +1,11 @@
 {
- "updated_at": "2026-10-09T13:57:49.008Z",
+ "updated_at": "2026-10-09T13:59:44.287Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-09T13:39:20.605Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Leopold Delarue LEOPOLD",
-   "muse": "",
-   "contract": "0x0b2fa37dec8720c7532a9728b2766f321b410912",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x4b7cf46a02ac379bc2eecf493ef9ef1ec342a716b8c2c3c3d90f4d3210a91a24",
-   "block": 84194221,
-   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84194221 (tx 0x4b7cf46a02ac379bc2eecf493ef9ef1ec342a716b8c2c3c3d90f4d3210a91a24); name=Leopold Delarue symbol=LEOPOLD. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
-  },
   {
    "found_at": "2026-10-09T13:40:26.302Z",
    "scout": "pons-family",
@@ -636,9 +623,20 @@
    "volume": "1.94 WETH",
    "contract": "0x0fc5ca9a30b3090b8105fd09a0db01ea8470a1ba",
    "detail": "CORRECTED re-probe 2026-10-09 ~09:55 EDT: WETH/VIKA ('Viking Ape', token 0xe37f5f207587245c7cc8a168899341b2ec0f0e34), pair created block 84197538. 68 swaps (49 buys / 19 sells), ~1.94 WETH volume, micro 0.06-0.10 WETH sizes. VERDICT: DEAD — WETH reserve drained to 3.2e-6 dust vs 25.9k VIKA. Bot micro-trading, liquidity gone. Do not chase."
+  },
+  {
+   "found_at": "2026-10-09T13:57:39.885Z",
+   "scout": "new-pairs",
+   "type": "pair",
+   "pair": "WETH / GENESIS",
+   "dex": "0x8bceaa40… v2",
+   "chain": "robinhood",
+   "volume": "4.73 WETH",
+   "contract": "0x264e6fd0c804570d5fb7535fa38ce5593dc99049",
+   "detail": "CORRECTED re-probe 2026-10-09 ~09:55 EDT: WETH/GENESIS (token 0xa36c2671e74d5281a6b25d9268b0aa58eddab3b4), pair created block 84196244. 43 swaps, ALL BUYS / 0 sells, ~4.73 WETH volume, uniform ~0.18 WETH buys (bot accumulation pattern). Reserves HEALTHY: 34.82 WETH / 5.79B GENESIS. VERDICT: STRONG — real liquidity + steady buy pressure, but sells UNPROVEN: zero sells could be honeypot or fresh buy wave. Investigator must verify sellability before any decision."
   }
  ],
- "scout_queue_total": 4069,
+ "scout_queue_total": 4070,
  "investigations": [
   {
    "candidate": {
@@ -187031,6 +187029,2499 @@
    "total": 2,
    "grade": "F",
    "notes": "Raw non-ERC-20 contract (1.2KB) ~278k blocks old: no token interface, no market, no social footprint."
+  },
+  {
+   "scored_at": "2026-10-08T17:31:05Z",
+   "candidate": {
+    "type": "announcement",
+    "scout": "agentic-registry",
+    "chain": "arc",
+    "name": "MalaSwap Agentic AI Portal",
+    "note": "@bscnews reported ~2026-10-07: MalaSwap unveiled an Agentic AI Portal on Arc with 5 AI agents (trading, security/risk, market intel, token launches, NFT ops), tied to $MALA; rollout 'this week'"
+   },
+   "scores": {
+    "website": 2,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 10,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). Announcement only: no contract addresses, no agent IDs, no mint mechanics, no ERC-8004 registrations to verify. Neither @musegod_rh nor @r_alx_z mentioned it; only @bscnews coverage. Chain is Arc — outside the robinhood/base/solana mint pipeline anyway. Watch item for the agentic-registry scout, not a buy candidate. skip."
+  },
+  {
+   "scored_at": "2026-10-08T21:26:00.010Z",
+   "candidate": {
+    "contract": "0x9597df7be0186f02fd834644a980bf5c8bb4e65f",
+    "name_hint": null,
+    "scout": "block-watcher",
+    "type": "contract",
+    "chain": "robinhood",
+    "block": 83449740,
+    "found_at": "2026-10-08T19:29:23.058Z",
+    "detail": "new contract deployed in block 83449740",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:12:02.985Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "findings": {
+     "onchain_name": null,
+     "onchain_symbol": null,
+     "has_code": true,
+     "transfers_in_window": 0,
+     "holders_positive": 0,
+     "top1_pct": null,
+     "top_holders": [],
+     "blocks_span": 172954,
+     "error": null
+    }
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). bare contract deployment (no ERC-20 name/symbol), zero transfers — nothing to trade. skip."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0xdf0992e440dd0be65bd8439b609d6d4366bf1cb5",
+    "name_hint": null,
+    "scout": "whale-watcher",
+    "type": null,
+    "chain": "robinhood",
+    "block": 0,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T18:58:10.620Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f; LP-lock and liquidity checks skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 9,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). STOCK-TOKEN MIMIC: brand impersonation of Circle (NYSE:CRCL), 'Circle Internet Group • Robinhood Token'. Scam-watch item for dubie, never a candidate. The 2-whale 'convergence' ($22.4k received) is accumulation of the fake; distribution is farm-concentrated (94% top-10)."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0x32ff8a2e3f35cbf9ec3b3babded7c37bf7ed881d",
+    "name_hint": null,
+    "scout": "block-watcher",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83450716,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:20:48.127Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). no name, no activity, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0x9a7a2e59fc1cb01710bdc6492be0896269e5cdc9",
+    "name_hint": null,
+    "scout": "block-watcher",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83450902,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:21:04.951Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). no name, no activity, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0x38e4778cf0c6a32bc548c69dc35b6e737e11ebf1",
+    "name_hint": null,
+    "scout": "block-watcher",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83451054,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:21:12.346Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). no name, no activity, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0x540190be2995deef0f060fcbe5ae3d8cbbe680f0",
+    "name_hint": null,
+    "scout": "block-watcher",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83451090,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:21:18.042Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). no name, no activity, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0xe5bfff81d4f0dae8a3f367ca5fbc34124ef04a13",
+    "name_hint": null,
+    "scout": "block-watcher",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83451090,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:21:22.989Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). no name, no activity, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0x6428c9f4927946d4f779be51784ff08d4b906b65",
+    "name_hint": null,
+    "scout": "block-watcher",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83451292,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:21:29.068Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). no name, no activity, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0x391d55c9cabadd576b9fd25af29011bdacd8680c",
+    "name_hint": null,
+    "scout": "block-watcher",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83451294,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:21:35.340Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). no name, no activity, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0x5275cb1ec6de2e5c97c9b0b927ca8de654543a83",
+    "name_hint": null,
+    "scout": "block-watcher",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83451500,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:21:50.152Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). no name, no activity, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0x358ce671b70036a496cc028a5fac325f90ad7eb3",
+    "name_hint": null,
+    "scout": "block-watcher",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83451628,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:21:55.583Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). no name, no activity, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0x844c676695c077c42190e0900de4834000da9ad7",
+    "name_hint": null,
+    "scout": "block-watcher",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83451748,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:22:02.512Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). no name, no activity, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0xdc71f3cb27be6b4f429aba32a0ff4b81d98f8b28",
+    "name_hint": null,
+    "scout": "block-watcher",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83451841,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:22:08.260Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). no name, no activity, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0x6a9f2a100100abffc9c8b4a8e4e6c966a980644f",
+    "name_hint": null,
+    "scout": "block-watcher",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83452012,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:22:13.834Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). no name, no activity, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0x872608851355d615449e956ff37cf05ddfc1da7f",
+    "name_hint": "Golden Age Age",
+    "scout": "pons-family",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83558882,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:22:19.789Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 6,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). fresh pons launch, no holders, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0xa3aef93bc8d585a143c3767cc1090e1b99835c6d",
+    "name_hint": "VISION VSN",
+    "scout": "pons-family",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83559582,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:22:26.340Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). fresh pons launch, no holders, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0x207f38f68113441fe0928757e8b166851b6a8bb8",
+    "name_hint": "NUTZ Dry Run NUTZDRY",
+    "scout": "pons-family",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83559982,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:22:33.736Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). fresh pons launch, no holders, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0xad3d248a6e2106708cb3ebce56cd1d47ceec5502",
+    "name_hint": "DecentraMind DMIND",
+    "scout": "pons-family",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83560900,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:22:39.358Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 6,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). fresh pons launch, no holders, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0xbccfc3758a860c6db1bffb110dfbe0b3cda46cc2",
+    "name_hint": "BOKS BOKS",
+    "scout": "pons-family",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83561023,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:22:44.968Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 8,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). wash pattern: 55 churners, 5 real holders. No X buzz for this contract."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0x71c95baa492fd1bab9b2b3f333edc4a6c053fd79",
+    "name_hint": "Doge Token DOGEN",
+    "scout": "pons-family",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83561023,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:22:51.848Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). fresh pons launch, no holders, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0xb28629613e346b82441f1d6969019769bd5cb3ba",
+    "name_hint": "Robinhood Market HOODMERCH",
+    "scout": "pons-family",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83561210,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:22:59.809Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 6,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). 'Robinhood Market HOODMERCH' — brand-flavored farm launch, 2 holders."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0xf53f66751b1eff985311b693531e3290f600c410",
+    "name_hint": "Shopify  Robinhood Token SHOP",
+    "scout": "pons-family",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83561210,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:23:05.951Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "V4: floor check decided early: 1 pool(s) read, V4 total >= 0.5 ETH (lower bound 4.008 ETH)",
+     "thin holder data (5 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 2,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 1,
+    "fomo_signals": 3
+   },
+   "total": 12,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). BRAND IMPERSONATION: 'Shopify  Robinhood Token' impersonates Shopify. Stock-token-mimic farm vertical — scam-watch item for dubie, never a candidate, despite the V4 pool."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0x31d7bd880884a76bd4e588c07a8737150d39c66d",
+    "name_hint": "Root Crak ROOT",
+    "scout": "pons-family",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83561305,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:25:01.937Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). fresh pons launch, no holders, no social signal."
+  },
+  {
+   "scored_at": "2026-10-08T21:35:30Z",
+   "candidate": {
+    "contract": "0xc03dfefdbdca4aec885598244eaa010f12a9b83d",
+    "name_hint": "XELF XELF",
+    "scout": "pons-family",
+    "type": null,
+    "chain": "robinhood",
+    "block": 83561422,
+    "found_at": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T21:25:38.281Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 9,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). FARMED-NAME TRAP AVOIDED: the tracked $XELF market (Dexape: $428.5K mcap, $30.51M ATH) belongs to a DIFFERENT, older contract 0x5fa94a4f046d35f760cfaca10f5b3603e535d08b — not this fresh clone. No social attribution to this contract."
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0x8b35537f19c9db89d3c5cd30c88672553049e814",
+    "name": "Roblynz ROBLYNZ",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83578234,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:26:42.581Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=9 transfers since launch, 2 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0x3da23e2c217d954cadaba7e7d0ca58c3210e60f1",
+    "name": "MEME MEME",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83578358,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:26:49.998Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (3 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=35 transfers since launch, 4 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0xd891819cc80d59a9c7caeb3214501d3240062271",
+    "name": "Incovia INCOVIA",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83578398,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:26:57.990Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=9 transfers since launch, 2 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0xd9cf316bede69c291c9dbe16c8f9b0508de6b5e8",
+    "name": "Clipped CLIPPED",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83579199,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:27:06.017Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=6 transfers since launch, 2 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0xa3aaa22bc8e80984be3e871440e7d66610c9870e",
+    "name": "Where is Sam Trabucco TRABUCCO",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83579554,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:27:11.510Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=2 transfers since launch, 2 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0xfe02d05944243b4a252b5a3760b156ca12b7943b",
+    "name": "Tiktok Con TIKTOK",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83580001,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:27:17.415Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=37 transfers since launch, 5 holders (top 97.2%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0x028aa08fc2f6c25c8883e434297a5a6ae0576d4b",
+    "name": "kenzocoin KENZO",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83580206,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:27:22.719Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=8 transfers since launch, 2 holders (top 99.9%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0x6c5473a2361520e0dc6bcddd13b002d0a76ebbc4",
+    "name": null,
+    "scout": "new-pairs",
+    "chain": "robinhood",
+    "block": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:27:29.103Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=0 transfers since launch, 0 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0x711e0df4eea5e0740f35940f591f25efa97615cc",
+    "name": null,
+    "scout": "new-pairs",
+    "chain": "robinhood",
+    "block": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:27:36.264Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "dangerous selectors present (mint(address)) but no owner() — power unattributable",
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=0 transfers since launch, 0 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0x0e2cee991e15a3f65c11049f461019636e44fd66",
+    "name": null,
+    "scout": "new-pairs",
+    "chain": "robinhood",
+    "block": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:27:41.970Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "dangerous selectors present (mint(address)) but no owner() — power unattributable",
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=0 transfers since launch, 0 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0xa4da500ac07e2f5783a348fc4d919ac385ababe3",
+    "name": "Algonaut ALGONAUT",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83580908,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:27:47.311Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=126 transfers since launch, 3 holders (top 99.9%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0x1529d437e474e1612ffe9aeb745b0305457213ca",
+    "name": "Dealink DLINK",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83581075,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:27:52.683Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=11 transfers since launch, 1 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0x26a0812297c36800154cabf56631628d84ea7bc6",
+    "name": "Billboard BOARD",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83582960,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:28:06.357Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=21 transfers since launch, 2 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0x245598fb9a42877f5d79790a06b579c454a61ca8",
+    "name": "Shrift SHRIFT",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83583417,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:28:12.311Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=6 transfers since launch, 1 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0x0774c3fd8b980eedfffd835e1d24f10659197889",
+    "name": "VIBE DOG VDOG",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83583651,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:28:18.647Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=1 transfers since launch, 1 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0xbcad9b882153131d3a38b07e93a9cac12593c15e",
+    "name": "CLIPPED CLIPPED",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83583926,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:28:24.437Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=64 transfers since launch, 2 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0xd9ab021ff9a6bc5a01d21691d6b31e5ffd734f60",
+    "name": "Frank Albino FRNKALBINO",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83584659,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:28:31.808Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=5 transfers since launch, 1 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0xd7373c7d7834fcd0ec07d06c71c3bbd46246155a",
+    "name": "ZellePad ZELLEPAD",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83586449,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:34:42.480Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=5 transfers since launch, 2 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0x941961dd6f7007878fd7996c2d154a6609c551cf",
+    "name": "Quantum Vault QUANTUM",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83586916,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:34:49.704Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=25 transfers since launch, 2 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0xe6d46304b1527d672e959c659a09455aac705c53",
+    "name": "MEME MEME",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83587604,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:35:00.427Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=9 transfers since launch, 2 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0xaf67e01f060488ca1da4d12aa7cffc6f6c647ec4",
+    "name": "Pebbly PEB",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83587622,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:35:09.229Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=1 transfers since launch, 1 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0x266003bd19643044d4414de70608bc643c7622b4",
+    "name": "Brewly BREW",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83588316,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:35:16.534Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=1 transfers since launch, 1 holders (top 100.0%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T22:46:05Z",
+   "candidate": {
+    "contract": "0x98196909058d5754a7bc76a7c39edfbe0a9e7665",
+    "name": "uniquedots UNQ",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83588733,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:35:24.475Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=7 transfers since launch, 3 holders (top 99.9%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0xa2650f138cc4807d97bfd28888b1d921938359b7",
+    "name": "OrloByWallet ORLO",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83588744,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:38:38.291Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=5 transfers since launch, 1 holder (top 100% = pons curve contract) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0x877e593505698740a41d3a85d0f049ce85f01c55",
+    "name": "Fizzly FIZZ",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83589005,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:38:46.875Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=1 transfer since launch, 1 holder (top 100% = pons curve contract) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0x0a0ea5894a64cf01ee203e97fdd2395f4fb76a61",
+    "name": "CrawlDev CRAWLDEV",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83589020,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:38:53.677Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=66 transfers since launch, 4 holders (top 99.99% = pons curve contract) — churn, no accumulation"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0xb6c2be4f181b7ba1fab4d95abf46d5eea7966124",
+    "name": "Octobear OCTOBEAR",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83589373,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:39:00.431Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=7 transfers since launch, 2 holders (top 99.99%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0x31149ebd145cb2226b0d99a61fef0658a4a34ba0",
+    "name": "Bubbl BUBBL",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83589548,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:39:05.983Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=104 transfers, 2 holders (top 99.99%); 30 distinct dust buyers churned through curve, none holding — bot wash pattern"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0xd7b454a5e41efffb56a7a273c789a07f092b1c41",
+    "name": "Basis Dex BASIS",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83590413,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:39:12.681Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=57 transfers since launch, 2 holders (top 99.99%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0x236d68c3cf6f14cf3dab7051b41fd766e3c62db9",
+    "name": "BBC BBC",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83590638,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:39:21.025Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=1 transfer since launch, 1 holder (top 100% = pons curve contract) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0x82ae3c102963df7dca7173c9fa34426e728c5e1c",
+    "name": "Ave Mujica MUJICA",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83590677,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:39:27.712Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=40 transfers since launch, 12 holders (top 99.74%) — dust only, no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0xd7bb2a51a00adfe74a76f83bc79aed46179e87c0",
+    "name": "Porns PORNS",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83590952,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:45:58.320Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=5 transfers since launch, 1 holder (top 100% = pons curve contract) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0x9f3f3608a86a2ff3a155256c0cf1bcf76ea3b89e",
+    "name": "Motion Game MOTION",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83591315,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:46:11.061Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=75 transfers since launch, 2 holders (top 99.99%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0x5acd536465c1ebdbc3fe46ef8dd492c0b037642d",
+    "name": "Hook Radar RADAR",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83591652,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:46:20.903Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 6,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=201 transfers, 4 holders (top 99.76%); 69 distinct dust buyers churned, max holder 0.23% — bot wash pattern"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0x602a9a9f0e1716aa17cc05cfb6c80147b509c9b5",
+    "name": "MANA MANA",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83591901,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:46:27.664Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (8 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 8,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=mixed; velocity=251 transfers, 36 holders (top 71.88% = pons curve contract; largest EOA 3.35%, rest 1-2.6%) — most distributed of batch but farmed name (Decentraland ticker), no whale, no velocity spike | farmed-name: MANA = Decentraland ticker; any X buzz unattributable to this clone"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0xf08a4c38ce9f26cbf19caa67d8af65f70577bec7",
+    "name": "Quantum Vault QVAULT",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83592023,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:46:42.094Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=7 transfers since launch, 1 holder (top 100% = pons curve contract) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0x6577b4f35210a3bff64d6500cb56732adbcce064",
+    "name": "Earthlawb EARTH",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83592321,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:46:51.059Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=12 transfers since launch, 2 holders (top 99.99%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0x63c88fec2c9639867ac6b419e93f89f1cde589c8",
+    "name": "NetSniff NetSniff",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83593037,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:46:59.540Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=6 transfers since launch, 1 holder (top 100% = pons curve contract) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0x454f6a986cd38111d305ac1a78bef7a1d040b7ef",
+    "name": "Jingo JINGO",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83593225,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:47:16.038Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=20 transfers since launch, 6 holders (top 93.97%) — dust only, no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0x72803ced5dcaebf6408f775273d5f510278fd74a",
+    "name": "BOKUYABA BOKUYABA",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83593540,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:47:23.323Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=57 transfers since launch, 17 holders (top 99.87%) — dust only, no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0x2844b411c66cb4cf9c33a9d17e114aa1a7c288be",
+    "name": "Pixel Check PCHECK",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83594152,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:47:31.318Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=19 transfers since launch, 1 holder (top 100% = pons curve contract) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0xe1f9491bbb461dceb114989800cef3a2bb4d5ec3",
+    "name": "Cashmere CASHME",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83594231,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:47:42.031Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=13 transfers since launch, 2 holders (top 99.99%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0xfc95725be8894fcc04ba408b295970c0345adf87",
+    "name": "DNS Pad DNS",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83594397,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:47:48.354Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=58 transfers since launch, 2 holders (top 99.99%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0x702693a6c15b452eb92f1c5d549f37e021a6832c",
+    "name": "ARTIST ARTIST",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83594774,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:47:55.493Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=7 transfers since launch, 2 holders (top 99.99%) — no velocity"
+  },
+  {
+   "scored_at": "2026-10-08T23:06:00Z",
+   "candidate": {
+    "contract": "0x4deefb28f850d87d940417d7b34681b638503c83",
+    "name": "Farm FARM",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 83594945,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-08T22:48:05.456Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=bot; velocity=113 transfers, 2 holders (top 99.99%); 29 distinct dust buyers churned through curve, none holding — bot wash pattern"
+  },
+  {
+   "scored_at": "2026-10-09T05:45:25Z",
+   "candidate": {
+    "found_at": null,
+    "scout": "pons-family",
+    "type": "token",
+    "contract": "0x36664e9a6e023d175beddf65f05f03f04c1300e9",
+    "chain": "robinhood",
+    "name": "Tranche",
+    "symbol": "TRNAI",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83722260 (tx 0xe9fda520e47b9878a40c6ab2773e24174285bb80a9e1af2aa9b8106621ef322d); name=Tranche symbol=TRNAI. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "block": 83722260,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T05:33:46.999Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 9,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=none observed — no minting wallets, no trading wallets; supply at factory/deployer.; velocity=factory-fresh pons launch (block 83722260, minutes old at gate): 1B fixed supply, 18 dec, 3248B pons template bytecode; ~0 holders in 12k-block window; DexScreener: no pools, no trades, no mcap — zero market signal yet."
+  },
+  {
+   "scored_at": "2026-10-09T05:45:25Z",
+   "candidate": {
+    "found_at": null,
+    "scout": "pons-family",
+    "type": "token",
+    "contract": "0xecbe3409bcdb203f2072961538c7cece61af1bda",
+    "chain": "robinhood",
+    "name": "0x_Darius",
+    "symbol": "0XDARIUS",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83722959 (tx 0xf4cdc9510766034b06638a945737148ee14f75d90885e3652b95be9550412245); name=0x_Darius symbol=0XDARIUS. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "block": 83722959,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T05:33:54.041Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 9,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=none observed — no minting wallets, no trading wallets; supply at factory/deployer.; velocity=factory-fresh pons launch (block 83722959, minutes old at gate): 1B fixed supply, 18 dec, 3248B pons template bytecode; ~0 holders in 12k-block window; DexScreener: no pools, no trades, no mcap — zero market signal yet."
+  },
+  {
+   "scored_at": "2026-10-09T05:45:25Z",
+   "candidate": {
+    "found_at": null,
+    "scout": "pons-family",
+    "type": "token",
+    "contract": "0xafc40704cff641d9326227311158731c26096972",
+    "chain": "robinhood",
+    "name": "Work",
+    "symbol": "WORK",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83723629 (tx 0x392a82bafe2f20794063f0ac097a3250fce464c83eafa3db384bd509e8561597); name=Work symbol=WORK. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "block": 83723629,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T05:34:05.242Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 9,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=none observed — no minting wallets, no trading wallets; supply at factory/deployer.; velocity=factory-fresh pons launch (block 83723629, minutes old at gate): 1B fixed supply, 18 dec, 3248B pons template bytecode; ~0 holders in 12k-block window; DexScreener: no pools, no trades, no mcap — zero market signal yet."
+  },
+  {
+   "scored_at": "2026-10-09T05:45:25Z",
+   "candidate": {
+    "found_at": null,
+    "scout": "pons-family",
+    "type": "token",
+    "contract": "0x7f5873bad6e52f50917e3913022d35751f6e54f7",
+    "chain": "robinhood",
+    "name": "IMPEPE",
+    "symbol": "PEPE",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83724249 (tx 0x4513f9d1b04174e5a06bd02f14aaae774d98dd2eb6be7b63bf95491bf791db4e); name=IMPEPE symbol=PEPE. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "block": 83724249,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T05:34:28.540Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 9,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=none observed — no minting wallets, no trading wallets; supply at factory/deployer.; velocity=factory-fresh pons launch (block 83724249, minutes old at gate): 1B fixed supply, 18 dec, 3248B pons template bytecode; ~0 holders in 12k-block window; DexScreener: no pools, no trades, no mcap — zero market signal yet."
+  },
+  {
+   "scored_at": "2026-10-09T05:45:25Z",
+   "candidate": {
+    "found_at": null,
+    "scout": "pons-family",
+    "type": "token",
+    "contract": "0x5a2b3f9cfb6f8a17d0562ab0a852d13b9052dd9f",
+    "chain": "robinhood",
+    "name": "Brez",
+    "symbol": "BREZSCALES",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83724890 (tx 0xa57910c650140253974b444387c9a55bf7c73ec8b4ca77985c759541affe885b); name=Brez symbol=BREZSCALES. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "block": 83724890,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T05:34:34.387Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 9,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=none observed — no minting wallets, no trading wallets; supply at factory/deployer.; velocity=factory-fresh pons launch (block 83724890, minutes old at gate): 1B fixed supply, 18 dec, 3248B pons template bytecode; ~0 holders in 12k-block window; DexScreener: no pools, no trades, no mcap — zero market signal yet."
+  },
+  {
+   "scored_at": "2026-10-09T05:45:25Z",
+   "candidate": {
+    "found_at": null,
+    "scout": "pons-family",
+    "type": "token",
+    "contract": "0x00fadf1fa642ee2e7ac8f906e35f90592a85e1d0",
+    "chain": "robinhood",
+    "name": "Gomo",
+    "symbol": "GOMO",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83724921 (tx 0x75496d763ca2cc7b5adf40e0b7a430e70ee8d3fa8b15ec1e8716178dd4c9ac4b); name=Gomo symbol=GOMO. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "block": 83724921,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T05:34:39.311Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 9,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=none observed — no minting wallets, no trading wallets; supply at factory/deployer.; velocity=factory-fresh pons launch (block 83724921, minutes old at gate): 1B fixed supply, 18 dec, 3248B pons template bytecode; ~0 holders in 12k-block window; DexScreener: no pools, no trades, no mcap — zero market signal yet."
+  },
+  {
+   "scored_at": "2026-10-09T05:45:25Z",
+   "candidate": {
+    "found_at": null,
+    "scout": "pons-family",
+    "type": "token",
+    "contract": "0x28906485a8ae1acf01445f9337e23b1d9b3e08aa",
+    "chain": "robinhood",
+    "name": "Green Candle Club",
+    "symbol": "GCC",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83725768 (tx 0x6d7917dc9e36ef6083ab1540eb42d29432d3d0ca5deefeab181c2cc238998aec); name=Green Candle Club symbol=GCC. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "block": 83725768,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T05:34:43.864Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 9,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=none observed — no minting wallets, no trading wallets; supply at factory/deployer.; velocity=factory-fresh pons launch (block 83725768, minutes old at gate): 1B fixed supply, 18 dec, 3248B pons template bytecode; ~0 holders in 12k-block window; DexScreener: no pools, no trades, no mcap — zero market signal yet."
+  },
+  {
+   "scored_at": "2026-10-09T05:45:25Z",
+   "candidate": {
+    "found_at": null,
+    "scout": "pons-family",
+    "type": "token",
+    "contract": "0x0ec6803be443d9330ec7908f7b6133b3a29b11f9",
+    "chain": "robinhood",
+    "name": "ROBIN KINGDOM COIN",
+    "symbol": "JEWEL",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83725955 (tx 0x350c06d9564065c42ac81f149065444ba606ee6f215376916c44721aff6b9c57); name=ROBIN KINGDOM COIN symbol=JEWEL. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "block": 83725955,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T05:34:48.571Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 9,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=none observed — no minting wallets, no trading wallets; supply at factory/deployer.; velocity=factory-fresh pons launch (block 83725955, minutes old at gate): 1B fixed supply, 18 dec, 3248B pons template bytecode; ~0 holders in 12k-block window; DexScreener: no pools, no trades, no mcap — zero market signal yet."
+  },
+  {
+   "scored_at": "2026-10-09T05:45:25Z",
+   "candidate": {
+    "found_at": null,
+    "scout": "pons-family",
+    "type": "token",
+    "contract": "0xc4dbc97784942e0d5dbdf32ada21f96a9e5e36e4",
+    "chain": "robinhood",
+    "name": "Paseo",
+    "symbol": "PASEO",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83726139 (tx 0x698a6ca3c458fa773665029ab5359b9c0ac24c55ecd4e7acc7a72d8b28adb58a); name=Paseo symbol=PASEO. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "block": 83726139,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T05:34:53.271Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (2 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 9,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=none observed — no minting wallets, no trading wallets; supply at factory/deployer.; velocity=factory-fresh pons launch (block 83726139, minutes old at gate): 1B fixed supply, 18 dec, 3248B pons template bytecode; ~0 holders in 12k-block window; DexScreener: no pools, no trades, no mcap — zero market signal yet."
+  },
+  {
+   "scored_at": "2026-10-09T05:45:25Z",
+   "candidate": {
+    "found_at": null,
+    "scout": "pons-family",
+    "type": "token",
+    "contract": "0x37a41dd664f82f34ae6973b0a330ed2329532b3c",
+    "chain": "robinhood",
+    "name": "UsedFaintHare",
+    "symbol": "USEDFAINTHARE",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 83726773 (tx 0x27b8ef61480b8c6c86ea28a700a98099f8aee44fb086fdc34c37c7afa8a0edc0); name=UsedFaintHare symbol=USEDFAINTHARE. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "block": 83726773,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-09T05:35:00.757Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 2,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 9,
+   "grade": "F",
+   "notes": "Recovered from queue-entry grade (social_scored_at preserved; prior run graded but never appended). verdict=skip; social_signal=weak; money_flow=none observed — no minting wallets, no trading wallets; supply at factory/deployer.; velocity=factory-fresh pons launch (block 83726773, minutes old at gate): 1B fixed supply, 18 dec, 3248B pons template bytecode; ~0 holders in 12k-block window; DexScreener: no pools, no trades, no mcap — zero market signal yet."
   }
  ],
  "decisions": [
@@ -194701,6 +197192,54 @@
    "processed": true,
    "processed_at": "2026-10-09T13:39:43Z",
    "note": "09:39:43 EDT tick: 211 entries, 0 unprocessed; 0 new whale-moves since 09:29 review (13:29:37Z; latest move spotted 13:25:09Z, already reviewed). Fresh 13:25Z convergence (MEME 7 EOA whales, CASHCAT 2, ORBANCY 2) all reviewed by 09:29 tick and digest 09:42Z: MEME re-sight carried score 63 (buy band) but gate previously failed (1.5% buy/sell tax, top1 33.6% > 30% cap) -> no execution; CASHCAT lacks gate_pass -> skip per binary-gate rule; ORBANCY lacks gate_pass -> skip per rule. No scoring, no execution. Execution remains standing-blocked pending dubie's rule pick."
+  },
+  {
+   "candidate": {
+    "name": "MEME (re-sight)",
+    "contract": "0x385f4f8ae47651ce5f58f5265395a669f8281e18",
+    "chain": "robinhood",
+    "type": "re-sight",
+    "from_batch": "whale-convergence-check"
+   },
+   "broken_down_at": "2026-10-09T13:49:00.000Z",
+   "processed": true,
+   "processed_at": "2026-10-09T13:50:00.000Z",
+   "recommendation": "watch",
+   "gate_status": "gate_pass (carried from earlier entries)",
+   "score": {
+    "carried": 48,
+    "vitality_core": 12,
+    "mcap_tilt": 0,
+    "whale_convergence_bonus": 10,
+    "conv_note": "fresh: 7 distinct EOA whale wallets moved MEME in the last ~5min (13:20-13:25Z window); largest single EOA receipt $588,068.88 (0xb5a2a4fe64356184, block 84136584) + $40,996.77 (0x9ab7be3f71a149ce); 91 moves total in window, majority contract-to-contract DeFi flow",
+    "total": 58,
+    "decision": "watch",
+    "virality": "uncertain (mature-phase meme-stock token, 7th re-flag; convergence real but each re-flag weaker; shill + fraud accusations from prior runs)"
+   },
+   "processed_note": "flock-decision run 2026-10-09 09:50 EDT: decision queue 0 unprocessed; MEME re-sight - fresh 7-EOA convergence (largest receipt $588k, block 84136584) vs 3-EOA/$63k at 19:52 EDT. score carried 48 + 10 conv = 58 -> watch (<60; vitality_core 12 < 15, no half-size). Position already held (1055.2497 MEME bought 2026-10-08 13:05 EDT, tx 0x750f3d6...); position watcher owns exits. no new execution."
+  },
+  {
+   "candidate": {
+    "name": "CASHCAT (re-sight)",
+    "contract": "0x020bfc650a365f8bb26819deaabf3e21291018b4",
+    "chain": "robinhood",
+    "type": "re-sight",
+    "from_batch": "whale-convergence-check"
+   },
+   "broken_down_at": "2026-10-09T13:49:00.000Z",
+   "processed": true,
+   "processed_at": "2026-10-09T13:50:00.000Z",
+   "recommendation": "watch (held position)",
+   "gate_status": "gate_pass (carried from earlier entries)",
+   "score": {
+    "carried": 60,
+    "whale_convergence_bonus": 10,
+    "conv_note": "fresh: 9 whales / 2 EOA receivers in last ~5min window; largest $98,129.60 move was contract-to-contract (DeFi flow), 79 moves total in window, EOA flow thin",
+    "total": 70,
+    "decision": "watch (held position; convergence noted for position watcher; no re-buy on held token)",
+    "virality": "sustained per original breakdown (2026-10-08)"
+   },
+   "processed_note": "flock-decision run 2026-10-09 09:50 EDT: CASHCAT re-sight - position already EXECUTED 2026-10-08 22:03 EDT. fresh 2-EOA convergence logged but EOA flow is thin (most moves contract-to-contract). no re-buy on a held token; position watcher trails exits. no execution."
   }
  ],
  "tracking": {
@@ -296216,9 +298755,9 @@
  "last_activity": {
   "scout": "2026-10-09T13:57:39.885Z",
   "hymn": "2026-10-09T13:26:19.208414+00:00",
-  "scorer": "2026-10-09T13:41:29Z",
-  "snug": null,
-  "cardigan": null
+  "scorer": "2026-10-09T05:45:25Z",
+  "snug": "2026-10-09T13:49:00.000Z",
+  "cardigan": "2026-10-09T13:49:00.000Z"
  },
  "challenge": {
   "wallet": "0xa554e642ac0fe1bbeeea26df17644ad8fce00ecc",

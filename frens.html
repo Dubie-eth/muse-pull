@@ -56,6 +56,40 @@
   .mint .links a, .mint .own a { color:var(--acc); text-decoration:none; font-size:13px; font-weight:700; }
   .mint .links a:hover, .mint .own a:hover { text-decoration:underline; }
   .empty { color:var(--dim); font-size:14px; padding:20px; text-align:center; }
+  .tsec { margin-top:22px; }
+  .tsec h2 { font-size:15px; text-transform:uppercase; letter-spacing:1.5px; color:var(--dim); margin-bottom:12px; }
+  .tgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:16px; }
+  .tcard { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; }
+  .tcard h3 { font-size:14px; text-transform:uppercase; letter-spacing:1px; color:var(--dim); margin-bottom:10px; }
+  .tcard .addr { font-size:12px; word-break:break-all; }
+  .tcard .addr a { color:var(--acc); text-decoration:none; }
+  .tcard .bal { font-size:20px; font-weight:800; margin-top:6px; }
+  .item { background:#0f1430; border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin-top:8px; font-size:13px; line-height:1.5; }
+  .item time { color:var(--dim); font-size:11px; }
+  .tag { display:inline-block; background:#1d2547; border:1px solid var(--line); border-radius:999px; padding:2px 10px; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; margin-right:6px; }
+  .tag.promising { background:#123f2a; color:var(--green); border-color:#1d5c3a; }
+  .tag.skip { background:#3a1a1a; color:#ff7b7b; border-color:#5c2323; }
+  .tag.warn { background:#3a2c10; color:var(--fire); border-color:#5c451a; }
+  .pnl-up { color:var(--green); font-weight:800; }
+  .pnl-down { color:#ff7b7b; font-weight:800; }
+  .tcard .links, .item .links { margin-top:6px; display:flex; gap:8px; flex-wrap:wrap; }
+  .tcard .links a, .item .links a { color:var(--acc); text-decoration:none; font-size:12px; font-weight:700; }
+  .flow { display:flex; align-items:stretch; gap:6px; flex-wrap:wrap; }
+  .stage { flex:1 1 120px; background:#0f1430; border:1px solid var(--line); border-radius:12px; padding:10px; text-align:center; }
+  .stage.active { border-color:var(--green); box-shadow:0 0 14px #3ddc8433; }
+  .stage h3 { font-size:12px; color:var(--dim); text-transform:uppercase; letter-spacing:1px; }
+  .stage .count { font-size:26px; font-weight:800; margin:4px 0; }
+  .stage .meta { font-size:11px; color:var(--dim); }
+  .arrow { align-self:center; color:var(--dim); font-size:20px; }
+  .tcard table { width:100%; font-size:12px; border-collapse:collapse; }
+  .tcard th, .tcard td { padding:4px 6px; text-align:left; border-bottom:1px solid #1c2444; }
+  .tcard th { color:var(--dim); font-weight:600; }
+  [class^="grade-"] { display:inline-block; min-width:26px; text-align:center; font-weight:800; border-radius:6px; padding:2px 6px; font-size:12px; }
+  .grade-A { background:#123f2a; color:var(--green); }
+  .grade-B { background:#1d3a5c; color:#7cc4ff; }
+  .grade-C { background:#3a2c10; color:var(--fire); }
+  .grade-D { background:#3a1a1a; color:#ff7b7b; }
+  .grade-F { background:#2a0f0f; color:#ff4d4d; }
   footer { margin-top:28px; color:var(--dim); font-size:13px; text-align:center; }
   footer a { color:var(--acc); }
 </style>
@@ -87,6 +121,26 @@
 <div class="wall">
   <h2>minted frens</h2>
   <div id="mints"><div class="empty">no mints yet — be the first to call out.</div></div>
+</div>
+
+<div class="tsec">
+  <h2>trading stats</h2>
+  <div class="tgrid" id="tstats"><div class="tcard"><div class="empty">loading trading stats…</div></div></div>
+</div>
+
+<div class="tsec">
+  <h2>live pipeline</h2>
+  <div class="tcard"><div class="flow" id="flow"><div class="empty">loading pipeline…</div></div></div>
+</div>
+
+<div class="tsec">
+  <h2>grade scorecard</h2>
+  <div class="tgrid" id="scorecard"><div class="tcard"><div class="empty">loading scorecard…</div></div></div>
+</div>
+
+<div class="tsec">
+  <h2>recent decisions</h2>
+  <div class="tgrid"><div class="tcard" id="decisions"><div class="empty">loading decisions…</div></div></div>
 </div>
 
 <footer>
@@ -180,6 +234,95 @@ async function tick() {
 }
 tick();
 setInterval(tick, 20000);
+
+// ---- trading stats (mirrors index.html, fed by data/snapshot.json) ----
+function linksFor(c) {
+  const links = [];
+  const addr = c.contract || c.mint || '';
+  const chain = String(c.chain || '').toLowerCase();
+  if (/^0x[a-fA-F0-9]{40}$/.test(addr)) {
+    if (chain === 'robinhood') {
+      links.push(['explorer', `https://robinhoodchain.blockscout.com/address/${addr}`]);
+      links.push(['dexscreener', `https://dexscreener.com/robinhood/${addr}`]);
+    } else if (chain === 'base') {
+      links.push(['basescan', `https://basescan.org/address/${addr}`]);
+      links.push(['dexscreener', `https://dexscreener.com/base/${addr}`]);
+    }
+  } else if (addr && chain === 'solana') {
+    links.push(['pump.fun', `https://pump.fun/coin/${addr}`]);
+    links.push(['dexscreener', `https://dexscreener.com/solana/${addr}`]);
+    links.push(['solscan', `https://solscan.io/token/${addr}`]);
+  }
+  const q = encodeURIComponent(c.symbol || c.name || addr);
+  if (q) links.push(['x search', `https://x.com/search?q=${q}`]);
+  if (!links.length) return '';
+  return `<div class="links">${links.map(([t, u]) => `<a href="${u}" target="_blank" rel="noopener">${t} ↗</a>`).join('')}</div>`;
+}
+
+async function loadStats() {
+  const pnlCls = v => v == null ? '' : (v >= 0 ? 'pnl-up' : 'pnl-down');
+  const pnlTxt = v => v == null ? '—' : (v >= 0 ? '+' : '') + v.toFixed(1) + '%';
+  try {
+    const r = await fetch('data/snapshot.json?t=' + Date.now(), { cache: 'no-store' });
+    if (!r.ok) throw new Error(r.status);
+    const d = await r.json();
+
+    // orders & pnl
+    const ch = d.challenge;
+    let statsHtml = '';
+    if (ch) {
+      const wlink = `https://robinhoodchain.blockscout.com/address/${ch.wallet}`;
+      statsHtml += `<div class="tcard"><h3>🏦 challenge wallet</h3><div class="addr"><a href="${wlink}" target="_blank" rel="noopener">${esc(ch.wallet)}</a></div><div class="bal">${ch.eth_balance != null ? ch.eth_balance.toFixed(4) + ' ETH' : '—'}${ch.weth_balance ? ' + ' + ch.weth_balance.toFixed(4) + ' WETH' : ''}</div><div style="font-size:12px;color:var(--dim)">${esc(ch.note || '')}</div></div>`;
+      const open = ch.open_positions || [];
+      const fmtAmt = v => v == null ? null : Number(v).toLocaleString(undefined, { maximumFractionDigits: 2 });
+      statsHtml += `<div class="tcard"><h3>📈 open positions (${open.length})</h3>` + (open.length ? open.map(p =>
+        `<div class="item"><span class="tag promising">${esc(p.symbol || p.name || '')}</span> <span class="${pnlCls(p.pnl_pct)}">${pnlTxt(p.pnl_pct)}</span><br><span style="color:var(--dim)">${p.amount_tokens != null ? fmtAmt(p.amount_tokens) + ' ' + esc(p.symbol || '') + ' · ' : ''}${p.amount_eth_in != null ? p.amount_eth_in + ' ETH in · ' : ''}entry $${p.entry_price_usd ?? '—'} → now $${p.current_price_usd ?? '—'}</span>${linksFor(p)}<br><time>${esc(p.entered_at || '')}</time></div>`).join('') : '<div class="empty">none yet</div>') + `</div>`;
+      const closed = ch.closed_trades || [];
+      statsHtml += `<div class="tcard"><h3>📕 closed trades (${closed.length})</h3><div style="margin-bottom:8px;font-size:13px">realized: <span class="${pnlCls(ch.realized_pnl_pct_total)}">${pnlTxt(ch.realized_pnl_pct_total)}</span></div>` + (closed.length ? closed.map(t =>
+        `<div class="item"><span class="tag">${esc(t.symbol || t.name || '')}</span> <span class="${pnlCls(t.pnl_pct)}">${pnlTxt(t.pnl_pct)}</span><br><span style="color:var(--dim)">${t.amount_tokens != null ? fmtAmt(t.amount_tokens) + ' ' + esc(t.symbol || '') + ' · ' : ''}${t.amount_eth_in != null ? t.amount_eth_in + ' ETH in · ' : ''}exit $${t.exit_price_usd ?? '—'}</span>${linksFor(t)}</div>`).join('') : '<div class="empty">none yet</div>') + `</div>`;
+    } else {
+      statsHtml = '<div class="tcard"><div class="empty">challenge data loading…</div></div>';
+    }
+    document.getElementById('tstats').innerHTML = statsHtml;
+
+    // pipeline flow
+    const stages = [
+      { name: 'Scouts', count: d.scout_queue_total || (d.scout_queue || []).length, meta: (d.scouts || []).join(', ') || 'scanning…', key: 'scout' },
+      { name: 'Humming Hymn', count: (d.investigations || []).length, meta: 'investigates', key: 'hymn' },
+      { name: 'Social Scorer', count: (d.scores || []).length, meta: 'grades A–F', key: 'scorer' },
+      { name: 'Blanket Snug', count: (d.decisions || []).length, meta: 'durability', key: 'snug' },
+      { name: 'Cardigan', count: (d.decisions || []).filter(x => x.recommendation === 'mint' || x.recommendation === 'buy').length, meta: 'decides + executes', key: 'cardigan' },
+    ];
+    const now = Date.now();
+    document.getElementById('flow').innerHTML = stages.map((s, i) => {
+      const active = d.last_activity && d.last_activity[s.key] && (now - new Date(d.last_activity[s.key]).getTime() < 5 * 60 * 1000);
+      return (i > 0 ? '<div class="arrow">→</div>' : '') +
+        `<div class="stage${active ? ' active' : ''}"><h3>${s.name}</h3><div class="count">${s.count}</div><div class="meta">${esc(s.meta)}</div></div>`;
+    }).join('');
+
+    // grade scorecard
+    const tk = d.tracking || {};
+    const recs = (tk.records || []).filter(x => x.baseline_price_usd);
+    const accTable = (acc, title) => {
+      const rows = Object.entries(acc || {}).sort().map(([k, v]) =>
+        `<tr><td><b>${esc(k)}</b></td><td>${v.priced ?? 0}/${v.n ?? 0}</td>` +
+        ['m5', 'm30', 'h1', 'd1'].map(key =>
+          `<td class="${pnlCls(v[key])}">${pnlTxt(v[key])}</td>`).join('') + '</tr>').join('');
+      return rows ? `<h3 style="font-size:13px;margin:10px 0 6px">avg return by ${title}</h3><table><tr><th></th><th>priced</th><th>5m</th><th>30m</th><th>1h</th><th>1d</th></tr>${rows}</table>` : '';
+    };
+    document.getElementById('scorecard').innerHTML =
+      `<div class="tcard"><h3>🎯 grade scorecard</h3><div style="font-size:12px;color:var(--dim);margin-bottom:6px">${recs.length} tickers tracked · updated ${esc(tk.updated_at || '—')}</div>` +
+      accTable(tk.grade_accuracy, 'social grade') + accTable(tk.rec_accuracy, 'recommendation') + `</div>`;
+
+    // recent decisions
+    document.getElementById('decisions').innerHTML = `<h3>✅ decisions</h3>` + ((d.decisions || []).slice(-10).reverse().map(x =>
+      `<div class="item"><span class="tag ${x.recommendation === 'skip' ? 'skip' : 'promising'}">${esc(x.recommendation)}</span>${esc(x.candidate?.symbol || x.candidate?.name || '')} <span style="color:var(--dim)">${esc(x.candidate?.contract || x.candidate?.mint || '')}</span><br>${esc(x.reason || '')}${linksFor(x.candidate || {})}<br><time>${esc(x.broken_down_at)}</time></div>`).join('') || '<div class="empty">empty</div>');
+  } catch (e) {
+    document.getElementById('tstats').innerHTML = '<div class="tcard"><div class="empty">stats hiccup — retrying…</div></div>';
+  }
+}
+loadStats();
+setInterval(loadStats, 60000);
 </script>
 </body>
 </html>

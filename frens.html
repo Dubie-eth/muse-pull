@@ -133,7 +133,9 @@
   <div class="panel wallet">
     <h2>💰 dev worth</h2>
     <div class="big snugv" id="devsnug">…</div>
-    <div class="lbl">$snug from dev buys</div>
+    <div class="lbl">total $snug in dev wallet</div>
+    <div class="row"><span class="k">launch allocation</span><span class="v snugv" id="devlaunch">…</span></div>
+    <div class="row"><span class="k">dev buys</span><span class="v snugv" id="devbuysnug">…</span></div>
     <div class="row"><span class="k">sol spent</span><span class="v" id="devsol">…</span></div>
     <div class="row"><span class="k">dev bag</span><span class="v snugv" id="devbag">…</span></div>
     <div class="row"><span class="k">giveaways</span><span class="v" id="devgive">…</span></div>
@@ -217,7 +219,9 @@ function renderTreasury(t) {
 
 function renderDevBuys(d) {
   if (!d) return;
-  document.getElementById('devsnug').textContent = d.snugBought != null ? Number(d.snugBought).toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' SNUG' : '…';
+  document.getElementById('devsnug').textContent = d.totalDevWallet != null ? Number(d.totalDevWallet).toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' SNUG' : '…';
+  document.getElementById('devlaunch').textContent = d.launchAllocation != null ? Number(d.launchAllocation).toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' SNUG' : '…';
+  document.getElementById('devbuysnug').textContent = d.snugBought != null ? Number(d.snugBought).toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' SNUG' : '…';
   document.getElementById('devsol').textContent = d.solSpent != null ? d.solSpent + ' SOL' : '…';
   document.getElementById('devbag').textContent = d.devBag != null ? Number(d.devBag).toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' SNUG' : '…';
   document.getElementById('devgive').textContent = d.giveaways != null ? Number(d.giveaways).toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' SNUG' : '…';

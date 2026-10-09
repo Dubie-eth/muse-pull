@@ -8,6 +8,7 @@
   :root { --bg:#0b0e1a; --card:#141a30; --line:#263056; --txt:#eef1ff; --dim:#8b93b8; --acc:#7c6cff; --fire:#ff9a3c; --green:#3ddc84; }
   * { box-sizing:border-box; margin:0; padding:0; }
   body { background:var(--bg); color:var(--txt); font-family:ui-rounded,system-ui,-apple-system,"Segoe UI",sans-serif; min-height:100vh; padding:20px 24px 40px; }
+  .wrap { max-width:1440px; margin:0 auto; }
   header { display:flex; align-items:center; gap:14px; margin-bottom:18px; flex-wrap:wrap; }
   h1 { font-size:30px; font-weight:800; letter-spacing:.5px; text-transform:lowercase; }
   h1 .fren { color:var(--fire); }
@@ -42,9 +43,11 @@
   .st.queued { background:#3a2c10; color:var(--fire); }
   .wall { margin-top:18px; }
   .wall h2 { font-size:15px; text-transform:uppercase; letter-spacing:1.5px; color:var(--dim); margin-bottom:12px; }
-  #mints { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
-  .mint { background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; animation:slidein .4s ease; }
+  #mints { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,340px)); gap:16px; justify-content:start; }
+  .mint { background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; animation:slidein .4s ease; position:relative; }
   .mint.fresh { border-color:var(--fire); box-shadow:0 0 24px #ff9a3c44; }
+  .heldbadge { position:absolute; top:10px; right:10px; background:#0b0e1add; border:1px solid var(--line); border-radius:999px; padding:3px 10px; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; color:var(--dim); }
+  .heldbadge.test { border-color:var(--fire); color:var(--fire); }
   .mint img { width:100%; aspect-ratio:1; object-fit:cover; display:block; background:#000; }
   .mint .body { padding:14px 16px 16px; }
   .mint .nm { font-size:20px; font-weight:800; text-transform:lowercase; }
@@ -58,7 +61,7 @@
   .empty { color:var(--dim); font-size:14px; padding:20px; text-align:center; }
   .tsec { margin-top:22px; }
   .tsec h2 { font-size:15px; text-transform:uppercase; letter-spacing:1.5px; color:var(--dim); margin-bottom:12px; }
-  .tgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:16px; }
+  .tgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,460px)); gap:16px; justify-content:start; }
   .tcard { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; }
   .tcard h3 { font-size:14px; text-transform:uppercase; letter-spacing:1px; color:var(--dim); margin-bottom:10px; }
   .tcard .addr { font-size:12px; word-break:break-all; }
@@ -90,11 +93,23 @@
   .grade-C { background:#3a2c10; color:var(--fire); }
   .grade-D { background:#3a1a1a; color:#ff7b7b; }
   .grade-F { background:#2a0f0f; color:#ff4d4d; }
+  .walletrow { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,480px)); gap:18px; justify-content:start; margin-bottom:18px; }
+  .wallet .big { font-size:30px; font-weight:800; line-height:1.15; }
+  .wallet .lbl { font-size:12px; text-transform:uppercase; letter-spacing:2px; color:var(--dim); margin-top:6px; }
+  .wallet .row { display:flex; justify-content:space-between; align-items:baseline; gap:10px; padding:7px 0; border-bottom:1px solid #1c2444; font-size:14px; }
+  .wallet .row:last-child { border-bottom:0; }
+  .wallet .row .k { color:var(--dim); text-transform:lowercase; }
+  .wallet .row .v { font-weight:800; }
+  .wallet .addr { font-size:12px; word-break:break-all; margin-top:8px; }
+  .wallet .addr a { color:var(--acc); text-decoration:none; font-weight:700; }
+  .wallet .snugv { color:var(--fire); }
+  .wallet .solv { color:var(--green); }
   footer { margin-top:28px; color:var(--dim); font-size:13px; text-align:center; }
   footer a { color:var(--acc); }
 </style>
 </head>
 <body>
+<div class="wrap">
 <header>
   <h1><span class="fren">festive frens</span> · live mint board</h1>
   <span class="live"><span class="dot"></span>LIVE</span>
@@ -105,6 +120,25 @@
   <div><div class="big" id="burntotal">…</div><div class="lbl">$snug burned 🔥</div></div>
   <div class="pol" id="burnpol"></div>
   <div id="burnfeed"></div>
+</div>
+
+<div class="walletrow">
+  <div class="panel wallet">
+    <h2>🏦 treasury</h2>
+    <div class="big solv" id="treasurysol">…</div>
+    <div class="lbl">sol balance</div>
+    <div class="row"><span class="k">$snug holdings</span><span class="v snugv" id="treasurysnug">…</span></div>
+    <div class="addr"><a id="treasuryaddr" href="#" target="_blank" rel="noopener">…</a></div>
+  </div>
+  <div class="panel wallet">
+    <h2>💰 dev worth</h2>
+    <div class="big snugv" id="devsnug">…</div>
+    <div class="lbl">$snug from dev buys</div>
+    <div class="row"><span class="k">sol spent</span><span class="v" id="devsol">…</span></div>
+    <div class="row"><span class="k">dev bag</span><span class="v snugv" id="devbag">…</span></div>
+    <div class="row"><span class="k">giveaways</span><span class="v" id="devgive">…</span></div>
+    <div class="row"><span class="k">market making</span><span class="v" id="devmm">…</span></div>
+  </div>
 </div>
 
 <div class="grid">
@@ -158,6 +192,24 @@ const short = (a) => a ? a.slice(0,4) + '…' + a.slice(-4) : '';
 const tstr = (iso) => { try { return new Date(iso).toLocaleString(); } catch { return ''; } };
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
+function renderTreasury(t) {
+  if (!t) return;
+  document.getElementById('treasurysol').textContent = t.sol != null ? Number(t.sol).toLocaleString(undefined, { maximumFractionDigits: 4 }) + ' SOL' : '…';
+  document.getElementById('treasurysnug').textContent = t.snug != null ? Number(t.snug).toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' SNUG' : '…';
+  const a = document.getElementById('treasuryaddr');
+  a.href = t.solscanUrl || '#';
+  a.textContent = t.address ? t.address.slice(0, 4) + '…' + t.address.slice(-4) + ' ↗' : '…';
+}
+
+function renderDevBuys(d) {
+  if (!d) return;
+  document.getElementById('devsnug').textContent = d.snugBought != null ? Number(d.snugBought).toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' SNUG' : '…';
+  document.getElementById('devsol').textContent = d.solSpent != null ? d.solSpent + ' SOL' : '…';
+  document.getElementById('devbag').textContent = d.devBag != null ? Number(d.devBag).toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' SNUG' : '…';
+  document.getElementById('devgive').textContent = d.giveaways != null ? Number(d.giveaways).toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' SNUG' : '…';
+  document.getElementById('devmm').textContent = d.marketMaking != null ? Number(d.marketMaking).toLocaleString(undefined, { maximumFractionDigits: 0 }) + ' SNUG' : '…';
+}
+
 function renderMints(mints) {
   const el = document.getElementById('mints');
   if (!mints.length) { el.innerHTML = '<div class="empty">no mints yet — be the first to call out.</div>'; return; }
@@ -165,7 +217,9 @@ function renderMints(mints) {
     const fresh = !seenMints.has(m.asset) && !firstLoad;
     seenMints.add(m.asset);
     const ownerName = esc(m.ownerSns || m.ownerLabel || short(m.owner));
+    const badge = m.held ? `<span class="heldbadge${(m.fullName || '').match(/test/i) || (m.name || '').match(/test/i) ? ' test' : ''}">${esc(m.ownerLabel === 'treasury' && m.callout ? 'airdrop ready' : 'held')}</span>` : '';
     return `<div class="mint${fresh ? ' fresh' : ''}">
+      ${badge}
       <img src="${esc(m.image)}" alt="${esc(m.fullName)}" loading="lazy">
       <div class="body">
         <div class="nm">${esc(m.name)} <span style="color:var(--dim)">#${m.edition}</span></div>
@@ -226,6 +280,8 @@ async function tick() {
     renderMints(d.mints || []);
     renderFeed(d.callouts || []);
     renderBurns(d.burns);
+    renderTreasury(d.treasury);
+    renderDevBuys(d.devBuys);
     document.getElementById('updated').textContent = 'updated ' + tstr(d.updatedAt);
     firstLoad = false;
   } catch (e) {
@@ -324,5 +380,6 @@ async function loadStats() {
 loadStats();
 setInterval(loadStats, 60000);
 </script>
+</div>
 </body>
 </html>

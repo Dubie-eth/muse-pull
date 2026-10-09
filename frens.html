@@ -247,7 +247,7 @@ function renderMints(mints) {
       <div class="body">
         <div class="nm">${esc(m.name)} <span style="color:var(--dim)">#${m.edition}</span></div>
         <div class="own">held by <b>${ownerName}</b> · <a href="https://solscan.io/account/${esc(m.owner)}" target="_blank" rel="noopener">${short(m.owner)}</a></div>
-        ${m.callout ? `<div class="quote"><span class="qb">winning callout — ${esc(m.calloutBy || '')}</span>${esc(m.callout)}</div>` : ''}
+        ${m.callout ? `<div class="quote"><span class="qb">winning callout — ${esc(m.calloutBy || '')}</span>${esc(m.callout)}${m.entryTweetUrl ? ` <a href="${esc(m.entryTweetUrl)}" target="_blank" rel="noopener">entry ↗</a>` : ''}</div>` : (m.entryTweetUrl ? `<div class="quote"><span class="qb">winning entry — ${esc(m.calloutBy || '')}</span><a href="${esc(m.entryTweetUrl)}" target="_blank" rel="noopener">view entry on X ↗</a></div>` : '')}
         <div class="links">
           <a href="${esc(m.tokenUrl)}" target="_blank" rel="noopener">token ↗</a>
           ${m.mintTxUrl ? `<a href="${esc(m.mintTxUrl)}" target="_blank" rel="noopener">mint tx ↗</a>` : ''}

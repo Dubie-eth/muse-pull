@@ -117,10 +117,21 @@
 
 <h2 style="margin-bottom:12px">💜 snug creator rewards</h2>
 <div class="queues" style="margin-bottom:32px">
-  <div class="queue"><h2>total earned</h2><div class="snug-big">0 SOL</div><div style="font-size:0.8rem;color:#8b949e">waiting for first rewards data</div></div>
-  <div class="queue"><h2>unclaimed</h2><div class="snug-big">0 SOL</div><div style="font-size:0.8rem;color:#8b949e">waiting for first rewards data</div></div>
-  <div class="queue"><h2>claimed</h2><div class="snug-big">0 SOL</div><div style="font-size:0.8rem;color:#8b949e">waiting for first rewards data</div></div>
+  <div class="queue"><h2>total earned</h2><div class="snug-big" id="rw-total">…</div><div style="font-size:0.8rem;color:#8b949e" id="rw-total-sub">loading…</div></div>
+  <div class="queue"><h2>unclaimed</h2><div class="snug-big" id="rw-unclaimed">…</div><div style="font-size:0.8rem;color:#8b949e" id="rw-unclaimed-sub">loading…</div></div>
+  <div class="queue"><h2>claimed</h2><div class="snug-big" id="rw-claimed">…</div><div style="font-size:0.8rem;color:#8b949e" id="rw-claimed-sub">loading…</div></div>
 </div>
+<script>
+fetch('data/rewards.json').then(r=>r.json()).then(d=>{
+  document.getElementById('rw-total').textContent = d.totalEarnedSol.toFixed(4)+' SOL';
+  document.getElementById('rw-unclaimed').textContent = d.unclaimedSol.toFixed(4)+' SOL';
+  document.getElementById('rw-claimed').textContent = d.claimedSol.toFixed(4)+' SOL';
+  var t = new Date(d.updatedAt).toLocaleString();
+  document.getElementById('rw-total-sub').textContent = 'updated '+t;
+  document.getElementById('rw-unclaimed-sub').textContent = d.claimCount+' claim(s) so far';
+  document.getElementById('rw-claimed-sub').textContent = 'updated '+t;
+}).catch(()=>{});
+</script>
 
 <h2 style="margin-bottom:12px">📈 rewards over time</h2>
 <div class="queue" style="margin-bottom:32px">

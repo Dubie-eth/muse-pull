@@ -13,12 +13,22 @@ export const config = {
 export default async function middleware(request) {
   const host = (request.headers.get('host') || '').toLowerCase().split(':')[0];
   const url = new URL(request.url);
-  if (url.pathname === '/') {
-    url.pathname =
-      host === 'festivefrens.fun' || host === 'www.festivefrens.fun'
-        ? '/frens.html'
-        : '/index.html';
-    return fetch(url.toString(), request);
+  if (url.pathname !== '/') {
+    return fetch(request);
   }
-  return fetch(request);
+  url.pathname =
+    host === 'festivefrens.fun' || host === 'www.festivefrens.fun'
+      ? '/frens.html'
+      : '/index.html';
+  // Fetch the file WITHOUT accept-encoding: the edge runtime can decode a
+  // compressed subrequest body while leaving `content-encoding` intact, which
+  // makes real browsers (they send Accept-Encoding: br) fail decoding and
+  // render a blank page. Uncompressed + stripped headers serves clean HTML.
+  const headers = new Headers(request.headers);
+  headers.delete('accept-encoding');
+  const res = await fetch(url.toString(), { headers });
+  const outHeaders = new Headers(res.headers);
+  outHeaders.delete('content-encoding');
+  outHeaders.delete('content-length');
+  return new Response(res.body, { status: res.status, headers: outHeaders });
 }

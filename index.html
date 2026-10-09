@@ -139,9 +139,16 @@ fetch('data/rewards.json').then(r=>r.json()).then(d=>{
 </div>
 
 <h2 style="margin-bottom:12px">🧾 claims feed</h2>
-<div class="queue" style="margin-bottom:32px">
-  <p style="color:#8b949e">no claims yet — rewards start accruing from the first trade.</p>
+<div class="queue" style="margin-bottom:32px" id="rw-claims">
+  <p style="color:#8b949e">loading claims…</p>
 </div>
+<script>
+fetch('data/rewards.json').then(r=>r.json()).then(d=>{
+  var el = document.getElementById('rw-claims');
+  if (!d.claims || !d.claims.length) { el.innerHTML = '<p style="color:#8b949e">no claims yet — rewards start accruing from the first trade.</p>'; return; }
+  el.innerHTML = d.claims.map(c=>'<div class="item"><span class="tag">✓</span> claimed '+c.amountSol.toFixed(4)+' SOL — <a href="https://solscan.io/tx/'+c.tx+'" target="_blank" rel="noopener" style="color:#58a6ff">'+c.tx.slice(0,8)+'… ↗</a> <span style="color:#8b949e">'+c.ts.slice(0,10)+'</span></div>').join('');
+}).catch(()=>{});
+</script>
 
 <h2 style="margin-bottom:12px">🛒 how to buy snug</h2>
 <div class="queue" style="margin-bottom:32px">

@@ -10,6 +10,9 @@
 // Request (POST, JSON):
 //   { "text": "caption", "mediaBase64": "<base64>", "mediaType": "image/jpeg" }
 //   mediaType "video/mp4" triggers chunked upload (up to ~50MB).
+//   Optional: "replyTo": "<tweet id>" threads as a reply,
+//             "quoteTweetId": "<tweet id>" posts as a quote tweet,
+//             { "action": "delete", "id": "<tweet id>" } deletes a tweet.
 //
 // Response: { "ok": true, "id": "<tweet id>", "url": "https://x.com/cardiganmuse35/status/<id>" }
 
@@ -172,6 +175,24 @@ module.exports = async (req, res) => {
   const text = body.text || "";
   const mediaBase64 = body.mediaBase64;
   const mediaType = body.mediaType || "image/jpeg";
+  const replyTo = body.replyTo || body.in_reply_to_tweet_id;
+  const quoteTweetId = body.quoteTweetId || body.quote_tweet_id;
+
+  // --- delete action ---
+  if (body.action === "delete" && body.id) {
+    const delRes = await fetch(`${TWEETS_URL}/${body.id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: oauthHeader("DELETE", `${TWEETS_URL}/${body.id}`, CK, CS, AT, AS),
+      },
+    });
+    const delJson = await delRes.json().catch(() => ({}));
+    if (!delRes.ok || delJson?.data?.deleted !== true) {
+      return res.status(502).json({ ok: false, error: "delete failed", detail: delJson });
+    }
+    return res.status(200).json({ ok: true, deleted: body.id });
+  }
+
   if (!text && !mediaBase64) {
     return res.status(400).json({ ok: false, error: "text or mediaBase64 required" });
   }
@@ -213,6 +234,8 @@ module.exports = async (req, res) => {
     // --- post the tweet ---
     const payload = { text };
     if (mediaId) payload.media = { media_ids: [mediaId] };
+    if (replyTo) payload.reply = { in_reply_to_tweet_id: String(replyTo) };
+    if (quoteTweetId) payload.quote_tweet_id = String(quoteTweetId);
     const twRes = await fetch(TWEETS_URL, {
       method: "POST",
       headers: {

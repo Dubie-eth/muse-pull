@@ -1,22 +1,11 @@
 {
- "updated_at": "2026-10-09T05:26:58.052Z",
+ "updated_at": "2026-10-09T05:28:52.721Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-09T05:19:27.859Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xa04bc63af8c5534bfcd1b0fb00899d25558a5557",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0xa4afb176f93f2a2c3ffbd8308a328682196e7b5ec2015dd88984f5aecff93dbb",
-   "block": 83905616,
-   "detail": "new contract deployed in block 83905616"
-  },
   {
    "found_at": "2026-10-09T05:19:28.909Z",
    "scout": "block-watcher",
@@ -615,9 +604,30 @@
    "volume": "0.67 WETH",
    "contract": "0xd15e3c6d114a7f83689637d0809df7393d5ca8f1",
    "detail": "V2 pair created block 83907877. 13 swaps since creation (13 buys / 0 sells), ~0.67 WETH volume, reserves 1.88 WETH / 533.6k SPCC. FLAGS: no sells observed yet. RE-APPENDED: JSON mirror was clobbered by a concurrent writer after the scan verify."
+  },
+  {
+   "found_at": "2026-10-09T05:28:30.651Z",
+   "scout": "whale-watcher",
+   "type": "whale-convergence",
+   "token": "MSTR",
+   "contract": "0xec262a75e413fafd0df80480274532c79d42da09",
+   "chain": "robinhood",
+   "tx_hash": "0x3cf78e9d864e5d541144bbda519d3882bbd3404255d772c66d8a99b86c278fee",
+   "detail": "CONVERGENCE: 2 whale EOA wallets accumulating MSTR (0xec262a75e413fafd0df80480274532c79d42da09) on robinhood within one scan window; combined $40,723 received. Largest: whale 0x1a18a8b96eac3f980133a18402d04194f1faa4e7 (~$7,393,819 assets) received $32,333 in tx 0x3cf78e9d864e5d541144bbda519d3882bbd3404255d772c66d8a99b86c278fee",
+   "converging_whales": 2,
+   "converging_wallets": [
+    "0x9f736f87e6293ac1bd9142e257dbfac8b7acf1ae",
+    "0x1a18a8b96eac3f980133a18402d04194f1faa4e7"
+   ],
+   "combined_amount_usd": 40723.3,
+   "whale": "0x1a18a8b96eac3f980133a18402d04194f1faa4e7",
+   "whale_assets_usd": 7393818.81,
+   "amount_usd": 32332.65,
+   "convergence": true,
+   "receiver_is_contract": false
   }
  ],
- "scout_queue_total": 3010,
+ "scout_queue_total": 3011,
  "investigations": [
   {
    "candidate": {
@@ -92851,6 +92861,845 @@
    "total": 6,
    "grade": "F",
    "notes": "WETH/BIDEN new V2 pair: 1.39 WETH volume, buys-only political meme. no socials. F = dust."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x36ecfcbdebfdba263693645c0e676da832f7fc91",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 4,
+   "grade": "F",
+   "notes": "Raw contract deployment (0x36ecfcbd…), not ERC-20 / not a token, no pairs/pools, no social footprint of any kind. investigator note: raw contract deployment (828B bytecode); name()/symbol()/totalSupply() unreadable; no V2 pair, no V4 pools. not a token. F = infra debris, nothing to grade socially. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0xacde75e5ab8c690fc5cdc87d80e36a6eb700943e",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 4,
+   "grade": "F",
+   "notes": "Raw contract deployment (0xacde75e5…), not ERC-20 / not a token, no pairs/pools, no social footprint of any kind. investigator note: raw contract deployment (14KB bytecode); not ERC-20; no liquidity anywhere. not a token. F = infra debris, nothing to grade socially. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x726c67fb0c762c6f948e8df7132fabb9b31bd11b",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 4,
+   "grade": "F",
+   "notes": "Raw contract deployment (0x726c67fb…), not ERC-20 / not a token, no pairs/pools, no social footprint of any kind. investigator note: bytecode contains mint(address) selector but no owner() — power unattributable (gate_warn); not ERC-20; no pair/pools. not a token. F = infra debris, nothing to grade socially. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0xa1482d1925aec4c020e00f2dd5df9404f1a9d8ad",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 4,
+   "grade": "F",
+   "notes": "Raw contract deployment (0xa1482d19…), not ERC-20 / not a token, no pairs/pools, no social footprint of any kind. investigator note: bytecode contains mint(address)/pause()/unpause() but no owner() (gate_warn); not ERC-20; no pair/pools. not a token. F = infra debris, nothing to grade socially. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0xde82f156fbff98624260f5bbe33cd67b294d512f",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 4,
+   "grade": "F",
+   "notes": "Dead shell: decimals=18 but totalSupply=0, zero transfers, no pairs/pools, no buzz. F = empty container. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x71ee875b3b1840c810ad1a56d4df6a555f818b4d",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 4,
+   "grade": "F",
+   "notes": "Raw contract deployment (0x71ee875b…), not ERC-20 / not a token, no pairs/pools, no social footprint of any kind. investigator note: raw contract deployment (3.4KB); not ERC-20; no pair/pools. not a token. F = infra debris, nothing to grade socially. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x77715644cf4f560230f54da5506b49d26d127fe4",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 4,
+   "grade": "F",
+   "notes": "Raw contract deployment (0x77715644…), not ERC-20 / not a token, no pairs/pools, no social footprint of any kind. investigator note: bytecode contains pause()/unpause() but no owner() (gate_warn); not ERC-20; no pair/pools. not a token. F = infra debris, nothing to grade socially. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x231ba8b2abc1ef4d77a23e6dd0140b7296a5081c",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 4,
+   "grade": "F",
+   "notes": "Raw contract deployment (0x231ba8b2…), not ERC-20 / not a token, no pairs/pools, no social footprint of any kind. investigator note: raw contract deployment (11.6KB); not ERC-20; no pair/pools. not a token. F = infra debris, nothing to grade socially. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x3d5561c74e27d5b64968a795b343e896d533be2d",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 4,
+   "grade": "F",
+   "notes": "Raw contract deployment (0x3d5561c7…), not ERC-20 / not a token, no pairs/pools, no social footprint of any kind. investigator note: raw contract deployment (10KB); not ERC-20; no pair/pools. not a token. F = infra debris, nothing to grade socially. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x6372a72e95e748ca808d05f7476d6cfde587c5d3",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 7,
+   "grade": "F",
+   "notes": "Justice For Alcebíades (Alcebíades) farm clone — identical-code spray (0x6372a72e…), deployer holds ~everything, zero liquidity, zero volume, no X buzz. farmed-name trap. F = manufactured, no social substance. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0xc7b921cc8e052172b956180d3d106cb164f43986",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "P P"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "P (P) pons-family: transfer count is launchpad-internal churn only, zero organic holders, no buzz. F = launch noise, no social substance. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x100d07a2099dd6c56fbb945d60dab3a1332444e3",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "Lagoon LAGOON"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 6,
+   "grade": "F",
+   "notes": "Lagoon (LAGOON) pons-family: dead on arrival, bot money flow; fresh web search finds only unrelated anime fanart for 'Lagoon'. No website, no X, no team. F = no footprint. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x98ec6e06482765795c21b3ef39faa3be1674a87b",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 4,
+   "grade": "F",
+   "notes": "Raw contract deployment (0x98ec6e06…), not ERC-20 / not a token, no pairs/pools, no social footprint of any kind. investigator note: raw contract deployment (7.4KB); gate warned actor nonce 2318 (possible spray); not ERC-20; no pair/pools. not a token. F = infra debris, nothing to grade socially. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x43df5055626752068ec51fe6027c439deffbd2fe",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 7,
+   "grade": "F",
+   "notes": "Justice For Alcebíades (Alcebíades) farm clone — identical-code spray (0x43df5055…), deployer holds ~everything, zero liquidity, zero volume, no X buzz. farmed-name trap. F = manufactured, no social substance. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0xa359b9bcf17f1e49a6b0f175105209fb2b32db41",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 7,
+   "grade": "F",
+   "notes": "Justice For Alcebíades (Alcebíades) farm clone — identical-code spray (0xa359b9bc…), deployer holds ~everything, zero liquidity, zero volume, no X buzz. farmed-name trap. F = manufactured, no social substance. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x30658cdffda0f4ffa139be7efb90e0542def5c5e",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "Kitebloom KITEBLOOM"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 6,
+   "grade": "F",
+   "notes": "Kitebloom (KITEBLOOM) pons-family: dead on arrival, bot flow; X @kitebloom hits are an unrelated project. No project website, no team, no buzz. F = no footprint. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0xcd4d342499eda2d218ac74974bec24774bab9998",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "American Coin USA"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 6,
+   "grade": "F",
+   "notes": "American Coin (USA) pons-family: patriotic-name meme, dead on arrival, no liquidity, no buzz, no muse attribution. F = no footprint. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x14a76965a65045316122e1eda767f010d1abd74c",
+    "type": "pair",
+    "chain": "robinhood",
+    "scout": "new-pairs",
+    "pair": "WETH / CRAWL"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 7,
+   "grade": "F",
+   "notes": "WETH/CRAWL V2 pair: 4 swaps since creation (4 buys / 0 sells), ~0.69 WETH volume, 'no sells observed' flag, reserves 41.51 WETH / 5408546.7k CRAWL. Investigator: dead pair side; X chatter is an unrelated Solana $CRAWL. F = farm-seeded pair, no social substance. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0xed8370fb14d161731b8ca0e4ec8ec3023f20c6ce",
+    "type": "pair",
+    "chain": "robinhood",
+    "scout": "new-pairs",
+    "pair": "WETH / SI"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 6,
+   "grade": "F",
+   "notes": "WETH/SI (Super Inu) V2 pair: 13 swaps (12 buys / 1 sell), ~2.43 WETH volume, reserves 8.1e-8 WETH / 718189.8k SI — dead pair side. X hits are unrelated Solana inu chatter. F = no footprint. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0xdbbbad38a7743ee65f08cfc7707bf5688bc201e4",
+    "type": "pair",
+    "chain": "robinhood",
+    "scout": "new-pairs",
+    "pair": "WETH / ANGF"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "WETH/ANGF (Angry Frog) V2 pair: 22 swaps (20 buys / 2 sells), ~0.93 WETH volume, $0.01 liquidity = untradable dust. Fresh web search finds zero project buzz — only unrelated $ROBIN frog press (farmed-name trap in the frog narrative). F = no social substance. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x903837c5c2c2704c8d7dc1cb7b201aeac744ded6",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "YoungCench YOUNGCENCH"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "YoungCench YOUNGCENCH pons-family (0x903837c5…): fresh pons-factory launch, no minting/trading wallets observed, deployer undiscoverable via RPC, no buzz, no muse attribution. F = no footprint, not scam evidence. verdict skip stands; requeue-worthy only if velocity + social proof appear."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0xfbdbbfff0a39aa5b3dce80fe8a6337ccb3d5ad09",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "Sherwood SHERWOOD"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Sherwood SHERWOOD pons-family (0xfbdbbfff…): fresh pons-factory launch, no minting/trading wallets observed, deployer undiscoverable via RPC, no buzz, no muse attribution. F = no footprint, not scam evidence. verdict skip stands; requeue-worthy only if velocity + social proof appear."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x5dfd18388ac6d5043db1ff829e8199ef8c5a91b9",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "Pubic Key PUBIC"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Pubic Key (PUBIC) pons-family (0x5dfd1838…): duplicate-name launch — PUBIC and KEY from the same factory minutes apart, duplicate-name farm spam. No holders, no buzz. F = manufactured clutter. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x550006dfd7a688a8a7947f9f7b1b3bd08e361732",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "Gage GAGE"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Gage (GAGE) pons-family (0x550006df…): DUPLICATE-name launch — two Gage contracts from the pons factory within ~20 min, classic duplicate-name farm spam. No holders, no buzz. F = manufactured clutter. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x46be0d0d022c53f65fa9a84f10eedb37d26df2c7",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "Cesare Borgia CESAREBORGIA"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Cesare Borgia CESAREBORGIA pons-family (0x46be0d0d…): fresh pons-factory launch, no minting/trading wallets observed, deployer undiscoverable via RPC, no buzz, no muse attribution. F = no footprint, not scam evidence. verdict skip stands; requeue-worthy only if velocity + social proof appear."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x9bc43bc7af641ffeb7651051a2d3e11190936350",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "Povel Durev DUREV"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Povel Durev DUREV pons-family (0x9bc43bc7…): fresh pons-factory launch, no minting/trading wallets observed, deployer undiscoverable via RPC, no buzz, no muse attribution. F = no footprint, not scam evidence. verdict skip stands; requeue-worthy only if velocity + social proof appear."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x6c9e2cdd6efe049c7510261777740fba9ac38403",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "Starlink Duck DUCK"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 2,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 7,
+   "grade": "F",
+   "notes": "Starlink Duck (DUCK) pons-family: Starlink brand-mimic; fresh web search finds no project website, X account, or team — only a DexScreener farm-cluster hit ('Starlink Duck' + 'STARLINK MEMES' paired with SPCXon, ~$4k liq each, hours old), matching the known SpaceX/stock-token impersonation farm pattern on 4663. No holders, no trading wallets. F = brand-mimic farm signal. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x4cb30561540a72e0c741376c38af1d192c360e77",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "Not Dog NOTDOG"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Not Dog NOTDOG pons-family (0x4cb30561…): fresh pons-factory launch, no minting/trading wallets observed, deployer undiscoverable via RPC, no buzz, no muse attribution. F = no footprint, not scam evidence. verdict skip stands; requeue-worthy only if velocity + social proof appear."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x83ad194e3376f0d1fc4d4aec3d9e6a2874610ebc",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 4,
+   "grade": "F",
+   "notes": "Raw contract deployment (0x83ad194e…), not ERC-20 / not a token, no pairs/pools, no social footprint of any kind. F = infra debris, nothing to grade socially. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0xe87a7a26ac1d99c3c27142c2265cc29ee98fbf04",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "Gage GAGE"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Gage (GAGE) pons-family (0xe87a7a26…): DUPLICATE-name launch — two Gage contracts from the pons factory within ~20 min, classic duplicate-name farm spam. No holders, no buzz. F = manufactured clutter. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x3493c073c22b6086df3c8613681b8abdb0b2c548",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "Pubic Key KEY"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Pubic Key (KEY) pons-family (0x3493c073…): duplicate-name launch — PUBIC and KEY from the same factory minutes apart, duplicate-name farm spam. No holders, no buzz. F = manufactured clutter. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x18a3330142fce9ffe589effe44a4ee47e1e3df34",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "AwareFinePrawn AWAREFINEPRAWN"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "AwareFinePrawn AWAREFINEPRAWN pons-family (0x18a33301…): fresh pons-factory launch, no minting/trading wallets observed, deployer undiscoverable via RPC, no buzz, no muse attribution. F = no footprint, not scam evidence. verdict skip stands; requeue-worthy only if velocity + social proof appear."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x7e51ec342ab8a150bc5484c4a5172e7a350ce830",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "VAULTSTOCKS VSTOX"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 6,
+   "grade": "F",
+   "notes": "VAULTSTOCKS (VSTOX) pons-family: stock-brand-adjacent name, no wallets/holders, no buzz, no muse attribution. F = no footprint. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0xe4e6dba17e580cc5068d43bd50af49d7e148d7ea",
+    "type": "token",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "name": "Degen Coin DEGEN"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 5,
+   "grade": "F",
+   "notes": "Degen Coin DEGEN pons-family (0xe4e6dba1…): fresh pons-factory launch, no minting/trading wallets observed, deployer undiscoverable via RPC, no buzz, no muse attribution. F = no footprint, not scam evidence. verdict skip stands; requeue-worthy only if velocity + social proof appear."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x0613b131596ded225b6c8600e0684b856de6cab9",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 4,
+   "grade": "F",
+   "notes": "Raw contract deployment (0x0613b131…), not ERC-20 / not a token, no pairs/pools, no social footprint of any kind. F = infra debris, nothing to grade socially. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0xa8f0e728c8c69f2b61869b9234b9652dfb06e252",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 4,
+   "grade": "F",
+   "notes": "Raw contract deployment (0xa8f0e728…), not ERC-20 / not a token, no pairs/pools, no social footprint of any kind. F = infra debris, nothing to grade socially. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0xbae304db012bb2b914585f72453a060ff28e1df4",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 4,
+   "grade": "F",
+   "notes": "Raw contract deployment (0xbae304db…), not ERC-20 / not a token, no pairs/pools, no social footprint of any kind. F = infra debris, nothing to grade socially. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x6618aa5cf052579c45751ca9112f6eab81845fa6",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 4,
+   "grade": "F",
+   "notes": "Raw contract deployment (0x6618aa5c…), not ERC-20 / not a token, no pairs/pools, no social footprint of any kind. F = infra debris, nothing to grade socially. verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-09T05:27:03.962734+00:00",
+   "candidate": {
+    "contract": "0x8e189b25f9a8ce06b6e66c370bdf3e05f3f705a5",
+    "type": "contract",
+    "chain": "robinhood",
+    "scout": "block-watcher"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 4,
+   "grade": "F",
+   "notes": "Raw contract deployment (0x8e189b25…), not ERC-20 / not a token, no pairs/pools, no social footprint of any kind. F = infra debris, nothing to grade socially. verdict skip stands."
   }
  ],
  "decisions": [
@@ -98352,6 +99201,40 @@
    "processed": true,
    "processed_at": "2026-10-09T05:14:00Z",
    "processed_note": "flock-decision run 2026-10-09 01:13 EDT: 0 unprocessed entries (84 total, all processed). PONS re-sight: fresh 2-whale EOA convergence ($12.7k) -> carried score 63 cautious-buy; exec BLOCKED (wallet 0.00291795 ETH < 0.005 half-size minimum, verified onchain + standing real-money pause pending dubie rule choice). MEME 3-whale EOA convergence ($1.35M inflow incl. $1.17M print) = same dip-convergence pattern as 22:39/22:54 ticks; standing watch + dubie no-re-entry note (position closed 20:49Z) -> no score change, no execution. CREORA: single EOA whale ($51.6k by 0x16787671, ~100% of its assets) + $393k whale->contract deposits = NOT convergence (1 EOA receiver) -> skip (still investigating in queue.db). DJT 2-whale EOA ($2.4k ea) = stock peg -> skip. GLD/AMZN/GOOGL/MSFT/SPCX/NET = equity/gold pegs -> skip. AI/CASHCAT/PRIORS/ZZZ/U/USDe = single/small moves, no convergence -> skip. No execution. No message (nothing executed; blockers already reported to dubie)."
+  },
+  {
+   "candidate": {
+    "name": "PONS (re-sight)",
+    "chain": "robinhood",
+    "type": "token",
+    "token": "0x39dbed3a2bd333467115de45665cc57f813c4571",
+    "scout": "whale-watcher"
+   },
+   "social_grade": "B",
+   "investigation": {
+    "verdict": "promising",
+    "velocity": "no FRESH PONS EOA convergence since the 01:13 EDT tick (last PONS EOA moves 05:07:38Z, inside that tick's window); accumulation thesis unchanged",
+    "notes": "standing entry-53 thesis carried: revenue-backed pons launchpad flagship, buyback+burn, tier-1 listings; whale dip-buying = accumulation not spike"
+   },
+   "gate_status": "gate_pass",
+   "score": {
+    "v": 14,
+    "s": 15,
+    "vit": 24,
+    "o": 0,
+    "total": 63,
+    "decision": "cautious-buy (BLOCKED)",
+    "conv_bonus": 10,
+    "conv_note": "thesis carried from 01:13 EDT tick (2-whale EOA convergence $12.7k 05:07-05:12Z); no new PONS EOA moves 05:14-05:27Z",
+    "virality": "uncertain (pons launchpad platform token; whale accumulation, no new socials)",
+    "entry_exit": "Entry ~current; TP1 +50% (1/3), TP2 +100% (1/3), TP3 +300% (final 1/3, sustained legs), SL -40%, 15% moon bag after final TP, trailing stop trail_pct 25. NOT EXECUTED: challenge wallet 0xa554e642ac0fe1bbeeea26df17644ad8fce00ecc holds 0.00291795 ETH (verified onchain this run) < 0.005 half-size minimum; standing real-money pause pending dubie rule choice."
+   },
+   "recommendation": "cautious-buy",
+   "reason": "standing entry-53 cautious-buy thesis unchanged; no fresh convergence to change the score; execution blocked on both rails",
+   "broken_down_at": "2026-10-09T05:27:00Z",
+   "processed": true,
+   "processed_at": "2026-10-09T05:27:00Z",
+   "processed_note": "flock-decision run 2026-10-09 01:26 EDT: 0 unprocessed entries (85 total, all processed). PONS re-sight: no fresh EOA convergence since 05:07:38Z -> carried score 63 cautious-buy; exec BLOCKED (wallet 0.00291795 ETH < 0.005 half-size minimum, verified fresh onchain + standing real-money pause pending dubie rule choice). MEME: 2 more EOA receivers since 01:13 ($14.0k 05:17Z, $12.3k 05:23Z) but standing dubie no-re-entry (position closed 20:49Z) -> no score change, no execution. DJT 3-EOA / GLD 3-EOA = stock/gold pegs -> standing skip. AI, CASHCAT($43k single EOA), CREORA, TENDIES, U, STANDARD, CRCL = single-whale or contract-to-contract -> no convergence -> skip. No execution. No message (nothing executed; blockers already reported to dubie)."
   }
  ],
  "tracking": {
@@ -99855,11 +100738,11 @@
   "probe"
  ],
  "last_activity": {
-  "scout": "2026-10-09T05:24:35.466Z",
+  "scout": "2026-10-09T05:28:30.651Z",
   "hymn": "2026-10-09T05:23:21.623712+00:00",
-  "scorer": "2026-10-09T05:15:54.187Z",
-  "snug": "2026-10-09T05:14:00Z",
-  "cardigan": "2026-10-09T05:14:00Z"
+  "scorer": "2026-10-09T05:27:03.962734+00:00",
+  "snug": "2026-10-09T05:27:00Z",
+  "cardigan": "2026-10-09T05:27:00Z"
  },
  "challenge": {
   "wallet": "0xa554e642ac0fe1bbeeea26df17644ad8fce00ecc",
@@ -99985,7 +100868,7 @@
   "realized_pnl_pct_total": 0
  },
  "paper_trades": {
-  "as_of": "2026-10-09T05:22:08.611Z",
+  "as_of": "2026-10-09T05:27:08.859Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -100004,7 +100887,7 @@
     "seeded": true,
     "score": 66,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01181,
+    "last_price_usd": 0.01188,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -100015,8 +100898,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0002785030461270655,
-    "unrealized_pnl_pct": 2.7850304612706545
+    "unrealized_pnl_eth": 0.0003394255874673635,
+    "unrealized_pnl_pct": 3.394255874673635
    },
    {
     "id": "pt-muzwwuzb-27",
@@ -100027,7 +100910,7 @@
     "seeded": true,
     "score": 63,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01181,
+    "last_price_usd": 0.01188,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -100038,8 +100921,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0002785030461270655,
-    "unrealized_pnl_pct": 2.7850304612706545
+    "unrealized_pnl_eth": 0.0003394255874673635,
+    "unrealized_pnl_pct": 3.394255874673635
    },
    {
     "id": "pt-mv02u5pe-52",
@@ -100073,7 +100956,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3633,
+    "last_price_usd": 0.3648,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -100084,8 +100967,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0004426559356136828,
-    "unrealized_pnl_pct": 4.426559356136828
+    "unrealized_pnl_eth": 0.0004857717734981315,
+    "unrealized_pnl_pct": 4.857717734981315
    },
    {
     "id": "pt-mv03wwab-54",
@@ -100119,7 +101002,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.3633,
+    "last_price_usd": 0.3648,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -100130,8 +101013,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0002947010484556545,
-    "unrealized_pnl_pct": 2.947010484556545
+    "unrealized_pnl_eth": 0.0003372060073675276,
+    "unrealized_pnl_pct": 3.372060073675276
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -100142,7 +101025,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.3633,
+    "last_price_usd": 0.3648,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -100153,8 +101036,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00030053870144598706,
-    "unrealized_pnl_pct": 3.0053870144598704
+    "unrealized_pnl_eth": 0.00034306776297136297,
+    "unrealized_pnl_pct": 3.43067762971363
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -100165,7 +101048,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.3633,
+    "last_price_usd": 0.3648,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -100176,8 +101059,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.000283045570336824,
-    "unrealized_pnl_pct": 2.83045570336824
+    "unrealized_pnl_eth": 0.0003255024058873479,
+    "unrealized_pnl_pct": 3.255024058873479
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -100188,7 +101071,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.3633,
+    "last_price_usd": 0.3648,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -100199,8 +101082,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0002772277227722775,
-    "unrealized_pnl_pct": 2.7722772277227747
+    "unrealized_pnl_eth": 0.00031966053748232025,
+    "unrealized_pnl_pct": 3.1966053748232026
    }
   ],
   "closed_recent": [],

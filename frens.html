@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>festive frens · live mint board</title>
+<style>
+  :root { --bg:#0b0e1a; --card:#141a30; --line:#263056; --txt:#eef1ff; --dim:#8b93b8; --acc:#7c6cff; --fire:#ff9a3c; --green:#3ddc84; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--txt); font-family:ui-rounded,system-ui,-apple-system,"Segoe UI",sans-serif; min-height:100vh; padding:20px 24px 40px; }
+  header { display:flex; align-items:center; gap:14px; margin-bottom:18px; flex-wrap:wrap; }
+  h1 { font-size:30px; font-weight:800; letter-spacing:.5px; text-transform:lowercase; }
+  h1 .fren { color:var(--fire); }
+  .live { display:inline-flex; align-items:center; gap:8px; background:#1d2547; border:1px solid var(--line); border-radius:999px; padding:6px 14px; font-size:14px; font-weight:700; }
+  .dot { width:10px; height:10px; border-radius:50%; background:#ff4d4d; animation:pulse 1.6s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.25} }
+  #updated { color:var(--dim); font-size:13px; margin-left:auto; }
+  .burnbar { display:flex; gap:20px; align-items:center; background:linear-gradient(135deg,#1a1030,#0f1430); border:1px solid #4a2f1d; border-radius:16px; padding:16px 22px; margin-bottom:18px; flex-wrap:wrap; }
+  .burnbar .big { font-size:38px; font-weight:800; color:var(--fire); line-height:1; }
+  .burnbar .lbl { font-size:12px; text-transform:uppercase; letter-spacing:2px; color:var(--dim); margin-top:4px; }
+  .burnbar .pol { font-size:14px; color:var(--dim); max-width:340px; line-height:1.5; }
+  #burnfeed { display:flex; gap:10px; overflow-x:auto; flex:1; min-width:200px; padding-bottom:4px; }
+  .burn { flex:0 0 auto; background:#0f1430; border:1px solid var(--line); border-radius:12px; padding:10px 14px; font-size:13px; animation:slidein .4s ease; }
+  .burn.fresh { border-color:var(--fire); box-shadow:0 0 18px #ff9a3c33; }
+  .burn b { color:var(--fire); font-size:16px; }
+  .burn .wt { color:var(--dim); font-size:12px; margin-top:2px; }
+  .burn a { color:var(--acc); text-decoration:none; font-weight:700; font-size:12px; margin-right:8px; }
+  .grid { display:grid; grid-template-columns: 1fr 380px; gap:18px; }
+  @media (max-width:1100px){ .grid{grid-template-columns:1fr} }
+  .panel { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; }
+  .panel h2 { font-size:15px; text-transform:uppercase; letter-spacing:1.5px; color:var(--dim); margin-bottom:12px; }
+  .chart-wrap iframe { width:100%; height:520px; border:0; border-radius:10px; background:#000; }
+  #feed { display:flex; flex-direction:column; gap:10px; max-height:560px; overflow-y:auto; }
+  .callout { background:#0f1430; border:1px solid var(--line); border-radius:12px; padding:12px 14px; animation:slidein .4s ease; }
+  .callout.fresh { border-color:var(--green); box-shadow:0 0 18px #3ddc8433; }
+  @keyframes slidein { from{transform:translateY(-8px); opacity:0} to{transform:none; opacity:1} }
+  .callout .who { font-weight:800; color:var(--acc); font-size:15px; }
+  .callout .when { color:var(--dim); font-size:12px; margin-left:8px; }
+  .callout .txt { margin-top:6px; font-size:15px; line-height:1.45; white-space:pre-wrap; word-break:break-word; }
+  .callout .st { display:inline-block; margin-top:8px; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:1px; padding:3px 10px; border-radius:999px; }
+  .st.minted { background:#123f2a; color:var(--green); }
+  .st.queued { background:#3a2c10; color:var(--fire); }
+  .wall { margin-top:18px; }
+  .wall h2 { font-size:15px; text-transform:uppercase; letter-spacing:1.5px; color:var(--dim); margin-bottom:12px; }
+  #mints { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .mint { background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden; animation:slidein .4s ease; }
+  .mint.fresh { border-color:var(--fire); box-shadow:0 0 24px #ff9a3c44; }
+  .mint img { width:100%; aspect-ratio:1; object-fit:cover; display:block; background:#000; }
+  .mint .body { padding:14px 16px 16px; }
+  .mint .nm { font-size:20px; font-weight:800; text-transform:lowercase; }
+  .mint .own { margin-top:6px; font-size:14px; color:var(--dim); }
+  .mint .own b { color:var(--txt); }
+  .mint .quote { margin-top:10px; background:#0f1430; border-left:3px solid var(--acc); border-radius:0 10px 10px 0; padding:10px 12px; font-size:14px; line-height:1.5; white-space:pre-wrap; word-break:break-word; }
+  .mint .quote .qb { display:block; font-size:12px; color:var(--dim); margin-bottom:4px; }
+  .mint .links { margin-top:10px; display:flex; gap:8px; flex-wrap:wrap; }
+  .mint .links a, .mint .own a { color:var(--acc); text-decoration:none; font-size:13px; font-weight:700; }
+  .mint .links a:hover, .mint .own a:hover { text-decoration:underline; }
+  .empty { color:var(--dim); font-size:14px; padding:20px; text-align:center; }
+  footer { margin-top:28px; color:var(--dim); font-size:13px; text-align:center; }
+  footer a { color:var(--acc); }
+</style>
+</head>
+<body>
+<header>
+  <h1><span class="fren">festive frens</span> · live mint board</h1>
+  <span class="live"><span class="dot"></span>LIVE</span>
+  <span id="updated">connecting…</span>
+</header>
+
+<div class="burnbar">
+  <div><div class="big" id="burntotal">…</div><div class="lbl">$snug burned 🔥</div></div>
+  <div class="pol" id="burnpol"></div>
+  <div id="burnfeed"></div>
+</div>
+
+<div class="grid">
+  <div class="panel chart-wrap">
+    <h2>$snug · live chart</h2>
+    <iframe id="chart" title="SNUG chart" loading="lazy"></iframe>
+  </div>
+  <div class="panel">
+    <h2>callout feed</h2>
+    <div id="feed"><div class="empty">waiting for callouts…</div></div>
+  </div>
+</div>
+
+<div class="wall">
+  <h2>minted frens</h2>
+  <div id="mints"><div class="empty">no mints yet — be the first to call out.</div></div>
+</div>
+
+<footer>
+  festive frens on solana · claim with <b>all hail musegod</b> + your wallet · <a id="pump" href="#" target="_blank" rel="noopener">trade $snug on pump.fun</a>
+</footer>
+
+<script>
+const DATA_URL = 'data/frens-live.json';
+const seenCallouts = new Set();
+const seenMints = new Set();
+const seenBurns = new Set();
+let firstLoad = true;
+
+const short = (a) => a ? a.slice(0,4) + '…' + a.slice(-4) : '';
+const tstr = (iso) => { try { return new Date(iso).toLocaleString(); } catch { return ''; } };
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function renderMints(mints) {
+  const el = document.getElementById('mints');
+  if (!mints.length) { el.innerHTML = '<div class="empty">no mints yet — be the first to call out.</div>'; return; }
+  el.innerHTML = mints.map((m) => {
+    const fresh = !seenMints.has(m.asset) && !firstLoad;
+    seenMints.add(m.asset);
+    const ownerName = esc(m.ownerSns || m.ownerLabel || short(m.owner));
+    return `<div class="mint${fresh ? ' fresh' : ''}">
+      <img src="${esc(m.image)}" alt="${esc(m.fullName)}" loading="lazy">
+      <div class="body">
+        <div class="nm">${esc(m.name)} <span style="color:var(--dim)">#${m.edition}</span></div>
+        <div class="own">held by <b>${ownerName}</b> · <a href="https://solscan.io/account/${esc(m.owner)}" target="_blank" rel="noopener">${short(m.owner)}</a></div>
+        ${m.callout ? `<div class="quote"><span class="qb">winning callout — ${esc(m.calloutBy || '')}</span>${esc(m.callout)}</div>` : ''}
+        <div class="links">
+          <a href="${esc(m.tokenUrl)}" target="_blank" rel="noopener">token ↗</a>
+          ${m.mintTxUrl ? `<a href="${esc(m.mintTxUrl)}" target="_blank" rel="noopener">mint tx ↗</a>` : ''}
+          ${m.transferTxUrl ? `<a href="${esc(m.transferTxUrl)}" target="_blank" rel="noopener">airdrop tx ↗</a>` : ''}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderFeed(callouts) {
+  const el = document.getElementById('feed');
+  if (!callouts.length) { el.innerHTML = '<div class="empty">waiting for callouts…</div>'; return; }
+  el.innerHTML = callouts.map((c) => {
+    const key = 'n' + c.n;
+    const fresh = !seenCallouts.has(key) && !firstLoad;
+    seenCallouts.add(key);
+    const cls = (c.status === 'minted' || c.status === 'transferred') ? 'minted' : 'queued';
+    return `<div class="callout${fresh ? ' fresh' : ''}">
+      <span class="who">${esc(c.by)}</span><span class="when">${esc(tstr(c.at))}</span>
+      <div class="txt">${esc(c.text)}</div>
+      <span class="st ${cls}">${esc(c.status || 'seen')}</span>
+    </div>`;
+  }).join('');
+}
+
+function renderBurns(b) {
+  if (!b) return;
+  document.getElementById('burntotal').textContent = Number(b.totalBurned || 0).toLocaleString(undefined, { maximumFractionDigits: 0 });
+  document.getElementById('burnpol').textContent = b.policy || '';
+  const el = document.getElementById('burnfeed');
+  const recent = b.recent || [];
+  if (!recent.length) { el.innerHTML = '<div class="empty">no burns yet.</div>'; return; }
+  el.innerHTML = recent.map((x) => {
+    const key = x.burnTx || x.ts;
+    const fresh = !seenBurns.has(key) && !firstLoad;
+    seenBurns.add(key);
+    return `<div class="burn${fresh ? ' fresh' : ''}">
+      <b>${Number(x.snugBurned || 0).toLocaleString(undefined, { maximumFractionDigits: 0 })} SNUG</b>
+      <div class="wt">${esc(tstr(x.ts))}${x.solSpent ? ' · ' + x.solSpent + ' SOL' : ''}</div>
+      <div>${x.burnUrl ? `<a href="${esc(x.burnUrl)}" target="_blank" rel="noopener">burn tx ↗</a>` : ''}${x.buyUrl ? `<a href="${esc(x.buyUrl)}" target="_blank" rel="noopener">buy tx ↗</a>` : ''}</div>
+    </div>`;
+  }).join('');
+}
+
+async function tick() {
+  try {
+    const r = await fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
+    if (!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    document.getElementById('chart').src = d.snug.chartEmbed;
+    document.getElementById('pump').href = d.snug.pumpUrl;
+    renderMints(d.mints || []);
+    renderFeed(d.callouts || []);
+    renderBurns(d.burns);
+    document.getElementById('updated').textContent = 'updated ' + tstr(d.updatedAt);
+    firstLoad = false;
+  } catch (e) {
+    document.getElementById('updated').textContent = 'feed hiccup — retrying…';
+  }
+}
+tick();
+setInterval(tick, 20000);
+</script>
+</body>
+</html>

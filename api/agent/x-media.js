@@ -71,8 +71,10 @@ function qs(params) {
 
 async function chunkedVideoUpload(bytes, creds) {
   const { CK, CS, AT, AS } = creds;
-  const sign = (method, params, bodyIsMultipart = false) =>
-    oauthHeader(method, UPLOAD_URL, CK, CS, AT, AS, bodyIsMultipart ? {} : params);
+  // Query-string params are ALWAYS part of the OAuth signature base string,
+  // even on multipart requests (only the multipart body itself is excluded).
+  const sign = (method, params) =>
+    oauthHeader(method, UPLOAD_URL, CK, CS, AT, AS, params);
 
   // --- INIT ---
   const initParams = {
@@ -100,7 +102,7 @@ async function chunkedVideoUpload(bytes, creds) {
     form.append("media", new Blob([chunk], { type: "video/mp4" }), "chunk.mp4");
     r = await fetch(`${UPLOAD_URL}?${qs(appendParams)}`, {
       method: "POST",
-      headers: { Authorization: sign("POST", appendParams, true) },
+      headers: { Authorization: sign("POST", appendParams) },
       body: form,
     });
     if (r.status !== 204 && !r.ok) {

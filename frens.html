@@ -30,7 +30,10 @@
   @media (max-width:1100px){ .grid{grid-template-columns:1fr} }
   .panel { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; }
   .panel h2 { font-size:15px; text-transform:uppercase; letter-spacing:1.5px; color:var(--dim); margin-bottom:12px; }
-  .chart-wrap iframe { width:100%; height:520px; border:0; border-radius:10px; background:#000; }
+  .vidgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
+  .vidgrid figure { margin:0; }
+  .vidgrid video { width:100%; border-radius:10px; background:#000; display:block; }
+  .vidgrid figcaption { font-size:13px; color:var(--dim); margin-top:6px; text-transform:lowercase; }
   #feed { display:flex; flex-direction:column; gap:10px; max-height:560px; overflow-y:auto; }
   .callout { background:#0f1430; border:1px solid var(--line); border-radius:12px; padding:12px 14px; animation:slidein .4s ease; }
   .callout.fresh { border-color:var(--green); box-shadow:0 0 18px #3ddc8433; }
@@ -123,6 +126,7 @@
 
 <div class="burnbar">
   <div><div class="big" id="burntotal">…</div><div class="lbl">$snug burned 🔥</div></div>
+  <div><div class="big solv" id="claimtotal">…</div><div class="lbl">creator rewards claimed</div></div>
   <div class="pol" id="burnpol"></div>
   <div id="burnfeed"></div>
 </div>
@@ -163,9 +167,15 @@
 </div>
 
 <div class="grid">
-  <div class="panel chart-wrap">
-    <h2>$snug · live chart</h2>
-    <iframe id="chart" title="SNUG chart" loading="lazy"></iframe>
+  <div class="panel">
+    <h2>🎬 cardigan shorts · eps 1–4</h2>
+    <div class="vidgrid">
+      <figure><video controls preload="metadata" playsinline src="videos/cardigan-host-final3.mp4"></video><figcaption>ep 1 · meet cardigan</figcaption></figure>
+      <figure><video controls preload="metadata" playsinline src="videos/cardigan-video-2-steps.mp4"></video><figcaption>ep 2 · how to mint</figcaption></figure>
+      <figure><video controls preload="metadata" playsinline src="videos/cardigan-video-3-collection.mp4"></video><figcaption>ep 3 · the collection</figcaption></figure>
+      <figure><video controls preload="metadata" playsinline src="videos/cardigan-video-4-soul.mp4"></video><figcaption>ep 4 · soul, onchain</figcaption></figure>
+    </div>
+    <div class="lbl" style="margin-top:8px">more episodes coming — the series keeps growing 📼</div>
   </div>
   <div class="panel">
     <h2>callout feed</h2>
@@ -285,6 +295,11 @@ function renderFeed(callouts) {
   }).join('');
 }
 
+function renderClaims(c) {
+  if (!c) return;
+  document.getElementById('claimtotal').textContent = Number(c.totalClaimed || 0).toLocaleString(undefined, { maximumFractionDigits: 4 }) + ' SOL';
+}
+
 function renderBurns(b) {
   if (!b) return;
   document.getElementById('burntotal').textContent = Number(b.totalBurned || 0).toLocaleString(undefined, { maximumFractionDigits: 0 });
@@ -309,11 +324,11 @@ async function tick() {
     const r = await fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
     if (!r.ok) throw new Error(r.status);
     const d = await r.json();
-    document.getElementById('chart').src = d.snug.chartEmbed;
     document.getElementById('pump').href = d.snug.pumpUrl;
     renderMints(d.mints || []);
     renderFeed(d.callouts || []);
     renderBurns(d.burns);
+    renderClaims(d.claims);
     renderTreasury(d.treasury);
     renderDevBuys(d.devBuys);
     document.getElementById('updated').textContent = 'updated ' + tstr(d.updatedAt);

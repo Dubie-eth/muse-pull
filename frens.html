@@ -61,6 +61,8 @@
   .mint .nm { font-size:20px; font-weight:800; text-transform:lowercase; }
   .mint .own { margin-top:6px; font-size:14px; color:var(--dim); }
   .mint .own b { color:var(--txt); }
+  .mint .backing { margin-top:4px; font-size:13px; color:var(--dim); }
+  .mint .backing b { color:var(--acc); }
   .mint .quote { margin-top:10px; background:#0f1430; border-left:3px solid var(--acc); border-radius:0 10px 10px 0; padding:10px 12px; font-size:14px; line-height:1.5; white-space:pre-wrap; word-break:break-word; }
   .mint .quote .qb { display:block; font-size:12px; color:var(--dim); margin-bottom:4px; }
   .mint .links { margin-top:10px; display:flex; gap:8px; flex-wrap:wrap; }
@@ -257,6 +259,7 @@ function renderMints(mints) {
       <div class="body">
         <div class="nm">${esc(m.name)} <span style="color:var(--dim)">#${m.edition}</span></div>
         <div class="own">held by <b>${ownerName}</b> · <a href="https://solscan.io/account/${esc(m.owner)}" target="_blank" rel="noopener">${short(m.owner)}</a></div>
+        ${m.backingSnug ? `<div class="backing" title="burn this fren and the treasury sends the backing SNUG to the burner">🛟 backed by <b>${Number(m.backingSnug).toLocaleString()} SNUG</b>${m.backingStatus === 'redeemed' ? ' · redeemed' : ' · burn to redeem'}</div>` : ''}
         ${m.callout ? `<div class="quote"><span class="qb">winning callout — ${esc(m.calloutBy || '')}</span>${esc(m.callout)}${m.entryTweetUrl ? ` <a href="${esc(m.entryTweetUrl)}" target="_blank" rel="noopener">entry ↗</a>` : ''}</div>` : (m.entryTweetUrl ? `<div class="quote"><span class="qb">winning entry — ${esc(m.calloutBy || '')}</span><a href="${esc(m.entryTweetUrl)}" target="_blank" rel="noopener">view entry on X ↗</a></div>` : '')}
         <div class="links">
           <a href="${esc(m.tokenUrl)}" target="_blank" rel="noopener">token ↗</a>

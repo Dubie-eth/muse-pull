@@ -114,6 +114,23 @@
   .wallet .addr a { color:var(--acc); text-decoration:none; font-weight:700; }
   .wallet .snugv { color:var(--fire); }
   .wallet .solv { color:var(--green); }
+  .redeem { background:linear-gradient(135deg,#161a3a,#101a2e); border:1px solid var(--acc); border-radius:16px; padding:20px 22px; margin-bottom:18px; }
+  .redeem h2 { font-size:15px; text-transform:uppercase; letter-spacing:1.5px; color:var(--txt); margin-bottom:8px; }
+  .redeem .lede { font-size:15px; line-height:1.55; color:var(--txt); margin-bottom:14px; }
+  .redeem .lede b { color:var(--fire); }
+  .steps { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px; }
+  .step { flex:1 1 220px; background:#0f1430; border:1px solid var(--line); border-radius:12px; padding:12px 14px; font-size:14px; line-height:1.5; }
+  .step .n { display:inline-block; background:var(--acc); color:#fff; font-weight:800; border-radius:999px; width:24px; height:24px; line-height:24px; text-align:center; font-size:13px; margin-right:8px; }
+  .step .dim { color:var(--dim); font-size:12px; display:block; margin-top:6px; }
+  .checker { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:10px; }
+  .checker input { background:#0f1430; border:1px solid var(--line); border-radius:10px; color:var(--txt); padding:10px 14px; font-size:15px; width:140px; }
+  .checker button { background:var(--acc); border:0; border-radius:10px; color:#fff; font-weight:800; padding:10px 18px; font-size:15px; cursor:pointer; }
+  .checker button:hover { filter:brightness(1.15); }
+  #checkresult { font-size:14px; line-height:1.6; }
+  #checkresult a { color:var(--acc); text-decoration:none; font-weight:700; }
+  .redeemstats { display:flex; gap:22px; flex-wrap:wrap; margin-top:14px; }
+  .redeemstats .big { font-size:28px; font-weight:800; color:var(--fire); line-height:1; }
+  .redeemstats .lbl { font-size:11px; text-transform:uppercase; letter-spacing:2px; color:var(--dim); margin-top:4px; }
   footer { margin-top:28px; color:var(--dim); font-size:13px; text-align:center; }
   footer a { color:var(--acc); }
 </style>
@@ -131,6 +148,26 @@
   <div><div class="big solv" id="claimtotal">…</div><div class="lbl">creator rewards claimed</div></div>
   <div class="pol" id="burnpol"></div>
   <div id="burnfeed"></div>
+</div>
+
+<div class="redeem" id="redeem">
+  <h2>🛟 burn to redeem</h2>
+  <div class="lede">every festive fren is backed by <b>100,000 $snug</b> from the treasury. burn your fren anytime and the treasury automatically sends the snug to the wallet that burned it — no forms, no dms, no waiting on us.</div>
+  <div class="steps">
+    <div class="step"><span class="n">1</span>burn your fren in your wallet<span class="dim">phantom / solflare → your nft → burn. the nft leaves your wallet for good.</span></div>
+    <div class="step"><span class="n">2</span>our watcher sees it<span class="dim">it checks the chain every few minutes and finds your burn transaction.</span></div>
+    <div class="step"><span class="n">3</span>treasury pays out<span class="dim">100,000 $snug goes straight to the wallet that burned it. the board updates live.</span></div>
+  </div>
+  <div class="checker">
+    <input id="checkedition" type="number" min="1" placeholder="edition #" inputmode="numeric">
+    <button id="checkbtn">check backing</button>
+    <span id="checkresult"></span>
+  </div>
+  <div class="redeemstats">
+    <div><div class="big" id="backedcount">…</div><div class="lbl">frens backed</div></div>
+    <div><div class="big" id="earmarked">…</div><div class="lbl">$snug earmarked</div></div>
+    <div><div class="big" id="redeemedcount">…</div><div class="lbl">redemptions paid</div></div>
+  </div>
 </div>
 
 <div class="walletrow">
@@ -322,6 +359,32 @@ function renderBurns(b) {
   }).join('');
 }
 
+function renderRedeem(mints) {
+  const backed = mints.filter(m => m.backingSnug);
+  const redeemed = backed.filter(m => m.backingStatus === 'redeemed');
+  const earmarked = backed.reduce((s, m) => s + (Number(m.backingSnug) || 0), 0);
+  document.getElementById('backedcount').textContent = backed.length;
+  document.getElementById('earmarked').textContent = earmarked.toLocaleString(undefined, { maximumFractionDigits: 0 });
+  document.getElementById('redeemedcount').textContent = redeemed.length;
+  window._mints = mints;
+}
+
+function checkBacking() {
+  const el = document.getElementById('checkresult');
+  const n = parseInt(document.getElementById('checkedition').value, 10);
+  if (!n || !window._mints) { el.textContent = 'enter an edition number.'; return; }
+  const m = window._mints.find(x => x.edition === n);
+  if (!m) { el.textContent = `no fren #${n} on the board yet.`; return; }
+  if (!m.backingSnug) { el.textContent = `fren #${n} is not backed.`; return; }
+  if (m.backingStatus === 'redeemed') {
+    el.innerHTML = `fren #${n} · already redeemed — payout sent${m.backingPayoutTx ? ` <a href="https://solscan.io/tx/${esc(m.backingPayoutTx)}" target="_blank" rel="noopener">payout tx ↗</a>` : ''}`;
+    return;
+  }
+  el.innerHTML = `fren #${n} · backed by <b style="color:var(--fire)">${Number(m.backingSnug).toLocaleString()} SNUG</b> · burn it and the treasury pays the burner. <a href="${esc(m.tokenUrl)}" target="_blank" rel="noopener">nft ↗</a>`;
+}
+document.getElementById('checkbtn').addEventListener('click', checkBacking);
+document.getElementById('checkedition').addEventListener('keydown', (e) => { if (e.key === 'Enter') checkBacking(); });
+
 async function tick() {
   try {
     const r = await fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
@@ -334,6 +397,7 @@ async function tick() {
     renderClaims(d.claims);
     renderTreasury(d.treasury);
     renderDevBuys(d.devBuys);
+    renderRedeem(d.mints || []);
     document.getElementById('updated').textContent = 'updated ' + tstr(d.updatedAt);
     firstLoad = false;
   } catch (e) {

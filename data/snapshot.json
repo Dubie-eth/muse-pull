@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-10T04:40:52.975Z",
+ "updated_at": "2026-10-10T04:42:52.469Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
@@ -149722,6 +149722,788 @@
    "notes": "not a token at all - unidentified contract from a high-volume deployer bot. Gate passed (no dangerous selectors per gate_detail). Nothing for the buy pipeline; skipping.",
    "social_scored_at": "2026-10-10T04:31:49Z",
    "social_grade": "F (0/100)"
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "block-watcher",
+    "type": "contract",
+    "name": null,
+    "contract": "0xafd19727c27f27e8499fc4734cc9ddf941a0900b",
+    "chain": "robinhood",
+    "block": 84374873,
+    "found_at": "2026-10-09T18:40:13.901Z",
+    "tx_hash": "0xc7a1816e7c7a85804ca6194e86cd857e8c7258994a4eabd1b709c651f5c000fe",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:20:05.937Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "non-token contract (4693B code, no ERC20 totalSupply/decimals/symbol/name). Deployed ~10h ago; not an investable token.",
+   "social_signal": "weak",
+   "money_flow": "unknown",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "not a token - unidentified contract. Gate passed (no dangerous selectors). Nothing for the buy pipeline."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Hoodlet HOODLET",
+    "contract": "0xeb710ac81445fa76802491f5bd47a52f914ce004",
+    "chain": "robinhood",
+    "block": 84371599,
+    "found_at": "2026-10-09T18:43:34.195Z",
+    "tx_hash": "0x671c9141a67a01a83fdbb378d96f80d1ba0289624bfdae1954161cb7b62935b1",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:20:22.204Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84371599); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Agent Wormhole WORM",
+    "contract": "0x4b2383fe50015421e7394096efd623492d6fc8fa",
+    "chain": "robinhood",
+    "block": 84371760,
+    "found_at": "2026-10-09T18:43:35.037Z",
+    "tx_hash": "0xfb624eb676f84301dfc8985eec574cad1f4591b07d1f70d25bf2ceba6b670824",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:20:36.461Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84371760); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Kwibo KWIBO",
+    "contract": "0x03368b44fa4fbf765f13f6e0094a56db1bbe7de6",
+    "chain": "robinhood",
+    "block": 84372550,
+    "found_at": "2026-10-09T18:43:35.644Z",
+    "tx_hash": "0x7eac31e3fe0d4cf70e2561f2689285cce5f9cffba8c3fb6e90d290337e387227",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:20:50.308Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84372550); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "opcodedotso OP",
+    "contract": "0x45515f048b9ad160d40291b882d864e05f2e4014",
+    "chain": "robinhood",
+    "block": 84372557,
+    "found_at": "2026-10-09T18:43:36.604Z",
+    "tx_hash": "0xce42c2239f49e753753cc2662daaf3452b949721c1a06aaecf9da2bc6356bb82",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:21:07.509Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84372557); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Leash LEASH",
+    "contract": "0x34c6e128221a62f7f4e5182923c8bbc55fb79cce",
+    "chain": "robinhood",
+    "block": 84372645,
+    "found_at": "2026-10-09T18:43:37.629Z",
+    "tx_hash": "0xd641a1b84059b6bdb63e7b7c87e6d7772a14ca39b98a9fe3f90179d3c0f71fac",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:21:40.262Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84372645); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "KWANT KWANT",
+    "contract": "0xf1b0444e3cc1796f377453404e71c06ef7b3a1aa",
+    "chain": "robinhood",
+    "block": 84372656,
+    "found_at": "2026-10-09T18:43:38.720Z",
+    "tx_hash": "0x8b78d02638ea5a75d8c1bbc9b95c96c2c6e7ea63bae829171a354beb566572cd",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:21:51.425Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84372656); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Suited SUITED",
+    "contract": "0xf8b3e051fed08ec5aed258cdc3b3d4c7b123ffef",
+    "chain": "robinhood",
+    "block": 84372723,
+    "found_at": "2026-10-09T18:43:41.740Z",
+    "tx_hash": "0x3d4ebcf4c77dcc55dfd9a6944f5dab95f084559491ef2baa793f89cacd04812f",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:22:04.652Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84372723); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "FoxKnox KNOX",
+    "contract": "0xeb3d6d2702ddb99bbfcd16fe05d5912e97730862",
+    "chain": "robinhood",
+    "block": 84372870,
+    "found_at": "2026-10-09T18:43:42.573Z",
+    "tx_hash": "0x593ab9a9407583d1db45dd00f4ea4adfd12499ae088770287613ed815832a4d0",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:22:10.289Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84372870); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Steer STEER",
+    "contract": "0x094f61bcffeafbd1960f7000b8f87f2507e55c75",
+    "chain": "robinhood",
+    "block": 84372888,
+    "found_at": "2026-10-09T18:43:43.862Z",
+    "tx_hash": "0xb15c22cff504a7056e5fdb1565ded970196a301c887fd80c252765907d86d5c3",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:22:15.984Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84372888); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Rivet RIVET",
+    "contract": "0xbe3917de4b429d48de0ce87c2d8bc21f2a670c7c",
+    "chain": "robinhood",
+    "block": 84373069,
+    "found_at": "2026-10-09T18:43:44.675Z",
+    "tx_hash": "0xab10d23b3dafadfc20323fc2c81c535970e2b41bbafc56781aba613f3c663f4c",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:22:21.478Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84373069); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Supernguin SUPERNGUIN",
+    "contract": "0xfd5b0d8d30734f90f905d3dbfbe9ac0b9e9fece6",
+    "chain": "robinhood",
+    "block": 84373210,
+    "found_at": "2026-10-09T18:43:45.839Z",
+    "tx_hash": "0x0080e216087b84216c32cc7c98884c25b64bdcee2d68cc4483c7fa25a7908014",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:22:27.515Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84373210); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "block-watcher",
+    "type": "contract",
+    "name": null,
+    "contract": "0x572307a2d579867a12866dfb5dd69c3c9f620113",
+    "chain": "robinhood",
+    "block": 84376398,
+    "found_at": "2026-10-09T18:43:46.468Z",
+    "tx_hash": "0x867f53d322b7a224e1b0558f7bcd18701c5a327fa977c66241169efd95b685a5",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:22:33.429Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "non-token contract (4826B code, no ERC20 totalSupply/decimals/symbol/name). Deployed ~10h ago; not an investable token.",
+   "social_signal": "weak",
+   "money_flow": "unknown",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "not a token - unidentified contract. Gate passed (no dangerous selectors). Nothing for the buy pipeline."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "PadoShka PADOSHKA",
+    "contract": "0xe394b658abff756eb537ea52a688102aec2b9032",
+    "chain": "robinhood",
+    "block": 84373379,
+    "found_at": "2026-10-09T18:43:48.038Z",
+    "tx_hash": "0xd9ca39269f43a3336919e54a9cccc77ebe1a5f1f2b4528037f2ed975309db29f",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:22:38.226Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84373379); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Pepito Brokers PEPITO",
+    "contract": "0xe8faf4858c80ea6ed3799a3702dd7356a5f98bc4",
+    "chain": "robinhood",
+    "block": 84373500,
+    "found_at": "2026-10-09T18:43:49.629Z",
+    "tx_hash": "0x6c3fc01f3c885bb31b117ea1b574eb125f0513a4edb110df05e0c5c0b52e5b3b",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:22:43.833Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84373500); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "OpenJEV JEV",
+    "contract": "0xd4403a030e78db53c8572c02b22e44da7159a3c9",
+    "chain": "robinhood",
+    "block": 84373706,
+    "found_at": "2026-10-09T18:43:51.028Z",
+    "tx_hash": "0xcfed222bf30a7ff1eb2ee8a7f298bf4370f83857c4fcd1a122146c081218b4fb",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:22:49.042Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84373706); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Sharbi Token SHARBI",
+    "contract": "0x8fb3566b4a8398e8f43c11e01587d1741f3e86f5",
+    "chain": "robinhood",
+    "block": 84373802,
+    "found_at": "2026-10-09T18:43:52.940Z",
+    "tx_hash": "0x5af2606d9a40bb22daec0ad1920355e5f6dd97b0259732893583aaa38a3e8055",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:22:55.535Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84373802); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "VANTA VNTA",
+    "contract": "0x3a23a90b9b6520452cdc471464775c83caf20e9f",
+    "chain": "robinhood",
+    "block": 84373914,
+    "found_at": "2026-10-09T18:43:58.803Z",
+    "tx_hash": "0x872cb6b91d3674622b0a77aa305e345a0c8907a1517430398edf45de5c550f5a",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:23:01.844Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84373914); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Leeway LEEWAY",
+    "contract": "0x1d3c4ac0796ae61ec4cc65c949839f283a20bd69",
+    "chain": "robinhood",
+    "block": 84374137,
+    "found_at": "2026-10-09T18:44:02.367Z",
+    "tx_hash": "0x7e84bc26d3c5806439e3ae76674aee4bca42fecd7b59967d829c5bb7ee35ca1a",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:23:07.573Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84374137); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Humcomb HUMCOMB",
+    "contract": "0x7d3597d94efa2baf008742b9858777c923256413",
+    "chain": "robinhood",
+    "block": 84374171,
+    "found_at": "2026-10-09T18:44:19.572Z",
+    "tx_hash": "0x54be0635e686a89e0fe1b8d04a87455eb144ff1ffe7e33518c33404415403f21",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:23:14.585Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84374171); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "MINT MNTD",
+    "contract": "0x96b4cae4ef958b378dee9b3eeef3c0b89868ad14",
+    "chain": "robinhood",
+    "block": 84374675,
+    "found_at": "2026-10-09T18:44:32.344Z",
+    "tx_hash": "0x85ceaaee5623ffe0f007ba46cfd7575e16e101465631eaa22996eb70f76897ab",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:23:32.645Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84374675); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Trufflop TRUFFLOP",
+    "contract": "0xaeed6ad1d84d4c3c484b634100d8edf0ea1e5317",
+    "chain": "robinhood",
+    "block": 84374947,
+    "found_at": "2026-10-09T18:44:33.369Z",
+    "tx_hash": "0xfdcd23924d84ee185f8484517d6b7f5346012d688e3b34907fa99d2408e1fd56",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:23:38.563Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84374947); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
+  },
+  {
+   "investigated_at": "2026-10-10T04:41:18.306960+00:00",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "MAKE ROBINHOOD GREAT AGAIN MRGA",
+    "contract": "0x77793d99fb08d11549b298e0f699fb3e8ed9e142",
+    "chain": "robinhood",
+    "block": 84375047,
+    "found_at": "2026-10-09T18:44:34.270Z",
+    "tx_hash": "0xefe5f89ba1b8da34080f4f0eb38fb46174402f1c3f67d6ddb90ea593075f62ac",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:23:47.282Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead launch - 0 transfers observed in gate's 12k-block launch window (addrsSeen 0), no V2 WETH pair, no V4 pools, DexScreener robinhood has no record (no pairs detected). 1B supply standard pons template (3248B code). Launched ~10h ago (block 84375047); no velocity since, no liquidity anywhere.",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.64,
+    "sol_source": "live CoinGecko simple/price 2026-10-10T04:36Z",
+    "pumpfun_momentum": "stale - 675 tokens tracked in pump-fun-seen.json, last sighting 2026-10-09T13:54Z (~15h ago); launch feed not refreshing this run",
+    "x_sentiment": "unavailable this run - X search/recent API returned HTTP 400 for all queries via x-cardiganmuse credential (both 'from:solana OR from:pumpfun' and 'solana')",
+    "stance": "neutral for Solana memecoins - SOL steady ~$109.6 (-0.6%), no chain FUD on record; all candidates this run are Robinhood-chain EVM tokens, pulse attached as ecosystem context only"
+   },
+   "verdict": "skip",
+   "notes": "gate passed (no dangerous selectors, non-upgradeable) but the token has zero market: no liquidity, no holders beyond factory mint, no DexScreener listing, no X presence checkable. Nothing to buy or grade; revisit only if liquidity appears."
   }
  ],
  "scores": [
@@ -430964,7 +431746,7 @@
  ],
  "last_activity": {
   "scout": "2026-10-10T04:39:11.956Z",
-  "hymn": "2026-10-10T04:29:03.705446+00:00",
+  "hymn": "2026-10-10T04:41:18.306960+00:00",
   "scorer": "2026-10-10T04:31:49Z",
   "snug": null,
   "cardigan": null
@@ -431040,7 +431822,7 @@
   "realized_pnl_pct_total": 0
  },
  "paper_trades": {
-  "as_of": "2026-10-10T04:37:13.137Z",
+  "as_of": "2026-10-10T04:42:16.603Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -431105,7 +431887,7 @@
     "seeded": false,
     "score": 69,
     "entry_price_usd": 0.04243,
-    "last_price_usd": 0.04251,
+    "last_price_usd": 0.04238,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -431116,8 +431898,8 @@
     "mcap_at_scan": 42788142.46528106,
     "mcap_at_decision": 42788142.46528106,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.000018854584020739917,
-    "unrealized_pnl_pct": 0.18854584020739917
+    "unrealized_pnl_eth": -0.000011784115012962727,
+    "unrealized_pnl_pct": -0.11784115012962726
    },
    {
     "id": "pt-mv03ww45-53",
@@ -431128,7 +431910,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3471,
+    "last_price_usd": 0.3473,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -431139,8 +431921,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.000022995113538372137,
-    "unrealized_pnl_pct": -0.22995113538372136
+    "unrealized_pnl_eth": -0.000017246335153779936,
+    "unrealized_pnl_pct": -0.17246335153779935
    },
    {
     "id": "pt-mv03wwab-54",
@@ -431174,7 +431956,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.3471,
+    "last_price_usd": 0.3473,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -431185,8 +431967,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0001643525077925745,
-    "unrealized_pnl_pct": -1.6435250779257449
+    "unrealized_pnl_eth": -0.00015868517993765873,
+    "unrealized_pnl_pct": -1.5868517993765874
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -431197,7 +431979,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.3471,
+    "last_price_usd": 0.3473,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -431208,8 +431990,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00015877516302806872,
-    "unrealized_pnl_pct": -1.587751630280687
+    "unrealized_pnl_eth": -0.0001531046214913534,
+    "unrealized_pnl_pct": -1.531046214913534
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -431220,7 +432002,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.3471,
+    "last_price_usd": 0.3473,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -431231,8 +432013,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00017548825360883091,
-    "unrealized_pnl_pct": -1.7548825360883091
+    "unrealized_pnl_eth": -0.00016982734220209462,
+    "unrealized_pnl_pct": -1.698273422020946
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -431243,7 +432025,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.3471,
+    "last_price_usd": 0.3473,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -431254,8 +432036,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00018104667609618043,
-    "unrealized_pnl_pct": -1.8104667609618041
+    "unrealized_pnl_eth": -0.00017538896746817524,
+    "unrealized_pnl_pct": -1.7538896746817523
    }
   ],
   "closed_recent": [],

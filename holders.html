@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Holders · Token Reader</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #e6edf3; padding: 16px; max-width: 860px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin-bottom: 2px; }
+  .subtitle { color: #8b949e; margin-bottom: 14px; font-size: 0.9rem; }
+  .nav { margin-bottom: 16px; font-size: 0.85rem; }
+  .nav a { color: #58a6ff; text-decoration: none; margin-right: 14px; }
+  .card { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 16px; margin-bottom: 14px; }
+  .card h2 { font-size: 1.05rem; margin-bottom: 8px; }
+  .card p { font-size: 0.88rem; color: #c9d1d9; line-height: 1.45; }
+  .muted { color: #8b949e; font-size: 0.82rem; }
+  .btn { display: inline-block; background: #6e40c9; color: #fff; border: none; border-radius: 8px; padding: 11px 18px; font-size: 0.95rem; cursor: pointer; margin: 6px 6px 6px 0; }
+  .btn:hover { background: #8957e5; }
+  .btn.ghost { background: #21262d; }
+  .btn:disabled { opacity: 0.5; cursor: default; }
+  input[type=text] { width: 100%; background: #0d1117; border: 1px solid #30363d; border-radius: 8px; color: #e6edf3; padding: 11px 12px; font-size: 0.9rem; font-family: monospace; }
+  .seg { display: flex; gap: 8px; margin: 10px 0; }
+  .seg button { flex: 1; background: #21262d; color: #c9d1d9; border: 1px solid #30363d; border-radius: 8px; padding: 10px; font-size: 0.88rem; cursor: pointer; }
+  .seg button.on { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+  .gate-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  @media (min-width: 640px) { .gate-grid { grid-template-columns: 1fr 1fr; } }
+  .score-hero { text-align: center; padding: 18px 10px; }
+  .score-num { font-size: 3rem; font-weight: bold; }
+  .score-A { color: #3fb950; } .score-B { color: #a371f7; } .score-C { color: #d29922; } .score-D { color: #f85149; } .score-F { color: #f85149; }
+  .verdict { font-size: 1.05rem; font-weight: bold; margin-top: 4px; }
+  .check { display: flex; gap: 8px; align-items: flex-start; padding: 8px 0; border-top: 1px solid #21262d; font-size: 0.86rem; }
+  .check .ic { font-size: 1rem; flex-shrink: 0; }
+  .check b { display: block; font-size: 0.88rem; }
+  .check span { color: #8b949e; font-size: 0.8rem; }
+  .sec-title { font-size: 0.95rem; font-weight: bold; color: #58a6ff; margin: 14px 0 4px; }
+  #bubblemap { width: 100%; height: 340px; background: #0d1117; border: 1px solid #21262d; border-radius: 8px; touch-action: manipulation; }
+  .wallet-chip { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 10px; margin-top: 8px; font-size: 0.82rem; }
+  .wallet-chip code { word-break: break-all; color: #79c0ff; }
+  .wallet-chip a { color: #58a6ff; }
+  .pill { display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: 0.75rem; font-weight: bold; margin: 2px 4px 2px 0; }
+  .pill.ok { background: rgba(63,185,80,.15); color: #3fb950; }
+  .pill.warn { background: rgba(210,153,34,.15); color: #d29922; }
+  .pill.bad { background: rgba(248,81,73,.15); color: #f85149; }
+  .pill.info { background: rgba(88,166,255,.15); color: #58a6ff; }
+  .loader { color: #8b949e; font-size: 0.85rem; padding: 12px 0; }
+  .hidden { display: none !important; }
+  code.addr { font-size: 0.78rem; word-break: break-all; color: #79c0ff; }
+</style>
+</head>
+<body>
+<h1>🐸 holders spot</h1>
+<p class="subtitle">for $SNUG (solana) + $CARDIGAN (robinhood) holders · free instant token reads</p>
+<div class="nav"><a href="/index.html">← signal board</a><a href="/frens.html">festive frens</a></div>
+
+<!-- ═══ GATE ═══ -->
+<div id="gate">
+  <div class="card">
+    <h2>🔑 holder gate</h2>
+    <p>connect a wallet holding <b>$SNUG</b> on solana <span class="muted">(mint <code class="addr">4EP6dPWAjKyNvznRBSrkPeTsciVZ3MYDSKbDtsYRpump</code>)</span> to unlock the token reader.</p>
+    <p class="muted" style="margin-top:6px">$CARDIGAN on robinhood chain isn't live yet — that side of the gate activates at launch.</p>
+  </div>
+  <div class="gate-grid">
+    <div class="card">
+      <h2>◎ solana</h2>
+      <p class="muted">phantom / solflare (in-app browser on mobile)</p>
+      <div id="sol-status" class="muted" style="margin:8px 0">not connected</div>
+      <button class="btn" id="sol-connect">connect solana wallet</button>
+    </div>
+    <div class="card">
+      <h2>Ξ robinhood chain</h2>
+      <p class="muted">$CARDIGAN hasn't launched — gate opens at launch.</p>
+      <div class="muted" style="margin:8px 0">coming soon</div>
+      <button class="btn ghost" id="evm-connect">connect anyway</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ READER ═══ -->
+<div id="reader" class="hidden">
+  <div class="card">
+    <h2>🔎 token reader <span class="pill ok">holder unlocked</span></h2>
+    <p class="muted" id="holder-line"></p>
+    <div style="margin-top:10px">
+      <input type="text" id="ca" placeholder="paste contract / mint address…" autocomplete="off">
+      <div class="seg" id="chainseg">
+        <button data-chain="auto" class="on">auto</button>
+        <button data-chain="robinhood">robinhood</button>
+        <button data-chain="solana">solana</button>
+      </div>
+      <button class="btn" id="read-btn">read token</button>
+    </div>
+  </div>
+  <div id="report"></div>
+</div>
+
+<script>
+"use strict";
+const SNUG_MINT = "4EP6dPWAjKyNvznRBSrkPeTsciVZ3MYDSKbDtsYRpump";
+const RH_RPC = "https://rpc.mainnet.chain.robinhood.com";
+const RH_CHAIN_ID = 4663;
+const SOL_RPCS = ["https://api.mainnet-beta.solana.com", "https://solana-rpc.publicnode.com"];
+let CHAIN = "auto", READ_INDEX = null, WALLET_LINKS = null, UNLOCKED = sessionStorage.getItem("holders_unlocked") === "1";
+
+async function loadData() {
+  try { READ_INDEX = (await (await fetch("data/token-read.json")).json()).index || {}; } catch { READ_INDEX = {}; }
+  try { WALLET_LINKS = (await (await fetch("data/wallet-links.json")).json()).links || {}; } catch { WALLET_LINKS = {}; }
+}
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const shortAddr = (a) => a && a.length > 14 ? a.slice(0,6)+"…"+a.slice(-4) : a;
+
+/* ── solana helpers ── */
+async function solRpc(method, params) {
+  let last;
+  for (const url of SOL_RPCS) {
+    try {
+      const r = await fetch(url, { method: "POST", headers: {"content-type":"application/json"},
+        body: JSON.stringify({ jsonrpc: "2.0", id: 1, method, params }), signal: AbortSignal.timeout(20000) });
+      const j = await r.json();
+      if (j.result !== undefined) return j.result;
+      last = j.error;
+    } catch (e) { last = e; }
+  }
+  throw last || new Error("solana rpc failed");
+}
+async function snugBalance(owner) {
+  const res = await solRpc("getTokenAccountsByOwner", [owner, { mint: SNUG_MINT }, { encoding: "jsonParsed" }]);
+  let total = 0;
+  for (const a of (res.value || [])) total += Number(a.account?.data?.parsed?.info?.tokenAmount?.uiAmount || 0);
+  return total;
+}
+
+/* ── gate ── */
+async function connectSol() {
+  const prov = window.solana || window.phantom?.solana;
+  $("sol-status").textContent = "opening wallet…";
+  try {
+    if (!prov) { $("sol-status").innerHTML = 'no solana wallet found. open this page in <b>phantom</b> in-app browser.'; return; }
+    const resp = await prov.connect();
+    const owner = resp.publicKey.toString();
+    $("sol-status").textContent = "checking $SNUG balance…";
+    const bal = await snugBalance(owner);
+    if (bal > 0) {
+      UNLOCKED = true; sessionStorage.setItem("holders_unlocked", "1");
+      $("sol-status").innerHTML = `✅ holder verified — <b>${bal.toLocaleString()} $SNUG</b>`;
+      showReader(`solana · ${shortAddr(owner)} · ${bal.toLocaleString()} $SNUG`);
+    } else {
+      $("sol-status").innerHTML = `connected <code class="addr">${esc(shortAddr(owner))}</code> — no $SNUG found. holders only 🐸`;
+    }
+  } catch (e) { $("sol-status").textContent = "connect cancelled or failed."; }
+}
+async function connectEvm() {
+  if (!window.ethereum) { alert("no evm wallet found — open in metamask/rabby in-app browser."); return; }
+  try {
+    const [acct] = await window.ethereum.request({ method: "eth_requestAccounts" });
+    alert("connected " + shortAddr(acct) + "\n\n$CARDIGAN hasn't launched yet — this side of the gate activates at launch. the $SNUG side works now.");
+  } catch {}
+}
+function showReader(line) {
+  $("gate").classList.add("hidden");
+  $("reader").classList.remove("hidden");
+  $("holder-line").textContent = "unlocked as " + line;
+}
+
+/* ── chain detect ── */
+function detectChain(addr) {
+  if (CHAIN !== "auto") return CHAIN;
+  if (/^0x[0-9a-fA-F]{40}$/.test(addr)) return "robinhood";
+  if (/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(addr)) return "solana";
+  return null;
+}
+
+/* ── evm rpc ── */
+async function evmRpc(method, params) {
+  const r = await fetch(RH_RPC, { method: "POST", headers: {"content-type":"application/json"},
+    body: JSON.stringify({ jsonrpc: "2.0", id: 1, method, params }), signal: AbortSignal.timeout(25000) });
+  const j = await r.json();
+  if (j.error) throw new Error(j.error.message);
+  return j.result;
+}
+const SEL = { totalSupply: "0x18160ddd", decimals: "0x313ce567", symbol: "0x95d89b41", name: "0x06fdde03", owner: "0x8da5cb5b", balanceOf: "0x70a08231" };
+async function evmCall(to, data) {
+  try { return await evmRpc("eth_call", [{ to, data }, "latest"]); } catch { return "0x"; }
+}
+function hexStr(h) {
+  if (!h || h === "0x") return "";
+  try {
+    const b = h.slice(2); const len = parseInt(b.slice(64, 128), 16);
+    return decodeURIComponent("%" + b.slice(128, 128 + len * 2).match(/../g).map((x) => x).join("%")).replace(/\0/g, "");
+  } catch { return ""; }
+}
+
+/* ── report builders ── */
+function gradeLetter(score) { return score >= 80 ? "A" : score >= 60 ? "B" : score >= 40 ? "C" : score >= 20 ? "D" : "F"; }
+
+async function readSolana(mint) {
+  const out = { chain: "solana", checks: [], holders: [], links: [], meta: {}, partial: [] };
+  const acct = await solRpc("getAccountInfo", [mint, { encoding: "jsonParsed" }]).catch(() => null);
+  const parsed = acct?.value?.data?.parsed?.info;
+  if (!parsed) { out.fatal = "mint account not found on solana — check the address."; return out; }
+  out.meta.decimals = parsed.decimals;
+  out.meta.supply = Number(parsed.supply) / Math.pow(10, parsed.decimals);
+  const mintAuth = parsed.mintAuthority, freezeAuth = parsed.freezeAuthority;
+  out.checks.push({ ok: !mintAuth, t: "mint authority", d: mintAuth ? "still active — dev can print more tokens. major red flag." : "renounced — supply is fixed. good." });
+  out.checks.push({ ok: !freezeAuth, t: "freeze authority", d: freezeAuth ? "still active — dev can freeze your tokens. red flag." : "none — tokens can't be frozen. good." });
+  let largest = [];
+  try {
+    const l = await solRpc("getTokenLargestAccounts", [mint]);
+    largest = (l.value || []).slice(0, 20);
+  } catch { out.partial.push("holder list unavailable"); }
+  let top10 = 0;
+  const owners = await Promise.all(largest.map(async (h) => {
+    let owner = h.address;
+    try {
+      const ai = await solRpc("getAccountInfo", [h.address, { encoding: "jsonParsed" }]);
+      owner = ai?.value?.data?.parsed?.info?.owner || h.address;
+    } catch {}
+    return { account: h.address, owner, uiAmount: h.uiAmount };
+  }));
+  for (const h of owners) {
+    const pct = out.meta.supply ? (h.uiAmount / out.meta.supply) * 100 : 0;
+    out.holders.push({ addr: h.owner, pct, amount: h.uiAmount });
+  }
+  out.holders.sort((a, b) => b.pct - a.pct);
+  top10 = out.holders.slice(0, 10).reduce((s, h) => s + h.pct, 0);
+  out.checks.push({ ok: top10 < 30, warn: top10 >= 30 && top10 < 60, t: "holder concentration", d: `top 10 wallets hold ${top10.toFixed(1)}% of supply. ${top10 < 30 ? "well spread." : top10 < 60 ? "concentrated — check who they are below." : "very concentrated — whale dump risk."}` });
+  // transfer links between top holders (recent signatures on the mint)
+  try {
+    const sigs = await solRpc("getSignaturesForAddress", [mint, { limit: 60 }]);
+    const seen = new Set();
+    for (const s of (sigs || []).slice(0, 25)) {
+      try {
+        const tx = await solRpc("getTransaction", [s.signature, { encoding: "jsonParsed", maxSupportedTransactionVersion: 0 }]);
+        const keys = tx?.transaction?.message?.accountKeys?.map((k) => k.pubkey) || [];
+        const tops = out.holders.slice(0, 12).map((h) => h.addr);
+        const hit = keys.filter((k) => tops.includes(k));
+        for (let i = 0; i < hit.length; i++) for (let j = i + 1; j < hit.length; j++) {
+          const k = [hit[i], hit[j]].sort().join("|");
+          if (!seen.has(k)) { seen.add(k); out.links.push([hit[i], hit[j]]); }
+        }
+      } catch {}
+      if (out.links.length >= 20) break;
+    }
+  } catch { out.partial.push("transfer graph unavailable"); }
+  // market data
+  try {
+    const dx = await (await fetch(`https://api.dexscreener.com/latest/dex/tokens/${mint}`, { signal: AbortSignal.timeout(15000) })).json();
+    const p = (dx.pairs || []).sort((a, b) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0))[0];
+    if (p) {
+      out.meta.price = p.priceUsd; out.meta.liquidity = p.liquidity?.usd; out.meta.dex = p.dexId;
+      out.meta.mcap = p.marketCap || p.fdv;
+      out.checks.push({ ok: (p.liquidity?.usd || 0) >= 20000, warn: (p.liquidity?.usd || 0) >= 5000, t: "liquidity", d: `$${Math.round(p.liquidity?.usd || 0).toLocaleString()} on ${esc(p.dexId)}. ${(p.liquidity?.usd || 0) >= 20000 ? "enough to trade." : "thin — big slippage on size."}` });
+    } else out.partial.push("no dex market found");
+  } catch { out.partial.push("market data unavailable"); }
+  return out;
+}
+
+async function readEvm(addr) {
+  const out = { chain: "robinhood", checks: [], holders: [], links: [], meta: {}, partial: [] };
+  const [sup, dec, sym, name] = await Promise.all([
+    evmCall(addr, SEL.totalSupply), evmCall(addr, SEL.decimals), evmCall(addr, SEL.symbol), evmCall(addr, SEL.name),
+  ]);
+  if (sup === "0x" || BigInt(sup || "0x0") === 0n) { out.fatal = "not a readable ERC-20 on robinhood chain (totalSupply failed)."; return out; }
+  const decimals = parseInt(dec, 16) || 18;
+  const supply = Number(BigInt(sup)) / 10 ** decimals;
+  out.meta = { symbol: hexStr(sym) || "?", name: hexStr(name) || "?", decimals, supply };
+  const code = await evmRpc("eth_getCode", [addr, "latest"]).catch(() => "0x");
+  out.checks.push({ ok: true, t: "contract live", d: `${esc(out.meta.name)} (${esc(out.meta.symbol)}) · supply ${supply.toLocaleString()}` });
+  const owner = await evmCall(addr, SEL.owner);
+  const ownerAddr = owner && owner !== "0x" && !/^0x0+$/.test(owner) ? "0x" + owner.slice(-40) : null;
+  out.checks.push({ ok: !ownerAddr, t: "owner / admin", d: ownerAddr ? `owner() → ${shortAddr(ownerAddr)} — admin powers may exist.` : "no owner() — looks ownerless. good." });
+  // bounded transfer-log holder reconstruction (recent window, honest partial)
+  const TRANSFER = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef";
+  try {
+    const tip = parseInt(await evmRpc("eth_blockNumber", []), 16);
+    const WINDOW = 60000, CHUNK = 30000;
+    const bals = new Map(); const flows = new Map();
+    let logs = 0;
+    for (let from = tip - WINDOW; from < tip && logs < 4000; from += CHUNK) {
+      const to = Math.min(from + CHUNK - 1, tip);
+      let res = [];
+      try {
+        res = await Promise.race([
+          evmRpc("eth_getLogs", [{ address: addr, topics: [TRANSFER], fromBlock: "0x" + from.toString(16), toBlock: "0x" + to.toString(16) }]),
+          new Promise((_, rej) => setTimeout(() => rej(new Error("t/o")), 30000)),
+        ]);
+      } catch { continue; }
+      for (const l of res || []) {
+        if (logs++ >= 4000) break;
+        const fromA = "0x" + (l.topics[1] || "").slice(-40), toA = "0x" + (l.topics[2] || "").slice(-40);
+        const amt = BigInt(l.data || "0x0");
+        bals.set(fromA, (bals.get(fromA) || 0n) - amt);
+        bals.set(toA, (bals.get(toA) || 0n) + amt);
+        if (fromA !== "0x0000000000000000000000000000000000000000") {
+          const k = [fromA, toA].sort().join("|");
+          flows.set(k, (flows.get(k) || 0) + 1);
+        }
+      }
+    }
+    const sorted = [...bals.entries()].filter(([, b]) => b > 0n).sort((a, b) => (b[1] > a[1] ? 1 : -1)).slice(0, 20);
+    for (const [a, b] of sorted) out.holders.push({ addr: a, pct: (Number(b) / Number(BigInt(sup))) * 100, amount: Number(b) / 10 ** decimals });
+    const top10 = out.holders.slice(0, 10).reduce((s, h) => s + h.pct, 0);
+    out.checks.push({ ok: top10 < 30, warn: top10 >= 30 && top10 < 60, t: "holder concentration (recent window)", d: `top 10 recent holders ≈ ${top10.toFixed(1)}% of supply — sampled from the last ~60k blocks, partial by design.` });
+    out.partial.push("holder map covers the recent ~60k-block window only");
+    const topAddrs = new Set(out.holders.slice(0, 12).map((h) => h.addr.toLowerCase()));
+    for (const [k] of flows) {
+      const [x, y] = k.split("|");
+      if (topAddrs.has(x) && topAddrs.has(y)) out.links.push([x, y]);
+      if (out.links.length >= 20) break;
+    }
+  } catch { out.partial.push("holder scan failed — rpc busy"); }
+  try {
+    const dx = await (await fetch(`https://api.dexscreener.com/latest/dex/tokens/${addr}`, { signal: AbortSignal.timeout(15000) })).json();
+    const p = ((dx.pairs || []).filter((x) => x.chainId === "robinhood").sort((a, b) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0)))[0]
+      || (dx.pairs || []).sort((a, b) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0))[0];
+    if (p) {
+      out.meta.liquidity = p.liquidity?.usd; out.meta.dex = p.dexId; out.meta.mcap = p.marketCap || p.fdv;
+      out.checks.push({ ok: (p.liquidity?.usd || 0) >= 20000, warn: (p.liquidity?.usd || 0) >= 5000, t: "liquidity", d: `$${Math.round(p.liquidity?.usd || 0).toLocaleString()} on ${esc(p.dexId)}. ${(p.liquidity?.usd || 0) >= 20000 ? "enough to trade." : "thin — big slippage on size."}` });
+    } else out.partial.push("no dex market found");
+  } catch { out.partial.push("market data unavailable"); }
+  return out;
+}
+</script>
+<script>
+"use strict";
+/* ── part 2: report rendering, our take, bubble map ── */
+
+function ourTake(addr) {
+  const r = READ_INDEX[addr.toLowerCase()];
+  if (!r) return null;
+  const bits = [];
+  if (r.scout?.gate) bits.push(`safety gate: <b>${esc(r.scout.gate)}</b>${r.scout.reasons?.length ? " — " + esc(r.scout.reasons.slice(0,3).join("; ")) : ""}`);
+  if (r.investigation) bits.push(`our investigator: <b>${esc(r.investigation.verdict || "?")}</b>${r.investigation.notes ? " — " + esc(r.investigation.notes) : ""}${r.investigation.money_flow ? ` (money flow: ${esc(r.investigation.money_flow)})` : ""}`);
+  if (r.social) bits.push(`social grade: <b class="grade-${esc(r.social.grade)}">${esc(r.social.grade)}</b>${r.social.total != null ? ` (${r.social.total}/100)` : ""}${r.social.notes ? " — " + esc(r.social.notes) : ""}`);
+  if (r.decision) bits.push(`durability: <b>${esc(r.decision.durability || "?")}</b> → our call: <b>${esc(r.decision.recommendation || "?")}</b>${r.decision.reason ? " — " + esc(r.decision.reason) : ""}${r.decision.risks ? ` risks: ${esc(r.decision.risks)}` : ""}`);
+  if (r.whale?.moves) bits.push(`whale radar: ${r.whale.moves} large moves tracked${r.whale.converging ? `, <b>${r.whale.converging} with whale convergence</b>` : ""}`);
+  return { bits, name: r.scout?.name || null, raw: r };
+}
+
+function scoreReport(rep, take) {
+  let score = 50; const why = [];
+  for (const c of rep.checks) {
+    if (c.ok === true) { score += 8; }
+    else if (c.warn) { score += 2; why.push("⚠️ " + c.t + ": " + c.d); }
+    else { score -= 14; why.push("🚫 " + c.t + ": " + c.d); }
+  }
+  if (take?.raw?.social?.grade) {
+    const g = take.raw.social.grade;
+    if (g === "A") score += 8; else if (g === "B") score += 4;
+    else if (g === "D" || g === "F") { score -= 20; why.push(`🚫 our social grade is ${g} — hard skip by our rules.`); }
+  }
+  if (take?.raw?.investigation?.verdict === "skip") { score -= 10; why.push("⚠️ our investigator said skip on this one."); }
+  if (take?.raw?.decision?.recommendation === "skip") { score -= 10; }
+  if (take?.raw?.decision?.recommendation === "buy") { score += 8; why.push("✅ our pipeline rated this a buy."); }
+  score = Math.max(0, Math.min(100, score));
+  return { score, why };
+}
+
+function walletChip(h) {
+  const link = WALLET_LINKS[h.addr.toLowerCase()];
+  let extra = "";
+  if (link && (link.label || link.x)) {
+    extra = `<div style="margin-top:6px">🏷️ ${esc(link.label || "")}${link.category ? ` <span class="pill info">${esc(link.category)}</span>` : ""}${link.x ? ` · <a href="https://x.com/${esc(link.x.replace(/^@/, ""))}" target="_blank" rel="noopener">@${esc(link.x.replace(/^@/, ""))}</a>` : ""}${link.verified ? ` <span class="muted">(${esc(link.verified)})</span>` : ""}</div>`;
+  } else {
+    extra = `<div style="margin-top:6px"><a href="https://x.com/search?q=${encodeURIComponent(h.addr)}" target="_blank" rel="noopener">search this wallet on X ↗</a> <span class="muted">(no verified link on file)</span></div>`;
+  }
+  return `<div class="wallet-chip"><code>${esc(h.addr)}</code><div>${h.pct.toFixed(2)}% of supply · ${Number(h.amount).toLocaleString()} tokens</div>${extra}</div>`;
+}
+
+/* bubble map */
+function drawBubbles(rep) {
+  const cv = $("bubblemap"), ctx = cv.getContext("2d");
+  const W = cv.clientWidth, Hh = 340, dpr = Math.min(2, window.devicePixelRatio || 1);
+  cv.width = W * dpr; cv.height = Hh * dpr; ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, W, Hh);
+  const holders = rep.holders.slice(0, 16);
+  if (!holders.length) { ctx.fillStyle = "#8b949e"; ctx.font = "13px sans-serif"; ctx.fillText("no holder data", 16, 30); return; }
+  const maxPct = Math.max(...holders.map((h) => h.pct), 0.01);
+  const nodes = holders.map((h, i) => ({
+    h, r: 10 + 34 * Math.sqrt(h.pct / maxPct),
+    x: W / 2 + (Math.random() - 0.5) * W * 0.5, y: Hh / 2 + (Math.random() - 0.5) * Hh * 0.5,
+    vx: 0, vy: 0, i,
+  }));
+  const linkSet = new Set(rep.links.map(([a, b]) => [a.toLowerCase(), b.toLowerCase()].sort().join("|")));
+  const linked = (x, y) => linkSet.has([x.toLowerCase(), y.toLowerCase()].sort().join("|"));
+  for (let it = 0; it < 120; it++) {
+    for (const n of nodes) {
+      n.x += (W / 2 - n.x) * 0.008; n.y += (Hh / 2 - n.y) * 0.008;
+      for (const m of nodes) {
+        if (m === n) continue;
+        let dx = n.x - m.x, dy = n.y - m.y, d = Math.hypot(dx, dy) || 1;
+        const want = n.r + m.r + (linked(n.h.addr, m.h.addr) ? 6 : 16);
+        if (d < want) { const f = (want - d) / d * 0.25; n.x += dx * f; n.y += dy * f; m.x -= dx * f; m.y -= dy * f; }
+        else if (linked(n.h.addr, m.h.addr) && d > want + 40) { const f = (d - want - 40) / d * 0.03; n.x -= dx * f; n.y -= dy * f; m.x += dx * f; m.y += dy * f; }
+      }
+      n.x = Math.max(n.r, Math.min(W - n.r, n.x)); n.y = Math.max(n.r, Math.min(Hh - n.r, n.y));
+    }
+  }
+  ctx.strokeStyle = "rgba(88,166,255,.35)"; ctx.lineWidth = 1;
+  for (const n of nodes) for (const m of nodes) {
+    if (m.i <= n.i) continue;
+    if (linked(n.h.addr, m.h.addr)) { ctx.beginPath(); ctx.moveTo(n.x, n.y); ctx.lineTo(m.x, m.y); ctx.stroke(); }
+  }
+  nodes.forEach((n, i) => {
+    const link = WALLET_LINKS[n.h.addr.toLowerCase()];
+    const hasSocial = link && (link.label || link.x);
+    const g = ctx.createRadialGradient(n.x - n.r / 3, n.y - n.r / 3, 2, n.x, n.y, n.r);
+    const base = hasSocial ? "110,64,201" : i === 0 ? "210,153,34" : "31,111,235";
+    g.addColorStop(0, `rgba(${base},.95)`); g.addColorStop(1, `rgba(${base},.35)`);
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, 7); ctx.fill();
+    ctx.fillStyle = "#fff"; ctx.font = `bold ${Math.max(9, Math.min(13, n.r / 2.4))}px sans-serif`;
+    ctx.textAlign = "center"; ctx.textBaseline = "middle";
+    ctx.fillText(n.h.pct >= 1 ? n.h.pct.toFixed(1) + "%" : n.h.pct.toFixed(2) + "%", n.x, n.y);
+  });
+  cv._nodes = nodes;
+  cv.onclick = (e) => {
+    const rect = cv.getBoundingClientRect();
+    const x = e.clientX - rect.left, y = e.clientY - rect.top;
+    let best = null, bd = 1e9;
+    for (const n of cv._nodes) { const d = Math.hypot(n.x - x, n.y - y); if (d < n.r && d < bd) { bd = d; best = n; } }
+    $("wallet-detail").innerHTML = best ? walletChip(best.h) : '<p class="muted">tap a bubble to inspect that wallet</p>';
+  };
+}
+
+async function doRead() {
+  const addr = $("ca").value.trim();
+  const chain = detectChain(addr);
+  const box = $("report");
+  if (!chain) { box.innerHTML = '<div class="card"><p>❓ not a recognized address. paste a <b>0x…</b> (robinhood) or solana mint address.</p></div>'; return; }
+  box.innerHTML = '<div class="card loader">reading onchain data…</div>';
+  let rep;
+  try { rep = chain === "solana" ? await readSolana(addr) : await readEvm(addr); }
+  catch (e) { box.innerHTML = `<div class="card"><p>⚠️ read failed: ${esc(e.message)}. rpc may be busy — try again.</p></div>`; return; }
+  if (rep.fatal) { box.innerHTML = `<div class="card"><p>❌ ${esc(rep.fatal)}</p></div>`; return; }
+  const take = ourTake(addr);
+  const { score, why } = scoreReport(rep, take);
+  const g = gradeLetter(score);
+  const verdict = score >= 60 ? "looks tradeable — do your own homework" : score >= 40 ? "mixed — caution advised" : "high risk — probably skip";
+  let html = `<div class="card"><div class="score-hero"><div class="score-num score-${g}">${score}</div>
+    <div class="pill ${g === "A" || g === "B" ? "ok" : g === "C" ? "warn" : "bad"}">grade ${g}</div>
+    <div class="verdict">${verdict}</div>
+    <p class="muted" style="margin-top:6px">${esc(rep.meta.name || rep.meta.symbol || "")} · ${chain}${rep.meta.mcap ? ` · mcap $${Math.round(rep.meta.mcap).toLocaleString()}` : ""}${rep.meta.price ? ` · $${rep.meta.price}` : ""}</p></div></div>`;
+  html += `<div class="card"><div class="sec-title">🛡️ safety</div>` +
+    rep.checks.map((c) => `<div class="check"><span class="ic">${c.ok ? "✅" : c.warn ? "⚠️" : "🚫"}</span><div><b>${esc(c.t)}</b><span>${c.d}</span></div></div>`).join("") +
+    (rep.partial.length ? `<p class="muted" style="margin-top:8px">partial data: ${esc(rep.partial.join("; "))}</p>` : "") + `</div>`;
+  if (take) {
+    html += `<div class="card"><div class="sec-title">🐸 our flock's take</div>${take.name ? `<p class="muted">tracked as <b>${esc(take.name)}</b></p>` : ""}
+      ${take.bits.map((b) => `<div class="check"><span class="ic">💬</span><div><span style="font-size:0.86rem;color:#c9d1d9">${b}</span></div></div>`).join("")}
+      <p class="muted" style="margin-top:6px">from our live pipeline data (exported ${esc(READ_INDEX_EXPORTED || "recently")}). scores refresh as the flock works.</p></div>`;
+  } else {
+    html += `<div class="card"><div class="sec-title">🐸 our flock's take</div><p>we haven't seen this token in our pipeline yet — this read is live onchain data only. if our scouts pick it up later, their verdicts will appear here.</p></div>`;
+  }
+  html += `<div class="card"><div class="sec-title">🫧 holder map</div>
+    <p class="muted" style="margin-bottom:8px">bubble size = share of supply · lines = onchain transfers between top holders · tap a bubble for wallet detail + socials</p>
+    <canvas id="bubblemap"></canvas><div id="wallet-detail"><p class="muted">tap a bubble to inspect that wallet</p></div></div>`;
+  if (why.length) html += `<div class="card"><div class="sec-title">🧠 why this score</div>${why.map((w) => `<div class="check"><div><span style="font-size:0.86rem;color:#c9d1d9">${w}</span></div></div>`).join("")}</div>`;
+  html += `<div class="card"><p class="muted">free read, not financial advice. holder-gated perk for the $SNUG / $CARDIGAN flock. 🐸</p></div>`;
+  box.innerHTML = html;
+  drawBubbles(rep);
+}
+
+let READ_INDEX_EXPORTED = null;
+(async () => {
+  try { READ_INDEX_EXPORTED = (await (await fetch("data/token-read.json")).json()).exported_at?.slice(0, 16); } catch {}
+})();
+$("chainseg").addEventListener("click", (e) => {
+  const b = e.target.closest("button"); if (!b) return;
+  CHAIN = b.dataset.chain;
+  [...$("chainseg").children].forEach((x) => x.classList.toggle("on", x === b));
+});
+$("read-btn").addEventListener("click", doRead);
+$("ca").addEventListener("keydown", (e) => { if (e.key === "Enter") doRead(); });
+$("sol-connect").addEventListener("click", connectSol);
+$("evm-connect").addEventListener("click", connectEvm);
+if (UNLOCKED) showReader("restored session");
+loadData();
+</script>
+
+</body>
+</html>

@@ -1,22 +1,11 @@
 {
- "updated_at": "2026-10-10T00:15:16.256Z",
+ "updated_at": "2026-10-10T00:17:21.953Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-09T23:57:18.274Z",
-   "scout": "new-pairs",
-   "type": "pair",
-   "pair": "WETH / MAPE",
-   "dex": "0x8bceaa40… v2",
-   "chain": "robinhood",
-   "volume": "0.28 WETH",
-   "detail": "V2 pair created block 84559964 via factory 0x8bceaa40…. 5 swaps since creation (5 buys / 0 sells), ~0.28 WETH volume, reserves 1.36 WETH / 734.7k MAPE. FLAGS: no sells observed yet",
-   "contract": "0xa6927d30fc2cd8fc16231e15583471c45e956cd5"
-  },
   {
    "found_at": "2026-10-09T23:59:18.273Z",
    "scout": "pons-family",
@@ -639,9 +628,20 @@
    "tx_hash": "0xa953ef4e88872b0a5ab4670a26611a03af5e139ae6ea9f59ee7e253faa019d68",
    "block": 84569912,
    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84569912 (tx 0xa953ef4e88872b0a5ab4670a26611a03af5e139ae6ea9f59ee7e253faa019d68); name=BabyBaton symbol=BABYBATON. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-10T00:16:55.069Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x56d66964d284e6f4cf0113a47a98082e1da9b5fa",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x2a643ddd441e9188c16abd4e3f60cd2751d3358b339943f38ab76a9b1c303c36",
+   "block": 84571971,
+   "detail": "new contract deployed in block 84571971"
   }
  ],
- "scout_queue_total": 1823,
+ "scout_queue_total": 1824,
  "investigations": [
   {
    "candidate": {
@@ -142933,7 +142933,9 @@
    },
    "verdict": "skip",
    "verdict_note": "gate passed with warnings and fresh onchain probe confirms them: zero liquidity, zero trading velocity, 100% deployer concentration, no social footprint. nothing actionable for dubie.",
-   "duplicate_of": "investigation idx 1972 (2026-10-09T19:40:00Z, also skip) covered the sibling queue entry for this contract"
+   "duplicate_of": "investigation idx 1972 (2026-10-09T19:40:00Z, also skip) covered the sibling queue entry for this contract",
+   "social_scored_at": "2026-10-10T00:16:45Z",
+   "social_grade": "F (6/100)"
   }
  ],
  "scores": [
@@ -238141,6 +238143,28 @@
    "total": 1,
    "grade": "F",
    "notes": "Block-watcher contract deploy (block 84371082), non-token (no name()/symbol()), 0 transfers since deploy. n/a — app/infra contract, no launch candidate to grade. F = no footprint. Verdict skip stands."
+  },
+  {
+   "scored_at": "2026-10-10T00:16:45Z",
+   "candidate": {
+    "type": "token",
+    "chain": "robinhood",
+    "name": "Embervale EMBV",
+    "contract": "0x9fa40a56f8b6a9d95aa0417240fc1d5ca30155a5",
+    "note": "pons-family scout entry, found 2026-10-09T18:34:12.768Z, block 84367584"
+   },
+   "scores": {
+    "website": 1,
+    "twitter_growth": 1,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 6,
+   "grade": "F",
+   "notes": "Embervale EMBV (0x9fa40a56f8b6a9d95aa0417240fc1d5ca30155a5): dead pons-factory launch. 3 transfers in ~7h since launch (block 84367584->84566683): 100% of supply sits with deployer wallet 0x94722d8ce4b9ff46afa174ffa6af113fa8428a74, zero trading, zero buys/sells; no V2 WETH pair, no V4 pools, no liquidity. No website, no X account, zero ticker/CA spread — fresh web search returns no project mention (only generic Robinhood Chain coverage), confirming humming-hymn's finding. F reflects total absence of footprint, not scam evidence. Verdict skip stands."
   }
  ],
  "decisions": [
@@ -408556,9 +408580,9 @@
   "whale-watcher"
  ],
  "last_activity": {
-  "scout": "2026-10-10T00:14:38.086Z",
+  "scout": "2026-10-10T00:16:55.069Z",
   "hymn": "2026-10-10T00:10:51.864Z",
-  "scorer": "2026-10-10T00:08:08.190541Z",
+  "scorer": "2026-10-10T00:16:45Z",
   "snug": null,
   "cardigan": null
  },
@@ -408686,7 +408710,7 @@
   "realized_pnl_pct_total": 0
  },
  "paper_trades": {
-  "as_of": "2026-10-10T00:10:26.935Z",
+  "as_of": "2026-10-10T00:17:14.820Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,

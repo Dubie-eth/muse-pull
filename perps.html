@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>paper perps · live</title>
+<style>
+  :root { --bg:#0b0e1a; --card:#141a30; --line:#263056; --txt:#eef1ff; --dim:#8b93b8; --acc:#7c6cff; --green:#3ddc84; --red:#ff6b6b; --fire:#ff9a3c; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--txt); font-family:ui-rounded,system-ui,-apple-system,"Segoe UI",sans-serif; min-height:100vh; padding:16px 14px 40px; }
+  .wrap { max-width:760px; margin:0 auto; }
+  header { display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap; }
+  h1 { font-size:24px; font-weight:800; text-transform:lowercase; }
+  h1 .p { color:var(--fire); }
+  .live { display:inline-flex; align-items:center; gap:8px; background:#1d2547; border:1px solid var(--line); border-radius:999px; padding:5px 12px; font-size:13px; font-weight:700; }
+  .dot { width:9px; height:9px; border-radius:50%; background:#ff4d4d; animation:pulse 1.6s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.25} }
+  #updated { color:var(--dim); font-size:12px; margin-left:auto; }
+  .banner { background:linear-gradient(135deg,#2a1a10,#0f1430); border:1px solid var(--fire); border-radius:14px; padding:12px 16px; margin-bottom:14px; font-size:14px; line-height:1.5; }
+  .banner b { color:var(--fire); }
+  .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:14px; }
+  .stat { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px 14px; }
+  .stat .lbl { font-size:11px; text-transform:uppercase; letter-spacing:1.5px; color:var(--dim); }
+  .stat .val { font-size:24px; font-weight:800; margin-top:4px; }
+  .pos { color:var(--green); } .neg { color:var(--red); }
+  .panel { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px; margin-bottom:14px; }
+  .panel h2 { font-size:13px; text-transform:uppercase; letter-spacing:1.5px; color:var(--dim); margin-bottom:10px; }
+  .price { display:flex; justify-content:space-between; align-items:baseline; padding:8px 2px; border-bottom:1px solid var(--line); font-size:16px; }
+  .price:last-child { border-bottom:none; }
+  .price .sym { font-weight:800; }
+  .price .px { font-variant-numeric:tabular-nums; }
+  .price .fd { font-size:12px; color:var(--dim); }
+  .poscard { background:#0f1430; border:1px solid var(--line); border-radius:12px; padding:12px 14px; margin-bottom:8px; font-size:14px; }
+  .poscard .top { display:flex; justify-content:space-between; font-weight:800; font-size:16px; }
+  .poscard .rows { display:grid; grid-template-columns:1fr 1fr; gap:4px 12px; margin-top:8px; font-size:13px; color:var(--dim); }
+  .poscard .rows b { color:var(--txt); font-weight:700; }
+  .side-long { color:var(--green); } .side-short { color:var(--red); }
+  .trade { background:#0f1430; border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin-bottom:8px; font-size:13px; line-height:1.5; }
+  .trade .ts { color:var(--dim); font-size:12px; }
+  .sig { display:flex; justify-content:space-between; align-items:center; padding:8px 2px; border-bottom:1px solid var(--line); font-size:15px; }
+  .sig:last-child { border-bottom:none; }
+  .sig .b { font-weight:800; padding:3px 12px; border-radius:999px; font-size:13px; }
+  .b.long { background:#123f2a; color:var(--green); }
+  .b.short { background:#431a1a; color:var(--red); }
+  .b.neutral { background:#1d2547; color:var(--dim); }
+  .b.unknown { background:#1d2547; color:var(--dim); }
+  .sig .why { display:block; font-size:12px; color:var(--dim); font-weight:400; margin-top:2px; }
+  .risk { font-size:13px; color:var(--dim); line-height:1.7; }
+  .risk b { color:var(--txt); }
+  .empty { color:var(--dim); font-size:14px; padding:14px; text-align:center; }
+  footer { color:var(--dim); font-size:12px; text-align:center; margin-top:20px; line-height:1.6; }
+  a { color:var(--acc); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>paper <span class="p">perps</span></h1>
+    <span class="live"><span class="dot"></span>testnet</span>
+    <span id="updated">loading…</span>
+  </header>
+
+  <div class="banner"><b>paper only — fake money.</b> this is a simulation on hyperliquid testnet. no real funds, no real positions, no keys anywhere. just cardigan learning to trade perps before anything real ever happens.</div>
+
+  <div class="grid">
+    <div class="stat"><div class="lbl">equity</div><div class="val" id="equity">—</div></div>
+    <div class="stat"><div class="lbl">day pnl</div><div class="val" id="daypnl">—</div></div>
+    <div class="stat"><div class="lbl">cash</div><div class="val" id="cash">—</div></div>
+    <div class="stat"><div class="lbl">open positions</div><div class="val" id="npos">—</div></div>
+  </div>
+
+  <div class="panel">
+    <h2>live testnet prices</h2>
+    <div id="prices"></div>
+  </div>
+
+  <div class="panel">
+    <h2>open paper positions</h2>
+    <div id="positions"></div>
+  </div>
+
+  <div class="panel">
+    <h2>signal bias</h2>
+    <div id="signals"></div>
+  </div>
+
+  <div class="panel">
+    <h2>recent paper trades</h2>
+    <div id="trades"></div>
+  </div>
+
+  <div class="panel">
+    <h2>risk rules</h2>
+    <div class="risk" id="risk"></div>
+  </div>
+
+  <footer>paper perps on hyperliquid testnet · refreshes every 30s · fake money, real learning</footer>
+</div>
+
+<script>
+const URL = 'data/perps-live.json';
+const fmt$ = n => (n == null ? '—' : (n < 0 ? '−$' : '$') + Math.abs(n).toLocaleString('en-US', {maximumFractionDigits: 2, minimumFractionDigits: 2}));
+const fmtPx = n => n == null ? '—' : '$' + Number(n).toLocaleString('en-US', {maximumFractionDigits: n < 100 ? 3 : 2});
+
+function tick() {
+  fetch(URL + '?t=' + Date.now(), { cache: 'no-store' })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch(e => { document.getElementById('updated').textContent = 'feed hiccup — retrying…'; });
+}
+
+function render(d) {
+  const a = d.account;
+  set('equity', fmt$(a.equity_usd));
+  const dp = document.getElementById('daypnl');
+  dp.textContent = (a.day_pnl_usd < 0 ? '−' : '+') + fmt$(Math.abs(a.day_pnl_usd)).slice(1);
+  dp.className = 'val ' + (a.day_pnl_usd >= 0 ? 'pos' : 'neg');
+  set('cash', fmt$(a.cash_usd));
+  set('npos', a.open_positions);
+  document.getElementById('updated').textContent = 'updated ' + new Date(d.updatedAt).toLocaleTimeString();
+
+  document.getElementById('prices').innerHTML = Object.keys(d.prices).map(s => {
+    const f = d.funding_hourly && d.funding_hourly[s];
+    const fstr = f == null ? '' : ' <span class="fd">fund ' + (f >= 0 ? '+' : '') + (f * 100).toFixed(4) + '%/h</span>';
+    return '<div class="price"><span class="sym">' + s + '</span><span><span class="px">' + fmtPx(d.prices[s]) + '</span>' + fstr + '</span></div>';
+  }).join('');
+
+  document.getElementById('positions').innerHTML = d.positions.length ? d.positions.map(p => {
+    const u = p.unrealized_pnl_usd;
+    const cls = u == null ? '' : (u >= 0 ? 'pos' : 'neg');
+    return '<div class="poscard"><div class="top"><span class="side-' + p.side + '">' + p.side + ' ' + p.symbol + ' ' + p.leverage + 'x</span>' +
+      '<span class="' + cls + '">' + (u == null ? '—' : (u >= 0 ? '+' : '−') + fmt$(Math.abs(u)).slice(1)) + '</span></div>' +
+      '<div class="rows"><span>size <b>' + fmt$(p.notional_usd) + '</b></span>' +
+      '<span>entry <b>' + fmtPx(p.entry_price) + '</b></span>' +
+      '<span>mark <b>' + fmtPx(p.mark_price) + '</b></span>' +
+      '<span>funding paid <b>' + fmt$(p.funding_paid_usd) + '</b></span></div></div>';
+  }).join('') : '<div class="empty">no open positions — flat and cozy</div>';
+
+  document.getElementById('signals').innerHTML = d.signals.map(s =>
+    '<div class="sig"><span><b>' + s.symbol + '</b><span class="why">' + s.reasons.join(' · ') + '</span></span>' +
+    '<span class="b ' + s.bias + '">' + s.bias + '</span></div>').join('');
+
+  document.getElementById('trades').innerHTML = d.trades.length ? d.trades.map(t => {
+    const detail = t.action === 'close'
+      ? 'closed @ ' + fmtPx(t.price) + ' · net <b class="' + (t.net_pnl_usd >= 0 ? 'pos' : 'neg') + '">' + fmt$(t.net_pnl_usd) + '</b>'
+      : t.action.replace('open_', '') + ' ' + fmt$(t.notional_usd) + ' @ ' + fmtPx(t.price) + ' · ' + t.leverage + 'x · fee ' + fmt$(t.fee_usd);
+    return '<div class="trade"><span class="ts">' + t.ts.replace('T', ' ').slice(0, 19) + 'z</span> · <b>' + t.symbol + '</b> ' + detail + '</div>';
+  }).join('') : '<div class="empty">no paper trades yet</div>';
+
+  const r = d.risk;
+  document.getElementById('risk').innerHTML =
+    'mode: <b>paper (hard stop — live orders refused)</b><br>' +
+    'venue: <b>hyperliquid testnet</b><br>' +
+    'max leverage <b>' + r.max_leverage + 'x</b> · max position <b>' + fmt$(r.max_notional_usd) + '</b> · max total <b>' + fmt$(r.max_total_notional_usd) + '</b><br>' +
+    'daily loss halt <b>' + fmt$(r.max_daily_loss_usd) + '</b> · allowed <b>' + r.allowed.join(', ') + '</b>';
+}
+
+function set(id, v) { document.getElementById(id).textContent = v; }
+tick();
+setInterval(tick, 30000);
+</script>
+</body>
+</html>

@@ -98,6 +98,21 @@
   </div>
 
   <div class="panel">
+    <h2>market context — real-money analytics (advisory)</h2>
+    <div id="analytics"></div>
+  </div>
+
+  <div class="panel">
+    <h2>liquidity + money flows — 5m watcher</h2>
+    <div id="flow"></div>
+  </div>
+
+  <div class="panel">
+    <h2>liquidation heat — estimated clusters</h2>
+    <div id="liqheat"></div>
+  </div>
+
+  <div class="panel">
     <h2>recent paper trades</h2>
     <div id="trades"></div>
   </div>
@@ -211,6 +226,62 @@ function render(d) {
     '<div class="sig"><span><b>' + s.symbol + '</b><span class="why">' + s.reasons.join(' · ') + '</span></span>' +
     '<span class="b ' + s.bias + '">' + s.bias + '</span></div>').join('');
 
+  const an = d.analytics;
+  document.getElementById('analytics').innerHTML = an ? (() => {
+    const fg = an.fear_greed;
+    const mk = an.market;
+    let h = '<div class="rows"><span>fear &amp; greed <b>' + (fg ? fg.value + ' · ' + fg.classification : '—') + '</b></span>' +
+      '<span>btc dominance <b>' + (mk ? mk.btc_dominance_pct + '%' : '—') + '</b></span>' +
+      '<span>total mcap 24h <b>' + (mk ? (mk.mcap_change_24h_pct >= 0 ? '+' : '') + mk.mcap_change_24h_pct + '%' : '—') + '</b></span></div>';
+    h += Object.keys(an.coins || {}).map(sym => {
+      const c = an.coins[sym], ctx = c.ctx || {}, m = c.math, soc = c.social;
+      const mc = m ? '<span class="b ' + (m.score >= 15 ? 'long' : m.score <= -15 ? 'short' : 'neutral') + '">' + m.label + ' ' + m.score + '</span>'
+                   : '<span class="b unknown">no data</span>';
+      return '<div class="sig"><span><b>' + sym + '</b><span class="why">' +
+        '24h ' + (ctx.day_change_pct == null ? '—' : (ctx.day_change_pct >= 0 ? '+' : '') + ctx.day_change_pct + '%') +
+        ' · funding ' + (ctx.funding_annualized_pct == null ? '—' : ctx.funding_annualized_pct + '%/yr') +
+        ' · OI ' + (ctx.open_interest_usd == null ? '—' : '$' + (ctx.open_interest_usd / 1e9).toFixed(2) + 'B') +
+        (soc && soc.label ? ' · social: ' + soc.label : '') + '</span></span>' + mc + '</div>';
+    }).join('');
+    return h + '<div class="why" style="margin-top:6px">mainnet positioning + alternative.me + coingecko · social every 30m · entries: fathom + crew vetoes/conviction sizing · exits: tested strategy</div>';
+  })() : '<div class="empty">analytics warming up — next tick</div>';
+
+  const fl = d.flow;
+  document.getElementById('flow').innerHTML = fl ? (() => {
+    let h = '<div class="why">updated ' + new Date(fl.ts).toLocaleTimeString() + ' · OI deltas = money in/out of positions</div>';
+    h += Object.keys(fl.coins || {}).map(sym => {
+      const c = fl.coins[sym], liq = c.liquidity || {}, bands = liq.bands || {};
+      const b50 = bands['0.50pct'] || {};
+      const d1 = c.oi_delta_1h, d4 = c.oi_delta_4h;
+      const fstr = (v, u) => v == null ? '—' : (v >= 0 ? '+' : '−') + '$' + (Math.abs(v) / 1e6).toFixed(1) + 'M';
+      return '<div class="sig"><span><b>' + sym + '</b><span class="why">' +
+        'book 0.5%: bid $' + ((b50.bid_usd || 0) / 1e6).toFixed(1) + 'M / ask $' + ((b50.ask_usd || 0) / 1e6).toFixed(1) + 'M' +
+        ' · OI 1h ' + fstr(d1 && d1.delta_usd) + ' · 4h ' + fstr(d4 && d4.delta_usd) +
+        ' · fund flow ' + fstr(c.funding_flow_usd_per_hr) + '/h</span></span>' +
+        '<span class="b ' + ((d4 && d4.delta_usd >= 0) ? 'long' : 'short') + '">' +
+        (d4 && d4.delta_usd != null ? (d4.delta_usd >= 0 ? 'inflow' : 'outflow') : '—') + '</span></div>';
+    }).join('');
+    return h;
+  })() : '<div class="empty">flow watcher warming up</div>';
+
+  const lh = d.liq_heat;
+  document.getElementById('liqheat').innerHTML = lh ? (() => {
+    let h = '<div class="why">updated ' + new Date(lh.ts).toLocaleTimeString() + ' · <b>estimated</b> from OI/funding/ATR — not exchange data</div>';
+    h += Object.keys(lh.coins || {}).map(sym => {
+      const c = lh.coins[sym];
+      if (!c) return '';
+      const na = c.nearest_cluster_above, nb = c.nearest_cluster_below;
+      const f2 = v => '$' + (v / 1e6).toFixed(0) + 'M';
+      return '<div class="sig"><span><b>' + sym + '</b><span class="why">' +
+        'magnet ≤2% above ' + f2(c.magnet_above_2pct_usd) + ' · below ' + f2(c.magnet_below_2pct_usd) +
+        (na ? '<br>nearest heavy above: ' + fmtPx(na.price) + ' (' + na.dist_pct + '%, ' + f2(na.est_liq_usd) + ')' : '') +
+        (nb ? '<br>nearest heavy below: ' + fmtPx(nb.price) + ' (' + nb.dist_pct + '%, ' + f2(nb.est_liq_usd) + ')' : '') +
+        '</span></span><span class="b ' + (c.magnet_above_2pct_usd >= c.magnet_below_2pct_usd ? 'long' : 'short') + '">' +
+        (c.magnet_above_2pct_usd >= c.magnet_below_2pct_usd ? 'heavier above' : 'heavier below') + '</span></div>';
+    }).join('');
+    return h;
+  })() : '<div class="empty">liq heat warming up</div>';
+
   const sc = d.scalp;
   document.getElementById('scalp').innerHTML = sc ? (
     '<div class="poscard"><div class="top"><span>bankroll <b>' + fmt$(sc.bankroll_usd) + '</b></span>' +
@@ -230,6 +301,14 @@ function render(d) {
       : t.action.replace('open_', '') + ' ' + fmt$(t.notional_usd) + ' @ ' + fmtPx(t.price) + ' · ' + t.leverage + 'x · fee ' + fmt$(t.fee_usd);
     return '<div class="trade"><span class="ts">' + t.ts.replace('T', ' ').slice(0, 19) + 'z</span> · <b>' + t.symbol + '</b> ' + detail + '</div>';
   }).join('') : '<div class="empty">no paper trades yet</div>';
+
+  const vt = d.vetoes || [];
+  if (vt.length) {
+    document.getElementById('trades').innerHTML += '<div class="why" style="margin-top:6px">vetoed by the crew (counterfactual log):</div>' +
+      vt.slice(-5).reverse().map(v =>
+        '<div class="trade"><span class="ts">' + String(v.ts).replace('T', ' ').slice(0, 19) + 'z</span> · <b>' + v.coin + '</b> ' + v.side +
+        ' vetoed — <span class="why">' + v.reason + '</span></div>').join('');
+  }
 
   const r = d.risk;
   document.getElementById('risk').innerHTML =

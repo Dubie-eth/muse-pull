@@ -1,24 +1,24 @@
 {
-  "updatedAt": "2026-10-10T16:00:01Z",
+  "updatedAt": "2026-10-10T16:07:05Z",
   "paper": true,
   "venue": "hyperliquid testnet",
   "account": {
-    "equity_usd": 9998.72,
-    "cash_usd": 8999.55,
-    "margin_locked_usd": 1000.0,
-    "open_positions": 2,
-    "day_pnl_usd": -0.83
+    "equity_usd": 9999.74,
+    "cash_usd": 8499.3,
+    "margin_locked_usd": 1500.0,
+    "open_positions": 3,
+    "day_pnl_usd": 0.44
   },
   "prices": {
-    "BTC": 82458.5,
-    "ETH": 2496.25,
-    "SOL": 109.985,
-    "HYPE": 44.112
+    "BTC": 82536.0,
+    "ETH": 2503.95,
+    "SOL": 110.285,
+    "HYPE": 44.0945
   },
   "funding_hourly": {
-    "BTC": -0.0007830906,
-    "ETH": -0.0005860014,
-    "SOL": -0.0001421416,
+    "BTC": -0.0006676004,
+    "ETH": -0.0004132505,
+    "SOL": 1.25e-05,
     "HYPE": 0.0
   },
   "positions": [
@@ -27,10 +27,10 @@
       "side": "long",
       "notional_usd": 500.0,
       "entry_price": 2497.85,
-      "mark_price": 2496.25,
+      "mark_price": 2503.95,
       "leverage": 1,
-      "unrealized_pnl_usd": -0.32,
-      "funding_paid_usd": 0.0,
+      "unrealized_pnl_usd": 1.22,
+      "funding_paid_usd": 0.0136,
       "fees_paid_usd": 0.225,
       "opened_at": "2026-10-10T15:45:57Z"
     },
@@ -39,15 +39,36 @@
       "side": "long",
       "notional_usd": 500.0,
       "entry_price": 44.157,
-      "mark_price": 44.112,
+      "mark_price": 44.0945,
       "leverage": 1,
-      "unrealized_pnl_usd": -0.51,
-      "funding_paid_usd": 0.0,
+      "unrealized_pnl_usd": -0.71,
+      "funding_paid_usd": 0.0136,
       "fees_paid_usd": 0.225,
       "opened_at": "2026-10-10T15:46:27Z"
+    },
+    {
+      "symbol": "BTC",
+      "side": "short",
+      "notional_usd": 500.0,
+      "entry_price": 82525.0,
+      "mark_price": 82536.0,
+      "leverage": 1,
+      "unrealized_pnl_usd": -0.07,
+      "funding_paid_usd": 0.0,
+      "fees_paid_usd": 0.225,
+      "opened_at": "2026-10-10T16:02:02Z"
     }
   ],
   "trades": [
+    {
+      "ts": "2026-10-10T16:02:02Z",
+      "action": "open_short",
+      "symbol": "BTC",
+      "price": 82525.0,
+      "notional_usd": 500.0,
+      "leverage": 1,
+      "fee_usd": 0.225
+    },
     {
       "ts": "2026-10-10T15:46:27Z",
       "action": "open_long",
@@ -71,40 +92,143 @@
     {
       "symbol": "BTC",
       "bias": "short",
-      "strength": 0.198,
+      "strength": 0.154,
       "reasons": [
         "whale net -0.57 over 2h",
-        "24h BTC -0.19%"
+        "24h BTC +0.12%"
       ]
     },
     {
       "symbol": "ETH",
       "bias": "neutral",
-      "strength": 0.037,
+      "strength": 0.021,
       "reasons": [
         "whale net -0.57 over 2h",
-        "24h ETH +0.96%"
+        "24h ETH +1.07%"
       ]
     },
     {
       "symbol": "SOL",
       "bias": "neutral",
-      "strength": 0.075,
+      "strength": 0.041,
       "reasons": [
         "whale net -0.57 over 2h",
-        "24h SOL +0.69%"
+        "24h SOL +0.93%"
       ]
     },
     {
       "symbol": "HYPE",
       "bias": "long",
-      "strength": 0.529,
+      "strength": 0.168,
       "reasons": [
         "whale net -0.57 over 2h",
-        "24h HYPE +6.45%"
+        "24h HYPE +2.43%"
       ]
     }
   ],
+  "scalp": {
+    "bankroll_usd": 95.85,
+    "start_bankroll_usd": 100.0,
+    "margin_per_trade_usd": 1.0,
+    "leverage": 1000,
+    "wins": 0,
+    "losses": 6,
+    "liquidations": 0,
+    "net_usd": -4.15,
+    "recent": [
+      {
+        "ts_entry": "2026-10-10T16:04:22Z",
+        "ts_exit": "2026-10-10T16:04:44Z",
+        "symbol": "BTC",
+        "side": "long",
+        "entry": 82549.5,
+        "exit": 82549.5,
+        "move_pct": 0.0,
+        "gross_usd": 0.0,
+        "fees_usd": 0.7,
+        "net_usd": -0.7,
+        "result": "loss",
+        "exit_reason": "timeout",
+        "hold_s": 22.1
+      },
+      {
+        "ts_entry": "2026-10-10T16:03:47Z",
+        "ts_exit": "2026-10-10T16:04:03Z",
+        "symbol": "BTC",
+        "side": "long",
+        "entry": 82536.0,
+        "exit": 82549.5,
+        "move_pct": 0.0164,
+        "gross_usd": 0.1636,
+        "fees_usd": 0.7,
+        "net_usd": -0.5364,
+        "result": "loss",
+        "exit_reason": "timeout",
+        "hold_s": 16.4
+      },
+      {
+        "ts_entry": "2026-10-10T16:02:50Z",
+        "ts_exit": "2026-10-10T16:03:14Z",
+        "symbol": "BTC",
+        "side": "long",
+        "entry": 82527.0,
+        "exit": 82527.5,
+        "move_pct": 0.0006,
+        "gross_usd": 0.0061,
+        "fees_usd": 0.7,
+        "net_usd": -0.6939,
+        "result": "loss",
+        "exit_reason": "timeout",
+        "hold_s": 24.5
+      },
+      {
+        "ts_entry": "2026-10-10T16:01:50Z",
+        "ts_exit": "2026-10-10T16:02:07Z",
+        "symbol": "BTC",
+        "side": "long",
+        "entry": 82525.0,
+        "exit": 82525.5,
+        "move_pct": 0.0006,
+        "gross_usd": 0.0061,
+        "fees_usd": 0.7,
+        "net_usd": -0.6939,
+        "result": "loss",
+        "exit_reason": "timeout",
+        "hold_s": 17.5
+      },
+      {
+        "ts_entry": "2026-10-10T16:00:53Z",
+        "ts_exit": "2026-10-10T16:01:10Z",
+        "symbol": "BTC",
+        "side": "long",
+        "entry": 82514.5,
+        "exit": 82524.5,
+        "move_pct": 0.0121,
+        "gross_usd": 0.1212,
+        "fees_usd": 0.7,
+        "net_usd": -0.5788,
+        "result": "loss",
+        "exit_reason": "timeout",
+        "hold_s": 16.8
+      },
+      {
+        "ts_entry": "2026-10-10T16:00:00Z",
+        "ts_exit": "2026-10-10T16:00:20Z",
+        "symbol": "BTC",
+        "side": "long",
+        "entry": 82510.5,
+        "exit": 82490.5,
+        "move_pct": -0.0242,
+        "gross_usd": -0.2424,
+        "fees_usd": 0.7,
+        "net_usd": -0.9424,
+        "result": "loss",
+        "exit_reason": "timeout",
+        "hold_s": 20.2
+      }
+    ],
+    "note": "simulated 1000x (real HL caps ~50x). fake money."
+  },
   "risk": {
     "paper_mode": true,
     "max_leverage": 3,

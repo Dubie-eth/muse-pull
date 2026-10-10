@@ -1,35 +1,11 @@
 {
- "updated_at": "2026-10-10T00:17:21.953Z",
+ "updated_at": "2026-10-10T00:19:09.883Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-09T23:59:18.273Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Commander Vrax VRAX",
-   "muse": "",
-   "contract": "0x3612bc0d2c78161156a12c9f7086fd8420b66998",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x4125dc1812fd11d414d8d116a59434e50893626abc2c3614720659de1394ffe7",
-   "block": 84560834,
-   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84560834 (tx 0x4125dc1812fd11d414d8d116a59434e50893626abc2c3614720659de1394ffe7); name=Commander Vrax symbol=VRAX. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
-  },
-  {
-   "found_at": "2026-10-10T00:02:22.346Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xcd29d4b6154b6bc3c92a407d9998ada68e436b33",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0x9649c1d291fd2eb60e417d03c96581fd0228cf7e400adba531ac1ce574b3d52a",
-   "block": 84563396,
-   "detail": "new contract deployed in block 84563396"
-  },
   {
    "found_at": "2026-10-10T00:02:29.101Z",
    "scout": "block-watcher",
@@ -639,9 +615,31 @@
    "tx_hash": "0x2a643ddd441e9188c16abd4e3f60cd2751d3358b339943f38ab76a9b1c303c36",
    "block": 84571971,
    "detail": "new contract deployed in block 84571971"
+  },
+  {
+   "found_at": "2026-10-10T00:18:03.326Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x7f70681355251f29345e1850d06c85727ebd539c",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x89c31e44a8c67cb036da2fe5fc02c315f9bb8d7029b66f6a46c394916f84844b",
+   "block": 84572461,
+   "detail": "new contract deployed in block 84572461"
+  },
+  {
+   "found_at": "2026-10-10T00:18:30.680Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xdbacdf0fdf6dfa4f23cf6438d4149ab9c87d7700",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xe3ef46aafb96014a15945c1d9bcab2c819c60ef153ed095c7362b86a1995e1bc",
+   "block": 84572695,
+   "detail": "new contract deployed in block 84572695"
   }
  ],
- "scout_queue_total": 1824,
+ "scout_queue_total": 1826,
  "investigations": [
   {
    "candidate": {
@@ -142936,6 +142934,540 @@
    "duplicate_of": "investigation idx 1972 (2026-10-09T19:40:00Z, also skip) covered the sibling queue entry for this contract",
    "social_scored_at": "2026-10-10T00:16:45Z",
    "social_grade": "F (6/100)"
+  },
+  {
+   "investigated_at": "2026-10-10T00:18:47.016Z",
+   "candidate": {
+    "type": "token",
+    "contract": "0x0a1b7721cb35a04986b0b1fcf96f33f711b0e202",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T18:35:17.820Z",
+    "tx_hash": "0x45442d16a51b9e2038ea15b732f641d2e673e59f392a6b0e099b57b67b17daf1",
+    "block": 84369481,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84369481 (tx 0x45442d16a51b9e2038ea15b732f641d2e673e59f392a6b0e099b57b67b17daf1); name=Homeowner symbol=HMOWNR. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:04:13.343Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "3 transfers / 3 addrs / 1 net holders since launch block 84369481 (probe tip ~84572k)",
+   "social_signal": "weak",
+   "social_detail": "no mentions of this token/contract in web search; name searches returned only unrelated projects",
+   "money_flow": "mixed",
+   "money_flow_detail": "mint + initial distribution only; no V2 WETH pair, no V4 pools (gate + fresh pairOf check); no trading possible",
+   "onchain_detail": "fresh getLogs probe from launch block to tip; gate warned no-liquidity + thin holder data, confirmed onchain",
+   "solana_pulse": {
+    "sol_usd": 109.15,
+    "sol_24h_change_pct": -1.043,
+    "price_source": "sol-price-cache.json at 2026-10-09T23:29:00Z",
+    "pumpfun_feed": "cold: 0 new mints in last 2h (675 tracked in pump-fun-seen.json)",
+    "x_news": "no fresh market-moving Solana news in last ~2h (price pages + stale analyses only; no outage/exploit/big-launch items)",
+    "stance": "risk-off/quiet for Solana memecoins: SOL soft -1%, launch feed dead, no catalyst. candidates are robinhood-chain; pulse is ecosystem context only"
+   },
+   "verdict": "skip",
+   "verdict_note": "fresh launch, zero liquidity, no trading velocity, concentrated end-state, no social footprint. nothing actionable for dubie.",
+   "queue_rows": 2
+  },
+  {
+   "investigated_at": "2026-10-10T00:18:47.016Z",
+   "candidate": {
+    "type": "token",
+    "contract": "0xe08927455acc850ab19ee2db9fc670c56c1b9477",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T18:35:21.307Z",
+    "tx_hash": "0x790bcc8a7eac368eee3850b0cf5369f66c62572fd3be71e60cbd43f38c1f5761",
+    "block": 84369545,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84369545 (tx 0x790bcc8a7eac368eee3850b0cf5369f66c62572fd3be71e60cbd43f38c1f5761); name=FoxKnox symbol=KNOX. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:04:38.371Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "7 transfers / 5 addrs / 1 net holders since launch block 84369545 (probe tip ~84572k)",
+   "social_signal": "weak",
+   "social_detail": "no mentions of this token/contract in web search; name searches returned only unrelated projects",
+   "money_flow": "mixed",
+   "money_flow_detail": "duplicate-name contract #1; quiet, single net holder; no V2 WETH pair, no V4 pools (gate + fresh pairOf check); no trading possible",
+   "onchain_detail": "fresh getLogs probe from launch block to tip; gate warned no-liquidity + thin holder data, confirmed onchain",
+   "solana_pulse": {
+    "sol_usd": 109.15,
+    "sol_24h_change_pct": -1.043,
+    "price_source": "sol-price-cache.json at 2026-10-09T23:29:00Z",
+    "pumpfun_feed": "cold: 0 new mints in last 2h (675 tracked in pump-fun-seen.json)",
+    "x_news": "no fresh market-moving Solana news in last ~2h (price pages + stale analyses only; no outage/exploit/big-launch items)",
+    "stance": "risk-off/quiet for Solana memecoins: SOL soft -1%, launch feed dead, no catalyst. candidates are robinhood-chain; pulse is ecosystem context only"
+   },
+   "verdict": "skip",
+   "verdict_note": "fresh launch, zero liquidity, no trading velocity, concentrated end-state, no social footprint. nothing actionable for dubie.",
+   "queue_rows": 2
+  },
+  {
+   "investigated_at": "2026-10-10T00:18:47.016Z",
+   "candidate": {
+    "type": "token",
+    "contract": "0xd31554cc26ef069d86143cf4a15701765e76a47b",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T18:35:26.050Z",
+    "tx_hash": "0x038a5d3fb9a49636924806d563a31dbac9b5663d683d0b62a4f66f8a5f865e73",
+    "block": 84370023,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84370023 (tx 0x038a5d3fb9a49636924806d563a31dbac9b5663d683d0b62a4f66f8a5f865e73); name=FoxKnox symbol=KNOX. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:04:59.290Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "357 transfers / 110 addrs / 3 net holders since launch block 84370023 (probe tip ~84572k)",
+   "social_signal": "weak",
+   "social_detail": "no mentions of this token/contract in web search; name searches returned only unrelated projects",
+   "money_flow": "bot",
+   "money_flow_detail": "duplicate-name contract #2; WASH PATTERN: 107 senders/109 receivers over 182 blocks, 100% reconcentrated to 0xc7b3d9a265; fan-out/fan-in, not organic demand; no V2 WETH pair, no V4 pools (gate + fresh pairOf check); no trading possible",
+   "onchain_detail": "fresh getLogs probe from launch block to tip; gate warned no-liquidity + thin holder data, confirmed onchain",
+   "solana_pulse": {
+    "sol_usd": 109.15,
+    "sol_24h_change_pct": -1.043,
+    "price_source": "sol-price-cache.json at 2026-10-09T23:29:00Z",
+    "pumpfun_feed": "cold: 0 new mints in last 2h (675 tracked in pump-fun-seen.json)",
+    "x_news": "no fresh market-moving Solana news in last ~2h (price pages + stale analyses only; no outage/exploit/big-launch items)",
+    "stance": "risk-off/quiet for Solana memecoins: SOL soft -1%, launch feed dead, no catalyst. candidates are robinhood-chain; pulse is ecosystem context only"
+   },
+   "verdict": "skip",
+   "verdict_note": "fresh launch, zero liquidity, no trading velocity, concentrated end-state, no social footprint. nothing actionable for dubie.",
+   "queue_rows": 2
+  },
+  {
+   "investigated_at": "2026-10-10T00:18:47.016Z",
+   "candidate": {
+    "type": "token",
+    "contract": "0x879a60cce6d653de03bc266861147c78fc282db3",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T18:35:27.999Z",
+    "tx_hash": "0xdd10a5c18b9f4a9edaf6773686f8e472ca8c849debb5c975d6236681f3d63c84",
+    "block": 84370063,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84370063 (tx 0xdd10a5c18b9f4a9edaf6773686f8e472ca8c849debb5c975d6236681f3d63c84); name=Overload symbol=OVERLOAD. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:05:09.290Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "3 transfers / 3 addrs / 1 net holders since launch block 84370063 (probe tip ~84572k)",
+   "social_signal": "weak",
+   "social_detail": "no mentions of this token/contract in web search; name searches returned only unrelated projects",
+   "money_flow": "mixed",
+   "money_flow_detail": "mint + initial distribution only; no V2 WETH pair, no V4 pools (gate + fresh pairOf check); no trading possible",
+   "onchain_detail": "fresh getLogs probe from launch block to tip; gate warned no-liquidity + thin holder data, confirmed onchain",
+   "solana_pulse": {
+    "sol_usd": 109.15,
+    "sol_24h_change_pct": -1.043,
+    "price_source": "sol-price-cache.json at 2026-10-09T23:29:00Z",
+    "pumpfun_feed": "cold: 0 new mints in last 2h (675 tracked in pump-fun-seen.json)",
+    "x_news": "no fresh market-moving Solana news in last ~2h (price pages + stale analyses only; no outage/exploit/big-launch items)",
+    "stance": "risk-off/quiet for Solana memecoins: SOL soft -1%, launch feed dead, no catalyst. candidates are robinhood-chain; pulse is ecosystem context only"
+   },
+   "verdict": "skip",
+   "verdict_note": "fresh launch, zero liquidity, no trading velocity, concentrated end-state, no social footprint. nothing actionable for dubie.",
+   "queue_rows": 2
+  },
+  {
+   "investigated_at": "2026-10-10T00:18:47.016Z",
+   "candidate": {
+    "type": "token",
+    "contract": "0xac7c37021a1b63e7d3f3bbf7c399351640cf5d48",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T18:35:30.846Z",
+    "tx_hash": "0x229b7ebd49134f3a9fc3474f2d053dbb3add27b92b983c6bd3ef467be6a141aa",
+    "block": 84370153,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84370153 (tx 0x229b7ebd49134f3a9fc3474f2d053dbb3add27b92b983c6bd3ef467be6a141aa); name=Cherry Foundation symbol=CHERRY. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:05:19.625Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "12 transfers / 8 addrs / 1 net holders since launch block 84370153 (probe tip ~84572k)",
+   "social_signal": "weak",
+   "social_detail": "no mentions of this token/contract in web search; name searches returned only unrelated projects",
+   "money_flow": "mixed",
+   "money_flow_detail": "small distribution, single net holder; no V2 WETH pair, no V4 pools (gate + fresh pairOf check); no trading possible",
+   "onchain_detail": "fresh getLogs probe from launch block to tip; gate warned no-liquidity + thin holder data, confirmed onchain",
+   "solana_pulse": {
+    "sol_usd": 109.15,
+    "sol_24h_change_pct": -1.043,
+    "price_source": "sol-price-cache.json at 2026-10-09T23:29:00Z",
+    "pumpfun_feed": "cold: 0 new mints in last 2h (675 tracked in pump-fun-seen.json)",
+    "x_news": "no fresh market-moving Solana news in last ~2h (price pages + stale analyses only; no outage/exploit/big-launch items)",
+    "stance": "risk-off/quiet for Solana memecoins: SOL soft -1%, launch feed dead, no catalyst. candidates are robinhood-chain; pulse is ecosystem context only"
+   },
+   "verdict": "skip",
+   "verdict_note": "fresh launch, zero liquidity, no trading velocity, concentrated end-state, no social footprint. nothing actionable for dubie.",
+   "queue_rows": 2
+  },
+  {
+   "investigated_at": "2026-10-10T00:18:47.016Z",
+   "candidate": {
+    "type": "token",
+    "contract": "0x4da4d69f20c0ecd4e779442e4f50fbf8e41ea145",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T18:35:34.034Z",
+    "tx_hash": "0xbcd844032ae068905554367ff435176d099788d7dc6febea9d956cc18be54cb8",
+    "block": 84370154,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84370154 (tx 0xbcd844032ae068905554367ff435176d099788d7dc6febea9d956cc18be54cb8); name=Tutti symbol=TUTTI. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:05:44.679Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "26 transfers / 11 addrs / 1 net holders since launch block 84370154 (probe tip ~84572k)",
+   "social_signal": "weak",
+   "social_detail": "no mentions of this token/contract in web search; name searches returned only unrelated projects",
+   "money_flow": "mixed",
+   "money_flow_detail": "small distribution, single net holder; no V2 WETH pair, no V4 pools (gate + fresh pairOf check); no trading possible",
+   "onchain_detail": "fresh getLogs probe from launch block to tip; gate warned no-liquidity + thin holder data, confirmed onchain",
+   "solana_pulse": {
+    "sol_usd": 109.15,
+    "sol_24h_change_pct": -1.043,
+    "price_source": "sol-price-cache.json at 2026-10-09T23:29:00Z",
+    "pumpfun_feed": "cold: 0 new mints in last 2h (675 tracked in pump-fun-seen.json)",
+    "x_news": "no fresh market-moving Solana news in last ~2h (price pages + stale analyses only; no outage/exploit/big-launch items)",
+    "stance": "risk-off/quiet for Solana memecoins: SOL soft -1%, launch feed dead, no catalyst. candidates are robinhood-chain; pulse is ecosystem context only"
+   },
+   "verdict": "skip",
+   "verdict_note": "fresh launch, zero liquidity, no trading velocity, concentrated end-state, no social footprint. nothing actionable for dubie.",
+   "queue_rows": 2
+  },
+  {
+   "investigated_at": "2026-10-10T00:18:47.016Z",
+   "candidate": {
+    "type": "token",
+    "contract": "0x3168a1406fee2b57682826c9fd393ab9704e4547",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T18:35:36.287Z",
+    "tx_hash": "0xce1a5ad8d6ba8d51306865c5632cd1e2639f05079ec676d392d3c1dbc35e0195",
+    "block": 84370371,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84370371 (tx 0xce1a5ad8d6ba8d51306865c5632cd1e2639f05079ec676d392d3c1dbc35e0195); name=Pirsch Analytics symbol=PIRSCHANA. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:05:53.012Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "13 transfers / 9 addrs / 2 net holders since launch block 84370371 (probe tip ~84572k)",
+   "social_signal": "weak",
+   "social_detail": "no mentions of this token/contract in web search; name searches returned only unrelated projects",
+   "money_flow": "mixed",
+   "money_flow_detail": "small distribution, 2 net holders; no V2 WETH pair, no V4 pools (gate + fresh pairOf check); no trading possible",
+   "onchain_detail": "fresh getLogs probe from launch block to tip; gate warned no-liquidity + thin holder data, confirmed onchain",
+   "solana_pulse": {
+    "sol_usd": 109.15,
+    "sol_24h_change_pct": -1.043,
+    "price_source": "sol-price-cache.json at 2026-10-09T23:29:00Z",
+    "pumpfun_feed": "cold: 0 new mints in last 2h (675 tracked in pump-fun-seen.json)",
+    "x_news": "no fresh market-moving Solana news in last ~2h (price pages + stale analyses only; no outage/exploit/big-launch items)",
+    "stance": "risk-off/quiet for Solana memecoins: SOL soft -1%, launch feed dead, no catalyst. candidates are robinhood-chain; pulse is ecosystem context only"
+   },
+   "verdict": "skip",
+   "verdict_note": "fresh launch, zero liquidity, no trading velocity, concentrated end-state, no social footprint. nothing actionable for dubie.",
+   "queue_rows": 2
+  },
+  {
+   "investigated_at": "2026-10-10T00:18:47.016Z",
+   "candidate": {
+    "type": "token",
+    "contract": "0x38dcb1f045079ef16bbc6191946cd34a2a3cab77",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T18:35:37.441Z",
+    "tx_hash": "0xce5b9be62e8058ef34ac02541989171f289d55ab23048531634f64d15567a087",
+    "block": 84370792,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84370792 (tx 0xce5b9be62e8058ef34ac02541989171f289d55ab23048531634f64d15567a087); name=Priors Agents symbol=PRIORS. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:06:02.774Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "7 transfers / 4 addrs / 1 net holders since launch block 84370792 (probe tip ~84572k)",
+   "social_signal": "weak",
+   "social_detail": "no mentions of this token/contract in web search; name searches returned only unrelated projects",
+   "money_flow": "mixed",
+   "money_flow_detail": "quiet, single net holder; no V2 WETH pair, no V4 pools (gate + fresh pairOf check); no trading possible",
+   "onchain_detail": "fresh getLogs probe from launch block to tip; gate warned no-liquidity + thin holder data, confirmed onchain",
+   "solana_pulse": {
+    "sol_usd": 109.15,
+    "sol_24h_change_pct": -1.043,
+    "price_source": "sol-price-cache.json at 2026-10-09T23:29:00Z",
+    "pumpfun_feed": "cold: 0 new mints in last 2h (675 tracked in pump-fun-seen.json)",
+    "x_news": "no fresh market-moving Solana news in last ~2h (price pages + stale analyses only; no outage/exploit/big-launch items)",
+    "stance": "risk-off/quiet for Solana memecoins: SOL soft -1%, launch feed dead, no catalyst. candidates are robinhood-chain; pulse is ecosystem context only"
+   },
+   "verdict": "skip",
+   "verdict_note": "fresh launch, zero liquidity, no trading velocity, concentrated end-state, no social footprint. nothing actionable for dubie.",
+   "queue_rows": 2
+  },
+  {
+   "investigated_at": "2026-10-10T00:18:47.016Z",
+   "candidate": {
+    "type": "token",
+    "contract": "0x446b03a333ac58255b149853413a96edb9309669",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T18:35:45.193Z",
+    "tx_hash": "0x8a45d0db77ee1481c5ad9a2d5799ae0af9a014a519fa3a412a45fb99a67e8782",
+    "block": 84370997,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84370997 (tx 0x8a45d0db77ee1481c5ad9a2d5799ae0af9a014a519fa3a412a45fb99a67e8782); name=ZNodeGrid symbol=ZNODE. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:06:16.957Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "3 transfers / 3 addrs / 2 net holders since launch block 84370997 (probe tip ~84572k)",
+   "social_signal": "weak",
+   "social_detail": "no mentions of this token/contract in web search; name searches returned only unrelated projects",
+   "money_flow": "mixed",
+   "money_flow_detail": "mint + initial distribution only; no V2 WETH pair, no V4 pools (gate + fresh pairOf check); no trading possible",
+   "onchain_detail": "fresh getLogs probe from launch block to tip; gate warned no-liquidity + thin holder data, confirmed onchain",
+   "solana_pulse": {
+    "sol_usd": 109.15,
+    "sol_24h_change_pct": -1.043,
+    "price_source": "sol-price-cache.json at 2026-10-09T23:29:00Z",
+    "pumpfun_feed": "cold: 0 new mints in last 2h (675 tracked in pump-fun-seen.json)",
+    "x_news": "no fresh market-moving Solana news in last ~2h (price pages + stale analyses only; no outage/exploit/big-launch items)",
+    "stance": "risk-off/quiet for Solana memecoins: SOL soft -1%, launch feed dead, no catalyst. candidates are robinhood-chain; pulse is ecosystem context only"
+   },
+   "verdict": "skip",
+   "verdict_note": "fresh launch, zero liquidity, no trading velocity, concentrated end-state, no social footprint. nothing actionable for dubie.",
+   "queue_rows": 1
+  },
+  {
+   "investigated_at": "2026-10-10T00:18:47.016Z",
+   "candidate": {
+    "type": "token",
+    "contract": "0x5887e1b143c6f9f6ea14d24cb0ddac52d44e0e0a",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-09T18:35:46.817Z",
+    "tx_hash": "0x48c38393ee0d92beed6dccdaf5989446b9affe64c7304160c30ad8921eebfd82",
+    "block": 84371174,
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84371174 (tx 0x48c38393ee0d92beed6dccdaf5989446b9affe64c7304160c30ad8921eebfd82); name=Otterkeel symbol=OTKEEL. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:06:23.248Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "67 transfers / 32 addrs / 3 net holders since launch block 84371174 (probe tip ~84572k)",
+   "social_signal": "weak",
+   "social_detail": "no mentions of this token/contract in web search; name searches returned only unrelated projects",
+   "money_flow": "bot",
+   "money_flow_detail": "airdrop-style distribution: 1 mint, 67 transfers across 29 blocks (~1.3h), 100% ends with minter 0x2de5fd26f0; top sender is the minter itself (22 sends); no external demand; no V2 WETH pair, no V4 pools (gate + fresh pairOf check); no trading possible",
+   "onchain_detail": "fresh getLogs probe from launch block to tip; gate warned no-liquidity + thin holder data, confirmed onchain",
+   "solana_pulse": {
+    "sol_usd": 109.15,
+    "sol_24h_change_pct": -1.043,
+    "price_source": "sol-price-cache.json at 2026-10-09T23:29:00Z",
+    "pumpfun_feed": "cold: 0 new mints in last 2h (675 tracked in pump-fun-seen.json)",
+    "x_news": "no fresh market-moving Solana news in last ~2h (price pages + stale analyses only; no outage/exploit/big-launch items)",
+    "stance": "risk-off/quiet for Solana memecoins: SOL soft -1%, launch feed dead, no catalyst. candidates are robinhood-chain; pulse is ecosystem context only"
+   },
+   "verdict": "skip",
+   "verdict_note": "fresh launch, zero liquidity, no trading velocity, concentrated end-state, no social footprint. nothing actionable for dubie.",
+   "queue_rows": 2
+  },
+  {
+   "investigated_at": "2026-10-10T00:18:47.016Z",
+   "candidate": {
+    "type": "pair",
+    "contract": "0xf9875baa083d033bd5414ca82c41ede7778f385e",
+    "chain": "robinhood",
+    "scout": "new-pairs",
+    "found_at": "2026-10-09T18:38:15.535Z",
+    "tx_hash": null,
+    "block": null,
+    "detail": "V2 pair created block 84366772 via factory 0x8bceaa40…. 22 swaps since creation (22 buys / 0 sells), ~2.23 WETH volume, reserves 32.84 WETH / 5133135.1k GENESIS. FLAGS: no sells observed yet",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:06:34.168Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "dangerous selectors present (mint(address)) but no owner() — power unattributable",
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "3 transfers / 4 addrs / 2 net holders since launch block None (probe tip ~84572k)",
+   "social_signal": "weak",
+   "social_detail": "no mentions of this token/contract in web search; name searches returned only unrelated projects",
+   "money_flow": "mixed",
+   "money_flow_detail": "gate: mint(address) selector present, no owner() - power unattributable; no activity; no V2 WETH pair, no V4 pools (gate + fresh pairOf check); no trading possible",
+   "onchain_detail": "fresh getLogs probe from launch block to tip; gate warned no-liquidity + thin holder data, confirmed onchain",
+   "solana_pulse": {
+    "sol_usd": 109.15,
+    "sol_24h_change_pct": -1.043,
+    "price_source": "sol-price-cache.json at 2026-10-09T23:29:00Z",
+    "pumpfun_feed": "cold: 0 new mints in last 2h (675 tracked in pump-fun-seen.json)",
+    "x_news": "no fresh market-moving Solana news in last ~2h (price pages + stale analyses only; no outage/exploit/big-launch items)",
+    "stance": "risk-off/quiet for Solana memecoins: SOL soft -1%, launch feed dead, no catalyst. candidates are robinhood-chain; pulse is ecosystem context only"
+   },
+   "verdict": "skip",
+   "verdict_note": "fresh launch, zero liquidity, no trading velocity, concentrated end-state, no social footprint. nothing actionable for dubie.",
+   "queue_rows": 1
+  },
+  {
+   "investigated_at": "2026-10-10T00:18:47.016Z",
+   "candidate": {
+    "type": "pair",
+    "contract": "0x2b6dc217654c4f061274374a6b9360b22f988019",
+    "chain": "robinhood",
+    "scout": "new-pairs",
+    "found_at": "2026-10-09T18:38:15.535Z",
+    "tx_hash": null,
+    "block": null,
+    "detail": "V2 pair created block 84370936 via factory 0x8bceaa40…. 18 swaps since creation (18 buys / 0 sells), ~0.71 WETH volume, reserves 1.91 WETH / 524.5k ZAPE. FLAGS: no sells observed yet",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:06:42.935Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "dangerous selectors present (mint(address)) but no owner() — power unattributable",
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "3 transfers / 4 addrs / 2 net holders since launch block None (probe tip ~84572k)",
+   "social_signal": "weak",
+   "social_detail": "no mentions of this token/contract in web search; name searches returned only unrelated projects",
+   "money_flow": "mixed",
+   "money_flow_detail": "gate: mint(address) selector present, no owner() - power unattributable; no activity; no V2 WETH pair, no V4 pools (gate + fresh pairOf check); no trading possible",
+   "onchain_detail": "fresh getLogs probe from launch block to tip; gate warned no-liquidity + thin holder data, confirmed onchain",
+   "solana_pulse": {
+    "sol_usd": 109.15,
+    "sol_24h_change_pct": -1.043,
+    "price_source": "sol-price-cache.json at 2026-10-09T23:29:00Z",
+    "pumpfun_feed": "cold: 0 new mints in last 2h (675 tracked in pump-fun-seen.json)",
+    "x_news": "no fresh market-moving Solana news in last ~2h (price pages + stale analyses only; no outage/exploit/big-launch items)",
+    "stance": "risk-off/quiet for Solana memecoins: SOL soft -1%, launch feed dead, no catalyst. candidates are robinhood-chain; pulse is ecosystem context only"
+   },
+   "verdict": "skip",
+   "verdict_note": "fresh launch, zero liquidity, no trading velocity, concentrated end-state, no social footprint. nothing actionable for dubie.",
+   "queue_rows": 1
+  },
+  {
+   "investigated_at": "2026-10-10T00:18:47.016Z",
+   "candidate": {
+    "type": "pair",
+    "contract": "0x063e405d1260c90e7ebe9f9ed094c5c4b455c00b",
+    "chain": "robinhood",
+    "scout": "new-pairs",
+    "found_at": "2026-10-09T18:38:15.535Z",
+    "tx_hash": null,
+    "block": null,
+    "detail": "V2 pair created block 84369561 via factory 0x0d1ebb17…. 5 swaps since creation (3 buys / 2 sells), ~0.0016 WETH volume, reserves 1.92 WETH / 1107036.5k QLAB",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:06:50.652Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "0 transfers / 0 addrs / 0 net holders since launch block None (probe tip ~84572k)",
+   "social_signal": "weak",
+   "social_detail": "no mentions of this token/contract in web search; name searches returned only unrelated projects",
+   "money_flow": "mixed",
+   "money_flow_detail": "zero transfers since deploy; totalSupply readable but nothing moved; no V2 WETH pair, no V4 pools (gate + fresh pairOf check); no trading possible",
+   "onchain_detail": "fresh getLogs probe from launch block to tip; gate warned no-liquidity + thin holder data, confirmed onchain",
+   "solana_pulse": {
+    "sol_usd": 109.15,
+    "sol_24h_change_pct": -1.043,
+    "price_source": "sol-price-cache.json at 2026-10-09T23:29:00Z",
+    "pumpfun_feed": "cold: 0 new mints in last 2h (675 tracked in pump-fun-seen.json)",
+    "x_news": "no fresh market-moving Solana news in last ~2h (price pages + stale analyses only; no outage/exploit/big-launch items)",
+    "stance": "risk-off/quiet for Solana memecoins: SOL soft -1%, launch feed dead, no catalyst. candidates are robinhood-chain; pulse is ecosystem context only"
+   },
+   "verdict": "skip",
+   "verdict_note": "fresh launch, zero liquidity, no trading velocity, concentrated end-state, no social footprint. nothing actionable for dubie.",
+   "queue_rows": 1
+  },
+  {
+   "investigated_at": "2026-10-10T00:18:47.016Z",
+   "candidate": {
+    "type": "contract",
+    "contract": "0x2fd06a9cfe2e239c6a41e13c1a01bea659cd521d",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "found_at": "2026-10-09T18:39:12.214Z",
+    "tx_hash": "0xd764fc5ab1fe3d56af8b37cb5f9b0b874f5f50f97485df9269c54700f0d8cb30",
+    "block": 84374108,
+    "detail": "new contract deployed in block 84374108",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-10T00:06:57.556Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "0 transfers / 0 addrs / 0 net holders since launch block 84374108 (probe tip ~84572k)",
+   "social_signal": "weak",
+   "social_detail": "no mentions of this token/contract in web search; name searches returned only unrelated projects",
+   "money_flow": "mixed",
+   "money_flow_detail": "zero transfers since deploy; totalSupply unreadable per gate; no V2 WETH pair, no V4 pools (gate + fresh pairOf check); no trading possible",
+   "onchain_detail": "fresh getLogs probe from launch block to tip; gate warned no-liquidity + thin holder data, confirmed onchain",
+   "solana_pulse": {
+    "sol_usd": 109.15,
+    "sol_24h_change_pct": -1.043,
+    "price_source": "sol-price-cache.json at 2026-10-09T23:29:00Z",
+    "pumpfun_feed": "cold: 0 new mints in last 2h (675 tracked in pump-fun-seen.json)",
+    "x_news": "no fresh market-moving Solana news in last ~2h (price pages + stale analyses only; no outage/exploit/big-launch items)",
+    "stance": "risk-off/quiet for Solana memecoins: SOL soft -1%, launch feed dead, no catalyst. candidates are robinhood-chain; pulse is ecosystem context only"
+   },
+   "verdict": "skip",
+   "verdict_note": "fresh launch, zero liquidity, no trading velocity, concentrated end-state, no social footprint. nothing actionable for dubie.",
+   "queue_rows": 1
   }
  ],
  "scores": [
@@ -251635,6 +252167,18 @@
    "processed_at": "2026-10-09T23:46:47.934877+00:00",
    "gate_status": "n/a-tick-note",
    "processed_note": "flock-decision run 2026-10-09 19:44 EDT: 0 unprocessed entries (328 total, all processed). whale feed: 17 new moves since 19:39 tick - QI 14 moves ~$30.4k, PONS 2 moves ~$6.8k, CASHCAT 1 move ~$6.8k. ALL 17 receiver_is_contract=true (pool-ops/contract-shaped, not buys), single whale per token, watcher convergence flags = 0. QI has no pipeline entry (never gated/scored) - no scoring without gate_pass. CASHCAT position OPEN (challenge watch) - its whale flow is contract-directed, no re-buy on a held token. PONS standing score 71 buy (sustained) carried, NOT executed (standing real-money pause pending dubie broad-vs-narrow auto-buy pick). nothing scored, no executions. no message to dubie - quiet tick."
+  },
+  {
+   "processed": true,
+   "processed_at": "2026-10-10T00:17:44.479329+00:00",
+   "gate_status": "n/a-tick-note",
+   "token": "flock-decision tick 2026-10-09 20:12 EDT",
+   "contract": null,
+   "recommendation": "no-action",
+   "cardigan_score": null,
+   "decision": null,
+   "decided_at": null,
+   "note": "tick 2026-10-09 20:12 EDT: 329 entries, all processed, 0 unprocessed. whale feed: PONS 3-whale convergence (3rd consecutive tick, ~$111.7k bought) + CASHCAT 2-whale convergence ($77k+$67.9k) from 20:12 whale-watcher tick already handed off to humming-hymn-chain-listener for investigation; no new scored candidates in queue yet. CASHCAT position already OPEN, no re-buy. execution paused pending dubie rule pick. no scoring, no execution this tick."
   }
  ],
  "tracking": {
@@ -408580,8 +409124,8 @@
   "whale-watcher"
  ],
  "last_activity": {
-  "scout": "2026-10-10T00:16:55.069Z",
-  "hymn": "2026-10-10T00:10:51.864Z",
+  "scout": "2026-10-10T00:18:30.680Z",
+  "hymn": "2026-10-10T00:18:47.016Z",
   "scorer": "2026-10-10T00:16:45Z",
   "snug": null,
   "cardigan": null
@@ -408598,7 +409142,7 @@
     "chain": "robinhood",
     "entered_at": "2026-10-09T01:52:36.263Z",
     "entry_price_usd": null,
-    "current_price_usd": 0.1133,
+    "current_price_usd": 0.1134,
     "pnl_pct": null,
     "exit_plan": null
    },
@@ -408610,8 +409154,8 @@
     "tx_hash": "0xcd209345f031f3ae4337c6feea42e3d8e01ac92d777205864e60ab2dd0bea993",
     "entered_at": "2026-10-08T20:58:38.421Z",
     "entry_price_usd": 0.011554,
-    "current_price_usd": 0.01292,
-    "pnl_pct": 11.822745369568974,
+    "current_price_usd": 0.01291,
+    "pnl_pct": 11.736195257053831,
     "amount_tokens": 1055.8207,
     "amount_eth_in": 0.005,
     "score": 62,
@@ -408660,8 +409204,8 @@
     "tx_hash": "0x0cef41c59b5ff5890632d9a5d376772d22fd5c83eb6d90960088f8f66517ec90",
     "entered_at": "2026-10-09T01:51:03.242Z",
     "entry_price_usd": 0.1135,
-    "current_price_usd": 0.1133,
-    "pnl_pct": -0.17621145374449843,
+    "current_price_usd": 0.1134,
+    "pnl_pct": -0.08810572687224921,
     "amount_tokens": 216.29986717343255,
     "amount_eth_in": 0.01,
     "score": 60,
@@ -408687,7 +409231,7 @@
     "tx_hash": "0x750f3d68427ad7be0a12ca6aaf1ab7d1829802294b36090161aaf08025799dbd",
     "entered_at": "2026-10-08T20:15:30.720Z",
     "entry_price_usd": 0.01156,
-    "current_price_usd": 0.01292,
+    "current_price_usd": 0.01291,
     "pnl_pct": 0,
     "amount_tokens": 1055.2497206937642,
     "amount_eth_in": 0.005,

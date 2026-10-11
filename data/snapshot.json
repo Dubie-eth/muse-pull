@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-11T07:54:56.464Z",
+ "updated_at": "2026-10-11T07:56:56.215Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
@@ -2625,7 +2625,19 @@
    "block": 85672902,
    "curve": "0xada49ddf64a4ef572a0af0e6de53e3abaa0900c3",
    "deployer": "0x779b1e3af5a4b85d08296eb7adc17f0499344fe5",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85672902 (tx 0x546200f31036a3d1f3d2f4d7e575654a37d0b242b4bbcd6b9acf6ba43b99cc04); name=veracity symbol=VERACITY curve=0xada49ddf64a4ef572a0af0e6de53e3abaa0900c3 deployer=0x779b1e3af5a4b85d08296eb7adc17f0499344fe5. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85672902 (tx 0x546200f31036a3d1f3d2f4d7e575654a37d0b242b4bbcd6b9acf6ba43b99cc04); name=veracity symbol=VERACITY curve=0xada49ddf64a4ef572a0af0e6de53e3abaa0900c3 deployer=0x779b1e3af5a4b85d08296eb7adc17f0499344fe5. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_error",
+   "gate_checked_at": "2026-10-11T07:56:29.868Z",
+   "gate_reasons": [
+    "gate threw: fetch failed"
+   ],
+   "gate_warnings": [],
+   "gate_detail": {},
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "gate-gate_error",
+    "gate": "gate_error"
+   }
   },
   {
    "found_at": "2026-10-11T07:54:23.202Z",
@@ -2640,7 +2652,97 @@
    "block": 85672915,
    "curve": "0x146d2a8ebe8ddc4a31ce1dee4b548d28fe60613e",
    "deployer": "0x660591c04dd40ac2d6604ecc2951e155fbd914b7",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85672915 (tx 0x0a6c685ac82434aa428d3558b669d7e1f9246eae0695ac8c2b71815f31efef88); name=Trump Ocean symbol=TRUMPOCEAN curve=0x146d2a8ebe8ddc4a31ce1dee4b548d28fe60613e deployer=0x660591c04dd40ac2d6604ecc2951e155fbd914b7. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85672915 (tx 0x0a6c685ac82434aa428d3558b669d7e1f9246eae0695ac8c2b71815f31efef88); name=Trump Ocean symbol=TRUMPOCEAN curve=0x146d2a8ebe8ddc4a31ce1dee4b548d28fe60613e deployer=0x660591c04dd40ac2d6604ecc2951e155fbd914b7. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-11T07:55:39.073Z",
+   "gate_reasons": [
+    "curve 0x146d2a8ebe8ddc4a31ce1dee4b548d28fe60613e phase unreadable (totalSupply unreadable) — cannot verify graduation; fail closed"
+   ],
+   "gate_warnings": [
+    "thin holder data (2 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": false,
+      "reasons": [
+       "curve 0x146d2a8ebe8ddc4a31ce1dee4b548d28fe60613e phase unreadable (totalSupply unreadable) — cannot verify graduation; fail closed"
+      ],
+      "warnings": [],
+      "notes": [],
+      "detail": {
+       "curve": "0x146d2a8ebe8ddc4a31ce1dee4b548d28fe60613e",
+       "phase": {
+        "phase": "unknown",
+        "reason": "totalSupply unreadable"
+       }
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (2 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 2,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "unknown",
+     "reason": "totalSupply unreadable"
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "gate-gate_failed",
+    "gate": "gate_failed"
+   }
   },
   {
    "found_at": "2026-10-11T07:54:25.602Z",
@@ -2655,7 +2757,98 @@
    "block": 85673874,
    "curve": "0x51f4dc9ebc30c36a6fb893da61a89bd693844d23",
    "deployer": "0x6866cec2cb79f069ad505f47b508e40c1df54e1e",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85673874 (tx 0x720fef7fb6f69ef0231060de3eed994bfd02372df5d4b8524b1204f89a45ae16); name=veracity symbol=VERACITY curve=0x51f4dc9ebc30c36a6fb893da61a89bd693844d23 deployer=0x6866cec2cb79f069ad505f47b508e40c1df54e1e. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85673874 (tx 0x720fef7fb6f69ef0231060de3eed994bfd02372df5d4b8524b1204f89a45ae16); name=veracity symbol=VERACITY curve=0x51f4dc9ebc30c36a6fb893da61a89bd693844d23 deployer=0x6866cec2cb79f069ad505f47b508e40c1df54e1e. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-11T07:54:51.743Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "V4 liquidity lookup failed (fetch failed); gate used V2 figures only",
+    "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+    "thin holder data (5 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "lp-liquidity": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "V4 liquidity lookup failed (fetch failed); gate used V2 figures only",
+       "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+      ],
+      "notes": [],
+      "detail": {
+       "v2Skipped": true,
+       "poolValueEth": 0,
+       "v4Error": "fetch failed",
+       "combinedValueEth": 0,
+       "skipped": true
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (5 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 5,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "no-liquidity",
+    "gate": "gate_pass",
+    "agents": [],
+    "veto": false,
+    "liqEth": 0,
+    "venue": null
+   }
   }
  ],
  "scout_queue_total": 1924,
@@ -428432,7 +428625,13 @@
     "processed_at": "2026-10-10T11:02:25Z",
     "decision": "skip",
     "decision_note": "no gate_pass (gate=gate_pass (carried from earlier entries)) - binary gate rule: not scored"
-   }
+   },
+   "cardigan_decision": {
+    "action": "skip",
+    "reason": "HIGH-CAP SKIP: PONS mcap $236.9M (DexScreener, cited in 10-08 investigation) > $25M hard skip. Fresh 07:51Z 4-whale EOA convergence (this tick) is moot under the hard skip. Stale re-sight row.",
+    "tick": "2026-10-11 03:52 EDT"
+   },
+   "cardigan_decided_at": "2026-10-11T07:52:43Z"
   },
   {
    "broken_down_at": "2026-10-09T03:45:00.000Z",
@@ -428457,7 +428656,13 @@
     "processed_at": "2026-10-10T11:02:25Z",
     "decision": "skip",
     "decision_note": "no gate_pass (gate=gate_pass (carried from earlier entries)) - binary gate rule: not scored"
-   }
+   },
+   "cardigan_decision": {
+    "action": "skip",
+    "reason": "HIGH-CAP SKIP: PONS mcap $236.9M > $25M hard skip. Fresh 07:51Z 4-whale EOA convergence moot under hard skip. Stale re-sight row.",
+    "tick": "2026-10-11 03:52 EDT"
+   },
+   "cardigan_decided_at": "2026-10-11T07:52:43Z"
   },
   {
    "broken_down_at": "2026-10-09T04:05:00Z",
@@ -429530,7 +429735,13 @@
     "processed_at": "2026-10-10T11:02:25Z",
     "decision": "skip",
     "decision_note": "no gate_pass (gate=gate_pass (carried from earlier entries)) - binary gate rule: not scored"
-   }
+   },
+   "cardigan_decision": {
+    "action": "skip",
+    "reason": "HIGH-CAP SKIP: PONS mcap $236.9M > $25M hard skip. Stale re-sight row.",
+    "tick": "2026-10-11 03:52 EDT"
+   },
+   "cardigan_decided_at": "2026-10-11T07:52:43Z"
   },
   {
    "candidate": {
@@ -430240,7 +430451,13 @@
     "processed_at": "2026-10-10T11:02:25Z",
     "decision": "skip",
     "decision_note": "no gate_pass (gate=gate_pass (carried from earlier entries)) - binary gate rule: not scored"
-   }
+   },
+   "cardigan_decision": {
+    "action": "skip",
+    "reason": "HIGH-CAP SKIP: PONS mcap $236.9M > $25M hard skip. Stale re-sight row.",
+    "tick": "2026-10-11 03:52 EDT"
+   },
+   "cardigan_decided_at": "2026-10-11T07:52:43Z"
   },
   {
    "candidate": {
@@ -430260,7 +430477,13 @@
     "processed_at": "2026-10-10T11:02:25Z",
     "decision": "skip",
     "decision_note": "no gate_pass (gate=gate_pass (carried from earlier entries)) - binary gate rule: not scored"
-   }
+   },
+   "cardigan_decision": {
+    "action": "skip",
+    "reason": "HIGH-CAP SKIP: PONS mcap $236.9M > $25M hard skip. Stale re-sight row.",
+    "tick": "2026-10-11 03:52 EDT"
+   },
+   "cardigan_decided_at": "2026-10-11T07:52:43Z"
   },
   {
    "candidate": null,
@@ -431304,7 +431527,13 @@
     "processed_at": "2026-10-10T11:02:25Z",
     "decision": "skip",
     "decision_note": "no gate_pass (gate=gate_pass (carried from earlier entries)) - binary gate rule: not scored"
-   }
+   },
+   "cardigan_decision": {
+    "action": "skip",
+    "reason": "HIGH-CAP SKIP: PONS mcap $236.9M > $25M hard skip. Stale re-sight row.",
+    "tick": "2026-10-11 03:52 EDT"
+   },
+   "cardigan_decided_at": "2026-10-11T07:52:43Z"
   },
   {
    "broken_down_at": "2026-10-09T12:08:06Z",
@@ -431784,7 +432013,13 @@
     "processed_at": "2026-10-10T11:02:25Z",
     "decision": "skip",
     "decision_note": "no gate_pass (gate=gate_pass (carried from earlier entries)) - binary gate rule: not scored"
-   }
+   },
+   "cardigan_decision": {
+    "action": "watch",
+    "reason": "STALE DUPE: standing cardigan decision 2026-10-09T17:23Z on MEME = watch (score 73, cautious-buy band OVERRIDDEN by snug breakdown watch; mcap above buy lane). No new signal; position closed 2026-10-10.",
+    "tick": "2026-10-11 03:52 EDT"
+   },
+   "cardigan_decided_at": "2026-10-11T07:52:43Z"
   },
   {
    "candidate": {
@@ -431813,7 +432048,13 @@
     "processed_at": "2026-10-10T11:02:25Z",
     "decision": "skip",
     "decision_note": "no gate_pass (gate=gate_pass (carried from earlier entries)) - binary gate rule: not scored"
-   }
+   },
+   "cardigan_decision": {
+    "action": "skip",
+    "reason": "STALE: CASHCAT position closed 2026-10-10 (challenge pivot to new pairs/low caps). Old ledger row, not a fresh candidate.",
+    "tick": "2026-10-11 03:52 EDT"
+   },
+   "cardigan_decided_at": "2026-10-11T07:52:43Z"
   },
   {
    "broken_down_at": "2026-10-09T14:04:26.376942+00:00",
@@ -438387,7 +438628,13 @@
     "processed_at": "2026-10-10T11:02:25Z",
     "decision": "skip",
     "decision_note": "no gate_pass (gate=gate_pass (carried from earlier entries)) - binary gate rule: not scored"
-   }
+   },
+   "cardigan_decision": {
+    "action": "skip",
+    "reason": "HIGH-CAP SKIP: PONS mcap $236.9M > $25M hard skip. Stale re-sight row.",
+    "tick": "2026-10-11 03:52 EDT"
+   },
+   "cardigan_decided_at": "2026-10-11T07:52:43Z"
   },
   {
    "candidate": {
@@ -439032,7 +439279,13 @@
     "processed_at": "2026-10-10T11:02:25Z",
     "decision": "skip",
     "decision_note": "no gate_pass (gate=gate_pass (carried from earlier entries)) - binary gate rule: not scored"
-   }
+   },
+   "cardigan_decision": {
+    "action": "skip",
+    "reason": "HIGH-CAP SKIP: PONS mcap $236.9M > $25M hard skip. Stale re-sight row.",
+    "tick": "2026-10-11 03:52 EDT"
+   },
+   "cardigan_decided_at": "2026-10-11T07:52:43Z"
   },
   {
    "candidate": {
@@ -442030,7 +442283,13 @@
     "processed": true,
     "processed_at": "2026-10-10T19:00:00Z",
     "tick_note": "flock-decision tick 14:59 EDT: re-affirmed, not re-litigated (score 60 stood; fresh PONS convergence batch is contract-plumbing-heavy and candidate row is done/skip in queue.db; PONS is a $245M cap, outside the new-pairs/low-caps pivot)"
-   }
+   },
+   "cardigan_decision": {
+    "action": "skip",
+    "reason": "HIGH-CAP SKIP: PONS mcap $236.9M > $25M hard skip. Prior decision (10-10 08:26 EDT) scored 60/cautious-buy but mcap rule now hard-skips. Stale re-sight row.",
+    "tick": "2026-10-11 03:52 EDT"
+   },
+   "cardigan_decided_at": "2026-10-11T07:52:43Z"
   },
   {
    "candidate": {
@@ -709585,7 +709844,7 @@
     "tx_hash": "0x750f3d68427ad7be0a12ca6aaf1ab7d1829802294b36090161aaf08025799dbd",
     "entered_at": "2026-10-08T20:15:30.720Z",
     "entry_price_usd": 0.01156,
-    "current_price_usd": 0.01196,
+    "current_price_usd": 0.01195,
     "pnl_pct": 0,
     "amount_tokens": 1055.2497206937642,
     "amount_eth_in": 0.005,
@@ -709612,8 +709871,8 @@
     "tx_hash": "0xcd209345f031f3ae4337c6feea42e3d8e01ac92d777205864e60ab2dd0bea993",
     "entered_at": "2026-10-08T20:58:38.421Z",
     "entry_price_usd": 0.011554,
-    "current_price_usd": 0.01196,
-    "pnl_pct": 3.5139345681149394,
+    "current_price_usd": 0.01195,
+    "pnl_pct": 3.427384455599797,
     "amount_tokens": 1055.8207,
     "amount_eth_in": 0.005,
     "score": 62,
@@ -709686,7 +709945,7 @@
     "exit_price_usd": null
    }
   ],
-  "realized_pnl_pct_total": -7.820356888962162
+  "realized_pnl_pct_total": -7.906907001477304
  },
  "paper_trades": {
   "as_of": "2026-10-11T07:52:10.170Z",

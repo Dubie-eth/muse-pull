@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-11T13:17:03.611Z",
+ "updated_at": "2026-10-11T13:18:52.957Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
@@ -2095,7 +2095,97 @@
    "block": 85857677,
    "curve": "0xe332de746d66890f855b15a63c29f8056b2bd177",
    "deployer": "0x17a58a885f58317dbc618b71213c95455113e71d",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85857677 (tx 0xeae19f99e765cc5aa3d3d5e2b0e958529af61cd821a6622fcb9e088b80cee7ef); name=lupirini symbol=LUPIRINI curve=0xe332de746d66890f855b15a63c29f8056b2bd177 deployer=0x17a58a885f58317dbc618b71213c95455113e71d. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85857677 (tx 0xeae19f99e765cc5aa3d3d5e2b0e958529af61cd821a6622fcb9e088b80cee7ef); name=lupirini symbol=LUPIRINI curve=0xe332de746d66890f855b15a63c29f8056b2bd177 deployer=0x17a58a885f58317dbc618b71213c95455113e71d. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-11T13:17:51.077Z",
+   "gate_reasons": [
+    "curve-collected ETH ~0.0000 < 0.01 floor (pre-graduation venue)"
+   ],
+   "gate_warnings": [
+    "thin holder data (4 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": false,
+      "reasons": [
+       "curve-collected ETH ~0.0000 < 0.01 floor (pre-graduation venue)"
+      ],
+      "warnings": [],
+      "notes": [],
+      "detail": {
+       "curve": "0xe332de746d66890f855b15a63c29f8056b2bd177",
+       "phase": "pre",
+       "curvePct": 100,
+       "curveCodeBytes": 10229,
+       "curveEth": 1e-18
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (4 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 4,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "pre",
+     "curvePct": 100
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "gate-gate_failed",
+    "gate": "gate_failed"
+   }
   },
   {
    "found_at": "2026-10-11T13:14:02.590Z",
@@ -2110,7 +2200,97 @@
    "block": 85858252,
    "curve": "0xa319a74ab57c9cdf41ce2b9a48de1f5f6ae1677e",
    "deployer": "0x719eff70b132259b4ec262fdd1112b46cc88f15a",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85858252 (tx 0x956b06316519bf46645ba0582cde276f859472cefd526376061893d57f1c69a8); name=Phlox symbol=PHLOX curve=0xa319a74ab57c9cdf41ce2b9a48de1f5f6ae1677e deployer=0x719eff70b132259b4ec262fdd1112b46cc88f15a. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85858252 (tx 0x956b06316519bf46645ba0582cde276f859472cefd526376061893d57f1c69a8); name=Phlox symbol=PHLOX curve=0xa319a74ab57c9cdf41ce2b9a48de1f5f6ae1677e deployer=0x719eff70b132259b4ec262fdd1112b46cc88f15a. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-11T13:17:17.865Z",
+   "gate_reasons": [
+    "curve-collected ETH ~0.0003 < 0.01 floor (pre-graduation venue)"
+   ],
+   "gate_warnings": [
+    "thin holder data (4 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": false,
+      "reasons": [
+       "curve-collected ETH ~0.0003 < 0.01 floor (pre-graduation venue)"
+      ],
+      "warnings": [],
+      "notes": [],
+      "detail": {
+       "curve": "0xa319a74ab57c9cdf41ce2b9a48de1f5f6ae1677e",
+       "phase": "pre",
+       "curvePct": 100,
+       "curveCodeBytes": 10229,
+       "curveEth": 0.000326369999999999
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (4 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 4,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "pre",
+     "curvePct": 100
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "gate-gate_failed",
+    "gate": "gate_failed"
+   }
   },
   {
    "found_at": "2026-10-11T13:14:04.245Z",
@@ -251117,7 +251297,11 @@
    "social_scored_at": "2026-10-11T10:10:55.478Z",
    "snug_broken_down": true,
    "snug_broken_down_at": "2026-10-11T10:13:06.574Z",
-   "snug_processed": true
+   "snug_processed": true,
+   "snug_rebroken_down_at": "2026-10-11T13:17:35.043Z",
+   "snug_rebroken_down_reason": "consumed no social grade (breakdown 2026-10-11T10:13:06Z pre-dated the score); new grade F/3 landed 2026-10-11T10:36:00Z",
+   "snug_rebroken_down_resolution": "no new breakdown written: grade F confirms the existing 10:13Z weak/skip decision-queue entry; conclusion unchanged",
+   "snug_rebroken_down_resolved_at": "2026-10-11T13:17:35.043Z"
   },
   {
    "investigated_at": "2026-10-11T10:09:29.158Z",
@@ -251272,7 +251456,11 @@
    "social_scored_at": "2026-10-11T10:10:55.478Z",
    "snug_broken_down": true,
    "snug_broken_down_at": "2026-10-11T10:13:06.574Z",
-   "snug_processed": true
+   "snug_processed": true,
+   "snug_rebroken_down_at": "2026-10-11T13:17:35.043Z",
+   "snug_rebroken_down_reason": "consumed no social grade (breakdown 2026-10-11T10:13:06Z pre-dated the score); new grade F/4 landed 2026-10-11T10:36:00Z",
+   "snug_rebroken_down_resolution": "no new breakdown written: grade F confirms the existing 10:13Z weak/skip decision-queue entry; conclusion unchanged",
+   "snug_rebroken_down_resolved_at": "2026-10-11T13:17:35.043Z"
   },
   {
    "investigated_at": "2026-10-11T10:16:33.796Z",
@@ -254627,7 +254815,11 @@
    "snug_breakdown_durability": "uncertain",
    "snug_breakdown_recommendation": "skip",
    "snug_breakdown_reason": "genuine whale convergence (2 EOAs, ~$25.7-55.9k) and social grade B tailwind are real, but this is the established Pons platform token at a $250M+ mcap - ~15x above the standing $25M hard-skip ceiling and outside the fast lane's fresh-launch mandate. durability call is uncertain, not strong: the product is delivered and institutional-grade, but the tape is a downtrend (-58% off ATH) with fee revenue -78% off peak. watch-worthy, not buyable on the authorized rails.",
-   "snug_breakdown_note": "written to decision-queue.json 2026-10-11T12:55:26.198844+00:00"
+   "snug_breakdown_note": "written to decision-queue.json 2026-10-11T12:55:26.198844+00:00",
+   "snug_rebroken_down_at": "2026-10-11T13:17:35.043Z",
+   "snug_rebroken_down_reason": "consumed grade B at 2026-10-11T12:55:26Z (promising entry idx 3675); new grade C/41 landed 2026-10-11T13:00:20Z (PONS protocol token ~$244M mcap, ecosystem signal only)",
+   "snug_rebroken_down_resolution": "no new breakdown written: existing 12:55Z decision-queue entry is already skip (high-cap protocol token, mcap far above the $25M ceiling); B->C downgrade does not change the conclusion",
+   "snug_rebroken_down_resolved_at": "2026-10-11T13:17:35.043Z"
   },
   {
    "investigated_at": "2026-10-11T12:51:29.237Z",
@@ -255620,7 +255812,14 @@
    },
    "verdict": "needs-snug",
    "note": "pons V2 pre-grad; TokenLaunched attribution re-verified (curve+deployer match). 23 unique buyers is real participation and the 51% sell ratio is healthier than WILDCAP's 76%, BUT bot concentration is heavy: sniper contract 0x65050a9b7e5075a2ba5ced7b1b64ee66262c40dc made 31 buys (top buyer) and 0xf0b7eaaf86 made 17 — top-2 wallets = 59% of all buys; the 0x65050a9b contract churned 21 buys/19 sells on WILDCAP too — wash/prop pattern, not accumulation. cross-launch sniper 0xe33e9e479df8802cb0866d5d05258bec4cf62948 present. deployer 0xad82f3be7576… nonce 2, not in buyers. onchain name()/symbol() return EMPTY (scout name from event data). no X access (402); web search: zero mentions of this WROSE launch (only unrelated Wrapped Rose). real gate-passed liquidity + live flow = not skip; bot-dominated flow + blank name + no social = not promising. -> needs-snug for durability/social grading.",
-   "social_scored_at": "2026-10-11T13:14:07.917Z"
+   "social_scored_at": "2026-10-11T13:14:07.917Z",
+   "snug_processed": true,
+   "snug_broken_down": true,
+   "snug_broken_down_at": "2026-10-11T13:17:35.043Z",
+   "snug_breakdown_grade": "F",
+   "snug_breakdown_recommendation": "skip",
+   "snug_breakdown_durability": "weak",
+   "social_grade": "F"
   },
   {
    "investigated_at": "2026-10-11T13:10:16.992Z",
@@ -255651,7 +255850,14 @@
    },
    "verdict": "needs-snug",
    "note": "pons V2 pre-grad, ~80 min old; TokenLaunched attribution re-verified (curve+deployer match). curve 0.3076 ETH — above the 0.01 pre-grad floor and the 0.05 fast-lane floor. 42 unique buyers is real participation, BUT the top buyer is sniper contract 0x65050a9b7e5075a2ba5ced7b1b64ee66262c40dc with 21 buys totaling 0.6418 ETH (28% of buy volume) AND 19 sells — churn/prop flow, not accumulation. cross-launch sniper 0xe33e9e479df8802cb0866d5d05258bec4cf62948 (also bought DEAL+EVALE+SNORKEL this tick) present. sell/buy 76% by count. deployer 0x529ed2961f67… nonce 3, single launch in 100k blocks, not in buyers. onchain name()/symbol() return EMPTY (scout name from event data). no X access (402); web search: zero mentions of this WILDCAP launch (only unrelated Wilder World/WILDx). matches the QVAULT pattern (08:43 tick): bot-propped flow + heavy sells = not promising; real gate-passed liquidity = not skip. -> needs-snug for durability/social grading.",
-   "social_scored_at": "2026-10-11T13:14:07.917Z"
+   "social_scored_at": "2026-10-11T13:14:07.917Z",
+   "snug_processed": true,
+   "snug_broken_down": true,
+   "snug_broken_down_at": "2026-10-11T13:17:35.043Z",
+   "snug_breakdown_grade": "F",
+   "snug_breakdown_recommendation": "skip",
+   "snug_breakdown_durability": "weak",
+   "social_grade": "F"
   },
   {
    "investigated_at": "2026-10-11T13:10:16.992Z",
@@ -470558,6 +470764,68 @@
    "score_breakdown": "volume 15/40 (1.03 ETH curve inflow, 57 holders, but twin-wash buyer profile) + sentiment 0/20 (social grade F) + vitality 8/40 (momentum 4/11 capped — distribution mirrors twin wash pattern; pickup 2/11; already-talking 0/11; legs 2/7 — serial-farm one-off). mcap adjustment 0 (no dex quote). total 23/100 — below 50, skip band.",
    "decision_note": "F social grade = hard skip per backtest rule (D/F never buy). twin TRIVO launched 3 min apart by different deployer = serial-farm/sybil signature. fast lane already no-buy vetoed (wave-hello SKIP + humming-hymn SKIP). blanket-snug skip. no whale convergence. exit plan n/a — no buy.",
    "virality_lifecycle": "one-off (farm deploy; no follow-through expected)"
+  },
+  {
+   "broken_down_at": "2026-10-11T13:17:35.043Z",
+   "candidate": {
+    "contract": "0xcef4ca0cdc6c37e18cd90f87a09620deb083c67a",
+    "name": "Windrose Market WROSE",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-11T13:05:16.407Z",
+    "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85851422 (tx 0x27a20b484c1f8013d2e3b927bb05d230bab0a8ba7f3db85d9f9053977ea0e809); name=Windrose Market symbol=WROSE curve=0x72b2e2b870ff0db74aa7b48a04b21833120912f1 deployer=0xad82f3be75760869d58938ef20de8f51d44cb4b0. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T13:07:22.140Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "investigation": {
+    "verdict": "needs-snug",
+    "velocity": "warming — 81 buys/23 unique buyers (2.60 ETH in), 41 sells/15 sellers, all within ~5256 blocks (~100 min) of launch block 85851422; flow LIVE through tip-77 blocks (last buy 85856601, last sell 85856598); curve holds 1.1528 ETH — the deepest curve of the tick, well above the 0.01 pre-grad and 0.05 fast-lane floors",
+    "social_signal": "weak",
+    "money_flow": "bot",
+    "note": "pons V2 pre-grad; TokenLaunched attribution re-verified (curve+deployer match). 23 unique buyers is real participation and the 51% sell ratio is healthier than WILDCAP's 76%, BUT bot concentration is heavy: sniper contract 0x65050a9b7e5075a2ba5ced7b1b64ee66262c40dc made 31 buys (top buyer) and 0xf0b7eaaf86 made 17 — top-2 wallets = 59% of all buys; the 0x65050a9b contract churned 21 buys/19 sells on WILDCAP too — wash/prop pattern, not accumulation. cross-launch sniper 0xe33e9e479df8802cb0866d5d05258bec4cf62948 present. deployer 0xad82f3be7576… nonce 2, not in buyers. onchain name()/symbol() return EMPTY (scout name from event data). no X access (402); web search: zero mentions of this WROSE launch (only unrelated Wrapped Rose). real gate-passed liquidity + live flow = not skip; bot-dominated flow + blank name + no social = not promising. -> needs-snug for durability/social grading."
+   },
+   "social_grade": "F",
+   "social_total": 10,
+   "durability": "weak",
+   "comps": "Pons V2 pre-grad curve launch, same tick cohort as WILDCAP — matches the QVAULT pattern from the 08:43 tick: bot-propped flow + heavy sell ratio reads as wash/prop, not accumulation. Manufactured-flow pons launches of this shape typically collapse once the prop flow exits the curve; pre-grad venue means no LP-age rule applies yet, so the only floor is the curve itself.",
+   "risks": "Wash/prop flow: sniper contract 0x65050a9b7e5075a2ba5ced7b1b64ee66262c40dc made 31 buys (top buyer) and 0xf0b7eaaf86 made 17 — top-2 wallets = 59% of all buys; the same sniper churned 21 buys/19 sells on WILDCAP this tick, a cross-launch prop pattern. Cross-launch sniper 0xe33e9e479df8802cb0866d5d05258bec4cf62948 present. Onchain name()/symbol() return EMPTY (scout name from event data only) — blank identity. Deployer 0xad82f3be7576… nonce 2 undiscoverable via RPC; denylist check skipped. Social legitimacy nil: zero web mentions, no website, no X presence, no team, no KOLs.",
+   "recommendation": "skip",
+   "reason": "Weak durability: social grade F/10 with zero offchain legitimacy — no team, no website, no mentions anywhere. The onchain 'strength' (1.15 ETH curve, 81 buys/23 buyers, 51% sell ratio, live flow) is manufactured: 59% of buys from the top-2 wallets and the dominant sniper is a cross-launch churner, which is wash/prop flow, not demand. Anonymous deployer, blank onchain identity, and denylist check skipped. Real gate-passed liquidity keeps it from a scam verdict, but nothing here underwrites a buy. Skip (a snug skip also vetoes the fast lane); requeue only if an attributable team + organic social proof appear."
+  },
+  {
+   "broken_down_at": "2026-10-11T13:17:35.043Z",
+   "candidate": {
+    "contract": "0xda783a8b1c141e33c8677eea4f027a33b0daf871",
+    "name": "WILDCAP WILD",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-11T13:05:18.774Z",
+    "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85851521 (tx 0xa9752127735a3913fd78899049296365c5c34165990274635c675f9ca5c425f1); name=WILDCAP symbol=WILD curve=0xc813f18a85576e4f55c469f3cc851d2126d8d98b deployer=0x529ed2961f67c3539b85db9eb5717bd4403d4f49. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T13:06:42.726Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "investigation": {
+    "verdict": "needs-snug",
+    "velocity": "HOT — 82 buys/42 unique buyers (2.25 ETH in), 62 sells/36 sellers, all within ~4163 blocks (~80 min) of launch; flow LIVE through tip-35 blocks; curve holds 0.3076 ETH",
+    "social_signal": "weak",
+    "money_flow": "bot",
+    "note": "pons V2 pre-grad, ~80 min old; TokenLaunched attribution re-verified (curve+deployer match). curve 0.3076 ETH — above the 0.01 pre-grad floor and the 0.05 fast-lane floor. 42 unique buyers is real participation, BUT the top buyer is sniper contract 0x65050a9b7e5075a2ba5ced7b1b64ee66262c40dc with 21 buys totaling 0.6418 ETH (28% of buy volume) AND 19 sells — churn/prop flow, not accumulation. cross-launch sniper 0xe33e9e479df8802cb0866d5d05258bec4cf62948 (also bought DEAL+EVALE+SNORKEL this tick) present. sell/buy 76% by count. deployer 0x529ed2961f67… nonce 3, single launch in 100k blocks, not in buyers. onchain name()/symbol() return EMPTY (scout name from event data). no X access (402); web search: zero mentions of this WILDCAP launch (only unrelated Wilder World/WILDx). matches the QVAULT pattern (08:43 tick): bot-propped flow + heavy sells = not promising; real gate-passed liquidity = not skip. -> needs-snug for durability/social grading."
+   },
+   "social_grade": "F",
+   "social_total": 9,
+   "durability": "weak",
+   "comps": "Pons V2 pre-grad curve launch, direct QVAULT-pattern match (08:43 tick): bot-propped flow + heavy sells = skip. Sibling launch WROSE this tick shows the same farm-shape (shared sniper 0x65050a9b churn). Pre-grad curve venue: no LP-yank path, but the floor is only the 0.31 ETH curve against 0.64 ETH of churned sniper flow.",
+   "risks": "Top buyer is sniper contract 0x65050a9b7e5075a2ba5ced7b1b64ee66262c40dc: 21 buys totaling 0.6418 ETH (28% of buy volume) AND 19 sells — churn/prop flow, not accumulation. Cross-launch sniper 0xe33e9e479df8802cb0866d5d05258bec4cf62948 also bought DEAL+EVALE+SNORKEL this tick. Sell/buy 76% by count — the heaviest of the tick. Onchain name()/symbol() return EMPTY. Deployer 0x529ed2961f67… nonce 3, single launch in 100k blocks, undiscoverable via RPC; denylist check skipped. Zero web mentions (only unrelated Wilder World/WILDx), no website, no X, no KOLs, no team.",
+   "recommendation": "skip",
+   "reason": "Weak durability: social grade F/9 with zero social legitimacy and the worst flow shape of the tick — 76% sell ratio with the top buyer churning 21 buys/19 sells is textbook prop flow dumping into the curve. 42 unique buyers is real participation, but the dominant wallet is a cross-launch sniper and the exit pressure is already live through tip-35. Anonymous single-launch deployer, blank onchain identity, no denylist check. Gate-passed liquidity is real but buys nothing here. Skip (snug skip vetoes the fast lane); requeue only on attributable operator + organic social proof."
   }
  ],
  "tracking": {
@@ -739004,8 +739272,8 @@
   "scout": "2026-10-11T13:14:48.357Z",
   "hymn": "2026-10-11T13:10:16.992Z",
   "scorer": "2026-10-11T13:14:00Z",
-  "snug": "2026-10-11T13:04:41.716Z",
-  "cardigan": "2026-10-11T13:04:41.716Z"
+  "snug": "2026-10-11T13:17:35.043Z",
+  "cardigan": "2026-10-11T13:17:35.043Z"
  },
  "challenge": {
   "wallet": "0xa554e642ac0fe1bbeeea26df17644ad8fce00ecc",
@@ -739176,7 +739444,7 @@
   "realized_pnl_pct_total": 8.568575035670197
  },
  "paper_trades": {
-  "as_of": "2026-10-11T13:12:28.992Z",
+  "as_of": "2026-10-11T13:17:16.411Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -739241,7 +739509,7 @@
     "seeded": false,
     "score": 69,
     "entry_price_usd": 0.04243,
-    "last_price_usd": 0.0398,
+    "last_price_usd": 0.03978,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -739252,8 +739520,8 @@
     "mcap_at_scan": 42788142.46528106,
     "mcap_at_decision": 42788142.46528106,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0006198444496818289,
-    "unrealized_pnl_pct": -6.19844449681829
+    "unrealized_pnl_eth": -0.0006245580956870134,
+    "unrealized_pnl_pct": -6.245580956870134
    },
    {
     "id": "pt-mv03ww45-53",
@@ -739264,7 +739532,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.356,
+    "last_price_usd": 0.3561,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -739275,8 +739543,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00023282552457602802,
-    "unrealized_pnl_pct": 2.32825524576028
+    "unrealized_pnl_eth": 0.00023569991376832578,
+    "unrealized_pnl_pct": 2.3569991376832578
    },
    {
     "id": "pt-mv03wwab-54",
@@ -739310,7 +739578,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.356,
+    "last_price_usd": 0.3561,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -739321,8 +739589,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00008784358175120354,
-    "unrealized_pnl_pct": 0.8784358175120355
+    "unrealized_pnl_eth": 0.0000906772456786631,
+    "unrealized_pnl_pct": 0.9067724567866309
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -739333,7 +739601,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.356,
+    "last_price_usd": 0.3561,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -739344,8 +739612,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00009356393535582486,
-    "unrealized_pnl_pct": 0.9356393535582486
+    "unrealized_pnl_eth": 0.00009639920612418473,
+    "unrealized_pnl_pct": 0.9639920612418473
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -739356,7 +739624,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.356,
+    "last_price_usd": 0.3561,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -739367,8 +739635,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00007642230399094175,
-    "unrealized_pnl_pct": 0.7642230399094174
+    "unrealized_pnl_eth": 0.00007925275969431045,
+    "unrealized_pnl_pct": 0.7925275969431045
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -739379,7 +739647,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.356,
+    "last_price_usd": 0.3561,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -739390,8 +739658,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00007072135785006984,
-    "unrealized_pnl_pct": 0.7072135785006983
+    "unrealized_pnl_eth": 0.00007355021216407521,
+    "unrealized_pnl_pct": 0.735502121640752
    }
   ],
   "closed_recent": [],

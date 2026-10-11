@@ -1,33 +1,11 @@
 {
- "updated_at": "2026-10-11T04:04:53.464Z",
+ "updated_at": "2026-10-11T04:06:52.289Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-11T03:03:33.453Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0x440de1c2a5bf4cda896828949d898af41e4cc7c3",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0x79332f4d7a409023b2b18e09f1ff62da87a18d4bd59f317de0b00e04a2907dc7",
-   "block": 85508203,
-   "detail": "new contract deployed in block 85508203"
-  },
-  {
-   "found_at": "2026-10-11T03:04:43.747Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0x6bcec9019133d7de0e05e18622657f3b26d4077d",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0xf88fb76d70c507cef36dfe69375a607845d31076c782fe94e586bae15339595b",
-   "block": 85508731,
-   "detail": "new contract deployed in block 85508731"
-  },
   {
    "found_at": "2026-10-11T03:04:49.424Z",
    "scout": "block-watcher",
@@ -602,9 +580,31 @@
    "tx_hash": "0x7468308d1c802645c0089508177ff1cd9939968fbaa3d342bffa1f446d6eaeb2",
    "block": 85541942,
    "detail": "new contract deployed in block 85541942"
+  },
+  {
+   "found_at": "2026-10-11T04:05:36.856Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x859be57c188715d6cc7eb825e6817f7bf6d2a1a0",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x3850903c3b0e0ee48f515a8d02eeb2b6b2175382b586cf800f2962627f1d070c",
+   "block": 85543810,
+   "detail": "new contract deployed in block 85543810"
+  },
+  {
+   "found_at": "2026-10-11T04:06:27.119Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x9fc543bee1b0dbe451af33a754f9c0f423d6d6da",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xb8c124d54a02e725968c1b351667424cb2f00d26c34452f1bd41823f542dc5c0",
+   "block": 85544165,
+   "detail": "new contract deployed in block 85544165"
   }
  ],
- "scout_queue_total": 1375,
+ "scout_queue_total": 1377,
  "investigations": [
   {
    "candidate": {
@@ -439882,7 +439882,20 @@
    "comps": "Same-batch comps: 9 dead pons launches this tick (impersonation/grief/junk-meme launches that round-tripped curves to ~0 ETH, incl. Meme Scape 63 buys fully drained). VIRUS sits mid-trajectory: curve not yet drained (0.1327 ETH, 92.83% supply still on curve) but with ~9.6h of zero activity after a ~36-min buy window, the early flow reads as failed distribution, not accumulation. Junk-meme pons launches with no social surface do not revive after a ~10h dead stall; they grind to dust when early holders exit.",
    "risks": "junk-meme name ('VIRUS GOT ME VIRUS'); ~9.6h zero curve activity (stall, not pause — 14 buys then nothing); anonymous deployer 0x6df811dd9bcddf4d8ae1bafe4d044c30995e237d bought once only, zero team engagement; no website, no KOL, no social surface; X API 402 this run so social unverifiable; gate_pass was via pons-curve floor only (LP legs skipped — no V2 pair, no V4 pools, thin holder data, deployer undiscoverable on gate path); pre-graduation phase — the 0.1327 ETH is exit liquidity for the 10 early buyers, not a base.",
    "recommendation": "skip",
-   "reason": "Social credit F = likely skip regardless of other factors (standing rule); durability weak on every axis — anonymous one-shot deployer, zero team/website/KOL surface, collection trajectory stalling (~9.6h dead after a 36-min window), comps all failed. The positives (0.1327 ETH curve, 13x floor, live sell path, organic non-sybil buys) describe a tradeable curve, not a durable one — that was the gate's call, already made and already stale. Snug breakdown: skip."
+   "reason": "Social credit F = likely skip regardless of other factors (standing rule); durability weak on every axis — anonymous one-shot deployer, zero team/website/KOL surface, collection trajectory stalling (~9.6h dead after a 36-min window), comps all failed. The positives (0.1327 ETH curve, 13x floor, live sell path, organic non-sybil buys) describe a tradeable curve, not a durable one — that was the gate's call, already made and already stale. Snug breakdown: skip.",
+   "processed": true,
+   "processed_at": "2026-10-11T04:05:00Z",
+   "processed_note": "cardigan-flock-decision tick 00:02 EDT",
+   "decision": {
+    "decided_at": "2026-10-11T04:05:00Z",
+    "verdict": "skip",
+    "score": null,
+    "score_breakdown": null,
+    "skip_rule": "social-grade-F hard skip",
+    "whale_convergence_bonus": 0,
+    "whale_moves_on_token": 0,
+    "reason": "social credit grade F = hard skip at any score (standing rule). snug: skip (durability weak, ~9.6h stale curve, junk-meme name, anon deployer). gate gate_pass, no fast-lane position, no whale signal. no scoring, no execution."
+   }
   }
  ],
  "tracking": {
@@ -679245,7 +679258,7 @@
   "reentry-watch"
  ],
  "last_activity": {
-  "scout": "2026-10-11T04:02:50.529Z",
+  "scout": "2026-10-11T04:06:27.119Z",
   "hymn": "2026-10-11T04:01:48Z",
   "scorer": "2026-10-11T04:02:46.302Z",
   "snug": "2026-10-11T00:04:30-04:00",
@@ -679397,8 +679410,8 @@
     "tx_hash": "0x0cef41c59b5ff5890632d9a5d376772d22fd5c83eb6d90960088f8f66517ec90",
     "entered_at": "2026-10-09T01:51:03.242Z",
     "entry_price_usd": 0.1135,
-    "current_price_usd": 0.1071,
-    "pnl_pct": -5.638766519823791,
+    "current_price_usd": 0.107,
+    "pnl_pct": -5.72687224669604,
     "amount_tokens": 216.29986717343255,
     "amount_eth_in": 0.01,
     "score": 60,
@@ -679417,7 +679430,7 @@
     "exit_price_usd": null
    }
   ],
-  "realized_pnl_pct_total": -8.740571140822274
+  "realized_pnl_pct_total": -8.828676867694522
  },
  "paper_trades": {
   "as_of": "2026-10-11T04:02:09.328Z",

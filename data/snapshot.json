@@ -1,1410 +1,11 @@
 {
- "updated_at": "2026-10-11T14:35:00.942Z",
+ "updated_at": "2026-10-11T14:36:53.190Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-11T14:25:37.012Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Doormat DOORMAT",
-   "muse": "",
-   "contract": "0xaa31473d49fc2714dcc51b9603e8ba5d3de84d66",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0xd57d95b945baea7a9b384d5a405bb9030f5731a52cd60810c7cb742ae2d77145",
-   "block": 85894446,
-   "curve": "0xc3fdb52e5ab3536b5d85cdb9c1a33a64d806c522",
-   "deployer": "0xd588ccd13c217117dd60654d9741b3afd860f5e3",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85894446 (tx 0xd57d95b945baea7a9b384d5a405bb9030f5731a52cd60810c7cb742ae2d77145); name=Doormat symbol=DOORMAT curve=0xc3fdb52e5ab3536b5d85cdb9c1a33a64d806c522 deployer=0xd588ccd13c217117dd60654d9741b3afd860f5e3. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
-  },
-  {
-   "found_at": "2026-10-11T14:25:38.858Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Coragentic CORA",
-   "muse": "",
-   "contract": "0x672b62417bb45582b9f569d55c2350701d5beb19",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0xc19bb9f1798b89fcdbebb37af03f49c9e0053eba7466a4b2a3312826fd0ca3c2",
-   "block": 85894592,
-   "curve": "0x107575f3dff1b7e74e4772c46f1b3e81f6f30791",
-   "deployer": "0xc90c10b1e6d7ad1bf4a5a92558fb294689e1db14",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85894592 (tx 0xc19bb9f1798b89fcdbebb37af03f49c9e0053eba7466a4b2a3312826fd0ca3c2); name=Coragentic symbol=CORA curve=0x107575f3dff1b7e74e4772c46f1b3e81f6f30791 deployer=0xc90c10b1e6d7ad1bf4a5a92558fb294689e1db14. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
-  },
-  {
-   "found_at": "2026-10-11T14:25:40.459Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Coragentic CORA",
-   "muse": "",
-   "contract": "0xd53dcf611236f7fe801c5381728dbe735ba930e6",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x73bb020099f5cb3291d572a94d67b771162e910bb4e5149eef422cfebcc54350",
-   "block": 85894607,
-   "curve": "0x09decf7e3625647ff9954524a766dce8fbed6938",
-   "deployer": "0xfacf2b10f400968740c295dbb280d82a35de88c8",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85894607 (tx 0x73bb020099f5cb3291d572a94d67b771162e910bb4e5149eef422cfebcc54350); name=Coragentic symbol=CORA curve=0x09decf7e3625647ff9954524a766dce8fbed6938 deployer=0xfacf2b10f400968740c295dbb280d82a35de88c8. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
-   "gate_status": "gate_failed",
-   "gate_checked_at": "2026-10-11T14:25:43.281Z",
-   "gate_reasons": [
-    "curve-collected ETH ~0.0000 < 0.01 floor (pre-graduation venue)"
-   ],
-   "gate_warnings": [
-    "thin holder data (2 addresses in 12k-block window)",
-    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-   ],
-   "gate_detail": {
-    "checks": {
-     "owner-powers": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no owner(); no dangerous selectors in bytecode"
-      ],
-      "detail": {
-       "selectors": {
-        "mint": [],
-        "pause": [],
-        "blacklist": [],
-        "fee": []
-       },
-       "owner": null
-      }
-     },
-     "proxy": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no proxy admin/beacon slots set; not an upgradeable proxy"
-      ],
-      "detail": {}
-     },
-     "pons-curve": {
-      "pass": false,
-      "reasons": [
-       "curve-collected ETH ~0.0000 < 0.01 floor (pre-graduation venue)"
-      ],
-      "warnings": [],
-      "notes": [],
-      "detail": {
-       "curve": "0x09decf7e3625647ff9954524a766dce8fbed6938",
-       "phase": "pre",
-       "curvePct": 100,
-       "curveCodeBytes": 10229,
-       "curveEth": 0
-      }
-     },
-     "concentration": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "thin holder data (2 addresses in 12k-block window)"
-      ],
-      "notes": [
-       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
-      ],
-      "detail": {
-       "supply": "1000000000000000000000000000",
-       "addrsSeen": 2,
-       "top10EoaBps": 0,
-       "top1EoaBps": 0,
-       "top10": [],
-       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
-      }
-     },
-     "deployer-history": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-      ],
-      "notes": [],
-      "detail": {}
-     }
-    },
-    "ponsPhase": {
-     "phase": "pre",
-     "curvePct": 100
-    }
-   },
-   "fast_lane": {
-    "action": "no-buy",
-    "reason": "gate-gate_failed",
-    "gate": "gate_failed"
-   }
-  },
-  {
-   "found_at": "2026-10-11T14:25:42.128Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "PokePad POKEPAD",
-   "muse": "",
-   "contract": "0xd9ea88cb1713ffb097b0cad5b3186c77dee4b842",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x12893aec7665a9684b43540104b5e81d0a715cdaca47e6b803f604c52349b1e0",
-   "block": 85894925,
-   "curve": "0xa64e1608f3d223feb514754c5dc9ce1584e752b6",
-   "deployer": "0xe1e456f16ac747355e09d0055449e595f30758a0",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85894925 (tx 0x12893aec7665a9684b43540104b5e81d0a715cdaca47e6b803f604c52349b1e0); name=PokePad symbol=POKEPAD curve=0xa64e1608f3d223feb514754c5dc9ce1584e752b6 deployer=0xe1e456f16ac747355e09d0055449e595f30758a0. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
-   "gate_status": "gate_failed",
-   "gate_checked_at": "2026-10-11T14:34:42.166Z",
-   "gate_reasons": [
-    "curve-collected ETH ~0.0004 < 0.01 floor (pre-graduation venue)"
-   ],
-   "gate_warnings": [
-    "thin holder data (9 addresses in 12k-block window)",
-    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-   ],
-   "gate_detail": {
-    "checks": {
-     "owner-powers": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no owner(); no dangerous selectors in bytecode"
-      ],
-      "detail": {
-       "selectors": {
-        "mint": [],
-        "pause": [],
-        "blacklist": [],
-        "fee": []
-       },
-       "owner": null
-      }
-     },
-     "proxy": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no proxy admin/beacon slots set; not an upgradeable proxy"
-      ],
-      "detail": {}
-     },
-     "pons-curve": {
-      "pass": false,
-      "reasons": [
-       "curve-collected ETH ~0.0004 < 0.01 floor (pre-graduation venue)"
-      ],
-      "warnings": [],
-      "notes": [],
-      "detail": {
-       "curve": "0xa64e1608f3d223feb514754c5dc9ce1584e752b6",
-       "phase": "pre",
-       "curvePct": 100,
-       "curveCodeBytes": 10229,
-       "curveEth": 0.000416004137075027
-      }
-     },
-     "concentration": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "thin holder data (9 addresses in 12k-block window)"
-      ],
-      "notes": [
-       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
-      ],
-      "detail": {
-       "supply": "1000000000000000000000000000",
-       "addrsSeen": 9,
-       "top10EoaBps": 0,
-       "top1EoaBps": 0,
-       "top10": [],
-       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
-      }
-     },
-     "deployer-history": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-      ],
-      "notes": [],
-      "detail": {}
-     }
-    },
-    "ponsPhase": {
-     "phase": "pre",
-     "curvePct": 100
-    }
-   },
-   "fast_lane": {
-    "action": "no-buy",
-    "reason": "gate-gate_failed",
-    "gate": "gate_failed"
-   }
-  },
-  {
-   "found_at": "2026-10-11T14:25:44.274Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Mitra MITRA",
-   "muse": "",
-   "contract": "0x21285eb27fb1f11300fb3255789d71061de20214",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0xa7512fa787b9a60d2dd2156b3cec6b423f4bebac3bafc75a0cfa4ac927fd5743",
-   "block": 85895327,
-   "curve": "0x63e7dee86ebb125bfa154bf6100261bd72d42726",
-   "deployer": "0x8ba483e409dd27f2afd86d93425b3b4d9ac16e61",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85895327 (tx 0xa7512fa787b9a60d2dd2156b3cec6b423f4bebac3bafc75a0cfa4ac927fd5743); name=Mitra symbol=MITRA curve=0x63e7dee86ebb125bfa154bf6100261bd72d42726 deployer=0x8ba483e409dd27f2afd86d93425b3b4d9ac16e61. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
-   "gate_status": "gate_failed",
-   "gate_checked_at": "2026-10-11T14:34:18.955Z",
-   "gate_reasons": [
-    "curve-collected ETH ~0.0024 < 0.01 floor (pre-graduation venue)"
-   ],
-   "gate_warnings": [
-    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-   ],
-   "gate_detail": {
-    "checks": {
-     "owner-powers": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no owner(); no dangerous selectors in bytecode"
-      ],
-      "detail": {
-       "selectors": {
-        "mint": [],
-        "pause": [],
-        "blacklist": [],
-        "fee": []
-       },
-       "owner": null
-      }
-     },
-     "proxy": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no proxy admin/beacon slots set; not an upgradeable proxy"
-      ],
-      "detail": {}
-     },
-     "pons-curve": {
-      "pass": false,
-      "reasons": [
-       "curve-collected ETH ~0.0024 < 0.01 floor (pre-graduation venue)"
-      ],
-      "warnings": [],
-      "notes": [],
-      "detail": {
-       "curve": "0x63e7dee86ebb125bfa154bf6100261bd72d42726",
-       "phase": "pre",
-       "curvePct": 100,
-       "curveCodeBytes": 10229,
-       "curveEth": 0.002396478151588412
-      }
-     },
-     "concentration": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
-      ],
-      "detail": {
-       "supply": "1000000000000000000000000000",
-       "addrsSeen": 10,
-       "top10EoaBps": 0,
-       "top1EoaBps": 0,
-       "top10": [],
-       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
-      }
-     },
-     "deployer-history": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-      ],
-      "notes": [],
-      "detail": {}
-     }
-    },
-    "ponsPhase": {
-     "phase": "pre",
-     "curvePct": 100
-    }
-   },
-   "fast_lane": {
-    "action": "no-buy",
-    "reason": "gate-gate_failed",
-    "gate": "gate_failed"
-   }
-  },
-  {
-   "found_at": "2026-10-11T14:25:51.070Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Mossbrook MOSS",
-   "muse": "",
-   "contract": "0x5821f102de8f39ddcc4e151cf600a7dcc8d94fb4",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x3166a69f93d3e846aaba840bcf4481fc3b3c5ce13c139db92cd505594c5ce31a",
-   "block": 85895926,
-   "curve": "0xaa5a57ee093e4f8b0dc558b031ec986b74c91cb7",
-   "deployer": "0xd34cb18e34a119844a1c9d04e73a59055734b80c",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85895926 (tx 0x3166a69f93d3e846aaba840bcf4481fc3b3c5ce13c139db92cd505594c5ce31a); name=Mossbrook symbol=MOSS curve=0xaa5a57ee093e4f8b0dc558b031ec986b74c91cb7 deployer=0xd34cb18e34a119844a1c9d04e73a59055734b80c. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
-   "gate_status": "gate_failed",
-   "gate_checked_at": "2026-10-11T14:33:29.645Z",
-   "gate_reasons": [
-    "curve-collected ETH ~0.0004 < 0.01 floor (pre-graduation venue)"
-   ],
-   "gate_warnings": [
-    "thin holder data (5 addresses in 12k-block window)",
-    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-   ],
-   "gate_detail": {
-    "checks": {
-     "owner-powers": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no owner(); no dangerous selectors in bytecode"
-      ],
-      "detail": {
-       "selectors": {
-        "mint": [],
-        "pause": [],
-        "blacklist": [],
-        "fee": []
-       },
-       "owner": null
-      }
-     },
-     "proxy": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no proxy admin/beacon slots set; not an upgradeable proxy"
-      ],
-      "detail": {}
-     },
-     "pons-curve": {
-      "pass": false,
-      "reasons": [
-       "curve-collected ETH ~0.0004 < 0.01 floor (pre-graduation venue)"
-      ],
-      "warnings": [],
-      "notes": [],
-      "detail": {
-       "curve": "0xaa5a57ee093e4f8b0dc558b031ec986b74c91cb7",
-       "phase": "pre",
-       "curvePct": 100,
-       "curveCodeBytes": 10229,
-       "curveEth": 0.000373933102061872
-      }
-     },
-     "concentration": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "thin holder data (5 addresses in 12k-block window)"
-      ],
-      "notes": [
-       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
-      ],
-      "detail": {
-       "supply": "1000000000000000000000000000",
-       "addrsSeen": 5,
-       "top10EoaBps": 0,
-       "top1EoaBps": 0,
-       "top10": [],
-       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
-      }
-     },
-     "deployer-history": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-      ],
-      "notes": [],
-      "detail": {}
-     }
-    },
-    "ponsPhase": {
-     "phase": "pre",
-     "curvePct": 100
-    }
-   },
-   "fast_lane": {
-    "action": "no-buy",
-    "reason": "gate-gate_failed",
-    "gate": "gate_failed"
-   }
-  },
-  {
-   "found_at": "2026-10-11T14:25:52.577Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Minehood MINEHOOD",
-   "muse": "",
-   "contract": "0x6008f4dfacdd9ff9b54753e5dfe84ca3092400a8",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0xd2c5773f4a85c386dfd55a9485883cc5002434848e42015fbb8796e6bd8d7469",
-   "block": 85896276,
-   "curve": "0x00f2a858589bfaa0a30b6db35059534bb899f18d",
-   "deployer": "0x17e9e62e29c47e82f9664b3159610f02f8f63ede",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85896276 (tx 0xd2c5773f4a85c386dfd55a9485883cc5002434848e42015fbb8796e6bd8d7469); name=Minehood symbol=MINEHOOD curve=0x00f2a858589bfaa0a30b6db35059534bb899f18d deployer=0x17e9e62e29c47e82f9664b3159610f02f8f63ede. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
-   "gate_status": "gate_failed",
-   "gate_checked_at": "2026-10-11T14:33:04.517Z",
-   "gate_reasons": [
-    "curve-collected ETH ~0.0068 < 0.01 floor (pre-graduation venue)"
-   ],
-   "gate_warnings": [
-    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-   ],
-   "gate_detail": {
-    "checks": {
-     "owner-powers": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no owner(); no dangerous selectors in bytecode"
-      ],
-      "detail": {
-       "selectors": {
-        "mint": [],
-        "pause": [],
-        "blacklist": [],
-        "fee": []
-       },
-       "owner": null
-      }
-     },
-     "proxy": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no proxy admin/beacon slots set; not an upgradeable proxy"
-      ],
-      "detail": {}
-     },
-     "pons-curve": {
-      "pass": false,
-      "reasons": [
-       "curve-collected ETH ~0.0068 < 0.01 floor (pre-graduation venue)"
-      ],
-      "warnings": [],
-      "notes": [],
-      "detail": {
-       "curve": "0x00f2a858589bfaa0a30b6db35059534bb899f18d",
-       "phase": "pre",
-       "curvePct": 99.62,
-       "curveCodeBytes": 10229,
-       "curveEth": 0.006780203434795275
-      }
-     },
-     "concentration": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
-      ],
-      "detail": {
-       "supply": "1000000000000000000000000000",
-       "addrsSeen": 33,
-       "top10EoaBps": 0,
-       "top1EoaBps": 0,
-       "top10": [],
-       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
-      }
-     },
-     "deployer-history": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-      ],
-      "notes": [],
-      "detail": {}
-     }
-    },
-    "ponsPhase": {
-     "phase": "pre",
-     "curvePct": 99.62
-    }
-   },
-   "fast_lane": {
-    "action": "no-buy",
-    "reason": "gate-gate_failed",
-    "gate": "gate_failed"
-   }
-  },
-  {
-   "found_at": "2026-10-11T14:25:54.704Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Minehood MINEHOOD",
-   "muse": "",
-   "contract": "0x0a7aff99b84d41c4e6d544878d9794863180d8c9",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x1215bbb8b1703dd96a469bbb297cfcf9dc0d3ceef5359d758ace7944ebb3c55d",
-   "block": 85896292,
-   "curve": "0xfc7fd03b9f430597230a00206e3bb1cabff58d05",
-   "deployer": "0xc3c9dd588dfd082e798096a15d312a696de1f5f2",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85896292 (tx 0x1215bbb8b1703dd96a469bbb297cfcf9dc0d3ceef5359d758ace7944ebb3c55d); name=Minehood symbol=MINEHOOD curve=0xfc7fd03b9f430597230a00206e3bb1cabff58d05 deployer=0xc3c9dd588dfd082e798096a15d312a696de1f5f2. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
-   "gate_status": "gate_failed",
-   "gate_checked_at": "2026-10-11T14:32:40.371Z",
-   "gate_reasons": [
-    "curve-collected ETH ~0.0000 < 0.01 floor (pre-graduation venue)"
-   ],
-   "gate_warnings": [
-    "thin holder data (2 addresses in 12k-block window)",
-    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-   ],
-   "gate_detail": {
-    "checks": {
-     "owner-powers": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no owner(); no dangerous selectors in bytecode"
-      ],
-      "detail": {
-       "selectors": {
-        "mint": [],
-        "pause": [],
-        "blacklist": [],
-        "fee": []
-       },
-       "owner": null
-      }
-     },
-     "proxy": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no proxy admin/beacon slots set; not an upgradeable proxy"
-      ],
-      "detail": {}
-     },
-     "pons-curve": {
-      "pass": false,
-      "reasons": [
-       "curve-collected ETH ~0.0000 < 0.01 floor (pre-graduation venue)"
-      ],
-      "warnings": [],
-      "notes": [],
-      "detail": {
-       "curve": "0xfc7fd03b9f430597230a00206e3bb1cabff58d05",
-       "phase": "pre",
-       "curvePct": 100,
-       "curveCodeBytes": 10229,
-       "curveEth": 0
-      }
-     },
-     "concentration": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "thin holder data (2 addresses in 12k-block window)"
-      ],
-      "notes": [
-       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
-      ],
-      "detail": {
-       "supply": "1000000000000000000000000000",
-       "addrsSeen": 2,
-       "top10EoaBps": 0,
-       "top1EoaBps": 0,
-       "top10": [],
-       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
-      }
-     },
-     "deployer-history": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-      ],
-      "notes": [],
-      "detail": {}
-     }
-    },
-    "ponsPhase": {
-     "phase": "pre",
-     "curvePct": 100
-    }
-   },
-   "fast_lane": {
-    "action": "no-buy",
-    "reason": "gate-gate_failed",
-    "gate": "gate_failed"
-   }
-  },
-  {
-   "found_at": "2026-10-11T14:25:56.401Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Stopwatch STPWTCH",
-   "muse": "",
-   "contract": "0x88e1cf1b4929abce82acac23ff40eb3cbdef7d15",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0xbe90864cc366c0b66353578372ef0cbc4d8d864b7ab9fef481f8a69b1926b773",
-   "block": 85896372,
-   "curve": "0xfdf153fe4715089af879679f4ccbc86531f31d14",
-   "deployer": "0x9a8117bca707527f987329306f52f8d48bce9f73",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85896372 (tx 0xbe90864cc366c0b66353578372ef0cbc4d8d864b7ab9fef481f8a69b1926b773); name=Stopwatch symbol=STPWTCH curve=0xfdf153fe4715089af879679f4ccbc86531f31d14 deployer=0x9a8117bca707527f987329306f52f8d48bce9f73. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
-   "gate_status": "gate_failed",
-   "gate_checked_at": "2026-10-11T14:32:08.989Z",
-   "gate_reasons": [
-    "curve-collected ETH ~0.0000 < 0.01 floor (pre-graduation venue)"
-   ],
-   "gate_warnings": [
-    "thin holder data (3 addresses in 12k-block window)",
-    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-   ],
-   "gate_detail": {
-    "checks": {
-     "owner-powers": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no owner(); no dangerous selectors in bytecode"
-      ],
-      "detail": {
-       "selectors": {
-        "mint": [],
-        "pause": [],
-        "blacklist": [],
-        "fee": []
-       },
-       "owner": null
-      }
-     },
-     "proxy": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no proxy admin/beacon slots set; not an upgradeable proxy"
-      ],
-      "detail": {}
-     },
-     "pons-curve": {
-      "pass": false,
-      "reasons": [
-       "curve-collected ETH ~0.0000 < 0.01 floor (pre-graduation venue)"
-      ],
-      "warnings": [],
-      "notes": [],
-      "detail": {
-       "curve": "0xfdf153fe4715089af879679f4ccbc86531f31d14",
-       "phase": "pre",
-       "curvePct": 100,
-       "curveCodeBytes": 10229,
-       "curveEth": 1e-18
-      }
-     },
-     "concentration": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "thin holder data (3 addresses in 12k-block window)"
-      ],
-      "notes": [
-       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
-      ],
-      "detail": {
-       "supply": "1000000000000000000000000000",
-       "addrsSeen": 3,
-       "top10EoaBps": 0,
-       "top1EoaBps": 0,
-       "top10": [],
-       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
-      }
-     },
-     "deployer-history": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-      ],
-      "notes": [],
-      "detail": {}
-     }
-    },
-    "ponsPhase": {
-     "phase": "pre",
-     "curvePct": 100
-    }
-   },
-   "fast_lane": {
-    "action": "no-buy",
-    "reason": "gate-gate_failed",
-    "gate": "gate_failed"
-   }
-  },
-  {
-   "found_at": "2026-10-11T14:25:58.467Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Stopwatch STPWTCH",
-   "muse": "",
-   "contract": "0x6b0fb15a888bcdbd7dc92ac59b4427e1228d86ff",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x148a97eeafe5be2bd58201d8ae3ba0e6c9abadae18b1302b9c190c341cf9924b",
-   "block": 85896390,
-   "curve": "0xe11a80e43adc651f6e061d130a8d96be71e18625",
-   "deployer": "0x41339ceaa50a209b0fd4190860af99e45b542fb4",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85896390 (tx 0x148a97eeafe5be2bd58201d8ae3ba0e6c9abadae18b1302b9c190c341cf9924b); name=Stopwatch symbol=STPWTCH curve=0xe11a80e43adc651f6e061d130a8d96be71e18625 deployer=0x41339ceaa50a209b0fd4190860af99e45b542fb4. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
-   "gate_status": "gate_failed",
-   "gate_checked_at": "2026-10-11T14:31:36.674Z",
-   "gate_reasons": [
-    "curve-collected ETH ~0.0000 < 0.01 floor (pre-graduation venue)"
-   ],
-   "gate_warnings": [
-    "thin holder data (2 addresses in 12k-block window)",
-    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-   ],
-   "gate_detail": {
-    "checks": {
-     "owner-powers": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no owner(); no dangerous selectors in bytecode"
-      ],
-      "detail": {
-       "selectors": {
-        "mint": [],
-        "pause": [],
-        "blacklist": [],
-        "fee": []
-       },
-       "owner": null
-      }
-     },
-     "proxy": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no proxy admin/beacon slots set; not an upgradeable proxy"
-      ],
-      "detail": {}
-     },
-     "pons-curve": {
-      "pass": false,
-      "reasons": [
-       "curve-collected ETH ~0.0000 < 0.01 floor (pre-graduation venue)"
-      ],
-      "warnings": [],
-      "notes": [],
-      "detail": {
-       "curve": "0xe11a80e43adc651f6e061d130a8d96be71e18625",
-       "phase": "pre",
-       "curvePct": 100,
-       "curveCodeBytes": 10229,
-       "curveEth": 0
-      }
-     },
-     "concentration": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "thin holder data (2 addresses in 12k-block window)"
-      ],
-      "notes": [
-       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
-      ],
-      "detail": {
-       "supply": "1000000000000000000000000000",
-       "addrsSeen": 2,
-       "top10EoaBps": 0,
-       "top1EoaBps": 0,
-       "top10": [],
-       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
-      }
-     },
-     "deployer-history": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-      ],
-      "notes": [],
-      "detail": {}
-     }
-    },
-    "ponsPhase": {
-     "phase": "pre",
-     "curvePct": 100
-    }
-   },
-   "fast_lane": {
-    "action": "no-buy",
-    "reason": "gate-gate_failed",
-    "gate": "gate_failed"
-   }
-  },
-  {
-   "found_at": "2026-10-11T14:26:03.126Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Ledgerzine ZINE",
-   "muse": "",
-   "contract": "0x9d69f9b6ca006d9aaf10ec3032edc64c4a4b2477",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0xe5255248ed01e4b29dd81cc1407a333e28658d48b4a85b6356bb6402bc1d42a2",
-   "block": 85897636,
-   "curve": "0x585ef3d248c5f18c8ebc62abcc3425806b633f5d",
-   "deployer": "0x31ae1b7077ef6f31c937d2b8a2f44bb7dabd8893",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85897636 (tx 0xe5255248ed01e4b29dd81cc1407a333e28658d48b4a85b6356bb6402bc1d42a2); name=Ledgerzine symbol=ZINE curve=0x585ef3d248c5f18c8ebc62abcc3425806b633f5d deployer=0x31ae1b7077ef6f31c937d2b8a2f44bb7dabd8893. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
-   "gate_status": "gate_failed",
-   "gate_checked_at": "2026-10-11T14:26:12.451Z",
-   "gate_reasons": [
-    "curve-collected ETH ~0.0027 < 0.01 floor (pre-graduation venue)"
-   ],
-   "gate_warnings": [
-    "thin holder data (5 addresses in 12k-block window)",
-    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-   ],
-   "gate_detail": {
-    "checks": {
-     "owner-powers": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no owner(); no dangerous selectors in bytecode"
-      ],
-      "detail": {
-       "selectors": {
-        "mint": [],
-        "pause": [],
-        "blacklist": [],
-        "fee": []
-       },
-       "owner": null
-      }
-     },
-     "proxy": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no proxy admin/beacon slots set; not an upgradeable proxy"
-      ],
-      "detail": {}
-     },
-     "pons-curve": {
-      "pass": false,
-      "reasons": [
-       "curve-collected ETH ~0.0027 < 0.01 floor (pre-graduation venue)"
-      ],
-      "warnings": [],
-      "notes": [],
-      "detail": {
-       "curve": "0x585ef3d248c5f18c8ebc62abcc3425806b633f5d",
-       "phase": "pre",
-       "curvePct": 99.78,
-       "curveCodeBytes": 10229,
-       "curveEth": 0.002702085502737658
-      }
-     },
-     "concentration": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "thin holder data (5 addresses in 12k-block window)"
-      ],
-      "notes": [
-       "top-10 real-wallet holders own 0.21% of supply (<=30%); no concentration trigger"
-      ],
-      "detail": {
-       "supply": "1000000000000000000000000000",
-       "addrsSeen": 5,
-       "top10EoaBps": 21,
-       "top1EoaBps": 21,
-       "top10": [
-        {
-         "addr": "0xf4d0b74de896b3b666369fd738c0f6d034cd7e92",
-         "bal": "2136752179697870932672443"
-        }
-       ],
-       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
-      }
-     },
-     "deployer-history": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-      ],
-      "notes": [],
-      "detail": {}
-     }
-    },
-    "ponsPhase": {
-     "phase": "pre",
-     "curvePct": 99.78
-    }
-   },
-   "fast_lane": {
-    "action": "no-buy",
-    "reason": "gate-gate_failed",
-    "gate": "gate_failed"
-   }
-  },
-  {
-   "found_at": "2026-10-11T14:26:11.989Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Inbred Cat coin INCATCOIN",
-   "muse": "",
-   "contract": "0x9f85d9595770506e930a56c5a4ce57e7aca22316",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x81a9af7756e07e7fc67589c63e331b5a9adbf7576266cbc6734c0f7b81c74b3c",
-   "block": 85897795,
-   "curve": "0x7b236b2a60d09d7094345614aad002bc03bd664c",
-   "deployer": "0xee5df8c07917ef2f9f247d89139f427286a3448c",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85897795 (tx 0x81a9af7756e07e7fc67589c63e331b5a9adbf7576266cbc6734c0f7b81c74b3c); name=Inbred Cat coin symbol=INCATCOIN curve=0x7b236b2a60d09d7094345614aad002bc03bd664c deployer=0xee5df8c07917ef2f9f247d89139f427286a3448c. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
-   "gate_status": "gate_failed",
-   "gate_checked_at": "2026-10-11T14:31:11.349Z",
-   "gate_reasons": [
-    "curve-collected ETH ~0.0060 < 0.01 floor (pre-graduation venue)"
-   ],
-   "gate_warnings": [
-    "thin holder data (6 addresses in 12k-block window)",
-    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-   ],
-   "gate_detail": {
-    "checks": {
-     "owner-powers": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no owner(); no dangerous selectors in bytecode"
-      ],
-      "detail": {
-       "selectors": {
-        "mint": [],
-        "pause": [],
-        "blacklist": [],
-        "fee": []
-       },
-       "owner": null
-      }
-     },
-     "proxy": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no proxy admin/beacon slots set; not an upgradeable proxy"
-      ],
-      "detail": {}
-     },
-     "pons-curve": {
-      "pass": false,
-      "reasons": [
-       "curve-collected ETH ~0.0060 < 0.01 floor (pre-graduation venue)"
-      ],
-      "warnings": [],
-      "notes": [],
-      "detail": {
-       "curve": "0x7b236b2a60d09d7094345614aad002bc03bd664c",
-       "phase": "pre",
-       "curvePct": 99.72,
-       "curveCodeBytes": 10229,
-       "curveEth": 0.006044770786893745
-      }
-     },
-     "concentration": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "thin holder data (6 addresses in 12k-block window)"
-      ],
-      "notes": [
-       "top-10 real-wallet holders own 0.27% of supply (<=30%); no concentration trigger"
-      ],
-      "detail": {
-       "supply": "1000000000000000000000000000",
-       "addrsSeen": 6,
-       "top10EoaBps": 27,
-       "top1EoaBps": 27,
-       "top10": [
-        {
-         "addr": "0xac96aba213168182f99e0dd9474dd34cb7b78f53",
-         "bal": "2706309980390527641778845"
-        }
-       ],
-       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
-      }
-     },
-     "deployer-history": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-      ],
-      "notes": [],
-      "detail": {}
-     }
-    },
-    "ponsPhase": {
-     "phase": "pre",
-     "curvePct": 99.72
-    }
-   },
-   "fast_lane": {
-    "action": "no-buy",
-    "reason": "gate-gate_failed",
-    "gate": "gate_failed"
-   }
-  },
-  {
-   "found_at": "2026-10-11T14:26:16.934Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "PoorLess POORLESS",
-   "muse": "",
-   "contract": "0x2fc1c65a974b891d6896554f192cbd40366bf634",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0xf23f1c452bce59833cbeb909249b3597603302d58a605236c77006b012192633",
-   "block": 85897808,
-   "curve": "0x573f1921d052a63f582df744dfa22ff5332c16d5",
-   "deployer": "0x5e964c08c878b55ef946bd41ce5e175753abffc9",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85897808 (tx 0xf23f1c452bce59833cbeb909249b3597603302d58a605236c77006b012192633); name=PoorLess symbol=POORLESS curve=0x573f1921d052a63f582df744dfa22ff5332c16d5 deployer=0x5e964c08c878b55ef946bd41ce5e175753abffc9. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
-   "gate_status": "gate_failed",
-   "gate_checked_at": "2026-10-11T14:30:47.007Z",
-   "gate_reasons": [
-    "curve-collected ETH ~0.0012 < 0.01 floor (pre-graduation venue)"
-   ],
-   "gate_warnings": [
-    "thin holder data (6 addresses in 12k-block window)",
-    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-   ],
-   "gate_detail": {
-    "checks": {
-     "owner-powers": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no owner(); no dangerous selectors in bytecode"
-      ],
-      "detail": {
-       "selectors": {
-        "mint": [],
-        "pause": [],
-        "blacklist": [],
-        "fee": []
-       },
-       "owner": null
-      }
-     },
-     "proxy": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no proxy admin/beacon slots set; not an upgradeable proxy"
-      ],
-      "detail": {}
-     },
-     "pons-curve": {
-      "pass": false,
-      "reasons": [
-       "curve-collected ETH ~0.0012 < 0.01 floor (pre-graduation venue)"
-      ],
-      "warnings": [],
-      "notes": [],
-      "detail": {
-       "curve": "0x573f1921d052a63f582df744dfa22ff5332c16d5",
-       "phase": "pre",
-       "curvePct": 100,
-       "curveCodeBytes": 10229,
-       "curveEth": 0.001220683150085044
-      }
-     },
-     "concentration": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "thin holder data (6 addresses in 12k-block window)"
-      ],
-      "notes": [
-       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
-      ],
-      "detail": {
-       "supply": "1000000000000000000000000000",
-       "addrsSeen": 6,
-       "top10EoaBps": 0,
-       "top1EoaBps": 0,
-       "top10": [],
-       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
-      }
-     },
-     "deployer-history": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-      ],
-      "notes": [],
-      "detail": {}
-     }
-    },
-    "ponsPhase": {
-     "phase": "pre",
-     "curvePct": 100
-    }
-   },
-   "fast_lane": {
-    "action": "no-buy",
-    "reason": "gate-gate_failed",
-    "gate": "gate_failed"
-   }
-  },
-  {
-   "found_at": "2026-10-11T14:26:19.910Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Inbred Cat coin INCATCOIN",
-   "muse": "",
-   "contract": "0xbf00ad122b9397fd9865b904f4cd85da17eb84d8",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x4539d1efeb7b99fd79f9f873f9a7f83d67d8f65bf6b4368e7ef4eaf23338bf3a",
-   "block": 85897812,
-   "curve": "0xe10d7416412c33301dad875528b3c79695c2392d",
-   "deployer": "0x20b5fe115d47543d9bc636ee6306ba5c8838afc1",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85897812 (tx 0x4539d1efeb7b99fd79f9f873f9a7f83d67d8f65bf6b4368e7ef4eaf23338bf3a); name=Inbred Cat coin symbol=INCATCOIN curve=0xe10d7416412c33301dad875528b3c79695c2392d deployer=0x20b5fe115d47543d9bc636ee6306ba5c8838afc1. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
-   "gate_status": "gate_failed",
-   "gate_checked_at": "2026-10-11T14:30:26.599Z",
-   "gate_reasons": [
-    "curve-collected ETH ~0.0000 < 0.01 floor (pre-graduation venue)"
-   ],
-   "gate_warnings": [
-    "thin holder data (2 addresses in 12k-block window)",
-    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-   ],
-   "gate_detail": {
-    "checks": {
-     "owner-powers": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no owner(); no dangerous selectors in bytecode"
-      ],
-      "detail": {
-       "selectors": {
-        "mint": [],
-        "pause": [],
-        "blacklist": [],
-        "fee": []
-       },
-       "owner": null
-      }
-     },
-     "proxy": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no proxy admin/beacon slots set; not an upgradeable proxy"
-      ],
-      "detail": {}
-     },
-     "pons-curve": {
-      "pass": false,
-      "reasons": [
-       "curve-collected ETH ~0.0000 < 0.01 floor (pre-graduation venue)"
-      ],
-      "warnings": [],
-      "notes": [],
-      "detail": {
-       "curve": "0xe10d7416412c33301dad875528b3c79695c2392d",
-       "phase": "pre",
-       "curvePct": 100,
-       "curveCodeBytes": 10229,
-       "curveEth": 0
-      }
-     },
-     "concentration": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "thin holder data (2 addresses in 12k-block window)"
-      ],
-      "notes": [
-       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
-      ],
-      "detail": {
-       "supply": "1000000000000000000000000000",
-       "addrsSeen": 2,
-       "top10EoaBps": 0,
-       "top1EoaBps": 0,
-       "top10": [],
-       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
-      }
-     },
-     "deployer-history": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-      ],
-      "notes": [],
-      "detail": {}
-     }
-    },
-    "ponsPhase": {
-     "phase": "pre",
-     "curvePct": 100
-    }
-   },
-   "fast_lane": {
-    "action": "no-buy",
-    "reason": "gate-gate_failed",
-    "gate": "gate_failed"
-   }
-  },
-  {
-   "found_at": "2026-10-11T14:26:21.896Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Pango Protocol PANGO",
-   "muse": "",
-   "contract": "0x234bf53b0f0d87f4026ec6fcff1bd2be73a74f86",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x02e767c503c93cc1642c92ed983b25dcd5e722193cb570ea06cec5468fa9a974",
-   "block": 85897864,
-   "curve": "0x740417244a492ddc9283105589d5ed341ac5f77a",
-   "deployer": "0x9d2a040f2d81ba5a7dccab086af07406c6714db7",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85897864 (tx 0x02e767c503c93cc1642c92ed983b25dcd5e722193cb570ea06cec5468fa9a974); name=Pango Protocol symbol=PANGO curve=0x740417244a492ddc9283105589d5ed341ac5f77a deployer=0x9d2a040f2d81ba5a7dccab086af07406c6714db7. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
-   "gate_status": "gate_failed",
-   "gate_checked_at": "2026-10-11T14:30:00.629Z",
-   "gate_reasons": [
-    "curve-collected ETH ~0.0002 < 0.01 floor (pre-graduation venue)"
-   ],
-   "gate_warnings": [
-    "thin holder data (7 addresses in 12k-block window)",
-    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-   ],
-   "gate_detail": {
-    "checks": {
-     "owner-powers": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no owner(); no dangerous selectors in bytecode"
-      ],
-      "detail": {
-       "selectors": {
-        "mint": [],
-        "pause": [],
-        "blacklist": [],
-        "fee": []
-       },
-       "owner": null
-      }
-     },
-     "proxy": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no proxy admin/beacon slots set; not an upgradeable proxy"
-      ],
-      "detail": {}
-     },
-     "pons-curve": {
-      "pass": false,
-      "reasons": [
-       "curve-collected ETH ~0.0002 < 0.01 floor (pre-graduation venue)"
-      ],
-      "warnings": [],
-      "notes": [],
-      "detail": {
-       "curve": "0x740417244a492ddc9283105589d5ed341ac5f77a",
-       "phase": "pre",
-       "curvePct": 99.99,
-       "curveCodeBytes": 10229,
-       "curveEth": 0.00015346942884001
-      }
-     },
-     "concentration": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "thin holder data (7 addresses in 12k-block window)"
-      ],
-      "notes": [
-       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
-      ],
-      "detail": {
-       "supply": "1000000000000000000000000000",
-       "addrsSeen": 7,
-       "top10EoaBps": 0,
-       "top1EoaBps": 0,
-       "top10": [],
-       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
-      }
-     },
-     "deployer-history": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-      ],
-      "notes": [],
-      "detail": {}
-     }
-    },
-    "ponsPhase": {
-     "phase": "pre",
-     "curvePct": 99.99
-    }
-   },
-   "fast_lane": {
-    "action": "no-buy",
-    "reason": "gate-gate_failed",
-    "gate": "gate_failed"
-   }
-  },
   {
    "found_at": "2026-10-11T14:26:23.685Z",
    "scout": "pons-family",
@@ -2554,9 +1155,218 @@
    "tx_hash": "0x7b4d50281cb5a7051a7f93ad6aa3617f984e654f1900efa547876dcc53c0c130",
    "block": 85905573,
    "detail": "new contract deployed in block 85905573"
+  },
+  {
+   "found_at": "2026-10-11T14:35:00.805Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x53128984e015b586bfde652ec3d705705b5c8fc7",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xbfaa83bf669af602832fe0110300f9981322f49055053ae1c10cc60eec715310",
+   "block": 85905693,
+   "detail": "new contract deployed in block 85905693"
+  },
+  {
+   "found_at": "2026-10-11T14:35:02.915Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xaa379766a4bd7427b93766f57e34a0c2ddfddf3a",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x0fed5a168adf84757580574197ff0f4c36afc813a1f278ad6bf0cf3573bb5856",
+   "block": 85905710,
+   "detail": "new contract deployed in block 85905710"
+  },
+  {
+   "found_at": "2026-10-11T14:35:13.112Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x85e6efe59308472a40bef96f6c78b3de09883044",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x35af9bcdbb0396827b174bb0df242e3b5bf6d69fffbd1fa3298fd7023cd8e4fc",
+   "block": 85905811,
+   "detail": "new contract deployed in block 85905811"
+  },
+  {
+   "found_at": "2026-10-11T14:35:28.068Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x8d6462be0c77e16d19f1346de27fd613875a5524",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xd7e5ff55be21f933b644cf7d9586dab555dc4ff6d6943f7440e0edf0d7c65494",
+   "block": 85905900,
+   "detail": "new contract deployed in block 85905900"
+  },
+  {
+   "found_at": "2026-10-11T14:35:59.415Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Merist MERIST",
+   "muse": "",
+   "contract": "0xc102d0ea391b048785bb8995622f26260b3a09ca",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x4fd789ae0b258254a7f5ab4527ab70e74c1a3dd067888a26344fbe95bb0f232d",
+   "block": 85901352,
+   "curve": "0x6d8bf8ee7360850b9eedeb482e11d0485482a666",
+   "deployer": "0xdae07829b656847b9fc0a87c612dddf206e75836",
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85901352 (tx 0x4fd789ae0b258254a7f5ab4527ab70e74c1a3dd067888a26344fbe95bb0f232d); name=Merist symbol=MERIST curve=0x6d8bf8ee7360850b9eedeb482e11d0485482a666 deployer=0xdae07829b656847b9fc0a87c612dddf206e75836. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-11T14:36:01.986Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Merist MERIST",
+   "muse": "",
+   "contract": "0xbcdb87735f45eac0f3fc75de87f0a0385b89b3d0",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x8c728953f36c712a3c29b54a40ac0cd6a2f1c4c2f4d532f8ae330106282b01a2",
+   "block": 85901370,
+   "curve": "0xfd784469f788bc08005c7349c131f521ee6daf50",
+   "deployer": "0xfe595f25448ae4e4f61b31eb6aa4023f1af83186",
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85901370 (tx 0x8c728953f36c712a3c29b54a40ac0cd6a2f1c4c2f4d532f8ae330106282b01a2); name=Merist symbol=MERIST curve=0xfd784469f788bc08005c7349c131f521ee6daf50 deployer=0xfe595f25448ae4e4f61b31eb6aa4023f1af83186. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-11T14:36:04.837Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "PyroAiTrade PYROBOT",
+   "muse": "",
+   "contract": "0x73705ce74b7b434cc716a3cb0494251f78108642",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x1fbf4d9242b8f712008343bac997562f50edee7f3f87b8139a874d33591220a8",
+   "block": 85902043,
+   "curve": "0x627cd13d966956af4b1b6a6122f004a8c3e29e91",
+   "deployer": "0x357204b5437ca0ccf592dd42c52e1e921ae912e6",
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85902043 (tx 0x1fbf4d9242b8f712008343bac997562f50edee7f3f87b8139a874d33591220a8); name=PyroAiTrade symbol=PYROBOT curve=0x627cd13d966956af4b1b6a6122f004a8c3e29e91 deployer=0x357204b5437ca0ccf592dd42c52e1e921ae912e6. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-11T14:36:14.224Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Merist Finance MERIST",
+   "muse": "",
+   "contract": "0x9489bf1c250ffda315246ffc997801a3a46efa00",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x75fa6358d2f394e9b37195d4d48ca4fd54cee4fc2e2901d3eb56e80e72839f58",
+   "block": 85904185,
+   "curve": "0x36f5ea7f826ac778018a2cbb9a1f50b6175431e1",
+   "deployer": "0xece0d0fb3f2d3c65e712fe74da56766829c9ce7a",
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85904185 (tx 0x75fa6358d2f394e9b37195d4d48ca4fd54cee4fc2e2901d3eb56e80e72839f58); name=Merist Finance symbol=MERIST curve=0x36f5ea7f826ac778018a2cbb9a1f50b6175431e1 deployer=0xece0d0fb3f2d3c65e712fe74da56766829c9ce7a. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-11T14:36:18.842Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Groyper GROYPER",
+   "muse": "",
+   "contract": "0x5b2713c275b417d552e3209f6ca8e966725a4bea",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x6b3f1ea6e9b1128d8c540341406f6888ec672e238ac1e1093d342666b157febc",
+   "block": 85904485,
+   "curve": "0x5cfe8846862f4d1e07864d6e1d08beff7cd84c39",
+   "deployer": "0x11f1bc59214341dbbbe28e2b6741c22c3be1f76a",
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85904485 (tx 0x6b3f1ea6e9b1128d8c540341406f6888ec672e238ac1e1093d342666b157febc); name=Groyper symbol=GROYPER curve=0x5cfe8846862f4d1e07864d6e1d08beff7cd84c39 deployer=0x11f1bc59214341dbbbe28e2b6741c22c3be1f76a. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-11T14:36:21.662Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Sentry SENTRY",
+   "muse": "",
+   "contract": "0x736aedfe762208e4c13609f02938281a186d10eb",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x9019e164976d57abd43abe6677f3b58ad4a123abadbb75da006c9d45cf635f20",
+   "block": 85905207,
+   "curve": "0x487533105be5345fab2bf29bf550521815711317",
+   "deployer": "0xd781d00521bfa2e4c32f3b11286e68c9d9f50032",
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85905207 (tx 0x9019e164976d57abd43abe6677f3b58ad4a123abadbb75da006c9d45cf635f20); name=Sentry symbol=SENTRY curve=0x487533105be5345fab2bf29bf550521815711317 deployer=0xd781d00521bfa2e4c32f3b11286e68c9d9f50032. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-11T14:36:23.135Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Sentry SENTRY",
+   "muse": "",
+   "contract": "0xd2e78c3288f32430e6ed4865c888d1401296649a",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x8b9fa6e59faba2bd335a61a5d56df663d25b5af962b1a775dbaebd6468141001",
+   "block": 85905475,
+   "curve": "0x9ff92ddfc4ee1140dc2509b46b95e9e98ccbddcc",
+   "deployer": "0x2dc5bb8ec699f0cf369d84f6d3e2197d1adeaabf",
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85905475 (tx 0x8b9fa6e59faba2bd335a61a5d56df663d25b5af962b1a775dbaebd6468141001); name=Sentry symbol=SENTRY curve=0x9ff92ddfc4ee1140dc2509b46b95e9e98ccbddcc deployer=0x2dc5bb8ec699f0cf369d84f6d3e2197d1adeaabf. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-11T14:36:25.656Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Zamkuro ZAMKURO",
+   "muse": "",
+   "contract": "0x56162b77e0a289ea2d6d4116287991638dc66b96",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x649a0ae6f6c77283077b4fecdd90831e93c978258294e88ce18bd6d8a9e2b4be",
+   "block": 85905905,
+   "curve": "0x51bd026599a6feefacff03bc0f37a3bedf2c368f",
+   "deployer": "0xbb5836d9bfa6c97262fa3846bb9daa848c1de284",
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85905905 (tx 0x649a0ae6f6c77283077b4fecdd90831e93c978258294e88ce18bd6d8a9e2b4be); name=Zamkuro symbol=ZAMKURO curve=0x51bd026599a6feefacff03bc0f37a3bedf2c368f deployer=0xbb5836d9bfa6c97262fa3846bb9daa848c1de284. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-11T14:36:27.759Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Waxsigil WAXSIGIL",
+   "muse": "",
+   "contract": "0x5d974047acc5bcba7144ffe5fe873248b6de22e1",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x6cf82adf615640b7ab0cf57b0508686fd37405adcdabf367534397aff39732e3",
+   "block": 85905909,
+   "curve": "0xc30ab9d64559b2b0c24a4bda415338b3a50af221",
+   "deployer": "0x85e6efe59308472a40bef96f6c78b3de09883044",
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85905909 (tx 0x6cf82adf615640b7ab0cf57b0508686fd37405adcdabf367534397aff39732e3); name=Waxsigil symbol=WAXSIGIL curve=0xc30ab9d64559b2b0c24a4bda415338b3a50af221 deployer=0x85e6efe59308472a40bef96f6c78b3de09883044. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-11T14:36:29.875Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "KITEFALL KFALL",
+   "muse": "",
+   "contract": "0x67970b8863713db4006c77eec4581fd9816d6773",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x9ead2def6467a529865175af794322d7277bcd19cbf64dfa2d379b5993f4c2c4",
+   "block": 85906020,
+   "curve": "0x6bd4cf4bac3c1e8acfa1f9dc83a7cc18879d89d4",
+   "deployer": "0x86b8a3ac004dd2696c256a18363ea09eb4aba2dc",
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85906020 (tx 0x9ead2def6467a529865175af794322d7277bcd19cbf64dfa2d379b5993f4c2c4); name=KITEFALL symbol=KFALL curve=0x6bd4cf4bac3c1e8acfa1f9dc83a7cc18879d89d4 deployer=0x86b8a3ac004dd2696c256a18363ea09eb4aba2dc. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-11T14:36:33.549Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Waxsigil WAXSIGIL",
+   "muse": "",
+   "contract": "0x226a49a8c8d46f53cb992f607e0d3e9fa58b1791",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x6cd2ca8126e735ab8005dc034a92673b6f6585f00c2771778b4a7adbf7e64948",
+   "block": 85906540,
+   "curve": "0x71884a8b97e67c0abca2d7631d7f146a3668f3e2",
+   "deployer": "0xb04a223fcffddf0fe98c63a34ffca937e1d401b0",
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85906540 (tx 0x6cd2ca8126e735ab8005dc034a92673b6f6585f00c2771778b4a7adbf7e64948); name=Waxsigil symbol=WAXSIGIL curve=0x71884a8b97e67c0abca2d7631d7f146a3668f3e2 deployer=0xb04a223fcffddf0fe98c63a34ffca937e1d401b0. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
   }
  ],
- "scout_queue_total": 2704,
+ "scout_queue_total": 2719,
  "investigations": [
   {
    "candidate": {
@@ -257009,7 +255819,8 @@
     "symbol": "WAIFUS",
     "total_supply": "1000000000000000000000000000",
     "transfer_logs_200k": 0
-   }
+   },
+   "social_scored_at": "2026-10-11T14:36:29.453Z"
   },
   {
    "investigated_at": "2026-10-11T14:26:15.676Z",
@@ -257049,7 +255860,8 @@
     "symbol": "uzicat",
     "total_supply": "1000000000000000000000000000",
     "transfer_logs_200k": 0
-   }
+   },
+   "social_scored_at": "2026-10-11T14:36:29.453Z"
   },
   {
    "investigated_at": "2026-10-11T14:26:15.676Z",
@@ -257089,7 +255901,8 @@
     "symbol": "WAIFUS",
     "total_supply": "1000000000000000000000000000",
     "transfer_logs_200k": 0
-   }
+   },
+   "social_scored_at": "2026-10-11T14:36:29.453Z"
   },
   {
    "investigated_at": "2026-10-11T14:26:15.676Z",
@@ -257129,7 +255942,8 @@
     "symbol": "WAIFUS",
     "total_supply": "1000000000000000000000000000",
     "transfer_logs_200k": 0
-   }
+   },
+   "social_scored_at": "2026-10-11T14:36:29.453Z"
   },
   {
    "investigated_at": "2026-10-11T14:26:15.676Z",
@@ -257191,7 +256005,8 @@
     "unique_sellers": 30,
     "curve_balance_eth": 0.6463,
     "top_buyer_fresh_wallets": true
-   }
+   },
+   "social_scored_at": "2026-10-11T14:36:29.453Z"
   }
  ],
  "scores": [
@@ -435621,6 +434436,106 @@
    "total": 50,
    "grade": "P",
    "notes": "pre-social: 22 min since launch (found_at proxy; TokenLaunched block 85879195), no footprint yet - no website, X presence, or ticker spread found (web search only surfaces unrelated older tokens); gate_pass with no affirmative bad evidence; re-grade after the social window."
+  },
+  {
+   "scored_at": "2026-10-11T14:37:00Z",
+   "candidate": {
+    "contract": "0x9473ca5dcfab3559d39f7441dd8ded9340555939",
+    "name": "Hooded Waifus",
+    "ticker": "WAIFUS"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 25,
+   "grade": "D",
+   "notes": "~14h old (deploy block 85410777, ts 1791677727), normal rubric. zero onchain footprint: 0 transfers, 0 holders, no V2 pair, no V4 pools. part of a serial-deploy batch (3 identical WAIFUS contracts + uzicat). name piggybacks the real HW Labs 'Hooded Waifus' project (hwlabs.app, token $HOODED) - this contract is unaffiliated copycat naming. no website, no X account, no team, no ticker spread for this contract. manufactured spam deployment."
+  },
+  {
+   "scored_at": "2026-10-11T14:37:00Z",
+   "candidate": {
+    "contract": "0xd80288062a91b469879017cae400e6ae912c8317",
+    "name": "lil uzi cat",
+    "ticker": "uzicat"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 25,
+   "grade": "D",
+   "notes": "~14h old (deploy block 85410778), normal rubric. zero onchain footprint: 0 transfers, 0 holders, no pairs. same serial-deploy batch as the WAIFUS trio. name matches a trending Solana $UZICAT (Dexape-tracked, TG caller lists) - this robinhood-chain contract is a copycat deployment, not the solana token. no website, no X, no team, no spread for this contract."
+  },
+  {
+   "scored_at": "2026-10-11T14:37:00Z",
+   "candidate": {
+    "contract": "0x2e7f985c89142482d5f19aa60b2ba214789fae3a",
+    "name": "Hooded Waifus",
+    "ticker": "WAIFUS"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 25,
+   "grade": "D",
+   "notes": "~14h old (deploy block 85410892), normal rubric. identical copy of 0x9473ca5d - second of three identical WAIFUS serial deploys. 0 transfers, 0 holders, no pairs. name piggybacks HW Labs' $HOODED project; this contract unaffiliated. no own social footprint."
+  },
+  {
+   "scored_at": "2026-10-11T14:37:00Z",
+   "candidate": {
+    "contract": "0x9964be1827f209b780db07f6d4a8850e85f82c41",
+    "name": "Hooded Waifus",
+    "ticker": "WAIFUS"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 25,
+   "grade": "D",
+   "notes": "~14h old (deploy block 85410999), normal rubric. identical copy of 0x9473ca5d - third of three identical WAIFUS serial deploys. 0 transfers, 0 holders, no pairs. name piggybacks HW Labs' $HOODED project; this contract unaffiliated. no own social footprint."
+  },
+  {
+   "scored_at": "2026-10-11T14:37:00Z",
+   "candidate": {
+    "contract": "0xb3d8f50432dc469b0189889a8074e0cac3b806b0",
+    "name": "curato",
+    "ticker": "CURATO"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 2,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 3
+   },
+   "total": 25,
+   "grade": "D",
+   "notes": "67 min since pons V2 launch (launch block 85867267, ts 1791725269) - past the 60-min pre-social window, normal rubric. affirmative bad evidence: sybil/bot churn - top two buyers did 41 of 88 curve buys from fresh nonce-1/nonce-2 wallets (0x65050a9b... 25 buys, 0xf0b7eaaf... 16 buys), not organic accumulation; 55 sells vs 88 buys, curve balance draining 0.696->0.646 ETH. no social footprint found anywhere (no site, no X, no KOL, no ticker spread). manufactured trading activity."
   }
  ],
  "decisions": [
@@ -745096,9 +744011,9 @@
   "reentry-watch"
  ],
  "last_activity": {
-  "scout": "2026-10-11T14:34:22.122Z",
+  "scout": "2026-10-11T14:36:33.549Z",
   "hymn": "2026-10-11T14:26:15.676Z",
-  "scorer": "2026-10-11T14:17:20.046Z",
+  "scorer": "2026-10-11T14:37:00Z",
   "snug": "2026-10-11T14:03:01.283Z",
   "cardigan": "2026-10-11T14:03:01.283Z"
  },

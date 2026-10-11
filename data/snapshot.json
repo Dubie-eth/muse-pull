@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-11T10:30:55.929Z",
+ "updated_at": "2026-10-11T10:32:52.508Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
@@ -2788,7 +2788,94 @@
    "source": "pons-factory",
    "tx_hash": "0x2c2a105645dafd53bc375182cec59e5fa303be8d37290143fccd6e7cbb592fe8",
    "block": 85755858,
-   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85755858 (tx 0x2c2a105645dafd53bc375182cec59e5fa303be8d37290143fccd6e7cbb592fe8); name=Bid Broker symbol=BIDBROKER creator=0x9661744e535529a1e9f08f499cc093df82fb8ae2. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85755858 (tx 0x2c2a105645dafd53bc375182cec59e5fa303be8d37290143fccd6e7cbb592fe8); name=Bid Broker symbol=BIDBROKER creator=0x9661744e535529a1e9f08f499cc093df82fb8ae2. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-11T10:31:41.103Z",
+   "gate_reasons": [
+    "curve-collected ETH ~0.0003 < 0.01 floor (pre-graduation venue)"
+   ],
+   "gate_warnings": [
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": false,
+      "reasons": [
+       "curve-collected ETH ~0.0003 < 0.01 floor (pre-graduation venue)"
+      ],
+      "warnings": [],
+      "notes": [],
+      "detail": {
+       "curve": "0x9661744e535529a1e9f08f499cc093df82fb8ae2",
+       "phase": "pre",
+       "curvePct": 100,
+       "curveCodeBytes": 10229,
+       "curveEth": 0.000283197523856766
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 11,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "pre",
+     "curvePct": 100
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "gate-gate_failed",
+    "gate": "gate_failed"
+   }
   },
   {
    "found_at": "2026-10-11T10:24:15.170Z",
@@ -2915,7 +3002,160 @@
    "source": "pons-factory",
    "tx_hash": "0x40ed38adb35b204464b1fcfb952709699ce792338d7e3998f04f079497b92a71",
    "block": 85759472,
-   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85759472 (tx 0x40ed38adb35b204464b1fcfb952709699ce792338d7e3998f04f079497b92a71); name=DeltaQuantum symbol=DELTAQ creator=0xbd9bfbd14b8a6cfb0ce4f3f7aebb7649519cd783. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85759472 (tx 0x40ed38adb35b204464b1fcfb952709699ce792338d7e3998f04f079497b92a71); name=DeltaQuantum symbol=DELTAQ creator=0xbd9bfbd14b8a6cfb0ce4f3f7aebb7649519cd783. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-11T10:30:09.822Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time"
+      ],
+      "notes": [
+       "curve venue: ~0.4668 ETH collected >= 0.01 floor",
+       "buy leg simulates clean: 0.001 ETH -> 353553437122521091049363 tokens",
+       "14 CurveSell events in 20k blocks — sell path live"
+      ],
+      "detail": {
+       "curve": "0xbd9bfbd14b8a6cfb0ce4f3f7aebb7649519cd783",
+       "phase": "pre",
+       "curvePct": 78.26,
+       "curveCodeBytes": 10229,
+       "curveEth": 0.4667694764731473,
+       "snipeTaxBps": 0,
+       "buySim": {
+        "tokensOut": "353553437122521091049363"
+       },
+       "sellLiveness": {
+        "sells": 14,
+        "totalEthOut": "66241841967056637414775"
+       },
+       "sellSim": {
+        "error": "no recent seller with usable allowance found"
+       }
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "top-10 real-wallet holders own 18.20% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 44,
+       "top10EoaBps": 1820,
+       "top1EoaBps": 503,
+       "top10": [
+        {
+         "addr": "0x7af4253a4704e6d2aeeaf3455c22b7742473c241",
+         "bal": "50302266606146682363912273"
+        },
+        {
+         "addr": "0x0ce258fa60b6e5470993df512eedc22e339c17f4",
+         "bal": "28100514946236406240487286"
+        },
+        {
+         "addr": "0xfb80a86501a45bb8499846748f42d5079a920798",
+         "bal": "21982891573298000342749689"
+        },
+        {
+         "addr": "0xd89eb0676849b6cac985d0fc3486607d49125b3a",
+         "bal": "20465702114200958696949032"
+        },
+        {
+         "addr": "0x9530090d357f8828d598a5bca5905e68203fcfaf",
+         "bal": "18798765372266409771555238"
+        },
+        {
+         "addr": "0x89638d56e7ef0408bdde6ab7f2d9dcc27afcfde7",
+         "bal": "17186269923163304330454044"
+        },
+        {
+         "addr": "0x274169b62b089ffd0b8b182fae5348bcf9df3813",
+         "bal": "10671183055358091995777126"
+        },
+        {
+         "addr": "0x798730b1d50adac53d575df9e7c39a04394ec5bc",
+         "bal": "10169041061285616616578906"
+        },
+        {
+         "addr": "0x68f542f694ae78d66185986dbd17cba5bac1533c",
+         "bal": "2191624585875785577660798"
+        },
+        {
+         "addr": "0x656c9156b246264967843918584b9d1eb2cef909",
+         "bal": "2154164906907679971598808"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "pre",
+     "curvePct": 78.26
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "agent-veto",
+    "gate": "gate_pass",
+    "agents": [
+     "wave-hello:SKIP",
+     "humming-hymn:SKIP",
+     "blanket-snug:BUY"
+    ],
+    "veto": true,
+    "liqEth": 0.4667694764731473,
+    "venue": "curve",
+    "curve": "0xbd9bfbd14b8a6cfb0ce4f3f7aebb7649519cd783"
+   },
+   "hymn_investigated": true,
+   "hymn_investigated_at": "2026-10-11T10:32:37.555Z"
   },
   {
    "found_at": "2026-10-11T10:24:28.431Z",
@@ -252355,9 +252595,12 @@
    "social_scored_at": "2026-10-11T10:22:27.035Z",
    "snug_processed": true,
    "snug_processed_at": "2026-10-11T10:24:51.507Z",
-   "snug_broken_down_at": "2026-10-11T10:24:51.507Z",
+   "snug_broken_down_at": "2026-10-11T10:32:16.787Z",
    "snug_rebroken_down_at": "2026-10-11T10:24:51.507Z",
-   "snug_rebroken_down_reason": "mirror-dup row of same contract; existing breakdown at 2026-10-11T10:13:06.574Z governs - no re-do, no new decision-queue entry"
+   "snug_rebroken_down_reason": "mirror-dup row of same contract; existing breakdown at 2026-10-11T10:13:06.574Z governs - no re-do, no new decision-queue entry",
+   "snug_broken_down": true,
+   "snug_broken_down_marked_at": "2026-10-11T10:32:16.787Z",
+   "snug_breakdown_note": "blanket-snug tick 06:29 EDT 2026-10-11: durability breakdown already present in decision-queue.json from the 10:24-10:25 UTC run (rec=skip, dur=weak, grade=F for all; THARSIS/WISP from 10:13 UTC run); no new breakdown appended. marked to prevent re-processing."
   },
   {
    "investigated_at": "2026-10-11T10:22:40Z",
@@ -252389,9 +252632,12 @@
    "social_scored_at": "2026-10-11T10:22:27.035Z",
    "snug_processed": true,
    "snug_processed_at": "2026-10-11T10:24:51.507Z",
-   "snug_broken_down_at": "2026-10-11T10:24:51.507Z",
+   "snug_broken_down_at": "2026-10-11T10:32:16.787Z",
    "snug_rebroken_down_at": "2026-10-11T10:24:51.507Z",
-   "snug_rebroken_down_reason": "mirror-dup row of same contract; existing breakdown at 2026-10-11T10:13:06.574Z governs - no re-do, no new decision-queue entry"
+   "snug_rebroken_down_reason": "mirror-dup row of same contract; existing breakdown at 2026-10-11T10:13:06.574Z governs - no re-do, no new decision-queue entry",
+   "snug_broken_down": true,
+   "snug_broken_down_marked_at": "2026-10-11T10:32:16.787Z",
+   "snug_breakdown_note": "blanket-snug tick 06:29 EDT 2026-10-11: durability breakdown already present in decision-queue.json from the 10:24-10:25 UTC run (rec=skip, dur=weak, grade=F for all; THARSIS/WISP from 10:13 UTC run); no new breakdown appended. marked to prevent re-processing."
   },
   {
    "investigated_at": "2026-10-11T10:22:40Z",
@@ -252451,14 +252697,17 @@
    "social_scored_at": "2026-10-11T10:22:27.035Z",
    "snug_processed": true,
    "snug_processed_at": "2026-10-11T10:24:51.507Z",
-   "snug_broken_down_at": "2026-10-11T10:24:51.507Z",
+   "snug_broken_down_at": "2026-10-11T10:32:16.787Z",
    "snug_breakdown_grade": "F",
    "snug_breakdown_total": 0,
    "snug_breakdown_durability": "weak",
    "snug_breakdown_recommendation": "skip",
    "snug_breakdown_reason": "block-watcher sighting with random 12-byte hex name, zero holder data (0 addresses in 12k-block window), no V2 pair and no V4 pools - no tradeable venue exists at all (gate LP/liquidity checks skipped); anonymous/undiscoverable deployer so the rug-farm denylist check was skipped; zero web/social footprint, X unverifiable. not a pons launch, so it also fails the pons-only gate upstream. nothing to hold.",
    "snug_breakdown_comps": "no comps possible: zero-liquidity, zero-holder anomaly - worse than today’s stalled pons V2 churn cohort",
-   "snug_breakdown_risks": "no liquidity venue (no V2 pair, no V4 pools); zero holder data; anonymous deployer undiscoverable via RPC; zero social footprint"
+   "snug_breakdown_risks": "no liquidity venue (no V2 pair, no V4 pools); zero holder data; anonymous deployer undiscoverable via RPC; zero social footprint",
+   "snug_broken_down": true,
+   "snug_broken_down_marked_at": "2026-10-11T10:32:16.787Z",
+   "snug_breakdown_note": "blanket-snug tick 06:29 EDT 2026-10-11: durability breakdown already present in decision-queue.json from the 10:24-10:25 UTC run (rec=skip, dur=weak, grade=F for all; THARSIS/WISP from 10:13 UTC run); no new breakdown appended. marked to prevent re-processing."
   },
   {
    "investigated_at": "2026-10-11T10:22:40Z",
@@ -252490,14 +252739,17 @@
    "social_scored_at": "2026-10-11T10:22:27.035Z",
    "snug_processed": true,
    "snug_processed_at": "2026-10-11T10:24:51.507Z",
-   "snug_broken_down_at": "2026-10-11T10:24:51.507Z",
+   "snug_broken_down_at": "2026-10-11T10:32:16.787Z",
    "snug_breakdown_grade": "F",
    "snug_breakdown_total": 0,
    "snug_breakdown_durability": "weak",
    "snug_breakdown_recommendation": "skip",
    "snug_breakdown_reason": "fresh pons V2 launch: gate_pass but only 9 holder addresses in 12k-block window (thin), 2 CurveSells already in the gate probe - sell path exercised this early signals fast-flip holders; zero web/social footprint, X unverifiable (absence-based F); anonymous fresh deployer, no owner(), denylist skipped. hard social skip regardless of clean gate.",
    "snug_breakdown_comps": "matches today’s pons V2 churn profile: 06:00-10:00 EDT cohort overwhelmingly stalled or unwound (GHOSTS serial-farm, name-squat launches); VIALZ lesson - thin-curve fills can breach the 0.01 ETH floor fast",
-   "snug_breakdown_risks": "thin holder base (9 addresses); early curve sells; anonymous fresh deployer; zero social footprint; third-party sell sim unavailable"
+   "snug_breakdown_risks": "thin holder base (9 addresses); early curve sells; anonymous fresh deployer; zero social footprint; third-party sell sim unavailable",
+   "snug_broken_down": true,
+   "snug_broken_down_marked_at": "2026-10-11T10:32:16.787Z",
+   "snug_breakdown_note": "blanket-snug tick 06:29 EDT 2026-10-11: durability breakdown already present in decision-queue.json from the 10:24-10:25 UTC run (rec=skip, dur=weak, grade=F for all; THARSIS/WISP from 10:13 UTC run); no new breakdown appended. marked to prevent re-processing."
   },
   {
    "investigated_at": "2026-10-11T10:26:10Z",
@@ -252528,14 +252780,17 @@
    "social_scored_at": "2026-10-11T10:22:27.035Z",
    "snug_processed": true,
    "snug_processed_at": "2026-10-11T10:24:51.507Z",
-   "snug_broken_down_at": "2026-10-11T10:24:51.507Z",
+   "snug_broken_down_at": "2026-10-11T10:32:16.787Z",
    "snug_breakdown_grade": "F",
    "snug_breakdown_total": 0,
    "snug_breakdown_durability": "weak",
    "snug_breakdown_recommendation": "skip",
    "snug_breakdown_reason": "fresh pons V2 launch, ~0.10 ETH in curve, clean-looking fresh launch but thin and brand-new; zero web/social footprint, X unverifiable (absence-based F); anonymous deployer, no owner(), denylist skipped. hard social skip - no organic demand evidence to price conviction on.",
    "snug_breakdown_comps": "identical profile to today’s churned pons V2 launches: clean launches with no social that filled thin and unwound within hours",
-   "snug_breakdown_risks": "anonymous fresh deployer; zero social footprint; thin holder base; brand-new curve (minutes old at investigation)"
+   "snug_breakdown_risks": "anonymous fresh deployer; zero social footprint; thin holder base; brand-new curve (minutes old at investigation)",
+   "snug_broken_down": true,
+   "snug_broken_down_marked_at": "2026-10-11T10:32:16.787Z",
+   "snug_breakdown_note": "blanket-snug tick 06:29 EDT 2026-10-11: durability breakdown already present in decision-queue.json from the 10:24-10:25 UTC run (rec=skip, dur=weak, grade=F for all; THARSIS/WISP from 10:13 UTC run); no new breakdown appended. marked to prevent re-processing."
   },
   {
    "investigated_at": "2026-10-11T10:26:10Z",
@@ -252566,14 +252821,17 @@
    "social_scored_at": "2026-10-11T10:22:27.035Z",
    "snug_processed": true,
    "snug_processed_at": "2026-10-11T10:24:51.507Z",
-   "snug_broken_down_at": "2026-10-11T10:24:51.507Z",
+   "snug_broken_down_at": "2026-10-11T10:32:16.787Z",
    "snug_breakdown_grade": "F",
    "snug_breakdown_total": 0,
    "snug_breakdown_durability": "weak",
    "snug_breakdown_recommendation": "skip",
    "snug_breakdown_reason": "fresh pons V2 launch with ~0.366 ETH in curve but 10 sells observed in the gate probe - heavy sell-side churn relative to its fresh life; sell pressure dominating this early means flip-trawlers, not organic demand; zero web/social footprint, X unverifiable (absence-based F); anonymous deployer, no owner(), denylist skipped. hard social skip.",
    "snug_breakdown_comps": "churn profile recalls VIALZ-style fast-churn curves that breached the 0.01 ETH floor post-gate-stamp; today’s pons cohort overwhelmingly stalled",
-   "snug_breakdown_risks": "10 curve sells in gate probe (early flip pressure); anonymous fresh deployer; zero social footprint; third-party sell sim unavailable"
+   "snug_breakdown_risks": "10 curve sells in gate probe (early flip pressure); anonymous fresh deployer; zero social footprint; third-party sell sim unavailable",
+   "snug_broken_down": true,
+   "snug_broken_down_marked_at": "2026-10-11T10:32:16.787Z",
+   "snug_breakdown_note": "blanket-snug tick 06:29 EDT 2026-10-11: durability breakdown already present in decision-queue.json from the 10:24-10:25 UTC run (rec=skip, dur=weak, grade=F for all; THARSIS/WISP from 10:13 UTC run); no new breakdown appended. marked to prevent re-processing."
   },
   {
    "investigated_at": "2026-10-11T10:26:10Z",
@@ -252605,14 +252863,17 @@
    "social_scored_at": "2026-10-11T10:22:27.035Z",
    "snug_processed": true,
    "snug_processed_at": "2026-10-11T10:24:51.507Z",
-   "snug_broken_down_at": "2026-10-11T10:24:51.507Z",
+   "snug_broken_down_at": "2026-10-11T10:32:16.787Z",
    "snug_breakdown_grade": "F",
    "snug_breakdown_total": 0,
    "snug_breakdown_durability": "weak",
    "snug_breakdown_recommendation": "skip",
    "snug_breakdown_reason": "fresh pons V2 launch, only ~0.0205 ETH in curve with 5 holder addresses - thin above the 0.01 ETH floor but any flip breaches it fast (VIALZ pattern); zero web/social footprint, X unverifiable (absence-based F); anonymous fresh deployer, no owner(), denylist skipped. hard social skip.",
    "snug_breakdown_comps": "floor-adjacent pons launches like VIALZ that breached the 0.01 ETH floor between gate stamp and investigation; today’s churned cohort",
-   "snug_breakdown_risks": "0.0205 ETH curve near floor-breach zone; 5 holders only; anonymous fresh deployer; zero social footprint"
+   "snug_breakdown_risks": "0.0205 ETH curve near floor-breach zone; 5 holders only; anonymous fresh deployer; zero social footprint",
+   "snug_broken_down": true,
+   "snug_broken_down_marked_at": "2026-10-11T10:32:16.787Z",
+   "snug_breakdown_note": "blanket-snug tick 06:29 EDT 2026-10-11: durability breakdown already present in decision-queue.json from the 10:24-10:25 UTC run (rec=skip, dur=weak, grade=F for all; THARSIS/WISP from 10:13 UTC run); no new breakdown appended. marked to prevent re-processing."
   },
   {
    "investigated_at": "2026-10-11T10:26:38.554339+00:00",
@@ -252862,6 +253123,40 @@
    },
    "verdict": "skip",
    "verdict_note": "gate_pass by unattributability, not by merit (same phantom class flagged 2026-10-11 ~05:45: scout emitted a non-token contract as candidate). No token, no pair, no V4 pool, zero transfers in 12h - no trade surface exists. Nothing for snug to grade."
+  },
+  {
+   "investigated_at": "2026-10-11T10:32:37.555Z",
+   "candidate": {
+    "contract": "0x2d7badfd7057683ea64b4ee6911a0fc973935127",
+    "name": "DeltaQuantum DELTAQ",
+    "symbol": "DELTAQ",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "type": "token",
+    "found_at": "2026-10-11T10:24:25.157Z",
+    "block": 85759472,
+    "tx_hash": "0x40ed38adb35b204464b1fcfb952709699ce792338d7e3998f04f079497b92a71",
+    "curve": "0xbd9bfbd14b8a6cfb0ce4f3f7aebb7649519cd783",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T10:30:09.822Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer sell is forward-simulated by the executor at exit time",
+     "no owner(); deployer undiscoverable via RPC - denylist check skipped"
+    ]
+   },
+   "velocity": "no jumps — clean fresh launch (~9 min old at investigate); curve holds ~0.4668 ETH, strongest of this tick batch",
+   "social_signal": "weak — brand-new launch, zero launch-specific mentions; X leg unavailable (X API 402 payment-required, credits exhausted)",
+   "money_flow": "mixed-organic — top-10 real-wallet holders own 18.20% of supply (no concentration trigger), 14 CurveSell events in 20k-block probe = flippy early activity; deployer unattributed (pons TokenLaunched topic2 mislabeled as creator; real deployer unknown, denylist check skipped); snipe tax 0 bps per gate probe",
+   "solana_pulse": {
+    "sol_usd": 109.41,
+    "sol_24h_change_pct": -0.29,
+    "sol_7d_change_pct": -8.4,
+    "note": "SOL -0.3% 24h but -8.4% on the week; ETF $3.76M net outflow Oct 9 ended 14-week inflow streak; pump-fun-seen feed stale since Oct 8; X ecosystem check blocked (402). mildly risk-off for sol memecoins, but this candidate is a Robinhood-chain pons launch — pulse attached as context, not a veto driver."
+   },
+   "verdict": "needs-snug",
+   "verdict_note": "clean gate (no dangerous selectors, no proxy, buy sims clean, sell path live with 14 observed sells), strongest curve in this batch (~0.467 ETH), but deployer unattributed and early flip activity; fast-lane quick round already vetoed (wave-hello/hymn SKIP, snug BUY). needs the snug durability breakdown — not a solo promising call."
   }
  ],
  "scores": [
@@ -724676,7 +724971,7 @@
  ],
  "last_activity": {
   "scout": "2026-10-11T10:25:38.384Z",
-  "hymn": "2026-10-11T10:29:44+00:00",
+  "hymn": "2026-10-11T10:32:37.555Z",
   "scorer": "2026-10-11T10:42:00.000Z",
   "snug": null,
   "cardigan": null
@@ -724827,8 +725122,8 @@
     "tx_hash": "0x0cef41c59b5ff5890632d9a5d376772d22fd5c83eb6d90960088f8f66517ec90",
     "entered_at": "2026-10-09T01:51:03.242Z",
     "entry_price_usd": 0.1135,
-    "current_price_usd": 0.1119,
-    "pnl_pct": -1.4096916299559508,
+    "current_price_usd": 0.1118,
+    "pnl_pct": -1.4977973568282,
     "amount_tokens": 216.29986717343255,
     "amount_eth_in": 0.01,
     "score": 60,
@@ -724847,10 +725142,10 @@
     "exit_price_usd": null
    }
   ],
-  "realized_pnl_pct_total": 0.38576692399833346
+  "realized_pnl_pct_total": 0.2976611971260843
  },
  "paper_trades": {
-  "as_of": "2026-10-11T10:27:08.891Z",
+  "as_of": "2026-10-11T10:32:15.200Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -724915,7 +725210,7 @@
     "seeded": false,
     "score": 69,
     "entry_price_usd": 0.04243,
-    "last_price_usd": 0.03912,
+    "last_price_usd": 0.03923,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -724926,8 +725221,8 @@
     "mcap_at_scan": 42788142.46528106,
     "mcap_at_decision": 42788142.46528106,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0007801084138581194,
-    "unrealized_pnl_pct": -7.801084138581194
+    "unrealized_pnl_eth": -0.0007541833608296023,
+    "unrealized_pnl_pct": -7.541833608296022
    },
    {
     "id": "pt-mv03ww45-53",
@@ -724938,7 +725233,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3604,
+    "last_price_usd": 0.3602,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -724949,8 +725244,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0003592986490370809,
-    "unrealized_pnl_pct": 3.5929864903708086
+    "unrealized_pnl_eth": 0.00035354987065248754,
+    "unrealized_pnl_pct": 3.5354987065248755
    },
    {
     "id": "pt-mv03wwab-54",
@@ -724984,7 +725279,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.3604,
+    "last_price_usd": 0.3602,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -724995,8 +725290,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00021252479455936558,
-    "unrealized_pnl_pct": 2.1252479455936557
+    "unrealized_pnl_eth": 0.0002068574667044487,
+    "unrealized_pnl_pct": 2.068574667044487
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -725007,7 +725302,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.3604,
+    "last_price_usd": 0.3602,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -725018,8 +725313,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00021831584916359503,
-    "unrealized_pnl_pct": 2.1831584916359503
+    "unrealized_pnl_eth": 0.0002126453076268775,
+    "unrealized_pnl_pct": 2.126453076268775
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -725030,7 +725325,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.3604,
+    "last_price_usd": 0.3602,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -725041,8 +725336,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00020096235493914484,
-    "unrealized_pnl_pct": 2.0096235493914483
+    "unrealized_pnl_eth": 0.00019530144353240963,
+    "unrealized_pnl_pct": 1.9530144353240964
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -725053,7 +725348,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.3604,
+    "last_price_usd": 0.3602,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -725064,8 +725359,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00019519094766619506,
-    "unrealized_pnl_pct": 1.9519094766619505
+    "unrealized_pnl_eth": 0.00018953323903819096,
+    "unrealized_pnl_pct": 1.8953323903819097
    }
   ],
   "closed_recent": [],

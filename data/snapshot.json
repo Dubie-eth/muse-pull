@@ -1,33 +1,11 @@
 {
- "updated_at": "2026-10-11T10:24:56.257Z",
+ "updated_at": "2026-10-11T10:27:11.531Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-11T09:50:49.342Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xd481a0d2d0fe7987d2de62baefb01caf7931ba3c",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0xc7e25934a623a51984b8fdd6d5264922e5184387534a3452fd7248293d26115e",
-   "block": 85741487,
-   "detail": "new contract deployed in block 85741487"
-  },
-  {
-   "found_at": "2026-10-11T09:52:07.960Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0x852f2f2b928f8d41a9a035eed43e5d5434a7f0cf",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0xb4c5c1c94ab4d3c844e5199695fe3926c842dab5e01627939e6ac1bbe0c71262",
-   "block": 85741924,
-   "detail": "new contract deployed in block 85741924"
-  },
   {
    "found_at": "2026-10-11T09:52:38.244Z",
    "scout": "block-watcher",
@@ -2985,10 +2963,127 @@
    "source": "pons-factory",
    "tx_hash": "0x829c3ac274c50b7d0710f2413dcc2c9925b836c922cfa33cb95f344d2229ea2f",
    "block": 85760569,
-   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85760569 (tx 0x829c3ac274c50b7d0710f2413dcc2c9925b836c922cfa33cb95f344d2229ea2f); name=Vialz symbol=VIALZ creator=0xeb72ba75d0a02469a178e9aee17fc9c70e87ec5b. no muse attribution seen; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85760569 (tx 0x829c3ac274c50b7d0710f2413dcc2c9925b836c922cfa33cb95f344d2229ea2f); name=Vialz symbol=VIALZ creator=0xeb72ba75d0a02469a178e9aee17fc9c70e87ec5b. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-11T10:25:15.503Z",
+   "gate_reasons": [
+    "curve-collected ETH ~0.0001 < 0.01 floor (pre-graduation venue)"
+   ],
+   "gate_warnings": [
+    "thin holder data (9 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": false,
+      "reasons": [
+       "curve-collected ETH ~0.0001 < 0.01 floor (pre-graduation venue)"
+      ],
+      "warnings": [],
+      "notes": [],
+      "detail": {
+       "curve": "0xeb72ba75d0a02469a178e9aee17fc9c70e87ec5b",
+       "phase": "pre",
+       "curvePct": 99.99,
+       "curveCodeBytes": 10229,
+       "curveEth": 0.000072941015446119
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (9 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 9,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [
+        {
+         "addr": "0xb7f7532d33b6ce2af52a10ccef529288a38d7c3c",
+         "bal": "10146537756"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "pre",
+     "curvePct": 99.99
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "gate-gate_failed",
+    "gate": "gate_failed"
+   }
+  },
+  {
+   "found_at": "2026-10-11T10:25:35.134Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x8b1a7c923ffc3c4d4098fa081d3a5fc3d06e7165",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x0e4e65c939e0bfc0b7cefb37004bff136c1f5fed012e3f3ff49c7098ff3d9dea",
+   "block": 85761673,
+   "detail": "new contract deployed in block 85761673"
+  },
+  {
+   "found_at": "2026-10-11T10:25:38.384Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x60e62a403c5275757f5f7d27526f53c751d18e25",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x0e4765f0a7a84678dd49fdb095c321f3eb3cd7226b3b1ef4ef7d3f3c8d56f5d9",
+   "block": 85761706,
+   "detail": "new contract deployed in block 85761706"
   }
  ],
- "scout_queue_total": 2203,
+ "scout_queue_total": 2205,
  "investigations": [
   {
    "candidate": {
@@ -252423,6 +252518,216 @@
    "snug_breakdown_reason": "fresh pons V2 launch, only ~0.0205 ETH in curve with 5 holder addresses - thin above the 0.01 ETH floor but any flip breaches it fast (VIALZ pattern); zero web/social footprint, X unverifiable (absence-based F); anonymous fresh deployer, no owner(), denylist skipped. hard social skip.",
    "snug_breakdown_comps": "floor-adjacent pons launches like VIALZ that breached the 0.01 ETH floor between gate stamp and investigation; today’s churned cohort",
    "snug_breakdown_risks": "0.0205 ETH curve near floor-breach zone; 5 holders only; anonymous fresh deployer; zero social footprint"
+  },
+  {
+   "investigated_at": "2026-10-11T10:26:38.554339+00:00",
+   "investigator": "humming-hymn (token 2, agent #8600)",
+   "candidate": {
+    "found_at": "2026-10-10T22:12:06.240Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x8f3df188ce788c9a29814d7017fd4b347fb4a31f",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x64819410136ad277e46a771d7e96169a605540c0d6a6243b5e5f9c73cb1d3b8c",
+    "block": 85338902,
+    "detail": "new contract deployed in block 85338902",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T10:21:25.112Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not a token; no mint velocity measurable",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.48,
+    "sol_24h_change_pct": -0.03,
+    "source": "CoinGecko simple/price live this tick; cached context 10:18 EDT: -0.29% 24h, -8.4% 7d; ETF $3.76M net outflow Oct 9 ended 14-week inflow streak; 200ms slots live Oct 9",
+    "pump_fun_momentum": "pump-fun-seen.json: 675 tracked mints, zero new in last 24h — feed stale, no heat reading available",
+    "x_context": "unavailable — X API 402 Payment Required (credits dry since 2026-10-11 ~03:00 EDT)",
+    "risk_read": "risk-neutral to mildly cautious: SOL flat today at ~$109 but -8.4% on the 7d, no confirmed FUD/outage news; n/a to these Robinhood-chain non-token contracts anyway"
+   },
+   "onchain_forensics": "1283-byte contract, name()/symbol()/totalSupply() all return empty 0x — not an ERC20 token. no V2 WETH pair, no V4 pools, zero measurable liquidity. no owner(), no dangerous selectors (mint/pause/blacklist/fee absent). deployed block 85338902 (2026-10-10 22:12 UTC). unattributable non-token contract.",
+   "social_forensics": "no token name/symbol exists, so no X search surface — nothing to look up; @r_alx_z/@musegod_rh silent on these contracts (X unreadable this tick regardless)",
+   "verdict": "skip",
+   "verdict_note": "unattributable non-token contract (gate passed by unattributability, not by token merit). zero liquidity, no holders, no token metadata, nothing investable. no velocity event. nothing for snug to grade."
+  },
+  {
+   "investigated_at": "2026-10-11T10:26:38.554339+00:00",
+   "investigator": "humming-hymn (token 2, agent #8600)",
+   "candidate": {
+    "found_at": "2026-10-10T22:12:42.653Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0xa0a10041a5e861a2f02e3e12628bb0755844edf9",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x5b40593a1be20eb11a87141c8ba09f17f35c5024b0c9f380decfc12a1a5d3c68",
+    "block": 85339846,
+    "detail": "new contract deployed in block 85339846",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T10:22:19.931Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "totalSupply unreadable or 0; concentration check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "velocity": "n/a — not a token; no mint velocity measurable",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.48,
+    "sol_24h_change_pct": -0.03,
+    "source": "CoinGecko simple/price live this tick; cached context 10:18 EDT: -0.29% 24h, -8.4% 7d; ETF $3.76M net outflow Oct 9 ended 14-week inflow streak; 200ms slots live Oct 9",
+    "pump_fun_momentum": "pump-fun-seen.json: 675 tracked mints, zero new in last 24h — feed stale, no heat reading available",
+    "x_context": "unavailable — X API 402 Payment Required (credits dry since 2026-10-11 ~03:00 EDT)",
+    "risk_read": "risk-neutral to mildly cautious: SOL flat today at ~$109 but -8.4% on the 7d, no confirmed FUD/outage news; n/a to these Robinhood-chain non-token contracts anyway"
+   },
+   "onchain_forensics": "1995-byte contract, name()/symbol()/totalSupply() all revert (execution reverted, code 3) — not an ERC20 token. no V2 WETH pair, no V4 pools, zero measurable liquidity. no owner(), no dangerous selectors. deployed block 85339846 (2026-10-10 22:12 UTC). unattributable non-token contract.",
+   "social_forensics": "no token name/symbol exists, so no X search surface — nothing to look up; @r_alx_z/@musegod_rh silent on these contracts (X unreadable this tick regardless)",
+   "verdict": "skip",
+   "verdict_note": "unattributable non-token contract (gate passed by unattributability, not by token merit). zero liquidity, no holders, no token metadata, nothing investable. no velocity event. nothing for snug to grade."
   }
  ],
  "scores": [
@@ -464168,7 +464473,12 @@
    "comps": "no comps possible: zero-liquidity, zero-holder anomaly - worse than today’s stalled pons V2 churn cohort",
    "risks": "no liquidity venue (no V2 pair, no V4 pools); zero holder data; anonymous deployer undiscoverable via RPC; zero social footprint",
    "recommendation": "skip",
-   "reason": "block-watcher sighting with random 12-byte hex name, zero holder data (0 addresses in 12k-block window), no V2 pair and no V4 pools - no tradeable venue exists at all (gate LP/liquidity checks skipped); anonymous/undiscoverable deployer so the rug-farm denylist check was skipped; zero web/social footprint, X unverifiable. not a pons launch, so it also fails the pons-only gate upstream. nothing to hold."
+   "reason": "block-watcher sighting with random 12-byte hex name, zero holder data (0 addresses in 12k-block window), no V2 pair and no V4 pools - no tradeable venue exists at all (gate LP/liquidity checks skipped); anonymous/undiscoverable deployer so the rug-farm denylist check was skipped; zero web/social footprint, X unverifiable. not a pons launch, so it also fails the pons-only gate upstream. nothing to hold.",
+   "processed": true,
+   "processed_at": "2026-10-11T10:25:00Z",
+   "processed_note": "flock-decision tick 06:24 EDT: gate_pass but social_grade=F -> hard social skip; no score computed, no buy.",
+   "decision": "skip",
+   "decision_reason": "hard social skip (grade F)"
   },
   {
    "broken_down_at": "2026-10-11T10:24:51.507Z",
@@ -464199,7 +464509,12 @@
    "comps": "matches today’s pons V2 churn profile: 06:00-10:00 EDT cohort overwhelmingly stalled or unwound (GHOSTS serial-farm, name-squat launches); VIALZ lesson - thin-curve fills can breach the 0.01 ETH floor fast",
    "risks": "thin holder base (9 addresses); early curve sells; anonymous fresh deployer; zero social footprint; third-party sell sim unavailable",
    "recommendation": "skip",
-   "reason": "fresh pons V2 launch: gate_pass but only 9 holder addresses in 12k-block window (thin), 2 CurveSells already in the gate probe - sell path exercised this early signals fast-flip holders; zero web/social footprint, X unverifiable (absence-based F); anonymous fresh deployer, no owner(), denylist skipped. hard social skip regardless of clean gate."
+   "reason": "fresh pons V2 launch: gate_pass but only 9 holder addresses in 12k-block window (thin), 2 CurveSells already in the gate probe - sell path exercised this early signals fast-flip holders; zero web/social footprint, X unverifiable (absence-based F); anonymous fresh deployer, no owner(), denylist skipped. hard social skip regardless of clean gate.",
+   "processed": true,
+   "processed_at": "2026-10-11T10:25:00Z",
+   "processed_note": "flock-decision tick 06:24 EDT: gate_pass but social_grade=F -> hard social skip; no score computed, no buy.",
+   "decision": "skip",
+   "decision_reason": "hard social skip (grade F)"
   },
   {
    "broken_down_at": "2026-10-11T10:24:51.507Z",
@@ -464229,7 +464544,12 @@
    "comps": "identical profile to today’s churned pons V2 launches: clean launches with no social that filled thin and unwound within hours",
    "risks": "anonymous fresh deployer; zero social footprint; thin holder base; brand-new curve (minutes old at investigation)",
    "recommendation": "skip",
-   "reason": "fresh pons V2 launch, ~0.10 ETH in curve, clean-looking fresh launch but thin and brand-new; zero web/social footprint, X unverifiable (absence-based F); anonymous deployer, no owner(), denylist skipped. hard social skip - no organic demand evidence to price conviction on."
+   "reason": "fresh pons V2 launch, ~0.10 ETH in curve, clean-looking fresh launch but thin and brand-new; zero web/social footprint, X unverifiable (absence-based F); anonymous deployer, no owner(), denylist skipped. hard social skip - no organic demand evidence to price conviction on.",
+   "processed": true,
+   "processed_at": "2026-10-11T10:25:00Z",
+   "processed_note": "flock-decision tick 06:24 EDT: gate_pass but social_grade=F -> hard social skip; no score computed, no buy.",
+   "decision": "skip",
+   "decision_reason": "hard social skip (grade F)"
   },
   {
    "broken_down_at": "2026-10-11T10:24:51.507Z",
@@ -464259,7 +464579,12 @@
    "comps": "churn profile recalls VIALZ-style fast-churn curves that breached the 0.01 ETH floor post-gate-stamp; today’s pons cohort overwhelmingly stalled",
    "risks": "10 curve sells in gate probe (early flip pressure); anonymous fresh deployer; zero social footprint; third-party sell sim unavailable",
    "recommendation": "skip",
-   "reason": "fresh pons V2 launch with ~0.366 ETH in curve but 10 sells observed in the gate probe - heavy sell-side churn relative to its fresh life; sell pressure dominating this early means flip-trawlers, not organic demand; zero web/social footprint, X unverifiable (absence-based F); anonymous deployer, no owner(), denylist skipped. hard social skip."
+   "reason": "fresh pons V2 launch with ~0.366 ETH in curve but 10 sells observed in the gate probe - heavy sell-side churn relative to its fresh life; sell pressure dominating this early means flip-trawlers, not organic demand; zero web/social footprint, X unverifiable (absence-based F); anonymous deployer, no owner(), denylist skipped. hard social skip.",
+   "processed": true,
+   "processed_at": "2026-10-11T10:25:00Z",
+   "processed_note": "flock-decision tick 06:24 EDT: gate_pass but social_grade=F -> hard social skip; no score computed, no buy.",
+   "decision": "skip",
+   "decision_reason": "hard social skip (grade F)"
   },
   {
    "broken_down_at": "2026-10-11T10:24:51.507Z",
@@ -464290,7 +464615,12 @@
    "comps": "floor-adjacent pons launches like VIALZ that breached the 0.01 ETH floor between gate stamp and investigation; today’s churned cohort",
    "risks": "0.0205 ETH curve near floor-breach zone; 5 holders only; anonymous fresh deployer; zero social footprint",
    "recommendation": "skip",
-   "reason": "fresh pons V2 launch, only ~0.0205 ETH in curve with 5 holder addresses - thin above the 0.01 ETH floor but any flip breaches it fast (VIALZ pattern); zero web/social footprint, X unverifiable (absence-based F); anonymous fresh deployer, no owner(), denylist skipped. hard social skip."
+   "reason": "fresh pons V2 launch, only ~0.0205 ETH in curve with 5 holder addresses - thin above the 0.01 ETH floor but any flip breaches it fast (VIALZ pattern); zero web/social footprint, X unverifiable (absence-based F); anonymous fresh deployer, no owner(), denylist skipped. hard social skip.",
+   "processed": true,
+   "processed_at": "2026-10-11T10:25:00Z",
+   "processed_note": "flock-decision tick 06:24 EDT: gate_pass but social_grade=F -> hard social skip; no score computed, no buy.",
+   "decision": "skip",
+   "decision_reason": "hard social skip (grade F)"
   }
  ],
  "tracking": {
@@ -723944,8 +724274,8 @@
   "reentry-watch"
  ],
  "last_activity": {
-  "scout": "2026-10-11T10:24:32.688Z",
-  "hymn": "2026-10-11T10:26:10Z",
+  "scout": "2026-10-11T10:25:38.384Z",
+  "hymn": "2026-10-11T10:26:38.554339+00:00",
   "scorer": "2026-10-11T10:42:00.000Z",
   "snug": "2026-10-11T10:24:51.507Z",
   "cardigan": "2026-10-11T10:24:51.507Z"
@@ -724119,7 +724449,7 @@
   "realized_pnl_pct_total": 0.3900368232911944
  },
  "paper_trades": {
-  "as_of": "2026-10-11T10:22:16.259Z",
+  "as_of": "2026-10-11T10:27:08.891Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -724207,7 +724537,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3603,
+    "last_price_usd": 0.3604,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -724218,8 +724548,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0003564242598447831,
-    "unrealized_pnl_pct": 3.564242598447831
+    "unrealized_pnl_eth": 0.0003592986490370809,
+    "unrealized_pnl_pct": 3.5929864903708086
    },
    {
     "id": "pt-mv03wwab-54",
@@ -724253,7 +724583,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.3603,
+    "last_price_usd": 0.3604,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -724264,8 +724594,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00020969113063190825,
-    "unrealized_pnl_pct": 2.0969113063190825
+    "unrealized_pnl_eth": 0.00021252479455936558,
+    "unrealized_pnl_pct": 2.1252479455936557
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -724276,7 +724606,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.3603,
+    "last_price_usd": 0.3604,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -724287,8 +724617,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00021548057839523738,
-    "unrealized_pnl_pct": 2.1548057839523738
+    "unrealized_pnl_eth": 0.00021831584916359503,
+    "unrealized_pnl_pct": 2.1831584916359503
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -724299,7 +724629,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.3603,
+    "last_price_usd": 0.3604,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -724310,8 +724640,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00019813189923577614,
-    "unrealized_pnl_pct": 1.9813189923577612
+    "unrealized_pnl_eth": 0.00020096235493914484,
+    "unrealized_pnl_pct": 2.0096235493914483
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -724322,7 +724652,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.3603,
+    "last_price_usd": 0.3604,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -724333,8 +724663,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00019236209335219412,
-    "unrealized_pnl_pct": 1.9236209335219412
+    "unrealized_pnl_eth": 0.00019519094766619506,
+    "unrealized_pnl_pct": 1.9519094766619505
    }
   ],
   "closed_recent": [],

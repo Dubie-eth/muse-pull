@@ -1,33 +1,11 @@
 {
- "updated_at": "2026-10-11T17:50:53.863Z",
+ "updated_at": "2026-10-11T17:52:56.428Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-11T16:39:29.249Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xe6775a3b3db2d8d7876b7b27474aeaa6670649d1",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0x5b28134500baa2c722fae600dc842a86dda90c5d97f615d1c4fdcfefd4aa0acc",
-   "block": 85971318,
-   "detail": "new contract deployed in block 85971318"
-  },
-  {
-   "found_at": "2026-10-11T17:05:14.021Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0x2d9e82752ee871d70b5913207908b338a44276c2",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0xfaba60c2158d2215ab086c5b59eab674884ef595daeed15427ee6ebdc057dd3a",
-   "block": 85994206,
-   "detail": "new contract deployed in block 85994206"
-  },
   {
    "found_at": "2026-10-11T17:05:16.972Z",
    "scout": "block-watcher",
@@ -563,9 +541,31 @@
    "tx_hash": "0xdd1d939a90b3bea2d0fde1ca764539f18ba03df7bce9d5739915d91631918de9",
    "block": 86020953,
    "detail": "new contract deployed in block 86020953"
+  },
+  {
+   "found_at": "2026-10-11T17:50:52.724Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x2f5b721bcd584d9505008b6c2c394f93cae5dd48",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xc01631d9d4600113c77b314b7b6221f7cf7977df5859f72f560b75f03030dfbe",
+   "block": 86020955,
+   "detail": "new contract deployed in block 86020955"
+  },
+  {
+   "found_at": "2026-10-11T17:51:52.882Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x9085a4ad13809578e4550b5614d75310d0bd1508",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x801e49e10089e279f44e6e8562a5848396dad91a4fb9f932b56f059b311bbab9",
+   "block": 86021188,
+   "detail": "new contract deployed in block 86021188"
   }
  ],
- "scout_queue_total": 3005,
+ "scout_queue_total": 3007,
  "investigations": [
   {
    "candidate": {
@@ -260924,6 +260924,191 @@
    "verdict": "skip",
    "verdict_note": "opaque non-ERC20 contract, same ~16h-old deploy cluster (block 85458322); no token interface, no V2 pair, no V4 pools, no owner() - nothing to score.",
    "social_scored_at": "2026-10-11T17:45:28.341Z"
+  },
+  {
+   "investigated_at": "2026-10-11T17:52:35.056Z",
+   "candidate": {
+    "found_at": "2026-10-11T01:41:02.119Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x7a97229bfca1a30b72184eb52b661e26dc42e14d",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x5f9e796a6e3765689e2a086adb31ac27bad4cdf6fc75e08f62392449c1b4265a",
+    "block": 85459535,
+    "detail": "new contract deployed in block 85459535",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T17:46:15.513Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "velocity": "n/a - no token interface (name/symbol/decimals/totalSupply all revert); zero Transfer logs in deploy window + recent 30k blocks; no liquidity venue",
+   "social_signal": "weak",
+   "money_flow": "none observed - zero transfers onchain",
+   "solana_pulse": {
+    "sol_usd": 111.78,
+    "sol_24h_change_pct": 1.63,
+    "sol_price_source": "cached sol-price-cache.json 2026-10-11T17:16:00Z",
+    "pump_momentum": "cold - scout feed silent since 2026-10-08; 675 tracked tokens",
+    "x_leg": "fresh 17:47Z: shill/airdrop-bot heavy feed (pump CA spam; phishing scam alert re 'Bitcoin Hyper' refund links - not a Solana exploit); no exploit/FUD news",
+    "x_reads_this_run": 1,
+    "risk": "neutral-to-cautious for Solana memecoins - SOL +1.6% but social feed is shill/bot-heavy and pump.fun launch feed is dead; all 5 candidates are Robinhood-chain contracts, so pulse is context-only"
+   },
+   "verdict": "skip",
+   "note": "not an ERC-20 token (233-byte runtime code, no metadata), zero onchain activity since deploy ~16h ago (block 85459535); nothing to grade"
+  },
+  {
+   "investigated_at": "2026-10-11T17:52:35.056Z",
+   "candidate": {
+    "found_at": "2026-10-11T01:41:43.510Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x4484fda1bdb20849e29d17234be1e57e29ac3484",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x6b612d0ace4f90ada24751beda487540a5bf7c28e98fc97b60ecb7f9c224a72b",
+    "block": 85460345,
+    "detail": "new contract deployed in block 85460345",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T17:46:48.019Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "velocity": "burst-then-dead: 878 transfers across 288 addrs in first ~20 min post-deploy (last activity block 85471363); zero activity in the 16h since; no liquidity venue",
+   "social_signal": "weak",
+   "money_flow": "mixed/bot - 878-transfer burst across 288 addresses in ~20 min then full stop; single zero-address mint; no whale wallets; deployer 0x20863cb708c8cdbb751e37a7bb168374384ef602",
+   "solana_pulse": {
+    "sol_usd": 111.78,
+    "sol_24h_change_pct": 1.63,
+    "sol_price_source": "cached sol-price-cache.json 2026-10-11T17:16:00Z",
+    "pump_momentum": "cold - scout feed silent since 2026-10-08; 675 tracked tokens",
+    "x_leg": "fresh 17:47Z: shill/airdrop-bot heavy feed (pump CA spam; phishing scam alert re 'Bitcoin Hyper' refund links - not a Solana exploit); no exploit/FUD news",
+    "x_reads_this_run": 1,
+    "risk": "neutral-to-cautious for Solana memecoins - SOL +1.6% but social feed is shill/bot-heavy and pump.fun launch feed is dead; all 5 candidates are Robinhood-chain contracts, so pulse is context-only"
+   },
+   "verdict": "skip",
+   "note": "ERC-20-shaped (decimals 18, 1B supply) but name/symbol unreadable, burst-and-die distribution with no V2 pair or V4 pools; dead since deploy+20min"
+  },
+  {
+   "investigated_at": "2026-10-11T17:52:35.056Z",
+   "candidate": {
+    "found_at": "2026-10-11T01:41:54.657Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x68386a44e7660f709d7fbc85df48b2177ad1384d",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0xb36e78d128edeedee0e4ca6fbfb7065b5d67643aab86ad940daad6319074f2e7",
+    "block": 85460379,
+    "detail": "new contract deployed in block 85460379",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T17:47:17.189Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "actor nonce 149 — possible spray pattern (serial deployer)"
+    ],
+    "gate_warn": true
+   },
+   "velocity": "n/a - 64 transfers in first ~5 min post-deploy (last activity 85463292), zero since; no liquidity venue",
+   "social_signal": "weak",
+   "money_flow": "bot/insider - 32 zero-address mints into just 3 addresses; deployer=owner 0x51f8f53394bc5b0f04fdb74d4597991ddb70995d, same deployer as 0x0d4c180e... 21s apart; gate spray-pattern (actor nonce 149) confirmed",
+   "solana_pulse": {
+    "sol_usd": 111.78,
+    "sol_24h_change_pct": 1.63,
+    "sol_price_source": "cached sol-price-cache.json 2026-10-11T17:16:00Z",
+    "pump_momentum": "cold - scout feed silent since 2026-10-08; 675 tracked tokens",
+    "x_leg": "fresh 17:47Z: shill/airdrop-bot heavy feed (pump CA spam; phishing scam alert re 'Bitcoin Hyper' refund links - not a Solana exploit); no exploit/FUD news",
+    "x_reads_this_run": 1,
+    "risk": "neutral-to-cautious for Solana memecoins - SOL +1.6% but social feed is shill/bot-heavy and pump.fun launch feed is dead; all 5 candidates are Robinhood-chain contracts, so pulse is context-only"
+   },
+   "verdict": "skip",
+   "note": "spray-deployed, insider-concentrated (32 mints -> 3 addrs), dead 16h; serial-deployer spray warning is a risk flag"
+  },
+  {
+   "investigated_at": "2026-10-11T17:52:35.056Z",
+   "candidate": {
+    "found_at": "2026-10-11T01:42:03.875Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x0d4c180ed7eff3506190655cb38f62fe407aad96",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x2516eced37d8f279ed4084b1a00a23c4fccfd376b740c30ce84faa24a6bf6adb",
+    "block": 85460400,
+    "detail": "new contract deployed in block 85460400",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T17:47:53.194Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "actor nonce 149 — possible spray pattern (serial deployer)"
+    ],
+    "gate_warn": true
+   },
+   "velocity": "n/a - no token interface (16.6KB runtime code, no ERC-20 metadata); zero Transfer logs; no liquidity venue",
+   "social_signal": "weak",
+   "money_flow": "none observed - zero transfers; same deployer/owner 0x51f8f53394bc5b0f04fdb74d4597991ddb70995d as 0x68386a44...; gate spray-pattern warning applies",
+   "solana_pulse": {
+    "sol_usd": 111.78,
+    "sol_24h_change_pct": 1.63,
+    "sol_price_source": "cached sol-price-cache.json 2026-10-11T17:16:00Z",
+    "pump_momentum": "cold - scout feed silent since 2026-10-08; 675 tracked tokens",
+    "x_leg": "fresh 17:47Z: shill/airdrop-bot heavy feed (pump CA spam; phishing scam alert re 'Bitcoin Hyper' refund links - not a Solana exploit); no exploit/FUD news",
+    "x_reads_this_run": 1,
+    "risk": "neutral-to-cautious for Solana memecoins - SOL +1.6% but social feed is shill/bot-heavy and pump.fun launch feed is dead; all 5 candidates are Robinhood-chain contracts, so pulse is context-only"
+   },
+   "verdict": "skip",
+   "note": "not a token; spray-pattern sibling of 0x68386a44..., zero activity"
+  },
+  {
+   "investigated_at": "2026-10-11T17:52:35.056Z",
+   "candidate": {
+    "found_at": "2026-10-11T01:42:47.342Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0xcb87ad6c63f28cb1c43c01d191c719508ae35f64",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x4dabda3b15c4152112eda1a19466b180dccced2d4908b3fc820f551e33885340",
+    "block": 85460952,
+    "detail": "new contract deployed in block 85460952",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T17:48:22.652Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "velocity": "n/a - no token interface (1319-byte runtime code, no ERC-20 metadata); zero Transfer logs; no liquidity venue",
+   "social_signal": "weak",
+   "money_flow": "none observed - zero transfers; deployer 0x05a42e984340b041b4056981a379a87f7fb215e1",
+   "solana_pulse": {
+    "sol_usd": 111.78,
+    "sol_24h_change_pct": 1.63,
+    "sol_price_source": "cached sol-price-cache.json 2026-10-11T17:16:00Z",
+    "pump_momentum": "cold - scout feed silent since 2026-10-08; 675 tracked tokens",
+    "x_leg": "fresh 17:47Z: shill/airdrop-bot heavy feed (pump CA spam; phishing scam alert re 'Bitcoin Hyper' refund links - not a Solana exploit); no exploit/FUD news",
+    "x_reads_this_run": 1,
+    "risk": "neutral-to-cautious for Solana memecoins - SOL +1.6% but social feed is shill/bot-heavy and pump.fun launch feed is dead; all 5 candidates are Robinhood-chain contracts, so pulse is context-only"
+   },
+   "verdict": "skip",
+   "note": "not an ERC-20 token, zero onchain activity since deploy ~16h ago (block 85460952); nothing to grade"
   }
  ],
  "scores": [
@@ -761670,8 +761855,8 @@
   "wave-hello"
  ],
  "last_activity": {
-  "scout": "2026-10-11T17:50:52.110Z",
-  "hymn": "2026-10-11T17:44:27.106Z",
+  "scout": "2026-10-11T17:51:52.882Z",
+  "hymn": "2026-10-11T17:52:35.056Z",
   "scorer": "2026-10-11T17:45:21.294Z",
   "snug": null,
   "cardigan": null
@@ -761872,7 +762057,7 @@
   "realized_pnl_pct_total": -30.009091897711556
  },
  "paper_trades": {
-  "as_of": "2026-10-11T17:47:41.698Z",
+  "as_of": "2026-10-11T17:52:13.680Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -761960,7 +762145,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3647,
+    "last_price_usd": 0.3646,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -761971,8 +762156,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00048289738430583594,
-    "unrealized_pnl_pct": 4.8289738430583595
+    "unrealized_pnl_eth": 0.0004800229951135382,
+    "unrealized_pnl_pct": 4.800229951135382
    },
    {
     "id": "pt-mv03wwab-54",
@@ -762006,7 +762191,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.3647,
+    "last_price_usd": 0.3646,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -762017,8 +762202,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00033437234344006804,
-    "unrealized_pnl_pct": 3.3437234344006805
+    "unrealized_pnl_eth": 0.00033153867951260854,
+    "unrealized_pnl_pct": 3.315386795126085
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -762029,7 +762214,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.3647,
+    "last_price_usd": 0.3646,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -762040,8 +762225,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00034023249220300534,
-    "unrealized_pnl_pct": 3.4023249220300533
+    "unrealized_pnl_eth": 0.00033739722143464544,
+    "unrealized_pnl_pct": 3.3739722143464546
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -762052,7 +762237,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.3647,
+    "last_price_usd": 0.3646,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -762063,8 +762248,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0003226719501839792,
-    "unrealized_pnl_pct": 3.226719501839792
+    "unrealized_pnl_eth": 0.0003198414944806105,
+    "unrealized_pnl_pct": 3.198414944806105
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -762075,7 +762260,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.3647,
+    "last_price_usd": 0.3646,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -762086,8 +762271,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0003168316831683171,
-    "unrealized_pnl_pct": 3.168316831683171
+    "unrealized_pnl_eth": 0.000314002828854314,
+    "unrealized_pnl_pct": 3.1400282885431396
    }
   ],
   "closed_recent": [],

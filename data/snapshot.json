@@ -1,33 +1,11 @@
 {
- "updated_at": "2026-10-11T04:30:54.803Z",
+ "updated_at": "2026-10-11T04:32:52.222Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-11T03:39:48.722Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xcd93ed81d894238a598386acf9690fd30d124671",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0x71f762713708dc75241e475b25f6305a2374f9c31188fdabf183b2d465824355",
-   "block": 85528459,
-   "detail": "new contract deployed in block 85528459"
-  },
-  {
-   "found_at": "2026-10-11T03:42:18.614Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xcd5d185f428cc4285c2057b2bb03fbbb9fc036c3",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0x0c62f5cd7a3069027049bb1bca6c4bade6a7214564b564b1cc387f9d9d6b8c5f",
-   "block": 85529904,
-   "detail": "new contract deployed in block 85529904"
-  },
   {
    "found_at": "2026-10-11T03:48:06.568Z",
    "scout": "whale-watcher",
@@ -577,9 +555,31 @@
    "tx_hash": "0xbbefcf7f6bace6fd5880b374000e0a9326c38f87347c65835a0315c5825ddacc",
    "block": 85557735,
    "detail": "new contract deployed in block 85557735"
+  },
+  {
+   "found_at": "2026-10-11T04:31:16.368Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xabd8fe5b870790462343dc07b38bfb9a87348859",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xdbfcf6541533292f209db56027dccdc39e2aeb14b95e136f19c3f374bbb2b344",
+   "block": 85558236,
+   "detail": "new contract deployed in block 85558236"
+  },
+  {
+   "found_at": "2026-10-11T04:32:48.729Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xc25c635f2e97d965666c1b5bd0c8fa228275de96",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x4fde23e76a7bf2776ed059d4ab2a7e850aff42f21fc0ee6d3fcdf80acd330972",
+   "block": 85559214,
+   "detail": "new contract deployed in block 85559214"
   }
  ],
- "scout_queue_total": 1396,
+ "scout_queue_total": 1398,
  "investigations": [
   {
    "candidate": {
@@ -241597,6 +241597,218 @@
    },
    "investigation_notes": "block-watcher generic contract deploy (block 85223714), type=contract not token; not ERC20 — nothing buyable. gate passed owner/proxy with liquidity legs skipped.",
    "verdict": "skip"
+  },
+  {
+   "investigated_at": "2026-10-11T04:32:20.419Z",
+   "candidate": {
+    "contract": "0xaa947ece69fe98dfd1b9de3763b81c0a5fbc3b36",
+    "name": "Quantum Shield QSHIELD",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "found_at": "2026-10-10T18:49:11.417Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T04:20:49.952Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "V4: floor check decided early: 2 pool(s) read, V4 total >= 0.05 ETH (lower bound 9.458 ETH)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "real flow — 226 transfers in 29k-block window; curve drained via graduation ~2h after launch; V4 pool initialized block 85206665",
+   "social_signal": "weak",
+   "money_flow": "organic — 41 holders, top1 1.59%, top10 EOAs 13.88%, no whale concentration, no bot/sybil pattern",
+   "pons_forensics": {
+    "curve": "0xd5d20b571ebbcc9db435df9fa916d8572ceeecac",
+    "curve_collected_eth": 0,
+    "snipe_tax_bps": 0,
+    "phase": "graduated",
+    "v4_total_eth": 9.613079057820464,
+    "big_pool": "0x26c3c299984290f723be509c4b4d8359248aeb6b62f52ca1c214ad4037c5a3f6",
+    "big_pool_value_eth": 9.613,
+    "big_pool_fee": 0,
+    "big_pool_first_touch_block": 85206665,
+    "lp_events": "single ModifyLiquidity add at init, never touched since",
+    "pools_discovered": 14,
+    "pools_priced": 2,
+    "lp_age_min": 599.7,
+    "name": "Quantum Shield",
+    "symbol": "QSHIELD",
+    "launch_block": 85202972
+   },
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.014,
+    "sol_7d_change_pct": -8,
+    "note": "SOL flat ~$110 after an ~8% weekly slide; first ETF outflow in 14 weeks ended the inflow streak; 200ms slots live 2026-10-09, no exploit/outage news",
+    "risk": "neutral-to-mildly-risk-off"
+   },
+   "investigation_notes": "strongest candidate this run: graduated pons, 9.6 ETH real position-based V4 liquidity (2x ETH side, exit-able), healthy holder distribution, gate all-pass, LP age ~600min (45-min rule satisfied regardless of pons-graduated waiver). caveats: 14 pools discovered (12 unpriced dust/noise), biggest pool is fee=0 (unusual), graduation-lock of the LP NFT not verified onchain this run, zero social buzz found (only unrelated post-quantum projects). durability breakdown is the judge’s call.",
+   "verdict": "needs-snug"
+  },
+  {
+   "investigated_at": "2026-10-11T04:32:20.419Z",
+   "candidate": {
+    "contract": "0x623b9f094013a43f213ec9ec284bda9cc2f91d67",
+    "name": "LEOBUILDS LEOBUILDS",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "found_at": "2026-10-10T18:49:30.644Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T04:21:28.723Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead — curve collected ~1e-18 ETH, 0 CurveSells, 0 buys; no mint velocity",
+   "social_signal": "weak",
+   "money_flow": "none — no curve buy/sell flow; gate noted thin holder data (0 addresses in 12k-block window)",
+   "pons_forensics": {
+    "curve": "0x1a83a41a58e424ebed2fc50bf7ed8c2e0f6a3574",
+    "curve_collected_eth": 0,
+    "curve_floor_eth": 0.01,
+    "snipe_tax_bps": 0,
+    "curve_sells_20k": 0,
+    "phase": "pre, no flow",
+    "name": "LEOBUILDS",
+    "launch_block": 85203263
+   },
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.014,
+    "sol_7d_change_pct": -8,
+    "note": "SOL flat ~$110 after an ~8% weekly slide; first ETF outflow in 14 weeks ended the inflow streak; 200ms slots live 2026-10-09, no exploit/outage news",
+    "risk": "neutral-to-mildly-risk-off"
+   },
+   "investigation_notes": "ingest stamped gate_pass without running the pons-curve check (known open defect); hymn forensics fills the gap: fails the 0.01 ETH curve floor. web search found zero mentions of LEOBUILDS token (only pons platform news).",
+   "verdict": "skip"
+  },
+  {
+   "investigated_at": "2026-10-11T04:32:20.419Z",
+   "candidate": {
+    "contract": "0x8d926380293bb60dabd04c03b330b7be35563050",
+    "name": "KAIJU KAIJU",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "found_at": "2026-10-10T18:50:01.999Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T04:21:38.924Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead — curve collected ~1e-18 ETH, 0 CurveSells, 0 buys; no mint velocity",
+   "social_signal": "weak",
+   "money_flow": "none — no curve buy/sell flow; gate noted thin holder data (0 addresses in 12k-block window)",
+   "pons_forensics": {
+    "curve": "0x8f5fc4114c9084fcd89e4e4d473cac84aec47936",
+    "curve_collected_eth": 0,
+    "curve_floor_eth": 0.01,
+    "snipe_tax_bps": 0,
+    "curve_sells_20k": 0,
+    "phase": "pre, no flow",
+    "name": "KAIJU",
+    "launch_block": 85203283
+   },
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.014,
+    "sol_7d_change_pct": -8,
+    "note": "SOL flat ~$110 after an ~8% weekly slide; first ETF outflow in 14 weeks ended the inflow streak; 200ms slots live 2026-10-09, no exploit/outage news",
+    "risk": "neutral-to-mildly-risk-off"
+   },
+   "investigation_notes": "ingest stamped gate_pass without running the pons-curve check (known open defect); hymn forensics fills the gap: fails the 0.01 ETH curve floor. no social footprint found.",
+   "verdict": "skip"
+  },
+  {
+   "investigated_at": "2026-10-11T04:32:20.419Z",
+   "candidate": {
+    "contract": "0xcb2e50cc5655c140c4a4ce95b02c1c87e880432d",
+    "name": "PARSA PARSA",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "found_at": "2026-10-10T18:50:16.814Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T04:21:47.626Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead — curve collected ~1e-18 ETH, 0 CurveSells, 0 buys; no mint velocity",
+   "social_signal": "weak",
+   "money_flow": "none — no curve buy/sell flow; gate noted thin holder data (0 addresses in 12k-block window)",
+   "pons_forensics": {
+    "curve": "0x737ca7e476e28fef495c1de189882a4148b7fe1a",
+    "curve_collected_eth": 0,
+    "curve_floor_eth": 0.01,
+    "snipe_tax_bps": 0,
+    "curve_sells_20k": 0,
+    "phase": "pre, no flow",
+    "name": "PARSA",
+    "launch_block": 85203293
+   },
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.014,
+    "sol_7d_change_pct": -8,
+    "note": "SOL flat ~$110 after an ~8% weekly slide; first ETF outflow in 14 weeks ended the inflow streak; 200ms slots live 2026-10-09, no exploit/outage news",
+    "risk": "neutral-to-mildly-risk-off"
+   },
+   "investigation_notes": "ingest stamped gate_pass without running the pons-curve check (known open defect); hymn forensics fills the gap: fails the 0.01 ETH curve floor. no social footprint found.",
+   "verdict": "skip"
+  },
+  {
+   "investigated_at": "2026-10-11T04:32:20.419Z",
+   "candidate": {
+    "contract": "0x379e9f8b69f41ef6fd7da0927909db53890b53a9",
+    "name": "STARTUPSCORE STARTUPSCORE",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "found_at": "2026-10-10T18:50:21.468Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T04:21:55.592Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dead — curve collected ~1e-18 ETH, 0 CurveSells, 0 buys; no mint velocity",
+   "social_signal": "weak",
+   "money_flow": "none — no curve buy/sell flow; gate noted thin holder data (0 addresses in 12k-block window)",
+   "pons_forensics": {
+    "curve": "0xb350f3d76fcf2ca0f189e6b319efa4f6df5d6e64",
+    "curve_collected_eth": 0,
+    "curve_floor_eth": 0.01,
+    "snipe_tax_bps": 0,
+    "curve_sells_20k": 0,
+    "phase": "pre, no flow",
+    "name": "STARTUPSCORE",
+    "launch_block": 85203302
+   },
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.014,
+    "sol_7d_change_pct": -8,
+    "note": "SOL flat ~$110 after an ~8% weekly slide; first ETF outflow in 14 weeks ended the inflow streak; 200ms slots live 2026-10-09, no exploit/outage news",
+    "risk": "neutral-to-mildly-risk-off"
+   },
+   "investigation_notes": "ingest stamped gate_pass without running the pons-curve check (known open defect); hymn forensics fills the gap: fails the 0.01 ETH curve floor. web search found zero mentions of STARTUPSCORE token (only pons platform news).",
+   "verdict": "skip"
   }
  ],
  "scores": [
@@ -441073,13 +441285,9 @@
    "processed_note": "flock-decision run 2026-10-10 22:01 EDT: PONS protocol token — gate_pass (nested in candidate) but mcap $249.4M = high-cap HARD SKIP; breakdown rec watch (whale-convergence $35.2K/2 EOAs is pipeline durability signal, not an entry)",
    "decision": {
     "processed": true,
-    "processed_at": "2026-10-11T03:43:30Z",
-    "action": "skip",
-    "reason": "high-cap hard skip: mcap $249.4M > $25M band; whale-convergence is pipeline durability signal only, breakdown rec watch",
-    "contract": "0x39dbed3a2bd333467115de45665cc57f813c4571",
-    "gate_status": "gate_pass",
-    "social_grade": "B",
-    "executed": false
+    "processed_at": "2026-10-11T04:31:00Z",
+    "decision": "skip",
+    "decision_note": "cardigan-flock-decision tick 00:28 EDT: skip: PONS protocol token, high-cap hard skip (>$25M); rec watch only. adjudicated 22:01 run."
    }
   },
   {
@@ -441119,13 +441327,9 @@
    "processed_note": "flock-decision run 2026-10-10 22:01 EDT: gate_pass (nested) but F social = hard skip; name-clone farm, anon deployer, unknown concentrated top holders, fast-lane agent-veto already stands; breakdown rec skip",
    "decision": {
     "processed": true,
-    "processed_at": "2026-10-11T03:43:30Z",
-    "action": "skip",
-    "reason": "social-grade-F hard skip; name-clone farm, anon deployer, unknown concentrated top holders; fast-lane agent-veto already stands",
-    "contract": "0xd43559a4ed839f4151774c80ea3353b765cfaf25",
-    "gate_status": "gate_pass",
-    "social_grade": "F",
-    "executed": false
+    "processed_at": "2026-10-11T04:31:00Z",
+    "decision": "skip",
+    "decision_note": "cardigan-flock-decision tick 00:28 EDT: skip: F social hard skip; name-clone farm. adjudicated 22:01 run."
    }
   },
   {
@@ -441165,13 +441369,9 @@
    "processed_note": "flock-decision run 2026-10-10 22:01 EDT: gate_pass (nested) but F social = hard skip; 40-min-old QVAULT, anon deployer, concentrated unknown early holders, thin vol, fast-lane agent-veto already stands; breakdown rec skip",
    "decision": {
     "processed": true,
-    "processed_at": "2026-10-11T03:43:30Z",
-    "action": "skip",
-    "reason": "social-grade-F hard skip; 40-min-old direct launch, anon deployer, concentrated unknown early holders, thin vol; fast-lane agent-veto already stands",
-    "contract": "0xccf1d201bee589f2ddc8cd470fee3013ea1ad034",
-    "gate_status": "gate_pass",
-    "social_grade": "F",
-    "executed": false
+    "processed_at": "2026-10-11T04:31:00Z",
+    "decision": "skip",
+    "decision_note": "cardigan-flock-decision tick 00:28 EDT: skip: F social hard skip; anon deployer, concentrated unknown. adjudicated 22:01 run."
    }
   },
   {
@@ -441335,16 +441535,10 @@
    "processed_at": "2026-10-11T03:01:54.858Z",
    "processed_note": "cardigan-flock-decision 23:00 EDT tick: HARD SKIP on social grade F (standing hard-skip rule, D/F never buy). Blanket Snug recommendation skip (durability weak, F/0, flat slow-trickle, 8.5h stale). No score band computed; no execution.",
    "decision": {
-    "action": "skip",
-    "reason": "social-grade-F hard skip; snug durability weak",
-    "contract": "0xd4d8879594347bf63823e94c92144a789c255c91",
-    "symbol": "ANC",
-    "gate_status": "gate_pass (nested candidate obj)",
-    "social_grade": "F",
-    "virality": "uncertain/flash (flat velocity, no socials)",
-    "executed": false,
     "processed": true,
-    "processed_at": "2026-10-11T03:43:30Z"
+    "processed_at": "2026-10-11T04:31:00Z",
+    "decision": "skip",
+    "decision_note": "cardigan-flock-decision tick 00:28 EDT: skip: F social hard skip. adjudicated 23:00 run."
    }
   },
   {
@@ -441886,11 +442080,10 @@
    "processed": true,
    "processed_at": "2026-10-11T03:50:30Z",
    "decision": {
-    "action": "skip",
-    "reason": "confirmed seed-and-yank (F/2 social, pool drained 15.7->0 ETH); fast-lane dedup: open position already held (stranded 0.005 ETH, held per standing decision); social-F hard skip; humming-hymn verdict SKIP",
     "processed": true,
-    "processed_at": "2026-10-11T04:16:00Z",
-    "processed_by": "cardigan-flock-decision"
+    "processed_at": "2026-10-11T04:31:00Z",
+    "decision": "skip",
+    "decision_note": "cardigan-flock-decision tick 00:28 EDT: skip: fast-lane dedup - open position on this contract (live-positions.json); also F social."
    }
   },
   {
@@ -441968,16 +442161,10 @@
    "recommendation": "skip",
    "reason": "Social grade F is a hard negative per the durability rules: skip regardless of curve metrics. Combined with exit-heavy flow (sells > buys), bot-patterned buyers, and zero social footprint, this is a weak-durability farm-and-fade, not a buy.",
    "decision": {
-    "verdict": "skip",
-    "rule": "social-grade hard skip (F)",
-    "score_breakdown": "volume 8/40 (10 buys vs 13 sells over ~9h, sell-heavy, no acceleration) + sentiment 0/20 (F grade, hard skip) + vitality 9/40 (momentum 3 capped <0.55 buy/sell, pickup 3, mainstream 1, legs 2) = 17/100; mcap adj 0 (DexScreener blind) -> 17",
-    "virality": "n/a (no buy)",
-    "entry_exit_plan": null,
-    "tx": null,
-    "note": "F grade (5/100 social) = hard skip per standing rule, regardless of score. 17 << 50 anyway. exit-heavy farm-and-fade; ~9h stale. no execution, no messaging.",
     "processed": true,
-    "processed_at": "2026-10-11T04:16:00Z",
-    "processed_by": "cardigan-flock-decision"
+    "processed_at": "2026-10-11T04:31:00Z",
+    "decision": "skip",
+    "decision_note": "cardigan-flock-decision tick 00:28 EDT: skip: F social hard skip (standing rule, D/F never buy); gate_pass nested, blanket-snug rec skip."
    },
    "processed": true,
    "processed_at": "2026-10-11T03:55:34.036045+00:00"
@@ -442252,17 +442439,10 @@
    "processed_at": "2026-10-11T04:05:00Z",
    "processed_note": "cardigan-flock-decision tick 00:02 EDT",
    "decision": {
-    "decided_at": "2026-10-11T04:05:00Z",
-    "verdict": "skip",
-    "score": null,
-    "score_breakdown": null,
-    "skip_rule": "social-grade-F hard skip",
-    "whale_convergence_bonus": 0,
-    "whale_moves_on_token": 0,
-    "reason": "social credit grade F = hard skip at any score (standing rule). snug: skip (durability weak, ~9.6h stale curve, junk-meme name, anon deployer). gate gate_pass, no fast-lane position, no whale signal. no scoring, no execution.",
     "processed": true,
-    "processed_at": "2026-10-11T04:16:00Z",
-    "processed_by": "cardigan-flock-decision"
+    "processed_at": "2026-10-11T04:31:00Z",
+    "decision": "skip",
+    "decision_note": "cardigan-flock-decision tick 00:28 EDT: skip: F social hard skip (standing rule); pons pre-grad curve, snug rec skip."
    }
   },
   {
@@ -442330,7 +442510,13 @@
    "processed": true,
    "processed_by": "cardigan-flock-decision",
    "processed_at": "2026-10-11T04:19:25.373556+00:00",
-   "processed_note": "skip: legacy blanket-snug re-breakdown, no gate_status=gate_pass on any scorable contract (binary gate rule); already scored at 00:17 EDT tick (skip/skip/skip/watch/watch). no execution."
+   "processed_note": "skip: legacy blanket-snug re-breakdown, no gate_status=gate_pass on any scorable contract (binary gate rule); already scored at 00:17 EDT tick (skip/skip/skip/watch/watch). no execution.",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T04:31:15Z",
+    "decision": "skip",
+    "decision_note": "cardigan-flock-decision tick 00:28 EDT: skip: legacy blanket-snug re-breakdown, no gate_pass; already scored 00:17 tick."
+   }
   },
   {
    "broken_down_at": "2026-10-11T04:17:00Z",
@@ -442359,7 +442545,13 @@
    "processed": true,
    "processed_by": "cardigan-flock-decision",
    "processed_at": "2026-10-11T04:19:25.373596+00:00",
-   "processed_note": "skip: legacy blanket-snug re-breakdown, no gate_status=gate_pass on any scorable contract (binary gate rule); already scored at 00:17 EDT tick (skip/skip/skip/watch/watch). no execution."
+   "processed_note": "skip: legacy blanket-snug re-breakdown, no gate_status=gate_pass on any scorable contract (binary gate rule); already scored at 00:17 EDT tick (skip/skip/skip/watch/watch). no execution.",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T04:31:15Z",
+    "decision": "skip",
+    "decision_note": "cardigan-flock-decision tick 00:28 EDT: skip: legacy blanket-snug re-breakdown, no gate_pass; already scored 00:17 tick."
+   }
   },
   {
    "broken_down_at": "2026-10-11T04:17:00Z",
@@ -442388,7 +442580,13 @@
    "processed": true,
    "processed_by": "cardigan-flock-decision",
    "processed_at": "2026-10-11T04:19:25.373601+00:00",
-   "processed_note": "skip: legacy blanket-snug re-breakdown, no gate_status=gate_pass on any scorable contract (binary gate rule); already scored at 00:17 EDT tick (skip/skip/skip/watch/watch). no execution."
+   "processed_note": "skip: legacy blanket-snug re-breakdown, no gate_status=gate_pass on any scorable contract (binary gate rule); already scored at 00:17 EDT tick (skip/skip/skip/watch/watch). no execution.",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T04:31:15Z",
+    "decision": "skip",
+    "decision_note": "cardigan-flock-decision tick 00:28 EDT: skip: legacy blanket-snug re-breakdown, no gate_pass; already scored 00:17 tick."
+   }
   },
   {
    "broken_down_at": "2026-10-11T04:17:00Z",
@@ -442417,7 +442615,13 @@
    "processed": true,
    "processed_by": "cardigan-flock-decision",
    "processed_at": "2026-10-11T04:19:25.373603+00:00",
-   "processed_note": "skip: legacy blanket-snug re-breakdown, no gate_status=gate_pass on any scorable contract (binary gate rule); already scored at 00:17 EDT tick (skip/skip/skip/watch/watch). no execution."
+   "processed_note": "skip: legacy blanket-snug re-breakdown, no gate_status=gate_pass on any scorable contract (binary gate rule); already scored at 00:17 EDT tick (skip/skip/skip/watch/watch). no execution.",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T04:31:15Z",
+    "decision": "skip",
+    "decision_note": "cardigan-flock-decision tick 00:28 EDT: skip: legacy blanket-snug re-breakdown, no gate_pass; already scored 00:17 tick."
+   }
   },
   {
    "broken_down_at": "2026-10-11T04:17:00Z",
@@ -442446,7 +442650,13 @@
    "processed": true,
    "processed_by": "cardigan-flock-decision",
    "processed_at": "2026-10-11T04:19:25.373606+00:00",
-   "processed_note": "skip: legacy blanket-snug re-breakdown, no gate_status=gate_pass on any scorable contract (binary gate rule); already scored at 00:17 EDT tick (skip/skip/skip/watch/watch). no execution."
+   "processed_note": "skip: legacy blanket-snug re-breakdown, no gate_status=gate_pass on any scorable contract (binary gate rule); already scored at 00:17 EDT tick (skip/skip/skip/watch/watch). no execution.",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T04:31:15Z",
+    "decision": "skip",
+    "decision_note": "cardigan-flock-decision tick 00:28 EDT: skip: legacy blanket-snug re-breakdown, no gate_pass; already scored 00:17 tick."
+   }
   },
   {
    "broken_down_at": "2026-10-11T04:30:35.057Z",
@@ -442484,7 +442694,13 @@
    "processed": true,
    "processed_by": "blanket-snug",
    "processed_at": "2026-10-11T04:30:35.057Z",
-   "processed_note": "breakdown written; marked processed so future runs skip this candidate."
+   "processed_note": "breakdown written; marked processed so future runs skip this candidate.",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T04:31:15Z",
+    "decision": "skip",
+    "decision_note": "cardigan-flock-decision tick 00:28 EDT: skip: F social hard skip (standing rule); scored 32/watch at 2026-10-09 21:33 run, re-breakdown re-affirms."
+   }
   },
   {
    "broken_down_at": "2026-10-11T04:30:35.057Z",
@@ -442554,7 +442770,13 @@
    "processed": true,
    "processed_by": "blanket-snug",
    "processed_at": "2026-10-11T04:30:35.057Z",
-   "processed_note": "breakdown written; marked processed so future runs skip this candidate."
+   "processed_note": "breakdown written; marked processed so future runs skip this candidate.",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T04:31:00Z",
+    "decision": "skip",
+    "decision_note": "cardigan-flock-decision tick 00:28 EDT: skip: legacy re-breakdown; F social, skip per own note."
+   }
   },
   {
    "broken_down_at": "2026-10-11T04:30:35.057Z",
@@ -442624,7 +442846,13 @@
    "processed": true,
    "processed_by": "blanket-snug",
    "processed_at": "2026-10-11T04:30:35.057Z",
-   "processed_note": "breakdown written; marked processed so future runs skip this candidate."
+   "processed_note": "breakdown written; marked processed so future runs skip this candidate.",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T04:31:00Z",
+    "decision": "skip",
+    "decision_note": "cardigan-flock-decision tick 00:28 EDT: skip: legacy re-breakdown; F social, skip per own note."
+   }
   },
   {
    "broken_down_at": "2026-10-11T04:30:35.057Z",
@@ -442678,7 +442906,13 @@
    "processed": true,
    "processed_by": "blanket-snug",
    "processed_at": "2026-10-11T04:30:35.057Z",
-   "processed_note": "breakdown written; marked processed so future runs skip this candidate."
+   "processed_note": "breakdown written; marked processed so future runs skip this candidate.",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T04:31:00Z",
+    "decision": "skip",
+    "decision_note": "cardigan-flock-decision tick 00:28 EDT: skip: legacy re-breakdown; F social, skip per own note."
+   }
   }
  ],
  "tracking": {
@@ -682568,8 +682802,8 @@
   "reentry-watch"
  ],
  "last_activity": {
-  "scout": "2026-10-11T04:30:20.768Z",
-  "hymn": "2026-10-11T04:28:04.110Z",
+  "scout": "2026-10-11T04:32:48.729Z",
+  "hymn": "2026-10-11T04:32:20.419Z",
   "scorer": "2026-10-11T04:28:48.617Z",
   "snug": "2026-10-11T04:30:35.057Z",
   "cardigan": "2026-10-11T04:30:35.057Z"
@@ -682743,7 +682977,7 @@
   "realized_pnl_pct_total": -6.534608452531528
  },
  "paper_trades": {
-  "as_of": "2026-10-11T04:27:08.266Z",
+  "as_of": "2026-10-11T04:32:08.428Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -682831,7 +683065,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3521,
+    "last_price_usd": 0.3522,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -682842,8 +683076,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00012072434607645954,
-    "unrealized_pnl_pct": 1.2072434607645954
+    "unrealized_pnl_eth": 0.00012359873526875508,
+    "unrealized_pnl_pct": 1.2359873526875509
    },
    {
     "id": "pt-mv03wwab-54",
@@ -682854,7 +683088,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 80.94,
-    "last_price_usd": 85.33,
+    "last_price_usd": 85.36,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -682865,8 +683099,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 5819198,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0005423770694341479,
-    "unrealized_pnl_pct": 5.423770694341479
+    "unrealized_pnl_eth": 0.0005460835186557956,
+    "unrealized_pnl_pct": 5.460835186557955
    },
    {
     "id": "pt-mv0blxia-72",
@@ -682877,7 +683111,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.3521,
+    "last_price_usd": 0.3522,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -682888,8 +683122,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.000022669311419665218,
-    "unrealized_pnl_pct": -0.22669311419665217
+    "unrealized_pnl_eth": -0.00001983564749220679,
+    "unrealized_pnl_pct": -0.19835647492206787
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -682900,7 +683134,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.3521,
+    "last_price_usd": 0.3522,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -682911,8 +683145,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00001701162461015038,
-    "unrealized_pnl_pct": -0.17011624610150378
+    "unrealized_pnl_eth": -0.00001417635384179161,
+    "unrealized_pnl_pct": -0.1417635384179161
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -682923,7 +683157,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.3521,
+    "last_price_usd": 0.3522,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -682934,8 +683168,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.000033965468440417814,
-    "unrealized_pnl_pct": -0.3396546844041781
+    "unrealized_pnl_eth": -0.00003113501273705022,
+    "unrealized_pnl_pct": -0.31135012737050216
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -682946,7 +683180,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.3521,
+    "last_price_usd": 0.3522,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -682957,8 +683191,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00003960396039603853,
-    "unrealized_pnl_pct": -0.3960396039603853
+    "unrealized_pnl_eth": -0.00003677510608203538,
+    "unrealized_pnl_pct": -0.3677510608203538
    }
   ],
   "closed_recent": [],

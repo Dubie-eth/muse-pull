@@ -1,22 +1,11 @@
 {
- "updated_at": "2026-10-11T16:16:44.718Z",
+ "updated_at": "2026-10-11T16:17:52.653Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-11T15:34:50.924Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0x8c8cd5f0682c7c238545dec14668ee5126639338",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0x806a424609d9b86359ea4e3779e8fce5ab50ad07f034312dbc73d189d2c4d57e",
-   "block": 85941151,
-   "detail": "new contract deployed in block 85941151"
-  },
   {
    "found_at": "2026-10-11T15:34:55.180Z",
    "scout": "pons-family",
@@ -1905,9 +1894,20 @@
    "tx_hash": "0x5bfdfadbebae3e37d46953eba81e4818ef5d23859727a4d1a63c59b07e14f746",
    "block": 85965013,
    "detail": "new contract deployed in block 85965013"
+  },
+  {
+   "found_at": "2026-10-11T16:16:54.586Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x05d696fdb24d6ce6f76968af1941d4fd5374bcd2",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x15ba124ca9687d6b0ca0fba25af63e8d579a93e569723e3ea8ac3887716aeca9",
+   "block": 85965753,
+   "detail": "new contract deployed in block 85965753"
   }
  ],
- "scout_queue_total": 2949,
+ "scout_queue_total": 2950,
  "investigations": [
   {
    "candidate": {
@@ -260326,7 +260326,8 @@
    },
    "verdict": "skip",
    "verdict_note": "dead-on-arrival ERC20 batch (blocks 85418645-85419100, ~00:29-00:30Z); serial-deployer spray of inert contracts, following the 85416551-85418072 batch from the 15:52Z tick; totalSupply=0; no tradeable venue",
-   "x_reads": "0"
+   "x_reads": "0",
+   "social_scored_at": "2026-10-11T16:16:50.758Z"
   },
   {
    "investigated_at": "2026-10-11T16:08:00.326Z",
@@ -260361,7 +260362,8 @@
    },
    "verdict": "skip",
    "verdict_note": "bare non-token contract, no liquidity, no activity; part of the serial-deployer inert-spray batch (blocks 85418645-85419100); 5761 bytes, not a token; no tradeable venue",
-   "x_reads": "0"
+   "x_reads": "0",
+   "social_scored_at": "2026-10-11T16:16:50.758Z"
   },
   {
    "investigated_at": "2026-10-11T16:08:00.326Z",
@@ -260397,7 +260399,8 @@
    },
    "verdict": "skip",
    "verdict_note": "dead-on-arrival ERC20 batch (blocks 85418645-85419100, ~00:29-00:30Z); serial-deployer spray of inert contracts, following the 85416551-85418072 batch from the 15:52Z tick; totalSupply=1.699e18 wei (~1.7 tokens @18dp); no tradeable venue",
-   "x_reads": "0"
+   "x_reads": "0",
+   "social_scored_at": "2026-10-11T16:16:50.758Z"
   },
   {
    "investigated_at": "2026-10-11T16:08:00.326Z",
@@ -260433,7 +260436,8 @@
    },
    "verdict": "skip",
    "verdict_note": "bare non-token contract, no liquidity, no activity; part of the serial-deployer inert-spray batch (blocks 85418645-85419100); 596 bytes, not a token; no tradeable venue",
-   "x_reads": "0"
+   "x_reads": "0",
+   "social_scored_at": "2026-10-11T16:16:50.758Z"
   },
   {
    "investigated_at": "2026-10-11T16:08:00.326Z",
@@ -260469,6 +260473,103 @@
    },
    "verdict": "skip",
    "verdict_note": "bare non-token contract, no liquidity, no activity; part of the serial-deployer inert-spray batch (blocks 85418645-85419100); 23733 bytes, not a token; no tradeable venue",
+   "x_reads": "0",
+   "social_scored_at": "2026-10-11T16:16:50.758Z"
+  },
+  {
+   "investigated_at": "2026-10-11T16:17:42.672Z",
+   "candidate": {
+    "chain": "robinhood",
+    "contract": "0x2fb30f1e841d3ffc1d08ee25692fe486de18e81d",
+    "scout": "block-watcher",
+    "found_at": "2026-10-11T00:31:12.536Z",
+    "detail": "new contract deployed in block 85419427",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T16:11:52.529Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "static — deployed ~15.5h before gating (block 85419427); zero Transfer logs in the 20k-block probe window; no mint activity",
+   "social_signal": "weak — unnamed contract, no name/symbol to search; candidate X searches conserved this run (X credit budget)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 111.86,
+    "sol_24h_pct": 1.29,
+    "pumpfun": "pump.fun scout feed silent since 2026-10-08",
+    "x_leg": "cached 15:52Z (under 30-min TTL): shill-spam heavy, no exploit/FUD news",
+    "risk": "risk neutral-soft for Solana memecoins",
+    "fit_note": "candidates are Robinhood-chain EVM contracts (not Solana); pulse attached per protocol, verdict unaffected by it"
+   },
+   "verdict": "skip",
+   "verdict_note": "bare non-token contract (1906 bytes; name/symbol/totalSupply/decimals all revert); zero Transfer logs in 20k-block window; no V2 WETH pair or V4 pools per gate; serial-deployer inert-spray batch (blocks ~85419xxx); no tradeable venue",
+   "x_reads": "0"
+  },
+  {
+   "investigated_at": "2026-10-11T16:17:42.672Z",
+   "candidate": {
+    "chain": "robinhood",
+    "contract": "0x195ee62fd3e8bbb1a32bdce4588b81df3310ceae",
+    "scout": "block-watcher",
+    "found_at": "2026-10-11T00:31:13.204Z",
+    "detail": "new contract deployed in block 85419431",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T16:12:14.787Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "static — deployed ~15.5h before gating (block 85419431); zero Transfer logs in the 20k-block probe window; no mint activity",
+   "social_signal": "weak — unnamed contract, no name/symbol to search; candidate X searches conserved this run (X credit budget)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 111.86,
+    "sol_24h_pct": 1.29,
+    "pumpfun": "pump.fun scout feed silent since 2026-10-08",
+    "x_leg": "cached 15:52Z (under 30-min TTL): shill-spam heavy, no exploit/FUD news",
+    "risk": "risk neutral-soft for Solana memecoins",
+    "fit_note": "candidates are Robinhood-chain EVM contracts (not Solana); pulse attached per protocol, verdict unaffected by it"
+   },
+   "verdict": "skip",
+   "verdict_note": "bare non-token contract (1995 bytes; name/symbol/totalSupply/decimals all revert); zero Transfer logs in 20k-block window; no V2 WETH pair or V4 pools per gate; serial-deployer inert-spray batch (blocks ~85419xxx); no tradeable venue",
+   "x_reads": "0"
+  },
+  {
+   "investigated_at": "2026-10-11T16:17:42.672Z",
+   "candidate": {
+    "chain": "robinhood",
+    "contract": "0x228fd9015940d296eac138db957f3cfcb1a1552e",
+    "scout": "block-watcher",
+    "found_at": "2026-10-11T00:31:35.647Z",
+    "detail": "new contract deployed in block 85419584",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T16:12:46.585Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "static — deployed ~15.5h before gating (block 85419584); zero Transfer logs in the 20k-block probe window; no mint activity",
+   "social_signal": "weak — unnamed contract, no name/symbol to search; candidate X searches conserved this run (X credit budget)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 111.86,
+    "sol_24h_pct": 1.29,
+    "pumpfun": "pump.fun scout feed silent since 2026-10-08",
+    "x_leg": "cached 15:52Z (under 30-min TTL): shill-spam heavy, no exploit/FUD news",
+    "risk": "risk neutral-soft for Solana memecoins",
+    "fit_note": "candidates are Robinhood-chain EVM contracts (not Solana); pulse attached per protocol, verdict unaffected by it"
+   },
+   "verdict": "skip",
+   "verdict_note": "bare non-token contract (233 bytes; name/symbol/totalSupply/decimals all revert); zero Transfer logs in 20k-block window; no V2 WETH pair or V4 pools per gate; serial-deployer inert-spray batch (blocks ~85419xxx); no tradeable venue",
    "x_reads": "0"
   }
  ],
@@ -440495,6 +440596,164 @@
    "total": 0,
    "grade": "F",
    "notes": "dead-on-arrival deploy: 0 holders in 12k-block window, no V2 pair, no V4 pools, ~15.5h old, no website, no X presence, no ticker spread, no team, no fomo. (duplicate Pepper INU deploy, 2nd of 2 — copycat cluster) age 60+ min — absence of footprint at this age scores F per rubric."
+  },
+  {
+   "scored_at": "2026-10-11T16:16:42.571Z",
+   "candidate": {
+    "contract": "0x4f414069a80b4a72810808fdd794a155c82da6bb",
+    "chain": "robinhood",
+    "name": "Billy Debilly",
+    "ticker": "DEBILLY",
+    "scout": "block-watcher",
+    "found_at": "2026-10-11T00:29:35.037Z",
+    "block": 85418645,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T16:00:04.167Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped"
+    ]
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "F: ~16h since deploy; dead-on-arrival ERC20 (totalSupply=0, no transfers, no holders); part of serial-deployer inert-spray batch blocks 85418645-85419100; zero social footprint — no website, no X presence, no ticker spread, anonymous team; humming-hymn verdict skip."
+  },
+  {
+   "scored_at": "2026-10-11T16:16:42.571Z",
+   "candidate": {
+    "contract": "0xeaf17d540313f8fee6079cb17e2d71294bb250a0",
+    "chain": "robinhood",
+    "name": "<no ERC20 interface — reverts on name/symbol/totalSupply>",
+    "ticker": "<none>",
+    "scout": "block-watcher",
+    "found_at": "2026-10-11T00:29:59.232Z",
+    "block": 85418848,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T16:00:23.883Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped"
+    ]
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "F: ~16h since deploy; bare non-token contract (reverts on name/symbol/totalSupply, 5761 bytes); serial-deployer inert-spray batch blocks 85418645-85419100; no holders, no pairs, no activity; zero social footprint; humming-hymn verdict skip."
+  },
+  {
+   "scored_at": "2026-10-11T16:16:42.571Z",
+   "candidate": {
+    "contract": "0x561bef5be7ad0f434ecbf078541088148110d4e5",
+    "chain": "robinhood",
+    "name": "Cloudy Draft 05",
+    "ticker": "CLOUDY",
+    "scout": "block-watcher",
+    "found_at": "2026-10-11T00:30:06.440Z",
+    "block": 85418913,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T16:00:36.477Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "F: ~16h since deploy; dead-on-arrival ERC20 (totalSupply ~1.7 tokens @18dp, no transfers, no holders); serial-deployer inert-spray batch blocks 85418645-85419100; zero social footprint — no website, no X presence, no ticker spread; humming-hymn verdict skip."
+  },
+  {
+   "scored_at": "2026-10-11T16:16:42.571Z",
+   "candidate": {
+    "contract": "0x65c1a71a028cb38b0003b25d7d2a036021e503ce",
+    "chain": "robinhood",
+    "name": "<no ERC20 interface — reverts on name/symbol/totalSupply>",
+    "ticker": "<none>",
+    "scout": "block-watcher",
+    "found_at": "2026-10-11T00:30:20.999Z",
+    "block": 85419025,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T16:00:49.740Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "F: ~16h since deploy; bare non-token contract (reverts on name/symbol/totalSupply, 596 bytes); serial-deployer inert-spray batch blocks 85418645-85419100; no holders, no pairs, no activity; zero social footprint; humming-hymn verdict skip."
+  },
+  {
+   "scored_at": "2026-10-11T16:16:42.571Z",
+   "candidate": {
+    "contract": "0x9d8ff97b59b95e56ec4f358f38080826359423ca",
+    "chain": "robinhood",
+    "name": "<no ERC20 interface — reverts on name/symbol/totalSupply>",
+    "ticker": "<none>",
+    "scout": "block-watcher",
+    "found_at": "2026-10-11T00:30:28.990Z",
+    "block": 85419100,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T16:01:02.865Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "F: ~16h since deploy; bare non-token contract (reverts on name/symbol/totalSupply, 23733 bytes); serial-deployer inert-spray batch blocks 85418645-85419100; no holders, no pairs, no activity; zero social footprint; humming-hymn verdict skip."
   }
  ],
  "decisions": [
@@ -758242,9 +758501,9 @@
   "wave-hello"
  ],
  "last_activity": {
-  "scout": "2026-10-11T16:15:21.293Z",
-  "hymn": "2026-10-11T16:08:00.326Z",
-  "scorer": "2026-10-11T16:05:47.732Z",
+  "scout": "2026-10-11T16:16:54.586Z",
+  "hymn": "2026-10-11T16:17:42.672Z",
+  "scorer": "2026-10-11T16:16:42.571Z",
   "snug": "2026-10-11T15:47:19.074529+00:00",
   "cardigan": "2026-10-11T15:47:19.074529+00:00"
  },
@@ -758394,8 +758653,8 @@
     "tx_hash": "0x0cef41c59b5ff5890632d9a5d376772d22fd5c83eb6d90960088f8f66517ec90",
     "entered_at": "2026-10-09T01:51:03.242Z",
     "entry_price_usd": 0.1135,
-    "current_price_usd": 0.124,
-    "pnl_pct": 9.2511013215859,
+    "current_price_usd": 0.1241,
+    "pnl_pct": 9.339207048458148,
     "amount_tokens": 216.29986717343255,
     "amount_eth_in": 0.01,
     "score": 60,
@@ -758441,10 +758700,10 @@
     "exit_price_usd": 0.0000057094609974722175
    }
   ],
-  "realized_pnl_pct_total": -30.237217681106078
+  "realized_pnl_pct_total": -30.14911195423383
  },
  "paper_trades": {
-  "as_of": "2026-10-11T16:12:20.766Z",
+  "as_of": "2026-10-11T16:17:13.074Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -758463,7 +758722,7 @@
     "seeded": true,
     "score": 66,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01275,
+    "last_price_usd": 0.01289,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -758474,8 +758733,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0010966057441253252,
-    "unrealized_pnl_pct": 10.966057441253252
+    "unrealized_pnl_eth": 0.0012184508268059191,
+    "unrealized_pnl_pct": 12.18450826805919
    },
    {
     "id": "pt-muzwwuzb-27",
@@ -758486,7 +758745,7 @@
     "seeded": true,
     "score": 63,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01275,
+    "last_price_usd": 0.01289,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -758497,8 +758756,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0010966057441253252,
-    "unrealized_pnl_pct": 10.966057441253252
+    "unrealized_pnl_eth": 0.0012184508268059191,
+    "unrealized_pnl_pct": 12.18450826805919
    },
    {
     "id": "pt-mv02u5pe-52",
@@ -758532,7 +758791,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3631,
+    "last_price_usd": 0.3633,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -758543,8 +758802,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00043690715722908944,
-    "unrealized_pnl_pct": 4.369071572290895
+    "unrealized_pnl_eth": 0.0004426559356136828,
+    "unrealized_pnl_pct": 4.426559356136828
    },
    {
     "id": "pt-mv03wwab-54",
@@ -758578,7 +758837,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.3631,
+    "last_price_usd": 0.3633,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -758589,8 +758848,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0002890337206007354,
-    "unrealized_pnl_pct": 2.890337206007354
+    "unrealized_pnl_eth": 0.0002947010484556545,
+    "unrealized_pnl_pct": 2.947010484556545
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -758601,7 +758860,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.3631,
+    "last_price_usd": 0.3633,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -758612,8 +758871,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0002948681599092695,
-    "unrealized_pnl_pct": 2.948681599092695
+    "unrealized_pnl_eth": 0.00030053870144598706,
+    "unrealized_pnl_pct": 3.0053870144598704
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -758624,7 +758883,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.3631,
+    "last_price_usd": 0.3633,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -758635,8 +758894,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0002773846589300866,
-    "unrealized_pnl_pct": 2.7738465893008657
+    "unrealized_pnl_eth": 0.000283045570336824,
+    "unrealized_pnl_pct": 2.83045570336824
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -758647,7 +758906,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.3631,
+    "last_price_usd": 0.3633,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -758658,8 +758917,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0002715700141442712,
-    "unrealized_pnl_pct": 2.7157001414427118
+    "unrealized_pnl_eth": 0.0002772277227722775,
+    "unrealized_pnl_pct": 2.7722772277227747
    }
   ],
   "closed_recent": [],

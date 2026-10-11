@@ -1,22 +1,11 @@
 {
- "updated_at": "2026-10-11T12:34:52.563Z",
+ "updated_at": "2026-10-11T12:36:54.776Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-11T12:19:51.362Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xe53caaee77846fc7f5925facb9b968810d37cffe",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0x6b0e7e52cc531ef54a459719801e72849e3072ea63d8c9e4496b7a29b894602e",
-   "block": 85827496,
-   "detail": "new contract deployed in block 85827496"
-  },
   {
    "found_at": "2026-10-11T12:19:59.746Z",
    "scout": "block-watcher",
@@ -1207,9 +1196,33 @@
    "tx_hash": "0x8179a4b8e47e21d670fd0edfe5636556b610e7661c6482d6e2510576c9c8a7fc",
    "block": 85835847,
    "detail": "new contract deployed in block 85835847"
+  },
+  {
+   "found_at": "2026-10-11T12:35:19.457Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Take-Two Interactive Software  Robinhood Token TTWO",
+   "muse": "",
+   "contract": "0x5e81213613b6b86eab4c6c50d718d34359459786",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0xe6400cfc86868a844d8db0c9196f46e0e86a6fa3661a02695c63089b6345a758",
+   "block": 84833783,
+   "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 84833783 (tx 0xe6400cfc86868a844d8db0c9196f46e0e86a6fa3661a02695c63089b6345a758); name=Take-Two Interactive Software  Robinhood Token symbol=TTWO. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-11T12:35:33.736Z",
+   "gate_reasons": [
+    "not a Pons V2 factory launch — pons-only mode"
+   ],
+   "gate_warnings": [],
+   "gate_detail": {},
+   "fast_lane": {
+    "action": "skipped",
+    "reason": "pons-only"
+   }
   }
  ],
- "scout_queue_total": 2434,
+ "scout_queue_total": 2435,
  "investigations": [
   {
    "candidate": {
@@ -253097,7 +253110,8 @@
    },
    "classification": "non-erc20",
    "verdict": "skip",
-   "verdict_note": "non-ERC20 utility contracts (3990-byte runtime; name()/symbol()/decimals()/totalSupply() all revert). Three byte-identical deploys ~35-46 blocks apart = automated utility deployment, not a tradeable launch. No liquidity venue exists; not pons-origin, so fails PONS-only ingest downstream as well. Unknown-attribution gate warnings = risk flag per policy."
+   "verdict_note": "non-ERC20 utility contracts (3990-byte runtime; name()/symbol()/decimals()/totalSupply() all revert). Three byte-identical deploys ~35-46 blocks apart = automated utility deployment, not a tradeable launch. No liquidity venue exists; not pons-origin, so fails PONS-only ingest downstream as well. Unknown-attribution gate warnings = risk flag per policy.",
+   "social_scored_at": "2026-10-11T12:35:12.069Z"
   },
   {
    "investigated_at": "2026-10-11T12:28:07.024Z",
@@ -253132,7 +253146,8 @@
    },
    "classification": "non-erc20",
    "verdict": "skip",
-   "verdict_note": "non-ERC20 utility contracts (3990-byte runtime; name()/symbol()/decimals()/totalSupply() all revert). Three byte-identical deploys ~35-46 blocks apart = automated utility deployment, not a tradeable launch. No liquidity venue exists; not pons-origin, so fails PONS-only ingest downstream as well. Unknown-attribution gate warnings = risk flag per policy."
+   "verdict_note": "non-ERC20 utility contracts (3990-byte runtime; name()/symbol()/decimals()/totalSupply() all revert). Three byte-identical deploys ~35-46 blocks apart = automated utility deployment, not a tradeable launch. No liquidity venue exists; not pons-origin, so fails PONS-only ingest downstream as well. Unknown-attribution gate warnings = risk flag per policy.",
+   "social_scored_at": "2026-10-11T12:35:12.069Z"
   },
   {
    "investigated_at": "2026-10-11T12:28:07.024Z",
@@ -253167,7 +253182,8 @@
    },
    "classification": "non-erc20",
    "verdict": "skip",
-   "verdict_note": "non-ERC20 utility contracts (3990-byte runtime; name()/symbol()/decimals()/totalSupply() all revert). Three byte-identical deploys ~35-46 blocks apart = automated utility deployment, not a tradeable launch. No liquidity venue exists; not pons-origin, so fails PONS-only ingest downstream as well. Unknown-attribution gate warnings = risk flag per policy."
+   "verdict_note": "non-ERC20 utility contracts (3990-byte runtime; name()/symbol()/decimals()/totalSupply() all revert). Three byte-identical deploys ~35-46 blocks apart = automated utility deployment, not a tradeable launch. No liquidity venue exists; not pons-origin, so fails PONS-only ingest downstream as well. Unknown-attribution gate warnings = risk flag per policy.",
+   "social_scored_at": "2026-10-11T12:35:12.069Z"
   }
  ],
  "scores": [
@@ -430186,6 +430202,63 @@
    "total": 2,
    "grade": "F",
    "notes": "Brand-new pons-family launch (block 85824214, ~10 min before scoring): zero web footprint for this contract — exact-name search returns only unrelated WISP tokens on BNB/BSC/Polygon/Base (ticker_spread=1 for brand-confusion risk, not organic spread). X leg unavailable (X API 402 outage persists since 2026-10-10), so X-native signals unverifiable. Onchain is bot-churn, not organic: 75 buys + 59 sells in a ~2-min flurry then 11+ min silence, 44% of buys from 2 wallets, every buyer flipping, launch-sweeper first in (fomo_signals=1 for launch-minute spike only). Investigation verdict skip (sniper-bot signature); fast lane vetoed by wave-hello + blanket-snug. F reflects ABSENT social legitimacy, NOT positive scam evidence. Rescore if team socials emerge."
+  },
+  {
+   "scored_at": "2026-10-11T12:35:03.279Z",
+   "candidate": {
+    "chain": "robinhood",
+    "contract": "0xbe7f991cdaefa8fff0f51c36cbdc90c6d06f0c8b"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "non-ERC20 utility contract (3990-byte runtime; name()/symbol()/decimals()/totalSupply() all revert). One of three byte-identical automated utility deploys in blocks 85400493-85400573; not a token launch, no social surface exists. Not scam per se — verdict skip (not tradeable)."
+  },
+  {
+   "scored_at": "2026-10-11T12:35:03.279Z",
+   "candidate": {
+    "chain": "robinhood",
+    "contract": "0x055b371f03fce3549626680a3a403745568d7bce"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "non-ERC20 utility contract (3990-byte runtime; name()/symbol()/decimals()/totalSupply() all revert). One of three byte-identical automated utility deploys in blocks 85400493-85400573; not a token launch, no social surface exists. Not scam per se — verdict skip (not tradeable)."
+  },
+  {
+   "scored_at": "2026-10-11T12:35:03.279Z",
+   "candidate": {
+    "chain": "robinhood",
+    "contract": "0x513a774ab96851d2857b6e8965b93fd9fd4efb2d"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "non-ERC20 utility contract (3990-byte runtime; name()/symbol()/decimals()/totalSupply() all revert). One of three byte-identical automated utility deploys in blocks 85400493-85400573; not a token launch, no social surface exists. Not scam per se — verdict skip (not tradeable)."
   }
  ],
  "decisions": [
@@ -732779,9 +732852,9 @@
   "reentry-watch"
  ],
  "last_activity": {
-  "scout": "2026-10-11T12:34:04.118Z",
+  "scout": "2026-10-11T12:35:19.457Z",
   "hymn": "2026-10-11T12:28:07.024Z",
-  "scorer": "2026-10-11T12:24:39Z",
+  "scorer": "2026-10-11T12:35:03.279Z",
   "snug": null,
   "cardigan": null
  },

@@ -1,180 +1,11 @@
 {
- "updated_at": "2026-10-11T12:20:52.214Z",
+ "updated_at": "2026-10-11T12:22:53.041Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-11T12:04:05.803Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Robin Kingdom's Jewel JEWEL",
-   "muse": "",
-   "contract": "0x13830441a077e477efcea6d1a4e35a0311d62d8b",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x692e18046a95d0a5558e83252660d2fab8bd5cc066cde46c30825c340f8c7ef9",
-   "block": 85813468,
-   "curve": "0xa911d997eeff547e5c5b855d1a66969e49129723",
-   "deployer": "0x34ca9abea5f836865475933594f9d082453c0695",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85813468 (tx 0x692e18046a95d0a5558e83252660d2fab8bd5cc066cde46c30825c340f8c7ef9); name=Robin Kingdom's Jewel symbol=JEWEL curve=0xa911d997eeff547e5c5b855d1a66969e49129723 deployer=0x34ca9abea5f836865475933594f9d082453c0695. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
-   "gate_status": "gate_pass",
-   "gate_checked_at": "2026-10-11T12:04:12.793Z",
-   "gate_reasons": [],
-   "gate_warnings": [
-    "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time",
-    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-   ],
-   "gate_detail": {
-    "checks": {
-     "owner-powers": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no owner(); no dangerous selectors in bytecode"
-      ],
-      "detail": {
-       "selectors": {
-        "mint": [],
-        "pause": [],
-        "blacklist": [],
-        "fee": []
-       },
-       "owner": null
-      }
-     },
-     "proxy": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no proxy admin/beacon slots set; not an upgradeable proxy"
-      ],
-      "detail": {}
-     },
-     "pons-curve": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time"
-      ],
-      "notes": [
-       "curve venue: ~0.5863 ETH collected >= 0.01 floor",
-       "buy leg simulates clean: 0.001 ETH -> 313885905964846571494819 tokens",
-       "22 CurveSell events in 20k blocks — sell path live"
-      ],
-      "detail": {
-       "curve": "0xa911d997eeff547e5c5b855d1a66969e49129723",
-       "phase": "pre",
-       "curvePct": 74.13,
-       "curveCodeBytes": 10229,
-       "curveEth": 0.5862738359693147,
-       "snipeTaxBps": 0,
-       "buySim": {
-        "tokensOut": "313885905964846571494819"
-       },
-       "sellLiveness": {
-        "sells": 22,
-        "totalEthOut": "506074765909387988852639"
-       },
-       "sellSim": {
-        "error": "no recent seller with usable allowance found"
-       }
-      }
-     },
-     "concentration": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "top-10 real-wallet holders own 16.30% of supply (<=30%); no concentration trigger"
-      ],
-      "detail": {
-       "supply": "1000000000000000000000000000",
-       "addrsSeen": 50,
-       "top10EoaBps": 1630,
-       "top1EoaBps": 230,
-       "top10": [
-        {
-         "addr": "0x783c59057c110f2573f07b32374407766d428c79",
-         "bal": "23031233424522961535631788"
-        },
-        {
-         "addr": "0xe6f39e8f9a02d74f1ffc327ca41e2bb7d8b6bc95",
-         "bal": "22584265638868053007264265"
-        },
-        {
-         "addr": "0xa38b9a3c5715c97877d7b86fed68dbda0df243fe",
-         "bal": "20442520376570850969881348"
-        },
-        {
-         "addr": "0x24eab53090cdf5491ae84523199bc2cc2ff275dd",
-         "bal": "17418567473179149989758495"
-        },
-        {
-         "addr": "0x8437c23851a5e5825918a05734dd5a600c5a389b",
-         "bal": "15296389707346654482108938"
-        },
-        {
-         "addr": "0xa5439be7d8d1b0bbc2ba7d2f76b44912575b8618",
-         "bal": "13538148582200316071247866"
-        },
-        {
-         "addr": "0xe7155f5bb8512964e7e712d97585f7ce2b5152fd",
-         "bal": "13171100875031752726116482"
-        },
-        {
-         "addr": "0x35cf9fd54937a7e2d7a99771b6b94df36444bb84",
-         "bal": "12908102333705935591670431"
-        },
-        {
-         "addr": "0x3e299a95792bcd27aced69c92898182bcd8e0717",
-         "bal": "12736515164372976773964270"
-        },
-        {
-         "addr": "0x8d8bd8a7c2f99ac6dc65016a560c1cd3a4ec310c",
-         "bal": "11972775927195720406989651"
-        }
-       ],
-       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
-      }
-     },
-     "deployer-history": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-      ],
-      "notes": [],
-      "detail": {}
-     }
-    },
-    "ponsPhase": {
-     "phase": "pre",
-     "curvePct": 74.13
-    }
-   },
-   "fast_lane": {
-    "action": "no-buy",
-    "reason": "agent-veto",
-    "gate": "gate_pass",
-    "agents": [
-     "wave-hello:SKIP",
-     "humming-hymn:SKIP",
-     "blanket-snug:SKIP"
-    ],
-    "veto": true,
-    "liqEth": 0.5862738359693147,
-    "venue": "curve",
-    "curve": "0xa911d997eeff547e5c5b855d1a66969e49129723"
-   },
-   "investigated": true,
-   "investigated_at": "2026-10-11T12:09:00Z",
-   "investigation_verdict": "promising"
-  },
   {
    "found_at": "2026-10-11T12:04:11.838Z",
    "scout": "pons-family",
@@ -2069,9 +1900,20 @@
    "tx_hash": "0x361ec0df9222c6fd4a1d1ce820111781c4db850c33633cc1c5786eefffe3c414",
    "block": 85827720,
    "detail": "new contract deployed in block 85827720"
+  },
+  {
+   "found_at": "2026-10-11T12:21:15.418Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x8c17e2de8d83739443943bf2a13ba88086fb3cab",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x1626fa0bdc904d4b94f7aa1339e61e43a77768dff31739c62d64227f6cfd940f",
+   "block": 85828596,
+   "detail": "new contract deployed in block 85828596"
   }
  ],
- "scout_queue_total": 2391,
+ "scout_queue_total": 2392,
  "investigations": [
   {
    "candidate": {
@@ -253521,6 +253363,425 @@
    },
    "verdict": "skip",
    "verdict_note": "Sniper-bot churn signature: 2-minute buy/sell flurry then silence, 44% of buys from 2 wallets, every buyer flipping, launch-sweeper first in, zero social footprint. Nothing here rewards holding; corroborates the fast-lane agent-veto."
+  },
+  {
+   "investigated_at": "2026-10-11T12:22:50.692Z",
+   "candidate": {
+    "contract": "0xdb871b6bd66e177912b37ef10e7825c434d8ca60",
+    "scout": "block-watcher",
+    "chain": "robinhood",
+    "name": null,
+    "found_at": "2026-10-10T23:33:42.780Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T11:15:08.073Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "stale (found 2026-10-10, ~12.6h old; no mint velocity applicable)",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.64,
+    "sol_24h_pct": 0.06,
+    "stance": "risk-neutral",
+    "note": "SOL flat at $109.64 (+0.06% 24h); no Solana candidates this tick - pulse informational only."
+   },
+   "classification": "non-erc20",
+   "verdict": "skip",
+   "verdict_note": "non-ERC20 contract (1478 bytes; name()/symbol()/totalSupply() all revert). Nothing tradeable. Gate stamp copied from scout-queue. No liquidity venue exists, so nothing to buy on any verdict."
+  },
+  {
+   "investigated_at": "2026-10-11T12:22:50.692Z",
+   "candidate": {
+    "contract": "0x2401ef4272c75dea35c5640f1ed2d9c093353c13",
+    "scout": "block-watcher",
+    "chain": "robinhood",
+    "name": null,
+    "found_at": "2026-10-10T23:36:39.156Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T11:32:14.632Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "stale (found 2026-10-10, ~12.6h old; no mint velocity applicable)",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.64,
+    "sol_24h_pct": 0.06,
+    "stance": "risk-neutral",
+    "note": "SOL flat at $109.64 (+0.06% 24h); no Solana candidates this tick - pulse informational only."
+   },
+   "classification": "dead-token",
+   "verdict": "skip",
+   "verdict_note": "ERC20 'Super Intelligence Cat' (Ollie), 18 dec, 1B supply, but NO liquidity venue onchain (no V2 WETH pair, no V4 pools) - dead token. No venue to buy/sell; not pons-origin. Skip on merit. Gate stamp copied from scout-queue. No liquidity venue exists, so nothing to buy on any verdict."
+  },
+  {
+   "investigated_at": "2026-10-11T12:22:50.692Z",
+   "candidate": {
+    "contract": "0x18a2b3423c9ca82798795f4267fcf14edbf64a55",
+    "scout": "block-watcher",
+    "chain": "robinhood",
+    "name": null,
+    "found_at": "2026-10-10T23:43:57.972Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T11:46:18.837Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "stale (found 2026-10-10, ~12.6h old; no mint velocity applicable)",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.64,
+    "sol_24h_pct": 0.06,
+    "stance": "risk-neutral",
+    "note": "SOL flat at $109.64 (+0.06% 24h); no Solana candidates this tick - pulse informational only."
+   },
+   "classification": "non-erc20",
+   "verdict": "skip",
+   "verdict_note": "non-ERC20 contract (4720 bytes; name()/symbol()/totalSupply() all revert). Nothing tradeable. Gate stamp copied from scout-queue. No liquidity venue exists, so nothing to buy on any verdict."
+  },
+  {
+   "investigated_at": "2026-10-11T12:22:50.692Z",
+   "candidate": {
+    "contract": "0x069361d964730b068ca3f54b64f895131f342c36",
+    "scout": "block-watcher",
+    "chain": "robinhood",
+    "name": null,
+    "found_at": "2026-10-10T23:46:26.802Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T11:53:29.426Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped"
+    ]
+   },
+   "velocity": "stale (found 2026-10-10, ~12.6h old; no mint velocity applicable)",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.64,
+    "sol_24h_pct": 0.06,
+    "stance": "risk-neutral",
+    "note": "SOL flat at $109.64 (+0.06% 24h); no Solana candidates this tick - pulse informational only."
+   },
+   "classification": "non-erc20",
+   "verdict": "skip",
+   "verdict_note": "non-ERC20 contract (5436 bytes; name()/symbol()/totalSupply() all revert). Nothing tradeable. Gate stamp copied from scout-queue. No liquidity venue exists, so nothing to buy on any verdict."
+  },
+  {
+   "investigated_at": "2026-10-11T12:22:50.692Z",
+   "candidate": {
+    "contract": "0x3c3a23e8f89a74f677c2733f5e47b2213e282a74",
+    "scout": "block-watcher",
+    "chain": "robinhood",
+    "name": null,
+    "found_at": "2026-10-10T23:46:58.875Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T11:53:48.291Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "stale (found 2026-10-10, ~12.6h old; no mint velocity applicable)",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.64,
+    "sol_24h_pct": 0.06,
+    "stance": "risk-neutral",
+    "note": "SOL flat at $109.64 (+0.06% 24h); no Solana candidates this tick - pulse informational only."
+   },
+   "classification": "non-erc20",
+   "verdict": "skip",
+   "verdict_note": "non-ERC20 contract (6359 bytes; name()/symbol()/totalSupply() all revert). Nothing tradeable. Gate stamp copied from scout-queue. No liquidity venue exists, so nothing to buy on any verdict."
+  },
+  {
+   "investigated_at": "2026-10-11T12:22:50.692Z",
+   "candidate": {
+    "contract": "0x27e5aef188895ab9867cb8d28680cbc464f8fc2d",
+    "scout": "block-watcher",
+    "chain": "robinhood",
+    "name": null,
+    "found_at": "2026-10-10T23:47:00.868Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T11:54:13.713Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "stale (found 2026-10-10, ~12.6h old; no mint velocity applicable)",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.64,
+    "sol_24h_pct": 0.06,
+    "stance": "risk-neutral",
+    "note": "SOL flat at $109.64 (+0.06% 24h); no Solana candidates this tick - pulse informational only."
+   },
+   "classification": "non-erc20",
+   "verdict": "skip",
+   "verdict_note": "non-ERC20 contract (6359 bytes; name()/symbol()/totalSupply() all revert). Nothing tradeable. Gate stamp copied from scout-queue. No liquidity venue exists, so nothing to buy on any verdict."
+  },
+  {
+   "investigated_at": "2026-10-11T12:22:50.692Z",
+   "candidate": {
+    "contract": "0x20763b2e33b6b5404a291c025a4e2c2fe6e54533",
+    "scout": "block-watcher",
+    "chain": "robinhood",
+    "name": null,
+    "found_at": "2026-10-10T23:47:04.640Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T11:54:23.883Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped"
+    ]
+   },
+   "velocity": "stale (found 2026-10-10, ~12.6h old; no mint velocity applicable)",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.64,
+    "sol_24h_pct": 0.06,
+    "stance": "risk-neutral",
+    "note": "SOL flat at $109.64 (+0.06% 24h); no Solana candidates this tick - pulse informational only."
+   },
+   "classification": "dead-token",
+   "verdict": "skip",
+   "verdict_note": "zero-supply dead token 'Float STANDARD' (fSTANDARD), 24 decimals, totalSupply 0 - same class as Float HOOKR. Nothing tradeable. Gate stamp copied from scout-queue. No liquidity venue exists, so nothing to buy on any verdict."
+  },
+  {
+   "investigated_at": "2026-10-11T12:22:50.692Z",
+   "candidate": {
+    "contract": "0xe82045a2233f95c8cd2a1e7747289e1deffd0f26",
+    "scout": "block-watcher",
+    "chain": "robinhood",
+    "name": null,
+    "found_at": "2026-10-10T23:47:36.635Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T11:54:59.494Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "stale (found 2026-10-10, ~12.6h old; no mint velocity applicable)",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.64,
+    "sol_24h_pct": 0.06,
+    "stance": "risk-neutral",
+    "note": "SOL flat at $109.64 (+0.06% 24h); no Solana candidates this tick - pulse informational only."
+   },
+   "classification": "non-erc20",
+   "verdict": "skip",
+   "verdict_note": "non-ERC20 contract (6359 bytes; name()/symbol()/totalSupply() all revert). Nothing tradeable. Gate stamp copied from scout-queue. No liquidity venue exists, so nothing to buy on any verdict."
+  },
+  {
+   "investigated_at": "2026-10-11T12:22:50.692Z",
+   "candidate": {
+    "contract": "0xf89f7b5c3e5a6b2ee95153a92f568300745a4e11",
+    "scout": "block-watcher",
+    "chain": "robinhood",
+    "name": null,
+    "found_at": "2026-10-10T23:47:38.280Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T11:59:58.241Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "stale (found 2026-10-10, ~12.6h old; no mint velocity applicable)",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.64,
+    "sol_24h_pct": 0.06,
+    "stance": "risk-neutral",
+    "note": "SOL flat at $109.64 (+0.06% 24h); no Solana candidates this tick - pulse informational only."
+   },
+   "classification": "non-erc20",
+   "verdict": "skip",
+   "verdict_note": "non-ERC20 utility contract (6359 bytes code; name()/symbol()/totalSupply()/decimals() all revert). Nothing tradeable. Gate stamp copied from scout-queue. No liquidity venue exists, so nothing to buy on any verdict."
+  },
+  {
+   "investigated_at": "2026-10-11T12:22:50.692Z",
+   "candidate": {
+    "contract": "0x7e071f891eba5fd083c8d23b96c51ba1aaf87f68",
+    "scout": "block-watcher",
+    "chain": "robinhood",
+    "name": null,
+    "found_at": "2026-10-10T23:47:48.286Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T12:00:10.534Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped"
+    ]
+   },
+   "velocity": "stale (found 2026-10-10, ~12.6h old; no mint velocity applicable)",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.64,
+    "sol_24h_pct": 0.06,
+    "stance": "risk-neutral",
+    "note": "SOL flat at $109.64 (+0.06% 24h); no Solana candidates this tick - pulse informational only."
+   },
+   "classification": "dead-token",
+   "verdict": "skip",
+   "verdict_note": "zero-supply/zero-transfer dead token 'Float HOOKR' (totalSupply 0). Nothing tradeable. Gate stamp copied from scout-queue. No liquidity venue exists, so nothing to buy on any verdict."
+  },
+  {
+   "investigated_at": "2026-10-11T12:22:50.692Z",
+   "candidate": {
+    "contract": "0x69626bb4750f715e214dc48a5cc60f0ec22e79b1",
+    "scout": "new-pairs",
+    "chain": "robinhood",
+    "name": null,
+    "found_at": "2026-10-10T23:45:06.567Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T12:00:26.062Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "dangerous selectors present (mint(address)) but no owner() — power unattributable",
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "stale (found 2026-10-10, ~12.6h old; no mint velocity applicable)",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.64,
+    "sol_24h_pct": 0.06,
+    "stance": "risk-neutral",
+    "note": "SOL flat at $109.64 (+0.06% 24h); no Solana candidates this tick - pulse informational only."
+   },
+   "classification": "pair-phantom",
+   "verdict": "skip",
+   "verdict_note": "Uniswap V2 pair phantom (pair-phantom defect class: name 'Uniswap V2'/symbol 'UNI-V2', mint(address) with no owner(), token1 resolves, token0() reverts). No tradeable token. Gate stamp copied from scout-queue. No liquidity venue exists, so nothing to buy on any verdict."
+  },
+  {
+   "investigated_at": "2026-10-11T12:22:50.692Z",
+   "candidate": {
+    "contract": "0xe212b1de676e2a35d347118f2832caf27f2b4d81",
+    "scout": "new-pairs",
+    "chain": "robinhood",
+    "name": null,
+    "found_at": "2026-10-10T23:45:06.567Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T12:00:35.415Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "dangerous selectors present (mint(address)) but no owner() — power unattributable",
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "stale (found 2026-10-10, ~12.6h old; no mint velocity applicable)",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.64,
+    "sol_24h_pct": 0.06,
+    "stance": "risk-neutral",
+    "note": "SOL flat at $109.64 (+0.06% 24h); no Solana candidates this tick - pulse informational only."
+   },
+   "classification": "pair-phantom",
+   "verdict": "skip",
+   "verdict_note": "Uniswap V2 pair phantom (pair-phantom defect class: name 'Uniswap V2'/symbol 'UNI-V2', mint(address) with no owner(), token1 resolves, token0() reverts). No tradeable token. Gate stamp copied from scout-queue. No liquidity venue exists, so nothing to buy on any verdict."
+  },
+  {
+   "investigated_at": "2026-10-11T12:22:50.692Z",
+   "candidate": {
+    "contract": "0xdf2b708169b3f5016dfc6627de36be96b32dd868",
+    "scout": "new-pairs",
+    "chain": "robinhood",
+    "name": null,
+    "found_at": "2026-10-10T23:45:06.567Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T12:05:03.628Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "dangerous selectors present (mint(address)) but no owner() — power unattributable",
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "stale (found 2026-10-10, ~12.6h old; no mint velocity applicable)",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.64,
+    "sol_24h_pct": 0.06,
+    "stance": "risk-neutral",
+    "note": "SOL flat at $109.64 (+0.06% 24h); no Solana candidates this tick - pulse informational only."
+   },
+   "classification": "pair-phantom",
+   "verdict": "skip",
+   "verdict_note": "Uniswap V2 pair phantom (name 'Uniswap V2'/symbol 'UNI-V2', token0() resolves, supply 3.7e19) - pair contract, not a token. Gate passed it 'by unattributability'; reject at pair-phantom class level. Gate stamp copied from scout-queue. No liquidity venue exists, so nothing to buy on any verdict."
+  },
+  {
+   "investigated_at": "2026-10-11T12:22:50.692Z",
+   "candidate": {
+    "contract": "0xbf022071d15489a5c7586c1ba7e101ed63763903",
+    "scout": "block-watcher",
+    "chain": "robinhood",
+    "name": null,
+    "found_at": "2026-10-10T23:53:11.807Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T12:09:27.684Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped"
+    ]
+   },
+   "velocity": "stale (found 2026-10-10, ~12.6h old; no mint velocity applicable)",
+   "social_signal": "weak",
+   "money_flow": "none",
+   "solana_pulse": {
+    "sol_usd": 109.64,
+    "sol_24h_pct": 0.06,
+    "stance": "risk-neutral",
+    "note": "SOL flat at $109.64 (+0.06% 24h); no Solana candidates this tick - pulse informational only."
+   },
+   "classification": "non-erc20",
+   "verdict": "skip",
+   "verdict_note": "non-ERC20 contract (4945 bytes; name()/symbol()/totalSupply() all revert). Nothing tradeable. Gate stamp copied from scout-queue. No liquidity venue exists, so nothing to buy on any verdict."
   }
  ],
  "scores": [
@@ -731468,8 +731729,8 @@
   "reentry-watch"
  ],
  "last_activity": {
-  "scout": "2026-10-11T12:20:35.314Z",
-  "hymn": "2026-10-11T12:18:54.300Z",
+  "scout": "2026-10-11T12:21:15.418Z",
+  "hymn": "2026-10-11T12:22:50.692Z",
   "scorer": "2026-10-11T12:16:12.926Z",
   "snug": "2026-10-11T12:13:59.104Z",
   "cardigan": "2026-10-11T12:13:59.104Z"
@@ -731643,7 +731904,7 @@
   "realized_pnl_pct_total": 5.62803971767638
  },
  "paper_trades": {
-  "as_of": "2026-10-11T12:17:08.499Z",
+  "as_of": "2026-10-11T12:22:09.602Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -731731,7 +731992,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3581,
+    "last_price_usd": 0.358,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -731742,8 +732003,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00029318769761425666,
-    "unrealized_pnl_pct": 2.9318769761425667
+    "unrealized_pnl_eth": 0.00029031330842196114,
+    "unrealized_pnl_pct": 2.9031330842196112
    },
    {
     "id": "pt-mv03wwab-54",
@@ -731777,7 +732038,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.3581,
+    "last_price_usd": 0.358,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -731788,8 +732049,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00014735052422782503,
-    "unrealized_pnl_pct": 1.4735052422782502
+    "unrealized_pnl_eth": 0.0001445168603003677,
+    "unrealized_pnl_pct": 1.445168603003677
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -731800,7 +732061,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.3581,
+    "last_price_usd": 0.358,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -731811,8 +732072,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00015310462149135118,
-    "unrealized_pnl_pct": 1.5310462149135118
+    "unrealized_pnl_eth": 0.00015026935072299353,
+    "unrealized_pnl_pct": 1.5026935072299352
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -731823,7 +732084,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.3581,
+    "last_price_usd": 0.358,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -731834,8 +732095,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0001358618737616757,
-    "unrealized_pnl_pct": 1.3586187376167569
+    "unrealized_pnl_eth": 0.00013303141805830697,
+    "unrealized_pnl_pct": 1.3303141805830698
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -731846,7 +732107,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.3581,
+    "last_price_usd": 0.358,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -731857,8 +732118,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00013012729844412928,
-    "unrealized_pnl_pct": 1.301272984441293
+    "unrealized_pnl_eth": 0.00012729844413012837,
+    "unrealized_pnl_pct": 1.2729844413012836
    }
   ],
   "closed_recent": [],

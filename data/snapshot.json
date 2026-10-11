@@ -1,33 +1,11 @@
 {
- "updated_at": "2026-10-11T04:06:52.289Z",
+ "updated_at": "2026-10-11T04:08:51.722Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-11T03:04:49.424Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xfb4f55951141b76918855f0b8208814e28b6f909",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0xb6bde30e080b07405c9a2b5b78b034532624520272ce64494168f0963b2681fc",
-   "block": 85508766,
-   "detail": "new contract deployed in block 85508766"
-  },
-  {
-   "found_at": "2026-10-11T03:04:55.924Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0x79e9c4b081fe74356e1e03105049d2350e4f2f86",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0x3fbfc99e0d8d9171492d83343187bd37fb8f2f903c5c60fbca41e8e955e81d71",
-   "block": 85509273,
-   "detail": "new contract deployed in block 85509273"
-  },
   {
    "found_at": "2026-10-11T03:05:02.662Z",
    "scout": "block-watcher",
@@ -602,9 +580,31 @@
    "tx_hash": "0xb8c124d54a02e725968c1b351667424cb2f00d26c34452f1bd41823f542dc5c0",
    "block": 85544165,
    "detail": "new contract deployed in block 85544165"
+  },
+  {
+   "found_at": "2026-10-11T04:07:02.411Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x672ec6bed6f24e72e28a52d9a1b2b7d8d4e2d901",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xd6edecd7fe46bb13ba0e6aff63dc9c2be3e3c044af313df5de5115b7788dae61",
+   "block": 85544387,
+   "detail": "new contract deployed in block 85544387"
+  },
+  {
+   "found_at": "2026-10-11T04:07:03.120Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xd6fcc754880e1222f3853bc62b23a3e84edfd0bf",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x939f962b997e6c94702f9b574d23db4b5b219d05b2768fd51b00bc924bb6e99d",
+   "block": 85544391,
+   "detail": "new contract deployed in block 85544391"
   }
  ],
- "scout_queue_total": 1377,
+ "scout_queue_total": 1379,
  "investigations": [
   {
    "candidate": {
@@ -239983,6 +239983,686 @@
    "social_scored_at": "2026-10-11T04:02:51.392Z",
    "snug_processed": true,
    "snug_broken_down_at": "2026-10-11T00:04:30-04:00"
+  },
+  {
+   "investigated_at": "2026-10-11T04:08:20.990010+00:00",
+   "candidate": {
+    "contract": "0x57d911bc6e21c3b1dd0f63815d7aa1d2a0a05591",
+    "name": "Maneki Neko NEKO",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 85198520,
+    "found_at": "2026-10-10T18:45:35.000Z",
+    "tx_hash": "0x41a4115455d2f2a4088b951d108d27b7f552660d2a27d2344c1dd794526a65e5",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85198520 (tx 0x41a4115455d2f2a4088b951d108d27b7f552660d2a27d2344c1dd794526a65e5); name=Maneki Neko symbol=NEKO creator=0xc16fdab6c89ecd058d86a152c7aa18b324288e29. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T04:03:07.646Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "forensics": {
+    "curve": "0xc16fdab6c89ecd058d86a152c7aa18b324288e29",
+    "phase": "pre",
+    "curve_pct_of_supply": 99.99,
+    "curve_eth_now": 0,
+    "snipe_tax_bps": 0,
+    "curve_flow": {
+     "buys": 66,
+     "sells": 63,
+     "unique_buyers": 53,
+     "unique_sellers": 53,
+     "buyer_seller_overlap_pct": 98.1,
+     "buy_volume_eth": 1.6117
+    },
+    "last_activity": "2026-10-10T22:39:11.000Z (dead ~5.5h)",
+    "launched_at": "2026-10-10T18:11:36.000Z",
+    "block": 85198520,
+    "found_at": "2026-10-10T18:45:35.000Z"
+   },
+   "velocity": "burst-then-dead: 66 buys in first ~4.5h from 53 wallets, then flatlined",
+   "social_signal": "weak",
+   "social_note": "X unavailable (402); no web coverage found for a 10h-old RH-chain pons launch",
+   "money_flow": "churn — 52 of 53 buyers fully exited; ETH in ≈ ETH out; zero residual accumulation",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": 0.1,
+    "sol_7d_change_pct": -9.5,
+    "pump_price_usd": 0.005485,
+    "pump_24h_change_pct": 0.56,
+    "pumpfun_momentum": "unobservable — pump-fun-seen.json empty (0 entries); pipeline is pons-only on Robinhood chain, no Solana candidates in queue",
+    "x_ecosystem": "unavailable — X API 402 (credits exhausted); no fresh @solana/@pumpfun/KOL reads",
+    "news_last_24h": [
+     "bearish: 470,087 SOL (~$51M) moved to Coinbase amid sell-off fears; SOL dropped from ~$123 to below $110 (7h ago)",
+     "bullish: Solana network users +124% since early Sept, 1.71M new wallets/day, Samsung partnership (8h ago)",
+     "CoinDCX forecast $116-134 range for Oct 2026"
+    ],
+    "assessment": "mixed-to-mildly-risk-off for Solana memecoins: 7d dump (-9.5%) + whale exchange inflow temper risk appetite; no exploit/FUD news. Note: current candidates are Robinhood-chain Pons launches, not Solana — pulse is context only."
+   },
+   "verdict": "skip",
+   "verdict_note": "fails dubie's 0.01 ETH pre-grad curve-collected floor (0.0000 now); 98% buyer exit overlap = full churn, no holder base left; dead 5.5h. not a runner — a milked curve."
+  },
+  {
+   "investigated_at": "2026-10-11T04:08:20.990010+00:00",
+   "candidate": {
+    "contract": "0xe3fb65f0e8746a748611fbefff147c4a9b64f3ac",
+    "name": "奥兹你妈死 奥兹你妈死",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 85198782,
+    "found_at": "2026-10-10T18:45:49.518Z",
+    "tx_hash": "0x60fc8a90a0d4238620618cdf43d5aa7b6983779066086b91c3ec14d1f6ae968c",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85198782 (tx 0x60fc8a90a0d4238620618cdf43d5aa7b6983779066086b91c3ec14d1f6ae968c); name=奥兹你妈死 symbol=奥兹你妈死 creator=0x07823a5f22c0a8cb8f2acad26ef2031c0d09d63b. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T04:03:29.120Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "forensics": {
+    "curve": "0x07823a5f22c0a8cb8f2acad26ef2031c0d09d63b",
+    "phase": "pre",
+    "curve_pct_of_supply": 99.99,
+    "curve_eth_now": 0,
+    "snipe_tax_bps": 0,
+    "curve_flow": {
+     "buys": 4,
+     "sells": 5,
+     "unique_buyers": 4,
+     "unique_sellers": 3,
+     "buy_volume_eth": 0.2936
+    },
+    "last_activity": "launch +~1h, dead since",
+    "launched_at": "2026-10-10T18:12:01.000Z",
+    "block": 85198782,
+    "found_at": "2026-10-10T18:45:49.518Z"
+   },
+   "velocity": "dead on arrival: 4 buys in first hour, nothing after",
+   "social_signal": "forced",
+   "social_note": "name is Chinese profanity ('Oz your mom died') — harassment-style spam token, possible jab at @TomerO8492 (ozric); X unavailable (402)",
+   "money_flow": "bot — 4 wallets in, 3 out; no accumulation",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": 0.1,
+    "sol_7d_change_pct": -9.5,
+    "pump_price_usd": 0.005485,
+    "pump_24h_change_pct": 0.56,
+    "pumpfun_momentum": "unobservable — pump-fun-seen.json empty (0 entries); pipeline is pons-only on Robinhood chain, no Solana candidates in queue",
+    "x_ecosystem": "unavailable — X API 402 (credits exhausted); no fresh @solana/@pumpfun/KOL reads",
+    "news_last_24h": [
+     "bearish: 470,087 SOL (~$51M) moved to Coinbase amid sell-off fears; SOL dropped from ~$123 to below $110 (7h ago)",
+     "bullish: Solana network users +124% since early Sept, 1.71M new wallets/day, Samsung partnership (8h ago)",
+     "CoinDCX forecast $116-134 range for Oct 2026"
+    ],
+    "assessment": "mixed-to-mildly-risk-off for Solana memecoins: 7d dump (-9.5%) + whale exchange inflow temper risk appetite; no exploit/FUD news. Note: current candidates are Robinhood-chain Pons launches, not Solana — pulse is context only."
+   },
+   "verdict": "skip",
+   "verdict_note": "toxic name + dead curve + 0.0000 ETH collected; classic spam-farm launch. fails the 0.01 floor."
+  },
+  {
+   "investigated_at": "2026-10-11T04:08:20.990010+00:00",
+   "candidate": {
+    "contract": "0x11b550c973e1e9cd0ee77d734a65209109e1440b",
+    "name": "Pcat P PCATP",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 85199019,
+    "found_at": "2026-10-10T18:46:31.195Z",
+    "tx_hash": "0x1e05c0c7e487f39123f88d0ecb9e52fdaf707c2d73d74d835df520b90bb2327e",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85199019 (tx 0x1e05c0c7e487f39123f88d0ecb9e52fdaf707c2d73d74d835df520b90bb2327e); name=Pcat P symbol=PCATP creator=0xb7696105261705cbf96abaaf029dcbdc00f41d20. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T04:03:45.975Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "forensics": {
+    "curve": "0xb7696105261705cbf96abaaf029dcbdc00f41d20",
+    "phase": "pre",
+    "curve_pct_of_supply": 100,
+    "curve_eth_now": 0,
+    "snipe_tax_bps": 0,
+    "curve_flow": {
+     "buys": 42,
+     "sells": 31,
+     "unique_buyers": 16,
+     "unique_sellers": 15
+    },
+    "last_activity": "launch +~8min, dead since",
+    "launched_at": "2026-10-10T18:12:26.000Z",
+    "block": 85199019,
+    "found_at": "2026-10-10T18:46:31.195Z"
+   },
+   "velocity": "flash-churn: 42 buys from 16 wallets inside ~8 minutes, then flatlined",
+   "social_signal": "weak",
+   "social_note": "X unavailable (402); no organic signal",
+   "money_flow": "bot/mixed — repeat-buy churn from 16 wallets (2.6 buys/wallet), all exited",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": 0.1,
+    "sol_7d_change_pct": -9.5,
+    "pump_price_usd": 0.005485,
+    "pump_24h_change_pct": 0.56,
+    "pumpfun_momentum": "unobservable — pump-fun-seen.json empty (0 entries); pipeline is pons-only on Robinhood chain, no Solana candidates in queue",
+    "x_ecosystem": "unavailable — X API 402 (credits exhausted); no fresh @solana/@pumpfun/KOL reads",
+    "news_last_24h": [
+     "bearish: 470,087 SOL (~$51M) moved to Coinbase amid sell-off fears; SOL dropped from ~$123 to below $110 (7h ago)",
+     "bullish: Solana network users +124% since early Sept, 1.71M new wallets/day, Samsung partnership (8h ago)",
+     "CoinDCX forecast $116-134 range for Oct 2026"
+    ],
+    "assessment": "mixed-to-mildly-risk-off for Solana memecoins: 7d dump (-9.5%) + whale exchange inflow temper risk appetite; no exploit/FUD news. Note: current candidates are Robinhood-chain Pons launches, not Solana — pulse is context only."
+   },
+   "verdict": "skip",
+   "verdict_note": "8-minute pump-churn then abandoned; curve empty, 0.0000 ETH. fails the 0.01 floor."
+  },
+  {
+   "investigated_at": "2026-10-11T04:08:20.990010+00:00",
+   "candidate": {
+    "contract": "0xca1eb560cdf7797bdfb2a96df55ee725d656a43f",
+    "name": "Meme Scape SCAPE",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 85199129,
+    "found_at": "2026-10-10T18:46:40.437Z",
+    "tx_hash": "0x3532744d7d0c49212b229addf70f9e1f9457bdc2a455a98a4bd0b625e1a9d11d",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85199129 (tx 0x3532744d7d0c49212b229addf70f9e1f9457bdc2a455a98a4bd0b625e1a9d11d); name=Meme Scape symbol=SCAPE creator=0x8df0fafe12752f19b1c258df17b88ca559985aac. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T04:03:59.872Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "forensics": {
+    "curve": "0x8df0fafe12752f19b1c258df17b88ca559985aac",
+    "phase": "pre",
+    "curve_pct_of_supply": 100,
+    "curve_eth_now": 0,
+    "snipe_tax_bps": 0,
+    "curve_flow": {
+     "buys": 9,
+     "sells": 9,
+     "unique_buyers": 5,
+     "unique_sellers": 5,
+     "buy_volume_eth": 0.4727
+    },
+    "last_activity": "launch +~3min, dead since",
+    "launched_at": "2026-10-10T18:12:37.000Z",
+    "block": 85199129,
+    "found_at": "2026-10-10T18:46:40.437Z"
+   },
+   "velocity": "dead on arrival: 9 buys in first 3 minutes, nothing after",
+   "social_signal": "weak",
+   "social_note": "X unavailable (402)",
+   "money_flow": "bot — 5 wallets in and out; no accumulation",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": 0.1,
+    "sol_7d_change_pct": -9.5,
+    "pump_price_usd": 0.005485,
+    "pump_24h_change_pct": 0.56,
+    "pumpfun_momentum": "unobservable — pump-fun-seen.json empty (0 entries); pipeline is pons-only on Robinhood chain, no Solana candidates in queue",
+    "x_ecosystem": "unavailable — X API 402 (credits exhausted); no fresh @solana/@pumpfun/KOL reads",
+    "news_last_24h": [
+     "bearish: 470,087 SOL (~$51M) moved to Coinbase amid sell-off fears; SOL dropped from ~$123 to below $110 (7h ago)",
+     "bullish: Solana network users +124% since early Sept, 1.71M new wallets/day, Samsung partnership (8h ago)",
+     "CoinDCX forecast $116-134 range for Oct 2026"
+    ],
+    "assessment": "mixed-to-mildly-risk-off for Solana memecoins: 7d dump (-9.5%) + whale exchange inflow temper risk appetite; no exploit/FUD news. Note: current candidates are Robinhood-chain Pons launches, not Solana — pulse is context only."
+   },
+   "verdict": "skip",
+   "verdict_note": "3-minute lifecycle; 0.4727 ETH in, all out; curve empty. fails the 0.01 floor."
+  },
+  {
+   "investigated_at": "2026-10-11T04:08:20.990010+00:00",
+   "candidate": {
+    "contract": "0x84415bd86311505c6924aeb9221dfea7190a06e5",
+    "name": "Golden Age of Science GAOS",
+    "scout": "pons-family",
+    "chain": "robinhood",
+    "block": 85199188,
+    "found_at": "2026-10-10T18:46:44.653Z",
+    "tx_hash": "0xc29ebd58454cca5a639391ef3148050316f0b9bf577ab901389473238128529b",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85199188 (tx 0xc29ebd58454cca5a639391ef3148050316f0b9bf577ab901389473238128529b); name=Golden Age of Science symbol=GAOS creator=0xbb1c8b27441a7d1da18709e28a198e67dcf99f3c. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T04:04:09.281Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true,
+    "gate_detail": {
+     "checks": {
+      "owner-powers": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no owner(); no dangerous selectors in bytecode"
+       ],
+       "detail": {
+        "selectors": {
+         "mint": [],
+         "pause": [],
+         "blacklist": [],
+         "fee": []
+        },
+        "owner": null
+       }
+      },
+      "proxy": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [],
+       "notes": [
+        "no proxy admin/beacon slots set; not an upgradeable proxy"
+       ],
+       "detail": {}
+      },
+      "lp-liquidity": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped"
+       ],
+       "notes": [],
+       "detail": {
+        "v2Skipped": true,
+        "poolValueEth": 0,
+        "v4PoolCount": 0,
+        "v4PricedCount": 0,
+        "v4ValueEth": 0,
+        "v4Pools": [],
+        "combinedValueEth": 0,
+        "skipped": true
+       }
+      },
+      "concentration": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "thin holder data (0 addresses in 12k-block window)"
+       ],
+       "notes": [
+        "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+       ],
+       "detail": {
+        "supply": "1000000000000000000000000000",
+        "addrsSeen": 0,
+        "top10EoaBps": 0,
+        "top1EoaBps": 0,
+        "top10": [],
+        "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+       }
+      },
+      "deployer-history": {
+       "pass": true,
+       "reasons": [],
+       "warnings": [
+        "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+       ],
+       "notes": [],
+       "detail": {}
+      }
+     }
+    }
+   },
+   "forensics": {
+    "curve": "0xbb1c8b27441a7d1da18709e28a198e67dcf99f3c",
+    "phase": "pre",
+    "curve_pct_of_supply": 100,
+    "curve_eth_now": 0,
+    "snipe_tax_bps": 0,
+    "curve_flow": {
+     "buys": 2,
+     "sells": 4,
+     "unique_buyers": 2,
+     "unique_sellers": 2,
+     "buy_volume_eth": 0.0238
+    },
+    "last_activity": "launch +~9min, dead since",
+    "launched_at": "2026-10-10T18:12:43.000Z",
+    "block": 85199188,
+    "found_at": "2026-10-10T18:46:44.653Z"
+   },
+   "velocity": "dead on arrival: 2 buys total",
+   "social_signal": "weak",
+   "social_note": "X unavailable (402)",
+   "money_flow": "bot — 2 wallets",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": 0.1,
+    "sol_7d_change_pct": -9.5,
+    "pump_price_usd": 0.005485,
+    "pump_24h_change_pct": 0.56,
+    "pumpfun_momentum": "unobservable — pump-fun-seen.json empty (0 entries); pipeline is pons-only on Robinhood chain, no Solana candidates in queue",
+    "x_ecosystem": "unavailable — X API 402 (credits exhausted); no fresh @solana/@pumpfun/KOL reads",
+    "news_last_24h": [
+     "bearish: 470,087 SOL (~$51M) moved to Coinbase amid sell-off fears; SOL dropped from ~$123 to below $110 (7h ago)",
+     "bullish: Solana network users +124% since early Sept, 1.71M new wallets/day, Samsung partnership (8h ago)",
+     "CoinDCX forecast $116-134 range for Oct 2026"
+    ],
+    "assessment": "mixed-to-mildly-risk-off for Solana memecoins: 7d dump (-9.5%) + whale exchange inflow temper risk appetite; no exploit/FUD news. Note: current candidates are Robinhood-chain Pons launches, not Solana — pulse is context only."
+   },
+   "verdict": "skip",
+   "verdict_note": "2 buys from 2 wallets, fully exited; 0.0000 ETH collected. fails the 0.01 floor."
   }
  ],
  "scores": [
@@ -439895,6 +440575,17 @@
     "whale_convergence_bonus": 0,
     "whale_moves_on_token": 0,
     "reason": "social credit grade F = hard skip at any score (standing rule). snug: skip (durability weak, ~9.6h stale curve, junk-meme name, anon deployer). gate gate_pass, no fast-lane position, no whale signal. no scoring, no execution."
+   }
+  },
+  {
+   "type": "tick",
+   "tick": "2026-10-11 00:07 EDT",
+   "at": "2026-10-11T04:08:22.000Z",
+   "processed": true,
+   "processed_at": "2026-10-11T04:08:22.000Z",
+   "recommendation": "flock-decision run 2026-10-11 00:07 EDT: 693 entries, 0 unprocessed candidates - nothing to score. fast-lane dedup: 2 open positions in live-positions.json (Ollie 0xd08a0e4df5ba9e98d1a5a934fddd0f6780408b74 + SAFU 0xc85e9f749c69ee0fbd3d297bb5337c2c96aea3cb, both fast-lane bought, stranded seed-and-yanks held per standing decision); 542 fast_lane rows in queue.db, 2 with action bought (same two). whale feed: 24519 moves, 71 fresh since 00:05 EDT, 0 convergence=true flags; EOA-only grouping: 0 tokens with 2+ whale EOAs into EOA receivers (PONS 46 fresh moves = contract-routing noise; no gate_pass candidate to attach). no execution, no dubie message (quiet tick).",
+   "decision": {
+    "action": "none"
    }
   }
  ],
@@ -679258,11 +679949,11 @@
   "reentry-watch"
  ],
  "last_activity": {
-  "scout": "2026-10-11T04:06:27.119Z",
-  "hymn": "2026-10-11T04:01:48Z",
+  "scout": "2026-10-11T04:07:03.120Z",
+  "hymn": "2026-10-11T04:08:20.990010+00:00",
   "scorer": "2026-10-11T04:02:46.302Z",
-  "snug": "2026-10-11T00:04:30-04:00",
-  "cardigan": "2026-10-11T00:04:30-04:00"
+  "snug": null,
+  "cardigan": null
  },
  "challenge": {
   "wallet": "0xa554e642ac0fe1bbeeea26df17644ad8fce00ecc",
@@ -679433,7 +680124,7 @@
   "realized_pnl_pct_total": -8.828676867694522
  },
  "paper_trades": {
-  "as_of": "2026-10-11T04:02:09.328Z",
+  "as_of": "2026-10-11T04:07:07.990Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -679452,7 +680143,7 @@
     "seeded": true,
     "score": 66,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.0122,
+    "last_price_usd": 0.01228,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -679463,8 +680154,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0006179286335944312,
-    "unrealized_pnl_pct": 6.179286335944312
+    "unrealized_pnl_eth": 0.0006875543951261954,
+    "unrealized_pnl_pct": 6.875543951261953
    },
    {
     "id": "pt-muzwwuzb-27",
@@ -679475,7 +680166,7 @@
     "seeded": true,
     "score": 63,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.0122,
+    "last_price_usd": 0.01228,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -679486,8 +680177,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0006179286335944312,
-    "unrealized_pnl_pct": 6.179286335944312
+    "unrealized_pnl_eth": 0.0006875543951261954,
+    "unrealized_pnl_pct": 6.875543951261953
    },
    {
     "id": "pt-mv02u5pe-52",
@@ -679521,7 +680212,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3531,
+    "last_price_usd": 0.3526,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -679532,8 +680223,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00014946823799942612,
-    "unrealized_pnl_pct": 1.494682379994261
+    "unrealized_pnl_eth": 0.00013509629203794393,
+    "unrealized_pnl_pct": 1.3509629203794393
    },
    {
     "id": "pt-mv03wwab-54",
@@ -679544,7 +680235,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 80.94,
-    "last_price_usd": 85.34,
+    "last_price_usd": 85.33,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -679555,8 +680246,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 5819198,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0005436125525080304,
-    "unrealized_pnl_pct": 5.436125525080304
+    "unrealized_pnl_eth": 0.0005423770694341479,
+    "unrealized_pnl_pct": 5.423770694341479
    },
    {
     "id": "pt-mv0blxia-72",
@@ -679567,7 +680258,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.3531,
+    "last_price_usd": 0.3526,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -679578,8 +680269,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.000005667327854916859,
-    "unrealized_pnl_pct": 0.05667327854916859
+    "unrealized_pnl_eth": -0.000008500991782374178,
+    "unrealized_pnl_pct": -0.08500991782374179
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -679590,7 +680281,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.3531,
+    "last_price_usd": 0.3526,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -679601,8 +680292,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.000011341083073432844,
-    "unrealized_pnl_pct": 0.11341083073432845
+    "unrealized_pnl_eth": -0.0000028352707683576563,
+    "unrealized_pnl_pct": -0.02835270768357656
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -679613,7 +680304,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.3531,
+    "last_price_usd": 0.3526,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -679624,8 +680315,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.000005660911406736302,
-    "unrealized_pnl_pct": -0.05660911406736302
+    "unrealized_pnl_eth": -0.000019813189923577612,
+    "unrealized_pnl_pct": -0.19813189923577612
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -679636,7 +680327,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.3531,
+    "last_price_usd": 0.3526,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -679647,8 +680338,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.000011315417256010374,
-    "unrealized_pnl_pct": -0.11315417256010374
+    "unrealized_pnl_eth": -0.000025459688826023898,
+    "unrealized_pnl_pct": -0.25459688826023896
    }
   ],
   "closed_recent": [],

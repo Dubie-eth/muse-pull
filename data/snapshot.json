@@ -1,22 +1,11 @@
 {
- "updated_at": "2026-10-11T03:30:52.676Z",
+ "updated_at": "2026-10-11T03:32:56.187Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-11T02:48:42.345Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0x0c6ce6e7a8767cc870375657a17670e843f35fcb",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0xc6469f0ed314f2f7804cececf3d654100ac37457a8dd56473508497e3e85c4c9",
-   "block": 85499751,
-   "detail": "new contract deployed in block 85499751"
-  },
   {
    "found_at": "2026-10-11T02:48:56.314Z",
    "scout": "block-watcher",
@@ -570,9 +559,30 @@
    "tx_hash": "0xbed6eed3358887e57bb8fcd8ef5d10e84b7f42d88ce080cd552515e2aa6b4584",
    "block": 85520947,
    "detail": "new contract deployed in block 85520947"
+  },
+  {
+   "found_at": "2026-10-11T03:31:23.016Z",
+   "scout": "whale-watcher",
+   "type": "whale-convergence",
+   "token": "PONS",
+   "contract": "0x39dbed3a2bd333467115de45665cc57f813c4571",
+   "chain": "robinhood",
+   "tx_hash": "0xe61f931b55a0ddad53f61025f58ba2290205f89a2494beeba078126895d7686b",
+   "detail": "CONVERGENCE: 2 whale EOA wallets accumulating PONS (0x39dbed3a2bd333467115de45665cc57f813c4571) on robinhood within one degraded scan window; combined $67,203 received by the whale EOAs. Largest: whale 0xf8191d98ae98d2f7abdfb63a9b0b812b93c873aa (~$259,070 assets, degraded lower-bound) received $64,629 in tx 0xe61f931b55a0ddad53f61025f58ba2290205f89a2494beeba078126895d7686b. Contract-to-contract PONS flow in the same window is DeFi plumbing, excluded from this signal.",
+   "converging_whales": 2,
+   "converging_wallets": [
+    "0xf8191d98ae98d2f7abdfb63a9b0b812b93c873aa",
+    "0x88d25c861938a91af4ad57ad964a8fcc6c6351d3"
+   ],
+   "combined_amount_usd": 67203.45,
+   "whale": "0xf8191d98ae98d2f7abdfb63a9b0b812b93c873aa",
+   "whale_assets_usd": 259069.58,
+   "amount_usd": 64628.7,
+   "convergence": true,
+   "receiver_is_contract": false
   }
  ],
- "scout_queue_total": 1344,
+ "scout_queue_total": 1345,
  "investigations": [
   {
    "candidate": {
@@ -237557,6 +237567,402 @@
     "v4_pool_count_now": 2
    },
    "social_scored_at": "2026-10-11T03:25:59.405Z"
+  },
+  {
+   "investigated_at": "2026-10-11T03:31:43.626229+00:00",
+   "investigated_by": "humming-hymn",
+   "candidate": {
+    "contract": "0x4d37437e80af78a933ad94b213adc5b85ff061ac",
+    "name": "Alibaba Game BABAGAME",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "tx_hash": "0x3e6bf7a714ad24afd74caef0c4facda93b09deb772f844e487b1b3816a905ae0",
+    "launch_block": 85186712,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T03:15:28.601Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "onchain": {
+     "curve": "0x625fcb904079e1570bb1c69102dd02804c48249f",
+     "phase": "pre",
+     "curvePct": 100,
+     "curveEth": 0,
+     "snipeTaxBps": 0,
+     "launchedAt": "2026-10-10T17:51:23.000Z",
+     "buys30k": 0,
+     "sells30k": 0,
+     "buyers30k": 0
+    }
+   },
+   "velocity": "flat — 0 buys/0 sells, curve balance 0 or dust; no velocity alert",
+   "social_signal": "weak",
+   "money_flow": "none — zero CurveBuy/CurveSell activity; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 109.48,
+    "sol_24h_pct": -0.17,
+    "x_api": "blocked (402 Payment Required — credits dry)",
+    "pump_momentum": "n/a — all candidates are Robinhood-chain pons launches, not Solana",
+    "read": "risk-neutral for SOL memecoins: SOL flat at $109.48 (-0.17% 24h), no outage/FUD/news signals detected. Irrelevant to these EVM-chain candidates."
+   },
+   "verdict": "skip",
+   "note": "curve holds 0 ETH — zero buys since launch; phase=pre (curve holds 100% of supply); snipe tax 0 bps; CurveBuy/CurveSell logs in 30k-block window: 0 buys / 0 sells / 0 buyers — no money flow; age ~9.6h (launched 2026-10-10 ~13:51-13:54 EDT) — long past the fast lane's 30-min freshness window; trademark-adjacent name (Alibaba) — trademark risk; gate passed with gate_warn=true (lp-liquidity skipped, thin holders, deployer undiscoverable); social_signal=weak: X API 402 (no check possible); no web buzz for any name (Synthra web hits are the unrelated protocol)"
+  },
+  {
+   "investigated_at": "2026-10-11T03:31:43.626229+00:00",
+   "investigated_by": "humming-hymn",
+   "candidate": {
+    "contract": "0x65be7dd8fa5a7a4026597f953fe0b2d2798c77dd",
+    "name": "Baton Factory FACTORY",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "tx_hash": "0xdd730b7a7c07c14dce009591dedce44a51169fbed093b5529ef328987bd2359a",
+    "launch_block": 85186879,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T03:15:44.233Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "onchain": {
+     "curve": "0x2df896786595a03426019a855446c8f7b4b21db5",
+     "phase": "pre",
+     "curvePct": 99.99,
+     "curveEth": 2e-18,
+     "snipeTaxBps": 0,
+     "launchedAt": "2026-10-10T17:51:41.000Z",
+     "buys30k": 0,
+     "sells30k": 0,
+     "buyers30k": 0
+    }
+   },
+   "velocity": "flat — 0 buys/0 sells, curve balance 0 or dust; no velocity alert",
+   "social_signal": "weak",
+   "money_flow": "none — zero CurveBuy/CurveSell activity; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 109.48,
+    "sol_24h_pct": -0.17,
+    "x_api": "blocked (402 Payment Required — credits dry)",
+    "pump_momentum": "n/a — all candidates are Robinhood-chain pons launches, not Solana",
+    "read": "risk-neutral for SOL memecoins: SOL flat at $109.48 (-0.17% 24h), no outage/FUD/news signals detected. Irrelevant to these EVM-chain candidates."
+   },
+   "verdict": "skip",
+   "note": "curve holds 0.0000 ETH dust — below the 0.01 ETH curve floor; phase=pre (curve holds 99.99% of supply); snipe tax 0 bps; CurveBuy/CurveSell logs in 30k-block window: 0 buys / 0 sells / 0 buyers — no money flow; age ~9.6h (launched 2026-10-10 ~13:51-13:54 EDT) — long past the fast lane's 30-min freshness window; gate passed with gate_warn=true (lp-liquidity skipped, thin holders, deployer undiscoverable); social_signal=weak: X API 402 (no check possible); no web buzz for any name (Synthra web hits are the unrelated protocol)"
+  },
+  {
+   "investigated_at": "2026-10-11T03:31:43.626229+00:00",
+   "investigated_by": "humming-hymn",
+   "candidate": {
+    "contract": "0xe09a1643b23b3954fa80db7895611c1019bff1c7",
+    "name": "Talven XTAL",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "tx_hash": "0x7c452fe6a43fc34c1b36f96af70bec96127d6218153cb0b75bca6103185c7e10",
+    "launch_block": 85186881,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T03:15:55.955Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "onchain": {
+     "curve": "0xe6f1df93fe97d6bb803646e67ae7e6a98c3303fb",
+     "phase": "pre",
+     "curvePct": 99.99,
+     "curveEth": 1e-17,
+     "snipeTaxBps": 0,
+     "launchedAt": "2026-10-10T17:51:41.000Z",
+     "buys30k": 0,
+     "sells30k": 0,
+     "buyers30k": 0
+    }
+   },
+   "velocity": "flat — 0 buys/0 sells, curve balance 0 or dust; no velocity alert",
+   "social_signal": "weak",
+   "money_flow": "none — zero CurveBuy/CurveSell activity; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 109.48,
+    "sol_24h_pct": -0.17,
+    "x_api": "blocked (402 Payment Required — credits dry)",
+    "pump_momentum": "n/a — all candidates are Robinhood-chain pons launches, not Solana",
+    "read": "risk-neutral for SOL memecoins: SOL flat at $109.48 (-0.17% 24h), no outage/FUD/news signals detected. Irrelevant to these EVM-chain candidates."
+   },
+   "verdict": "skip",
+   "note": "curve holds 0.0000 ETH dust — below the 0.01 ETH curve floor; phase=pre (curve holds 99.99% of supply); snipe tax 0 bps; CurveBuy/CurveSell logs in 30k-block window: 0 buys / 0 sells / 0 buyers — no money flow; age ~9.6h (launched 2026-10-10 ~13:51-13:54 EDT) — long past the fast lane's 30-min freshness window; gate passed with gate_warn=true (lp-liquidity skipped, thin holders, deployer undiscoverable); social_signal=weak: X API 402 (no check possible); no web buzz for any name (Synthra web hits are the unrelated protocol)"
+  },
+  {
+   "investigated_at": "2026-10-11T03:31:43.626229+00:00",
+   "investigated_by": "humming-hymn",
+   "candidate": {
+    "contract": "0xed8081a8fc0464fe32eafd098470a09b15255ccd",
+    "name": "Longbow LONGBOW",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "tx_hash": "0x1c9dbe8385a974179267ec9ff6a851f806a026942e21cc7e56c039df4550e232",
+    "launch_block": 85187217,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T03:16:24.467Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "onchain": {
+     "curve": "0x95c90df6f4ed90091acd4fb2d20b240f9424d358",
+     "phase": "pre",
+     "curvePct": 100,
+     "curveEth": 1e-18,
+     "snipeTaxBps": 0,
+     "launchedAt": "2026-10-10T17:52:16.000Z",
+     "buys30k": 0,
+     "sells30k": 0,
+     "buyers30k": 0
+    }
+   },
+   "velocity": "flat — 0 buys/0 sells, curve balance 0 or dust; no velocity alert",
+   "social_signal": "weak",
+   "money_flow": "none — zero CurveBuy/CurveSell activity; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 109.48,
+    "sol_24h_pct": -0.17,
+    "x_api": "blocked (402 Payment Required — credits dry)",
+    "pump_momentum": "n/a — all candidates are Robinhood-chain pons launches, not Solana",
+    "read": "risk-neutral for SOL memecoins: SOL flat at $109.48 (-0.17% 24h), no outage/FUD/news signals detected. Irrelevant to these EVM-chain candidates."
+   },
+   "verdict": "skip",
+   "note": "curve holds 0.0000 ETH dust — below the 0.01 ETH curve floor; phase=pre (curve holds 100% of supply); snipe tax 0 bps; CurveBuy/CurveSell logs in 30k-block window: 0 buys / 0 sells / 0 buyers — no money flow; age ~9.6h (launched 2026-10-10 ~13:51-13:54 EDT) — long past the fast lane's 30-min freshness window; gate passed with gate_warn=true (lp-liquidity skipped, thin holders, deployer undiscoverable); social_signal=weak: X API 402 (no check possible); no web buzz for any name (Synthra web hits are the unrelated protocol)"
+  },
+  {
+   "investigated_at": "2026-10-11T03:31:43.626229+00:00",
+   "investigated_by": "humming-hymn",
+   "candidate": {
+    "contract": "0x67cbd1486c744427a73f32f83e7147a660b1c8f3",
+    "name": "Fixlantern LNTRN",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "tx_hash": "0xd40b775f3dfca01e34ccbf73e852e6a4e253d58c0763480406e10da641d9ac87",
+    "launch_block": 85187339,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T03:26:14.584Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "onchain": {
+     "curve": "0x2ea502d422a02dc78164ff7327f28fe3f02a0391",
+     "phase": "pre",
+     "curvePct": 100,
+     "curveEth": 2e-18,
+     "snipeTaxBps": 0,
+     "launchedAt": "2026-10-10T17:52:28.000Z",
+     "buys30k": 0,
+     "sells30k": 0,
+     "buyers30k": 0
+    }
+   },
+   "velocity": "flat — 0 buys/0 sells, curve balance 0 or dust; no velocity alert",
+   "social_signal": "weak",
+   "money_flow": "none — zero CurveBuy/CurveSell activity; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 109.48,
+    "sol_24h_pct": -0.17,
+    "x_api": "blocked (402 Payment Required — credits dry)",
+    "pump_momentum": "n/a — all candidates are Robinhood-chain pons launches, not Solana",
+    "read": "risk-neutral for SOL memecoins: SOL flat at $109.48 (-0.17% 24h), no outage/FUD/news signals detected. Irrelevant to these EVM-chain candidates."
+   },
+   "verdict": "skip",
+   "note": "curve holds 0.0000 ETH dust — below the 0.01 ETH curve floor; phase=pre (curve holds 100% of supply); snipe tax 0 bps; CurveBuy/CurveSell logs in 30k-block window: 0 buys / 0 sells / 0 buyers — no money flow; age ~9.6h (launched 2026-10-10 ~13:51-13:54 EDT) — long past the fast lane's 30-min freshness window; gate passed with gate_warn=true (lp-liquidity skipped, thin holders, deployer undiscoverable); social_signal=weak: X API 402 (no check possible); no web buzz for any name (Synthra web hits are the unrelated protocol)"
+  },
+  {
+   "investigated_at": "2026-10-11T03:31:43.626229+00:00",
+   "investigated_by": "humming-hymn",
+   "candidate": {
+    "contract": "0xdebf53e17faf834ad605f3f049be26e7a13e4a45",
+    "name": "PokemaxGo PMAX",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "tx_hash": "0x04a9644dbb60671523793b0ef6a64f527c0d493a7f4bbe1af54e30813af5e275",
+    "launch_block": 85187351,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T03:26:31.045Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "onchain": {
+     "curve": "0x05bd0b25de2b646d3a9d67fe96d8f7bd50518892",
+     "phase": "pre",
+     "curvePct": 99.99,
+     "curveEth": 0.002079000000000014,
+     "snipeTaxBps": 0,
+     "launchedAt": "2026-10-10T17:52:29.000Z",
+     "buys30k": 0,
+     "sells30k": 0,
+     "buyers30k": 0
+    }
+   },
+   "velocity": "flat — 0 buys/0 sells, curve balance 0 or dust; no velocity alert",
+   "social_signal": "weak",
+   "money_flow": "none — zero CurveBuy/CurveSell activity; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 109.48,
+    "sol_24h_pct": -0.17,
+    "x_api": "blocked (402 Payment Required — credits dry)",
+    "pump_momentum": "n/a — all candidates are Robinhood-chain pons launches, not Solana",
+    "read": "risk-neutral for SOL memecoins: SOL flat at $109.48 (-0.17% 24h), no outage/FUD/news signals detected. Irrelevant to these EVM-chain candidates."
+   },
+   "verdict": "skip",
+   "note": "curve holds 0.0021 ETH dust — below the 0.01 ETH curve floor; phase=pre (curve holds 99.99% of supply); snipe tax 0 bps; CurveBuy/CurveSell logs in 30k-block window: 0 buys / 0 sells / 0 buyers — no money flow; age ~9.6h (launched 2026-10-10 ~13:51-13:54 EDT) — long past the fast lane's 30-min freshness window; IP-infringing riff on Pokemon (trademark risk); gate passed with gate_warn=true (lp-liquidity skipped, thin holders, deployer undiscoverable); social_signal=weak: X API 402 (no check possible); no web buzz for any name (Synthra web hits are the unrelated protocol)"
+  },
+  {
+   "investigated_at": "2026-10-11T03:31:43.626229+00:00",
+   "investigated_by": "humming-hymn",
+   "candidate": {
+    "contract": "0x544f037fcbf7f525c0ee4dc11c8676dfc0432a0b",
+    "name": "Paperback PAPRBCK",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "tx_hash": "0xe87f2431011053bfcfd9292cf78c1af60d30c70377d7d6b4a27941f43c4cd635",
+    "launch_block": 85188109,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T03:26:46.188Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "onchain": {
+     "curve": "0x6acbb2579e27b9e7463d7d1bd418258f2b30fb01",
+     "phase": "pre",
+     "curvePct": 100,
+     "curveEth": 1e-18,
+     "snipeTaxBps": 0,
+     "launchedAt": "2026-10-10T17:53:45.000Z",
+     "buys30k": 0,
+     "sells30k": 0,
+     "buyers30k": 0
+    }
+   },
+   "velocity": "flat — 0 buys/0 sells, curve balance 0 or dust; no velocity alert",
+   "social_signal": "weak",
+   "money_flow": "none — zero CurveBuy/CurveSell activity; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 109.48,
+    "sol_24h_pct": -0.17,
+    "x_api": "blocked (402 Payment Required — credits dry)",
+    "pump_momentum": "n/a — all candidates are Robinhood-chain pons launches, not Solana",
+    "read": "risk-neutral for SOL memecoins: SOL flat at $109.48 (-0.17% 24h), no outage/FUD/news signals detected. Irrelevant to these EVM-chain candidates."
+   },
+   "verdict": "skip",
+   "note": "curve holds 0.0000 ETH dust — below the 0.01 ETH curve floor; phase=pre (curve holds 100% of supply); snipe tax 0 bps; CurveBuy/CurveSell logs in 30k-block window: 0 buys / 0 sells / 0 buyers — no money flow; age ~9.6h (launched 2026-10-10 ~13:51-13:54 EDT) — long past the fast lane's 30-min freshness window; gate passed with gate_warn=true (lp-liquidity skipped, thin holders, deployer undiscoverable); social_signal=weak: X API 402 (no check possible); no web buzz for any name (Synthra web hits are the unrelated protocol)"
+  },
+  {
+   "investigated_at": "2026-10-11T03:31:43.626229+00:00",
+   "investigated_by": "humming-hymn",
+   "candidate": {
+    "contract": "0x8783450103af061dc5c7654e20b260b6c6996cb8",
+    "name": "Synthra SYNTHRA",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "tx_hash": "0xde5b77065823fb5b2c801ea3af869ec9b4f61eec612117c98d1e9927cb26e91e",
+    "launch_block": 85188351,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T03:26:57.458Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "onchain": {
+     "curve": "0x4f5fd7c8b618985197299fa8ed7e83ce0c580996",
+     "phase": "pre",
+     "curvePct": 100,
+     "curveEth": 1e-18,
+     "snipeTaxBps": 0,
+     "launchedAt": "2026-10-10T17:54:10.000Z",
+     "buys30k": 0,
+     "sells30k": 0,
+     "buyers30k": 0
+    }
+   },
+   "velocity": "flat — 0 buys/0 sells, curve balance 0 or dust; no velocity alert",
+   "social_signal": "weak",
+   "money_flow": "none — zero CurveBuy/CurveSell activity; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 109.48,
+    "sol_24h_pct": -0.17,
+    "x_api": "blocked (402 Payment Required — credits dry)",
+    "pump_momentum": "n/a — all candidates are Robinhood-chain pons launches, not Solana",
+    "read": "risk-neutral for SOL memecoins: SOL flat at $109.48 (-0.17% 24h), no outage/FUD/news signals detected. Irrelevant to these EVM-chain candidates."
+   },
+   "verdict": "skip",
+   "note": "curve holds 0.0000 ETH dust — below the 0.01 ETH curve floor; phase=pre (curve holds 100% of supply); snipe tax 0 bps; CurveBuy/CurveSell logs in 30k-block window: 0 buys / 0 sells / 0 buyers — no money flow; age ~9.6h (launched 2026-10-10 ~13:51-13:54 EDT) — long past the fast lane's 30-min freshness window; name collides with legit Synthra Finance protocol — imitation/name-squat flag; gate passed with gate_warn=true (lp-liquidity skipped, thin holders, deployer undiscoverable); social_signal=weak: X API 402 (no check possible); no web buzz for any name (Synthra web hits are the unrelated protocol)"
+  },
+  {
+   "investigated_at": "2026-10-11T03:31:43.626229+00:00",
+   "investigated_by": "humming-hymn",
+   "candidate": {
+    "contract": "0x27f34262e7a793dc63b6dfb960d8659e3c2bf53c",
+    "name": "11% 11%",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "tx_hash": "0x7bd0bef3687de622da63be1ec30b3d27eae5163177d6b5d5cb51143fe16cc2da",
+    "launch_block": 85188355,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T03:27:09.483Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "onchain": {
+     "curve": "0xd2dbd33d906f9957691120951ce2cd786ea52edb",
+     "phase": "pre",
+     "curvePct": 100,
+     "curveEth": 1e-18,
+     "snipeTaxBps": 0,
+     "launchedAt": "2026-10-10T17:54:11.000Z",
+     "buys30k": 0,
+     "sells30k": 0,
+     "buyers30k": 0
+    }
+   },
+   "velocity": "flat — 0 buys/0 sells, curve balance 0 or dust; no velocity alert",
+   "social_signal": "weak",
+   "money_flow": "none — zero CurveBuy/CurveSell activity; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 109.48,
+    "sol_24h_pct": -0.17,
+    "x_api": "blocked (402 Payment Required — credits dry)",
+    "pump_momentum": "n/a — all candidates are Robinhood-chain pons launches, not Solana",
+    "read": "risk-neutral for SOL memecoins: SOL flat at $109.48 (-0.17% 24h), no outage/FUD/news signals detected. Irrelevant to these EVM-chain candidates."
+   },
+   "verdict": "skip",
+   "note": "curve holds 0.0000 ETH dust — below the 0.01 ETH curve floor; phase=pre (curve holds 100% of supply); snipe tax 0 bps; CurveBuy/CurveSell logs in 30k-block window: 0 buys / 0 sells / 0 buyers — no money flow; age ~9.6h (launched 2026-10-10 ~13:51-13:54 EDT) — long past the fast lane's 30-min freshness window; nonsense name '11%' — spam-pattern; gate passed with gate_warn=true (lp-liquidity skipped, thin holders, deployer undiscoverable); social_signal=weak: X API 402 (no check possible); no web buzz for any name (Synthra web hits are the unrelated protocol)"
   }
  ],
  "scores": [
@@ -674499,8 +674905,8 @@
   "reentry-watch"
  ],
  "last_activity": {
-  "scout": "2026-10-11T03:27:52.630Z",
-  "hymn": "2026-10-11T03:24:46.658Z",
+  "scout": "2026-10-11T03:31:23.016Z",
+  "hymn": "2026-10-11T03:31:43.626229+00:00",
   "scorer": "2026-10-11T03:25:46.873Z",
   "snug": "2026-10-11T03:29:22.088309+00:00",
   "cardigan": "2026-10-11T03:29:22.088309+00:00"
@@ -674624,8 +675030,8 @@
     "tx_hash": "0x9dd64a59b56f07d62b92d7900ad2c79f2d5f1bb3d007ca08a7dd03c743ffdb8e",
     "entered_at": "2026-10-08T21:51:09.592Z",
     "entry_price_usd": 0.0423,
-    "current_price_usd": 0.03889,
-    "pnl_pct": -8.06146572104018,
+    "current_price_usd": 0.03874,
+    "pnl_pct": -8.416075650118206,
     "amount_tokens": 289.1701,
     "amount_eth_in": 0.005,
     "score": 69,
@@ -674671,10 +675077,10 @@
     "exit_price_usd": null
    }
   ],
-  "realized_pnl_pct_total": -7.1554881203618095
+  "realized_pnl_pct_total": -7.510098049439835
  },
  "paper_trades": {
-  "as_of": "2026-10-11T03:27:14.275Z",
+  "as_of": "2026-10-11T03:32:12.378Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -674693,7 +675099,7 @@
     "seeded": true,
     "score": 66,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01236,
+    "last_price_usd": 0.0123,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -674704,8 +675110,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0007571801566579617,
-    "unrealized_pnl_pct": 7.571801566579617
+    "unrealized_pnl_eth": 0.0007049608355091386,
+    "unrealized_pnl_pct": 7.049608355091386
    },
    {
     "id": "pt-muzwwuzb-27",
@@ -674716,7 +675122,7 @@
     "seeded": true,
     "score": 63,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01236,
+    "last_price_usd": 0.0123,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -674727,8 +675133,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0007571801566579617,
-    "unrealized_pnl_pct": 7.571801566579617
+    "unrealized_pnl_eth": 0.0007049608355091386,
+    "unrealized_pnl_pct": 7.049608355091386
    },
    {
     "id": "pt-mv02u5pe-52",
@@ -674739,7 +675145,7 @@
     "seeded": false,
     "score": 69,
     "entry_price_usd": 0.04243,
-    "last_price_usd": 0.03892,
+    "last_price_usd": 0.03874,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -674750,8 +675156,8 @@
     "mcap_at_scan": 42788142.46528106,
     "mcap_at_decision": 42788142.46528106,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0008272448739099691,
-    "unrealized_pnl_pct": -8.27244873909969
+    "unrealized_pnl_eth": -0.0008696676879566356,
+    "unrealized_pnl_pct": -8.696676879566356
    },
    {
     "id": "pt-mv03ww45-53",
@@ -674762,7 +675168,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3538,
+    "last_price_usd": 0.3533,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -674773,8 +675179,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00016958896234550158,
-    "unrealized_pnl_pct": 1.6958896234550158
+    "unrealized_pnl_eth": 0.00015521701638401941,
+    "unrealized_pnl_pct": 1.5521701638401941
    },
    {
     "id": "pt-mv03wwab-54",
@@ -674785,7 +675191,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 80.94,
-    "last_price_usd": 85.86,
+    "last_price_usd": 85.83,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -674796,8 +675202,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 5819198,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0006078576723498897,
-    "unrealized_pnl_pct": 6.078576723498896
+    "unrealized_pnl_eth": 0.0006041512231282442,
+    "unrealized_pnl_pct": 6.041512231282442
    },
    {
     "id": "pt-mv0blxia-72",
@@ -674808,7 +675214,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.3538,
+    "last_price_usd": 0.3533,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -674819,8 +675225,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00002550297534712476,
-    "unrealized_pnl_pct": 0.25502975347124757
+    "unrealized_pnl_eth": 0.000011334655709833719,
+    "unrealized_pnl_pct": 0.11334655709833719
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -674831,7 +675237,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.3538,
+    "last_price_usd": 0.3533,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -674842,8 +675248,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00003118797845194088,
-    "unrealized_pnl_pct": 0.3118797845194088
+    "unrealized_pnl_eth": 0.00001701162461015038,
+    "unrealized_pnl_pct": 0.17011624610150378
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -674854,7 +675260,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.3538,
+    "last_price_usd": 0.3533,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -674865,8 +675271,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00001415227851684131,
-    "unrealized_pnl_pct": 0.1415227851684131
+    "unrealized_pnl_eth": 0,
+    "unrealized_pnl_pct": 0
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -674877,7 +675283,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.3538,
+    "last_price_usd": 0.3533,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -674888,8 +675294,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.000008486562942009446,
-    "unrealized_pnl_pct": 0.08486562942009446
+    "unrealized_pnl_eth": -0.000005657708628005187,
+    "unrealized_pnl_pct": -0.05657708628005187
    }
   ],
   "closed_recent": [],

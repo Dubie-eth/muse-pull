@@ -1,22 +1,11 @@
 {
- "updated_at": "2026-10-11T16:07:33.427Z",
+ "updated_at": "2026-10-11T16:08:54.262Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-11T15:28:54.409Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0x4dedd8da3b1fcc7c454fc0ff8dec35445b992a99",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0x34d42146da5f61accbd6383179f7b90b1c0ccd62811e808b971266f1e1639e11",
-   "block": 85937593,
-   "detail": "new contract deployed in block 85937593"
-  },
   {
    "found_at": "2026-10-11T15:28:59.614Z",
    "scout": "block-watcher",
@@ -1905,9 +1894,20 @@
    "tx_hash": "0x7c8a09042e67730189dbda250b15cda6d63cdc72f94d48c08bbf5ba8a6b3eba2",
    "block": 85960236,
    "detail": "new contract deployed in block 85960236"
+  },
+  {
+   "found_at": "2026-10-11T16:08:33.488Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x3c636b721bec9a8988ffa099bf640356c0770fd7",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x5e2aaf4a034c68d2a9939c8b2794bae1cf02e7f78ea00680ed1b35cf2391f8c9",
+   "block": 85960580,
+   "detail": "new contract deployed in block 85960580"
   }
  ],
- "scout_queue_total": 2943,
+ "scout_queue_total": 2944,
  "investigations": [
   {
    "candidate": {
@@ -260292,6 +260292,184 @@
    "verdict_note": "dead-on-arrival token (duplicate 'Pepper INU' name across two deploys): no V2 pair, no V4 pools, 0 holders",
    "x_reads": 0,
    "social_scored_at": "2026-10-11T16:05:57.467Z"
+  },
+  {
+   "investigated_at": "2026-10-11T16:08:00.326Z",
+   "candidate": {
+    "contract": "0x4f414069a80b4a72810808fdd794a155c82da6bb",
+    "chain": "robinhood",
+    "name": "Billy Debilly",
+    "ticker": "DEBILLY",
+    "scout": "block-watcher",
+    "found_at": "2026-10-11T00:29:35.037Z",
+    "block": 85418645,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T16:00:04.167Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped"
+    ]
+   },
+   "velocity": "static — deployed ~15.5h before gating (blocks 85418645-85419100, ~00:29-00:30Z); totalSupply=0; no transfers, no holders possible; inert since",
+   "social_signal": "weak — anonymous dead deploys, no socials, no X buzz target (X leg cached, 0 candidate searches)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 111.86,
+    "sol_24h_change_pct": 1.29,
+    "source": "CoinGecko simple/price fetched this run ~16:04Z (cache refreshed from $109.67/-0.64% to $111.86/+1.29%)",
+    "pump_fun_momentum": "cold — pump.fun scout feed silent since 2026-10-08; no fresh launch flow",
+    "x_leg": "cached — solana-pulse-x-ts.json 2026-10-11T15:52:26Z (<30min): 10 solana/memecoin tweets, shill-spam heavy ($HAMSTR/$LARP/$ROSE), no exploit/FUD news",
+    "candidate_x_searches": "0 spent — dead deploys with no ticker/venue; no discoverable buzz target (conservation)",
+    "risk": "neutral-soft for Solana memecoins — SOL bounced to $111.86 (+1.3% 24h, off the 7d lows), no exploit/FUD news, but pump.fun feed silent ~3.5d and X memecoin chatter is shill-spam heavy",
+    "fit_note": "candidates are Robinhood-chain EVM contracts (not Solana); pulse attached per protocol, verdict unaffected by it"
+   },
+   "verdict": "skip",
+   "verdict_note": "dead-on-arrival ERC20 batch (blocks 85418645-85419100, ~00:29-00:30Z); serial-deployer spray of inert contracts, following the 85416551-85418072 batch from the 15:52Z tick; totalSupply=0; no tradeable venue",
+   "x_reads": "0"
+  },
+  {
+   "investigated_at": "2026-10-11T16:08:00.326Z",
+   "candidate": {
+    "contract": "0xeaf17d540313f8fee6079cb17e2d71294bb250a0",
+    "chain": "robinhood",
+    "name": "<no ERC20 interface — reverts on name/symbol/totalSupply>",
+    "ticker": "<none>",
+    "scout": "block-watcher",
+    "found_at": "2026-10-11T00:29:59.232Z",
+    "block": 85418848,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T16:00:23.883Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped"
+    ]
+   },
+   "velocity": "static — deployed ~15.5h before gating (blocks 85418645-85419100, ~00:29-00:30Z); 5761 bytes, not a token; no transfers, no holders possible; inert since",
+   "social_signal": "weak — anonymous dead deploys, no socials, no X buzz target (X leg cached, 0 candidate searches)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 111.86,
+    "sol_24h_change_pct": 1.29,
+    "source": "CoinGecko simple/price fetched this run ~16:04Z (cache refreshed from $109.67/-0.64% to $111.86/+1.29%)",
+    "pump_fun_momentum": "cold — pump.fun scout feed silent since 2026-10-08; no fresh launch flow",
+    "x_leg": "cached — solana-pulse-x-ts.json 2026-10-11T15:52:26Z (<30min): 10 solana/memecoin tweets, shill-spam heavy ($HAMSTR/$LARP/$ROSE), no exploit/FUD news",
+    "candidate_x_searches": "0 spent — dead deploys with no ticker/venue; no discoverable buzz target (conservation)",
+    "risk": "neutral-soft for Solana memecoins — SOL bounced to $111.86 (+1.3% 24h, off the 7d lows), no exploit/FUD news, but pump.fun feed silent ~3.5d and X memecoin chatter is shill-spam heavy",
+    "fit_note": "candidates are Robinhood-chain EVM contracts (not Solana); pulse attached per protocol, verdict unaffected by it"
+   },
+   "verdict": "skip",
+   "verdict_note": "bare non-token contract, no liquidity, no activity; part of the serial-deployer inert-spray batch (blocks 85418645-85419100); 5761 bytes, not a token; no tradeable venue",
+   "x_reads": "0"
+  },
+  {
+   "investigated_at": "2026-10-11T16:08:00.326Z",
+   "candidate": {
+    "contract": "0x561bef5be7ad0f434ecbf078541088148110d4e5",
+    "chain": "robinhood",
+    "name": "Cloudy Draft 05",
+    "ticker": "CLOUDY",
+    "scout": "block-watcher",
+    "found_at": "2026-10-11T00:30:06.440Z",
+    "block": 85418913,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T16:00:36.477Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "static — deployed ~15.5h before gating (blocks 85418645-85419100, ~00:29-00:30Z); totalSupply=1.699e18 wei (~1.7 tokens @18dp); no transfers, no holders possible; inert since",
+   "social_signal": "weak — anonymous dead deploys, no socials, no X buzz target (X leg cached, 0 candidate searches)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 111.86,
+    "sol_24h_change_pct": 1.29,
+    "source": "CoinGecko simple/price fetched this run ~16:04Z (cache refreshed from $109.67/-0.64% to $111.86/+1.29%)",
+    "pump_fun_momentum": "cold — pump.fun scout feed silent since 2026-10-08; no fresh launch flow",
+    "x_leg": "cached — solana-pulse-x-ts.json 2026-10-11T15:52:26Z (<30min): 10 solana/memecoin tweets, shill-spam heavy ($HAMSTR/$LARP/$ROSE), no exploit/FUD news",
+    "candidate_x_searches": "0 spent — dead deploys with no ticker/venue; no discoverable buzz target (conservation)",
+    "risk": "neutral-soft for Solana memecoins — SOL bounced to $111.86 (+1.3% 24h, off the 7d lows), no exploit/FUD news, but pump.fun feed silent ~3.5d and X memecoin chatter is shill-spam heavy",
+    "fit_note": "candidates are Robinhood-chain EVM contracts (not Solana); pulse attached per protocol, verdict unaffected by it"
+   },
+   "verdict": "skip",
+   "verdict_note": "dead-on-arrival ERC20 batch (blocks 85418645-85419100, ~00:29-00:30Z); serial-deployer spray of inert contracts, following the 85416551-85418072 batch from the 15:52Z tick; totalSupply=1.699e18 wei (~1.7 tokens @18dp); no tradeable venue",
+   "x_reads": "0"
+  },
+  {
+   "investigated_at": "2026-10-11T16:08:00.326Z",
+   "candidate": {
+    "contract": "0x65c1a71a028cb38b0003b25d7d2a036021e503ce",
+    "chain": "robinhood",
+    "name": "<no ERC20 interface — reverts on name/symbol/totalSupply>",
+    "ticker": "<none>",
+    "scout": "block-watcher",
+    "found_at": "2026-10-11T00:30:20.999Z",
+    "block": 85419025,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T16:00:49.740Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "static — deployed ~15.5h before gating (blocks 85418645-85419100, ~00:29-00:30Z); 596 bytes, not a token; no transfers, no holders possible; inert since",
+   "social_signal": "weak — anonymous dead deploys, no socials, no X buzz target (X leg cached, 0 candidate searches)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 111.86,
+    "sol_24h_change_pct": 1.29,
+    "source": "CoinGecko simple/price fetched this run ~16:04Z (cache refreshed from $109.67/-0.64% to $111.86/+1.29%)",
+    "pump_fun_momentum": "cold — pump.fun scout feed silent since 2026-10-08; no fresh launch flow",
+    "x_leg": "cached — solana-pulse-x-ts.json 2026-10-11T15:52:26Z (<30min): 10 solana/memecoin tweets, shill-spam heavy ($HAMSTR/$LARP/$ROSE), no exploit/FUD news",
+    "candidate_x_searches": "0 spent — dead deploys with no ticker/venue; no discoverable buzz target (conservation)",
+    "risk": "neutral-soft for Solana memecoins — SOL bounced to $111.86 (+1.3% 24h, off the 7d lows), no exploit/FUD news, but pump.fun feed silent ~3.5d and X memecoin chatter is shill-spam heavy",
+    "fit_note": "candidates are Robinhood-chain EVM contracts (not Solana); pulse attached per protocol, verdict unaffected by it"
+   },
+   "verdict": "skip",
+   "verdict_note": "bare non-token contract, no liquidity, no activity; part of the serial-deployer inert-spray batch (blocks 85418645-85419100); 596 bytes, not a token; no tradeable venue",
+   "x_reads": "0"
+  },
+  {
+   "investigated_at": "2026-10-11T16:08:00.326Z",
+   "candidate": {
+    "contract": "0x9d8ff97b59b95e56ec4f358f38080826359423ca",
+    "chain": "robinhood",
+    "name": "<no ERC20 interface — reverts on name/symbol/totalSupply>",
+    "ticker": "<none>",
+    "scout": "block-watcher",
+    "found_at": "2026-10-11T00:30:28.990Z",
+    "block": 85419100,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T16:01:02.865Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "static — deployed ~15.5h before gating (blocks 85418645-85419100, ~00:29-00:30Z); 23733 bytes, not a token; no transfers, no holders possible; inert since",
+   "social_signal": "weak — anonymous dead deploys, no socials, no X buzz target (X leg cached, 0 candidate searches)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "sol_usd": 111.86,
+    "sol_24h_change_pct": 1.29,
+    "source": "CoinGecko simple/price fetched this run ~16:04Z (cache refreshed from $109.67/-0.64% to $111.86/+1.29%)",
+    "pump_fun_momentum": "cold — pump.fun scout feed silent since 2026-10-08; no fresh launch flow",
+    "x_leg": "cached — solana-pulse-x-ts.json 2026-10-11T15:52:26Z (<30min): 10 solana/memecoin tweets, shill-spam heavy ($HAMSTR/$LARP/$ROSE), no exploit/FUD news",
+    "candidate_x_searches": "0 spent — dead deploys with no ticker/venue; no discoverable buzz target (conservation)",
+    "risk": "neutral-soft for Solana memecoins — SOL bounced to $111.86 (+1.3% 24h, off the 7d lows), no exploit/FUD news, but pump.fun feed silent ~3.5d and X memecoin chatter is shill-spam heavy",
+    "fit_note": "candidates are Robinhood-chain EVM contracts (not Solana); pulse attached per protocol, verdict unaffected by it"
+   },
+   "verdict": "skip",
+   "verdict_note": "bare non-token contract, no liquidity, no activity; part of the serial-deployer inert-spray batch (blocks 85418645-85419100); 23733 bytes, not a token; no tradeable venue",
+   "x_reads": "0"
   }
  ],
  "scores": [
@@ -477359,7 +477537,13 @@
    "cardigan_score": 23,
    "score_breakdown": "volume 15/40 (1.03 ETH curve inflow, 57 holders, but twin-wash buyer profile) + sentiment 0/20 (social grade F) + vitality 8/40 (momentum 4/11 capped — distribution mirrors twin wash pattern; pickup 2/11; already-talking 0/11; legs 2/7 — serial-farm one-off). mcap adjustment 0 (no dex quote). total 23/100 — below 50, skip band.",
    "decision_note": "F social grade = hard skip per backtest rule (D/F never buy). twin TRIVO launched 3 min apart by different deployer = serial-farm/sybil signature. fast lane already no-buy vetoed (wave-hello SKIP + humming-hymn SKIP). blanket-snug skip. no whale convergence. exit plan n/a — no buy.",
-   "virality_lifecycle": "one-off (farm deploy; no follow-through expected)"
+   "virality_lifecycle": "one-off (farm deploy; no follow-through expected)",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T16:08:51Z",
+    "decision": "skip",
+    "decision_note": "no gate_pass (F grade, rec skip) - binary gate rule: not scored"
+   }
   },
   {
    "broken_down_at": "2026-10-11T13:17:35.043Z",
@@ -477503,7 +477687,12 @@
    "reason": "Standing D/F rule: rubric-grade F = likely skip regardless of other factors. Curve traction is real (62.4% filled in ~2.4h, 70 holders, steady fill, top-10 real wallets 22.02% / top-1 3.15%, live sell path) but traction without social/demand evidence is not durable demand. No path to a durability call above weak.",
    "processed": true,
    "processed_at": "2026-10-11T13:41:20.970Z",
-   "decision": "skip",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T16:08:51Z",
+    "decision": "skip",
+    "decision_note": "pre-gate duplicate of 951 (0x2d155cd3) - not scored"
+   },
    "decision_reason": "social grade F = hard skip (D/F rule)"
   },
   {
@@ -477554,7 +477743,13 @@
    "cardigan_decision_note": "score 35: vol14+sent10(P)+vit11(mom4 capped,pickup3,talk1,legs3),core7. mcap unknown,+0. fast-lane birth veto+20min recheck re-vetoed (wave/hymn SKIP). watch only.",
    "cardigan_decided_at": "2026-10-11T14:19:18.039Z",
    "processed": true,
-   "processed_at": "2026-10-11T14:21:00Z"
+   "processed_at": "2026-10-11T14:21:00Z",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T16:08:51Z",
+    "decision": "skip",
+    "decision_note": "pre-gate duplicate of 952 (0x4c1aa4a8) - not scored"
+   }
   },
   {
    "broken_down_at": "2026-10-11T14:03:01.283Z",
@@ -477604,7 +477799,13 @@
    "cardigan_decision_note": "score 53: vol15+sent10(P)+vit13(mom5 capped,pickup5,talk1,legs2),core8,+15 mcap($15.5k). 50-59 band needs core>=15 -> watch. serial-spam: 7 distinct FlowTenzor contracts (11:24Z,11:35Z,13:35Z); deployer fresh-wallet rank-2 bag 2.86%; fast-lane birth veto all-SKIP; snug watch pending recheck.",
    "cardigan_decided_at": "2026-10-11T14:19:18.039Z",
    "processed": true,
-   "processed_at": "2026-10-11T14:21:00Z"
+   "processed_at": "2026-10-11T14:21:00Z",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T16:08:51Z",
+    "decision": "skip",
+    "decision_note": "pre-gate duplicate of 953 (0x82a35851) - not scored"
+   }
   },
   {
    "candidate": {
@@ -477626,7 +477827,13 @@
    "rec": "quiet",
    "processed": true,
    "processed_at": "2026-10-11T14:44:43Z",
-   "processed_note": "flock-decision tick 2026-10-11 10:44 EDT: 949 entries, all processed, nothing new to score. fast-lane dedup: 2 open positions (Ollie 0xd08a0e4d, SAFU 0xc85e9f74) hold, queue.db shows same 2 as fast_lane-bought — no re-buy. whale feed: PONS 2-whale convergence 10:37:57 EDT (~$27k combined, 2 EOAs) + single-whale $355k SWARM buy 10:42:17 EDT (not convergence, needs 2+). no decision-queue candidates to bonus. no executions."
+   "processed_note": "flock-decision tick 2026-10-11 10:44 EDT: 949 entries, all processed, nothing new to score. fast-lane dedup: 2 open positions (Ollie 0xd08a0e4d, SAFU 0xc85e9f74) hold, queue.db shows same 2 as fast_lane-bought — no re-buy. whale feed: PONS 2-whale convergence 10:37:57 EDT (~$27k combined, 2 EOAs) + single-whale $355k SWARM buy 10:42:17 EDT (not convergence, needs 2+). no decision-queue candidates to bonus. no executions.",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T16:08:51Z",
+    "decision": "skip",
+    "decision_note": "malformed candidate (no contract) - not scored"
+   }
   },
   {
    "candidate": null,
@@ -477728,7 +477935,13 @@
    "cardigan_note": "watch through graduation; re-score if it graduates with cleared flow. fast lane agent-vetoed at birth; no buy.",
    "processed": true,
    "processed_at": "2026-10-11T14:57:00.000Z",
-   "processed_by": "cardigan-flock-decision"
+   "processed_by": "cardigan-flock-decision",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T16:08:51Z",
+    "decision": "skip",
+    "decision_note": "HARD SKIP: social F at ~4.6h old (60+min rule); fast-lane agent-veto (all 3 SKIP) stands"
+   }
   },
   {
    "broken_down_at": "2026-10-11T14:54:35.000Z",
@@ -477825,7 +478038,13 @@
    "cardigan_note": "fast lane re-vetoed at 20-min recheck (wave-hello/humming-hymn still SKIP); velocity lags runner tier. watch; not a buy.",
    "processed": true,
    "processed_at": "2026-10-11T14:57:00.000Z",
-   "processed_by": "cardigan-flock-decision"
+   "processed_by": "cardigan-flock-decision",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T16:08:51Z",
+    "decision": "skip",
+    "decision_note": "score 37 (v14+s10+vit13, core 10); fast-lane recheck held veto (hello+hymn SKIP); no buy"
+   }
   },
   {
    "broken_down_at": "2026-10-11T14:54:35.000Z",
@@ -477922,7 +478141,13 @@
    "cardigan_note": "runner-tier fill earns a watch, not a chase. deployer bag overhang + fast lane birth veto + no recheck yet = durability unproven. no buy.",
    "processed": true,
    "processed_at": "2026-10-11T14:57:00.000Z",
-   "processed_by": "cardigan-flock-decision"
+   "processed_by": "cardigan-flock-decision",
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T16:08:51Z",
+    "decision": "watch",
+    "decision_note": "score 59 (v20+s10+vit14 +15 micro-mcap), vitality_core 9 <15: no cautious buy; triple SKIP veto + rank-2 fresh dev bag 2.86% overhang; watch for graduation"
+   }
   },
   {
    "candidate": {
@@ -478013,6 +478238,12 @@
     "reason": "VOL 27/40 (1.89 ETH, 148 holders, 51 CurveSell live, top-10 22.6%; sell>collected anomaly unresolved) + SENT 10/20 (P pre-social, neutral) + VIT 14/40 (momentum 6 capped, pickup 4, talking 1, legs 3) = 51. vitality_core 8 < 15 -> no cautious buy. snug durability uncertain, recommendation watch. fast-lane no-bought twice (agent-veto + recheck).",
     "mcap_adjustment": 0,
     "mcap_note": "no mcap/FDV data; applied 0"
+   },
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T16:08:51Z",
+    "decision": "skip",
+    "decision_note": "no gate_status (gate_pass absent) - binary gate rule: not scored"
    }
   },
   {
@@ -478065,6 +478296,12 @@
     "reason": "VOL 24/40 (1.01 ETH, 74 holders, 32 CurveSell, sell>collected anomaly) + SENT 10/20 (P) + VIT 12/40 (momentum 5 capped, pickup 3 typo-name farm marker, talking 1, legs 3) = 46 < 50. snug durability uncertain. fast-lane agent-veto x2.",
     "mcap_adjustment": 0,
     "mcap_note": "no mcap/FDV data; applied 0"
+   },
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T16:08:51Z",
+    "decision": "skip",
+    "decision_note": "no gate_status (gate_pass absent) - binary gate rule: not scored"
    }
   },
   {
@@ -478118,6 +478355,12 @@
     "reason": "VOL 8/40 (0.068 ETH, 3 holders, zero CurveSell, exit unproven, deployer top) + SENT 10/20 (P) + VIT 8/40 (momentum 3 sniper-shaped, pickup 3, talking 1, legs 1) = 26. snug durability weak. fast-lane agent-veto + recheck gate_failed.",
     "mcap_adjustment": 0,
     "mcap_note": "no mcap/FDV data; applied 0"
+   },
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T16:08:51Z",
+    "decision": "skip",
+    "decision_note": "no gate_status (gate_pass absent) - binary gate rule: not scored"
    }
   },
   {
@@ -478171,6 +478414,12 @@
     "reason": "VOL 11/40 (0.147 ETH, 9 holders, 3 CurveSell, sell>collected 7.8x worst of batch, 6.48% deployer bag) + SENT 10/20 (P) + VIT 10/40 (momentum 3, pickup 4 piggyback name, talking 1, legs 2) = 31. snug durability weak. fast-lane agent-veto + recheck gate_failed.",
     "mcap_adjustment": 0,
     "mcap_note": "no mcap/FDV data; applied 0"
+   },
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T16:08:51Z",
+    "decision": "skip",
+    "decision_note": "no gate_status (gate_pass absent) - binary gate rule: not scored"
    }
   },
   {
@@ -478274,6 +478523,12 @@
     "verdict": "skip",
     "reason": "fast-lane dedup: already bought by fast lane (tx 0x9c6b67e9...) then stopped out -46.7%; never open a second position in the same token",
     "score": null
+   },
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T16:08:51Z",
+    "decision": "skip",
+    "decision_note": "no gate_status (gate_pass absent) - binary gate rule: not scored"
    }
   },
   {
@@ -478384,6 +478639,12 @@
      "mcap_adj": 0,
      "total": 25
     }
+   },
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T16:08:51Z",
+    "decision": "skip",
+    "decision_note": "no gate_status (gate_pass absent) - binary gate rule: not scored"
    }
   },
   {
@@ -478492,6 +478753,12 @@
      "mcap_adj": 0,
      "total": 40
     }
+   },
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T16:08:51Z",
+    "decision": "skip",
+    "decision_note": "no gate_status (gate_pass absent) - binary gate rule: not scored"
    }
   },
   {
@@ -478596,6 +478863,12 @@
      "mcap_adj": 0,
      "total": 28
     }
+   },
+   "decision": {
+    "processed": true,
+    "processed_at": "2026-10-11T16:08:51Z",
+    "decision": "skip",
+    "decision_note": "no gate_status (gate_pass absent) - binary gate rule: not scored"
    }
   },
   {
@@ -757652,8 +757925,8 @@
   "wave-hello"
  ],
  "last_activity": {
-  "scout": "2026-10-11T16:07:29.518Z",
-  "hymn": "2026-10-11T15:58:52Z",
+  "scout": "2026-10-11T16:08:33.488Z",
+  "hymn": "2026-10-11T16:08:00.326Z",
   "scorer": "2026-10-11T16:05:47.732Z",
   "snug": "2026-10-11T15:47:19.074529+00:00",
   "cardigan": "2026-10-11T15:47:19.074529+00:00"
@@ -757804,8 +758077,8 @@
     "tx_hash": "0x0cef41c59b5ff5890632d9a5d376772d22fd5c83eb6d90960088f8f66517ec90",
     "entered_at": "2026-10-09T01:51:03.242Z",
     "entry_price_usd": 0.1135,
-    "current_price_usd": 0.1225,
-    "pnl_pct": 7.929515418502198,
+    "current_price_usd": 0.1233,
+    "pnl_pct": 8.634361233480178,
     "amount_tokens": 216.29986717343255,
     "amount_eth_in": 0.01,
     "score": 60,
@@ -757851,7 +758124,7 @@
     "exit_price_usd": 0.0000057094609974722175
    }
   ],
-  "realized_pnl_pct_total": -32.7388519622243
+  "realized_pnl_pct_total": -32.03400614724633
  },
  "paper_trades": {
   "as_of": "2026-10-11T16:07:18.217Z",

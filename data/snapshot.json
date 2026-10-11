@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-11T07:16:52.597Z",
+ "updated_at": "2026-10-11T07:18:52.741Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
@@ -248548,6 +248548,39 @@
    "verdict": "skip",
    "verdict_note": "gate_pass on a technically clean contract, but forensics confirm the fast lane's all-SKIP round: concentrated flippy money flow (top-1 buyer 30.8% of buys, 75% of float in top-10, 19/26 buyers already sold), fresh nonce-1 deployer undiscoverable via RPC (denylist skipped), third-party sell sim unavailable (exit unproven for a real holder), zero social traction. Not a deployer-dump farm (creator never bought, no dump), but a snipe-cluster farm pattern cannot be ruled out and there is no organic demand signal. Re-investigate if organic velocity appears (graduation + real V4 volume).",
    "social_scored_at": "2026-10-11T07:15:09.204Z"
+  },
+  {
+   "investigated_at": "2026-10-11T07:18:49.439Z",
+   "candidate": {
+    "contract": "0xdd517e5dc5ab7b2b5cedc6e74804bd6a84d6358c",
+    "scout": "block-watcher",
+    "chain": "robinhood",
+    "type": "contract",
+    "found_at": "2026-10-10T20:26:08.971Z",
+    "detail": "new contract deployed in block 85276120",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T07:16:50.915Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "n/a — not an ERC20: totalSupply/decimals/symbol all revert onchain; no mint activity to measure",
+   "social_signal": "weak",
+   "money_flow": "n/a — single deploy tx 0xbf375add62934671c9ebc6c14f9bb88c358160150e2db03801b6608582ac8990 from EOA 0xc1e0924a07d1528e629277ea58a542950e61fb97 (nonce 11, ~0.00108 ETH balance; not a serial deployer)",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.00226,
+    "launch_feed": "very hot — rugcheck new_tokens feed turning over ~1 token per 5s (samples 11:15-11:16Z, all fresh createAt); symbols thin/random names",
+    "pump_fun_seen": "stale (last update 2026-10-09 13:54Z) — no current holder-momentum read",
+    "ecosystem_news": "no fresh X read possible (x api credits exhausted per standing note); no breaking solana news; SOL flat-soft ~$109 consolidating, pump.fun structural sell pressure continues in background",
+    "one_line": "risk-neutral leaning cautious: launch feed blazing but SOL flat with known structural sell pressure — hot feed alone is not risk-on; demand real differentiation",
+    "recorded_at": "2026-10-11T07:16:15.917Z"
+   },
+   "verdict": "skip",
+   "notes": "NOT a tradable token. 3.5KB bytecode, 3 non-standard selectors (566a8bda 784454ee 91dd7346), no ERC20 interface. No V2 pair, no V4 pools — nothing to buy. Age ~11.2h (deployed block 85276120, tip 85650192). Gate passed it but skipped every substantive check (liquidity, concentration, deployer). Not pons origin (block-watcher 'new contract' type, no curve) — no fast-lane overlap. Nothing for snug to grade."
   }
  ],
  "scores": [
@@ -707463,7 +707496,7 @@
  ],
  "last_activity": {
   "scout": "2026-10-11T07:16:41.385Z",
-  "hymn": "2026-10-11T07:14:28.326454+00:00",
+  "hymn": "2026-10-11T07:18:49.439Z",
   "scorer": "2026-10-11T07:15:04.107Z",
   "snug": null,
   "cardigan": null
@@ -707637,7 +707670,7 @@
   "realized_pnl_pct_total": -6.220439629359024
  },
  "paper_trades": {
-  "as_of": "2026-10-11T07:12:28.980Z",
+  "as_of": "2026-10-11T07:17:12.309Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -707656,7 +707689,7 @@
     "seeded": true,
     "score": 66,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.0121,
+    "last_price_usd": 0.01205,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -707667,8 +707700,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0005308964316797216,
-    "unrealized_pnl_pct": 5.308964316797216
+    "unrealized_pnl_eth": 0.00048738033072236674,
+    "unrealized_pnl_pct": 4.8738033072236675
    },
    {
     "id": "pt-muzwwuzb-27",
@@ -707679,7 +707712,7 @@
     "seeded": true,
     "score": 63,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.0121,
+    "last_price_usd": 0.01205,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -707690,8 +707723,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0005308964316797216,
-    "unrealized_pnl_pct": 5.308964316797216
+    "unrealized_pnl_eth": 0.00048738033072236674,
+    "unrealized_pnl_pct": 4.8738033072236675
    },
    {
     "id": "pt-mv02u5pe-52",
@@ -707702,7 +707735,7 @@
     "seeded": false,
     "score": 69,
     "entry_price_usd": 0.04243,
-    "last_price_usd": 0.03917,
+    "last_price_usd": 0.03912,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -707713,8 +707746,8 @@
     "mcap_at_scan": 42788142.46528106,
     "mcap_at_decision": 42788142.46528106,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0007683242988451567,
-    "unrealized_pnl_pct": -7.683242988451566
+    "unrealized_pnl_eth": -0.0007801084138581194,
+    "unrealized_pnl_pct": -7.801084138581194
    },
    {
     "id": "pt-mv03ww45-53",

@@ -1,22 +1,11 @@
 {
- "updated_at": "2026-10-11T03:47:05.027Z",
+ "updated_at": "2026-10-11T03:48:53.536Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-11T02:49:23.118Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xfac385a13b67d8ad322594d5299929a02ead3c91",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0xea200cf2cd62f1cd562db0857315379631583b38b601fbc3bf07f849115de15e",
-   "block": 85500088,
-   "detail": "new contract deployed in block 85500088"
-  },
   {
    "found_at": "2026-10-11T02:49:24.392Z",
    "scout": "block-watcher",
@@ -580,9 +569,31 @@
    "tx_hash": "0x0c62f5cd7a3069027049bb1bca6c4bade6a7214564b564b1cc387f9d9d6b8c5f",
    "block": 85529904,
    "detail": "new contract deployed in block 85529904"
+  },
+  {
+   "found_at": "2026-10-11T03:48:06.568Z",
+   "scout": "whale-watcher",
+   "type": "whale-convergence",
+   "token": "PONS",
+   "contract": "0x39dbed3a2bd333467115de45665cc57f813c4571",
+   "chain": "robinhood",
+   "tx_hash": "0x85279c9db3409b35b9dc96ab8ee67fef9b6a025ba6d9853c488ee67420602850",
+   "detail": "CONVERGENCE: 3 whale EOA wallets accumulating PONS (0x39dbed3a2bd333467115de45665cc57f813c4571) on robinhood within one scan window; combined $81,088 received. Largest: whale 0xf8191d98ae98d2f7abdfb63a9b0b812b93c873aa (~$672,710 assets) received $40,219 in tx 0x85279c9db3409b35b9dc96ab8ee67fef9b6a025ba6d9853c488ee67420602850",
+   "converging_whales": 3,
+   "converging_wallets": [
+    "0xf8191d98ae98d2f7abdfb63a9b0b812b93c873aa",
+    "0xe92e65049b3c2ca12806e9567b08895118c5a03f",
+    "0xed9ab5bc05a0152b9dc2f7902e8369af7bc18771"
+   ],
+   "combined_amount_usd": 81088.44,
+   "whale": "0xf8191d98ae98d2f7abdfb63a9b0b812b93c873aa",
+   "whale_assets_usd": 672709.57,
+   "amount_usd": 40219.26,
+   "convergence": true,
+   "receiver_is_contract": false
   }
  ],
- "scout_queue_total": 1348,
+ "scout_queue_total": 1349,
  "investigations": [
   {
    "candidate": {
@@ -437717,6 +437728,19 @@
    },
    "gate_status": "n/a-tick-note",
    "recommendation": "flock-decision run 2026-10-10 23:43 EDT: 681 entries, 0 unprocessed candidates - nothing to score (4 prior adjudications formalized with decision blocks: PONS high-cap skip, 0xd43559a4 F-skip, QVAULT F-skip, ANC F-skip already had block). fast-lane dedup: 2 open positions (Ollie 0xd08a0e4d + SAFU 0xc85e9f74, tonight fast-lane buys, yanked-to-dust strandings, held per dubie); queue.db 542 fast_lane rows, only buys = same two; fast-lane.mjs running (pid 2998, pons-only build). whale feed: 24,323 moves, 62 fresh since 23:40 EDT (03:40Z); BRML 0x184a9daef4 2 EOA whales/$356k (continuation of 23:35 watch item, no gate stamp, watcher conv:false -> watch-only), CPANC 6 EOAs/$49k, PRSV 4 EOAs/$37.7k (both no gate stamp, watch-only), PONS 2 EOAs/$71.5k (platform token, watch-only), CASHCAT 1 EOA (closed position, no action); conv:true last 90m = PONS only (52, already dismissed). No scoring, no execution, no dubie message."
+  },
+  {
+   "processed": true,
+   "processed_at": "2026-10-11T03:48:42Z",
+   "candidate": {
+    "contract": "flock-decision-tick-note",
+    "chain": "tick",
+    "scout": "cardigan-flock-decision",
+    "symbol": "flock-decision tick 2026-10-10 23:47 EDT",
+    "gate_status": "n/a-tick-note"
+   },
+   "gate_status": "n/a-tick-note",
+   "recommendation": "flock-decision run 2026-10-10 23:47 EDT: 681 entries, 0 unprocessed candidates - nothing to score (no new entries since 23:43 tick). fast-lane dedup: 2 open positions (Ollie 0xd08a0e4d + SAFU 0xc85e9f74, tonight fast-lane buys, yanked-to-dust strandings, held per dubie); queue.db only bought rows = same two, no new buys. fast-lane.mjs running (pid 2998, pons-only build). whale feed: 87 moves since 03:40Z - CPANC 25/$60k no-conv, PONS 20/$1.3M conv 13 (platform token, watch-only), PRSV 15/$40k, BRML 8/$374k (23:35 watch cont.), CINEMA 5/$45k, CASHCAT 6 (closed pos). no gate_pass candidates -> no convergence bonus applies, nothing actionable. quiet tick."
   }
  ],
  "tracking": {
@@ -676399,7 +676423,7 @@
   "reentry-watch"
  ],
  "last_activity": {
-  "scout": "2026-10-11T03:42:18.614Z",
+  "scout": "2026-10-11T03:48:06.568Z",
   "hymn": "2026-10-11T03:44:13.970Z",
   "scorer": "2026-10-11T03:45:42.558Z",
   "snug": null,

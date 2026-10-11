@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-11T11:20:53.293Z",
+ "updated_at": "2026-10-11T11:22:52.242Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
@@ -4107,7 +4107,10 @@
     "liqEth": 0.01612275276992083,
     "venue": "curve",
     "curve": "0xbf96a900a410b7143e613c14a6f30d68cf6a3430"
-   }
+   },
+   "investigated": true,
+   "investigated_at": "2026-10-11T11:22:25.283Z",
+   "investigation": "see investigation-queue.json"
   },
   {
    "found_at": "2026-10-11T11:15:45.858Z",
@@ -4549,7 +4552,10 @@
     "liqEth": 0.23518820818510333,
     "venue": "curve",
     "curve": "0x74711bf4dabf0157e59c532179cc1865351d634c"
-   }
+   },
+   "investigated": true,
+   "investigated_at": "2026-10-11T11:21:05.371Z",
+   "investigation": "see investigation-queue.json"
   },
   {
    "found_at": "2026-10-11T11:17:52.592Z",
@@ -254839,7 +254845,83 @@
     "risk": "neutral/cautious: post-dump consolidation, no risk-off trigger; no forced downgrade applied"
    },
    "verdict": "skip",
-   "verdict_note": "Non-token contract deploy; nothing to mint, hold, or hand off. Same skip class as the 5 sibling block-watcher deploys from this morning's ticks."
+   "verdict_note": "Non-token contract deploy; nothing to mint, hold, or hand off. Same skip class as the 5 sibling block-watcher deploys from this morning's ticks.",
+   "social_scored_at": "2026-10-11T11:22:34.134Z"
+  },
+  {
+   "investigated_at": "2026-10-11T11:21:05.371Z",
+   "candidate": {
+    "contract": "0x384d997bfbb7a6e6da1081ac4998222e9c6101dd",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-11T11:15:55.465Z",
+    "block": 85788960,
+    "tx_hash": "0xe9869503b3e478c6d3ac86fd21aff84ff5a4bc4f407bdc9fa37a3b05ab75e729",
+    "name": "Gallium Zero GZERO",
+    "curve": "0x74711bf4dabf0157e59c532179cc1865351d634c",
+    "deployer": "0x7894a0cdca80434ca2c9805a74bd6e24efecf72a",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T11:16:13.956Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "15 CurveBuy + 3 CurveSell, ALL within ~4.5 min of launch (blocks 85788960-85791484, 11:12:31-11:16:58 UTC); zero curve activity in the ~4h since (per latest-block getLogs)",
+   "social_signal": "weak",
+   "money_flow": "organic",
+   "onchain_notes": "13 distinct buyers, 0.3116 ETH total in, sizes 0.0014-0.0399 ETH, max single-wallet share 18.2%; deployer did NOT buy (appears only as indexed topic2 per verified pons V2 layout, never as buyer); 3 early flippers fully exited at +3-18% (0x5373fb35, 0xe4a727d2, 0x65050a9b); curve holds 0.2945 ETH live (above 0.01 floor, above gate-time 0.2352 - accumulating, not drained; no VIALZ-class stamp staleness); snipeTax 0; no toxic-name blocklist hit ('gallium zero' is neutral chemistry-meme)",
+   "solana_pulse": {
+    "sol_usd": 109.24,
+    "sol_24h_change_pct": -0.16,
+    "sol_7d_change_pct": -8.1,
+    "note": "$107-110 support holding after Oct 8 sell-off; ETF net outflow $3.76M Oct 9 ended 14-week inflow streak",
+    "news_2h": "200ms slots live Oct 9 (sell-the-news); network income positive 2 wks; key CPI data this week could shift direction; no exploit/outage/FUD",
+    "pumpfun_momentum": "no fresh data - pump-fun-seen.json last write Oct 9 13:54",
+    "x_leg": "unavailable - X API 402 credential outage",
+    "risk": "neutral/cautious: post-dump consolidation, no risk-off trigger; no forced downgrade applied"
+   },
+   "verdict": "needs-snug",
+   "verdict_note": "Clean gate, organic wallets, healthy curve - but the entire lifecycle is a 4.5-minute launch burst followed by ~4h of silence. No follow-through = durability question for Blanket Snug, not a fast-lane 'promising'.",
+   "social_scored_at": "2026-10-11T11:22:34.134Z"
+  },
+  {
+   "investigated_at": "2026-10-11T11:22:25.283Z",
+   "candidate": {
+    "contract": "0x96f2d9a3c1e7153ec584b3cc5098769fa03ad5af",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "found_at": "2026-10-11T11:15:42.364Z",
+    "block": 85787794,
+    "tx_hash": "0xbe91d9ad0a94eafac42bc5a3514fe4aee82ca5d8e8d094e8ea130c20c8f81362",
+    "name": "Hatched HATCH",
+    "curve": "0xbf96a900a410b7143e613c14a6f30d68cf6a3430",
+    "deployer": "0xef6428f723b131cee382db5ce15ef6df3c17c857",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T11:18:33.354Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "19 CurveBuy + 15 CurveSell, all within ~35 min of launch (blocks 85787794-85791454, 11:0x-11:16 UTC); zero curve activity since",
+   "social_signal": "weak",
+   "money_flow": "mixed",
+   "onchain_notes": "0.2602 ETH in from 12 wallets; 15 sells extracted 0.2403 ETH - curve stripped to 0.01612275276992083 ETH live (identical to the wei vs the 07:18 gate stamp: zero recovery in ~4h; sits 0.0061 above the 0.01 floor - the VIALZ drained-curve class, just barely on the pass side of the line). Concentration: one wallet took 38.4% of inflow (0x09aa1b00... bought ~0.1 ETH, sold it all back for 0.10156 ETH); biggest exits 0.10156 + 4x 0xe9f89a76 (~0.083 total). Deployer never bought. No toxic-name blocklist hit.",
+   "solana_pulse": {
+    "sol_usd": 109.24,
+    "sol_24h_change_pct": -0.16,
+    "sol_7d_change_pct": -8.1,
+    "note": "$107-110 support holding after Oct 8 sell-off; ETF net outflow $3.76M Oct 9 ended 14-week inflow streak",
+    "news_2h": "200ms slots live Oct 9 (sell-the-news); network income positive 2 wks; key CPI data this week could shift direction; no exploit/outage/FUD",
+    "pumpfun_momentum": "no fresh data - pump-fun-seen.json last write Oct 9 13:54",
+    "x_leg": "unavailable - X API 402 credential outage",
+    "risk": "neutral/cautious: post-dump consolidation, no risk-off trigger; no forced downgrade applied"
+   },
+   "verdict": "skip",
+   "verdict_note": "Stripped curve: 94% of inflow extracted by 15 sellers, venue left at 0.0161 ETH with no activity for ~4h. Technically above the 0.01 floor, but there is no trade left here - this is a husk, not a launch. Nothing to hand off."
   }
  ],
  "scores": [
@@ -431184,6 +431266,46 @@
    "total": 0,
    "grade": "F",
    "notes": "Not a tradeable token: block-watcher entry, 19417 code bytes, totalSupply reverts, zero Transfers in 30k blocks, no V2 pair, no V4 pools — no venue to buy or sell. Nothing to evaluate socially; scored F/0 only to mark it handled. hymn verdict was 'skip'."
+  },
+  {
+   "scored_at": "2026-10-11T11:22:28.445555Z",
+   "candidate": {
+    "contract": "0xdb871b6bd66e177912b37ef10e7825c434d8ca60",
+    "chain": "robinhood",
+    "name": null
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "NOT A TOKEN: non-ERC20 contract deploy (block-watcher one-off, same skip class as 5 sibling deploys). No token, no social surface exists; score reflects inapplicability, not scam evidence. Verdict already skip."
+  },
+  {
+   "scored_at": "2026-10-11T11:22:28.445555Z",
+   "candidate": {
+    "contract": "0x384d997bfbb7a6e6da1081ac4998222e9c6101dd",
+    "chain": "robinhood",
+    "name": "Gallium Zero GZERO"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 5,
+    "kol_involvement": 0,
+    "ticker_spread": 1,
+    "team_engagement": 0,
+    "fomo_signals": 3
+   },
+   "total": 9,
+   "grade": "F",
+   "notes": "Fresh Pons V2 launch (~4h old at scoring). No website, no X account found, no DexScreener page (pairs:null), zero mentions on X/web (all GZERO hits are unrelated Solana GroundZero and Base GZERO tickers), zero IG/Threads/FB posts. 13 buyers organic but all in a 4.5-min launch burst, then ~4h silence. Deployer never bought, no team engagement. Ticker $GZERO collides with existing tokens - zero clean spread for this contract. Weak-social, not scam-evidence."
   }
  ],
  "decisions": [
@@ -467513,7 +467635,25 @@
    "gate": "n/a-tick-note",
    "rec": null,
    "at": "2026-10-11T11:19:55Z",
-   "note": "flock-decision run 2026-10-11 07:19 EDT: 921 entries, 0 unprocessed candidates, 0 new since last tick. fast-lane dedup: 2 open (Ollie 0xd08a0e4d, SAFU 0xc85e9f74), no double-buy risk. whale feed: no fresh 2-whale EOA convergence (VORTA 11:16Z = single real whale $128k, second leg non-whale to contract; SWARM legs $3-8k sub-whale, no convergence). no executions."
+   "note": "flock-decision run 2026-10-11 07:19 EDT: 921 entries, 0 unprocessed candidates, 0 new since last tick. fast-lane dedup: 2 open (Ollie 0xd08a0e4d, SAFU 0xc85e9f74), no double-buy risk. whale feed: no fresh 2-whale EOA convergence (VORTA 11:16Z = single real whale $128k, second leg non-whale to contract; SWARM legs $3-8k sub-whale, no convergence). no executions.",
+   "processed": true,
+   "processed_at": "2026-10-11T11:20:43Z"
+  },
+  {
+   "contract": "flock-decision-tick-note",
+   "gate": "n/a-tick-note",
+   "rec": null,
+   "at": "2026-10-11T11:20:43Z",
+   "processed": true,
+   "note": "flock-decision run 2026-10-11 07:20 EDT: 922 entries, 0 unprocessed candidates, 0 new since 07:19 tick (HHH/GEAR/DITHERED/Teapot all social-skip-decided). fast-lane dedup: 2 open (Ollie 0xd08a0e4d, SAFU 0xc85e9f74), no double-buy risk. whale feed: nothing newer than 11:16:15Z (VORTA 2-leg convergence already cleared as single-whale at 07:19; SWARM sub-whale). no executions."
+  },
+  {
+   "contract": "flock-decision-tick-note",
+   "gate": "n/a-tick-note",
+   "rec": null,
+   "at": "2026-10-11T11:21:43Z",
+   "processed": false,
+   "note": "flock-decision run 2026-10-11 07:21 EDT: 923 entries, 0 unprocessed candidates, 0 new since 07:20 tick. fast-lane dedup: 2 open (Ollie 0xd08a0e4d, SAFU 0xc85e9f74), no double-buy risk. whale feed: nothing newer than 11:16:15Z (VORTA cleared single-whale, SWARM sub-whale at 07:19). no executions."
   }
  ],
  "tracking": {
@@ -728603,8 +728743,8 @@
  ],
  "last_activity": {
   "scout": "2026-10-11T11:19:34.714Z",
-  "hymn": "2026-10-11T11:17:53.216Z",
-  "scorer": "2026-10-11T11:13:00-04:00",
+  "hymn": "2026-10-11T11:22:25.283Z",
+  "scorer": "2026-10-11T11:22:28.445555Z",
   "snug": null,
   "cardigan": null
  },
@@ -728777,7 +728917,7 @@
   "realized_pnl_pct_total": 1.736070922559096
  },
  "paper_trades": {
-  "as_of": "2026-10-11T11:17:19.221Z",
+  "as_of": "2026-10-11T11:22:11.637Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -728796,7 +728936,7 @@
     "seeded": true,
     "score": 66,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01263,
+    "last_price_usd": 0.01272,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -728807,8 +728947,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0009921671018276767,
-    "unrealized_pnl_pct": 9.921671018276768
+    "unrealized_pnl_eth": 0.0010704960835509136,
+    "unrealized_pnl_pct": 10.704960835509137
    },
    {
     "id": "pt-muzwwuzb-27",
@@ -728819,7 +728959,7 @@
     "seeded": true,
     "score": 63,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01263,
+    "last_price_usd": 0.01272,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -728830,8 +728970,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0009921671018276767,
-    "unrealized_pnl_pct": 9.921671018276768
+    "unrealized_pnl_eth": 0.0010704960835509136,
+    "unrealized_pnl_pct": 10.704960835509137
    },
    {
     "id": "pt-mv02u5pe-52",
@@ -728865,7 +729005,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.358,
+    "last_price_usd": 0.3581,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -728876,8 +729016,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00029031330842196114,
-    "unrealized_pnl_pct": 2.9031330842196112
+    "unrealized_pnl_eth": 0.00029318769761425666,
+    "unrealized_pnl_pct": 2.9318769761425667
    },
    {
     "id": "pt-mv03wwab-54",
@@ -728911,7 +729051,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.358,
+    "last_price_usd": 0.3581,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -728922,8 +729062,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0001445168603003677,
-    "unrealized_pnl_pct": 1.445168603003677
+    "unrealized_pnl_eth": 0.00014735052422782503,
+    "unrealized_pnl_pct": 1.4735052422782502
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -728934,7 +729074,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.358,
+    "last_price_usd": 0.3581,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -728945,8 +729085,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00015026935072299353,
-    "unrealized_pnl_pct": 1.5026935072299352
+    "unrealized_pnl_eth": 0.00015310462149135118,
+    "unrealized_pnl_pct": 1.5310462149135118
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -728957,7 +729097,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.358,
+    "last_price_usd": 0.3581,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -728968,8 +729108,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00013303141805830697,
-    "unrealized_pnl_pct": 1.3303141805830698
+    "unrealized_pnl_eth": 0.0001358618737616757,
+    "unrealized_pnl_pct": 1.3586187376167569
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -728980,7 +729120,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.358,
+    "last_price_usd": 0.3581,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -728991,8 +729131,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00012729844413012837,
-    "unrealized_pnl_pct": 1.2729844413012836
+    "unrealized_pnl_eth": 0.00013012729844412928,
+    "unrealized_pnl_pct": 1.301272984441293
    }
   ],
   "closed_recent": [],

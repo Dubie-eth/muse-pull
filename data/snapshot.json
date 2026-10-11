@@ -1,116 +1,11 @@
 {
- "updated_at": "2026-10-11T15:52:10.043Z",
+ "updated_at": "2026-10-11T15:53:33.842Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-11T15:25:28.655Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "NoahAi NAI",
-   "muse": "",
-   "contract": "0x64a83a01163fb5f06185876b6c307352fdeab1c8",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x43d4545d38fff191e803e4e1604e14b7425cae0b8b38ec7acb732eb194601152",
-   "block": 85933617,
-   "curve": "0x54c2ce89a711bd7d4a6576ac1f60048ffe5cd5e7",
-   "deployer": "0x3999ef8fe2c4158ebc14aa1b1b9a7fcad7701ac8",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85933617 (tx 0x43d4545d38fff191e803e4e1604e14b7425cae0b8b38ec7acb732eb194601152); name=NoahAi symbol=NAI curve=0x54c2ce89a711bd7d4a6576ac1f60048ffe5cd5e7 deployer=0x3999ef8fe2c4158ebc14aa1b1b9a7fcad7701ac8. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
-   "gate_status": "gate_failed",
-   "gate_checked_at": "2026-10-11T15:26:53.111Z",
-   "gate_reasons": [
-    "curve-collected ETH ~0.0003 < 0.01 floor (pre-graduation venue)"
-   ],
-   "gate_warnings": [
-    "thin holder data (3 addresses in 12k-block window)",
-    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-   ],
-   "gate_detail": {
-    "checks": {
-     "owner-powers": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no owner(); no dangerous selectors in bytecode"
-      ],
-      "detail": {
-       "selectors": {
-        "mint": [],
-        "pause": [],
-        "blacklist": [],
-        "fee": []
-       },
-       "owner": null
-      }
-     },
-     "proxy": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [],
-      "notes": [
-       "no proxy admin/beacon slots set; not an upgradeable proxy"
-      ],
-      "detail": {}
-     },
-     "pons-curve": {
-      "pass": false,
-      "reasons": [
-       "curve-collected ETH ~0.0003 < 0.01 floor (pre-graduation venue)"
-      ],
-      "warnings": [],
-      "notes": [],
-      "detail": {
-       "curve": "0x54c2ce89a711bd7d4a6576ac1f60048ffe5cd5e7",
-       "phase": "pre",
-       "curvePct": 100,
-       "curveCodeBytes": 10229,
-       "curveEth": 0.000325877111040454
-      }
-     },
-     "concentration": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "thin holder data (3 addresses in 12k-block window)"
-      ],
-      "notes": [
-       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
-      ],
-      "detail": {
-       "supply": "1000000000000000000000000000",
-       "addrsSeen": 3,
-       "top10EoaBps": 0,
-       "top1EoaBps": 0,
-       "top10": [],
-       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
-      }
-     },
-     "deployer-history": {
-      "pass": true,
-      "reasons": [],
-      "warnings": [
-       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
-      ],
-      "notes": [],
-      "detail": {}
-     }
-    },
-    "ponsPhase": {
-     "phase": "pre",
-     "curvePct": 100
-    }
-   },
-   "fast_lane": {
-    "action": "no-buy",
-    "reason": "gate-gate_failed",
-    "gate": "gate_failed"
-   }
-  },
   {
    "found_at": "2026-10-11T15:25:30.561Z",
    "scout": "pons-family",
@@ -1013,7 +908,10 @@
     "liqEth": 0.10767,
     "venue": "curve",
     "curve": "0xdbea407d38f8d56f56137d59a7133b9a62a74b96"
-   }
+   },
+   "investigated": true,
+   "investigated_at": "2026-10-11T15:52:26.746Z",
+   "investigation": "see investigation-queue.json"
   },
   {
    "found_at": "2026-10-11T15:35:19.218Z",
@@ -1593,7 +1491,10 @@
     "liqEth": 0.15593823665,
     "venue": "curve",
     "curve": "0xba424a5eebacf3df18440452b2b971848557961b"
-   }
+   },
+   "investigated": true,
+   "investigated_at": "2026-10-11T15:52:26.746Z",
+   "investigation": "see investigation-queue.json"
   },
   {
    "found_at": "2026-10-11T15:35:42.109Z",
@@ -2219,9 +2120,20 @@
    "tx_hash": "0x18cf3cded69e1737b7ad34d9088cac6014ca29e9adce10da58558ac85bc1f1e3",
    "block": 85950252,
    "detail": "new contract deployed in block 85950252"
+  },
+  {
+   "found_at": "2026-10-11T15:52:32.738Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xc43158c7915419ad7576c21d3065105a253a2f21",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x81ff371297067d50755c20e7e6ac7058d9f2f0bdd32092157919a68af99ce27b",
+   "block": 85951607,
+   "detail": "new contract deployed in block 85951607"
   }
  ],
- "scout_queue_total": 2932,
+ "scout_queue_total": 2933,
  "investigations": [
   {
    "candidate": {
@@ -260004,6 +259916,412 @@
    "verdict": "skip",
    "verdict_note": "Windrose WINDROSE: 17 transfers / 10 holders in ~6h, curve 0.0008 ETH vs 0.031 at eval (~97% drained). stale and drained. fast_lane agent-veto. skip.",
    "social_scored_at": "2026-10-11T15:46:40.870Z"
+  },
+  {
+   "investigated_at": "2026-10-11T15:52:26.746Z",
+   "candidate": {
+    "contract": "0xa3c9b6620e6291ef8afd873e7a183324ec64b36d",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "source": "onchain",
+    "type": "contract",
+    "detail": "new contract deployed in block 85416551",
+    "block": 85416551,
+    "found_at": "2026-10-11T00:25:49.191Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T15:30:59.172Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "none — 0 transfers / 0 holders in gate's 12k-block window; inert since deploy (block 85416551, ~15h ago); no liquidity venue",
+   "social_signal": "weak — unnamed contract, no name/symbol to search; candidate X searches conserved this run (X credit budget)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "leg": "fresh",
+    "x_reads_this_run": 1,
+    "sol_usd": 109.67,
+    "sol_24h_change_pct": -0.64,
+    "sol_7d_change_pct": -8.1,
+    "pumpfun_momentum": "stale — scout feed silent since 2026-10-08; pump-fun-seen.json ~2 days old",
+    "x_summary": "10 recent solana/memecoin tweets; shill-spam heavy ($HAMSTR/$LARP/$ROSE), no exploit or FUD news",
+    "risk": "neutral-soft",
+    "why": "SOL flat (-0.6% 24h) after a -8.1% 7d drift; no catalyst in the X sample; X feed is noise, not organic heat"
+   },
+   "verdict": "skip",
+   "verdict_note": "inert ERC20 batch (deployed blocks 85416551-85418072, ~00:25-00:27Z); no pool, no holders, no transfers; not a tradeable launch; nothing for the social/scorer stages to grade"
+  },
+  {
+   "investigated_at": "2026-10-11T15:52:26.746Z",
+   "candidate": {
+    "contract": "0xefb0bec4b9898f059318f9c9496a472f2557e62a",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "source": "onchain",
+    "type": "contract",
+    "detail": "new contract deployed in block 85416986",
+    "block": 85416986,
+    "found_at": "2026-10-11T00:26:32.351Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T15:31:31.385Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "none — 0 transfers / 0 holders in gate's 12k-block window; inert since deploy (block 85416986, ~15h ago); no liquidity venue",
+   "social_signal": "weak — unnamed contract, no name/symbol to search; candidate X searches conserved this run (X credit budget)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "leg": "fresh",
+    "x_reads_this_run": 1,
+    "sol_usd": 109.67,
+    "sol_24h_change_pct": -0.64,
+    "sol_7d_change_pct": -8.1,
+    "pumpfun_momentum": "stale — scout feed silent since 2026-10-08; pump-fun-seen.json ~2 days old",
+    "x_summary": "10 recent solana/memecoin tweets; shill-spam heavy ($HAMSTR/$LARP/$ROSE), no exploit or FUD news",
+    "risk": "neutral-soft",
+    "why": "SOL flat (-0.6% 24h) after a -8.1% 7d drift; no catalyst in the X sample; X feed is noise, not organic heat"
+   },
+   "verdict": "skip",
+   "verdict_note": "inert ERC20 batch (deployed blocks 85416551-85418072, ~00:25-00:27Z); no pool, no holders, no transfers; not a tradeable launch; nothing for the social/scorer stages to grade"
+  },
+  {
+   "investigated_at": "2026-10-11T15:52:26.746Z",
+   "candidate": {
+    "contract": "0x2c846e7090ff9ae416c4bddafd868c657a64f283",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "source": "onchain",
+    "type": "contract",
+    "detail": "new contract deployed in block 85417065",
+    "block": 85417065,
+    "found_at": "2026-10-11T00:26:43.587Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T15:31:47.411Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "none — 0 transfers / 0 holders in gate's 12k-block window; inert since deploy (block 85417065, ~15h ago); no liquidity venue",
+   "social_signal": "weak — unnamed contract, no name/symbol to search; candidate X searches conserved this run (X credit budget)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "leg": "fresh",
+    "x_reads_this_run": 1,
+    "sol_usd": 109.67,
+    "sol_24h_change_pct": -0.64,
+    "sol_7d_change_pct": -8.1,
+    "pumpfun_momentum": "stale — scout feed silent since 2026-10-08; pump-fun-seen.json ~2 days old",
+    "x_summary": "10 recent solana/memecoin tweets; shill-spam heavy ($HAMSTR/$LARP/$ROSE), no exploit or FUD news",
+    "risk": "neutral-soft",
+    "why": "SOL flat (-0.6% 24h) after a -8.1% 7d drift; no catalyst in the X sample; X feed is noise, not organic heat"
+   },
+   "verdict": "skip",
+   "verdict_note": "inert ERC20 batch (deployed blocks 85416551-85418072, ~00:25-00:27Z); no pool, no holders, no transfers; not a tradeable launch; nothing for the social/scorer stages to grade"
+  },
+  {
+   "investigated_at": "2026-10-11T15:52:26.746Z",
+   "candidate": {
+    "contract": "0xa020f14e38fc852bea32800196b8797128f56756",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "source": "onchain",
+    "type": "contract",
+    "detail": "new contract deployed in block 85417081",
+    "block": 85417081,
+    "found_at": "2026-10-11T00:26:45.168Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T15:31:56.357Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "none — 0 transfers / 0 holders in gate's 12k-block window; inert since deploy (block 85417081, ~15h ago); no liquidity venue",
+   "social_signal": "weak — unnamed contract, no name/symbol to search; candidate X searches conserved this run (X credit budget)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "leg": "fresh",
+    "x_reads_this_run": 1,
+    "sol_usd": 109.67,
+    "sol_24h_change_pct": -0.64,
+    "sol_7d_change_pct": -8.1,
+    "pumpfun_momentum": "stale — scout feed silent since 2026-10-08; pump-fun-seen.json ~2 days old",
+    "x_summary": "10 recent solana/memecoin tweets; shill-spam heavy ($HAMSTR/$LARP/$ROSE), no exploit or FUD news",
+    "risk": "neutral-soft",
+    "why": "SOL flat (-0.6% 24h) after a -8.1% 7d drift; no catalyst in the X sample; X feed is noise, not organic heat"
+   },
+   "verdict": "skip",
+   "verdict_note": "inert ERC20 batch (deployed blocks 85416551-85418072, ~00:25-00:27Z); no pool, no holders, no transfers; not a tradeable launch; nothing for the social/scorer stages to grade"
+  },
+  {
+   "investigated_at": "2026-10-11T15:52:26.746Z",
+   "candidate": {
+    "contract": "0xfc765a112e19b061f467dbeea7eef2068c2672e7",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "source": "onchain",
+    "type": "contract",
+    "detail": "new contract deployed in block 85417203",
+    "block": 85417203,
+    "found_at": "2026-10-11T00:26:56.946Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T15:32:34.712Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "none — 0 transfers / 0 holders in gate's 12k-block window; inert since deploy (block 85417203, ~15h ago); no liquidity venue",
+   "social_signal": "weak — unnamed contract, no name/symbol to search; candidate X searches conserved this run (X credit budget)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "leg": "fresh",
+    "x_reads_this_run": 1,
+    "sol_usd": 109.67,
+    "sol_24h_change_pct": -0.64,
+    "sol_7d_change_pct": -8.1,
+    "pumpfun_momentum": "stale — scout feed silent since 2026-10-08; pump-fun-seen.json ~2 days old",
+    "x_summary": "10 recent solana/memecoin tweets; shill-spam heavy ($HAMSTR/$LARP/$ROSE), no exploit or FUD news",
+    "risk": "neutral-soft",
+    "why": "SOL flat (-0.6% 24h) after a -8.1% 7d drift; no catalyst in the X sample; X feed is noise, not organic heat"
+   },
+   "verdict": "skip",
+   "verdict_note": "inert ERC20 batch (deployed blocks 85416551-85418072, ~00:25-00:27Z); no pool, no holders, no transfers; not a tradeable launch; nothing for the social/scorer stages to grade"
+  },
+  {
+   "investigated_at": "2026-10-11T15:52:26.746Z",
+   "candidate": {
+    "contract": "0xa4a6ecd7fdd4b634991b2c5365e3e4ebdaf78484",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "source": "onchain",
+    "type": "contract",
+    "detail": "new contract deployed in block 85417284",
+    "block": 85417284,
+    "found_at": "2026-10-11T00:27:08.679Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T15:44:21.916Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "actor nonce 422 — possible spray pattern (serial deployer)"
+    ]
+   },
+   "velocity": "none — 0 transfers / 0 holders in gate's 12k-block window; inert since deploy (block 85417284, ~15h ago); no liquidity venue",
+   "social_signal": "weak — unnamed contract, no name/symbol to search; candidate X searches conserved this run (X credit budget)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "leg": "fresh",
+    "x_reads_this_run": 1,
+    "sol_usd": 109.67,
+    "sol_24h_change_pct": -0.64,
+    "sol_7d_change_pct": -8.1,
+    "pumpfun_momentum": "stale — scout feed silent since 2026-10-08; pump-fun-seen.json ~2 days old",
+    "x_summary": "10 recent solana/memecoin tweets; shill-spam heavy ($HAMSTR/$LARP/$ROSE), no exploit or FUD news",
+    "risk": "neutral-soft",
+    "why": "SOL flat (-0.6% 24h) after a -8.1% 7d drift; no catalyst in the X sample; X feed is noise, not organic heat"
+   },
+   "verdict": "skip",
+   "verdict_note": "inert ERC20 batch (deployed blocks 85416551-85418072, ~00:25-00:27Z); no pool, no holders, no transfers; not a tradeable launch; nothing for the social/scorer stages to grade"
+  },
+  {
+   "investigated_at": "2026-10-11T15:52:26.746Z",
+   "candidate": {
+    "contract": "0x3a141ddb09c3c37f2a84afbdbcef12cdd63aa0bb",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "source": "onchain",
+    "type": "contract",
+    "detail": "new contract deployed in block 85417311",
+    "block": 85417311,
+    "found_at": "2026-10-11T00:27:12.207Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T15:45:35.997Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "none — 0 transfers / 0 holders in gate's 12k-block window; inert since deploy (block 85417311, ~15h ago); no liquidity venue",
+   "social_signal": "weak — unnamed contract, no name/symbol to search; candidate X searches conserved this run (X credit budget)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "leg": "fresh",
+    "x_reads_this_run": 1,
+    "sol_usd": 109.67,
+    "sol_24h_change_pct": -0.64,
+    "sol_7d_change_pct": -8.1,
+    "pumpfun_momentum": "stale — scout feed silent since 2026-10-08; pump-fun-seen.json ~2 days old",
+    "x_summary": "10 recent solana/memecoin tweets; shill-spam heavy ($HAMSTR/$LARP/$ROSE), no exploit or FUD news",
+    "risk": "neutral-soft",
+    "why": "SOL flat (-0.6% 24h) after a -8.1% 7d drift; no catalyst in the X sample; X feed is noise, not organic heat"
+   },
+   "verdict": "skip",
+   "verdict_note": "inert ERC20 batch (deployed blocks 85416551-85418072, ~00:25-00:27Z); no pool, no holders, no transfers; not a tradeable launch; nothing for the social/scorer stages to grade"
+  },
+  {
+   "investigated_at": "2026-10-11T15:52:26.746Z",
+   "candidate": {
+    "contract": "0xb0aa3b3004201a193bc47c84a94ae915867956f6",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "source": "onchain",
+    "type": "contract",
+    "detail": "new contract deployed in block 85417510",
+    "block": 85417510,
+    "found_at": "2026-10-11T00:27:54.820Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T15:47:17.312Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "none — 0 transfers / 0 holders in gate's 12k-block window; inert since deploy (block 85417510, ~15h ago); no liquidity venue",
+   "social_signal": "weak — unnamed contract, no name/symbol to search; candidate X searches conserved this run (X credit budget)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "leg": "fresh",
+    "x_reads_this_run": 1,
+    "sol_usd": 109.67,
+    "sol_24h_change_pct": -0.64,
+    "sol_7d_change_pct": -8.1,
+    "pumpfun_momentum": "stale — scout feed silent since 2026-10-08; pump-fun-seen.json ~2 days old",
+    "x_summary": "10 recent solana/memecoin tweets; shill-spam heavy ($HAMSTR/$LARP/$ROSE), no exploit or FUD news",
+    "risk": "neutral-soft",
+    "why": "SOL flat (-0.6% 24h) after a -8.1% 7d drift; no catalyst in the X sample; X feed is noise, not organic heat"
+   },
+   "verdict": "skip",
+   "verdict_note": "inert ERC20 batch (deployed blocks 85416551-85418072, ~00:25-00:27Z); no pool, no holders, no transfers; not a tradeable launch; nothing for the social/scorer stages to grade"
+  },
+  {
+   "investigated_at": "2026-10-11T15:52:26.746Z",
+   "candidate": {
+    "contract": "0x0604d85f2a754c6048b84b62afc7beab4d6467e3",
+    "chain": "robinhood",
+    "scout": "block-watcher",
+    "source": "onchain",
+    "type": "contract",
+    "detail": "new contract deployed in block 85418072",
+    "block": 85418072,
+    "found_at": "2026-10-11T00:28:18.889Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T15:47:39.827Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "none — 0 transfers / 0 holders in gate's 12k-block window; inert since deploy (block 85418072, ~15h ago); no liquidity venue",
+   "social_signal": "weak — unnamed contract, no name/symbol to search; candidate X searches conserved this run (X credit budget)",
+   "money_flow": "none — no holders, no V2 pair, no V4 pools; no wallets minting",
+   "solana_pulse": {
+    "leg": "fresh",
+    "x_reads_this_run": 1,
+    "sol_usd": 109.67,
+    "sol_24h_change_pct": -0.64,
+    "sol_7d_change_pct": -8.1,
+    "pumpfun_momentum": "stale — scout feed silent since 2026-10-08; pump-fun-seen.json ~2 days old",
+    "x_summary": "10 recent solana/memecoin tweets; shill-spam heavy ($HAMSTR/$LARP/$ROSE), no exploit or FUD news",
+    "risk": "neutral-soft",
+    "why": "SOL flat (-0.6% 24h) after a -8.1% 7d drift; no catalyst in the X sample; X feed is noise, not organic heat"
+   },
+   "verdict": "skip",
+   "verdict_note": "inert ERC20 batch (deployed blocks 85416551-85418072, ~00:25-00:27Z); no pool, no holders, no transfers; not a tradeable launch; nothing for the social/scorer stages to grade"
+  },
+  {
+   "investigated_at": "2026-10-11T15:52:26.746Z",
+   "candidate": {
+    "contract": "0xa151c90691782f424d62808ddfc5e2757fb33c4d",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "type": "token",
+    "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85937387 (tx 0xf5247b726f876d56d0b60e30afff0141aea5bc0fcf690cd3520be397be3dcb54); name=LetHimCook symbol=COOK curve=0xdbea407d38f8d56f56137d59a7133b9a62a74b96 deployer=0x58b4882410a8d6116dee89ca996449fde60fa862. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+    "block": 85937387,
+    "found_at": "2026-10-11T15:35:17.408Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T15:40:52.016Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time",
+     "thin holder data (4 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "5 transfers / 4 distinct recipients / 1 mint-from-zero over 12,631 blocks since launch — near-zero activity, no velocity jump",
+   "social_signal": "weak — candidate X search conserved (X credit budget); fast-lane wave-hello already found no announcements",
+   "money_flow": "thin — 4 small buyers on the curve, no whale, no attributed smart money, no bot-farm pattern; ~0.108 ETH curve liquidity",
+   "solana_pulse": {
+    "leg": "fresh",
+    "x_reads_this_run": 1,
+    "sol_usd": 109.67,
+    "sol_24h_change_pct": -0.64,
+    "sol_7d_change_pct": -8.1,
+    "pumpfun_momentum": "stale — scout feed silent since 2026-10-08; pump-fun-seen.json ~2 days old",
+    "x_summary": "10 recent solana/memecoin tweets; shill-spam heavy ($HAMSTR/$LARP/$ROSE), no exploit or FUD news",
+    "risk": "neutral-soft",
+    "why": "SOL flat (-0.6% 24h) after a -8.1% 7d drift; no catalyst in the X sample; X feed is noise, not organic heat"
+   },
+   "verdict": "skip",
+   "verdict_note": "fast lane ran the full agent round at 15:38Z on this exact candidate: wave-hello/humming-hymn/blanket-snug all SKIP → no-buy agent-veto; onchain shows nothing to overturn (5 transfers, 4 recipients)"
+  },
+  {
+   "investigated_at": "2026-10-11T15:52:26.746Z",
+   "candidate": {
+    "contract": "0x7895b099e31d0ae3dcc27e94344ea960a793c8b8",
+    "chain": "robinhood",
+    "scout": "pons-family",
+    "source": "pons-factory",
+    "type": "token",
+    "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85940030 (tx 0xb66bddf2237a5b39f9129753b39327101c9e05a2cf9c11276a845daf4f93a1dc); name=Hashlink symbol=HLINK curve=0xba424a5eebacf3df18440452b2b971848557961b deployer=0x5eb105f158a06a77a1700bc0458de5635ab03cc0. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+    "block": 85940030,
+    "found_at": "2026-10-11T15:35:41.541Z",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T15:38:09.569Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "25 transfers / 17 distinct recipients / 1 mint-from-zero over 9,988 blocks since launch — light activity, no sudden jump",
+   "social_signal": "weak — candidate X search conserved (X credit budget)",
+   "money_flow": "thin — 17 small recipients, no concentration signal, no whale, no bot-farm pattern; ~0.156 ETH curve liquidity",
+   "solana_pulse": {
+    "leg": "fresh",
+    "x_reads_this_run": 1,
+    "sol_usd": 109.67,
+    "sol_24h_change_pct": -0.64,
+    "sol_7d_change_pct": -8.1,
+    "pumpfun_momentum": "stale — scout feed silent since 2026-10-08; pump-fun-seen.json ~2 days old",
+    "x_summary": "10 recent solana/memecoin tweets; shill-spam heavy ($HAMSTR/$LARP/$ROSE), no exploit or FUD news",
+    "risk": "neutral-soft",
+    "why": "SOL flat (-0.6% 24h) after a -8.1% 7d drift; no catalyst in the X sample; X feed is noise, not organic heat"
+   },
+   "verdict": "skip",
+   "verdict_note": "fast lane ran the full agent round at 15:40Z on this exact candidate: all three agents SKIP → no-buy agent-veto; onchain shows only light retail flow, nothing to overturn"
   }
  ],
  "scores": [
@@ -756664,8 +756982,8 @@
   "reentry-watch"
  ],
  "last_activity": {
-  "scout": "2026-10-11T15:51:41.177Z",
-  "hymn": "2026-10-11T15:41:07.113Z",
+  "scout": "2026-10-11T15:52:32.738Z",
+  "hymn": "2026-10-11T15:52:26.746Z",
   "scorer": "2026-10-11T15:46:21.004Z",
   "snug": "2026-10-11T15:47:19.074529+00:00",
   "cardigan": "2026-10-11T15:47:19.074529+00:00"
@@ -756866,7 +757184,7 @@
   "realized_pnl_pct_total": -37.192259324716005
  },
  "paper_trades": {
-  "as_of": "2026-10-11T15:52:16.584Z",
+  "as_of": "2026-10-11T15:52:57.000Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,

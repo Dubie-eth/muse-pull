@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-11T04:36:51.992Z",
+ "updated_at": "2026-10-11T04:38:52.174Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
@@ -241808,6 +241808,181 @@
    "investigation_notes": "ingest stamped gate_pass without running the pons-curve check (known open defect); hymn forensics fills the gap: fails the 0.01 ETH curve floor. web search found zero mentions of STARTUPSCORE token (only pons platform news).",
    "verdict": "skip",
    "social_scored_at": "2026-10-11T04:34:10.364Z"
+  },
+  {
+   "investigated_at": "2026-10-11T04:37:47Z",
+   "candidate": {
+    "chain": "robinhood",
+    "contract": "0x7378bf21c26f9d6a5cac33d82c30d77ddd0c4ba7",
+    "name": null,
+    "ticker": null,
+    "scout": "block-watcher",
+    "detail": "new contract deployed in block 85224495",
+    "first_seen": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T04:33:30.123Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "actor nonce 499 — possible spray pattern (serial deployer)"
+    ]
+   },
+   "velocity": "n/a — not an ERC20 token: totalSupply/name/symbol all revert (empty data); runtime code present (6.3KB) but no transfers, no liquidity, no holders",
+   "social_signal": "weak — no name, no ticker, zero mentions; X leg 402-blocked",
+   "money_flow": "none — no token, no transfers; gate warned actor nonce 499 (possible serial-deployer spray pattern)",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.014,
+    "sol_price_source": "sol-price-cache.json (fresh fetch 2026-10-11T03:43Z)",
+    "pumpfun_momentum": "local feed stale (pump-fun-seen.json last write 2026-10-09T13:53Z, 675 entries) — no live momentum read",
+    "x_ecosystem": "blocked — X API returned HTTP 402 Payment Required (credits exhausted); @solana/@pumpfun/KOL check skipped",
+    "news_last_2h": "SOL $109.61 flat 24h after dropping from ~$123; 470,087 SOL (~$51M) moved to Coinbase 7h ago (sell-off fear); spot SOL ETF inflows collapsed 98.7% ($188.22M -> $2.43M/wk); network fundamentals strong (record $3.06B DEX day Oct 3, +124% user growth, Samsung partnership); macro mild headwind (BTC failed near $87k)",
+    "risk": "MIXED leaning risk-off for new memecoin entries — not a dump, but the institutional bid has evaporated; no tailwind for fresh launches",
+    "note": "all 5 candidates this tick are Robinhood-chain EVM (0 Solana/pump.fun in queue); pulse attached as standing context, neutral for these"
+   },
+   "verdict": "skip",
+   "verdict_note": "raw block-watcher deploy in block 85224495; not a tradeable asset; spray-pattern deployer warning"
+  },
+  {
+   "investigated_at": "2026-10-11T04:37:47Z",
+   "candidate": {
+    "chain": "robinhood",
+    "contract": "0x1f76da83b47b51c0a2ccafceecaf1bbb6747cf0d",
+    "name": "Dropoutden DROPD",
+    "ticker": null,
+    "scout": "pons-family",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85207581 (tx 0xaa6e6dd6bb687ce08145a7a9221783f3e368abe133f8cbe6ae986d19b739c764); name=Dropoutden symbol=DROPD creator=0xe58dff0d829ff384b3eea41ad11fbc62a3595642. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "first_seen": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T04:33:49.776Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "0 buys in ~10.6h since launch (block 85207581); own pons-curve forensics: curve 0xe58dff0d829ff384b3eea41ad11fbc62a3595642 holds 100% of supply, 0 ETH collected, 0 CurveSell events; gate found 0 holders in 12k-block window, no V2 pair, no V4 pools",
+   "social_signal": "weak — web search for 'Dropoutden DROPD pons' returned zero relevant hits (only unrelated DropD Network/Dropout Bear); X leg 402-blocked",
+   "money_flow": "none — zero buy flow on curve",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.014,
+    "sol_price_source": "sol-price-cache.json (fresh fetch 2026-10-11T03:43Z)",
+    "pumpfun_momentum": "local feed stale (pump-fun-seen.json last write 2026-10-09T13:53Z, 675 entries) — no live momentum read",
+    "x_ecosystem": "blocked — X API returned HTTP 402 Payment Required (credits exhausted); @solana/@pumpfun/KOL check skipped",
+    "news_last_2h": "SOL $109.61 flat 24h after dropping from ~$123; 470,087 SOL (~$51M) moved to Coinbase 7h ago (sell-off fear); spot SOL ETF inflows collapsed 98.7% ($188.22M -> $2.43M/wk); network fundamentals strong (record $3.06B DEX day Oct 3, +124% user growth, Samsung partnership); macro mild headwind (BTC failed near $87k)",
+    "risk": "MIXED leaning risk-off for new memecoin entries — not a dump, but the institutional bid has evaporated; no tailwind for fresh launches",
+    "note": "all 5 candidates this tick are Robinhood-chain EVM (0 Solana/pump.fun in queue); pulse attached as standing context, neutral for these"
+   },
+   "verdict": "skip",
+   "verdict_note": "pons V2 launch Dropoutden/DROPD; ingest stamped gate_pass WITHOUT running the pons-curve check (known defect) — forensics run manually here; fails the 0.01 ETH curve floor on merit"
+  },
+  {
+   "investigated_at": "2026-10-11T04:37:47Z",
+   "candidate": {
+    "chain": "robinhood",
+    "contract": "0xab9741c46223231a5ee81a200572ee0ff39b20f5",
+    "name": null,
+    "ticker": null,
+    "scout": "block-watcher",
+    "detail": "new contract deployed in block 85226211",
+    "first_seen": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T04:34:07.418Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "n/a — not an ERC20 token: totalSupply/name/symbol all revert (empty data); runtime code present (1.65KB) but no transfers, no liquidity, no holders",
+   "social_signal": "weak — no name, no ticker, zero mentions; X leg 402-blocked",
+   "money_flow": "none — no token, no transfers; gate warned deployer undiscoverable",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.014,
+    "sol_price_source": "sol-price-cache.json (fresh fetch 2026-10-11T03:43Z)",
+    "pumpfun_momentum": "local feed stale (pump-fun-seen.json last write 2026-10-09T13:53Z, 675 entries) — no live momentum read",
+    "x_ecosystem": "blocked — X API returned HTTP 402 Payment Required (credits exhausted); @solana/@pumpfun/KOL check skipped",
+    "news_last_2h": "SOL $109.61 flat 24h after dropping from ~$123; 470,087 SOL (~$51M) moved to Coinbase 7h ago (sell-off fear); spot SOL ETF inflows collapsed 98.7% ($188.22M -> $2.43M/wk); network fundamentals strong (record $3.06B DEX day Oct 3, +124% user growth, Samsung partnership); macro mild headwind (BTC failed near $87k)",
+    "risk": "MIXED leaning risk-off for new memecoin entries — not a dump, but the institutional bid has evaporated; no tailwind for fresh launches",
+    "note": "all 5 candidates this tick are Robinhood-chain EVM (0 Solana/pump.fun in queue); pulse attached as standing context, neutral for these"
+   },
+   "verdict": "skip",
+   "verdict_note": "raw block-watcher deploy in block 85226211; not a tradeable asset"
+  },
+  {
+   "investigated_at": "2026-10-11T04:37:47Z",
+   "candidate": {
+    "chain": "robinhood",
+    "contract": "0xa70271d01dc9b4af4a795434c31d08f827981265",
+    "name": "The Horizon VOID",
+    "ticker": null,
+    "scout": "pons-family",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85207993 (tx 0xd9f13611c9223936d8164296db518bf55289c7192309fdc9c14a02e4e4ab1168); name=The Horizon symbol=VOID creator=0x373830734f375b4a94986ee837fb26c9cd2f6d67. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "first_seen": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T04:34:17.821Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "dust only in ~10.6h since launch (block 85207993); own pons-curve forensics: curve 0x373830734f375b4a94986ee837fb26c9cd2f6d67 holds 100% of supply, 0.0027 ETH collected (< 0.01 floor), 0 CurveSell events; gate found 0 holders in 12k-block window, no V2 pair, no V4 pools",
+   "social_signal": "weak — web search for 'The Horizon VOID token pons' returned zero relevant hits; X leg 402-blocked",
+   "money_flow": "none — 0.0027 ETH of buy flow is dust, below the 0.01 ETH curve floor",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.014,
+    "sol_price_source": "sol-price-cache.json (fresh fetch 2026-10-11T03:43Z)",
+    "pumpfun_momentum": "local feed stale (pump-fun-seen.json last write 2026-10-09T13:53Z, 675 entries) — no live momentum read",
+    "x_ecosystem": "blocked — X API returned HTTP 402 Payment Required (credits exhausted); @solana/@pumpfun/KOL check skipped",
+    "news_last_2h": "SOL $109.61 flat 24h after dropping from ~$123; 470,087 SOL (~$51M) moved to Coinbase 7h ago (sell-off fear); spot SOL ETF inflows collapsed 98.7% ($188.22M -> $2.43M/wk); network fundamentals strong (record $3.06B DEX day Oct 3, +124% user growth, Samsung partnership); macro mild headwind (BTC failed near $87k)",
+    "risk": "MIXED leaning risk-off for new memecoin entries — not a dump, but the institutional bid has evaporated; no tailwind for fresh launches",
+    "note": "all 5 candidates this tick are Robinhood-chain EVM (0 Solana/pump.fun in queue); pulse attached as standing context, neutral for these"
+   },
+   "verdict": "skip",
+   "verdict_note": "pons V2 launch The Horizon/VOID; ingest stamped gate_pass WITHOUT running the pons-curve check (known defect) — forensics run manually here; fails the curve floor"
+  },
+  {
+   "investigated_at": "2026-10-11T04:37:47Z",
+   "candidate": {
+    "chain": "robinhood",
+    "contract": "0x06b6872326f7017b639b88a315af06c567a99bee",
+    "name": "Argmaxlane ARGMX",
+    "ticker": null,
+    "scout": "pons-family",
+    "detail": "new pons launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 85208027 (tx 0x1f4574d8123606b87086009724d75efdc1e89a63d8c1eb17a29475b9a5b1a62f); name=Argmaxlane symbol=ARGMX creator=0xc8ceef48becd81b58be5b5690e2f769857dd767d. no muse attribution seen; needs Humming Hymn investigation for creator/holders.",
+    "first_seen": null,
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-11T04:34:28.471Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "0 buys in ~10.6h since launch (block 85208027); own pons-curve forensics: curve 0xc8ceef48becd81b58be5b5690e2f769857dd767d holds 100% of supply, 0 ETH collected, 0 CurveSell events; gate found 0 holders in 12k-block window, no V2 pair, no V4 pools",
+   "social_signal": "weak — web search for 'Argmaxlane ARGMX' returned zero relevant hits (only Argentine fan token / Aramax); X leg 402-blocked",
+   "money_flow": "none — zero buy flow on curve",
+   "solana_pulse": {
+    "sol_usd": 109.61,
+    "sol_24h_change_pct": -0.014,
+    "sol_price_source": "sol-price-cache.json (fresh fetch 2026-10-11T03:43Z)",
+    "pumpfun_momentum": "local feed stale (pump-fun-seen.json last write 2026-10-09T13:53Z, 675 entries) — no live momentum read",
+    "x_ecosystem": "blocked — X API returned HTTP 402 Payment Required (credits exhausted); @solana/@pumpfun/KOL check skipped",
+    "news_last_2h": "SOL $109.61 flat 24h after dropping from ~$123; 470,087 SOL (~$51M) moved to Coinbase 7h ago (sell-off fear); spot SOL ETF inflows collapsed 98.7% ($188.22M -> $2.43M/wk); network fundamentals strong (record $3.06B DEX day Oct 3, +124% user growth, Samsung partnership); macro mild headwind (BTC failed near $87k)",
+    "risk": "MIXED leaning risk-off for new memecoin entries — not a dump, but the institutional bid has evaporated; no tailwind for fresh launches",
+    "note": "all 5 candidates this tick are Robinhood-chain EVM (0 Solana/pump.fun in queue); pulse attached as standing context, neutral for these"
+   },
+   "verdict": "skip",
+   "verdict_note": "pons V2 launch Argmaxlane/ARGMX; ingest stamped gate_pass WITHOUT running the pons-curve check (known defect) — forensics run manually here; fails the 0.01 ETH curve floor on merit"
   }
  ],
  "scores": [
@@ -683234,7 +683409,7 @@
  ],
  "last_activity": {
   "scout": "2026-10-11T04:36:47.739Z",
-  "hymn": "2026-10-11T04:32:20.419Z",
+  "hymn": "2026-10-11T04:37:47Z",
   "scorer": "2026-10-11T04:34:01.410Z",
   "snug": "2026-10-11T04:35:45.000Z",
   "cardigan": "2026-10-11T04:35:45.000Z"
@@ -683304,7 +683479,7 @@
     "tx_hash": "0x750f3d68427ad7be0a12ca6aaf1ab7d1829802294b36090161aaf08025799dbd",
     "entered_at": "2026-10-08T20:15:30.720Z",
     "entry_price_usd": 0.01156,
-    "current_price_usd": 0.01226,
+    "current_price_usd": 0.01224,
     "pnl_pct": 0,
     "amount_tokens": 1055.2497206937642,
     "amount_eth_in": 0.005,
@@ -683331,8 +683506,8 @@
     "tx_hash": "0xcd209345f031f3ae4337c6feea42e3d8e01ac92d777205864e60ab2dd0bea993",
     "entered_at": "2026-10-08T20:58:38.421Z",
     "entry_price_usd": 0.011554,
-    "current_price_usd": 0.01226,
-    "pnl_pct": 6.110437943569327,
+    "current_price_usd": 0.01224,
+    "pnl_pct": 5.937337718539027,
     "amount_tokens": 1055.8207,
     "amount_eth_in": 0.005,
     "score": 62,
@@ -683405,10 +683580,10 @@
     "exit_price_usd": null
    }
   ],
-  "realized_pnl_pct_total": -6.534608452531528
+  "realized_pnl_pct_total": -6.707708677561828
  },
  "paper_trades": {
-  "as_of": "2026-10-11T04:32:08.428Z",
+  "as_of": "2026-10-11T04:37:08.399Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -683496,7 +683671,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3522,
+    "last_price_usd": 0.3527,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -683507,8 +683682,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00012359873526875508,
-    "unrealized_pnl_pct": 1.2359873526875509
+    "unrealized_pnl_eth": 0.0001379706812302395,
+    "unrealized_pnl_pct": 1.3797068123023948
    },
    {
     "id": "pt-mv03wwab-54",
@@ -683519,7 +683694,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 80.94,
-    "last_price_usd": 85.36,
+    "last_price_usd": 85.37,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -683530,8 +683705,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 5819198,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0005460835186557956,
-    "unrealized_pnl_pct": 5.460835186557955
+    "unrealized_pnl_eth": 0.000547319001729678,
+    "unrealized_pnl_pct": 5.473190017296781
    },
    {
     "id": "pt-mv0blxia-72",
@@ -683542,7 +683717,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.3522,
+    "last_price_usd": 0.3527,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -683553,8 +683728,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00001983564749220679,
-    "unrealized_pnl_pct": -0.19835647492206787
+    "unrealized_pnl_eth": -0.000005667327854915749,
+    "unrealized_pnl_pct": -0.05667327854915749
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -683565,7 +683740,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.3522,
+    "last_price_usd": 0.3527,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -683576,8 +683751,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00001417635384179161,
-    "unrealized_pnl_pct": -0.1417635384179161
+    "unrealized_pnl_eth": 0,
+    "unrealized_pnl_pct": 0
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -683588,7 +683763,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.3522,
+    "last_price_usd": 0.3527,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -683599,8 +683774,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00003113501273705022,
-    "unrealized_pnl_pct": -0.31135012737050216
+    "unrealized_pnl_eth": -0.000016982734220208907,
+    "unrealized_pnl_pct": -0.16982734220208906
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -683611,7 +683786,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.3522,
+    "last_price_usd": 0.3527,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -683622,8 +683797,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00003677510608203538,
-    "unrealized_pnl_pct": -0.3677510608203538
+    "unrealized_pnl_eth": -0.00002263083451202186,
+    "unrealized_pnl_pct": -0.22630834512021858
    }
   ],
   "closed_recent": [],

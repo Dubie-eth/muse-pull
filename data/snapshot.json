@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-12T01:37:29.447Z",
+ "updated_at": "2026-10-12T01:39:49.196Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
@@ -2782,7 +2782,21 @@
     "curve": "0xfe3551244b61e14b7f760a9e70d55fbb35a7e43a"
    },
    "investigated": true,
-   "investigated_at": "2026-10-12T01:31:22.380390+00:00"
+   "investigated_at": "2026-10-12T01:31:22.380390+00:00",
+   "fast_lane_recheck": {
+    "action": "no-buy",
+    "reason": "agent-veto",
+    "gate": "gate_pass",
+    "agents": [
+     "wave-hello:SKIP",
+     "humming-hymn:BUY",
+     "blanket-snug:SKIP"
+    ],
+    "veto": true,
+    "liqEth": 0.8720726820623994,
+    "venue": "curve",
+    "curve": "0xfe3551244b61e14b7f760a9e70d55fbb35a7e43a"
+   }
   },
   {
    "found_at": "2026-10-12T01:16:35.316Z",
@@ -3771,7 +3785,102 @@
    "block": 86291084,
    "curve": "0x4087e7556acbf645c111786f3a89d1713ed6c884",
    "deployer": "0x15e5142c688c5f79c4ce99992ec43dbaac576d12",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86291084 (tx 0xe1529f8c8ced4773bbe98ce2536f4008f4ec4bb5decbbe921158adaf354ec728); name=Jeet Fund symbol=JEET curve=0x4087e7556acbf645c111786f3a89d1713ed6c884 deployer=0x15e5142c688c5f79c4ce99992ec43dbaac576d12. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86291084 (tx 0xe1529f8c8ced4773bbe98ce2536f4008f4ec4bb5decbbe921158adaf354ec728); name=Jeet Fund symbol=JEET curve=0x4087e7556acbf645c111786f3a89d1713ed6c884 deployer=0x15e5142c688c5f79c4ce99992ec43dbaac576d12. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-12T01:38:14.982Z",
+   "gate_reasons": [
+    "curve-collected ETH ~0.0035 < 0.01 floor (pre-graduation venue)"
+   ],
+   "gate_warnings": [
+    "thin holder data (4 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": false,
+      "reasons": [
+       "curve-collected ETH ~0.0035 < 0.01 floor (pre-graduation venue)"
+      ],
+      "warnings": [],
+      "notes": [],
+      "detail": {
+       "curve": "0x4087e7556acbf645c111786f3a89d1713ed6c884",
+       "phase": "pre",
+       "curvePct": 99.79,
+       "curveCodeBytes": 10229,
+       "curveEth": 0.003471951339811745
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (4 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.20% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 4,
+       "top10EoaBps": 20,
+       "top1EoaBps": 20,
+       "top10": [
+        {
+         "addr": "0xf4d0b74de896b3b666369fd738c0f6d034cd7e92",
+         "bal": "2041942575502900181656922"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "pre",
+     "curvePct": 99.79
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "gate-gate_failed",
+    "gate": "gate_failed"
+   }
   }
  ],
  "scout_queue_total": 4068,
@@ -267595,15 +267704,16 @@
    "snug_broken_down": true,
    "snug_processed_at": "2026-10-11T22:34:17.788664+00:00",
    "snug_broken_down_at": "2026-10-11T22:34:17.788664+00:00",
-   "snug_breakdown_grade": "P",
-   "snug_breakdown_total": null,
+   "snug_breakdown_grade": "F",
+   "snug_breakdown_total": 0,
    "snug_breakdown_durability": "weak",
    "snug_breakdown_recommendation": "skip",
    "social_scored_at": "2026-10-11T22:35:36.632Z",
-   "snug_rebroken_down_at": "2026-10-11T22:55:42.592916+00:00",
-   "snug_rebroken_down_reason": "breakdown cited P/skip; newest score F/0 confirms skip - not re-run (reviewed 2026-10-11 18:44 EDT tick)",
-   "snug_rebroken_down_resolution": "marked processed without new breakdown",
-   "snug_rebroken_down_resolved_at": "2026-10-11T22:55:42.592916+00:00"
+   "snug_rebroken_down_at": "2026-10-12T01:38:31.378944+00:00",
+   "snug_rebroken_down_reason": "trigger: social scores ready — fresh F(0) score at 2026-10-11T22:35:11.662Z arrived after the 2026-10-11T22:34:17.788664+00:00 P breakdown. score notes show NO affirmative bad evidence (absence of footprint at >60 min age, not a scam flag), so dubie's young-launch D/F rule does not change the call; recommendation stays 'skip'.",
+   "snug_rebroken_down_resolution": "2026-10-12 01:35 UTC tick review: re-breakdown complete. Operative grade updated P -> F (0). Durability remains weak and recommendation stays skip; decision-queue record appended. No re-decision needed.",
+   "snug_rebroken_down_resolved_at": "2026-10-12T01:38:31.378944+00:00",
+   "snug_breakdown_at": "2026-10-12T01:38:31.378944+00:00"
   },
   {
    "investigated_at": "2026-10-11T22:26:58.819729+00:00",
@@ -267964,21 +268074,22 @@
    "verdict_note": "clean gate_pass + organic diffuse accumulation, no tax, no concentration, no affirmative bad evidence — worth social grading. tempering: momentum is SLOW (4.6h to 0.52 ETH, nearly stalled at check), 34 holders thin, sell leg unproven by history, real age 4.6h not 3 min (pons scout lag). risk-off NOT in force, so no forced downgrade.",
    "snug_broken_down": true,
    "snug_broken_down_at": "2026-10-11T22:43:27.287983+00:00",
-   "snug_breakdown_grade": "P",
-   "snug_breakdown_total": null,
+   "snug_breakdown_grade": "D",
+   "snug_breakdown_total": 20,
    "snug_breakdown_durability": "weak",
    "snug_breakdown_recommendation": "skip",
    "snug_breakdown_note": "blanket-snug tick 18:38 EDT: durability weak -> skip. P-neutral (no social row, X reads conserved); decelerating pre-graduation fill, 34 thin holders, sell leg unproven, anonymous deployer.",
    "social_scored_at": "2026-10-11T22:46:26.810Z",
-   "snug_rebroken_down_at": "2026-10-11T22:55:42.592916+00:00",
-   "snug_rebroken_down_reason": "breakdown cited P/skip; newest score D/20 confirms skip - not re-run (reviewed 2026-10-11 18:44 EDT tick)",
-   "snug_rebroken_down_resolution": "marked processed without new breakdown",
-   "snug_rebroken_down_resolved_at": "2026-10-11T22:55:42.592916+00:00",
+   "snug_rebroken_down_at": "2026-10-12T01:38:31.378944+00:00",
+   "snug_rebroken_down_reason": "trigger: social scores ready — fresh D(20) score at 2026-10-11T22:46:00Z arrived after the 2026-10-11T22:43:27.287983+00:00 P breakdown. score notes show NO affirmative bad evidence (absence of footprint at >60 min age, not a scam flag), so dubie's young-launch D/F rule does not change the call; recommendation stays 'skip'.",
+   "snug_rebroken_down_resolution": "2026-10-12 01:35 UTC tick review: re-breakdown complete. Operative grade updated P -> D (20). Durability remains weak and recommendation stays skip; decision-queue record appended. No re-decision needed.",
+   "snug_rebroken_down_resolved_at": "2026-10-12T01:38:31.378944+00:00",
    "snug_processed": true,
    "snug_processed_at": "2026-10-12T01:34:05.258537+00:00",
    "snug_breakdown_reason": "Pre-social (P = neutral, no social penalty): no social-score row exists for this contract and X reads were conserved per dubie's 2026-10-11 credit-conservation order, so judged onchain only with no affirmative bad social evidence. Clean gate_pass (zero gate reasons), organic diffuse flow, 0 snipe tax, top-10 only 0.40% of supply, 0.52 ETH collected at 76.7% curve fill. But durability is weak: the fill is decelerating (pace roughly halved vs lifetime average, nearly stalled at check), 34 holders over 4.7h is thin, zero socials at 4.7h is mildly negative past the pre-social window, the sell leg is unproven by history, the deployer is anonymous (denylist skipped), and pre-graduation is where most pons die. Skip. Revisit only if the fill resumes toward graduation or it graduates with distribution intact — the graduated, permanently-locked-liquidity scenario is the durable one for pons-origin tokens.",
    "snug_breakdown_comps": "Pons-family pre-graduation curve fills with thin-but-diffuse holder bases and decelerating momentum overwhelmingly stall and die pre-graduation. The durable minority are the ones that push through to graduation, where pons graduation liquidity is permanently locked (no LP-yank path at any phase; V4 LP-age rule waived for pons-origin) and a diffuse base like Dirac's (top-10 = 0.40% of supply) can hold value. Same-tick comp NOCAP (826 transfers/191 holders, steady ~2.5/min) only rated uncertain/watch with 6x Dirac's participation. Generic non-toxic meme names with zero socials at 4.7h rarely catch a bid without a catalyst.",
-   "snug_breakdown_risks": "Fill decelerating at 76.69%: +0.004 ETH in 4 min at check is roughly half the lifetime hourly pace (0.52 ETH / 4.6h) — stalling into the zone where most pons die. Thin base: 34 unique buyers over 4.6h; gate holder scan saw only 2 addresses in a 12k-block window. Zero social footprint at 4.7h real age — past the <60min pre-social window, so the no-buzz read is mildly negative (not a veto: no affirmative bad evidence, per dubie's order). Sell leg unproven by history: no CurveSell events in 20k blocks (sell selector verified onchain; executor forward-simulates the sell at exit time). Anonymous deployer: no owner(), undiscoverable via RPC — denylist check skipped (not on the toxic blocklist). Pre-graduation curve phase is where most pons die."
+   "snug_breakdown_risks": "Fill decelerating at 76.69%: +0.004 ETH in 4 min at check is roughly half the lifetime hourly pace (0.52 ETH / 4.6h) — stalling into the zone where most pons die. Thin base: 34 unique buyers over 4.6h; gate holder scan saw only 2 addresses in a 12k-block window. Zero social footprint at 4.7h real age — past the <60min pre-social window, so the no-buzz read is mildly negative (not a veto: no affirmative bad evidence, per dubie's order). Sell leg unproven by history: no CurveSell events in 20k blocks (sell selector verified onchain; executor forward-simulates the sell at exit time). Anonymous deployer: no owner(), undiscoverable via RPC — denylist check skipped (not on the toxic blocklist). Pre-graduation curve phase is where most pons die.",
+   "snug_breakdown_at": "2026-10-12T01:38:31.378944+00:00"
   },
   {
    "investigated_at": "2026-10-11T22:45:18Z",
@@ -499725,7 +499836,30 @@
    "comps": "parody name-squat (GTA riff). 39 past breakdowns of name-squat/parody comps in the decision queue: 32 skip / 5 watch / 2 buy (82% skip rate). Piggyback-style launches dump within hours once the borrowed attention passes; no parody-name pons launch in the log ever demonstrated hold-value past a day.",
    "risks": "fast-lane already vetoed 2-1 (wave-hello SKIP + humming-hymn-quick SKIP) — two of three hymnlings rejected the buy. Concentration unchecked. Deployer (0x58ea497c...) is an experienced nonce-92 wallet but a first sighting in the queue — serial-launcher profile, no delivered history. Parody name = zero brand durability, GTA IP-adjacent. Money flow flagged 'mixed' with deployer active.",
    "recommendation": "skip",
-   "reason": "Pre-social grade P is neutral on its own, and onchain velocity was genuinely hot (0.866 ETH on curve, 86 transfers/36 holders in ~10 min). But two of three hymnlings already vetoed the buy in fast lane, the parody-name base rate is brutal (32/39 past skip), and there is no delivered team history or social tailwind to carry it past the first hours. Nothing to buy that the pipeline hasn't already rejected."
+   "reason": "Pre-social grade P is neutral on its own, and onchain velocity was genuinely hot (0.866 ETH on curve, 86 transfers/36 holders in ~10 min). But two of three hymnlings already vetoed the buy in fast lane, the parody-name base rate is brutal (32/39 past skip), and there is no delivered team history or social tailwind to carry it past the first hours. Nothing to buy that the pipeline hasn't already rejected.",
+   "cardigan_score": {
+    "volume": 22,
+    "sentiment": 10,
+    "vitality": {
+     "momentum": 5,
+     "mainstream_pickup": 3,
+     "mainstream_talking": 2,
+     "legs": 2,
+     "total": 12,
+     "vitality_core": 7
+    },
+    "subtotal": 44,
+    "whale_bonus": 0,
+    "mcap_adj": 0,
+    "mcap_note": "pre-graduation pons token, no dexscreener quote; adj 0",
+    "total": 44
+   },
+   "virality": "flash (parody name-squat; 82% past skip rate on parody comps; no delivered team history)",
+   "decision": "skip",
+   "decision_reason": "total 44 (<50): volume 22 + sentiment 10 (P) + vitality 12; vitality_core 7 below cautious-buy bar; 2-1 fast-lane veto; no whale convergence. agrees with snug skip.",
+   "processed": true,
+   "processed_at": "2026-10-12T01:37:35.851978+00:00",
+   "decided_by": "cardigan-flock-decision 2026-10-11 21:34 EDT tick"
   },
   {
    "kind": "tick",
@@ -499734,6 +499868,46 @@
    "processed_at": "2026-10-12T01:31:43Z",
    "processed_note": "flock-decision tick 21:31 EDT: 1072 entries, 0 unprocessed to score. fast-lane dedup: 2 open positions unchanged (Ollie 0xd08a0e4d, SAFU 0xc85e9f74 stranded, zero onchain liquidity, skipped by design); queue.db 3 fast_lane bought rows (Ollie, SAFU open; DNU stop-closed), no new buys. 1 gate_pass scored row (synthetic, flock_decision already recorded), 1 gate_pass investigated row (TRELLIS fast_lane no-buy agent-veto) = fast-lane's own domain. whale feed: FUNPANDA 0x94dac244186ac17323d84be293e1ff42201fd9ed convergence (3 whales ~$71k, 00:37Z) still not gate_pass, not decision-ready, skipped per binary gate rule. AMC 0x05a3d1cd21d0c88145e82600e62e7e496e0f222b 2-whale convergence (21:19Z) is the official RH stock token, already adjudicated watch/skip (peg-token structural override). nothing scored, nothing executed, dubie not messaged.",
    "decision": "quiet-tick"
+  },
+  {
+   "broken_down_at": "2026-10-12T01:38:31.378944+00:00",
+   "candidate": {
+    "contract": "0xb2cc1485a3a6b14c302f66c9a561e5a8a1bf4438",
+    "name": "Plaza Toad PTOAD",
+    "chain": "robinhood"
+   },
+   "investigation": {
+    "velocity": "16 transfers / 13 holders since launch block 85985838 (deploy 16:50:32Z, ~5.7h old; scout queued it at 22:07:53Z, ~5.3h scout lag); curve 0.375446 ETH",
+    "notes": "re-breakdown: F-score confirmation",
+    "prior_grade": "P"
+   },
+   "social_grade": "F",
+   "social_total": 0,
+   "durability": "weak",
+   "comps": "16 transfers / 13 holders since launch block 85985838 (deploy 16:50:32Z), curve 0.3754 ETH, money flow organic. Fresh social score F (0/100): zero social footprint at ~5.9h — 60+ min old so the normal rubric applies, no pre-social P. Score notes explicitly report no affirmative bad evidence; F here = absence of legitimacy signal, not a scam flag.",
+   "risks": "zero social legitimacy at 5.9h, only 13 holders, anonymous team/deployer, thin onchain momentum; nothing to durable-hold.",
+   "recommendation": "skip",
+   "reason": "re-breakdown (social scores ready): operative grade moved P -> F (0/100). No affirmative bad evidence in the score notes; F reflects zero footprint past the pre-social window. Durability stays weak and recommendation stays skip — unchanged from the original breakdown."
+  },
+  {
+   "broken_down_at": "2026-10-12T01:38:31.378944+00:00",
+   "candidate": {
+    "contract": "0x5c64255f054f186fb00a6891ca5e034f1ae484e9",
+    "name": "Dirac DIRAC",
+    "chain": "robinhood"
+   },
+   "investigation": {
+    "velocity": "slow/steady, no spike: 129 CurveBuy / 34 unique buyers over ~4.6h; +0.004 ETH in 4 min around check time; 76.7% of curve filled",
+    "notes": "re-breakdown: D-score confirmation",
+    "prior_grade": "P"
+   },
+   "social_grade": "D",
+   "social_total": 20,
+   "durability": "weak",
+   "comps": "129 CurveBuy / 34 unique buyers, 76.7% of curve filled at 0.52 ETH collected, but fill decelerating/nearly stalled. Fresh social score D (20/100): zero verifiable social footprint at 4.7h — no website, no X, anonymous team — but no affirmative bad evidence (no bot-farm clusters, wash, snipers, fake socials, scam flags); D = zero social legitimacy, explicitly not a scam flag per scorer.",
+   "risks": "stalled fill near graduation, 34 holders over 4.7h is thin, anonymous deployer, unproven sell leg; pre-graduation is where most pons die.",
+   "recommendation": "skip",
+   "reason": "re-breakdown (social scores ready): operative grade moved P -> D (20/100). Score notes show no affirmative bad evidence, so the young-launch D/F rule would not have vetoed either way; 4.7h age is past the 60-min pre-social window anyway. Durability stays weak, recommendation stays skip."
   }
  ],
  "tracking": {
@@ -806433,8 +806607,8 @@
   "scout": "2026-10-12T01:36:47.906Z",
   "hymn": "2026-10-12T01:30:45.222874+00:00",
   "scorer": "2026-10-12T01:33:44.602Z",
-  "snug": null,
-  "cardigan": null
+  "snug": "2026-10-12T01:38:31.378944+00:00",
+  "cardigan": "2026-10-12T01:38:31.378944+00:00"
  },
  "challenge": {
   "wallet": "0xa554e642ac0fe1bbeeea26df17644ad8fce00ecc",

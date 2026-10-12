@@ -1,41 +1,11 @@
 {
- "updated_at": "2026-10-12T09:00:54.294Z",
+ "updated_at": "2026-10-12T09:02:54.345Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-12T08:36:45.730Z",
-   "scout": "wave-hello",
-   "type": "contract",
-   "name": "ERC-721 contract",
-   "contract": "0x7980aa64093853cb78c927e05b88fed96e945f81",
-   "chain": "robinhood",
-   "source": "onchain",
-   "detail": "ERC-721 detected via Transfer event + ERC-165 supportsInterface (block range 85221232..85223231)"
-  },
-  {
-   "found_at": "2026-10-12T08:36:45.730Z",
-   "scout": "wave-hello",
-   "type": "contract",
-   "name": "ERC-721 contract",
-   "contract": "0x66007297055229066d86294a18edb6e1a2db32d7",
-   "chain": "robinhood",
-   "source": "onchain",
-   "detail": "ERC-721 detected via Transfer event + ERC-165 supportsInterface (block range 85221232..85223231)"
-  },
-  {
-   "found_at": "2026-10-12T08:36:45.730Z",
-   "scout": "wave-hello",
-   "type": "contract",
-   "name": "ERC-721 contract",
-   "contract": "0x66da65dfa977f1897612f499a4b1fd030ae6d12c",
-   "chain": "robinhood",
-   "source": "onchain",
-   "detail": "ERC-721 detected via Transfer event + ERC-165 supportsInterface (block range 85221232..85223231)"
-  },
   {
    "found_at": "2026-10-12T08:33:12.693Z",
    "scout": "whale-watcher",
@@ -2586,9 +2556,51 @@
    "tx_hash": "0xbb1051edd4a636634f41d9467b213c71d8b223388d8e31127e976c162be4eebc",
    "block": 86551003,
    "detail": "new contract deployed in block 86551003"
+  },
+  {
+   "found_at": "2026-10-12T09:01:35.346Z",
+   "scout": "wave-hello",
+   "type": "contract",
+   "name": "ERC-721 contract",
+   "contract": "0x7a6e0a1444f56b17625123e4205da017c4f0c63b",
+   "chain": "robinhood",
+   "source": "onchain",
+   "detail": "ERC-721 detected via Transfer event + ERC-165 supportsInterface (block range 85237232..85239231)"
+  },
+  {
+   "found_at": "2026-10-12T08:59:44.146Z",
+   "scout": "whale-watcher",
+   "type": "whale-convergence",
+   "token": "CASHCAT",
+   "contract": "0x020bfc650a365f8bb26819deaabf3e21291018b4",
+   "chain": "robinhood",
+   "tx_hash": "0xe2fe9295934068e7dd02e4f5f61e6cc824c35143e7ed73079a4fd60c5bd019a7",
+   "detail": "CONVERGENCE: 2 whale EOA wallets accumulating CASHCAT (0x020bfc650a365f8bb26819deaabf3e21291018b4) on robinhood within one degraded scan window; combined $63,197 received by the whale EOAs. Largest: whale 0xf8191d98ae98d2f7abdfb63a9b0b812b93c873aa (~$258,478 assets, degraded lower-bound) received $60,132 in tx 0xe2fe9295934068e7dd02e4f5f61e6cc824c35143e7ed73079a4fd60c5bd019a7. Contract-to-contract CASHCAT flow in the same window is DeFi plumbing, excluded from this signal.",
+   "converging_whales": 2,
+   "converging_wallets": [
+    "0x3cdf67e6910c7a06c850082ee7d0d7c4e8fb8836",
+    "0xf8191d98ae98d2f7abdfb63a9b0b812b93c873aa"
+   ],
+   "combined_amount_usd": 63196.91,
+   "whale": "0xf8191d98ae98d2f7abdfb63a9b0b812b93c873aa",
+   "whale_assets_usd": 258477.72,
+   "amount_usd": 60131.53,
+   "convergence": true,
+   "receiver_is_contract": false
+  },
+  {
+   "found_at": "2026-10-12T09:02:49.504Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xd0c0dc6e24f9b4fd51ea654d7a96127f6bb37390",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xab333b79c1149cb151ecd13e1c529c0cce84aee9dd77fa04c4e446daa34ca2b7",
+   "block": 86552745,
+   "detail": "new contract deployed in block 86552745"
   }
  ],
- "scout_queue_total": 12482,
+ "scout_queue_total": 12485,
  "investigations": [
   {
    "candidate": {
@@ -281181,7 +281193,8 @@
     "note": "candidates are Robinhood-chain launches; pulse is context only"
    },
    "verdict": "skip",
-   "verdict_note": "dead deploy: totalSupply/name/symbol/decimals eth_call execution reverted; not an ERC-20 token; no V2 pair and no V4 pools per gate (deploy block act deployed in block 86430733, ~3.3h old). hymn dead-check fired."
+   "verdict_note": "dead deploy: totalSupply/name/symbol/decimals eth_call execution reverted; not an ERC-20 token; no V2 pair and no V4 pools per gate (deploy block act deployed in block 86430733, ~3.3h old). hymn dead-check fired.",
+   "social_scored_at": "2026-10-12T09:02:12.932116+00:00"
   },
   {
    "investigated_at": "2026-10-12T09:00:39Z",
@@ -281217,7 +281230,8 @@
     "note": "candidates are Robinhood-chain launches; pulse is context only"
    },
    "verdict": "skip",
-   "verdict_note": "dead deploy: totalSupply/name/symbol/decimals eth_call execution reverted; not an ERC-20 token; no V2 pair and no V4 pools per gate (deploy block act deployed in block 86434345, ~3.3h old). hymn dead-check fired."
+   "verdict_note": "dead deploy: totalSupply/name/symbol/decimals eth_call execution reverted; not an ERC-20 token; no V2 pair and no V4 pools per gate (deploy block act deployed in block 86434345, ~3.3h old). hymn dead-check fired.",
+   "social_scored_at": "2026-10-12T09:02:12.932116+00:00"
   },
   {
    "investigated_at": "2026-10-12T09:00:39Z",
@@ -281253,7 +281267,8 @@
     "note": "candidates are Robinhood-chain launches; pulse is context only"
    },
    "verdict": "skip",
-   "verdict_note": "dead deploy: totalSupply/name/symbol/decimals eth_call empty (null); not an ERC-20 token; no V2 pair and no V4 pools per gate (deploy block act deployed in block 86437235, ~3.3h old). hymn dead-check fired."
+   "verdict_note": "dead deploy: totalSupply/name/symbol/decimals eth_call empty (null); not an ERC-20 token; no V2 pair and no V4 pools per gate (deploy block act deployed in block 86437235, ~3.3h old). hymn dead-check fired.",
+   "social_scored_at": "2026-10-12T09:02:12.932116+00:00"
   },
   {
    "investigated_at": "2026-10-12T09:00:39Z",
@@ -281289,7 +281304,8 @@
     "note": "candidates are Robinhood-chain launches; pulse is context only"
    },
    "verdict": "skip",
-   "verdict_note": "dead deploy: totalSupply/name/symbol/decimals eth_call empty (null); not an ERC-20 token; no V2 pair and no V4 pools per gate (deploy block act deployed in block 86437239, ~3.3h old). hymn dead-check fired."
+   "verdict_note": "dead deploy: totalSupply/name/symbol/decimals eth_call empty (null); not an ERC-20 token; no V2 pair and no V4 pools per gate (deploy block act deployed in block 86437239, ~3.3h old). hymn dead-check fired.",
+   "social_scored_at": "2026-10-12T09:02:12.932116+00:00"
   },
   {
    "investigated_at": "2026-10-12T09:00:39Z",
@@ -281325,7 +281341,8 @@
     "note": "candidates are Robinhood-chain launches; pulse is context only"
    },
    "verdict": "skip",
-   "verdict_note": "dead deploy: totalSupply/name/symbol/decimals eth_call execution reverted; not an ERC-20 token; no V2 pair and no V4 pools per gate (deploy block act deployed in block 86438431, ~3.3h old). hymn dead-check fired."
+   "verdict_note": "dead deploy: totalSupply/name/symbol/decimals eth_call execution reverted; not an ERC-20 token; no V2 pair and no V4 pools per gate (deploy block act deployed in block 86438431, ~3.3h old). hymn dead-check fired.",
+   "social_scored_at": "2026-10-12T09:02:12.932116+00:00"
   },
   {
    "investigated_at": "2026-10-12T09:00:39Z",
@@ -281361,7 +281378,8 @@
     "note": "candidates are Robinhood-chain launches; pulse is context only"
    },
    "verdict": "skip",
-   "verdict_note": "dead deploy: totalSupply/name/symbol/decimals eth_call execution reverted; not an ERC-20 token; no V2 pair and no V4 pools per gate (deploy block act deployed in block 86438601, ~3.3h old). hymn dead-check fired."
+   "verdict_note": "dead deploy: totalSupply/name/symbol/decimals eth_call execution reverted; not an ERC-20 token; no V2 pair and no V4 pools per gate (deploy block act deployed in block 86438601, ~3.3h old). hymn dead-check fired.",
+   "social_scored_at": "2026-10-12T09:02:12.932116+00:00"
   },
   {
    "investigated_at": "2026-10-12T09:00:39Z",
@@ -281400,7 +281418,17 @@
     "note": "candidates are Robinhood-chain launches; pulse is context only"
    },
    "verdict": "needs-snug",
-   "verdict_note": "strongest early flow of the tick: 1.69 ETH curve (well above 0.01 floor), 138 holders, 43 buyers — but heavy flipping (63 sells/31 sellers) and a copycat ticker on the same name; needs snug's durability call before any decision."
+   "verdict_note": "strongest early flow of the tick: 1.69 ETH curve (well above 0.01 floor), 138 holders, 43 buyers — but heavy flipping (63 sells/31 sellers) and a copycat ticker on the same name; needs snug's durability call before any decision.",
+   "social_scored_at": "2026-10-12T09:02:12.932116+00:00",
+   "snug_broken_down": true,
+   "snug_broken_down_at": "2026-10-12T09:02:29.554233+00:00",
+   "snug_breakdown_grade": "P",
+   "snug_breakdown_total": 50,
+   "snug_breakdown_durability": "uncertain",
+   "snug_breakdown_recommendation": "watch",
+   "snug_breakdown_reason": "grade P at ~19 min post-launch is neutral per dubie's pre-social rule: judge onchain only, no social penalty, and there is no AFFIRMATIVE bad evidence (heavy flipping is churn, not bots/wash/scam flags). onchain shows the hottest early flow of the tick: 1.689 ETH curve (well above the 0.01 floor), 138 holders, 43 unique buyers, and a PROVEN two-way flow - 63 CurveSells mean exits work (RKH's 0-sell warning does not apply). but durability breaks on distribution: 72% flip rate + a serial buyer from today's D-skip holding ~24% of inflow + copycat ticker + anon deployer. not a buy at this age; recheck at graduation - if holder growth holds and the flip rate normalizes, upgrade to buy; if the serial buyer exits first, it dies. flash-exit fill only after that upgrade.",
+   "snug_breakdown_comps": "pons V2 factory (0x7ed5...ec7e) launches graduate with permanently locked liquidity - no Ollie/SAFU-style LP-yank path. NBM (0x1f9e...), ~2 ETH curve in 4 min with 18 sells absorbed, graded strong/buy this morning. OPCAT, steady 39-holder two-way flow, graded strong/buy. RKH, pre-social P with 0.05 ETH real demand but 0 CurveSells, graded uncertain/watch (09:00Z). REDISCRIBE graded D/skip: same serial curve buyer 0x65050a9b7e as top buyer there - and that SAME address is h402's top buyer (0.940 ETH, ~24% of inflow). the only resolved pons-era fast-lane fill, DNU (0.005 ETH), was stopped out at -47%. copycat second launches on a reused ticker (this H402 vs the original 0x188f2e... deploy) have no resolved comps yet; name-riding launches historically fade fast once the novelty buyer exits.",
+   "snug_breakdown_risks": "(1) 72% buyer flip rate: 63 CurveSells / 2.0806 ETH out vs 169 CurveBuys / 3.9607 ETH in from 43 buyers - flow is flipper churn, not accumulation; (2) top buyer 0x65050a9b7e50 holds 0.940 ETH (~24% of inflow) - same serial curve buyer that topped this morning's D-graded REDISCRIBE; single-wallet unwind craters the curve; (3) copycat ticker: second H402 launch, different deployer (0x31691ad45c5e37e8c03d17aaf5421d4812865a5a) than the original 0x188f2e... launch - zero organic identity, rides the name; (4) anonymous deployer, no owner(), undiscoverable via RPC - denylist check skipped per gate warning; (5) pre-graduation (49.86% curve): if flipper momentum stalls, it may never graduate."
   },
   {
    "investigated_at": "2026-10-12T09:00:39Z",
@@ -281440,7 +281468,8 @@
     "note": "candidates are Robinhood-chain launches; pulse is context only"
    },
    "verdict": "skip",
-   "verdict_note": "two-buyer flow with an early exit; no holder base, no social footprint; fast-lane agents all SKIP — corroborates, no buy case."
+   "verdict_note": "two-buyer flow with an early exit; no holder base, no social footprint; fast-lane agents all SKIP — corroborates, no buy case.",
+   "social_scored_at": "2026-10-12T09:02:12.932116+00:00"
   },
   {
    "investigated_at": "2026-10-12T09:00:39Z",
@@ -281480,7 +281509,8 @@
     "note": "candidates are Robinhood-chain launches; pulse is context only"
    },
    "verdict": "skip",
-   "verdict_note": "full churn: 4 sells against 4 buys, curve holds 0.0013 ETH (below the 0.01 floor); no investable liquidity; fast-lane all SKIP corroborates."
+   "verdict_note": "full churn: 4 sells against 4 buys, curve holds 0.0013 ETH (below the 0.01 floor); no investable liquidity; fast-lane all SKIP corroborates.",
+   "social_scored_at": "2026-10-12T09:02:12.932116+00:00"
   }
  ],
  "scores": [
@@ -474709,6 +474739,204 @@
    "total": 50,
    "grade": "P",
    "notes": "pre-social: ~11 min since pons V2 launch (Rambo Kitten Hood RKH, block 86542155), no footprint yet — web search found no site/X/KOL mentions or ticker spread (only unrelated homonyms). re-grade after the social window."
+  },
+  {
+   "scored_at": "2026-10-12T09:02:12.932116+00:00",
+   "candidate": {
+    "contract": "0xe1d1505c6360fcacf0e4cc1640febae9864b20f0",
+    "name": null,
+    "block": 86430733,
+    "found_at": "2026-10-12T05:34:08.661Z",
+    "verdict": "skip"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 25,
+   "grade": "D",
+   "notes": "dead deploy: not an ERC-20 (name/symbol/decimals eth_call reverted), no name, no V2 pair, no V4 pools. 3.4h old with zero social footprint anywhere. grade D (likely manufactured/empty) per rubric for 60m+ tokens with no footprint; no affirmative scam evidence, so not F."
+  },
+  {
+   "scored_at": "2026-10-12T09:02:12.932116+00:00",
+   "candidate": {
+    "contract": "0x644c806d46fdebdb4ceb87525dcc4848b1a58845",
+    "name": null,
+    "block": 86434345,
+    "found_at": "2026-10-12T05:39:19.258Z",
+    "verdict": "skip"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 25,
+   "grade": "D",
+   "notes": "dead deploy: not an ERC-20 (name/symbol/decimals eth_call reverted), no name, no V2 pair, no V4 pools. 3.4h old with zero social footprint anywhere. grade D (likely manufactured/empty) per rubric for 60m+ tokens with no footprint; no affirmative scam evidence, so not F."
+  },
+  {
+   "scored_at": "2026-10-12T09:02:12.932116+00:00",
+   "candidate": {
+    "contract": "0x794b14048482c86b2daa5fcc544eb43d510c557d",
+    "name": null,
+    "block": 86437235,
+    "found_at": "2026-10-12T05:44:14.710Z",
+    "verdict": "skip"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 25,
+   "grade": "D",
+   "notes": "dead deploy: not an ERC-20 (name/symbol/decimals eth_call reverted), no name, no V2 pair, no V4 pools. 3.4h old with zero social footprint anywhere. grade D (likely manufactured/empty) per rubric for 60m+ tokens with no footprint; no affirmative scam evidence, so not F."
+  },
+  {
+   "scored_at": "2026-10-12T09:02:12.932116+00:00",
+   "candidate": {
+    "contract": "0x06fb63ad3fda20eec2d21157529347ed01dbb0f9",
+    "name": null,
+    "block": 86437239,
+    "found_at": "2026-10-12T05:44:17.624Z",
+    "verdict": "skip"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 25,
+   "grade": "D",
+   "notes": "dead deploy: not an ERC-20 (name/symbol/decimals eth_call reverted), no name, no V2 pair, no V4 pools. 3.4h old with zero social footprint anywhere. grade D (likely manufactured/empty) per rubric for 60m+ tokens with no footprint; no affirmative scam evidence, so not F."
+  },
+  {
+   "scored_at": "2026-10-12T09:02:12.932116+00:00",
+   "candidate": {
+    "contract": "0x93dbc917b9526f0a7a0c35bf5334ae7be780bccd",
+    "name": null,
+    "block": 86438431,
+    "found_at": "2026-10-12T05:46:17.082Z",
+    "verdict": "skip"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 25,
+   "grade": "D",
+   "notes": "dead deploy: not an ERC-20 (name/symbol/decimals eth_call reverted), no name, no V2 pair, no V4 pools. 3.4h old with zero social footprint anywhere. grade D (likely manufactured/empty) per rubric for 60m+ tokens with no footprint; no affirmative scam evidence, so not F."
+  },
+  {
+   "scored_at": "2026-10-12T09:02:12.932116+00:00",
+   "candidate": {
+    "contract": "0x709c8147e7e50c60dfb28a7cffa6ee0ea98a1bfa",
+    "name": null,
+    "block": 86438601,
+    "found_at": "2026-10-12T05:46:43.859Z",
+    "verdict": "skip"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 25,
+   "grade": "D",
+   "notes": "dead deploy: not an ERC-20 (name/symbol/decimals eth_call reverted), no name, no V2 pair, no V4 pools. 3.4h old with zero social footprint anywhere. grade D (likely manufactured/empty) per rubric for 60m+ tokens with no footprint; no affirmative scam evidence, so not F."
+  },
+  {
+   "scored_at": "2026-10-12T09:02:12.932116+00:00",
+   "candidate": {
+    "contract": "0x949700985645e346b8ee23535e747853fbbfd3b1",
+    "name": "h402 H402",
+    "block": 86542577,
+    "found_at": "2026-10-12T08:53:53.097Z",
+    "verdict": "needs-snug"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 50,
+   "grade": "P",
+   "notes": "pre-social: ~18 min since launch (TokenLaunched block 86542577 @ 08:44:27Z), no footprint yet (no website, no X presence, no ticker spread) - expected at this age, re-grade after the social window. 138 holders/43 buyers onchain, no affirmative bad evidence."
+  },
+  {
+   "scored_at": "2026-10-12T09:02:12.932116+00:00",
+   "candidate": {
+    "contract": "0xebecbb9f6270b40fa29649b6bf1b10687b322c43",
+    "name": "Alfahedge ALFAHEDGE",
+    "block": 86547324,
+    "found_at": "2026-10-12T08:54:18.487Z",
+    "verdict": "skip"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 50,
+   "grade": "P",
+   "notes": "pre-social: ~9 min since launch (TokenLaunched block 86547324 @ 08:52:35Z), no footprint yet - expected at this age, re-grade after the social window. thin two-buyer flow with an early exit, no holder base; thin flow is not in the affirmative-bad list, so no veto."
+  },
+  {
+   "scored_at": "2026-10-12T09:02:12.932116+00:00",
+   "candidate": {
+    "contract": "0x188f2e45b4c8e3b7fcc9c680ac33fbe254a65a95",
+    "name": "h402 H402",
+    "block": 86548001,
+    "found_at": "2026-10-12T08:54:22.080Z",
+    "verdict": "skip"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 25,
+   "grade": "D",
+   "notes": "affirmative bad evidence at 8 min old: COPYCAT ticker - second H402 launch on the same name as 0x9497009856 (different deployer), curve holds 0.0013 ETH (below 0.01 floor), 4 buys vs 4 full churn sells, no investable liquidity. impersonation launch = scam flag; graded D per the pre-social veto rule."
   }
  ],
  "decisions": [
@@ -520051,6 +520279,46 @@
    "risks": "(1) thin holder set: 1-3 addrs at gate while the curve filled 0->0.05 ETH in ~6 min with the deployer buy included - demand may be simulated by 1-2 wallets, not organic breadth; (2) 0 CurveSells - exit path on this curve unproven by history (gate warning); (3) anonymous deployer 0x0b465f3799b804ded2deab1f961b7f581caae639, no owner() via RPC - denylist check skipped, zero accountability/track record; (4) generic meme name (Rambo Kitten Hood), no team, brand, or prior-delivery signal; (5) pre-social grade P - no organic demand evidence yet; if the 1-3 buyers were a deployer circle, momentum can evaporate before graduation. mitigants: deployer holds only 2.77% (no veto-level dump bag), gate passed, 0.05 ETH >= 0.01 venue floor, pons V2 origin verified so no LP-yank path.",
    "recommendation": "watch",
    "reason": "grade P at ~15 min post-launch is neutral per dubie's pre-social rule: judge onchain only, no social penalty, and absence of a footprint alone is not a veto under 60 min. onchain shows real early demand (0.05 ETH, ~97% of curve filled in ~6 min) with clean deployer concentration (2.77%) and verified pons V2 origin (no LP-yank path at graduation), but holder breadth is thin (1-3 addrs at gate, deployer buy included - possible demand simulation), the exit is unproven (0 CurveSells), and the deployer is fully anonymous with zero track record. not a buy call at birth; keep live for the minute-20 recheck with fresh onchain facts (holder breadth, sells, curve state) before any durability upgrade."
+  },
+  {
+   "broken_down_at": "2026-10-12T09:02:29.554233+00:00",
+   "candidate": {
+    "found_at": "2026-10-12T08:53:53.097Z",
+    "scout": "pons-family",
+    "type": "token",
+    "name": "h402 H402",
+    "muse": "",
+    "contract": "0x949700985645e346b8ee23535e747853fbbfd3b1",
+    "chain": "robinhood",
+    "source": "pons-factory",
+    "tx_hash": "0xad9e60c70754e1b08a508577f7e91756ed3e4900ab7b8a919f3772d5a04ad661",
+    "block": 86542577,
+    "curve": "0x4c0e384de63d9a314537d9ae9a90dd6be3401445",
+    "deployer": "0x31691ad45c5e37e8c03d17aaf5421d4812865a5a",
+    "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86542577 (tx 0xad9e60c70754e1b08a508577f7e91756ed3e4900ab7b8a919f3772d5a04ad661); name=h402 symbol=H402 curve=0x4c0e384de63d9a314537d9ae9a90dd6be3401445 deployer=0x31691ad45c5e37e8c03d17aaf5421d4812865a5a. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-12T08:58:12.946Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "investigation": {
+    "investigated_at": "2026-10-12T09:00:39Z",
+    "velocity": "curve 0 -> 1.689 ETH in ~19 min post-launch (pre-grad, 49.86% of supply in curve); 169 CurveBuys (3.9607 ETH in) from 43 unique buyers; 63 CurveSells (2.0806 ETH out) from 31 unique sellers; 138 unique holders",
+    "social_signal": "weak (pre-social — no X reads by credit conservation)",
+    "money_flow": "mixed — broad organic breadth (43 buyers) but 72% buyer flip rate; top buyer 0x65050a9b7e50 0.940 ETH (~24% of inflow), not the deployer; copycat ticker (second H402 launch, different deployer than 0x188f2e…)",
+    "verdict": "needs-snug",
+    "verdict_note": "strongest early flow of the tick: 1.69 ETH curve (well above 0.01 floor), 138 holders, 43 buyers — but heavy flipping (63 sells/31 sellers) and a copycat ticker on the same name; needs snug's durability call before any decision."
+   },
+   "social_grade": "P",
+   "social_total": 50,
+   "durability": "uncertain",
+   "comps": "pons V2 factory (0x7ed5...ec7e) launches graduate with permanently locked liquidity - no Ollie/SAFU-style LP-yank path. NBM (0x1f9e...), ~2 ETH curve in 4 min with 18 sells absorbed, graded strong/buy this morning. OPCAT, steady 39-holder two-way flow, graded strong/buy. RKH, pre-social P with 0.05 ETH real demand but 0 CurveSells, graded uncertain/watch (09:00Z). REDISCRIBE graded D/skip: same serial curve buyer 0x65050a9b7e as top buyer there - and that SAME address is h402's top buyer (0.940 ETH, ~24% of inflow). the only resolved pons-era fast-lane fill, DNU (0.005 ETH), was stopped out at -47%. copycat second launches on a reused ticker (this H402 vs the original 0x188f2e... deploy) have no resolved comps yet; name-riding launches historically fade fast once the novelty buyer exits.",
+   "risks": "(1) 72% buyer flip rate: 63 CurveSells / 2.0806 ETH out vs 169 CurveBuys / 3.9607 ETH in from 43 buyers - flow is flipper churn, not accumulation; (2) top buyer 0x65050a9b7e50 holds 0.940 ETH (~24% of inflow) - same serial curve buyer that topped this morning's D-graded REDISCRIBE; single-wallet unwind craters the curve; (3) copycat ticker: second H402 launch, different deployer (0x31691ad45c5e37e8c03d17aaf5421d4812865a5a) than the original 0x188f2e... launch - zero organic identity, rides the name; (4) anonymous deployer, no owner(), undiscoverable via RPC - denylist check skipped per gate warning; (5) pre-graduation (49.86% curve): if flipper momentum stalls, it may never graduate.",
+   "recommendation": "watch",
+   "reason": "grade P at ~19 min post-launch is neutral per dubie's pre-social rule: judge onchain only, no social penalty, and there is no AFFIRMATIVE bad evidence (heavy flipping is churn, not bots/wash/scam flags). onchain shows the hottest early flow of the tick: 1.689 ETH curve (well above the 0.01 floor), 138 holders, 43 unique buyers, and a PROVEN two-way flow - 63 CurveSells mean exits work (RKH's 0-sell warning does not apply). but durability breaks on distribution: 72% flip rate + a serial buyer from today's D-skip holding ~24% of inflow + copycat ticker + anon deployer. not a buy at this age; recheck at graduation - if holder growth holds and the flip rate normalizes, upgrade to buy; if the serial buyer exits first, it dies. flash-exit fill only after that upgrade."
   }
  ],
  "tracking": {
@@ -843741,11 +844009,11 @@
   "v4-launch"
  ],
  "last_activity": {
-  "scout": "2026-10-12T09:00:18.096Z",
+  "scout": "2026-10-12T09:02:49.504Z",
   "hymn": "2026-10-12T09:00:39Z",
-  "scorer": "2026-10-12T08:57:01.671327+00:00",
-  "snug": "2026-10-12T09:00:25.688439+00:00",
-  "cardigan": "2026-10-12T09:00:25.688439+00:00"
+  "scorer": "2026-10-12T09:02:12.932116+00:00",
+  "snug": "2026-10-12T09:02:29.554233+00:00",
+  "cardigan": "2026-10-12T09:02:29.554233+00:00"
  },
  "challenge": {
   "wallet": "0xa554e642ac0fe1bbeeea26df17644ad8fce00ecc",
@@ -843812,7 +844080,7 @@
     "tx_hash": "0x750f3d68427ad7be0a12ca6aaf1ab7d1829802294b36090161aaf08025799dbd",
     "entered_at": "2026-10-08T20:15:30.720Z",
     "entry_price_usd": 0.01156,
-    "current_price_usd": 0.01161,
+    "current_price_usd": 0.01163,
     "pnl_pct": 0,
     "amount_tokens": 1055.2497206937642,
     "amount_eth_in": 0.005,
@@ -843839,8 +844107,8 @@
     "tx_hash": "0xcd209345f031f3ae4337c6feea42e3d8e01ac92d777205864e60ab2dd0bea993",
     "entered_at": "2026-10-08T20:58:38.421Z",
     "entry_price_usd": 0.011554,
-    "current_price_usd": 0.01161,
-    "pnl_pct": 0.48468063008482337,
+    "current_price_usd": 0.01163,
+    "pnl_pct": 0.6577808551151089,
     "amount_tokens": 1055.8207,
     "amount_eth_in": 0.005,
     "score": 62,
@@ -843940,10 +844208,10 @@
     "exit_price_usd": 0.0000057094609974722175
    }
   ],
-  "realized_pnl_pct_total": -40.05611593553539
+  "realized_pnl_pct_total": -39.883015710505106
  },
  "paper_trades": {
-  "as_of": "2026-10-12T08:57:10.274Z",
+  "as_of": "2026-10-12T09:02:12.472Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -843962,7 +844230,7 @@
     "seeded": true,
     "score": 66,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.0116,
+    "last_price_usd": 0.01163,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -843973,8 +844241,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00009573542210617792,
-    "unrealized_pnl_pct": 0.9573542210617791
+    "unrealized_pnl_eth": 0.00012184508268059169,
+    "unrealized_pnl_pct": 1.2184508268059169
    },
    {
     "id": "pt-muzwwuzb-27",
@@ -843985,7 +844253,7 @@
     "seeded": true,
     "score": 63,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.0116,
+    "last_price_usd": 0.01163,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -843996,8 +844264,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00009573542210617792,
-    "unrealized_pnl_pct": 0.9573542210617791
+    "unrealized_pnl_eth": 0.00012184508268059169,
+    "unrealized_pnl_pct": 1.2184508268059169
    },
    {
     "id": "pt-mv02u5pe-52",
@@ -844031,7 +844299,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3495,
+    "last_price_usd": 0.3493,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -844042,8 +844310,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0000459902270767465,
-    "unrealized_pnl_pct": 0.4599022707674649
+    "unrealized_pnl_eth": 0.000040241448692153185,
+    "unrealized_pnl_pct": 0.4024144869215318
    },
    {
     "id": "pt-mv03wwab-54",
@@ -844054,7 +844322,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 80.94,
-    "last_price_usd": 86.16,
+    "last_price_usd": 86.14,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -844065,8 +844333,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 5819198,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0006449221645663461,
-    "unrealized_pnl_pct": 6.449221645663461
+    "unrealized_pnl_eth": 0.000642451198418581,
+    "unrealized_pnl_pct": 6.42451198418581
    },
    {
     "id": "pt-mv0blxia-72",
@@ -844077,7 +844345,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.3495,
+    "last_price_usd": 0.3493,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -844088,8 +844356,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00009634457353357884,
-    "unrealized_pnl_pct": -0.9634457353357884
+    "unrealized_pnl_eth": -0.00010201190138849459,
+    "unrealized_pnl_pct": -1.0201190138849459
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -844100,7 +844368,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.3495,
+    "last_price_usd": 0.3493,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -844111,8 +844379,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00009072866458746942,
-    "unrealized_pnl_pct": -0.9072866458746942
+    "unrealized_pnl_eth": -0.00009639920612418473,
+    "unrealized_pnl_pct": -0.9639920612418473
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -844123,7 +844391,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.3495,
+    "last_price_usd": 0.3493,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -844134,8 +844402,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00010755731672799419,
-    "unrealized_pnl_pct": -1.0755731672799418
+    "unrealized_pnl_eth": -0.00011321822813472937,
+    "unrealized_pnl_pct": -1.1321822813472937
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -844146,7 +844414,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.3495,
+    "last_price_usd": 0.3493,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -844157,8 +844425,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00011315417256011373,
-    "unrealized_pnl_pct": -1.1315417256011373
+    "unrealized_pnl_eth": -0.0001188118811881178,
+    "unrealized_pnl_pct": -1.188118811881178
    }
   ],
   "closed_recent": [],

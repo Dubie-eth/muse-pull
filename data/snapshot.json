@@ -1,75 +1,11 @@
 {
- "updated_at": "2026-10-12T09:36:11.248Z",
+ "updated_at": "2026-10-12T09:37:14.561Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-12T09:00:18.096Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xc7b066f232e0e67a1eb73985f322878462f38069",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0xbb1051edd4a636634f41d9467b213c71d8b223388d8e31127e976c162be4eebc",
-   "block": 86551003,
-   "detail": "new contract deployed in block 86551003"
-  },
-  {
-   "found_at": "2026-10-12T09:01:35.346Z",
-   "scout": "wave-hello",
-   "type": "contract",
-   "name": "ERC-721 contract",
-   "contract": "0x7a6e0a1444f56b17625123e4205da017c4f0c63b",
-   "chain": "robinhood",
-   "source": "onchain",
-   "detail": "ERC-721 detected via Transfer event + ERC-165 supportsInterface (block range 85237232..85239231)"
-  },
-  {
-   "found_at": "2026-10-12T08:59:44.146Z",
-   "scout": "whale-watcher",
-   "type": "whale-convergence",
-   "token": "CASHCAT",
-   "contract": "0x020bfc650a365f8bb26819deaabf3e21291018b4",
-   "chain": "robinhood",
-   "tx_hash": "0xe2fe9295934068e7dd02e4f5f61e6cc824c35143e7ed73079a4fd60c5bd019a7",
-   "detail": "CONVERGENCE: 2 whale EOA wallets accumulating CASHCAT (0x020bfc650a365f8bb26819deaabf3e21291018b4) on robinhood within one degraded scan window; combined $63,197 received by the whale EOAs. Largest: whale 0xf8191d98ae98d2f7abdfb63a9b0b812b93c873aa (~$258,478 assets, degraded lower-bound) received $60,132 in tx 0xe2fe9295934068e7dd02e4f5f61e6cc824c35143e7ed73079a4fd60c5bd019a7. Contract-to-contract CASHCAT flow in the same window is DeFi plumbing, excluded from this signal.",
-   "converging_whales": 2,
-   "converging_wallets": [
-    "0x3cdf67e6910c7a06c850082ee7d0d7c4e8fb8836",
-    "0xf8191d98ae98d2f7abdfb63a9b0b812b93c873aa"
-   ],
-   "combined_amount_usd": 63196.91,
-   "whale": "0xf8191d98ae98d2f7abdfb63a9b0b812b93c873aa",
-   "whale_assets_usd": 258477.72,
-   "amount_usd": 60131.53,
-   "convergence": true,
-   "receiver_is_contract": false
-  },
-  {
-   "found_at": "2026-10-12T09:02:49.504Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xd0c0dc6e24f9b4fd51ea654d7a96127f6bb37390",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0xab333b79c1149cb151ecd13e1c529c0cce84aee9dd77fa04c4e446daa34ca2b7",
-   "block": 86552745,
-   "detail": "new contract deployed in block 86552745"
-  },
-  {
-   "found_at": "2026-10-12T09:02:55.655Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xac0bebe9c4e08331fdce2047bcd1e8ae115b0ea5",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0x8250173a933646988ba67abca55f9c1ea7e8a4fc3a3e7602b9e7e5ec647ca2ae",
-   "block": 86552751,
-   "detail": "new contract deployed in block 86552751"
-  },
   {
    "found_at": "2026-10-12T09:03:42.260Z",
    "scout": "pons-family",
@@ -1707,7 +1643,12 @@
     "curve": "0x9c07c93e884a845d49c3b8dae6137cc2e0c88f49"
    },
    "investigated": true,
-   "investigated_at": "2026-10-12T09:21:35.638108+00:00"
+   "investigated_at": "2026-10-12T09:21:35.638108+00:00",
+   "fast_lane_recheck": {
+    "action": "no-buy",
+    "reason": "gate-gate_failed",
+    "gate": "gate_failed"
+   }
   },
   {
    "found_at": "2026-10-12T09:16:25.888Z",
@@ -2496,9 +2437,91 @@
    "curve": "0xd9c7f3cb02ba9a61c39519148ea43f102b6b8937",
    "deployer": "0x6a52267395189583cc212e23974aa32076bf139e",
    "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86566244 (tx 0x936a3d473aff34f0024f8d447c793f61a1d6cd25a010a340b7d5db5cc72be19d); name=Prinet symbol=PRINET curve=0xd9c7f3cb02ba9a61c39519148ea43f102b6b8937 deployer=0x6a52267395189583cc212e23974aa32076bf139e. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-12T09:36:13.039Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "fomies pickle PICKLE",
+   "muse": "",
+   "contract": "0xf1e60e2a3101b8170536664433aeb23ad1aa5ef5",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x9815e450ab600daf60ced2617f035f8b7431b57c699898f2fb575a6d1b3c7dc5",
+   "block": 86569881,
+   "curve": "0x489345891316aa4a3aecf272da129b051c988df1",
+   "deployer": "0xe66619cd28e9e282746e6042fc4c050d106e231f",
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86569881 (tx 0x9815e450ab600daf60ced2617f035f8b7431b57c699898f2fb575a6d1b3c7dc5); name=fomies pickle symbol=PICKLE curve=0x489345891316aa4a3aecf272da129b051c988df1 deployer=0xe66619cd28e9e282746e6042fc4c050d106e231f. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-12T09:29:37.453Z",
+   "scout": "whale-watcher",
+   "type": "whale-convergence",
+   "token": "MEME",
+   "contract": "0x385f4f8ae47651ce5f58f5265395a669f8281e18",
+   "chain": "robinhood",
+   "tx_hash": "0x3b6ce52704cb0fe3b553f273ef98e4e56cba477f52f4db0ad82ab03413f8111d",
+   "detail": "CONVERGENCE: 3 whale EOA wallets accumulating MEME (0x385f4f8ae47651ce5f58f5265395a669f8281e18) on robinhood within one degraded scan window; combined $742,873 received by the whale EOAs. Largest: whale 0xdb13016645ad9597576c8b7c2496f57f88be1926 (~$458,642 assets, degraded lower-bound) received $457,907 in tx 0x3b6ce52704cb0fe3b553f273ef98e4e56cba477f52f4db0ad82ab03413f8111d. Contract-to-contract MEME flow in the same window is DeFi plumbing, excluded from this signal.",
+   "converging_whales": 3,
+   "converging_wallets": [
+    "0xe34207a261ff91edf99282b1590ca7047296ed37",
+    "0xdb13016645ad9597576c8b7c2496f57f88be1926",
+    "0xe8b7102cb564fc9a64a9ae3ec7abd15c789d9d5d"
+   ],
+   "combined_amount_usd": 742872.55,
+   "whale": "0xdb13016645ad9597576c8b7c2496f57f88be1926",
+   "whale_assets_usd": 458641.98,
+   "amount_usd": 457907.01,
+   "convergence": true,
+   "receiver_is_contract": false
+  },
+  {
+   "found_at": "2026-10-12T09:36:19.767Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Raccoin RACC",
+   "muse": "",
+   "contract": "0x7f52721532511d241a9e188f57c055f12ba145a6",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x6cbc69313410adc3e6e0e6c125444e50270750df8b4d80e0ae7e51436269cec3",
+   "block": 86569978,
+   "curve": "0x47079906c5b269db67a1fdb2484adbc17fb10c2d",
+   "deployer": "0x07fba85ca92c5a0f4cb6912d910dfcd35f2c01bf",
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86569978 (tx 0x6cbc69313410adc3e6e0e6c125444e50270750df8b4d80e0ae7e51436269cec3); name=Raccoin symbol=RACC curve=0x47079906c5b269db67a1fdb2484adbc17fb10c2d deployer=0x07fba85ca92c5a0f4cb6912d910dfcd35f2c01bf. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-12T09:36:23.059Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Ingot Finance INGOT",
+   "muse": "",
+   "contract": "0x5dbee85df6d9a1d2df5d96cefc7661103db50da5",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x96380689c64e74208f19b9be9deb8d8b7c67fdfe97f826fd10127586cf1ed550",
+   "block": 86570203,
+   "curve": "0xac6cd8bbe89130ce5d0895e4d73aecd1c13bfd84",
+   "deployer": "0x4cfe3212f2e1672f8c32ef6ec7e78d8d3d7e316b",
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86570203 (tx 0x96380689c64e74208f19b9be9deb8d8b7c67fdfe97f826fd10127586cf1ed550); name=Ingot Finance symbol=INGOT curve=0xac6cd8bbe89130ce5d0895e4d73aecd1c13bfd84 deployer=0x4cfe3212f2e1672f8c32ef6ec7e78d8d3d7e316b. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+  },
+  {
+   "found_at": "2026-10-12T09:36:27.666Z",
+   "scout": "pons-family",
+   "type": "token",
+   "name": "Clawdia CLAWDIA",
+   "muse": "",
+   "contract": "0x6551a70dca4b941b00de4411e4bbf63cac4233e7",
+   "chain": "robinhood",
+   "source": "pons-factory",
+   "tx_hash": "0x0cd0a48f16083e548d017c9ed64594c7de6332ebae7bb77485abd76f94b30ad8",
+   "block": 86571173,
+   "curve": "0xafe5a06d4679d416831088d23b13e7e8865510bb",
+   "deployer": "0x129d295b509b037badacbf0347a0b0f359a5f364",
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86571173 (tx 0x0cd0a48f16083e548d017c9ed64594c7de6332ebae7bb77485abd76f94b30ad8); name=Clawdia symbol=CLAWDIA curve=0xafe5a06d4679d416831088d23b13e7e8865510bb deployer=0x129d295b509b037badacbf0347a0b0f359a5f364. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
   }
  ],
- "scout_queue_total": 12531,
+ "scout_queue_total": 12536,
  "investigations": [
   {
    "candidate": {
@@ -847079,7 +847102,7 @@
   "v4-launch"
  ],
  "last_activity": {
-  "scout": "2026-10-12T09:34:21.728Z",
+  "scout": "2026-10-12T09:36:27.666Z",
   "hymn": "2026-10-12T09:34:26.642Z",
   "scorer": "2026-10-12T09:25:19.655Z",
   "snug": null,
@@ -847231,8 +847254,8 @@
     "tx_hash": "0x0cef41c59b5ff5890632d9a5d376772d22fd5c83eb6d90960088f8f66517ec90",
     "entered_at": "2026-10-09T01:51:03.242Z",
     "entry_price_usd": 0.1135,
-    "current_price_usd": 0.1225,
-    "pnl_pct": 7.929515418502198,
+    "current_price_usd": 0.1221,
+    "pnl_pct": 7.577092511013213,
     "amount_tokens": 216.29986717343255,
     "amount_eth_in": 0.01,
     "score": 60,
@@ -847278,10 +847301,10 @@
     "exit_price_usd": 0.0000057094609974722175
    }
   ],
-  "realized_pnl_pct_total": -44.750910868681025
+  "realized_pnl_pct_total": -45.10333377617001
  },
  "paper_trades": {
-  "as_of": "2026-10-12T09:32:14.266Z",
+  "as_of": "2026-10-12T09:37:13.623Z",
   "closed_trades": 0,
   "win_rate_pct": null,
   "avg_realized_pct": null,
@@ -847300,7 +847323,7 @@
     "seeded": true,
     "score": 66,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01122,
+    "last_price_usd": 0.01115,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -847311,8 +847334,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00023498694516971175,
-    "unrealized_pnl_pct": -2.3498694516971175
+    "unrealized_pnl_eth": -0.00029590948651000873,
+    "unrealized_pnl_pct": -2.959094865100087
    },
    {
     "id": "pt-muzwwuzb-27",
@@ -847323,7 +847346,7 @@
     "seeded": true,
     "score": 63,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01122,
+    "last_price_usd": 0.01115,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -847334,8 +847357,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00023498694516971175,
-    "unrealized_pnl_pct": -2.3498694516971175
+    "unrealized_pnl_eth": -0.00029590948651000873,
+    "unrealized_pnl_pct": -2.959094865100087
    },
    {
     "id": "pt-mv02u5pe-52",
@@ -847369,7 +847392,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.3494,
+    "last_price_usd": 0.3498,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -847380,8 +847403,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00004311583788444873,
-    "unrealized_pnl_pct": 0.43115837884448727
+    "unrealized_pnl_eth": 0.00005461339465363757,
+    "unrealized_pnl_pct": 0.5461339465363757
    },
    {
     "id": "pt-mv03wwab-54",
@@ -847392,7 +847415,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 80.94,
-    "last_price_usd": 86.043,
+    "last_price_usd": 86.0065,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -847403,8 +847426,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 5819198,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0006304670126019274,
-    "unrealized_pnl_pct": 6.304670126019274
+    "unrealized_pnl_eth": 0.0006259574993822592,
+    "unrealized_pnl_pct": 6.259574993822592
    },
    {
     "id": "pt-mv0blxia-72",
@@ -847415,7 +847438,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.3494,
+    "last_price_usd": 0.3498,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -847426,8 +847449,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00009917823746103728,
-    "unrealized_pnl_pct": -0.9917823746103727
+    "unrealized_pnl_eth": -0.00008784358175120354,
+    "unrealized_pnl_pct": -0.8784358175120355
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -847438,7 +847461,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.3494,
+    "last_price_usd": 0.3498,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -847449,8 +847472,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00009356393535582708,
-    "unrealized_pnl_pct": -0.9356393535582708
+    "unrealized_pnl_eth": -0.00008222285228239312,
+    "unrealized_pnl_pct": -0.8222285228239312
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -847461,7 +847484,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.3494,
+    "last_price_usd": 0.3498,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -847472,8 +847495,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00011038777243136178,
-    "unrealized_pnl_pct": -1.1038777243136177
+    "unrealized_pnl_eth": -0.00009906594961788807,
+    "unrealized_pnl_pct": -0.9906594961788806
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -847484,7 +847507,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.3494,
+    "last_price_usd": 0.3498,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -847495,8 +847518,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00011598302687411577,
-    "unrealized_pnl_pct": -1.1598302687411577
+    "unrealized_pnl_eth": -0.00010466760961810428,
+    "unrealized_pnl_pct": -1.0466760961810428
    }
   ],
   "closed_recent": [],

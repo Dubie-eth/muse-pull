@@ -1,21 +1,11 @@
 {
- "updated_at": "2026-10-12T09:20:04.212Z",
+ "updated_at": "2026-10-12T09:21:56.906Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-12T08:55:41.440Z",
-   "scout": "wave-hello",
-   "type": "contract",
-   "name": "ERC-721 contract",
-   "contract": "0x9ec6c5b9f572a9b02138e553bc5f5882da735f45",
-   "chain": "robinhood",
-   "source": "onchain",
-   "detail": "ERC-721 detected via Transfer event + ERC-165 supportsInterface (block range 85231232..85233231)"
-  },
   {
    "found_at": "2026-10-12T08:55:41.440Z",
    "scout": "wave-hello",
@@ -1680,7 +1670,9 @@
     "liqEth": 0.020277921531092657,
     "venue": "curve",
     "curve": "0xf76e9baf5fbb9f0265d21382fcb9ed54486d5144"
-   }
+   },
+   "investigated": true,
+   "investigated_at": "2026-10-12T09:21:35.638108+00:00"
   },
   {
    "found_at": "2026-10-12T09:15:48.485Z",
@@ -1822,7 +1814,9 @@
     "liqEth": 0.11984557607406601,
     "venue": "curve",
     "curve": "0x9c07c93e884a845d49c3b8dae6137cc2e0c88f49"
-   }
+   },
+   "investigated": true,
+   "investigated_at": "2026-10-12T09:21:35.638108+00:00"
   },
   {
    "found_at": "2026-10-12T09:16:25.888Z",
@@ -2092,7 +2086,9 @@
     "liqEth": 0.04699,
     "venue": "curve",
     "curve": "0xc030837fc6967783dac643bccecca20454c0a977"
-   }
+   },
+   "investigated": true,
+   "investigated_at": "2026-10-12T09:21:35.638108+00:00"
   },
   {
    "found_at": "2026-10-12T09:19:02.238Z",
@@ -2104,9 +2100,19 @@
    "tx_hash": "0x224af5023fce3dcbbc443a83da476111117cb3ee838708fb3d2a0c3802db54bd",
    "block": 86561996,
    "detail": "new contract deployed in block 86561996"
+  },
+  {
+   "found_at": "2026-10-12T09:21:10.064Z",
+   "scout": "wave-hello",
+   "type": "contract",
+   "name": "ERC-721 contract",
+   "contract": "0xfd7ffa6f826b66c8458cb0040b54ae995f7dd93c",
+   "chain": "robinhood",
+   "source": "onchain",
+   "detail": "ERC-721 detected via Transfer event + ERC-165 supportsInterface (block range 85253232..85255231)"
   }
  ],
- "scout_queue_total": 12518,
+ "scout_queue_total": 12519,
  "investigations": [
   {
    "candidate": {
@@ -281563,6 +281569,218 @@
    "verdict": "skip",
    "verdict_note": "strongest onchain profile of this tick (early curve 35.8%, 3.01 ETH, 173 wallets, spread holders, live sells, zero snipe tax) — but fast lane's own three-hymnling verdict pass already SKIP-vetoed it (wave-hello:SKIP, humming-hymn:SKIP vs blanket-snug:BUY; no-buy recorded at 09:11Z) and no new onchain facts have arrived since to overturn the veto. coherent call: skip, documented.",
    "social_scored_at": "2026-10-12T09:16:46.166Z"
+  },
+  {
+   "investigated_at": "2026-10-12T09:21:35.638108+00:00",
+   "candidate": {
+    "contract": "0x9a64d4dbb49949fd73254ce1ea3ad99587667543",
+    "chain": "robinhood",
+    "name": null,
+    "scout": "block-watcher",
+    "type": "contract",
+    "found_at": "2026-10-12T06:10:18.719Z",
+    "block": 86452014,
+    "tx_hash": "0xa0d79a5da464a6f555e1faa08000f80f9375ff7f9acc958dd07bad0647454181",
+    "curve": null,
+    "deployer": null,
+    "detail": "new contract deployed in block 86452014",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-12T09:17:29.879Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "n/a (non-token contract)",
+   "velocity_note": "block-watcher 'new contract deployed' at 86452014; no mint/buy surface.",
+   "social_signal": "weak",
+   "social_note": "no ERC20 token to buzz about; X reads conserved per standing order.",
+   "money_flow": "n/a",
+   "money_flow_note": "not an ERC20 - totalSupply() reverts live (execution reverted, curl-verified 09:22Z); 6875-byte bytecode, no name/symbol; no V2 pair, no V4 pools per gate.",
+   "solana_pulse": {
+    "sol_usd": 111.64,
+    "sol_24h_change_pct": 2.05,
+    "sol_source": "coingecko simple/price cache 2026-10-12T09:02:30Z (fresh ~20min)",
+    "pump_fun_momentum": "degraded (pump-fun-seen.json has no timestamps; last price-cache note says stale since 2026-10-09)",
+    "x_leg": "cached",
+    "x_leg_ts": "2026-10-12T09:04:30Z",
+    "x_summary": "memecoin shill spam; $SOL ~$112 trader note; @solana RTs (2,000+ tokenized equities); $ASTER live on Solana via Jupiter; no exploit/FUD, no official @solana/@pumpfun posts in sample",
+    "risk": "neutral",
+    "risk_line": "risk-neutral for Solana memecoins: SOL green (+2.05% 24h), no FUD/exploit, but shill-heavy feed - caution warranted; all four candidates are Robinhood-chain pons launches, so the pulse is context only."
+   },
+   "verdict": "skip",
+   "verdict_note": "dead-end non-token contract: no investable path. Gate warnings (no LP data, unreadable supply, undiscoverable owner) corroborate; hymn dead-check fired (not ts)."
+  },
+  {
+   "investigated_at": "2026-10-12T09:21:35.638108+00:00",
+   "candidate": {
+    "contract": "0xf59e8dfe26af67a438b97957e823e4bd310602a1",
+    "chain": "robinhood",
+    "name": "Influence INFLUENCE",
+    "scout": "pons-family",
+    "type": "token",
+    "found_at": "2026-10-12T09:15:06.847Z",
+    "block": 86554871,
+    "tx_hash": "0x5462bbb47b281f0f0527f6019b8c68a1030470ea1b29f4013db6f4a42717d388",
+    "curve": "0xf76e9baf5fbb9f0265d21382fcb9ed54486d5144",
+    "deployer": "0xc44df4ae7126999417ab5a63db6fdcf856399749",
+    "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86554871 (tx 0x5462bbb47b281f0f0527f6019b8c68a1030470ea1b29f4013db6f4a42717d388); name=Influence symbol=INFLUENCE curve=0xf76e9baf5fbb9f0265d21382fcb9ed54486d5144 deployer=0xc44df4ae7126999417ab5a63db6fdcf856399749. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-12T09:15:49.008Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "fast_lane": {
+     "action": "no-buy",
+     "reason": "agent-veto",
+     "gate": "gate_pass",
+     "agents": [
+      "wave-hello:SKIP",
+      "humming-hymn:SKIP",
+      "blanket-snug:SKIP"
+     ],
+     "veto": true,
+     "liqEth": 0.020277921531092657,
+     "venue": "curve",
+     "curve": "0xf76e9baf5fbb9f0265d21382fcb9ed54486d5144"
+    }
+   },
+   "velocity": "churn at birth",
+   "velocity_note": "16 CurveBuys / 11 CurveSells in ~13 min from launch block 86554871 (tip 86562353); 8 unique buyers, 7 unique sellers, 7 overlap - 87% of buyers flipped within minutes; curve 98.85% pre-graduation.",
+   "social_signal": "weak",
+   "social_note": "pre-social age (~13 min at probe); no X buzz expected or sought - onchain decisive, reads conserved.",
+   "money_flow": "churn",
+   "money_flow_note": "buyers are flippers, not accumulators; deployer 0xc44df4ae7126999417ab5a63db6fdcf856399749 top holder at 1.14% (not a concentration play, just retail churn).",
+   "solana_pulse": {
+    "sol_usd": 111.64,
+    "sol_24h_change_pct": 2.05,
+    "sol_source": "coingecko simple/price cache 2026-10-12T09:02:30Z (fresh ~20min)",
+    "pump_fun_momentum": "degraded (pump-fun-seen.json has no timestamps; last price-cache note says stale since 2026-10-09)",
+    "x_leg": "cached",
+    "x_leg_ts": "2026-10-12T09:04:30Z",
+    "x_summary": "memecoin shill spam; $SOL ~$112 trader note; @solana RTs (2,000+ tokenized equities); $ASTER live on Solana via Jupiter; no exploit/FUD, no official @solana/@pumpfun posts in sample",
+    "risk": "neutral",
+    "risk_line": "risk-neutral for Solana memecoins: SOL green (+2.05% 24h), no FUD/exploit, but shill-heavy feed - caution warranted; all four candidates are Robinhood-chain pons launches, so the pulse is context only."
+   },
+   "verdict": "skip",
+   "verdict_note": "dump-at-birth churn pattern, no organic accumulation signature; corroborates fast-lane agent-veto (wave-hello/humming-hymn/blanket-snug all SKIP)."
+  },
+  {
+   "investigated_at": "2026-10-12T09:21:35.638108+00:00",
+   "candidate": {
+    "contract": "0x0a2ae8dcf79679cfd8e53712be081a9c33cd1a7d",
+    "chain": "robinhood",
+    "name": "ARES ARES",
+    "scout": "pons-family",
+    "type": "token",
+    "found_at": "2026-10-12T09:15:48.485Z",
+    "block": 86558541,
+    "tx_hash": "0x6d1eac7a00b7d2b19f9c50a912876bc2a30665a1893f9809673f754a2fa7ab11",
+    "curve": "0x9c07c93e884a845d49c3b8dae6137cc2e0c88f49",
+    "deployer": "0x9fc7875df1253c369f947100f2d90d8cd959b8d4",
+    "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86558541 (tx 0x6d1eac7a00b7d2b19f9c50a912876bc2a30665a1893f9809673f754a2fa7ab11); name=ARES symbol=ARES curve=0x9c07c93e884a845d49c3b8dae6137cc2e0c88f49 deployer=0x9fc7875df1253c369f947100f2d90d8cd959b8d4. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-12T09:19:17.977Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "fast_lane": {
+     "action": "no-buy",
+     "reason": "agent-veto",
+     "gate": "gate_pass",
+     "agents": [
+      "wave-hello:SKIP",
+      "humming-hymn:SKIP",
+      "blanket-snug:SKIP"
+     ],
+     "veto": true,
+     "liqEth": 0.11984557607406601,
+     "venue": "curve",
+     "curve": "0x9c07c93e884a845d49c3b8dae6137cc2e0c88f49"
+    }
+   },
+   "velocity": "churn at birth",
+   "velocity_note": "7 CurveBuys / 5 CurveSells in ~10 min from launch block 86558541; 6 unique buyers, 5 unique sellers, 4 overlap; curve 93.39% pre-graduation, 0.1198 ETH collected.",
+   "social_signal": "weak",
+   "social_note": "pre-social age (~10 min); onchain decisive, reads conserved.",
+   "money_flow": "churn",
+   "money_flow_note": "same flip-heavy birth as Influence - 4 of 6 buyers sold within minutes; no accumulation.",
+   "solana_pulse": {
+    "sol_usd": 111.64,
+    "sol_24h_change_pct": 2.05,
+    "sol_source": "coingecko simple/price cache 2026-10-12T09:02:30Z (fresh ~20min)",
+    "pump_fun_momentum": "degraded (pump-fun-seen.json has no timestamps; last price-cache note says stale since 2026-10-09)",
+    "x_leg": "cached",
+    "x_leg_ts": "2026-10-12T09:04:30Z",
+    "x_summary": "memecoin shill spam; $SOL ~$112 trader note; @solana RTs (2,000+ tokenized equities); $ASTER live on Solana via Jupiter; no exploit/FUD, no official @solana/@pumpfun posts in sample",
+    "risk": "neutral",
+    "risk_line": "risk-neutral for Solana memecoins: SOL green (+2.05% 24h), no FUD/exploit, but shill-heavy feed - caution warranted; all four candidates are Robinhood-chain pons launches, so the pulse is context only."
+   },
+   "verdict": "skip",
+   "verdict_note": "churn-at-birth class match; corroborates fast-lane agent-veto (3x SKIP)."
+  },
+  {
+   "investigated_at": "2026-10-12T09:21:35.638108+00:00",
+   "candidate": {
+    "contract": "0x40f1ae729ca3196949c0c5b8bf2f778d46f350a5",
+    "chain": "robinhood",
+    "name": "OTC OTC",
+    "scout": "pons-family",
+    "type": "token",
+    "found_at": "2026-10-12T09:16:42.067Z",
+    "block": 86559555,
+    "tx_hash": "0x412b7c8e172ca81eadf641e3b3cff61d72908b6ab57cd41befdca9fd8364265c",
+    "curve": "0xc030837fc6967783dac643bccecca20454c0a977",
+    "deployer": "0x7e0ee6d14a58ca8a949106acaf3029206511ac31",
+    "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86559555 (tx 0x412b7c8e172ca81eadf641e3b3cff61d72908b6ab57cd41befdca9fd8364265c); name=OTC symbol=OTC curve=0xc030837fc6967783dac643bccecca20454c0a977 deployer=0x7e0ee6d14a58ca8a949106acaf3029206511ac31. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-12T09:17:57.026Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no CurveSell events in 20k blocks — sell leg unproven by history (sell selector onchain-verified; executor forward-simulates the exact sell at exit time)",
+     "thin holder data (4 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "fast_lane": {
+     "action": "no-buy",
+     "reason": "agent-veto",
+     "gate": "gate_pass",
+     "agents": [
+      "wave-hello:SKIP",
+      "humming-hymn:SKIP",
+      "blanket-snug:SKIP"
+     ],
+     "veto": true,
+     "liqEth": 0.04699,
+     "venue": "curve",
+     "curve": "0xc030837fc6967783dac643bccecca20454c0a977"
+    }
+   },
+   "velocity": "thin",
+   "velocity_note": "2 CurveBuys / 1 CurveSell since launch block 86559555; 2 unique buyers; curve 97.35% pre-graduation, 0.047 ETH collected.",
+   "social_signal": "weak",
+   "social_note": "pre-social age; no buzz, reads conserved.",
+   "money_flow": "thin",
+   "money_flow_note": "insufficient activity to judge; 4-address holder data per gate.",
+   "solana_pulse": {
+    "sol_usd": 111.64,
+    "sol_24h_change_pct": 2.05,
+    "sol_source": "coingecko simple/price cache 2026-10-12T09:02:30Z (fresh ~20min)",
+    "pump_fun_momentum": "degraded (pump-fun-seen.json has no timestamps; last price-cache note says stale since 2026-10-09)",
+    "x_leg": "cached",
+    "x_leg_ts": "2026-10-12T09:04:30Z",
+    "x_summary": "memecoin shill spam; $SOL ~$112 trader note; @solana RTs (2,000+ tokenized equities); $ASTER live on Solana via Jupiter; no exploit/FUD, no official @solana/@pumpfun posts in sample",
+    "risk": "neutral",
+    "risk_line": "risk-neutral for Solana memecoins: SOL green (+2.05% 24h), no FUD/exploit, but shill-heavy feed - caution warranted; all four candidates are Robinhood-chain pons launches, so the pulse is context only."
+   },
+   "verdict": "skip",
+   "verdict_note": "no measurable liquidity signal; sell leg unproven (0 CurveSell in gate's 20k-block window, 1 observed since); corroborates fast-lane agent-veto (3x SKIP)."
   }
  ],
  "scores": [
@@ -845806,8 +846024,8 @@
   "v4-launch"
  ],
  "last_activity": {
-  "scout": "2026-10-12T09:19:02.238Z",
-  "hymn": "2026-10-12T09:13:35.700162+00:00",
+  "scout": "2026-10-12T09:21:10.064Z",
+  "hymn": "2026-10-12T09:21:35.638108+00:00",
   "scorer": "2026-10-12T09:17:00Z",
   "snug": null,
   "cardigan": null
@@ -845877,7 +846095,7 @@
     "tx_hash": "0x750f3d68427ad7be0a12ca6aaf1ab7d1829802294b36090161aaf08025799dbd",
     "entered_at": "2026-10-08T20:15:30.720Z",
     "entry_price_usd": 0.01156,
-    "current_price_usd": 0.01151,
+    "current_price_usd": 0.01149,
     "pnl_pct": 0,
     "amount_tokens": 1055.2497206937642,
     "amount_eth_in": 0.005,
@@ -845904,8 +846122,8 @@
     "tx_hash": "0xcd209345f031f3ae4337c6feea42e3d8e01ac92d777205864e60ab2dd0bea993",
     "entered_at": "2026-10-08T20:58:38.421Z",
     "entry_price_usd": 0.011554,
-    "current_price_usd": 0.01151,
-    "pnl_pct": -0.38082049506664906,
+    "current_price_usd": 0.01149,
+    "pnl_pct": -0.5539207200969345,
     "amount_tokens": 1055.8207,
     "amount_eth_in": 0.005,
     "score": 62,
@@ -846005,7 +846223,7 @@
     "exit_price_usd": 0.0000057094609974722175
    }
   ],
-  "realized_pnl_pct_total": -41.00972278755911
+  "realized_pnl_pct_total": -41.182823012589395
  },
  "paper_trades": {
   "as_of": "2026-10-12T09:17:13.770Z",

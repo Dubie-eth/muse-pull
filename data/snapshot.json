@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-12T02:31:43.592Z",
+ "updated_at": "2026-10-12T02:34:24.734Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
@@ -2951,7 +2951,157 @@
    "block": 86316781,
    "curve": "0x5d7d3d67ccd5781094fac128b1ca9b1a7b61802a",
    "deployer": "0xcec69f8d81c7ca7b2d9dd230e77973717ff907fb",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86316781 (tx 0x6dbf4f8fc1797a256d595e27927009aa11231997aaf62e549c2559bf7a9182e2); name=Doge Pepe symbol=DOPE curve=0x5d7d3d67ccd5781094fac128b1ca9b1a7b61802a deployer=0xcec69f8d81c7ca7b2d9dd230e77973717ff907fb. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86316781 (tx 0x6dbf4f8fc1797a256d595e27927009aa11231997aaf62e549c2559bf7a9182e2); name=Doge Pepe symbol=DOPE curve=0x5d7d3d67ccd5781094fac128b1ca9b1a7b61802a deployer=0xcec69f8d81c7ca7b2d9dd230e77973717ff907fb. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-12T02:32:46.844Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "curve venue: ~1.2911 ETH collected >= 0.01 floor",
+       "buy leg simulates clean: 0.001 ETH -> 188351299891948757636865 tokens",
+       "54 CurveSell events in 20k blocks — sell path live",
+       "sell leg simulates clean from recent seller (0xcec69f8d…): -> 979447274365848 wei"
+      ],
+      "detail": {
+       "curve": "0x5d7d3d67ccd5781094fac128b1ca9b1a7b61802a",
+       "phase": "pre",
+       "curvePct": 56.54,
+       "curveCodeBytes": 10229,
+       "curveEth": 1.2911384662364365,
+       "snipeTaxBps": 0,
+       "buySim": {
+        "tokensOut": "188351299891948757636865"
+       },
+       "sellLiveness": {
+        "sells": 54,
+        "totalEthOut": "13349366394519162704126289"
+       },
+       "sellSim": {
+        "ethOut": "979447274365848",
+        "holder": "0xcec69f8d81c7ca7b2d9dd230e77973717ff907fb"
+       }
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "top-10 real-wallet holders own 23.63% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 99,
+       "top10EoaBps": 2363,
+       "top1EoaBps": 819,
+       "top10": [
+        {
+         "addr": "0xcec69f8d81c7ca7b2d9dd230e77973717ff907fb",
+         "bal": "81971633279445910290775989"
+        },
+        {
+         "addr": "0xdf07cd4e14183572495bc7fddf0d05da52e4ce22",
+         "bal": "26692458639635837415266094"
+        },
+        {
+         "addr": "0x2450347ecc21ed110b1d944b788276706dd73362",
+         "bal": "21154064389198232740153821"
+        },
+        {
+         "addr": "0xd050ebf0e794e3e1f1fe13058a8f7172c82fec9f",
+         "bal": "18501252608377630262939669"
+        },
+        {
+         "addr": "0xf6bcf0de46ce8de2195713e15abf309fbe378e00",
+         "bal": "15773948873350403836032687"
+        },
+        {
+         "addr": "0x9ad6029aa02648aa4dd6e9416f4a99995a540cff",
+         "bal": "15636835614082077185062456"
+        },
+        {
+         "addr": "0x8cf4c9e3ddf902574837809a8656f456e12b896a",
+         "bal": "14538099322225250370552236"
+        },
+        {
+         "addr": "0x3910ed213887848f2df35a3551aa2cfd46e85c18",
+         "bal": "14378703004053018584028466"
+        },
+        {
+         "addr": "0xa224d5e925e549d07108088856c1fe4562420007",
+         "bal": "14253261845888260554818057"
+        },
+        {
+         "addr": "0x9ab1202258dc3aa605d1fdc376ecfa0f2364f46c",
+         "bal": "13409935962497210333403157"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "pre",
+     "curvePct": 56.54
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "agent-veto",
+    "gate": "gate_pass",
+    "agents": [
+     "wave-hello:SKIP",
+     "humming-hymn:SKIP",
+     "blanket-snug:SKIP"
+    ],
+    "veto": true,
+    "liqEth": 1.2911384662364365,
+    "venue": "curve",
+    "curve": "0x5d7d3d67ccd5781094fac128b1ca9b1a7b61802a"
+   }
   },
   {
    "found_at": "2026-10-12T02:27:35.661Z",
@@ -2966,7 +3116,102 @@
    "block": 86317535,
    "curve": "0x871bff63e6727e142928514350a4f72bd93c1faa",
    "deployer": "0x5971edc0620b63662388b3a1d940215dadc86871",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86317535 (tx 0x664838f0f3a26501e62fd22dc350766fc03944433ad4d824453a8c9b1dc30045); name=Father AI symbol=FATHER curve=0x871bff63e6727e142928514350a4f72bd93c1faa deployer=0x5971edc0620b63662388b3a1d940215dadc86871. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86317535 (tx 0x664838f0f3a26501e62fd22dc350766fc03944433ad4d824453a8c9b1dc30045); name=Father AI symbol=FATHER curve=0x871bff63e6727e142928514350a4f72bd93c1faa deployer=0x5971edc0620b63662388b3a1d940215dadc86871. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-12T02:31:36.243Z",
+   "gate_reasons": [
+    "curve-collected ETH ~0.0001 < 0.01 floor (pre-graduation venue)"
+   ],
+   "gate_warnings": [
+    "thin holder data (5 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": false,
+      "reasons": [
+       "curve-collected ETH ~0.0001 < 0.01 floor (pre-graduation venue)"
+      ],
+      "warnings": [],
+      "notes": [],
+      "detail": {
+       "curve": "0x871bff63e6727e142928514350a4f72bd93c1faa",
+       "phase": "pre",
+       "curvePct": 99.99,
+       "curveCodeBytes": 10229,
+       "curveEth": 0.000111715348327805
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (5 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 5,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [
+        {
+         "addr": "0xcd6b980029e6e6e0733ac8ec3e02be9410d09799",
+         "bal": "7344431585506988337932"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "pre",
+     "curvePct": 99.99
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "gate-gate_failed",
+    "gate": "gate_failed"
+   }
   },
   {
    "found_at": "2026-10-12T02:27:38.045Z",
@@ -272761,7 +273006,9 @@
    "ecosystem_fit": "Robinhood-chain pons launch; Solana pulse neutral-to-positive - not risk-off, no tempering needed",
    "verdict": "needs-snug",
    "verdict_note": "needs-snug for durability read: 0.5763 ETH curve, 13.6 buys/min real velocity - BUT two risk flags: (1) serial deployer 0xba085e4717f678f558f87db40d5695c3267e94e6 nonce=434 (rug-farm shape); (2) celebrity-impersonation name 'MrBeast'/'BEAST' - snug must weigh impersonation risk + holder-quality before any grade. not a solo-call candidate.",
-   "social_scored_at": "2026-10-12T02:28:17.852Z"
+   "social_scored_at": "2026-10-12T02:28:17.852Z",
+   "snug_broken_down": true,
+   "snug_broken_down_at": "2026-10-12T02:32:10.476809+00:00"
   },
   {
    "investigated_at": "2026-10-12T02:16:00.739Z",
@@ -272802,7 +273049,9 @@
    "ecosystem_fit": "Robinhood-chain pons launch; Solana pulse neutral-to-positive - not risk-off, no tempering needed",
    "verdict": "promising",
    "verdict_note": "real velocity: 2.579 ETH on curve in ~11min, 10.0 buys/min, 105 buyers; no toxic-name hit, deployer nonce 79 not serial; pulse risk neutral-to-positive",
-   "social_scored_at": "2026-10-12T02:28:17.852Z"
+   "social_scored_at": "2026-10-12T02:28:17.852Z",
+   "snug_broken_down": true,
+   "snug_broken_down_at": "2026-10-12T02:32:10.476809+00:00"
   }
  ],
  "scores": [
@@ -501245,6 +501494,91 @@
    "processed_at": "2026-10-12T02:21:30Z",
    "processed_note": "flock-decision tick 22:20 EDT: 1081 entries, 0 unprocessed to score. fast-lane dedup: 2 open positions unchanged (Ollie 0xd08a0e4d, SAFU 0xc85e9f74 stranded, zero onchain liquidity, skipped by design); queue.db 3 fast_lane bought rows (Ollie, SAFU open; DNU stop-closed), no new buys. whale feed: no new entries since 02:18:35Z cutoff; last adjudicated batch (PONS 0x39dbed3a + CASHCAT 0x020bfc65 convergence) already handled. nothing scored, nothing executed, dubie not messaged.",
    "decision": "quiet-tick"
+  },
+  {
+   "broken_down_at": "2026-10-12T02:32:10.476809+00:00",
+   "candidate": {
+    "contract": "0xc7b44892df377f2f14fbb7c68504f0cd70bf2870",
+    "name": "MrBeast BEAST",
+    "chain": "robinhood",
+    "block": 86305244,
+    "found_at": "2026-10-12T02:05:01.648Z"
+   },
+   "investigation": {
+    "verdict": "needs-snug",
+    "velocity": "curve collected 0.5763 ETH (157 curve buys from 111 distinct buyers in ~11.5 min = 13.6 buys/min); 202 transfers, 115 holders; phase=pre",
+    "notes": "real onchain velocity, but flagged for snug on deployer + name risk",
+    "prior_grade": "P"
+   },
+   "social_grade": "P",
+   "social_total": 50,
+   "durability": "uncertain",
+   "comps": "velocity (13.6 buys/min, 111 buyers) is stronger than today's fast-lane curve buys judged BUY (0.46-1.2 ETH, 30-70 holders). BUT comps for celebrity-name tokens are uniformly bad: his team warns against name-using coins, no confirmed MrBeast token exists, and serial-deployer rug-farm batches (blocklisted btcminer/spoof/jef/never/donna/4m/pixela crews) dump within ~13 min of launch. pre-graduation curve venue removes the LP-pull path, which is the only structural positive.",
+   "risks": "serial deployer 0xba085e4717f678f558f87db40d5695c3267e94e6 nonce=434 - rug-farm shape; celebrity-impersonation naming ('MrBeast' BEAST) with no confirmed official token; snipe/organic attribution pending - all buyers <10min-old wallets at birth, organic vs bot indistinguishable. social grade P at ~25 min = neutral, no affirmative bad evidence yet, so the impersonation name alone is not a D/F.",
+   "recommendation": "watch",
+   "reason": "real velocity does not outweigh a serial-deployer rug-farm shape plus celebrity-impersonation naming. do not buy at birth; watch the social window - re-grade for impersonation-scam patterns or a dump, buy only if organic social legitimation appears.",
+   "processed": true,
+   "flock_decision": {
+    "tick": "2026-10-11T22:31:43-04:00",
+    "action": "skip",
+    "reason": "fast-lane vetoed twice (wave-hello/humming-hymn/blanket-snug all SKIP on first pass and recheck); serial deployer nonce 434 rug-farm shape + celebrity-impersonation naming; snug breakdown verdict needs-snug/watch. no score computed under veto."
+   }
+  },
+  {
+   "broken_down_at": "2026-10-12T02:32:10.476809+00:00",
+   "candidate": {
+    "contract": "0xeec65769bbcb3e5704748010220ab3857e4e23ef",
+    "name": "JustHoot JUSTHOOT",
+    "chain": "robinhood",
+    "block": 86306488,
+    "found_at": "2026-10-12T02:05:21.128Z"
+   },
+   "investigation": {
+    "verdict": "promising",
+    "velocity": "curve collected 2.5791 ETH (115 curve buys from 105 distinct buyers in ~11.5 min = 10.0 buys/min); 137 transfers, 111 holders; phase=pre",
+    "notes": "strongest velocity of this tick's candidates; deployer nonce 79 not serial; no toxic-name hit",
+    "prior_grade": "P"
+   },
+   "social_grade": "P",
+   "social_total": 50,
+   "durability": "strong",
+   "comps": "outperforms every fast-lane curve buy judged BUY today (0.46-1.2 ETH, 30-70 holders, top10 4-20%): 2.58 ETH on curve, 105 distinct buyers, 111 holders at ~25 min old. recent strandings (Ollie, SAFU) were V4-pool seed-and-yank - JustHoot sits on the Pons V2 curve where graduated-pool liquidity is permanently locked, so that failure mode does not apply. name is neutral (web hits are an unrelated NEAR launchpad), no toxic-name hit.",
+   "risks": "organic vs bot indistinguishable at birth (all buyers <10min-old wallets); pre-graduation, ~25 min old; sell simulation unavailable (executor forward-simulates the buyer's own sell at exit); thin evidence base - size small per lane norms.",
+   "recommendation": "buy",
+   "reason": "cleanest at-birth profile in the window: 2.58 ETH of curve demand, 105 buyers, non-serial deployer, neutral name, social P (no penalty, judged onchain only). curve venue removes LP-pull risk. small size, adaptive virality exit per lane rules.",
+   "processed": true,
+   "flock_decision": {
+    "tick": "2026-10-11T22:31:43-04:00",
+    "action": "watch",
+    "score_breakdown": {
+     "volume": 30,
+     "sentiment": 10,
+     "vitality": 15,
+     "vitality_detail": {
+      "momentum": 6,
+      "pickup": 4,
+      "talking": 2,
+      "legs": 3
+     },
+     "vitality_core": 9,
+     "whale_bonus": 0,
+     "mcap_adj": 0,
+     "total": 55
+    },
+    "virality": "uncertain (birth velocity strong; no legs evidence at ~27 min; neutral name)",
+    "band": "50-59 watch (vitality_core 9 < 15 -> no cautious buy)",
+    "reason": "55/100: strongest at-birth curve velocity this window (2.58 ETH, 115 buys, 105 distinct buyers, ~27 min, gate_pass, Pons curve venue) but momentum capped (vol/liq ~1.0 <1.5 on curve), no mainstream footprint, thin evidence for legs. watch; re-surface only if organic social legitimation or graduation velocity appears.",
+    "plan": {
+     "entry": "n/a (watch)",
+     "tp1_pct": 30,
+     "tp2_pct": 60,
+     "tp3_pct": 100,
+     "stop_pct": -20,
+     "moon_bag_pct": 15,
+     "trail_pct": 15,
+     "note": "flash-type exits drafted if it ever scores into buy band"
+    }
+   }
   }
  ],
  "tracking": {
@@ -810332,8 +810666,8 @@
   "scout": "2026-10-12T02:29:49.238Z",
   "hymn": "2026-10-12T02:16:00.739Z",
   "scorer": "2026-10-12T02:30:00Z",
-  "snug": null,
-  "cardigan": null
+  "snug": "2026-10-12T02:32:10.476809+00:00",
+  "cardigan": "2026-10-12T02:32:10.476809+00:00"
  },
  "challenge": {
   "wallet": "0xa554e642ac0fe1bbeeea26df17644ad8fce00ecc",

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-12T00:18:48.107Z",
+ "updated_at": "2026-10-12T00:19:45.356Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
@@ -1345,7 +1345,106 @@
    "block": 86234969,
    "curve": "0xb28bab72d76805ccb68abbe574e874488631d199",
    "deployer": "0xdf07212bb195e8d887b177257301803de7c86eab",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86234969 (tx 0xc74d26003b11433e7504b06f628e0d2f877e3a597e4235ef71770bdf247aaf5a); name=Trump dev symbol=TD curve=0xb28bab72d76805ccb68abbe574e874488631d199 deployer=0xdf07212bb195e8d887b177257301803de7c86eab. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86234969 (tx 0xc74d26003b11433e7504b06f628e0d2f877e3a597e4235ef71770bdf247aaf5a); name=Trump dev symbol=TD curve=0xb28bab72d76805ccb68abbe574e874488631d199 deployer=0xdf07212bb195e8d887b177257301803de7c86eab. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-12T00:19:08.901Z",
+   "gate_reasons": [
+    "curve-collected ETH ~0.0007 < 0.01 floor (pre-graduation venue)"
+   ],
+   "gate_warnings": [
+    "thin holder data (3 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": false,
+      "reasons": [
+       "curve-collected ETH ~0.0007 < 0.01 floor (pre-graduation venue)"
+      ],
+      "warnings": [],
+      "notes": [],
+      "detail": {
+       "curve": "0xb28bab72d76805ccb68abbe574e874488631d199",
+       "phase": "pre",
+       "curvePct": 99.96,
+       "curveCodeBytes": 10229,
+       "curveEth": 0.000687722127222908
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (3 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 3,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [
+        {
+         "addr": "0x89cde0ee1f2d69e27e8452c0c123109d70918edc",
+         "bal": "52008328641276066046700"
+        },
+        {
+         "addr": "0x7df0cc9266192a08d28c5dbdd4219ba67f1fa251",
+         "bal": "47377159114776765956385"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "pre",
+     "curvePct": 99.96
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "gate-gate_failed",
+    "gate": "gate_failed"
+   }
   },
   {
    "found_at": "2026-10-12T00:08:21.257Z",
@@ -1360,7 +1459,114 @@
    "block": 86235260,
    "curve": "0x5daccfcb71a0a577370d285a96177cdf9a2a7c8e",
    "deployer": "0xba77b795514798f24555644a594fb1e68bb8db81",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86235260 (tx 0x2636c99d707d09d487f5b08534ada82d38d295a7bde62cc4b43e322ee0920e0f); name=OneWallet symbol=ONEWALLET curve=0x5daccfcb71a0a577370d285a96177cdf9a2a7c8e deployer=0xba77b795514798f24555644a594fb1e68bb8db81. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86235260 (tx 0x2636c99d707d09d487f5b08534ada82d38d295a7bde62cc4b43e322ee0920e0f); name=OneWallet symbol=ONEWALLET curve=0x5daccfcb71a0a577370d285a96177cdf9a2a7c8e deployer=0xba77b795514798f24555644a594fb1e68bb8db81. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-12T00:18:46.015Z",
+   "gate_reasons": [
+    "curve-collected ETH ~0.0003 < 0.01 floor (pre-graduation venue)"
+   ],
+   "gate_warnings": [
+    "thin holder data (6 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": false,
+      "reasons": [
+       "curve-collected ETH ~0.0003 < 0.01 floor (pre-graduation venue)"
+      ],
+      "warnings": [],
+      "notes": [],
+      "detail": {
+       "curve": "0x5daccfcb71a0a577370d285a96177cdf9a2a7c8e",
+       "phase": "pre",
+       "curvePct": 99.98,
+       "curveCodeBytes": 10229,
+       "curveEth": 0.000273881030465364
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (6 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.01% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 6,
+       "top10EoaBps": 1,
+       "top1EoaBps": 0,
+       "top10": [
+        {
+         "addr": "0xc963f002e05b2e26d51f5072194e78f89ebcc0f0",
+         "bal": "49482399625200957492375"
+        },
+        {
+         "addr": "0xe7d2e8aee57815d8bf7cdb01183bc9fbeb4055ff",
+         "bal": "39662352332060888317074"
+        },
+        {
+         "addr": "0x0c73cf726f4547678e0f8b406c0a576ee8467dee",
+         "bal": "36653879000710075792970"
+        },
+        {
+         "addr": "0x82f0b8484e164d982a1e08968d99e1c0dfaca537",
+         "bal": "33385676764165811564426"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "pre",
+     "curvePct": 99.98
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "gate-gate_failed",
+    "gate": "gate_failed"
+   }
   },
   {
    "found_at": "2026-10-12T00:08:22.895Z",
@@ -493683,6 +493889,166 @@
    "processed_at": "2026-10-12T00:07:43Z",
    "processed_note": "flock-decision tick 20:07 EDT: 1028 entries, 0 unprocessed to score. fast-lane dedup: 2 open positions unchanged (Ollie 0xd08a0e4d, SAFU 0xc85e9f74 stranded, zero onchain liquidity, skipped by design); queue.db 3 fast_lane bought rows (Ollie, SAFU, DNU/stopped-closed), no new buys. 115 queue.db rows touched since 19:47 EDT: gate_pass rows all fast_lane no-buys (agent-veto/no-liquidity) = fast-lane's own domain; gate_failed rest; pending ones pre-gate. whale feed: FUNPANDA (0x94dac244186ac17323d84be293e1ff42201fd9ed) convergence continues (6 converging whales, moves thru 00:04Z) but queue.db gate_status=pending — no gate_pass, not decision-ready, skipped per gate rule. nothing scored, nothing executed, dubie not messaged.",
    "decision": "quiet-tick"
+  },
+  {
+   "kind": "tick",
+   "chain": "robinhood",
+   "processed": true,
+   "processed_at": "2026-10-12T00:17:30Z",
+   "processed_note": "flock-decision tick 20:15 EDT: 1029 entries, 0 unprocessed to score. fast-lane dedup: 3 bought rows unchanged (Ollie 0xd08a0e4d, SAFU 0xc85e9f74 open/stranded, DNU 0xf1acbe67 stop-closed); no new buys. 5 queue.db gate_pass rows since 20:07 EDT: 4 fresh pons launches (BLAWA 0xdd1b, FLOAT 0x5612, RAYLS 0x9df2, TOPFLOOR 0x554b) all fast-lane no-buy (agent-veto, all 3 hymnlings SKIP); PONS 0x39dbed3a re-sighting = high-cap hard skip, already adjudicated. whale feed: FUNPANDA 0x94dac244186ac17323d84be293e1ff42201fd9ed convergence at 00:04Z (6 whales) still gate=pending in queue.db, no decision-queue entry — not decision-ready, skipped per binary gate rule; note: many identical ~$2-5k EOA buys at block 86232361 resembles multi-send distribution (CLAUSCAT class), watcher may not have excluded it. nothing scored, nothing executed, dubie not messaged.",
+   "decision": "quiet-tick"
+  },
+  {
+   "broken_down_at": "2026-10-12T00:19:41.601929+00:00",
+   "candidate": "{'type': 'collection', 'chain': 'robinhood', 'note': 'mibboverse batch #8616/#8627/#8628/#8629 + agnt.social batch #8615/#8617/#8618, 2026-10-08T14:27Z'}",
+   "investigation": "{'verdict': 'needs-snug', 'money_flow': 'bot', 'social_signal': 'weak', 'velocity': 'batch-mint pattern — 4 chat agents + 3 nft-agents registered within minutes; token velocity not yet observable.', 'notes': 'mibboverse/mibbgent (owner 0x2cfb8b705642fcc21d139988acdcecb35c613647): 4 chat agents each carrying an agent token on Robinhood chain (Grl, CM, etc.) + x402Support; Entropy++ #8616 spammy (\"nothing, nothing...\" + Point price shill); Chat Master #8627, KFRT #8628 (\"degen bot in robinhood\", chat+trading), CryptoGirl #8629. web search found no buzz — mixed-to-low quality but a NEW agentic-token platform actively minting today. agnt.social: contract 0x000000009d62675362a58911e3f32fecf46f5e18 auto-registered 3 nft-agents (#8615 token 2151, #8617 token 2752, #8618 token 5136 of 0x57efd86cf3ab1812cb47f0fd3c3d5bf0efb1f2d) via API; agnt.social is a real ERC-8004 agent-identity platform (MegaETH/Base/ETH). verdict needs-snug: new platforms minting token-bearing agents — durability of the model + token quality need the snug breakdown; not graded promising on their own merits.', 'investigated_at': '2026-10-08T14:45:23.006Z'}",
+   "social_grade": "F",
+   "social_total": 0,
+   "durability": "weak",
+   "comps": "agentic-token platforms minting agent-bearing tokens on RH chain have no graduation track record this week; mibboverse's chat-agent tokens read as chat toys (Entropy++ spammy, 'nothing nothing' + shill), and agnt.social's NFT-agent registrations are identity plumbing, not tradeable launches.",
+   "risks": "no actionable contract address on the entry (nothing to trade); mixed-to-low token quality; spammy content observed; zero web/X buzz 3 days on; safety gate skipped (no contract to check).",
+   "recommendation": "skip",
+   "reason": "collection-level intel with no tradeable target, social grade F, 3 days stale with no follow-up buzz. not a desk candidate; skip.",
+   "gate_status": "gate_skipped",
+   "gate_checked_at": "2026-10-08T19:11:13.753Z",
+   "gate_reasons": "[\"no contract address on entry\"]",
+   "gate_warnings": "[]",
+   "processed": true,
+   "processed_at": "2026-10-12T00:19:41.601929+00:00",
+   "processed_note": "snug breakdown, 2026-10-11 20:14 EDT tick"
+  },
+  {
+   "broken_down_at": "2026-10-12T00:19:41.601929+00:00",
+   "candidate": "{'type': 'collection', 'chain': 'solana', 'note': '2 late-window pump-fun entries: pullldotfun + Winterwallet, 2026-10-08T14:37Z'}",
+   "investigation": "{'verdict': 'needs-snug', 'money_flow': 'mixed', 'social_signal': 'mixed', 'velocity': 'pullldotfun: 34.5 SOL real reserves in bonding curve within ~1-2 min of launch, ~$14.5K mcap (ATH $16.4K), last trade seconds before fetch. Winterwallet: 30.8 SOL reserves, ~$12.9K mcap.', 'notes': 'pullldotfun LLL (HnMZsCML5fCFLCjqQ2WfVBkzJS7sxV4UntJQgSCMpump): strongest genuine candidate of the 60-coin scan — real concept (pull a random graded card, keep it or sell back instantly for 85%), socials x.com/pullldotfun + pulll.fun claimed in token metadata; pulll.fun resolves and serves a live app (Pool). web search could not independently confirm the X account or the project behind the token. Solana holder-spread/dev-bundle check NOT possible (Solana RPC 429). needs-snug: strongest organic candidate of this run, durability/holder check required before any interest. Winterwallet WW: RED FLAG — duplicate Winterwallet launches by different creators seconds apart (sister mint at dev baseline, 0 real SOL) = serial-launcher pattern, likely bundled/sniper fill. skip.', 'investigated_at': '2026-10-08T14:47:23.707Z'}",
+   "social_grade": "F",
+   "social_total": 0,
+   "durability": "weak",
+   "comps": "solana pump.fun graded-card concepts that cannot verify holders or team stay untradeable per the standing vetting bar (strict vetting, never force a buy).",
+   "risks": "holder-spread/dev-bundle check NEVER possible (Solana RPC 429 at scan time); X account x.com/pullldotfun never independently confirmed; Winterwallet = serial-launcher pattern (duplicate launches seconds apart, sister mint at dev baseline); entry 3 days stale; grade F.",
+   "recommendation": "skip",
+   "reason": "unverifiable on the two checks that matter (holders, team), the batch's other coin is an affirmative serial-launch red flag, and the entry is 3 days old with no social footprint. skip.",
+   "gate_status": "gate_skipped",
+   "gate_checked_at": "2026-10-08T19:11:13.753Z",
+   "gate_reasons": "[\"no contract address on entry\"]",
+   "gate_warnings": "[]",
+   "processed": true,
+   "processed_at": "2026-10-12T00:19:41.601929+00:00",
+   "processed_note": "snug breakdown, 2026-10-11 20:14 EDT tick"
+  },
+  {
+   "broken_down_at": "2026-10-12T00:19:41.601929+00:00",
+   "candidate": "{'type': 'collection', 'chain': 'base', 'note': '4 late-window new-pairs entries: Clumsy/BEARY/ZQRA/USDP, 2026-10-08T14:35Z'}",
+   "investigation": "{'verdict': 'needs-snug', 'money_flow': 'mixed', 'social_signal': 'weak', 'velocity': 'scout-reported: ZQRA $121.8k h1 (77 buys/53 sells, +76.7% m5), Clumsy $93.2k h1 (67/47, +69.1% m5), BEARY $85.6k h1 (67/45, +75.6% m5); USDP $2.3k h1.', 'notes': 'CLUSTER ALERT: Clumsy, BEARY, ZQRA (plus earlier SOUL, LOSERCORE) are FIVE near-identical momentum pairs launched within ~12 min — $85-128k h1 volumes, $6.8-8.6k reserves, $196-290k FDV, 53-77 buys / 40-53 sells, +24-77% m5 changes. buys/sells working (not honeypots) but the uniformity + timing smells like one launcher or a coordinated farm seeding lookalike pools. same corrupt pair_address fields as batch-2 (no onchain verification possible). needs-snug for the momentum cluster with the coordination red flag attached; USDP: $2.3k volume, skip.', 'investigated_at': '2026-10-08T14:47:23.707Z'}",
+   "social_grade": "F",
+   "social_total": 0,
+   "durability": "weak",
+   "comps": "coordinated lookalike-pool farms seed near-identical momentum pairs, rotate liquidity between them, and abandon the tail; no durability from uniformity.",
+   "risks": "AFFIRMATIVE coordination smell: five near-identical momentum pairs (Clumsy, BEARY, ZQRA, SOUL, LOSERCORE) launched within ~12 min with uniform stats ($85-128k h1, 53-77 buys/40-53 sells) = one launcher or a coordinated farm; pair_address fields corrupt so no onchain verification possible; 3 days stale; base outside the pons-only lane.",
+   "recommendation": "skip",
+   "reason": "coordination red flag on the whole cluster, no way to verify onchain, grade F, and base is outside the lane. skip.",
+   "gate_status": "gate_skipped",
+   "gate_checked_at": "2026-10-08T19:11:13.753Z",
+   "gate_reasons": "[\"no contract address on entry\"]",
+   "gate_warnings": "[]",
+   "processed": true,
+   "processed_at": "2026-10-12T00:19:41.601929+00:00",
+   "processed_note": "snug breakdown, 2026-10-11 20:14 EDT tick"
+  },
+  {
+   "broken_down_at": "2026-10-12T00:19:41.601929+00:00",
+   "candidate": "{'type': 'project', 'chain': 'ethereum', 'note': 'IMD identity.md agent swarm — 2,000 NFT seats, ERC-8004, open-source workers'}",
+   "investigation": "{'verdict': 'promising', 'money_flow': 'organic', 'social_signal': 'strong', 'velocity': 'n/a — not a fresh mint. network snapshot: 370+ active nodes (up from dozens within 5 days of Sept 20 NFT-gate opening); token +200%/week to ~$59.17M mcap, $6.4M daily volume (Sept 25 snapshot via coinlook.net, crawled ~2h before scan).', 'notes': 'verified real: coinlook.net + tokenpost.com confirm the swarm design — 2,000 identity.md NFTs, one seat per NFT, holder registers NFT under ERC-8004 and runs open-source worker (holder bears hardware/model costs, wires to Claude/Codex). paid requests 0.5 IMD (x402), Uniswap v4 CappedBurnHook burns 85% of trimmed tokens above cap. dubie-adjacent: IMD is the swarm-request payment token in the Swarm Pepe whitelist flow (0.5 IMD/request on mainnet). watch items: paid external usage still limited — growth may be launch-driven, not demand-driven. social grading + snug durability next.', 'investigated_at': '2026-10-08T15:06:00Z'}",
+   "social_grade": "B",
+   "social_total": 66,
+   "durability": "uncertain",
+   "comps": "ERC-8004 agent-identity networks with fee-burn tokenomics (MegaETH/Base/ETH agnt.social-style registries); IMD is the swarm-request payment token and dubie-adjacent via the Swarm Pepe whitelist flow.",
+   "risks": "paid external usage still limited - growth may be launch-driven, not demand-driven; the snapshot is 2+ weeks stale (Sept 25 via coinlook.net); ~$59M mcap sits outside the low-cap lane; X direct reads are credit-gated now.",
+   "recommendation": "watch",
+   "reason": "verified real project (coinlook.net + tokenpost.com), social grade B(66), organic money flow - but the intel is stale, the mcap is outside the desk lane, and there is no mint/buy target. watch as dubie-adjacent intel, not a trade.",
+   "gate_status": "gate_skipped",
+   "gate_checked_at": "2026-10-08T19:11:13.753Z",
+   "gate_reasons": "[\"no contract address on entry\"]",
+   "gate_warnings": "[]",
+   "processed": true,
+   "processed_at": "2026-10-12T00:19:41.601929+00:00",
+   "processed_note": "snug breakdown, 2026-10-11 20:14 EDT tick"
+  },
+  {
+   "broken_down_at": "2026-10-12T00:19:41.601929+00:00",
+   "candidate": "{'type': 'collection', 'chain': 'robinhood', 'note': '158 whale-watcher whale-move scout entries, window 2026-10-08T16:35-16:55Z; joined against whale-moves.json'}",
+   "investigation": "{'verdict': 'promising', 'money_flow': 'whale', 'social_signal': 'strong', 'velocity': 'MEME 0x385f4f8a: 353 txs/10k blocks (~17min) onchain; ~$1M 24h vol, $13M MC, 29K holders per itrusty.io. stock-mimic cluster: NVDA-clone 0xd0601ce1 6768 txs/10k blocks (extreme), SPY-clone 0x117cc213 3616 txs/10k blocks, SPCX-clone 0x4a0e65a3 1977 txs, CASHCAT 1606, PONS 1780, AI 4181.', 'notes': \"MEME (A Meme Coin 0x385f4f8ae47651ce5f58f5265395a669f8281e18) is LEGIT and ESTABLISHED, not a farm clone: Binance Spot + Binance Alpha + BingX listings, 29K holders, $13M MC, 'AMC = A Meme Coin' origin narrative, X @amemecoinrh, mainstream coverage (cryptobriefing, bitrue, coincarp). CORRECTION of earlier batch-5 note that lumped it with 7108-byte serial clones — different token. WHALE CONVERGENCE IS REAL: 6 whale-EOA receives in one window totaling $79,461.30 (max $29,980.32 by 0x3e4920555e680c142564456fb3f70ea84d6b4dc3 [$331.8k assets]; others 0x96949fd5 $13.1k, 0xe34207a2 $22.8k, 0x94aaeb10 x2 $3.0k, 0x4e5bc1cd $7.6k), scanner-flagged 10 converging whales. all receivers are EOAs (not contract-routing), token is tradeable on CEX+DEX. qualifies for the whale-convergence +10 bonus. NOTE: not a fresh launch — established token, so durability check should weigh entry timing vs launch-momentum scoring. STOCK-MIMIC CLUSTER = SKIP + SCAM-WATCH: SPY 0x117cc213 ($50.0k whale EOA buy by 0xa8553db0), AAPL 0xaf3d76f1 ($30.7k same whale), NVDA-2 0xd0601ce1 ($28.5k by 0x9f736f87; 6768 txs/10k blocks, 662 holders), MSTR 0xec262a75 ($19.2k by 0x1a18a8b9; farm-nexus 0x8366a39C holds 12.1%), GLD 0xc9a981fe ($18.2k), LLY 0x8005d266 ($6.2k/$3.3k), DJT 0x1d11f049, CRCL 0xdf0992e4, AMC 0x05a3d1cd, SPCX-3 0x4a0e65a3. all are UNOFFICIAL pons-factory launches impersonating Robinhood's official stock-token branding ('X • Robinhood Token') — second NVDA clone and third SPCX clone TODAY (farm respawn pattern), matching the Wazz-documented Pons-V2 coordinated-fraud pattern (batch-6/7). whale money is real but the tokens are impersonation vehicles; farm-nexus 0x8366a39C top-holds MSTR (12.1%), NVDA-2 (1.8%), SPCX-3 (0.3%). NOT buy candidates; flag to dubie as scam-watch. CASHCAT/PONS/AI: legit established tokens (CASHCAT first RH-chain breakout, Tapbit+Binance Alpha listed, ~$179M MC; PONS the pons platform token $31M MC; AI Artificial Inu on Binance Alpha) — whale moves here are contract-receiver DEX flow only (CASHCAT 7 moves $70.5k, PONS 6 moves $65.4k), no EOA accumulation; not launches, skip as market intel. CAPYBARA 0xb76cb608 ('Capybara With A Gun'): 15 whale moves $273.5k but ALL receiver-is-contract (DEX/pool routing), serial-launcher 1764-byte family with same-name clones on DEXscreener — farm token, skip. ORBIO (Orbio.so pons, $9.0k), CREORA ($2.4k), PRIORS ($5.3k), DJT/CRCL/AMC singletons: tiny or dead, skip.\", 'investigated_at': '2026-10-08T16:58:00Z'}",
+   "social_grade": "B",
+   "social_total": 68,
+   "durability": "uncertain",
+   "comps": "whale-convergence on established RH tokens (MEME, PONS, CASHCAT) is the persistent pattern this week; the stock-mimic cluster (MSTR/NVDA/SPY/AAPL clones) is the Wazz-documented Pons-V2 coordinated-fraud impersonation pattern with farm respawns (second NVDA, third SPCX clones in a day).",
+   "risks": "batch is 3 days stale; whale money into stock-mimics is real flow into IMPERSONATION vehicles (283-byte pons-proxy template, 'Robinhood Token' branding, farm-nexus 0x8366a39C top-holding several); the legitimate reads (MEME, CASHCAT, PONS convergence) were broken down per-token elsewhere.",
+   "recommendation": "watch",
+   "reason": "intel digest, not a single candidate: the legit read (MEME whale convergence on a CEX-listed token) is broken down per-token, and the stock-mimic flow is scam-watch. keep the convergence pattern on watch; skip the impersonation vehicles.",
+   "gate_status": "gate_skipped",
+   "gate_checked_at": "2026-10-08T19:11:13.754Z",
+   "gate_reasons": "[\"no contract address on entry\"]",
+   "gate_warnings": "[]",
+   "processed": true,
+   "processed_at": "2026-10-12T00:19:41.601929+00:00",
+   "processed_note": "snug breakdown, 2026-10-11 20:14 EDT tick"
+  },
+  {
+   "broken_down_at": "2026-10-12T00:19:41.601929+00:00",
+   "candidate": "{'type': 'token', 'scout': 'pons-family', 'name': 'Dog wiff Lizard DOGWIFFLIZ', 'contract': '0x6ac3e2adbafd1433f671749be4203be3393fabcf', 'chain': 'robinhood', 'found_at': '2026-10-11T23:53:11.689Z', 'tx_hash': '0xddf983dde40fafe343c6250df53bb85b2d72f08e67ad6320c6173283fb09ce82'}",
+   "investigation": "{'verdict': 'needs-snug', 'money_flow': 'bot', 'social_signal': 'weak', 'velocity': '+0.0041 ETH curve inflow in ~10 min (0.0174 -> 0.0215 ETH); 3 CurveBuys since deploy, 0 in last 2k blocks; 1 unique buyer = bot CONTRACT (0x6aa80d..., 19.8KB code, also sells on MAC curve) — single-bot accumulation, not a crowd', 'investigated_at': '2026-10-12T00:10:54.450Z'}",
+   "social_grade": "P",
+   "social_total": null,
+   "durability": "weak",
+   "comps": "single-bot-accumulated pons curves rarely develop a crowd - the bot fills the early curve and sells into graduation bids; compare MAC's 21-buyer two-sided tape tonight.",
+   "risks": "AFFIRMATIVE bad evidence: 1 unique buyer = bot CONTRACT (0x6aa80d..., 19.8KB code, also selling on the MAC curve) - single-bot accumulation, not a crowd; only 3 CurveBuys in ~20 min, 0 in the last 2k blocks; anonymous deployer; sell leg unproven by history; no social footprint.",
+   "recommendation": "skip",
+   "reason": "pre-social P is neutral on socials, but the onchain shows affirmative bot dominance, not absence of socials: one bot contract is the entire buyer base. skip; fast lane's thin-at-birth recheck can revisit if a real crowd shows up.",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-11T23:53:52.673Z",
+   "gate_reasons": "[]",
+   "gate_warnings": "[\"no CurveSell events in 20k blocks \\u2014 sell leg unproven by history (sell selector onchain-verified; executor forward-simulates the exact sell at exit time)\", \"thin holder data (0 addresses in 12k-block window)\", \"no owner(); deployer undiscoverable via RPC \\u2014 denylist check skipped\"]",
+   "processed": true,
+   "processed_at": "2026-10-12T00:19:41.601929+00:00",
+   "processed_note": "snug breakdown, 2026-10-11 20:14 EDT tick"
+  },
+  {
+   "broken_down_at": "2026-10-12T00:19:41.601929+00:00",
+   "candidate": "{'type': 'token', 'scout': 'pons-family', 'name': 'Multi Agent Controller MAC', 'contract': '0x5df5f13ad918ed3dbf8b5eb8b2d11cd9bc0d29cd', 'chain': 'robinhood', 'found_at': '2026-10-12T00:01:18.745Z', 'tx_hash': '0x77ddc3f106731270e76bc2607abac33d529dd202aa8768911b9a7f8e01f151ca'}",
+   "investigation": "{'verdict': 'promising', 'money_flow': 'mixed', 'social_signal': 'weak', 'velocity': 'live two-sided market: 37 CurveBuys/21 unique buyers + 33 CurveSells/17 unique sellers since deploy (~47 min ago, block 86213413); 2 buys in last 3k blocks, sells as recent as ~8 min ago; curve 0.221 ETH collected, 88.41% pre-grad; sell path live (17 events in 20k blocks). No X buzz found (0 results) — pre-social (<60 min), judged onchain only.', 'investigated_at': '2026-10-12T00:10:54.450Z'}",
+   "social_grade": "P",
+   "social_total": null,
+   "durability": "uncertain",
+   "comps": "tonight's strongest pons V2 pre-grad onchain: compare TRIVO (57 holders, ~1.03 ETH curve, 11.5h, still F) and DOGWIFFLIZ (3 buys, bot-only) - MAC has the only live two-sided tape of the batch.",
+   "risks": "anonymous deployer with no delivery history; no X/social footprint yet (pre-social, no penalty per dubie's rule); the known bot contract 0xe33e9e47... is among the buyers (mixed flow); 88.41% pre-grad with the sell path live - graduation mechanics are the remaining risk.",
+   "recommendation": "watch",
+   "reason": "humming-hymn verdict was promising and the onchain backs it: 37 CurveBuys/21 unique buyers + 33 CurveSells/17 unique sellers in ~47 min, 0.221 ETH curve, sell events live. grade P (~17 min old) is neutral - judge onchain only, no social penalty. durability uncertain until the 60-min social window closes; watch, entry is fast-lane's call with the agent verdicts.",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-12T00:01:36.813Z",
+   "gate_reasons": "[]",
+   "gate_warnings": "[\"third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time\", \"thin holder data (6 addresses in 12k-block window)\", \"no owner(); deployer undiscoverable via RPC \\u2014 denylist check skipped\"]",
+   "processed": true,
+   "processed_at": "2026-10-12T00:19:41.601929+00:00",
+   "processed_note": "snug breakdown, 2026-10-11 20:14 EDT tick"
+  },
+  {
+   "broken_down_at": "2026-10-12T00:19:41.601929+00:00",
+   "candidate": "{'type': 'token', 'scout': 'pons-family', 'name': 'Rayls RAYLS', 'contract': '0x9df2a9827da947279614b8ddaa1b89cc2f59f20d', 'chain': 'robinhood', 'found_at': '2026-10-12T00:08:58.411Z', 'tx_hash': '0x306b48e8ba7d0673abd69ea07c1c7305b3f1103b242013c3f08cf19c6e0ea0ab'}",
+   "investigation": "{'verdict': 'needs-snug', 'money_flow': 'bot', 'social_signal': 'weak', 'velocity': 'thin at birth: 2 CurveBuys/2 unique buyers (one = known 4.4KB bot contract 0xe33e9e47... also active on CI/ZENC/MAC), 0 sells, curve 0.0334 ETH (matches gate), 98.1% pre-grad, ~7 min old, 1 buy in last 3k blocks.', 'investigated_at': '2026-10-12T00:10:54.450Z'}",
+   "social_grade": "P",
+   "social_total": null,
+   "durability": "weak",
+   "comps": "thin-at-birth pons curves get one recheck at minute 20 per the standing rule; compare MAC's 21-buyer tape vs Rayls's 2 buyers.",
+   "risks": "thin at birth: 2 CurveBuys/2 unique buyers, 0 sells, one buyer = the known 4.4KB bot contract also active on CI/ZENC/MAC curves; anonymous deployer; sell leg unproven (no CurveSell events in 20k blocks); ~10 min old.",
+   "recommendation": "watch",
+   "reason": "too early to call (P, ~10 min old): bot among the first buyers is a caution flag, not a veto at this age. watch for the minute-20 thin-at-birth recheck per the standing rule.",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-12T00:10:09.426Z",
+   "gate_reasons": "[]",
+   "gate_warnings": "[\"no CurveSell events in 20k blocks \\u2014 sell leg unproven by history (sell selector onchain-verified; executor forward-simulates the exact sell at exit time)\", \"thin holder data (4 addresses in 12k-block window)\", \"no owner(); deployer undiscoverable via RPC \\u2014 denylist check skipped\"]",
+   "processed": true,
+   "processed_at": "2026-10-12T00:19:41.601929+00:00",
+   "processed_note": "snug breakdown, 2026-10-11 20:14 EDT tick"
   }
  ],
  "tracking": {
@@ -797611,8 +797977,8 @@
   "scout": "2026-10-12T00:13:55.441Z",
   "hymn": "2026-10-12T00:10:54.450Z",
   "scorer": "2026-10-12T00:17:43.595Z",
-  "snug": null,
-  "cardigan": null
+  "snug": "2026-10-12T00:19:41.601929+00:00",
+  "cardigan": "2026-10-12T00:19:41.601929+00:00"
  },
  "challenge": {
   "wallet": "0xa554e642ac0fe1bbeeea26df17644ad8fce00ecc",

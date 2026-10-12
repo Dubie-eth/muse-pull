@@ -1,26 +1,11 @@
 {
- "updated_at": "2026-10-12T11:30:42.985Z",
+ "updated_at": "2026-10-12T11:32:02.829Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-12T11:06:42.418Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Backroll BACKROLL",
-   "muse": "",
-   "contract": "0x09d235ccd5017ed022effb91666e2f05386a931d",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0x7e4f24171d5852ba874d6ac3fea419d5837d24261ebd426d845cc9ea55de9329",
-   "block": 86620566,
-   "curve": "0xba5969317f938770c88042dcbb54b668889a25e1",
-   "deployer": "0xcb920efceab85c6c46ae2e8bd7bebadbb3eecf08",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86620566 (tx 0x7e4f24171d5852ba874d6ac3fea419d5837d24261ebd426d845cc9ea55de9329); name=Backroll symbol=BACKROLL curve=0xba5969317f938770c88042dcbb54b668889a25e1 deployer=0xcb920efceab85c6c46ae2e8bd7bebadbb3eecf08. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
-  },
   {
    "found_at": "2026-10-12T11:07:03.405Z",
    "scout": "pons-family",
@@ -1483,7 +1468,97 @@
    "block": 86633558,
    "curve": "0xeb5caed992eb77d8c81d8daf88677c9fe53f146b",
    "deployer": "0xba8ee49c13c793187785d3b90b4da2174df334a0",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86633558 (tx 0x44232daeabd6391ed013b98e07742e2387f5aa801300854cb1cf20be65d473a7); name=Snarket Network symbol=SNARKS curve=0xeb5caed992eb77d8c81d8daf88677c9fe53f146b deployer=0xba8ee49c13c793187785d3b90b4da2174df334a0. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86633558 (tx 0x44232daeabd6391ed013b98e07742e2387f5aa801300854cb1cf20be65d473a7); name=Snarket Network symbol=SNARKS curve=0xeb5caed992eb77d8c81d8daf88677c9fe53f146b deployer=0xba8ee49c13c793187785d3b90b4da2174df334a0. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-12T11:31:24.257Z",
+   "gate_reasons": [
+    "curve-collected ETH ~0.0011 < 0.01 floor (pre-graduation venue)"
+   ],
+   "gate_warnings": [
+    "thin holder data (6 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": false,
+      "reasons": [
+       "curve-collected ETH ~0.0011 < 0.01 floor (pre-graduation venue)"
+      ],
+      "warnings": [],
+      "notes": [],
+      "detail": {
+       "curve": "0xeb5caed992eb77d8c81d8daf88677c9fe53f146b",
+       "phase": "pre",
+       "curvePct": 100,
+       "curveCodeBytes": 10229,
+       "curveEth": 0.001101559199999999
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (6 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 6,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "pre",
+     "curvePct": 100
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "gate-gate_failed",
+    "gate": "gate_failed"
+   }
   },
   {
    "found_at": "2026-10-12T11:25:35.081Z",
@@ -1498,7 +1573,99 @@
    "block": 86633757,
    "curve": "0x3e95f30b19a76f92448c76af8889c4e9713cc1cd",
    "deployer": "0x3b0e1e38591a7216df0687bac31b116ef3ff745f",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86633757 (tx 0x0640f46da56e83a1254e55a4d9467caf0f9a229c65326ffa6114bef87c7de42f); name=BAGS symbol=BAGS curve=0x3e95f30b19a76f92448c76af8889c4e9713cc1cd deployer=0x3b0e1e38591a7216df0687bac31b116ef3ff745f. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86633757 (tx 0x0640f46da56e83a1254e55a4d9467caf0f9a229c65326ffa6114bef87c7de42f); name=BAGS symbol=BAGS curve=0x3e95f30b19a76f92448c76af8889c4e9713cc1cd deployer=0x3b0e1e38591a7216df0687bac31b116ef3ff745f. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-12T11:30:42.432Z",
+   "gate_reasons": [
+    "curve-collected ETH ~0.0010 < 0.01 floor (pre-graduation venue)"
+   ],
+   "gate_warnings": [
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": false,
+      "reasons": [
+       "curve-collected ETH ~0.0010 < 0.01 floor (pre-graduation venue)"
+      ],
+      "warnings": [],
+      "notes": [],
+      "detail": {
+       "curve": "0x3e95f30b19a76f92448c76af8889c4e9713cc1cd",
+       "phase": "pre",
+       "curvePct": 99.99,
+       "curveCodeBytes": 10229,
+       "curveEth": 0.000983072366938468
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 20,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [
+        {
+         "addr": "0xd095841ed663b0a33adaf58ccb13919bd97334cb",
+         "bal": "4757098"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "pre",
+     "curvePct": 99.99
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "gate-gate_failed",
+    "gate": "gate_failed"
+   }
   },
   {
    "found_at": "2026-10-12T11:25:51.284Z",
@@ -1896,9 +2063,20 @@
    "tx_hash": "0xd00a7460da3ea0056e805223f89d06d77af8aad2bd1e095c2bf1f7bd1c7a6699",
    "block": 86638413,
    "detail": "new contract deployed in block 86638413"
+  },
+  {
+   "found_at": "2026-10-12T11:30:56.921Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xe4c5b20438f25683e10bbcfda592374d0ea46cc1",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x9a06427073d4c337726d2caa25c984f3e79c1a4b0bc5d3b19aa33b002da0ee63",
+   "block": 86639529,
+   "detail": "new contract deployed in block 86639529"
   }
  ],
- "scout_queue_total": 12757,
+ "scout_queue_total": 12758,
  "investigations": [
   {
    "candidate": {
@@ -479291,6 +479469,226 @@
    "grade": "D",
    "notes": "re-grade after social window (~120 min): no website, X, KOL or team surface. partial credit: shares the VENDO ARCADE name listed on robincalls.com night-market tracker (77% bonded, $53K FDV, $47K 24h vol) — aggregator visibility only; CA unattributed between two VENDO ARCADE contracts. onchain: spread holders, live sells, 0 snipe tax. weak, risky.",
    "regrade_of_prior_P": true
+  },
+  {
+   "scored_at": "2026-10-12T11:31:24.211Z",
+   "candidate": {
+    "contract": "0x4fd282865fe5eac2b91d52774172fb5145d4364d",
+    "name": "Raeto RAETO",
+    "chain": "robinhood",
+    "type": "token",
+    "found_at": "2026-10-12T05:46:08.756Z"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "re-grade (P->F): 5.7h old, zero social footprint across website/X/replies/KOL/spread/team/FOMO. web searches for ticker+contract found only an unrelated Ethereum RATO token (0xf81...27860); no site, no X account, no ticker spread, no KOL; queue social_signal weak downgraded per 60+min rubric; F hard-skips downstream."
+  },
+  {
+   "scored_at": "2026-10-12T11:31:24.211Z",
+   "candidate": {
+    "contract": "0x326fcb91685d946529ac68031e95be7dc32e24cc",
+    "name": "Revers REVERS",
+    "chain": "robinhood",
+    "type": "token",
+    "found_at": "2026-10-12T05:45:50.833Z"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "re-grade (P->F): 5.7h old, zero social footprint across website/X/replies/KOL/spread/team/FOMO. contract/ticker searches returned zero relevant results (French coin-collecting noise only); no footprint; queue social_signal weak downgraded per 60+min rubric; F hard-skips downstream."
+  },
+  {
+   "scored_at": "2026-10-12T11:31:24.211Z",
+   "candidate": {
+    "contract": "0x43c6f070f9e7d372e572270a317d2d3d6ff6c270",
+    "name": "Ryne RYNE",
+    "chain": "robinhood",
+    "type": "token",
+    "found_at": "2026-10-12T05:44:48.957Z"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "re-grade (P->F): 5.7h old, zero social footprint across website/X/replies/KOL/spread/team/FOMO. ticker searches surfaced nothing token-related; no site, no X, no spread; queue social_signal weak downgraded per 60+min rubric; F hard-skips downstream."
+  },
+  {
+   "scored_at": "2026-10-12T11:31:24.211Z",
+   "candidate": {
+    "contract": "0x13574f3f9ca68affad56c85521ac0aa030d7b2bd",
+    "name": "Hoodalerts HOODALERTS",
+    "chain": "robinhood",
+    "type": "token",
+    "found_at": "2026-10-12T05:46:18.777Z"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "re-grade (P->F): 5.7h old, zero social footprint across website/X/replies/KOL/spread/team/FOMO. searches hit only the unrelated hood-alerts Telegram bot service (nirholas); no token footprint; queue social_signal weak downgraded per 60+min rubric; F hard-skips downstream."
+  },
+  {
+   "scored_at": "2026-10-12T11:31:24.211Z",
+   "candidate": {
+    "contract": "0xbf13f5dd1ea2b2ba71bb3efbe42b2b8263ff3ad3",
+    "name": "Wow WOWCOIN",
+    "chain": "robinhood",
+    "type": "token",
+    "found_at": "2026-10-12T05:46:12.473Z"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "re-grade (P->F): 5.7h old, zero social footprint across website/X/replies/KOL/spread/team/FOMO. combined WOWCOIN/VECTA/JOBAI search returned only generic RH-chain memecoin guides; no token footprint; queue social_signal weak downgraded per 60+min rubric; F hard-skips downstream."
+  },
+  {
+   "scored_at": "2026-10-12T11:31:24.211Z",
+   "candidate": {
+    "contract": "0xc74095cf67bd7562139a3a20efad31d168f2297f",
+    "name": "Vecta VECTA",
+    "chain": "robinhood",
+    "type": "token",
+    "found_at": "2026-10-12T06:08:31.401Z"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "re-grade (P->F): 5.3h old, zero social footprint across website/X/replies/KOL/spread/team/FOMO. combined VECTA/JOBAI/WOWCOIN search returned only generic RH-chain memecoin guides; no token footprint; queue social_signal weak downgraded per 60+min rubric; F hard-skips downstream."
+  },
+  {
+   "scored_at": "2026-10-12T11:31:24.211Z",
+   "candidate": {
+    "contract": "0xbe3c881cadd129e55acb05c40d6715b377ca0756",
+    "name": "JobAI JOBAI",
+    "chain": "robinhood",
+    "type": "token",
+    "found_at": "2026-10-12T06:08:49.036Z"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "re-grade (P->F): 5.3h old, zero social footprint across website/X/replies/KOL/spread/team/FOMO. combined JOBAI/VECTA/WOWCOIN search returned only generic RH-chain memecoin guides; no token footprint; queue social_signal weak downgraded per 60+min rubric; F hard-skips downstream."
+  },
+  {
+   "scored_at": "2026-10-12T11:31:24.211Z",
+   "candidate": {
+    "contract": "0x454b8aa5ffaa13d70b2690a735910be5bd7fa6a0",
+    "name": "MIDWIMBLE MIDWIMBLE",
+    "chain": "robinhood",
+    "type": "token",
+    "found_at": ""
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "re-grade (P->F): ~4.8h old, zero social footprint across website/X/replies/KOL/spread/team/FOMO. launch-time X search found 3 engagement-farm wen-launch replies pinging @midwimble (an existing privacy-chain account, NOT the token) plus unverified sniper-3%/dev-holding claims; manufactured spam footprint, no real site/team; queue social_signal weak downgraded per 60+min rubric; F hard-skips downstream."
+  },
+  {
+   "scored_at": "2026-10-12T11:31:24.211Z",
+   "candidate": {
+    "contract": "0x67a7443ae368b073786ff5004804c134b45457ab",
+    "name": "(contract, unnamed)",
+    "chain": "robinhood",
+    "type": "token",
+    "found_at": "2026-10-12T03:40:31.611Z"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "re-grade (P->F): 7.7h old, zero social footprint across website/X/replies/KOL/spread/team/FOMO. unnamed contract, no token name to search; no footprint of any kind; queue social_signal weak downgraded per 60+min rubric; F hard-skips downstream."
+  },
+  {
+   "scored_at": "2026-10-12T11:31:24.211Z",
+   "candidate": {
+    "contract": "0xb086020c48eb346379f88f37a65f53747148ab79",
+    "name": "(contract, unnamed)",
+    "chain": "robinhood",
+    "type": "token",
+    "found_at": "2026-10-12T03:40:33.597Z"
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "re-grade (P->F): 7.7h old, zero social footprint across website/X/replies/KOL/spread/team/FOMO. unnamed contract, no token name to search; no footprint of any kind; queue social_signal weak downgraded per 60+min rubric; F hard-skips downstream."
   }
  ],
  "decisions": [
@@ -857495,9 +857893,9 @@
   "v4-launch"
  ],
  "last_activity": {
-  "scout": "2026-10-12T11:30:04.166Z",
+  "scout": "2026-10-12T11:30:56.921Z",
   "hymn": "2026-10-12T11:13:30Z",
-  "scorer": "2026-10-12T11:16:52.438Z",
+  "scorer": "2026-10-12T11:31:24.211Z",
   "snug": "2026-10-12T11:01:11.324369+00:00",
   "cardigan": "2026-10-12T11:01:11.324369+00:00"
  },
@@ -857566,7 +857964,7 @@
     "tx_hash": "0x750f3d68427ad7be0a12ca6aaf1ab7d1829802294b36090161aaf08025799dbd",
     "entered_at": "2026-10-08T20:15:30.720Z",
     "entry_price_usd": 0.01156,
-    "current_price_usd": 0.01127,
+    "current_price_usd": 0.01128,
     "pnl_pct": 0,
     "amount_tokens": 1055.2497206937642,
     "amount_eth_in": 0.005,
@@ -857593,8 +857991,8 @@
     "tx_hash": "0xcd209345f031f3ae4337c6feea42e3d8e01ac92d777205864e60ab2dd0bea993",
     "entered_at": "2026-10-08T20:58:38.421Z",
     "entry_price_usd": 0.011554,
-    "current_price_usd": 0.01127,
-    "pnl_pct": -2.45802319543015,
+    "current_price_usd": 0.01128,
+    "pnl_pct": -2.3714730829150072,
     "amount_tokens": 1055.8207,
     "amount_eth_in": 0.005,
     "score": 62,
@@ -857620,8 +858018,8 @@
     "tx_hash": "0x9dd64a59b56f07d62b92d7900ad2c79f2d5f1bb3d007ca08a7dd03c743ffdb8e",
     "entered_at": "2026-10-08T21:51:09.592Z",
     "entry_price_usd": 0.0423,
-    "current_price_usd": 0.03843,
-    "pnl_pct": -9.148936170212762,
+    "current_price_usd": 0.03849,
+    "pnl_pct": -9.007092198581548,
     "amount_tokens": 289.1701,
     "amount_eth_in": 0.005,
     "score": 69,
@@ -857694,7 +858092,7 @@
     "exit_price_usd": 0.0000057094609974722175
    }
   ],
-  "realized_pnl_pct_total": -54.40819895935074
+  "realized_pnl_pct_total": -54.17980487520438
  },
  "paper_trades": {
   "as_of": "2026-10-12T11:27:37.048Z",

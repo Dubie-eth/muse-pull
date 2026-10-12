@@ -1,21 +1,11 @@
 {
- "updated_at": "2026-10-12T09:07:57.301Z",
+ "updated_at": "2026-10-12T09:09:38.224Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-12T08:47:10.063Z",
-   "scout": "wave-hello",
-   "type": "contract",
-   "name": "ERC-721 contract",
-   "contract": "0x65d90a385cce3c478d95a09f4cbda407c7458643",
-   "chain": "robinhood",
-   "source": "onchain",
-   "detail": "ERC-721 detected via Transfer event + ERC-165 supportsInterface (block range 85225232..85227231)"
-  },
   {
    "found_at": "2026-10-12T08:47:10.063Z",
    "scout": "wave-hello",
@@ -1393,7 +1383,150 @@
    "block": 86551215,
    "curve": "0x726d77a3b30b26aeda231973e7095ca17504eab5",
    "deployer": "0x6c32c5f429d333cade4984b4cbad1f5a7c8a0f87",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86551215 (tx 0x74b5aad476c065b07b6a480926ec798488a389df2a23a36470493935b8aadcaa); name=XILO MARKETS symbol=XILO curve=0x726d77a3b30b26aeda231973e7095ca17504eab5 deployer=0x6c32c5f429d333cade4984b4cbad1f5a7c8a0f87. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 86551215 (tx 0x74b5aad476c065b07b6a480926ec798488a389df2a23a36470493935b8aadcaa); name=XILO MARKETS symbol=XILO curve=0x726d77a3b30b26aeda231973e7095ca17504eab5 deployer=0x6c32c5f429d333cade4984b4cbad1f5a7c8a0f87. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-12T09:08:36.947Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time"
+      ],
+      "notes": [
+       "curve venue: ~0.2817 ETH collected >= 0.01 floor",
+       "buy leg simulates clean: 0.001 ETH -> 423319181493891437957367 tokens",
+       "52 CurveSell events in 20k blocks — sell path live"
+      ],
+      "detail": {
+       "curve": "0x726d77a3b30b26aeda231973e7095ca17504eab5",
+       "phase": "pre",
+       "curvePct": 85.64,
+       "curveCodeBytes": 10229,
+       "curveEth": 0.28173322322475314,
+       "snipeTaxBps": 0,
+       "buySim": {
+        "tokensOut": "423319181493891437957367"
+       },
+       "sellLiveness": {
+        "sells": 52,
+        "totalEthOut": "5645757188330725534416658"
+       },
+       "sellSim": {
+        "error": "no recent seller with usable allowance found"
+       }
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "top-10 real-wallet holders own 12.34% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 58,
+       "top10EoaBps": 1234,
+       "top1EoaBps": 398,
+       "top10": [
+        {
+         "addr": "0x5fdc5bb6a17ff07db6ad4f28aca21bd4eedd5f80",
+         "bal": "39897521240561945676576692"
+        },
+        {
+         "addr": "0x6341fbf46df9fd701d06f872e7be0f128465eaf0",
+         "bal": "38873457477054905208319554"
+        },
+        {
+         "addr": "0xde234fa6686500cdf510764c99444ff4c36f0dfc",
+         "bal": "16107611490812837572413245"
+        },
+        {
+         "addr": "0x53e68553ca08f512423628d64c01b0a14dfcda99",
+         "bal": "15328505790314140495641521"
+        },
+        {
+         "addr": "0xb04519e72a07ff7d85a4b0a142549d2195867f94",
+         "bal": "8769905065765104610064974"
+        },
+        {
+         "addr": "0x2d82ce6ea9ba081642ac3ee9e2ae7c897d7f26d3",
+         "bal": "2168375005801131245946563"
+        },
+        {
+         "addr": "0x0230ed030f77baa43a2960371724da0b68035fc6",
+         "bal": "1958780773692691536894046"
+        },
+        {
+         "addr": "0x9acdf9bb6478a5168c25efcf950429bb29a6b8d8",
+         "bal": "298363923901892661911444"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "pre",
+     "curvePct": 85.64
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "agent-veto",
+    "gate": "gate_pass",
+    "agents": [
+     "wave-hello:SKIP",
+     "humming-hymn:SKIP",
+     "blanket-snug:SKIP"
+    ],
+    "veto": true,
+    "liqEth": 0.28173322322475314,
+    "venue": "curve",
+    "curve": "0x726d77a3b30b26aeda231973e7095ca17504eab5"
+   }
   },
   {
    "found_at": "2026-10-12T09:05:23.488Z",
@@ -1579,9 +1712,20 @@
    "tx_hash": "0xc95c37abf5a53f0054fad080ecb3b7459339e46af03d566f5f30db57d8ee6fb5",
    "block": 86555583,
    "detail": "new contract deployed in block 86555583"
+  },
+  {
+   "found_at": "2026-10-12T09:08:52.132Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x1c365da161092b26cb299e2d6fbf50e657fabaf3",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xb25cbafa775b1836459f0b1aba032838d7bb473661fa5cb4d2db6985dfa5cc17",
+   "block": 86556282,
+   "detail": "new contract deployed in block 86556282"
   }
  ],
- "scout_queue_total": 12504,
+ "scout_queue_total": 12505,
  "investigations": [
   {
    "candidate": {
@@ -274141,7 +274285,10 @@
    "snug_rebroken_down_at": "2026-10-12T08:08:45.954935+00:00",
    "snug_rebroken_down_reason": "social score arrived post-breakdown (D, 2026-10-12T07:12Z) - grade correction",
    "snug_rebroken_down_resolution": "grade P->D per 60+min rubric; recommendation unchanged (skip)",
-   "snug_rebroken_down_resolved_at": "2026-10-12T08:08:45.954935+00:00"
+   "snug_rebroken_down_resolved_at": "2026-10-12T08:08:45.954935+00:00",
+   "snug_processed": true,
+   "snug_processed_at": "2026-10-12T09:07:53.998990+00:00",
+   "snug_mark_note": "2026-10-12 05:10 EDT blanket-snug mark-race repair: decision-queue already held a complete breakdown (verified before stamping); snug_processed mark was lost in a concurrent-writer race. Re-applied marks only - no new breakdown written. Social grade at processing: D (scored 2026-10-12T07:12:00+00:00)."
   },
   {
    "investigated_at": "2026-10-12T07:05:26.549859+00:00",
@@ -274651,7 +274798,10 @@
    "snug_breakdown_total": 50,
    "snug_breakdown_durability": "uncertain",
    "snug_breakdown_recommendation": "watch",
-   "snug_breakdown_reason": "strong fill velocity but only 4 holders, zero proven sells, generic name, anon deployer, denylist skipped; pre-social P so onchain only. uncertain durability - watch for graduation transition, not a birth buy."
+   "snug_breakdown_reason": "strong fill velocity but only 4 holders, zero proven sells, generic name, anon deployer, denylist skipped; pre-social P so onchain only. uncertain durability - watch for graduation transition, not a birth buy.",
+   "snug_processed": true,
+   "snug_processed_at": "2026-10-12T09:07:53.998990+00:00",
+   "snug_mark_note": "2026-10-12 05:10 EDT blanket-snug mark-race repair: decision-queue already held a complete breakdown (verified before stamping); snug_processed mark was lost in a concurrent-writer race. Re-applied marks only - no new breakdown written. Social grade at processing: P (scored 2026-10-12T07:39:24Z)."
   },
   {
    "investigated_at": "2026-10-12T07:39:30Z",
@@ -274693,7 +274843,10 @@
    "snug_breakdown_total": 50,
    "snug_breakdown_durability": "strong",
    "snug_breakdown_recommendation": "buy",
-   "snug_breakdown_reason": "39 real holders, top10 13.59%, steady velocity, 11 CurveSells proving exits, no concentration, clean gate. pre-social P. strong durability - buy candidate."
+   "snug_breakdown_reason": "39 real holders, top10 13.59%, steady velocity, 11 CurveSells proving exits, no concentration, clean gate. pre-social P. strong durability - buy candidate.",
+   "snug_processed": true,
+   "snug_processed_at": "2026-10-12T09:07:53.998990+00:00",
+   "snug_mark_note": "2026-10-12 05:10 EDT blanket-snug mark-race repair: decision-queue already held a complete breakdown (verified before stamping); snug_processed mark was lost in a concurrent-writer race. Re-applied marks only - no new breakdown written. Social grade at processing: P (scored 2026-10-12T07:39:24Z)."
   },
   {
    "investigated_at": "2026-10-12T07:39:30Z",
@@ -274768,7 +274921,10 @@
    "snug_breakdown_total": 50,
    "snug_breakdown_durability": "strong",
    "snug_breakdown_recommendation": "buy",
-   "snug_breakdown_reason": "~2 ETH curve in 4min, 18 CurveSells (0.669 ETH) absorbed, buy+sell sims clean, no concentration. pre-social P. strong durability - buy candidate."
+   "snug_breakdown_reason": "~2 ETH curve in 4min, 18 CurveSells (0.669 ETH) absorbed, buy+sell sims clean, no concentration. pre-social P. strong durability - buy candidate.",
+   "snug_processed": true,
+   "snug_processed_at": "2026-10-12T09:07:53.998990+00:00",
+   "snug_mark_note": "2026-10-12 05:10 EDT blanket-snug mark-race repair: decision-queue already held a complete breakdown (verified before stamping); snug_processed mark was lost in a concurrent-writer race. Re-applied marks only - no new breakdown written. Social grade at processing: P (scored 2026-10-12T07:39:24Z)."
   },
   {
    "investigated_at": "2026-10-12T07:58:10.538Z",
@@ -280409,7 +280565,10 @@
    "snug_breakdown_recommendation": "watch",
    "snug_breakdown_reason": "grade P at ~19 min post-launch is neutral per dubie's pre-social rule: judge onchain only, no social penalty, and there is no AFFIRMATIVE bad evidence (heavy flipping is churn, not bots/wash/scam flags). onchain shows the hottest early flow of the tick: 1.689 ETH curve (well above the 0.01 floor), 138 holders, 43 unique buyers, and a PROVEN two-way flow - 63 CurveSells mean exits work (RKH's 0-sell warning does not apply). but durability breaks on distribution: 72% flip rate + a serial buyer from today's D-skip holding ~24% of inflow + copycat ticker + anon deployer. not a buy at this age; recheck at graduation - if holder growth holds and the flip rate normalizes, upgrade to buy; if the serial buyer exits first, it dies. flash-exit fill only after that upgrade.",
    "snug_breakdown_comps": "pons V2 factory (0x7ed5...ec7e) launches graduate with permanently locked liquidity - no Ollie/SAFU-style LP-yank path. NBM (0x1f9e...), ~2 ETH curve in 4 min with 18 sells absorbed, graded strong/buy this morning. OPCAT, steady 39-holder two-way flow, graded strong/buy. RKH, pre-social P with 0.05 ETH real demand but 0 CurveSells, graded uncertain/watch (09:00Z). REDISCRIBE graded D/skip: same serial curve buyer 0x65050a9b7e as top buyer there - and that SAME address is h402's top buyer (0.940 ETH, ~24% of inflow). the only resolved pons-era fast-lane fill, DNU (0.005 ETH), was stopped out at -47%. copycat second launches on a reused ticker (this H402 vs the original 0x188f2e... deploy) have no resolved comps yet; name-riding launches historically fade fast once the novelty buyer exits.",
-   "snug_breakdown_risks": "(1) 72% buyer flip rate: 63 CurveSells / 2.0806 ETH out vs 169 CurveBuys / 3.9607 ETH in from 43 buyers - flow is flipper churn, not accumulation; (2) top buyer 0x65050a9b7e50 holds 0.940 ETH (~24% of inflow) - same serial curve buyer that topped this morning's D-graded REDISCRIBE; single-wallet unwind craters the curve; (3) copycat ticker: second H402 launch, different deployer (0x31691ad45c5e37e8c03d17aaf5421d4812865a5a) than the original 0x188f2e... launch - zero organic identity, rides the name; (4) anonymous deployer, no owner(), undiscoverable via RPC - denylist check skipped per gate warning; (5) pre-graduation (49.86% curve): if flipper momentum stalls, it may never graduate."
+   "snug_breakdown_risks": "(1) 72% buyer flip rate: 63 CurveSells / 2.0806 ETH out vs 169 CurveBuys / 3.9607 ETH in from 43 buyers - flow is flipper churn, not accumulation; (2) top buyer 0x65050a9b7e50 holds 0.940 ETH (~24% of inflow) - same serial curve buyer that topped this morning's D-graded REDISCRIBE; single-wallet unwind craters the curve; (3) copycat ticker: second H402 launch, different deployer (0x31691ad45c5e37e8c03d17aaf5421d4812865a5a) than the original 0x188f2e... launch - zero organic identity, rides the name; (4) anonymous deployer, no owner(), undiscoverable via RPC - denylist check skipped per gate warning; (5) pre-graduation (49.86% curve): if flipper momentum stalls, it may never graduate.",
+   "snug_processed": true,
+   "snug_processed_at": "2026-10-12T09:07:53.998990+00:00",
+   "snug_mark_note": "2026-10-12 05:10 EDT blanket-snug mark-race repair: decision-queue already held a complete breakdown (verified before stamping); snug_processed mark was lost in a concurrent-writer race. Re-applied marks only - no new breakdown written. Social grade at processing: P (scored 2026-10-12T09:02:12.932116+00:00)."
   },
   {
    "investigated_at": "2026-10-12T09:00:39Z",
@@ -280697,6 +280856,108 @@
    "verdict": "skip",
    "verdict_note": "pre-graduation pons curve with essentially zero demand: 0.035 ETH over 2+ hours, zero sells ever, zero holders seen onchain. gate warnings (no sell history, thin holder data) stand as risk flags with no offsetting signal. fast lane already no-buy with all-three hymnling SKIP veto — this record corroborates.",
    "social_scored_at": "2026-10-12T09:06:22.388074+00:00"
+  },
+  {
+   "investigated_at": "2026-10-12T09:08:41Z",
+   "candidate": {
+    "found_at": "2026-10-12T05:55:39.357Z",
+    "scout": "onchain",
+    "type": "contract",
+    "name": null,
+    "contract": "0xac36f93f3e092c8f7660a5d4cb1f3e7b0a767d8e",
+    "chain": "robinhood",
+    "source": "onchain",
+    "detail": "new contract deployed in block 86443759",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-12T09:05:59.073Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "n/a: bare contract deploys, no mint/token interface readable (totalSupply unreadable per gate)",
+   "social_signal": "weak",
+   "money_flow": "unknown",
+   "money_flow_note": "no holder distribution available; no mint activity; deployer undiscoverable via RPC",
+   "solana_pulse": {
+    "sol_usd": 111.64,
+    "sol_24h_change_pct": 2.05,
+    "x_leg": "cached 09:04Z: memecoin shill spam in sample, $SOL ~$112, no exploit/FUD, no official @solana/@pumpfun posts",
+    "pump_momentum": "degraded (pump-fun-seen.json stale since 2026-10-09)",
+    "call": "neutral for Solana memecoins — not risk-off; no tempering needed"
+   },
+   "verdict": "skip",
+   "verdict_note": "not a pons V2 factory launch (pons-only mode); no V2 WETH pair, no V4 pool, no readable totalSupply, no owner — no tradable token, no measurable liquidity (0.05 ETH floor). anonymous infra/NFT-style deploy."
+  },
+  {
+   "investigated_at": "2026-10-12T09:08:41Z",
+   "candidate": {
+    "found_at": "2026-10-12T05:56:09.833Z",
+    "scout": "onchain",
+    "type": "contract",
+    "name": null,
+    "contract": "0x3e000df84ae200c3a89a2b6a23d8938da1f82041",
+    "chain": "robinhood",
+    "source": "onchain",
+    "detail": "new contract deployed in block 86443817",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-12T09:06:53.102Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "n/a: bare contract deploys, no mint/token interface readable (totalSupply unreadable per gate)",
+   "social_signal": "weak",
+   "money_flow": "unknown",
+   "money_flow_note": "no holder distribution available; no mint activity; deployer undiscoverable via RPC",
+   "solana_pulse": {
+    "sol_usd": 111.64,
+    "sol_24h_change_pct": 2.05,
+    "x_leg": "cached 09:04Z: memecoin shill spam in sample, $SOL ~$112, no exploit/FUD, no official @solana/@pumpfun posts",
+    "pump_momentum": "degraded (pump-fun-seen.json stale since 2026-10-09)",
+    "call": "neutral for Solana memecoins — not risk-off; no tempering needed"
+   },
+   "verdict": "skip",
+   "verdict_note": "not a pons V2 factory launch (pons-only mode); no V2 WETH pair, no V4 pool, no readable totalSupply, no owner — no tradable token, no measurable liquidity (0.05 ETH floor). anonymous infra/NFT-style deploy."
+  },
+  {
+   "investigated_at": "2026-10-12T09:08:41Z",
+   "candidate": {
+    "found_at": "2026-10-12T05:57:46.680Z",
+    "scout": "onchain",
+    "type": "contract",
+    "name": null,
+    "contract": "0x08837e1c3a7a6e6a1e043977e7b549c38594848a",
+    "chain": "robinhood",
+    "source": "onchain",
+    "detail": "new contract deployed in block 86445168",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-12T09:07:57.377Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "velocity": "n/a: bare contract deploys, no mint/token interface readable (totalSupply unreadable per gate)",
+   "social_signal": "weak",
+   "money_flow": "unknown",
+   "money_flow_note": "no holder distribution available; no mint activity; deployer undiscoverable via RPC",
+   "solana_pulse": {
+    "sol_usd": 111.64,
+    "sol_24h_change_pct": 2.05,
+    "x_leg": "cached 09:04Z: memecoin shill spam in sample, $SOL ~$112, no exploit/FUD, no official @solana/@pumpfun posts",
+    "pump_momentum": "degraded (pump-fun-seen.json stale since 2026-10-09)",
+    "call": "neutral for Solana memecoins — not risk-off; no tempering needed"
+   },
+   "verdict": "skip",
+   "verdict_note": "not a pons V2 factory launch (pons-only mode); no V2 WETH pair, no V4 pool, no readable totalSupply, no owner — no tradable token, no measurable liquidity (0.05 ETH floor). anonymous infra/NFT-style deploy."
   }
  ],
  "scores": [
@@ -843872,8 +844133,8 @@
   "v4-launch"
  ],
  "last_activity": {
-  "scout": "2026-10-12T09:07:42.445Z",
-  "hymn": "2026-10-12T09:07:30Z",
+  "scout": "2026-10-12T09:08:52.132Z",
+  "hymn": "2026-10-12T09:08:41Z",
   "scorer": "2026-10-12T09:05:56.691203+00:00",
   "snug": "2026-10-12T09:02:29.554233+00:00",
   "cardigan": "2026-10-12T09:02:29.554233+00:00"

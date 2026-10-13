@@ -1,22 +1,11 @@
 {
- "updated_at": "2026-10-13T12:22:14.750Z",
+ "updated_at": "2026-10-13T12:23:51.849Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-13T11:37:26.129Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0x27425795a0faf24af193d0bc73f5c735896e2f81",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0x2d2d17bb179de0870a303f2878c3fe7e025ff88c6f7de6a784e27e0fce68cb89",
-   "block": 87480753,
-   "detail": "new contract deployed in block 87480753"
-  },
   {
    "found_at": "2026-10-13T11:37:42.338Z",
    "scout": "block-watcher",
@@ -2710,7 +2699,19 @@
    "block": 87496871,
    "curve": "0xf3ce6d051662ab1d3b8a81cc2ff7ab0c921ed04c",
    "deployer": "0x25ce2a661ac127c7742814fb9fc6b6abc00ac245",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 87496871 (tx 0x90db7b532207dbc2007b70ad0e2d947a36fea9bc088e8f7a7291bc4f92dcfd2c); name=Veilrun symbol=VEILRUN curve=0xf3ce6d051662ab1d3b8a81cc2ff7ab0c921ed04c deployer=0x25ce2a661ac127c7742814fb9fc6b6abc00ac245. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 87496871 (tx 0x90db7b532207dbc2007b70ad0e2d947a36fea9bc088e8f7a7291bc4f92dcfd2c); name=Veilrun symbol=VEILRUN curve=0xf3ce6d051662ab1d3b8a81cc2ff7ab0c921ed04c deployer=0x25ce2a661ac127c7742814fb9fc6b6abc00ac245. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_error",
+   "gate_checked_at": "2026-10-13T12:22:35.922Z",
+   "gate_reasons": [
+    "gate threw: fetch failed"
+   ],
+   "gate_warnings": [],
+   "gate_detail": {},
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "gate-gate_error",
+    "gate": "gate_error"
+   }
   },
   {
    "found_at": "2026-10-13T12:10:24.587Z",
@@ -2867,7 +2868,10 @@
     "veto": false,
     "liqEth": 0,
     "venue": null
-   }
+   },
+   "investigated": true,
+   "investigated_at": "2026-10-13T12:22:25.640Z",
+   "investigation": "see investigation-queue.json"
   },
   {
    "found_at": "2026-10-13T12:10:43.105Z",
@@ -2995,9 +2999,20 @@
    "tx_hash": "0xce47709c58a1bd633f7ed20c01bd4b9c49e2c49dd1524c08b88256328a5954a9",
    "block": 87506604,
    "detail": "new contract deployed in block 87506604"
+  },
+  {
+   "found_at": "2026-10-13T12:22:42.327Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0xe2e47cb896b15fc3139998ff2e9cfccbc769bacd",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x34756c09ae4e411b0750f2b86034cdd6b31ea285d464964c513e43fe2a95de46",
+   "block": 87507044,
+   "detail": "new contract deployed in block 87507044"
   }
  ],
- "scout_queue_total": 16467,
+ "scout_queue_total": 16468,
  "investigations": [
   {
    "candidate": {
@@ -612277,6 +612292,14 @@
    "processed_at": "2026-10-13T12:19:20Z",
    "gate_status": "n/a-tick-note",
    "processed_note": "flock-decision tick 08:05 edt: 1395 entries at final check, 0 unprocessed after scoring 2 mid-tick arrivals. GOING 0xe854c49b4fe1b9b1064c57216c68ca45243dec19 scored 29 (vol 12 / sent 10 P / vit 7, core 3) skip - serial deployer nonce 208, curve 0.0393 eth below 0.05 floor, churn retention ~26%. Nullfold NFOLD 0xe65c0a6d468248223543a0adc99c56544a68b3f2 scored 37 (vol 16 / sent 10 P / vit 11, core 6) watch - curve 0.2943 eth holding (-1.2%) but only 3 senders / 10 transfers, 0 CurveSell events. step-0 dedup: 3 open positions (Ollie 0xd08a0e4df5ba9e98d1a5a934fddd0f6780408b74, SAFU 0xc85e9f749c69ee0fbd3d297bb5337c2c96aea3cb, PRISM 0x143185685456e50b88412d6cfc3a6f8d4fd18afa) - none match scored candidates; queue.db verified 4 fast_lane bought rows (Ollie/SAFU/DNU-closed/PRISM). whale feed: 79304 moves, last batch 2026-10-13T11:58:37.633Z (+312 since 07:42 tick's 78992); fresh convergence on SKHY 0x84cab63bc87912e71ad199ff14a0ba45de68fef8 (2 whale EOAs, $351,787 combined per queue.db handoff) - SKHY is scout-stage pending in queue.db, no decision-queue candidate, so no score/bonus applied here. no execution."
+  },
+  {
+   "kind": "tick",
+   "chain": "robinhood",
+   "processed": true,
+   "processed_at": "2026-10-13T12:22:30Z",
+   "gate_status": "n/a-tick-note",
+   "processed_note": "flock-decision tick 08:19 edt: 1396 entries at tick start, 0 unprocessed, nothing to score. step-0 dedup: 3 open positions (Ollie 0xd08a0e4df5ba9e98d1a5a934fddd0f6780408b74, SAFU 0xc85e9f749c69ee0fbd3d297bb5337c2c96aea3cb, PRISM 0x143185685456e50b88412d6cfc3a6f8d4fd18afa) - none in queue, no double-buy risk. queue.db verified 4 fast_lane bought rows (Ollie/SAFU/DNU-closed/PRISM). whale feed: 79304 moves, last 2026-10-13T11:58:37.633Z, 0 new rows since 08:05 tick (79304); SKHY convergence in that batch already handled/excluded as tokenized stock, no new convergence, no decision-queue candidate. lessons loop skipped (no scored decision). no execution. note: PRISM trail/stop sells still failing (curve sell simulation reverted) per position-watch - watcher domain, position remains open."
   }
  ],
  "tracking": {
@@ -1030016,7 +1030039,7 @@
   "v4-launch"
  ],
  "last_activity": {
-  "scout": "2026-10-13T12:20:36.533Z",
+  "scout": "2026-10-13T12:22:42.327Z",
   "hymn": "2026-10-13T12:21:05Z",
   "scorer": "2026-10-13T12:19:35.791Z",
   "snug": null,
@@ -1030166,8 +1030189,8 @@
     "tx_hash": "0x9dd64a59b56f07d62b92d7900ad2c79f2d5f1bb3d007ca08a7dd03c743ffdb8e",
     "entered_at": "2026-10-08T21:51:09.592Z",
     "entry_price_usd": 0.0423,
-    "current_price_usd": 0.02085,
-    "pnl_pct": -50.70921985815603,
+    "current_price_usd": 0.02119,
+    "pnl_pct": -49.905437352245855,
     "amount_tokens": 289.1701,
     "amount_eth_in": 0.005,
     "score": 69,
@@ -1030240,10 +1030263,10 @@
     "exit_price_usd": 0.0000057094609974722175
    }
   ],
-  "realized_pnl_pct_total": -102.90040698038155
+  "realized_pnl_pct_total": -102.09662447447138
  },
  "paper_trades": {
-  "as_of": "2026-10-13T12:17:45.323Z",
+  "as_of": "2026-10-13T12:22:26.268Z",
   "closed_trades": 1,
   "win_rate_pct": 0,
   "avg_realized_pct": -40,
@@ -1030308,7 +1030331,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.2822,
+    "last_price_usd": 0.2817,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -1030319,8 +1030342,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0018884736993388896,
-    "unrealized_pnl_pct": -18.884736993388895
+    "unrealized_pnl_eth": -0.0019028456453003728,
+    "unrealized_pnl_pct": -19.028456453003727
    },
    {
     "id": "pt-mv03wwab-54",
@@ -1030331,7 +1030354,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 80.94,
-    "last_price_usd": 83.31,
+    "last_price_usd": 83.26,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -1030342,8 +1030365,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 5819198,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00029280948851000854,
-    "unrealized_pnl_pct": 2.9280948851000854
+    "unrealized_pnl_eth": 0.000286632073140598,
+    "unrealized_pnl_pct": 2.86632073140598
    },
    {
     "id": "pt-mv0blxia-72",
@@ -1030354,7 +1030377,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.2822,
+    "last_price_usd": 0.2817,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -1030365,8 +1030388,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.00200340039671295,
-    "unrealized_pnl_pct": -20.0340039671295
+    "unrealized_pnl_eth": -0.002017568716350241,
+    "unrealized_pnl_pct": -20.17568716350241
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -1030377,7 +1030400,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.2822,
+    "last_price_usd": 0.2817,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -1030388,8 +1030411,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.001998865891692657,
-    "unrealized_pnl_pct": -19.98865891692657
+    "unrealized_pnl_eth": -0.0020130422455344487,
+    "unrealized_pnl_pct": -20.130422455344487
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -1030400,7 +1030423,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.2822,
+    "last_price_usd": 0.2817,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -1030411,8 +1030434,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0020124540050948203,
-    "unrealized_pnl_pct": -20.1245400509482
+    "unrealized_pnl_eth": -0.0020266062836116617,
+    "unrealized_pnl_pct": -20.266062836116618
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -1030423,7 +1030446,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.2822,
+    "last_price_usd": 0.2817,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -1030434,8 +1030457,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0020169731258840163,
-    "unrealized_pnl_pct": -20.169731258840162
+    "unrealized_pnl_eth": -0.002031117397454031,
+    "unrealized_pnl_pct": -20.31117397454031
    }
   ],
   "closed_recent": [

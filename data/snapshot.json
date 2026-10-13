@@ -1,41 +1,11 @@
 {
- "updated_at": "2026-10-13T15:02:27.342Z",
+ "updated_at": "2026-10-13T15:04:34.101Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-13T14:48:20.713Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "Pivot PIVOT",
-   "muse": "",
-   "contract": "0x5fd93384726b4e0bad4a8f9a7daa5b559c5f566a",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0xb294dcc9fbb712ceecaeb0663cef04981a60d1d46f918e71882db6a70ee5593f",
-   "block": 87588270,
-   "curve": "0x122f3eb18fb6553f05749ecff30d2daf78b8c280",
-   "deployer": "0x041886d9ba3bac9c207bd2d9529d3d3a6c814f13",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 87588270 (tx 0xb294dcc9fbb712ceecaeb0663cef04981a60d1d46f918e71882db6a70ee5593f); name=Pivot symbol=PIVOT curve=0x122f3eb18fb6553f05749ecff30d2daf78b8c280 deployer=0x041886d9ba3bac9c207bd2d9529d3d3a6c814f13. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
-  },
-  {
-   "found_at": "2026-10-13T14:48:23.819Z",
-   "scout": "pons-family",
-   "type": "token",
-   "name": "BLUE KET KET",
-   "muse": "",
-   "contract": "0xfac742d33948c6193d4c80ab4f5f4688475de084",
-   "chain": "robinhood",
-   "source": "pons-factory",
-   "tx_hash": "0xeb39d470254992e50efb2d67410670225475144b4880543e56797577a901bd2d",
-   "block": 87588288,
-   "curve": "0x00f28aa107dd957ca22b85dfeeef4ae3bfa9a6ff",
-   "deployer": "0x0ba114aae3d22d65043fe19bce58a3e8d62cc4ee",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 87588288 (tx 0xeb39d470254992e50efb2d67410670225475144b4880543e56797577a901bd2d); name=BLUE KET symbol=KET curve=0x00f28aa107dd957ca22b85dfeeef4ae3bfa9a6ff deployer=0x0ba114aae3d22d65043fe19bce58a3e8d62cc4ee. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
-  },
   {
    "found_at": "2026-10-13T14:48:37.567Z",
    "scout": "pons-family",
@@ -461,7 +431,95 @@
    "block": 87591838,
    "curve": "0xcfcdc483eedc9e31c9e30da63667570aa09b79fa",
    "deployer": "0x2742ffbce16660d10d4e4abf1341213268fb6545",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 87591838 (tx 0x808ea19d868a98f843ac24e84b884d153d49c3f0922ea1d8284852db2bd61ed1); name=Roxi symbol=ROXI curve=0xcfcdc483eedc9e31c9e30da63667570aa09b79fa deployer=0x2742ffbce16660d10d4e4abf1341213268fb6545. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 87591838 (tx 0x808ea19d868a98f843ac24e84b884d153d49c3f0922ea1d8284852db2bd61ed1); name=Roxi symbol=ROXI curve=0xcfcdc483eedc9e31c9e30da63667570aa09b79fa deployer=0x2742ffbce16660d10d4e4abf1341213268fb6545. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-13T15:02:58.661Z",
+   "gate_reasons": [
+    "curve code unreadable: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+   ],
+   "gate_warnings": [
+    "thin holder data (7 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": false,
+      "reasons": [
+       "curve code unreadable: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+      ],
+      "warnings": [],
+      "notes": [],
+      "detail": {
+       "curve": "0xcfcdc483eedc9e31c9e30da63667570aa09b79fa",
+       "phase": "pre",
+       "curvePct": 100
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (7 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 7,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "pre",
+     "curvePct": 100
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "gate-gate_failed",
+    "gate": "gate_failed"
+   }
   },
   {
    "found_at": "2026-10-13T14:50:45.412Z",
@@ -1418,9 +1476,31 @@
    "tx_hash": "0x4276ce90f55bdb6bab6d1254fec226442abb64acdbdcd94216e1f9fe1b863465",
    "block": 87602565,
    "detail": "new contract deployed in block 87602565"
+  },
+  {
+   "found_at": "2026-10-13T15:03:25.515Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x771ea99573a1da1dd8e483f221434ba338086b07",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xd582eaf108b4d9d79922943b585d48280e5cfa508976498811e64e2af8460334",
+   "block": 87602777,
+   "detail": "new contract deployed in block 87602777"
+  },
+  {
+   "found_at": "2026-10-13T15:03:42.405Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x8aeb65bb50fb9856b7fa9bb1abe1b778a65893e4",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xf1c2f7dfeaf7e63a096c47a62fb6e227da6e00a130de0e476e493eb66f6a8533",
+   "block": 87602803,
+   "detail": "new contract deployed in block 87602803"
   }
  ],
- "scout_queue_total": 16880,
+ "scout_queue_total": 16882,
  "investigations": [
   {
    "candidate": {
@@ -324708,6 +324788,170 @@
    "verdict": "skip",
    "verdict_note": "skip — gate_pass only means nothing toxic found; onchain investigation shows no transfers/liquidity/holders of substance, fast_lane already no-buy/no-liquidity where present, DexScreener no pair. Not promising, not needs-snug.",
    "social_scored_at": "2026-10-13T15:01:49.130416+00:00"
+  },
+  {
+   "investigated_at": "2026-10-13T15:04:19.000Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "found_at": "2026-10-12T14:13:50.080Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0xdaf3511f129c4e3b87ebf24f257df8617629352b",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x26f528b0081782c6904b066b616cd9ebc052917d2df09462c7f4a6d8459fbc00",
+    "block": 86734918,
+    "detail": "new contract deployed in block 86734918",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-13T14:58:45.861Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "velocity": "unnamed block-watcher contract (found 2026-10-12T14:13:50.080Z, block 86734918): dead deploy — 0 Transfers in first 20k blocks after deploy, totalSupply/name/symbol/owner eth_call all revert (non-ERC20), 0 ETH balance, bytecode 3630 bytes, no V2 pair, no V4 pools; hymn dead-check fired (totalSupply unreadable/0)",
+   "social_signal": "weak",
+   "social_detail": "weak — no candidate-specific X buzz checked: X leg unavailable (402 at 15:02Z attempt, 1 X read this run, no retry per 402 conservation rule); onchain signal is dead/no-liquidity so extra X reads not justified. X reads: 1 this run",
+   "money_flow": "mixed",
+   "money_detail": "no flow at all: 0 transfers, 0 ETH balance, no pair/pool, deployer undiscoverable via RPC per gate; nothing to attribute, no whale/smart-money signal",
+   "solana_pulse": {
+    "sol_price_usd": 107.49,
+    "sol_24h_change_pct": -1.19,
+    "source": "CoinGecko simple/price live 2026-10-13T15:02Z: SOL $107.49, -1.19% 24h; sol-price-cache.json refreshed with this figure",
+    "x_leg": "unavailable",
+    "x_summary": "solana-pulse-x-ts.json rewritten 2026-10-13T15:03Z: X leg unavailable (1 X search attempt 2026-10-13T15:02Z, HTTP 402 Payment Required via xsearch.py; no retry per conservation). Last cached summary: @solana generic posts, no @pumpfun catalyst, no exploit/FUD.",
+    "pump_momentum": "degraded — pump-fun-seen.json in hymnlings hidden_files holds only stale Oct-8-era entries (mtime 2026-10-09); no fresh pump.fun launch rate verified this run. Candidates are Robinhood-chain, so this leg is context-only.",
+    "verdict_line": "risk-off (moderating) for Solana memecoins: SOL -1.19% 24h, no catalyst and no FUD in cached X summary; risk-off backdrop tempers any promising verdict — noted, though all four candidates this run are Robinhood-chain and dead on onchain grounds regardless",
+    "risk": "risk-off"
+   },
+   "verdict": "skip",
+   "verdict_note": "skip — gate_pass only means nothing toxic found; live probes confirm a non-ERC20 dead deploy with no transfers, no liquidity, no holders. Not promising, not needs-snug."
+  },
+  {
+   "investigated_at": "2026-10-13T15:04:19.000Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "found_at": "2026-10-12T14:15:49.584Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0x3057bd21fd697da098e6d2a7a524151888529297",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x45797f609dbeb7c2f65edf28bdfd0dde5d49909f17e0c1117b76486cd0458a7f",
+    "block": 86736327,
+    "detail": "new contract deployed in block 86736327",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-13T14:59:06.428Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "velocity": "unnamed block-watcher contract (found 2026-10-12T14:15:49.584Z, block 86736327): dead deploy — 0 Transfers in first 20k blocks after deploy, totalSupply/name/symbol/owner eth_call all revert (non-ERC20), 0 ETH balance, bytecode 2194 bytes, no V2 pair, no V4 pools; hymn dead-check fired (totalSupply unreadable/0)",
+   "social_signal": "weak",
+   "social_detail": "weak — no candidate-specific X buzz checked: X leg unavailable (402 at 15:02Z attempt, 1 X read this run, no retry per 402 conservation rule); onchain signal is dead/no-liquidity so extra X reads not justified. X reads: 1 this run",
+   "money_flow": "mixed",
+   "money_detail": "no flow at all: 0 transfers, 0 ETH balance, no pair/pool, deployer undiscoverable via RPC per gate; nothing to attribute, no whale/smart-money signal",
+   "solana_pulse": {
+    "sol_price_usd": 107.49,
+    "sol_24h_change_pct": -1.19,
+    "source": "CoinGecko simple/price live 2026-10-13T15:02Z: SOL $107.49, -1.19% 24h; sol-price-cache.json refreshed with this figure",
+    "x_leg": "unavailable",
+    "x_summary": "solana-pulse-x-ts.json rewritten 2026-10-13T15:03Z: X leg unavailable (1 X search attempt 2026-10-13T15:02Z, HTTP 402 Payment Required via xsearch.py; no retry per conservation). Last cached summary: @solana generic posts, no @pumpfun catalyst, no exploit/FUD.",
+    "pump_momentum": "degraded — pump-fun-seen.json in hymnlings hidden_files holds only stale Oct-8-era entries (mtime 2026-10-09); no fresh pump.fun launch rate verified this run. Candidates are Robinhood-chain, so this leg is context-only.",
+    "verdict_line": "risk-off (moderating) for Solana memecoins: SOL -1.19% 24h, no catalyst and no FUD in cached X summary; risk-off backdrop tempers any promising verdict — noted, though all four candidates this run are Robinhood-chain and dead on onchain grounds regardless",
+    "risk": "risk-off"
+   },
+   "verdict": "skip",
+   "verdict_note": "skip — gate_pass only means nothing toxic found; live probes confirm a non-ERC20 dead deploy with no transfers, no liquidity, no holders. Not promising, not needs-snug."
+  },
+  {
+   "investigated_at": "2026-10-13T15:04:19.000Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "found_at": "2026-10-12T14:16:00.663Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0xfe0cdb08c4b88e1090641de6a8a83c8b3a7b36ef",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0x872aabb1080dcd58e4124f868114bbbcc614171c853cb708295bfccf05123c77",
+    "block": 86736398,
+    "detail": "new contract deployed in block 86736398",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-13T14:59:23.567Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "velocity": "unnamed block-watcher contract (found 2026-10-12T14:16:00.663Z, block 86736398): dead deploy — 0 Transfers in first 20k blocks after deploy, totalSupply/name/symbol/owner eth_call all revert (non-ERC20), 0 ETH balance, bytecode 2238 bytes, no V2 pair, no V4 pools; hymn dead-check fired (totalSupply unreadable/0)",
+   "social_signal": "weak",
+   "social_detail": "weak — no candidate-specific X buzz checked: X leg unavailable (402 at 15:02Z attempt, 1 X read this run, no retry per 402 conservation rule); onchain signal is dead/no-liquidity so extra X reads not justified. X reads: 1 this run",
+   "money_flow": "mixed",
+   "money_detail": "no flow at all: 0 transfers, 0 ETH balance, no pair/pool, deployer undiscoverable via RPC per gate; nothing to attribute, no whale/smart-money signal",
+   "solana_pulse": {
+    "sol_price_usd": 107.49,
+    "sol_24h_change_pct": -1.19,
+    "source": "CoinGecko simple/price live 2026-10-13T15:02Z: SOL $107.49, -1.19% 24h; sol-price-cache.json refreshed with this figure",
+    "x_leg": "unavailable",
+    "x_summary": "solana-pulse-x-ts.json rewritten 2026-10-13T15:03Z: X leg unavailable (1 X search attempt 2026-10-13T15:02Z, HTTP 402 Payment Required via xsearch.py; no retry per conservation). Last cached summary: @solana generic posts, no @pumpfun catalyst, no exploit/FUD.",
+    "pump_momentum": "degraded — pump-fun-seen.json in hymnlings hidden_files holds only stale Oct-8-era entries (mtime 2026-10-09); no fresh pump.fun launch rate verified this run. Candidates are Robinhood-chain, so this leg is context-only.",
+    "verdict_line": "risk-off (moderating) for Solana memecoins: SOL -1.19% 24h, no catalyst and no FUD in cached X summary; risk-off backdrop tempers any promising verdict — noted, though all four candidates this run are Robinhood-chain and dead on onchain grounds regardless",
+    "risk": "risk-off"
+   },
+   "verdict": "skip",
+   "verdict_note": "skip — gate_pass only means nothing toxic found; live probes confirm a non-ERC20 dead deploy with no transfers, no liquidity, no holders. Not promising, not needs-snug."
+  },
+  {
+   "investigated_at": "2026-10-13T15:04:19.000Z",
+   "investigator": "humming-hymn",
+   "candidate": {
+    "found_at": "2026-10-12T14:16:14.808Z",
+    "scout": "block-watcher",
+    "type": "contract",
+    "contract": "0xe212cfde1c4b8bbed4bf18c2638a0765c113495d",
+    "chain": "robinhood",
+    "source": "onchain",
+    "tx_hash": "0xa2e83ff6046ad1b19329f2ea2b63d9e58249d975b607fefa641487b84beecfe0",
+    "block": 86736473,
+    "detail": "new contract deployed in block 86736473",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-13T14:59:40.902Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ],
+    "gate_warn": true
+   },
+   "velocity": "unnamed block-watcher contract (found 2026-10-12T14:16:14.808Z, block 86736473): dead deploy — 0 Transfers in first 20k blocks after deploy, totalSupply/name/symbol/owner eth_call all revert (non-ERC20), 0 ETH balance, bytecode 4879 bytes, no V2 pair, no V4 pools; hymn dead-check fired (totalSupply unreadable/0)",
+   "social_signal": "weak",
+   "social_detail": "weak — no candidate-specific X buzz checked: X leg unavailable (402 at 15:02Z attempt, 1 X read this run, no retry per 402 conservation rule); onchain signal is dead/no-liquidity so extra X reads not justified. X reads: 1 this run",
+   "money_flow": "mixed",
+   "money_detail": "no flow at all: 0 transfers, 0 ETH balance, no pair/pool, deployer undiscoverable via RPC per gate; nothing to attribute, no whale/smart-money signal",
+   "solana_pulse": {
+    "sol_price_usd": 107.49,
+    "sol_24h_change_pct": -1.19,
+    "source": "CoinGecko simple/price live 2026-10-13T15:02Z: SOL $107.49, -1.19% 24h; sol-price-cache.json refreshed with this figure",
+    "x_leg": "unavailable",
+    "x_summary": "solana-pulse-x-ts.json rewritten 2026-10-13T15:03Z: X leg unavailable (1 X search attempt 2026-10-13T15:02Z, HTTP 402 Payment Required via xsearch.py; no retry per conservation). Last cached summary: @solana generic posts, no @pumpfun catalyst, no exploit/FUD.",
+    "pump_momentum": "degraded — pump-fun-seen.json in hymnlings hidden_files holds only stale Oct-8-era entries (mtime 2026-10-09); no fresh pump.fun launch rate verified this run. Candidates are Robinhood-chain, so this leg is context-only.",
+    "verdict_line": "risk-off (moderating) for Solana memecoins: SOL -1.19% 24h, no catalyst and no FUD in cached X summary; risk-off backdrop tempers any promising verdict — noted, though all four candidates this run are Robinhood-chain and dead on onchain grounds regardless",
+    "risk": "risk-off"
+   },
+   "verdict": "skip",
+   "verdict_note": "skip — gate_pass only means nothing toxic found; live probes confirm a non-ERC20 dead deploy with no transfers, no liquidity, no holders. Not promising, not needs-snug."
   }
  ],
  "scores": [
@@ -625141,6 +625385,14 @@
    "virality_lifecycle": "uncertain",
    "concentration_review": "narrow, not proven hostile: 41 buys from only 12 distinct buyers and 37 holders, no concentration figure or gate trigger in record, no smart-money attribution; repeat-buy churn noted as risk, skip rests on retention/flow, not concentration hostility.",
    "gate_status": "gate_pass"
+  },
+  {
+   "kind": "tick",
+   "chain": "robinhood",
+   "processed": true,
+   "processed_at": "2026-10-13T14:59:43Z",
+   "gate_status": "n/a-tick-note",
+   "processed_note": "flock-decision tick 10:59 edt: 1415 entries at tick start, 0 unprocessed, nothing to score. step-0 dedup: 3 open positions (Ollie 0xd08a0e4df5ba9e98d1a5a934fddd0f6780408b74, SAFU 0xc85e9f749c69ee0fbd3d297bb5337c2c96aea3cb, PRISM 0x143185685456e50b88412d6cfc3a6f8d4fd18afa) - no unprocessed queue to overlap, no double-buy risk. queue.db verified 4 fast_lane bought rows. whale feed: 81357 moves, last 2026-10-13T14:53:08.543Z, 151 new rows since 14:36 tick, 0 convergence in new batch. lessons loop run (no scored decision). no execution."
   }
  ],
  "tracking": {
@@ -1052859,11 +1053111,11 @@
   "v4-launch"
  ],
  "last_activity": {
-  "scout": "2026-10-13T15:02:03.018Z",
-  "hymn": "2026-10-13T14:55:10.000Z",
+  "scout": "2026-10-13T15:03:42.405Z",
+  "hymn": "2026-10-13T15:04:19.000Z",
   "scorer": "2026-10-13T15:01:07.502Z",
-  "snug": "2026-10-13T14:44:44Z",
-  "cardigan": "2026-10-13T14:44:44Z"
+  "snug": null,
+  "cardigan": null
  },
  "challenge": {
   "wallet": "0xa554e642ac0fe1bbeeea26df17644ad8fce00ecc",
@@ -1052955,7 +1053207,7 @@
     "tx_hash": "0x750f3d68427ad7be0a12ca6aaf1ab7d1829802294b36090161aaf08025799dbd",
     "entered_at": "2026-10-08T20:15:30.720Z",
     "entry_price_usd": 0.01156,
-    "current_price_usd": 0.0116,
+    "current_price_usd": 0.01173,
     "pnl_pct": 0,
     "amount_tokens": 1055.2497206937642,
     "amount_eth_in": 0.005,
@@ -1052982,8 +1053234,8 @@
     "tx_hash": "0xcd209345f031f3ae4337c6feea42e3d8e01ac92d777205864e60ab2dd0bea993",
     "entered_at": "2026-10-08T20:58:38.421Z",
     "entry_price_usd": 0.011554,
-    "current_price_usd": 0.0116,
-    "pnl_pct": 0.3981305175696656,
+    "current_price_usd": 0.01173,
+    "pnl_pct": 1.5232819802665813,
     "amount_tokens": 1055.8207,
     "amount_eth_in": 0.005,
     "score": 62,
@@ -1053083,7 +1053335,7 @@
     "exit_price_usd": 0.0000057094609974722175
    }
   ],
-  "realized_pnl_pct_total": -101.85375008175151
+  "realized_pnl_pct_total": -100.7285986190546
  },
  "paper_trades": {
   "as_of": "2026-10-13T15:02:25.746Z",

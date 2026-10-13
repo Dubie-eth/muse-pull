@@ -1,33 +1,11 @@
 {
- "updated_at": "2026-10-13T11:07:27.359Z",
+ "updated_at": "2026-10-13T11:10:13.189Z",
  "key_status": {
   "openai": true,
   "anthropic": true,
   "xai": true
  },
  "scout_queue": [
-  {
-   "found_at": "2026-10-13T10:41:33.485Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xf3197423231d2785e145711fc0c43e1c59e4e9ba",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0x32999706b0724b16cf30c98c8e646179f60b4935d497625296f2ddba9903866b",
-   "block": 87448672,
-   "detail": "new contract deployed in block 87448672"
-  },
-  {
-   "found_at": "2026-10-13T10:41:49.527Z",
-   "scout": "block-watcher",
-   "type": "contract",
-   "contract": "0xc149dac8ed03bd4ea4476534b8de6b2fa53ddc56",
-   "chain": "robinhood",
-   "source": "onchain",
-   "tx_hash": "0x4a550fd83f8df17c800a1c67943cfc55682a54041fd18b2a6274d36e251e1b08",
-   "block": 87448787,
-   "detail": "new contract deployed in block 87448787"
-  },
   {
    "found_at": "2026-10-13T10:42:20.651Z",
    "scout": "block-watcher",
@@ -2361,7 +2339,97 @@
    "block": 87462885,
    "curve": "0x956135c4be3e668186a7b4e4cfb302e53b5e9667",
    "deployer": "0x16a3bd5509ddcaf154f04e630d4485045055efc9",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 87462885 (tx 0x5648ffc002b9e83c437bf00a84c3082a75eac827b8636bf891f65efd4acfb9de); name=Sharp Terminal symbol=SHARP curve=0x956135c4be3e668186a7b4e4cfb302e53b5e9667 deployer=0x16a3bd5509ddcaf154f04e630d4485045055efc9. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 87462885 (tx 0x5648ffc002b9e83c437bf00a84c3082a75eac827b8636bf891f65efd4acfb9de); name=Sharp Terminal symbol=SHARP curve=0x956135c4be3e668186a7b4e4cfb302e53b5e9667 deployer=0x16a3bd5509ddcaf154f04e630d4485045055efc9. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_failed",
+   "gate_checked_at": "2026-10-13T11:09:23.456Z",
+   "gate_reasons": [
+    "curve-collected ETH ~0.0033 < 0.01 floor (pre-graduation venue)"
+   ],
+   "gate_warnings": [
+    "thin holder data (5 addresses in 12k-block window)",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": false,
+      "reasons": [
+       "curve-collected ETH ~0.0033 < 0.01 floor (pre-graduation venue)"
+      ],
+      "warnings": [],
+      "notes": [],
+      "detail": {
+       "curve": "0x956135c4be3e668186a7b4e4cfb302e53b5e9667",
+       "phase": "pre",
+       "curvePct": 100,
+       "curveCodeBytes": 10229,
+       "curveEth": 0.003337279999999999
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "thin holder data (5 addresses in 12k-block window)"
+      ],
+      "notes": [
+       "top-10 real-wallet holders own 0.00% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 5,
+       "top10EoaBps": 0,
+       "top1EoaBps": 0,
+       "top10": [],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "pre",
+     "curvePct": 100
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "gate-gate_failed",
+    "gate": "gate_failed"
+   }
   },
   {
    "found_at": "2026-10-13T11:05:52.579Z",
@@ -2376,7 +2444,158 @@
    "block": 87462963,
    "curve": "0x563237aebbffc80248aafcf5002c07179b0d8c42",
    "deployer": "0xe96a32e31d3833ec14092f2b59ff66b6b0365cd4",
-   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 87462963 (tx 0xd59766c8ee16ff75451ac746f46b4361d0064def32268b5d6d1e128da0d9eff1); name=TrySpan symbol=SPAN curve=0x563237aebbffc80248aafcf5002c07179b0d8c42 deployer=0xe96a32e31d3833ec14092f2b59ff66b6b0365cd4. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders."
+   "detail": "new pons V2 launch via factory 0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e in block 87462963 (tx 0xd59766c8ee16ff75451ac746f46b4361d0064def32268b5d6d1e128da0d9eff1); name=TrySpan symbol=SPAN curve=0x563237aebbffc80248aafcf5002c07179b0d8c42 deployer=0xe96a32e31d3833ec14092f2b59ff66b6b0365cd4. pre-graduation bonding-curve venue; needs Humming Hymn investigation for creator/holders.",
+   "gate_status": "gate_pass",
+   "gate_checked_at": "2026-10-13T11:08:04.494Z",
+   "gate_reasons": [],
+   "gate_warnings": [
+    "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time",
+    "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+   ],
+   "gate_detail": {
+    "checks": {
+     "owner-powers": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no owner(); no dangerous selectors in bytecode"
+      ],
+      "detail": {
+       "selectors": {
+        "mint": [],
+        "pause": [],
+        "blacklist": [],
+        "fee": []
+       },
+       "owner": null
+      }
+     },
+     "proxy": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "no proxy admin/beacon slots set; not an upgradeable proxy"
+      ],
+      "detail": {}
+     },
+     "pons-curve": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time"
+      ],
+      "notes": [
+       "curve venue: ~0.3236 ETH collected >= 0.01 floor",
+       "buy leg simulates clean: 0.001 ETH -> 411421173145761150056977 tokens",
+       "7 CurveSell events in 20k blocks — sell path live"
+      ],
+      "detail": {
+       "curve": "0x563237aebbffc80248aafcf5002c07179b0d8c42",
+       "phase": "pre",
+       "curvePct": 84,
+       "curveCodeBytes": 10229,
+       "curveEth": 0.32359868117454427,
+       "snipeTaxBps": 0,
+       "buySim": {
+        "tokensOut": "411421173145761150056977"
+       },
+       "sellLiveness": {
+        "sells": 7,
+        "totalEthOut": "0"
+       },
+       "sellSim": {
+        "error": "no recent seller with usable allowance found"
+       }
+      }
+     },
+     "concentration": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [],
+      "notes": [
+       "top-10 real-wallet holders own 15.99% of supply (<=30%); no concentration trigger"
+      ],
+      "detail": {
+       "supply": "1000000000000000000000000000",
+       "addrsSeen": 18,
+       "top10EoaBps": 1599,
+       "top1EoaBps": 283,
+       "top10": [
+        {
+         "addr": "0xe96a32e31d3833ec14092f2b59ff66b6b0365cd4",
+         "bal": "28340080971659919028340080"
+        },
+        {
+         "addr": "0x221f318cb2e6c18750f0ec2d28af4f825cdf179a",
+         "bal": "26505115435359582146700386"
+        },
+        {
+         "addr": "0xfdfe7ac05f9ac5b0799551a4b8624dc58b6fb17b",
+         "bal": "20902503843260737012043522"
+        },
+        {
+         "addr": "0x968a253659bd08d8554ed0dd4fc6cfe31533d001",
+         "bal": "20683816685488156663904027"
+        },
+        {
+         "addr": "0x21e5947b0eb35c42d9b4293d2f667fce10b0196c",
+         "bal": "16645920087632545765143971"
+        },
+        {
+         "addr": "0x8de05263da88542392473638faee8afce3d57f64",
+         "bal": "16214934744841355182664256"
+        },
+        {
+         "addr": "0x34ee6b412f8b02e1ac0339d9a30a57456ec2e505",
+         "bal": "15011464360402642973309187"
+        },
+        {
+         "addr": "0x0ac99bb62561eb069021f823523c9257ebf408dd",
+         "bal": "9748161577261029417810194"
+        },
+        {
+         "addr": "0xe4a727d2cca580d95e52d55930f6aac12ec61075",
+         "bal": "3921962731970800420160113"
+        },
+        {
+         "addr": "0xe02cd750309eb0a49845ec065514cec0211abd19",
+         "bal": "2002799987679608334269884"
+        }
+       ],
+       "x_sentiment": "not_checked — onchain-first policy; X cross-check left to investigators"
+      }
+     },
+     "deployer-history": {
+      "pass": true,
+      "reasons": [],
+      "warnings": [
+       "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+      ],
+      "notes": [],
+      "detail": {}
+     }
+    },
+    "ponsPhase": {
+     "phase": "pre",
+     "curvePct": 84
+    }
+   },
+   "fast_lane": {
+    "action": "no-buy",
+    "reason": "agent-veto",
+    "gate": "gate_pass",
+    "agents": [
+     "wave-hello:SKIP",
+     "humming-hymn:SKIP",
+     "blanket-snug:SKIP"
+    ],
+    "veto": true,
+    "liqEth": 0.32359868117454427,
+    "venue": "curve",
+    "curve": "0x563237aebbffc80248aafcf5002c07179b0d8c42"
+   }
   },
   {
    "found_at": "2026-10-13T11:06:46.951Z",
@@ -2388,9 +2607,31 @@
    "tx_hash": "0x220b0d8f7d3324791098eeb2b88f0e400f99c15b15912f494acaed3a61056d1a",
    "block": 87462884,
    "detail": "new contract deployed in block 87462884"
+  },
+  {
+   "found_at": "2026-10-13T11:07:30.228Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x7b3ac163cbbdc555ca5f11751e0fa31981a82d42",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0xab174c674915a836bc0429cda75b1d30000ddc95b7339eb7eb5bdc543a94991b",
+   "block": 87462933,
+   "detail": "new contract deployed in block 87462933"
+  },
+  {
+   "found_at": "2026-10-13T11:08:04.494Z",
+   "scout": "block-watcher",
+   "type": "contract",
+   "contract": "0x56114215670a8f8c630bdc3595d0570d4062a314",
+   "chain": "robinhood",
+   "source": "onchain",
+   "tx_hash": "0x311ac3052681fd216e905fb4cb275de707b728c41b974b68931309bf993eafe3",
+   "block": 87464223,
+   "detail": "new contract deployed in block 87464223"
   }
  ],
- "scout_queue_total": 16369,
+ "scout_queue_total": 16371,
  "investigations": [
   {
    "candidate": {
@@ -317416,7 +317657,8 @@
    "ecosystem_fit": "Robinhood-chain contract (not Solana/pump.fun); Solana pulse risk-off - no tempering needed (non-token surface, nothing to temper)",
    "verdict": "skip",
    "verdict_note": "not a token contract (no ERC20 surface; totalSupply unreadable or 0 per live probe + gate warning) and zero transfers in scanned windows - deployment/NFT-infra noise, nothing to grade",
-   "investigation_notes": "not a token contract (no ERC20 surface; totalSupply unreadable or 0 per live probe + gate warning) and zero transfers in scanned windows - deployment/NFT-infra noise, nothing to grade"
+   "investigation_notes": "not a token contract (no ERC20 surface; totalSupply unreadable or 0 per live probe + gate warning) and zero transfers in scanned windows - deployment/NFT-infra noise, nothing to grade",
+   "social_scored_at": "2026-10-13T11:09:20.249168+00:00"
   },
   {
    "investigated_at": "2026-10-13T10:53:57.389Z",
@@ -317458,7 +317700,8 @@
    "ecosystem_fit": "Robinhood-chain contract (not Solana/pump.fun); Solana pulse risk-off - no tempering needed (non-token surface, nothing to temper)",
    "verdict": "skip",
    "verdict_note": "not a token contract (no ERC20 surface; totalSupply unreadable or 0 per live probe + gate warning) and zero transfers in scanned windows - deployment/NFT-infra noise, nothing to grade",
-   "investigation_notes": "not a token contract (no ERC20 surface; totalSupply unreadable or 0 per live probe + gate warning) and zero transfers in scanned windows - deployment/NFT-infra noise, nothing to grade"
+   "investigation_notes": "not a token contract (no ERC20 surface; totalSupply unreadable or 0 per live probe + gate warning) and zero transfers in scanned windows - deployment/NFT-infra noise, nothing to grade",
+   "social_scored_at": "2026-10-13T11:09:20.249168+00:00"
   },
   {
    "investigated_at": "2026-10-13T10:53:57.389Z",
@@ -317499,7 +317742,8 @@
    "ecosystem_fit": "Robinhood-chain contract (not Solana/pump.fun); Solana pulse risk-off - no tempering needed (non-token surface, nothing to temper)",
    "verdict": "skip",
    "verdict_note": "not a token contract (no ERC20 surface; totalSupply unreadable or 0 per live probe + gate warning) and zero transfers in scanned windows - deployment/NFT-infra noise, nothing to grade",
-   "investigation_notes": "not a token contract (no ERC20 surface; totalSupply unreadable or 0 per live probe + gate warning) and zero transfers in scanned windows - deployment/NFT-infra noise, nothing to grade"
+   "investigation_notes": "not a token contract (no ERC20 surface; totalSupply unreadable or 0 per live probe + gate warning) and zero transfers in scanned windows - deployment/NFT-infra noise, nothing to grade",
+   "social_scored_at": "2026-10-13T11:09:20.249168+00:00"
   },
   {
    "investigated_at": "2026-10-13T10:53:57.389Z",
@@ -317541,7 +317785,8 @@
    "ecosystem_fit": "Robinhood-chain contract (not Solana/pump.fun); Solana pulse risk-off - no tempering needed (non-token surface, nothing to temper)",
    "verdict": "skip",
    "verdict_note": "thin: 2 recipient(s), 2 transfers in scanned windows over ~21.0h - below any grade threshold",
-   "investigation_notes": "thin: 2 recipient(s), 2 transfers in scanned windows over ~21.0h - below any grade threshold"
+   "investigation_notes": "thin: 2 recipient(s), 2 transfers in scanned windows over ~21.0h - below any grade threshold",
+   "social_scored_at": "2026-10-13T11:09:20.249168+00:00"
   },
   {
    "investigated_at": "2026-10-13T10:53:57.389Z",
@@ -317582,7 +317827,8 @@
    "ecosystem_fit": "Robinhood-chain contract (not Solana/pump.fun); Solana pulse risk-off - no tempering needed (non-token surface, nothing to temper)",
    "verdict": "skip",
    "verdict_note": "not a token contract (no ERC20 surface; totalSupply unreadable or 0 per live probe + gate warning) and zero transfers in scanned windows - deployment/NFT-infra noise, nothing to grade",
-   "investigation_notes": "not a token contract (no ERC20 surface; totalSupply unreadable or 0 per live probe + gate warning) and zero transfers in scanned windows - deployment/NFT-infra noise, nothing to grade"
+   "investigation_notes": "not a token contract (no ERC20 surface; totalSupply unreadable or 0 per live probe + gate warning) and zero transfers in scanned windows - deployment/NFT-infra noise, nothing to grade",
+   "social_scored_at": "2026-10-13T11:09:20.249168+00:00"
   },
   {
    "investigated_at": "2026-10-13T10:53:57.389Z",
@@ -317625,7 +317871,8 @@
    "verdict": "needs-snug",
    "verdict_note": "real velocity (0.606 ETH on curve in ~9min, 14.3 buys/min, 55 buyers; no toxic-name hit, deployer nonce 1 not serial) TEMPERED from promising to needs-snug: Solana pulse risk-off (SOL -4.88% 24h) (fast_lane no-buy/agent-veto stands - no-buy)",
    "investigation_notes": "real velocity (0.606 ETH on curve in ~9min, 14.3 buys/min, 55 buyers; no toxic-name hit, deployer nonce 1 not serial) TEMPERED from promising to needs-snug: Solana pulse risk-off (SOL -4.88% 24h) (fast_lane no-buy/agent-veto stands - no-buy)",
-   "snug_broken_down": "2026-10-13T11:05:41.275608+00:00"
+   "snug_broken_down": "2026-10-13T11:05:41.275608+00:00",
+   "social_scored_at": "2026-10-13T11:09:20.249168+00:00"
   },
   {
    "investigated_at": "2026-10-13T10:53:57.389Z",
@@ -317668,7 +317915,8 @@
    "verdict": "needs-snug",
    "verdict_note": "real velocity (0.545 ETH on curve in ~9min, 3.8 buys/min, 34 buyers; no toxic-name hit, deployer nonce 13 not serial) TEMPERED from promising to needs-snug: Solana pulse risk-off (SOL -4.88% 24h) (fast_lane no-buy/agent-veto stands - no-buy)",
    "investigation_notes": "real velocity (0.545 ETH on curve in ~9min, 3.8 buys/min, 34 buyers; no toxic-name hit, deployer nonce 13 not serial) TEMPERED from promising to needs-snug: Solana pulse risk-off (SOL -4.88% 24h) (fast_lane no-buy/agent-veto stands - no-buy)",
-   "snug_broken_down": "2026-10-13T11:05:41.275608+00:00"
+   "snug_broken_down": "2026-10-13T11:05:41.275608+00:00",
+   "social_scored_at": "2026-10-13T11:09:20.249168+00:00"
   },
   {
    "investigated_at": "2026-10-13T10:53:57.389Z",
@@ -317711,7 +317959,8 @@
    "ecosystem_fit": "Robinhood-chain pons launch; Solana pulse risk-off (SOL -4.88% 24h) - promising verdicts tempered to needs-snug per pulse rule",
    "verdict": "skip",
    "verdict_note": "no velocity: 0.0057 ETH on curve, 69 buys, 81 holders - dead/flat at birth (fast_lane no-buy/agent-veto stands - no-buy)",
-   "investigation_notes": "no velocity: 0.0057 ETH on curve, 69 buys, 81 holders - dead/flat at birth (fast_lane no-buy/agent-veto stands - no-buy)"
+   "investigation_notes": "no velocity: 0.0057 ETH on curve, 69 buys, 81 holders - dead/flat at birth (fast_lane no-buy/agent-veto stands - no-buy)",
+   "social_scored_at": "2026-10-13T11:09:20.249168+00:00"
   }
  ],
  "scores": [
@@ -551679,6 +551928,285 @@
    "total": 3,
    "grade": "F",
    "notes": "Re-grade of P (scored 2026-10-13T09:21:51Z, now >75m old, token ~109 min since launch): normal A-F rubric applies. No website, no X footprint, no ticker spread, no KOL, no team engagement found in investigation (social_signal weak, 0 candidate-specific X searches, X conserved); curve ETH fell ~27% with 31 CurveSell churn at investigation. Absent footprint at 60+ min scores F. X reads: 0."
+  },
+  {
+   "scored_at": "2026-10-13T11:09:05.894Z",
+   "candidate": {
+    "scout": "block-watcher",
+    "type": "contract",
+    "name": "Robin Kingdom Hero",
+    "symbol": "HERO",
+    "contract": "0xedc810351466724e093d34d061e35bfd496b638c",
+    "chain": "robinhood",
+    "block": 86722649,
+    "found_at": "2026-10-12T13:52:57.427Z",
+    "tx_hash": "0xac3757b6e3e6b001a172f88b88a1f2483523b50dbebdc81138e4dba88994c728",
+    "deployer": "0x2ba26d29033c86063fc40f18267c75119a3f5447",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-13T10:44:45.609Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "F scam/no-legitimacy signals: ~1276 min since found_at (2026-10-12T13:52:57.427Z, >60m, normal A-F rubric): NOT an ERC20 (totalSupply unreadable/0 per investigation+gate), 0 transfers/0 recipients, no website, no X presence, no ticker/CA spread, no KOL, no team engagement, no FOMO. Investigation verdict skip - non-token deployment noise. X reads: 0 (conserved, relied on humming-hymn investigation: social_signal weak, 0 candidate-specific X reads)."
+  },
+  {
+   "scored_at": "2026-10-13T11:09:05.894Z",
+   "candidate": {
+    "scout": "block-watcher",
+    "type": "contract",
+    "name": null,
+    "symbol": null,
+    "contract": "0xea493e32edb9bec7f09666e5004107c538d5da85",
+    "chain": "robinhood",
+    "block": 86722653,
+    "found_at": "2026-10-12T13:52:58.201Z",
+    "tx_hash": "0x4d1d78fa063be4056b9dacadd1f6e409b87f8438d32f0b817946bc5c53a71c76",
+    "deployer": "0x2ba26d29033c86063fc40f18267c75119a3f5447",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-13T10:45:00.026Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "F scam/no-legitimacy signals: ~1276 min since found_at (2026-10-12T13:52:58.201Z, >60m, normal A-F rubric): NOT an ERC20 (totalSupply unreadable/0 per investigation+gate), 0 transfers/0 recipients, no website, no X presence, no ticker/CA spread, no KOL, no team engagement, no FOMO. Investigation verdict skip - non-token deployment noise. X reads: 0 (conserved, relied on humming-hymn investigation: social_signal weak, 0 candidate-specific X reads)."
+  },
+  {
+   "scored_at": "2026-10-13T11:09:05.894Z",
+   "candidate": {
+    "scout": "block-watcher",
+    "type": "contract",
+    "name": null,
+    "symbol": null,
+    "contract": "0xb3f14807979dc2eba55b6c265ebf0ad9ef882a90",
+    "chain": "robinhood",
+    "block": 86722658,
+    "found_at": "2026-10-12T13:52:59.156Z",
+    "tx_hash": "0x58b3a2e1b4f5ba1fd00366d06e0f86da735971e55c0b6c1399bd34dfdc63ef61",
+    "deployer": "0x2ba26d29033c86063fc40f18267c75119a3f5447",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-13T10:45:07.013Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped"
+    ]
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "F scam/no-legitimacy signals: ~1276 min since found_at (2026-10-12T13:52:59.156Z, >60m, normal A-F rubric): NOT an ERC20 (totalSupply unreadable/0 per investigation+gate), 0 transfers/0 recipients, no website, no X presence, no ticker/CA spread, no KOL, no team engagement, no FOMO. Investigation verdict skip - non-token deployment noise. X reads: 0 (conserved, relied on humming-hymn investigation: social_signal weak, 0 candidate-specific X reads)."
+  },
+  {
+   "scored_at": "2026-10-13T11:09:05.894Z",
+   "candidate": {
+    "scout": "block-watcher",
+    "type": "contract",
+    "name": "xJEWEL",
+    "symbol": "xJEWEL",
+    "contract": "0xb94b0d9435e7964fb219e7cbe32a22bfedbd7359",
+    "chain": "robinhood",
+    "block": 86722666,
+    "found_at": "2026-10-12T13:53:01.949Z",
+    "tx_hash": "0x4dc77cb9e8d3f669e4acc4e271b0ec5f8a4ce6833a8c79cfca986555b9d801ae",
+    "deployer": "0x2ba26d29033c86063fc40f18267c75119a3f5447",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-13T10:45:20.082Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "thin holder data (0 addresses in 12k-block window)",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 1
+   },
+   "total": 2,
+   "grade": "F",
+   "notes": "F scam/no-legitimacy signals: ~1276 min since found_at (2026-10-12T13:53:01.949Z, >60m, normal A-F rubric): xJEWEL ERC20 but only 2 transfers / 2 recipients in ~21h, money_flow bot per investigation, no website, no X presence, no ticker/CA spread, no KOL, no team engagement. Thin/dead, no social legitimacy. X reads: 0 (conserved, relied on humming-hymn investigation)."
+  },
+  {
+   "scored_at": "2026-10-13T11:09:05.894Z",
+   "candidate": {
+    "scout": "block-watcher",
+    "type": "contract",
+    "name": null,
+    "symbol": null,
+    "contract": "0xd87bd1503f1a1b410b374ecc47fabbc488c55883",
+    "chain": "robinhood",
+    "block": 86722672,
+    "found_at": "2026-10-12T13:53:03.062Z",
+    "tx_hash": "0xb9f09b5edc7b587ea40e76d50ee533c06d969b685793515d6df803112bc5ed0b",
+    "deployer": "0x2ba26d29033c86063fc40f18267c75119a3f5447",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-13T10:45:38.806Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "no V2 WETH pair on factory 0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f and no V4 pools found; LP-lock and liquidity checks skipped",
+     "totalSupply unreadable or 0; concentration check skipped"
+    ]
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 0,
+   "grade": "F",
+   "notes": "F scam/no-legitimacy signals: ~1276 min since found_at (2026-10-12T13:53:03.062Z, >60m, normal A-F rubric): NOT an ERC20 (totalSupply unreadable/0 per investigation+gate), 0 transfers/0 recipients, no website, no X presence, no ticker/CA spread, no KOL, no team engagement, no FOMO. Investigation verdict skip - non-token deployment noise. X reads: 0 (conserved, relied on humming-hymn investigation: social_signal weak, 0 candidate-specific X reads)."
+  },
+  {
+   "scored_at": "2026-10-13T11:09:05.894Z",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "NAGARE NAGARE",
+    "symbol": null,
+    "contract": "0xe7c72503b1bddeeeb6c24efb1d30c3cdf5368c77",
+    "chain": "robinhood",
+    "block": 87448320,
+    "found_at": "2026-10-13T10:46:06.568Z",
+    "tx_hash": "0xa6815b95ee8150e468368aaaa005b354c9fc54b49d52970b0c091b410d24a9d8",
+    "curve": "0xaa7dc9af3efe75328adeb09e0b34d61413908aca",
+    "deployer": "0x903c8b289a3a3eaa81be082ae6b8c4f068029f07",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-13T10:49:47.444Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 50,
+   "grade": "P",
+   "notes": "pre-social: 23 min since launch, no footprint yet — re-grade after the social window. NAGARE NAGARE (pons V2, robinhood, contract 0xe7c72503b1bddeeeb6c24efb1d30c3cdf5368c77): investigation shows real onchain velocity (curve buys from distinct buyers, no toxic-name hit) but social_signal weak, no website/X/ticker spread/KOL/team footprint found, 0 candidate-specific X reads. No affirmative bad evidence (no bot-farm/wash/sniper dominance or scam flag in investigation) — absence at <60 min is expected, P is neutral. X reads: 0."
+  },
+  {
+   "scored_at": "2026-10-13T11:09:05.894Z",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "NAGARE NAGARE",
+    "symbol": null,
+    "contract": "0xfbe456a5538954580b55bebe9c7c3c571fa374b7",
+    "chain": "robinhood",
+    "block": 87449078,
+    "found_at": "2026-10-13T10:46:08.197Z",
+    "tx_hash": "0x89f148a51187e96783d6fb2ffda55018685d3a57361fed9c336977c808236704",
+    "curve": "0x8d428b3cbf859bd3cfb24b1da68d5fe474e09493",
+    "deployer": "0xea4cefc17aa428c873c96fba78323163606cdce3",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-13T10:48:54.810Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 0,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 0
+   },
+   "total": 50,
+   "grade": "P",
+   "notes": "pre-social: 23 min since launch, no footprint yet — re-grade after the social window. NAGARE NAGARE (pons V2, robinhood, contract 0xfbe456a5538954580b55bebe9c7c3c571fa374b7): investigation shows real onchain velocity (curve buys from distinct buyers, no toxic-name hit) but social_signal weak, no website/X/ticker spread/KOL/team footprint found, 0 candidate-specific X reads. No affirmative bad evidence (no bot-farm/wash/sniper dominance or scam flag in investigation) — absence at <60 min is expected, P is neutral. X reads: 0."
+  },
+  {
+   "scored_at": "2026-10-13T11:09:05.894Z",
+   "candidate": {
+    "scout": "pons-family",
+    "type": "token",
+    "name": "Grok AI Official Token Grok Ai",
+    "symbol": null,
+    "contract": "0x1c0b5da171ed1965200053df840669a9d29e74b5",
+    "chain": "robinhood",
+    "block": 87449644,
+    "found_at": "2026-10-13T10:46:09.729Z",
+    "tx_hash": "0xdf5e8472f957230ee34d8b3e87e26bf9ef9e441c56a387d8b7991c73cd30e91e",
+    "curve": "0x87d18a7373c4c281399ae3923c039c2a6d62e33e",
+    "deployer": "0xe275e2298b52aa5477101c406ba715ce1ae15760",
+    "gate_status": "gate_pass",
+    "gate_checked_at": "2026-10-13T10:46:14.109Z",
+    "gate_reasons": [],
+    "gate_warnings": [
+     "third-party sell simulation unavailable (no recent seller with usable allowance found); buyer's own sell is forward-simulated by the executor at exit time",
+     "concentrated holders need human review (top-10 34.56%): 0x5d6d8bba2b8efc0ca6562c6f5a3dafe6dd36f8ec holds 9.81% [unattributed], passive-recipient, net-worth ~0.0021 ETH; 0x34736413ddeda784d9c7c4aa1da63710b277146a holds 6.46% [unattributed], passive-recipient, net-worth ~0.0022 ETH; 0xc85f7275378858362247e7428a68d63c22fd400d holds 5.01% [unattributed], passive-recipient, net-worth ~0.0021 ETH; 0x6fc6fc1451b0d5432b288f256f5bf47cb46432d1 holds 3.69% [unattributed], passive-recipient, net-worth ~0.0021 ETH; 0xeb052c63fe9faae4b513a4ec7554e149ab56eb6f holds 2.84% [unattributed], passive-recipient, net-worth ~0.0023 ETH",
+     "no owner(); deployer undiscoverable via RPC — denylist check skipped"
+    ]
+   },
+   "scores": {
+    "website": 0,
+    "twitter_growth": 0,
+    "organic_activity": 1,
+    "kol_involvement": 0,
+    "ticker_spread": 0,
+    "team_engagement": 0,
+    "fomo_signals": 2
+   },
+   "total": 3,
+   "grade": "F",
+   "notes": "F - affirmative bad evidence at ~23 min since launch (pre-social exception veto): 'Grok AI Official Token' impersonation-style name with no official footprint, 69 curve buys from only 5 distinct buyers (sniper/bot dominance, 30 sells) yet curve collected only 0.0057 ETH / dead-flat per investigation, concentrated passive-recipient top holders in gate warnings, no website, no X presence, no ticker spread, no KOL, no team engagement. X reads: 0 (conserved, relied on humming-hymn investigation)."
   }
  ],
  "decisions": [
@@ -1023805,9 +1024333,9 @@
   "v4-launch"
  ],
  "last_activity": {
-  "scout": "2026-10-13T11:06:46.951Z",
+  "scout": "2026-10-13T11:08:04.494Z",
   "hymn": "2026-10-13T10:53:57.389Z",
-  "scorer": "2026-10-13T10:49:30.023Z",
+  "scorer": "2026-10-13T11:09:05.894Z",
   "snug": "2026-10-13T11:05:22Z",
   "cardigan": "2026-10-13T11:05:22Z"
  },
@@ -1023901,7 +1024429,7 @@
     "tx_hash": "0x750f3d68427ad7be0a12ca6aaf1ab7d1829802294b36090161aaf08025799dbd",
     "entered_at": "2026-10-08T20:15:30.720Z",
     "entry_price_usd": 0.01156,
-    "current_price_usd": 0.01175,
+    "current_price_usd": 0.01172,
     "pnl_pct": 0,
     "amount_tokens": 1055.2497206937642,
     "amount_eth_in": 0.005,
@@ -1023928,8 +1024456,8 @@
     "tx_hash": "0xcd209345f031f3ae4337c6feea42e3d8e01ac92d777205864e60ab2dd0bea993",
     "entered_at": "2026-10-08T20:58:38.421Z",
     "entry_price_usd": 0.011554,
-    "current_price_usd": 0.01175,
-    "pnl_pct": 1.6963822052968667,
+    "current_price_usd": 0.01172,
+    "pnl_pct": 1.4367318677514236,
     "amount_tokens": 1055.8207,
     "amount_eth_in": 0.005,
     "score": 62,
@@ -1023955,8 +1024483,8 @@
     "tx_hash": "0x9dd64a59b56f07d62b92d7900ad2c79f2d5f1bb3d007ca08a7dd03c743ffdb8e",
     "entered_at": "2026-10-08T21:51:09.592Z",
     "entry_price_usd": 0.0423,
-    "current_price_usd": 0.02197,
-    "pnl_pct": -48.061465721040186,
+    "current_price_usd": 0.02171,
+    "pnl_pct": -48.67612293144208,
     "amount_tokens": 289.1701,
     "amount_eth_in": 0.005,
     "score": 69,
@@ -1023982,8 +1024510,8 @@
     "tx_hash": "0x0cef41c59b5ff5890632d9a5d376772d22fd5c83eb6d90960088f8f66517ec90",
     "entered_at": "2026-10-09T01:51:03.242Z",
     "entry_price_usd": 0.1135,
-    "current_price_usd": 0.1004,
-    "pnl_pct": -11.541850220264317,
+    "current_price_usd": 0.1006,
+    "pnl_pct": -11.365638766519831,
     "amount_tokens": 216.29986717343255,
     "amount_eth_in": 0.01,
     "score": 60,
@@ -1024029,10 +1024557,10 @@
     "exit_price_usd": 0.0000057094609974722175
    }
   ],
-  "realized_pnl_pct_total": -104.58482531209432
+  "realized_pnl_pct_total": -105.28292140629716
  },
  "paper_trades": {
-  "as_of": "2026-10-13T11:02:36.786Z",
+  "as_of": "2026-10-13T11:07:55.832Z",
   "closed_trades": 1,
   "win_rate_pct": 0,
   "avg_realized_pct": -40,
@@ -1024051,7 +1024579,7 @@
     "seeded": true,
     "score": 66,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01177,
+    "last_price_usd": 0.01175,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -1024062,8 +1024590,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00024369016536118337,
-    "unrealized_pnl_pct": 2.4369016536118338
+    "unrealized_pnl_eth": 0.00022628372497824234,
+    "unrealized_pnl_pct": 2.2628372497824234
    },
    {
     "id": "pt-muzwwuzb-27",
@@ -1024074,7 +1024602,7 @@
     "seeded": true,
     "score": 63,
     "entry_price_usd": 0.01149,
-    "last_price_usd": 0.01177,
+    "last_price_usd": 0.01175,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -1024085,8 +1024613,8 @@
     "mcap_at_scan": 11494609.67857143,
     "mcap_at_decision": 11494609.67857143,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.00024369016536118337,
-    "unrealized_pnl_pct": 2.4369016536118338
+    "unrealized_pnl_eth": 0.00022628372497824234,
+    "unrealized_pnl_pct": 2.2628372497824234
    },
    {
     "id": "pt-mv03ww45-53",
@@ -1024097,7 +1024625,7 @@
     "seeded": false,
     "score": 70,
     "entry_price_usd": 0.3479,
-    "last_price_usd": 0.2846,
+    "last_price_usd": 0.2838,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -1024108,8 +1024636,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236903710.65536073,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0018194883587237698,
-    "unrealized_pnl_pct": -18.194883587237697
+    "unrealized_pnl_eth": -0.0018424834722621441,
+    "unrealized_pnl_pct": -18.42483472262144
    },
    {
     "id": "pt-mv03wwab-54",
@@ -1024120,7 +1024648,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 80.94,
-    "last_price_usd": 83.48,
+    "last_price_usd": 83.34,
     "lifecycle": "uncertain->sustained",
     "tps_hit": [],
     "fills": [],
@@ -1024131,8 +1024659,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 5819198,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": 0.0003138127007660008,
-    "unrealized_pnl_pct": 3.1381270076600076
+    "unrealized_pnl_eth": 0.00029651593773165395,
+    "unrealized_pnl_pct": 2.9651593773165397
    },
    {
     "id": "pt-mv0blxia-72",
@@ -1024143,7 +1024671,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3529,
-    "last_price_usd": 0.2846,
+    "last_price_usd": 0.2838,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -1024154,8 +1024682,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236878870.82861188,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.001935392462453952,
-    "unrealized_pnl_pct": -19.35392462453952
+    "unrealized_pnl_eth": -0.0019580617738736185,
+    "unrealized_pnl_pct": -19.580617738736183
    },
    {
     "id": "pt-mv0cnugg-72",
@@ -1024166,7 +1024694,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3527,
-    "last_price_usd": 0.2846,
+    "last_price_usd": 0.2838,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -1024177,8 +1024705,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236887365.55964863,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0019308193932520558,
-    "unrealized_pnl_pct": -19.308193932520556
+    "unrealized_pnl_eth": -0.0019535015593989224,
+    "unrealized_pnl_pct": -19.535015593989225
    },
    {
     "id": "pt-mv0d76ns-72",
@@ -1024189,7 +1024717,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3533,
-    "last_price_usd": 0.2846,
+    "last_price_usd": 0.2838,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -1024200,8 +1024728,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236883407.81179136,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0019445230682139825,
-    "unrealized_pnl_pct": -19.445230682139826
+    "unrealized_pnl_eth": -0.001967166713840929,
+    "unrealized_pnl_pct": -19.671667138409287
    },
    {
     "id": "pt-mv0ddooa-72",
@@ -1024212,7 +1024740,7 @@
     "seeded": false,
     "score": 65,
     "entry_price_usd": 0.3535,
-    "last_price_usd": 0.2846,
+    "last_price_usd": 0.2838,
     "lifecycle": "sustained",
     "tps_hit": [],
     "fills": [],
@@ -1024223,8 +1024751,8 @@
     "mcap_at_scan": null,
     "mcap_at_decision": 236788130.6214609,
     "mcap_method": "mcap_now(DexScreener marketCap|fdv) x price@T/price_now; assumes constant token supply",
-    "unrealized_pnl_eth": -0.0019490806223479485,
-    "unrealized_pnl_pct": -19.490806223479485
+    "unrealized_pnl_eth": -0.0019717114568599714,
+    "unrealized_pnl_pct": -19.717114568599715
    }
   ],
   "closed_recent": [

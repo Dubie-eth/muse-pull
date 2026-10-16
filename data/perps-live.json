@@ -1,28 +1,60 @@
 {
-  "updatedAt": "2026-10-16T15:47:49Z",
+  "updatedAt": "2026-10-16T15:52:16Z",
   "paper": true,
   "venue": "hyperliquid testnet",
   "account": {
-    "equity_usd": 9997.61,
-    "cash_usd": 9997.61,
-    "margin_locked_usd": 0,
-    "open_positions": 0,
-    "day_pnl_usd": 0.54
+    "equity_usd": 9996.08,
+    "cash_usd": 9647.45,
+    "margin_locked_usd": 350.0,
+    "open_positions": 1,
+    "day_pnl_usd": -0.83
   },
   "prices": {
-    "BTC": 81492.5,
-    "ETH": 2432.65,
-    "SOL": 103.85,
+    "BTC": 81352.5,
+    "ETH": 2424.85,
+    "SOL": 103.71,
     "HYPE": 43.35
   },
   "funding_hourly": {
-    "BTC": -0.0001454471,
-    "ETH": -0.0004220307,
-    "SOL": -0.0003093417,
+    "BTC": -0.0001402301,
+    "ETH": -0.0004230215,
+    "SOL": -0.0003185891,
     "HYPE": 0.0
   },
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "ETH",
+      "side": "long",
+      "notional_usd": 350.0,
+      "entry_price": 2434.35,
+      "mark_price": 2424.85,
+      "leverage": 1,
+      "unrealized_pnl_usd": -1.37,
+      "funding_paid_usd": 0.0,
+      "fees_paid_usd": 0.1575,
+      "opened_at": "2026-10-16T15:49:03Z"
+    }
+  ],
   "trades": [
+    {
+      "ts": "2026-10-16T15:49:03Z",
+      "action": "open_long",
+      "symbol": "ETH",
+      "price": 2434.35,
+      "notional_usd": 350.0,
+      "leverage": 1,
+      "fee_usd": 0.1575,
+      "strategy": "fathom_rrbf",
+      "conviction": 2,
+      "size_mult": 0.7,
+      "analytics": {
+        "fear_greed": 63,
+        "funding_ann_pct": 9.13,
+        "day_change_pct": -0.07,
+        "math_label": "neutral",
+        "social_label": "bearish"
+      }
+    },
     {
       "ts": "2026-10-16T14:34:05Z",
       "action": "close",
@@ -178,25 +210,6 @@
         "math_label": "bearish",
         "social_label": "bearish"
       }
-    },
-    {
-      "ts": "2026-10-15T13:04:16Z",
-      "action": "open_long",
-      "symbol": "ETH",
-      "price": 2337.15,
-      "notional_usd": 350.0,
-      "leverage": 1,
-      "fee_usd": 0.1575,
-      "strategy": "fathom_rrbf",
-      "conviction": 2,
-      "size_mult": 0.7,
-      "analytics": {
-        "fear_greed": 53,
-        "funding_ann_pct": 5.85,
-        "day_change_pct": -5.03,
-        "math_label": "bearish",
-        "social_label": "bearish"
-      }
     }
   ],
   "signals": [
@@ -205,15 +218,15 @@
       "bias": "neutral",
       "strength": 0,
       "reasons": [
-        "no setup (as of 2026-10-16T15:38:45Z)"
+        "no setup (as of 2026-10-16T15:48:31Z)"
       ]
     },
     {
       "symbol": "ETH",
-      "bias": "neutral",
-      "strength": 0,
+      "bias": "long",
+      "strength": 1.0,
       "reasons": [
-        "no setup (as of 2026-10-16T15:39:15Z)"
+        "adapt_long_long setup (as of 2026-10-16T15:49:03Z)"
       ]
     },
     {
@@ -221,7 +234,7 @@
       "bias": "neutral",
       "strength": 0,
       "reasons": [
-        "no setup (as of 2026-10-16T15:39:44Z)"
+        "no setup (as of 2026-10-16T15:49:31Z)"
       ]
     },
     {
@@ -229,12 +242,12 @@
       "bias": "neutral",
       "strength": 0,
       "reasons": [
-        "excluded from strategy universe (as of 2026-10-16T15:40:15Z)"
+        "excluded from strategy universe (as of 2026-10-16T15:50:01Z)"
       ]
     }
   ],
   "analytics": {
-    "ts": "2026-10-16T15:40:15Z",
+    "ts": "2026-10-16T15:50:01Z",
     "fear_greed": {
       "value": 63,
       "classification": "Greed",
@@ -243,31 +256,31 @@
     },
     "market": {
       "btc_dominance_pct": 59.3,
-      "total_mcap_usd": 2762788520915.0,
-      "mcap_change_24h_pct": -2.63
+      "total_mcap_usd": 2762360650368.0,
+      "mcap_change_24h_pct": -2.6
     },
     "coins": {
       "BTC": {
         "ctx": {
           "funding_per_hr": 1.25e-05,
           "funding_annualized_pct": 10.95,
-          "open_interest_coins": 42257.62798,
-          "open_interest_usd": 3450462097.0,
-          "day_change_pct": -0.84,
-          "day_volume_usd": 2455399372.0,
-          "mark_px": 81653.0
+          "open_interest_coins": 42240.82762,
+          "open_interest_usd": 3445035178.0,
+          "day_change_pct": -1.01,
+          "day_volume_usd": 2410328732.0,
+          "mark_px": 81557.0
         },
         "book": {
-          "bid_ask_ratio": 0.182,
+          "bid_ask_ratio": 1.108,
           "spread_bps": 0.1
         },
         "math": {
-          "score": -20.4,
-          "label": "bearish",
+          "score": 15.0,
+          "label": "bullish",
           "components": {
             "funding": 36.5,
-            "momentum": -16.8,
-            "book": -100.0
+            "momentum": -20.2,
+            "book": 21.6
           }
         },
         "social": {
@@ -280,25 +293,25 @@
       },
       "ETH": {
         "ctx": {
-          "funding_per_hr": 1.01202e-05,
-          "funding_annualized_pct": 8.87,
-          "open_interest_coins": 1086748.3451999999,
-          "open_interest_usd": 2655578256.0,
-          "day_change_pct": 0.21,
-          "day_volume_usd": 939915771.0,
-          "mark_px": 2443.6
+          "funding_per_hr": 1.04198e-05,
+          "funding_annualized_pct": 9.13,
+          "open_interest_coins": 1087073.8264,
+          "open_interest_usd": 2650503404.0,
+          "day_change_pct": -0.07,
+          "day_volume_usd": 922371335.0,
+          "mark_px": 2438.2
         },
         "book": {
-          "bid_ask_ratio": 0.938,
+          "bid_ask_ratio": 0.933,
           "spread_bps": 0.4
         },
         "math": {
-          "score": 9.4,
+          "score": 7.7,
           "label": "neutral",
           "components": {
-            "funding": 29.6,
-            "momentum": 4.2,
-            "book": -12.4
+            "funding": 30.4,
+            "momentum": -1.4,
+            "book": -13.4
           }
         },
         "social": {
@@ -311,25 +324,25 @@
       },
       "SOL": {
         "ctx": {
-          "funding_per_hr": 1.5091e-06,
-          "funding_annualized_pct": 1.32,
-          "open_interest_coins": 5482755.3599999985,
-          "open_interest_usd": 573934831.0,
-          "day_change_pct": -1.22,
-          "day_volume_usd": 225967140.0,
-          "mark_px": 104.68
+          "funding_per_hr": 4.2847e-06,
+          "funding_annualized_pct": 3.75,
+          "open_interest_coins": 5482937.42,
+          "open_interest_usd": 572802472.0,
+          "day_change_pct": -1.47,
+          "day_volume_usd": 224230509.0,
+          "mark_px": 104.47
         },
         "book": {
-          "bid_ask_ratio": 0.711,
+          "bid_ask_ratio": 1.386,
           "spread_bps": 1.0
         },
         "math": {
-          "score": -22.9,
-          "label": "bearish",
+          "score": 19.3,
+          "label": "bullish",
           "components": {
-            "funding": 4.4,
-            "momentum": -24.4,
-            "book": -57.8
+            "funding": 12.5,
+            "momentum": -29.4,
+            "book": 77.2
           }
         },
         "social": {
@@ -342,25 +355,25 @@
       },
       "HYPE": {
         "ctx": {
-          "funding_per_hr": -2.91345e-05,
-          "funding_annualized_pct": -25.52,
-          "open_interest_coins": 19905708.360000003,
-          "open_interest_usd": 1574123511.0,
-          "day_change_pct": -2.59,
-          "day_volume_usd": 357471949.0,
-          "mark_px": 79.079
+          "funding_per_hr": -2.32563e-05,
+          "funding_annualized_pct": -20.37,
+          "open_interest_coins": 19897863.64,
+          "open_interest_usd": 1569125629.0,
+          "day_change_pct": -3.25,
+          "day_volume_usd": 347117360.0,
+          "mark_px": 78.859
         },
         "book": {
-          "bid_ask_ratio": 1.241,
-          "spread_bps": 0.4
+          "bid_ask_ratio": 4.832,
+          "spread_bps": 0.3
         },
         "math": {
-          "score": -35.1,
+          "score": -16.7,
           "label": "bearish",
           "components": {
-            "funding": -85.1,
-            "momentum": -51.8,
-            "book": 48.2
+            "funding": -67.9,
+            "momentum": -65.0,
+            "book": 100.0
           }
         },
         "social": {

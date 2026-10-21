@@ -1,28 +1,60 @@
 {
-  "updatedAt": "2026-10-21T14:56:29Z",
+  "updatedAt": "2026-10-21T15:02:13Z",
   "paper": true,
   "venue": "hyperliquid testnet",
   "account": {
-    "equity_usd": 9982.65,
-    "cash_usd": 9982.65,
-    "margin_locked_usd": 0,
-    "open_positions": 0,
-    "day_pnl_usd": 0.0
+    "equity_usd": 9982.55,
+    "cash_usd": 9482.43,
+    "margin_locked_usd": 500.0,
+    "open_positions": 1,
+    "day_pnl_usd": 0.12
   },
   "prices": {
-    "BTC": 84164.5,
-    "ETH": 2483.95,
-    "SOL": 107.31,
-    "HYPE": 69.8
+    "BTC": 84228.5,
+    "ETH": 2486.75,
+    "SOL": 107.165,
+    "HYPE": 69.875
   },
   "funding_hourly": {
-    "BTC": -0.0003323261,
-    "ETH": -0.0005401121,
-    "SOL": -0.0002976699,
+    "BTC": -0.0005228601,
+    "ETH": -0.0005551356,
+    "SOL": -0.0002810548,
     "HYPE": 0.0
   },
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "SOL",
+      "side": "short",
+      "notional_usd": 500.0,
+      "entry_price": 107.19,
+      "mark_price": 107.165,
+      "leverage": 1,
+      "unrealized_pnl_usd": 0.12,
+      "funding_paid_usd": 0.0,
+      "fees_paid_usd": 0.225,
+      "opened_at": "2026-10-21T15:00:45Z"
+    }
+  ],
   "trades": [
+    {
+      "ts": "2026-10-21T15:00:45Z",
+      "action": "open_short",
+      "symbol": "SOL",
+      "price": 107.19,
+      "notional_usd": 500.0,
+      "leverage": 1,
+      "fee_usd": 0.225,
+      "strategy": "fathom_rrbf",
+      "conviction": 4,
+      "size_mult": 1.0,
+      "analytics": {
+        "fear_greed": 63,
+        "funding_ann_pct": 1.11,
+        "day_change_pct": -0.06,
+        "math_label": "neutral",
+        "social_label": "neutral"
+      }
+    },
     {
       "ts": "2026-10-20T14:09:07Z",
       "action": "close",
@@ -178,25 +210,6 @@
         "math_label": "bearish",
         "social_label": "bearish"
       }
-    },
-    {
-      "ts": "2026-10-16T15:49:03Z",
-      "action": "open_long",
-      "symbol": "ETH",
-      "price": 2434.35,
-      "notional_usd": 350.0,
-      "leverage": 1,
-      "fee_usd": 0.1575,
-      "strategy": "fathom_rrbf",
-      "conviction": 2,
-      "size_mult": 0.7,
-      "analytics": {
-        "fear_greed": 63,
-        "funding_ann_pct": 9.13,
-        "day_change_pct": -0.07,
-        "math_label": "neutral",
-        "social_label": "bearish"
-      }
     }
   ],
   "signals": [
@@ -205,7 +218,7 @@
       "bias": "neutral",
       "strength": 0,
       "reasons": [
-        "no setup (as of 2026-10-21T14:49:55Z)"
+        "no setup (as of 2026-10-21T15:00:41Z)"
       ]
     },
     {
@@ -213,15 +226,15 @@
       "bias": "neutral",
       "strength": 0,
       "reasons": [
-        "no setup (as of 2026-10-21T14:49:56Z)"
+        "no setup (as of 2026-10-21T15:00:44Z)"
       ]
     },
     {
       "symbol": "SOL",
-      "bias": "neutral",
-      "strength": 0,
+      "bias": "short",
+      "strength": 1.0,
       "reasons": [
-        "no setup (as of 2026-10-21T14:49:57Z)"
+        "adapt_short_short setup (as of 2026-10-21T15:00:45Z)"
       ]
     },
     {
@@ -229,12 +242,12 @@
       "bias": "neutral",
       "strength": 0,
       "reasons": [
-        "excluded from strategy universe (as of 2026-10-21T14:49:59Z)"
+        "excluded from strategy universe (as of 2026-10-21T15:00:46Z)"
       ]
     }
   ],
   "analytics": {
-    "ts": "2026-10-21T14:49:59Z",
+    "ts": "2026-10-21T15:00:46Z",
     "fear_greed": {
       "value": 63,
       "classification": "Greed",
@@ -243,30 +256,30 @@
     },
     "market": {
       "btc_dominance_pct": 59.7,
-      "total_mcap_usd": 2825217217880.0,
-      "mcap_change_24h_pct": -0.38
+      "total_mcap_usd": 2844450445378.0,
+      "mcap_change_24h_pct": 0.05
     },
     "coins": {
       "BTC": {
         "ctx": {
           "funding_per_hr": 1.25e-05,
           "funding_annualized_pct": 10.95,
-          "open_interest_coins": 40906.22616,
-          "open_interest_usd": 3450153833.0,
-          "day_change_pct": 1.31,
-          "day_volume_usd": 2094954321.0,
-          "mark_px": 84343.0
+          "open_interest_coins": 40625.93264,
+          "open_interest_usd": 3435857001.0,
+          "day_change_pct": 1.58,
+          "day_volume_usd": 2190431303.0,
+          "mark_px": 84573.0
         },
         "book": {
-          "bid_ask_ratio": 3.918,
+          "bid_ask_ratio": 6.072,
           "spread_bps": 0.1
         },
         "math": {
-          "score": 52.5,
+          "score": 54.1,
           "label": "strongly bullish",
           "components": {
             "funding": 36.5,
-            "momentum": 26.2,
+            "momentum": 31.6,
             "book": 100.0
           }
         },
@@ -282,23 +295,23 @@
         "ctx": {
           "funding_per_hr": 1.25e-05,
           "funding_annualized_pct": 10.95,
-          "open_interest_coins": 1103351.8592,
-          "open_interest_usd": 2746132442.0,
-          "day_change_pct": 0.69,
-          "day_volume_usd": 825492269.0,
-          "mark_px": 2488.9
+          "open_interest_coins": 1106088.8676000007,
+          "open_interest_usd": 2763231209.0,
+          "day_change_pct": 1.06,
+          "day_volume_usd": 851225478.0,
+          "mark_px": 2498.2
         },
         "book": {
-          "bid_ask_ratio": 0.251,
+          "bid_ask_ratio": 1.234,
           "spread_bps": 0.4
         },
         "math": {
-          "score": -11.3,
-          "label": "neutral",
+          "score": 35.0,
+          "label": "bullish",
           "components": {
             "funding": 36.5,
-            "momentum": 13.8,
-            "book": -100.0
+            "momentum": 21.2,
+            "book": 46.8
           }
         },
         "social": {
@@ -311,25 +324,25 @@
       },
       "SOL": {
         "ctx": {
-          "funding_per_hr": 1.13371e-05,
-          "funding_annualized_pct": 9.93,
-          "open_interest_coins": 5388781.32,
-          "open_interest_usd": 579347880.0,
-          "day_change_pct": -0.19,
-          "day_volume_usd": 213804563.0,
-          "mark_px": 107.51
+          "funding_per_hr": 1.2715e-06,
+          "funding_annualized_pct": 1.11,
+          "open_interest_coins": 5377621.339999997,
+          "open_interest_usd": 578954713.0,
+          "day_change_pct": -0.06,
+          "day_volume_usd": 217901138.0,
+          "mark_px": 107.66
         },
         "book": {
-          "bid_ask_ratio": 1.522,
+          "bid_ask_ratio": 0.943,
           "spread_bps": 0.9
         },
         "math": {
-          "score": 42.1,
-          "label": "bullish",
+          "score": -2.3,
+          "label": "neutral",
           "components": {
-            "funding": 33.1,
-            "momentum": -3.8,
-            "book": 100.0
+            "funding": 3.7,
+            "momentum": -1.2,
+            "book": -11.4
           }
         },
         "social": {
@@ -342,24 +355,24 @@
       },
       "HYPE": {
         "ctx": {
-          "funding_per_hr": 1.6753e-06,
-          "funding_annualized_pct": 1.47,
-          "open_interest_coins": 20511373.660000004,
-          "open_interest_usd": 1657261560.0,
-          "day_change_pct": -0.73,
-          "day_volume_usd": 372297578.0,
-          "mark_px": 80.7972
+          "funding_per_hr": -2.14463e-05,
+          "funding_annualized_pct": -18.79,
+          "open_interest_coins": 20446506.300000004,
+          "open_interest_usd": 1669723044.0,
+          "day_change_pct": 0.34,
+          "day_volume_usd": 387152691.0,
+          "mark_px": 81.663
         },
         "book": {
-          "bid_ask_ratio": 53.118,
+          "bid_ask_ratio": 7.095,
           "spread_bps": 0.1
         },
         "math": {
-          "score": 27.6,
-          "label": "bullish",
+          "score": 7.0,
+          "label": "neutral",
           "components": {
-            "funding": 4.9,
-            "momentum": -14.6,
+            "funding": -62.6,
+            "momentum": 6.8,
             "book": 100.0
           }
         },
@@ -405,1365 +418,1365 @@
     "notes": []
   },
   "flow": {
-    "ts": "2026-10-21T14:55:29Z",
+    "ts": "2026-10-21T15:00:55Z",
     "coins": {
       "BTC": {
-        "mark_px": 84542.0,
-        "oi_usd": 3435143154.0,
+        "mark_px": 84568.0,
+        "oi_usd": 3435680676.0,
         "liquidity": {
           "spread_bps": 0.1,
           "bands": {
             "0.10pct": {
-              "bid_usd": 6550267.0,
-              "ask_usd": 2129074.0
+              "bid_usd": 8677600.0,
+              "ask_usd": 1015189.0
             },
             "0.25pct": {
-              "bid_usd": 6550267.0,
-              "ask_usd": 2129074.0
+              "bid_usd": 8677600.0,
+              "ask_usd": 1015189.0
             },
             "0.50pct": {
-              "bid_usd": 6550267.0,
-              "ask_usd": 2129074.0
+              "bid_usd": 8677600.0,
+              "ask_usd": 1015189.0
             }
           },
-          "top10_bid_ask_ratio": 4.275
+          "top10_bid_ask_ratio": 27.561
         },
         "oi_delta_1h": {
-          "delta_usd": -43105093.0,
-          "delta_pct": -1.24
+          "delta_usd": -50340026.0,
+          "delta_pct": -1.44
         },
         "oi_delta_4h": {
-          "delta_usd": 10730044.0,
-          "delta_pct": 0.31
+          "delta_usd": 8903145.0,
+          "delta_pct": 0.26
         },
         "oi_delta_24h": {
-          "delta_usd": -58445462.0,
-          "delta_pct": -1.67
+          "delta_usd": -64744406.0,
+          "delta_pct": -1.85
         },
-        "funding_flow_usd_per_hr": 42939.0,
+        "funding_flow_usd_per_hr": 42946.0,
         "funding_ann_pct": 10.95
       },
       "ETH": {
-        "mark_px": 2494.4,
-        "oi_usd": 2756773578.0,
+        "mark_px": 2497.5,
+        "oi_usd": 2762518790.0,
         "liquidity": {
           "spread_bps": 0.4,
           "bands": {
             "0.10pct": {
-              "bid_usd": 10882314.0,
-              "ask_usd": 10845078.0
+              "bid_usd": 8611749.0,
+              "ask_usd": 12696965.0
             },
             "0.25pct": {
-              "bid_usd": 10882314.0,
-              "ask_usd": 10845078.0
+              "bid_usd": 8611749.0,
+              "ask_usd": 12696965.0
             },
             "0.50pct": {
-              "bid_usd": 10882314.0,
-              "ask_usd": 10845078.0
+              "bid_usd": 8611749.0,
+              "ask_usd": 12696965.0
             }
           },
-          "top10_bid_ask_ratio": 2.324
+          "top10_bid_ask_ratio": 0.488
         },
         "oi_delta_1h": {
-          "delta_usd": 33131662.0,
-          "delta_pct": 1.22
+          "delta_usd": 29123806.0,
+          "delta_pct": 1.07
         },
         "oi_delta_4h": {
-          "delta_usd": 61590874.0,
-          "delta_pct": 2.29
+          "delta_usd": 65570002.0,
+          "delta_pct": 2.43
         },
         "oi_delta_24h": {
-          "delta_usd": 121590311.0,
-          "delta_pct": 4.61
+          "delta_usd": 97268419.0,
+          "delta_pct": 3.65
         },
-        "funding_flow_usd_per_hr": 34460.0,
+        "funding_flow_usd_per_hr": 34531.0,
         "funding_ann_pct": 10.95
       },
       "SOL": {
-        "mark_px": 107.77,
-        "oi_usd": 580680501.0,
+        "mark_px": 107.68,
+        "oi_usd": 579062386.0,
         "liquidity": {
           "spread_bps": 0.9,
           "bands": {
             "0.10pct": {
-              "bid_usd": 1410919.0,
-              "ask_usd": 3718582.0
+              "bid_usd": 2064074.0,
+              "ask_usd": 3784716.0
             },
             "0.25pct": {
-              "bid_usd": 3145534.0,
-              "ask_usd": 6483024.0
+              "bid_usd": 4611081.0,
+              "ask_usd": 6095928.0
             },
             "0.50pct": {
-              "bid_usd": 3145534.0,
-              "ask_usd": 6483024.0
+              "bid_usd": 4611081.0,
+              "ask_usd": 6095928.0
             }
           },
-          "top10_bid_ask_ratio": 0.365
+          "top10_bid_ask_ratio": 0.544
         },
         "oi_delta_1h": {
-          "delta_usd": -1540235.0,
-          "delta_pct": -0.26
+          "delta_usd": -3577491.0,
+          "delta_pct": -0.61
         },
         "oi_delta_4h": {
-          "delta_usd": 1615912.0,
-          "delta_pct": 0.28
+          "delta_usd": -420162.0,
+          "delta_pct": -0.07
         },
         "oi_delta_24h": {
-          "delta_usd": -15832337.0,
-          "delta_pct": -2.65
+          "delta_usd": -18855368.0,
+          "delta_pct": -3.15
         },
-        "funding_flow_usd_per_hr": 6440.0,
-        "funding_ann_pct": 9.72
+        "funding_flow_usd_per_hr": 1636.0,
+        "funding_ann_pct": 2.47
       },
       "HYPE": {
-        "mark_px": 81.237,
-        "oi_usd": 1664896682.0,
+        "mark_px": 81.67,
+        "oi_usd": 1669606256.0,
         "liquidity": {
           "spread_bps": 0.1,
           "bands": {
             "0.10pct": {
-              "bid_usd": 175068.0,
-              "ask_usd": 68533.0
+              "bid_usd": 124766.0,
+              "ask_usd": 341674.0
             },
             "0.25pct": {
-              "bid_usd": 175068.0,
-              "ask_usd": 68533.0
+              "bid_usd": 124766.0,
+              "ask_usd": 341674.0
             },
             "0.50pct": {
-              "bid_usd": 175068.0,
-              "ask_usd": 68533.0
+              "bid_usd": 124766.0,
+              "ask_usd": 341674.0
             }
           },
-          "top10_bid_ask_ratio": 7.96
+          "top10_bid_ask_ratio": 0.233
         },
         "oi_delta_1h": {
-          "delta_usd": 17665587.0,
-          "delta_pct": 1.07
+          "delta_usd": 20402724.0,
+          "delta_pct": 1.24
         },
         "oi_delta_4h": {
-          "delta_usd": 7697216.0,
-          "delta_pct": 0.46
+          "delta_usd": 10816729.0,
+          "delta_pct": 0.65
         },
         "oi_delta_24h": {
-          "delta_usd": 4359159.0,
-          "delta_pct": 0.26
+          "delta_usd": 5879294.0,
+          "delta_pct": 0.35
         },
-        "funding_flow_usd_per_hr": 6083.0,
-        "funding_ann_pct": 3.2
+        "funding_flow_usd_per_hr": -35807.0,
+        "funding_ann_pct": -18.79
       }
     },
     "notes": []
   },
   "liq_heat": {
-    "ts": "2026-10-21T14:39:06Z",
+    "ts": "2026-10-21T14:55:29Z",
     "estimated": true,
     "method": "gaussian spread of OI across 5/10/25/50x liq levels, long/short split tilted by funding; NOT exchange data",
     "coins": {
       "BTC": {
-        "mark_px": 84094.0,
-        "oi_usd": 3474415330.0,
+        "mark_px": 84542.0,
+        "oi_usd": 3435144711.0,
         "long_frac_est": 0.555,
         "atr_pct": 1.0,
-        "magnet_above_2pct_usd": 257909432.0,
-        "magnet_below_2pct_usd": 321336905.0,
+        "magnet_above_2pct_usd": 254994333.0,
+        "magnet_below_2pct_usd": 317704899.0,
         "nearest_cluster_above": {
-          "price": 85347.0,
+          "price": 85801.7,
           "dist_pct": 1.49,
-          "est_liq_usd": 20038423.0,
+          "est_liq_usd": 19811932.0,
           "leverage": 50
         },
         "nearest_cluster_below": {
-          "price": 82824.2,
+          "price": 83265.4,
           "dist_pct": -1.51,
-          "est_liq_usd": 24966457.0,
+          "est_liq_usd": 24684266.0,
           "leverage": 50
         },
         "levels": [
           {
             "side": "long",
             "leverage": 5,
-            "price": 66938.8,
+            "price": 67295.4,
             "dist_pct": -20.4,
-            "est_liq_usd": 14979874.0
+            "est_liq_usd": 14810560.0
           },
           {
             "side": "long",
             "leverage": 5,
-            "price": 67107.0,
+            "price": 67464.5,
             "dist_pct": -20.2,
-            "est_liq_usd": 67135138.0
+            "est_liq_usd": 66376323.0
           },
           {
             "side": "long",
             "leverage": 5,
-            "price": 67275.2,
+            "price": 67633.6,
             "dist_pct": -20.0,
-            "est_liq_usd": 110687131.0
+            "est_liq_usd": 109436056.0
           },
           {
             "side": "long",
             "leverage": 5,
-            "price": 67443.4,
+            "price": 67802.7,
             "dist_pct": -19.8,
-            "est_liq_usd": 67135138.0
+            "est_liq_usd": 66376323.0
           },
           {
             "side": "long",
             "leverage": 5,
-            "price": 67611.6,
+            "price": 67971.8,
             "dist_pct": -19.6,
-            "est_liq_usd": 14979874.0
+            "est_liq_usd": 14810560.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 75306.2,
+            "price": 75707.4,
             "dist_pct": -10.45,
-            "est_liq_usd": 24966457.0
+            "est_liq_usd": 24684266.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 75495.4,
+            "price": 75897.6,
             "dist_pct": -10.22,
-            "est_liq_usd": 111891897.0
+            "est_liq_usd": 110627206.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 75684.6,
+            "price": 76087.8,
             "dist_pct": -10.0,
-            "est_liq_usd": 184478551.0
+            "est_liq_usd": 182393427.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 75873.8,
+            "price": 76278.0,
             "dist_pct": -9.78,
-            "est_liq_usd": 111891897.0
+            "est_liq_usd": 110627206.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 76063.0,
+            "price": 76468.2,
             "dist_pct": -9.55,
-            "est_liq_usd": 24966457.0
+            "est_liq_usd": 24684266.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 80326.6,
+            "price": 80754.5,
             "dist_pct": -4.48,
-            "est_liq_usd": 34953040.0
+            "est_liq_usd": 34557973.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 80528.4,
+            "price": 80957.4,
             "dist_pct": -4.24,
-            "est_liq_usd": 156648656.0
+            "est_liq_usd": 154878088.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 80730.2,
+            "price": 81160.3,
             "dist_pct": -4.0,
-            "est_liq_usd": 258269972.0
+            "est_liq_usd": 255350798.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 80932.1,
+            "price": 81363.2,
             "dist_pct": -3.76,
-            "est_liq_usd": 156648656.0
+            "est_liq_usd": 154878088.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 81133.9,
+            "price": 81566.1,
             "dist_pct": -3.52,
-            "est_liq_usd": 34953040.0
+            "est_liq_usd": 34557973.0
           },
           {
             "side": "long",
             "leverage": 50,
-            "price": 82000.1,
+            "price": 82436.9,
             "dist_pct": -2.49,
-            "est_liq_usd": 24966457.0
+            "est_liq_usd": 24684266.0
           },
           {
             "side": "long",
             "leverage": 50,
-            "price": 82206.1,
-            "dist_pct": -2.25,
-            "est_liq_usd": 111891897.0
+            "price": 82644.0,
+            "dist_pct": -2.24,
+            "est_liq_usd": 110627206.0
           },
           {
             "side": "long",
             "leverage": 50,
-            "price": 82412.1,
+            "price": 82851.2,
             "dist_pct": -2.0,
-            "est_liq_usd": 184478551.0
+            "est_liq_usd": 182393427.0
           },
           {
             "side": "long",
             "leverage": 50,
-            "price": 82618.2,
+            "price": 83058.3,
             "dist_pct": -1.76,
-            "est_liq_usd": 111891897.0
+            "est_liq_usd": 110627206.0
           },
           {
             "side": "long",
             "leverage": 50,
-            "price": 82824.2,
+            "price": 83265.4,
             "dist_pct": -1.51,
-            "est_liq_usd": 24966457.0
+            "est_liq_usd": 24684266.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 85347.0,
+            "price": 85801.7,
             "dist_pct": 1.49,
-            "est_liq_usd": 20038423.0
+            "est_liq_usd": 19811932.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 85561.4,
-            "dist_pct": 1.75,
-            "est_liq_usd": 89805980.0
+            "price": 86017.3,
+            "dist_pct": 1.74,
+            "est_liq_usd": 88790921.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 85775.9,
+            "price": 86232.8,
             "dist_pct": 2.0,
-            "est_liq_usd": 148065029.0
+            "est_liq_usd": 146391480.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 85990.3,
-            "dist_pct": 2.26,
-            "est_liq_usd": 89805980.0
+            "price": 86448.4,
+            "dist_pct": 2.25,
+            "est_liq_usd": 88790921.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 86204.8,
+            "price": 86664.0,
             "dist_pct": 2.51,
-            "est_liq_usd": 20038423.0
+            "est_liq_usd": 19811932.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 87020.5,
+            "price": 87484.1,
             "dist_pct": 3.48,
-            "est_liq_usd": 28053792.0
+            "est_liq_usd": 27736705.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 87239.1,
+            "price": 87703.9,
             "dist_pct": 3.74,
-            "est_liq_usd": 125728372.0
+            "est_liq_usd": 124307289.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 87457.8,
+            "price": 87923.7,
             "dist_pct": 4.0,
-            "est_liq_usd": 207291041.0
+            "est_liq_usd": 204948072.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 87676.4,
+            "price": 88143.5,
             "dist_pct": 4.26,
-            "est_liq_usd": 125728372.0
+            "est_liq_usd": 124307289.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 87895.0,
+            "price": 88363.3,
             "dist_pct": 4.52,
-            "est_liq_usd": 28053792.0
+            "est_liq_usd": 27736705.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 92040.9,
+            "price": 92531.2,
             "dist_pct": 9.45,
-            "est_liq_usd": 20038423.0
+            "est_liq_usd": 19811932.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 92272.1,
+            "price": 92763.7,
             "dist_pct": 9.73,
-            "est_liq_usd": 89805980.0
+            "est_liq_usd": 88790921.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 92503.4,
+            "price": 92996.2,
             "dist_pct": 10.0,
-            "est_liq_usd": 148065029.0
+            "est_liq_usd": 146391480.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 92734.7,
+            "price": 93228.7,
             "dist_pct": 10.28,
-            "est_liq_usd": 89805980.0
+            "est_liq_usd": 88790921.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 92965.9,
+            "price": 93461.2,
             "dist_pct": 10.55,
-            "est_liq_usd": 20038423.0
+            "est_liq_usd": 19811932.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 100408.2,
+            "price": 100943.1,
             "dist_pct": 19.4,
-            "est_liq_usd": 12023054.0
+            "est_liq_usd": 11887159.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 100660.5,
+            "price": 101196.8,
             "dist_pct": 19.7,
-            "est_liq_usd": 53883588.0
+            "est_liq_usd": 53274553.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 100912.8,
+            "price": 101450.4,
             "dist_pct": 20.0,
-            "est_liq_usd": 88839018.0
+            "est_liq_usd": 87834888.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 101165.1,
+            "price": 101704.0,
             "dist_pct": 20.3,
-            "est_liq_usd": 53883588.0
+            "est_liq_usd": 53274553.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 101417.4,
+            "price": 101957.7,
             "dist_pct": 20.6,
-            "est_liq_usd": 12023054.0
+            "est_liq_usd": 11887159.0
           }
         ]
       },
       "ETH": {
-        "mark_px": 2476.8,
-        "oi_usd": 2740935492.0,
+        "mark_px": 2494.4,
+        "oi_usd": 2756773578.0,
         "long_frac_est": 0.555,
         "atr_pct": 1.0,
-        "magnet_above_2pct_usd": 203462467.0,
-        "magnet_below_2pct_usd": 253499840.0,
+        "magnet_above_2pct_usd": 204638145.0,
+        "magnet_below_2pct_usd": 254964650.0,
         "nearest_cluster_above": {
-          "price": 2513.7,
+          "price": 2531.6,
           "dist_pct": 1.49,
-          "est_liq_usd": 15808134.0,
+          "est_liq_usd": 15899479.0,
           "leverage": 50
         },
         "nearest_cluster_below": {
-          "price": 2439.4,
+          "price": 2456.7,
           "dist_pct": -1.51,
-          "est_liq_usd": 19695817.0,
+          "est_liq_usd": 19809626.0,
           "leverage": 50
         },
         "levels": [
           {
             "side": "long",
             "leverage": 5,
-            "price": 1971.5,
+            "price": 1985.5,
             "dist_pct": -20.4,
-            "est_liq_usd": 11817490.0
+            "est_liq_usd": 11885776.0
           },
           {
             "side": "long",
             "leverage": 5,
-            "price": 1976.5,
+            "price": 1990.5,
             "dist_pct": -20.2,
-            "est_liq_usd": 52962316.0
+            "est_liq_usd": 53268351.0
           },
           {
             "side": "long",
             "leverage": 5,
-            "price": 1981.4,
+            "price": 1995.5,
             "dist_pct": -20.0,
-            "est_liq_usd": 87320097.0
+            "est_liq_usd": 87824664.0
           },
           {
             "side": "long",
             "leverage": 5,
-            "price": 1986.4,
+            "price": 2000.5,
             "dist_pct": -19.8,
-            "est_liq_usd": 52962316.0
+            "est_liq_usd": 53268351.0
           },
           {
             "side": "long",
             "leverage": 5,
-            "price": 1991.3,
+            "price": 2005.5,
             "dist_pct": -19.6,
-            "est_liq_usd": 11817490.0
+            "est_liq_usd": 11885776.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 2218.0,
+            "price": 2233.7,
             "dist_pct": -10.45,
-            "est_liq_usd": 19695817.0
+            "est_liq_usd": 19809626.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 2223.5,
-            "dist_pct": -10.22,
-            "est_liq_usd": 88270527.0
+            "price": 2239.3,
+            "dist_pct": -10.23,
+            "est_liq_usd": 88780585.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 2229.1,
+            "price": 2245.0,
             "dist_pct": -10.0,
-            "est_liq_usd": 145533496.0
+            "est_liq_usd": 146374439.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 2234.7,
-            "dist_pct": -9.77,
-            "est_liq_usd": 88270527.0
+            "price": 2250.6,
+            "dist_pct": -9.78,
+            "est_liq_usd": 88780585.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 2240.3,
+            "price": 2256.2,
             "dist_pct": -9.55,
-            "est_liq_usd": 19695817.0
+            "est_liq_usd": 19809626.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 2365.8,
+            "price": 2382.7,
             "dist_pct": -4.48,
-            "est_liq_usd": 27574144.0
+            "est_liq_usd": 27733477.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 2371.8,
+            "price": 2388.6,
             "dist_pct": -4.24,
-            "est_liq_usd": 123578738.0
+            "est_liq_usd": 124292819.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 2377.7,
+            "price": 2394.6,
             "dist_pct": -4.0,
-            "est_liq_usd": 203746894.0
+            "est_liq_usd": 204924215.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 2383.7,
+            "price": 2400.6,
             "dist_pct": -3.76,
-            "est_liq_usd": 123578738.0
+            "est_liq_usd": 124292819.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 2389.6,
+            "price": 2406.6,
             "dist_pct": -3.52,
-            "est_liq_usd": 27574144.0
+            "est_liq_usd": 27733477.0
           },
           {
             "side": "long",
             "leverage": 50,
-            "price": 2415.1,
+            "price": 2432.3,
             "dist_pct": -2.49,
-            "est_liq_usd": 19695817.0
+            "est_liq_usd": 19809626.0
           },
           {
             "side": "long",
             "leverage": 50,
-            "price": 2421.2,
+            "price": 2438.4,
             "dist_pct": -2.24,
-            "est_liq_usd": 88270527.0
+            "est_liq_usd": 88780585.0
           },
           {
             "side": "long",
             "leverage": 50,
-            "price": 2427.3,
+            "price": 2444.5,
             "dist_pct": -2.0,
-            "est_liq_usd": 145533496.0
+            "est_liq_usd": 146374439.0
           },
           {
             "side": "long",
             "leverage": 50,
-            "price": 2433.3,
-            "dist_pct": -1.76,
-            "est_liq_usd": 88270527.0
+            "price": 2450.6,
+            "dist_pct": -1.75,
+            "est_liq_usd": 88780585.0
           },
           {
             "side": "long",
             "leverage": 50,
-            "price": 2439.4,
+            "price": 2456.7,
             "dist_pct": -1.51,
-            "est_liq_usd": 19695817.0
+            "est_liq_usd": 19809626.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 2513.7,
+            "price": 2531.6,
             "dist_pct": 1.49,
-            "est_liq_usd": 15808134.0
+            "est_liq_usd": 15899479.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 2520.0,
+            "price": 2537.9,
             "dist_pct": 1.75,
-            "est_liq_usd": 70847142.0
+            "est_liq_usd": 71256522.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 2526.3,
+            "price": 2544.3,
             "dist_pct": 2.0,
-            "est_liq_usd": 116807191.0
+            "est_liq_usd": 117482144.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 2532.7,
+            "price": 2550.6,
             "dist_pct": 2.25,
-            "est_liq_usd": 70847142.0
+            "est_liq_usd": 71256522.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 2539.0,
+            "price": 2557.0,
             "dist_pct": 2.51,
-            "est_liq_usd": 15808134.0
+            "est_liq_usd": 15899479.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 2563.0,
+            "price": 2581.2,
             "dist_pct": 3.48,
-            "est_liq_usd": 22131388.0
+            "est_liq_usd": 22259271.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 2569.4,
+            "price": 2587.7,
             "dist_pct": 3.74,
-            "est_liq_usd": 99185999.0
+            "est_liq_usd": 99759131.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 2575.9,
+            "price": 2594.2,
             "dist_pct": 4.0,
-            "est_liq_usd": 163530067.0
+            "est_liq_usd": 164475001.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 2582.3,
+            "price": 2600.7,
             "dist_pct": 4.26,
-            "est_liq_usd": 99185999.0
+            "est_liq_usd": 99759131.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 2588.8,
+            "price": 2607.1,
             "dist_pct": 4.52,
-            "est_liq_usd": 22131388.0
+            "est_liq_usd": 22259271.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 2710.9,
+            "price": 2730.1,
             "dist_pct": 9.45,
-            "est_liq_usd": 15808134.0
+            "est_liq_usd": 15899479.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 2717.7,
+            "price": 2737.0,
             "dist_pct": 9.73,
-            "est_liq_usd": 70847142.0
+            "est_liq_usd": 71256522.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 2724.5,
+            "price": 2743.8,
             "dist_pct": 10.0,
-            "est_liq_usd": 116807191.0
+            "est_liq_usd": 117482144.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 2731.3,
+            "price": 2750.7,
             "dist_pct": 10.27,
-            "est_liq_usd": 70847142.0
+            "est_liq_usd": 71256522.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 2738.1,
+            "price": 2757.6,
             "dist_pct": 10.55,
-            "est_liq_usd": 15808134.0
+            "est_liq_usd": 15899479.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 2957.3,
+            "price": 2978.3,
             "dist_pct": 19.4,
-            "est_liq_usd": 9484881.0
+            "est_liq_usd": 9539688.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 2964.7,
+            "price": 2985.8,
             "dist_pct": 19.7,
-            "est_liq_usd": 42508285.0
+            "est_liq_usd": 42753913.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 2972.2,
+            "price": 2993.3,
             "dist_pct": 20.0,
-            "est_liq_usd": 70084314.0
+            "est_liq_usd": 70489286.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 2979.6,
+            "price": 3000.8,
             "dist_pct": 20.3,
-            "est_liq_usd": 42508285.0
+            "est_liq_usd": 42753913.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 2987.0,
+            "price": 3008.2,
             "dist_pct": 20.6,
-            "est_liq_usd": 9484881.0
+            "est_liq_usd": 9539688.0
           }
         ]
       },
       "SOL": {
-        "mark_px": 107.09,
-        "oi_usd": 582902299.0,
-        "long_frac_est": 0.543,
+        "mark_px": 107.77,
+        "oi_usd": 580680501.0,
+        "long_frac_est": 0.549,
         "atr_pct": 1.0,
-        "magnet_above_2pct_usd": 44455977.0,
-        "magnet_below_2pct_usd": 52724120.0,
+        "magnet_above_2pct_usd": 43701880.0,
+        "magnet_below_2pct_usd": 53107805.0,
         "nearest_cluster_above": {
-          "price": 108.69,
+          "price": 109.38,
           "dist_pct": 1.49,
-          "est_liq_usd": 3454033.0,
+          "est_liq_usd": 3395443.0,
           "leverage": 50
         },
         "nearest_cluster_below": {
-          "price": 105.47,
+          "price": 106.14,
           "dist_pct": -1.51,
-          "est_liq_usd": 4096431.0,
+          "est_liq_usd": 4126242.0,
           "leverage": 50
         },
         "levels": [
           {
             "side": "long",
             "leverage": 5,
-            "price": 85.24,
+            "price": 85.78,
             "dist_pct": -20.4,
-            "est_liq_usd": 2457859.0
+            "est_liq_usd": 2475745.0
           },
           {
             "side": "long",
             "leverage": 5,
-            "price": 85.46,
+            "price": 86.0,
             "dist_pct": -20.2,
-            "est_liq_usd": 11015358.0
+            "est_liq_usd": 11095519.0
           },
           {
             "side": "long",
             "leverage": 5,
-            "price": 85.67,
+            "price": 86.22,
             "dist_pct": -20.0,
-            "est_liq_usd": 18161255.0
+            "est_liq_usd": 18293418.0
           },
           {
             "side": "long",
             "leverage": 5,
-            "price": 85.89,
+            "price": 86.43,
             "dist_pct": -19.8,
-            "est_liq_usd": 11015358.0
+            "est_liq_usd": 11095519.0
           },
           {
             "side": "long",
             "leverage": 5,
-            "price": 86.1,
+            "price": 86.65,
             "dist_pct": -19.6,
-            "est_liq_usd": 2457859.0
+            "est_liq_usd": 2475745.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 95.9,
+            "price": 96.51,
             "dist_pct": -10.45,
-            "est_liq_usd": 4096431.0
+            "est_liq_usd": 4126242.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 96.14,
+            "price": 96.75,
             "dist_pct": -10.22,
-            "est_liq_usd": 18358930.0
+            "est_liq_usd": 18492532.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 96.38,
+            "price": 96.99,
             "dist_pct": -10.0,
-            "est_liq_usd": 30268759.0
+            "est_liq_usd": 30489031.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 96.62,
+            "price": 97.24,
             "dist_pct": -9.78,
-            "est_liq_usd": 18358930.0
+            "est_liq_usd": 18492532.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 96.86,
+            "price": 97.48,
             "dist_pct": -9.55,
-            "est_liq_usd": 4096431.0
+            "est_liq_usd": 4126242.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 102.29,
+            "price": 102.94,
             "dist_pct": -4.48,
-            "est_liq_usd": 5735004.0
+            "est_liq_usd": 5776738.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 102.55,
+            "price": 103.2,
             "dist_pct": -4.24,
-            "est_liq_usd": 25702503.0
+            "est_liq_usd": 25889545.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 102.81,
+            "price": 103.46,
             "dist_pct": -4.0,
-            "est_liq_usd": 42376263.0
+            "est_liq_usd": 42684643.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 103.06,
+            "price": 103.72,
             "dist_pct": -3.76,
-            "est_liq_usd": 25702503.0
+            "est_liq_usd": 25889545.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 103.32,
+            "price": 103.98,
             "dist_pct": -3.52,
-            "est_liq_usd": 5735004.0
+            "est_liq_usd": 5776738.0
           },
           {
             "side": "long",
             "leverage": 50,
-            "price": 104.42,
+            "price": 105.09,
             "dist_pct": -2.49,
-            "est_liq_usd": 4096431.0
+            "est_liq_usd": 4126242.0
           },
           {
             "side": "long",
             "leverage": 50,
-            "price": 104.69,
+            "price": 105.35,
             "dist_pct": -2.24,
-            "est_liq_usd": 18358930.0
+            "est_liq_usd": 18492532.0
           },
           {
             "side": "long",
             "leverage": 50,
-            "price": 104.95,
+            "price": 105.61,
             "dist_pct": -2.0,
-            "est_liq_usd": 30268759.0
+            "est_liq_usd": 30489031.0
           },
           {
             "side": "long",
             "leverage": 50,
-            "price": 105.21,
+            "price": 105.88,
             "dist_pct": -1.76,
-            "est_liq_usd": 18358930.0
+            "est_liq_usd": 18492532.0
           },
           {
             "side": "long",
             "leverage": 50,
-            "price": 105.47,
+            "price": 106.14,
             "dist_pct": -1.51,
-            "est_liq_usd": 4096431.0
+            "est_liq_usd": 4126242.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 108.69,
+            "price": 109.38,
             "dist_pct": 1.49,
-            "est_liq_usd": 3454033.0
+            "est_liq_usd": 3395443.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 108.96,
+            "price": 109.65,
             "dist_pct": 1.75,
-            "est_liq_usd": 15479901.0
+            "est_liq_usd": 15217319.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 109.23,
+            "price": 109.93,
             "dist_pct": 2.0,
-            "est_liq_usd": 25522043.0
+            "est_liq_usd": 25089118.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 109.5,
+            "price": 110.2,
             "dist_pct": 2.25,
-            "est_liq_usd": 15479901.0
+            "est_liq_usd": 15217319.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 109.78,
+            "price": 110.48,
             "dist_pct": 2.51,
-            "est_liq_usd": 3454033.0
+            "est_liq_usd": 3395443.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 110.82,
+            "price": 111.52,
             "dist_pct": 3.48,
-            "est_liq_usd": 4835646.0
+            "est_liq_usd": 4753620.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 111.1,
+            "price": 111.8,
             "dist_pct": 3.74,
-            "est_liq_usd": 21671862.0
+            "est_liq_usd": 21304247.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 111.37,
+            "price": 112.08,
             "dist_pct": 4.0,
-            "est_liq_usd": 35730860.0
+            "est_liq_usd": 35124766.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 111.65,
+            "price": 112.36,
             "dist_pct": 4.26,
-            "est_liq_usd": 21671862.0
+            "est_liq_usd": 21304247.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 111.93,
+            "price": 112.64,
             "dist_pct": 4.52,
-            "est_liq_usd": 4835646.0
+            "est_liq_usd": 4753620.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 117.21,
+            "price": 117.95,
             "dist_pct": 9.45,
-            "est_liq_usd": 3454033.0
+            "est_liq_usd": 3395443.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 117.5,
+            "price": 118.25,
             "dist_pct": 9.73,
-            "est_liq_usd": 15479901.0
+            "est_liq_usd": 15217319.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 117.8,
+            "price": 118.55,
             "dist_pct": 10.0,
-            "est_liq_usd": 25522043.0
+            "est_liq_usd": 25089118.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 118.09,
-            "dist_pct": 10.27,
-            "est_liq_usd": 15479901.0
+            "price": 118.84,
+            "dist_pct": 10.28,
+            "est_liq_usd": 15217319.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 118.39,
+            "price": 119.14,
             "dist_pct": 10.55,
-            "est_liq_usd": 3454033.0
+            "est_liq_usd": 3395443.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 127.87,
+            "price": 128.68,
             "dist_pct": 19.4,
-            "est_liq_usd": 2072420.0
+            "est_liq_usd": 2037266.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 128.19,
+            "price": 129.0,
             "dist_pct": 19.7,
-            "est_liq_usd": 9287941.0
+            "est_liq_usd": 9130392.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 128.51,
+            "price": 129.32,
             "dist_pct": 20.0,
-            "est_liq_usd": 15313226.0
+            "est_liq_usd": 15053471.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 128.83,
+            "price": 129.65,
             "dist_pct": 20.3,
-            "est_liq_usd": 9287941.0
+            "est_liq_usd": 9130392.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 129.15,
+            "price": 129.97,
             "dist_pct": 20.6,
-            "est_liq_usd": 2072420.0
+            "est_liq_usd": 2037266.0
           }
         ]
       },
       "HYPE": {
-        "mark_px": 80.42,
-        "oi_usd": 1646304039.0,
-        "long_frac_est": 0.48,
+        "mark_px": 81.237,
+        "oi_usd": 1664896682.0,
+        "long_frac_est": 0.516,
         "atr_pct": 1.0,
-        "magnet_above_2pct_usd": 142766470.0,
-        "magnet_below_2pct_usd": 131701461.0,
+        "magnet_above_2pct_usd": 134341853.0,
+        "magnet_below_2pct_usd": 143225798.0,
         "nearest_cluster_above": {
-          "price": 81.62,
+          "price": 82.45,
           "dist_pct": 1.49,
-          "est_liq_usd": 11092324.0,
+          "est_liq_usd": 10437768.0,
           "leverage": 50
         },
         "nearest_cluster_below": {
-          "price": 79.21,
+          "price": 80.01,
           "dist_pct": -1.51,
-          "est_liq_usd": 10232621.0,
+          "est_liq_usd": 11128011.0,
           "leverage": 50
         },
         "levels": [
           {
             "side": "long",
             "leverage": 5,
-            "price": 64.01,
-            "dist_pct": -20.4,
-            "est_liq_usd": 6139573.0
-          },
-          {
-            "side": "long",
-            "leverage": 5,
-            "price": 64.18,
-            "dist_pct": -20.2,
-            "est_liq_usd": 27515656.0
-          },
-          {
-            "side": "long",
-            "leverage": 5,
-            "price": 64.34,
-            "dist_pct": -20.0,
-            "est_liq_usd": 45365648.0
-          },
-          {
-            "side": "long",
-            "leverage": 5,
-            "price": 64.5,
-            "dist_pct": -19.8,
-            "est_liq_usd": 27515656.0
-          },
-          {
-            "side": "long",
-            "leverage": 5,
             "price": 64.66,
+            "dist_pct": -20.4,
+            "est_liq_usd": 6676807.0
+          },
+          {
+            "side": "long",
+            "leverage": 5,
+            "price": 64.83,
+            "dist_pct": -20.2,
+            "est_liq_usd": 29923372.0
+          },
+          {
+            "side": "long",
+            "leverage": 5,
+            "price": 64.99,
+            "dist_pct": -20.0,
+            "est_liq_usd": 49335300.0
+          },
+          {
+            "side": "long",
+            "leverage": 5,
+            "price": 65.15,
+            "dist_pct": -19.8,
+            "est_liq_usd": 29923372.0
+          },
+          {
+            "side": "long",
+            "leverage": 5,
+            "price": 65.31,
             "dist_pct": -19.6,
-            "est_liq_usd": 6139573.0
+            "est_liq_usd": 6676807.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 72.02,
+            "price": 72.75,
             "dist_pct": -10.45,
-            "est_liq_usd": 10232621.0
+            "est_liq_usd": 11128011.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 72.2,
+            "price": 72.93,
             "dist_pct": -10.22,
-            "est_liq_usd": 45859427.0
+            "est_liq_usd": 49872287.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 72.38,
+            "price": 73.11,
             "dist_pct": -10.0,
-            "est_liq_usd": 75609413.0
+            "est_liq_usd": 82225500.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 72.56,
+            "price": 73.3,
             "dist_pct": -9.78,
-            "est_liq_usd": 45859427.0
+            "est_liq_usd": 49872287.0
           },
           {
             "side": "long",
             "leverage": 10,
-            "price": 72.74,
+            "price": 73.48,
             "dist_pct": -9.55,
-            "est_liq_usd": 10232621.0
+            "est_liq_usd": 11128011.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 76.82,
+            "price": 77.6,
             "dist_pct": -4.48,
-            "est_liq_usd": 14325670.0
+            "est_liq_usd": 15579216.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 77.01,
+            "price": 77.79,
             "dist_pct": -4.24,
-            "est_liq_usd": 64203198.0
+            "est_liq_usd": 69821202.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 77.2,
+            "price": 77.99,
             "dist_pct": -4.0,
-            "est_liq_usd": 105853178.0
+            "est_liq_usd": 115115700.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 77.4,
+            "price": 78.18,
             "dist_pct": -3.76,
-            "est_liq_usd": 64203198.0
+            "est_liq_usd": 69821202.0
           },
           {
             "side": "long",
             "leverage": 25,
-            "price": 77.59,
+            "price": 78.38,
             "dist_pct": -3.52,
-            "est_liq_usd": 14325670.0
-          },
-          {
-            "side": "long",
-            "leverage": 50,
-            "price": 78.42,
-            "dist_pct": -2.49,
-            "est_liq_usd": 10232621.0
-          },
-          {
-            "side": "long",
-            "leverage": 50,
-            "price": 78.61,
-            "dist_pct": -2.25,
-            "est_liq_usd": 45859427.0
-          },
-          {
-            "side": "long",
-            "leverage": 50,
-            "price": 78.81,
-            "dist_pct": -2.0,
-            "est_liq_usd": 75609413.0
-          },
-          {
-            "side": "long",
-            "leverage": 50,
-            "price": 79.01,
-            "dist_pct": -1.76,
-            "est_liq_usd": 45859427.0
+            "est_liq_usd": 15579216.0
           },
           {
             "side": "long",
             "leverage": 50,
             "price": 79.21,
+            "dist_pct": -2.49,
+            "est_liq_usd": 11128011.0
+          },
+          {
+            "side": "long",
+            "leverage": 50,
+            "price": 79.41,
+            "dist_pct": -2.25,
+            "est_liq_usd": 49872287.0
+          },
+          {
+            "side": "long",
+            "leverage": 50,
+            "price": 79.61,
+            "dist_pct": -2.0,
+            "est_liq_usd": 82225500.0
+          },
+          {
+            "side": "long",
+            "leverage": 50,
+            "price": 79.81,
+            "dist_pct": -1.76,
+            "est_liq_usd": 49872287.0
+          },
+          {
+            "side": "long",
+            "leverage": 50,
+            "price": 80.01,
             "dist_pct": -1.51,
-            "est_liq_usd": 10232621.0
+            "est_liq_usd": 11128011.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 81.62,
+            "price": 82.45,
             "dist_pct": 1.49,
-            "est_liq_usd": 11092324.0
+            "est_liq_usd": 10437768.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 81.82,
+            "price": 82.65,
             "dist_pct": 1.75,
-            "est_liq_usd": 49712345.0
+            "est_liq_usd": 46778831.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 82.03,
+            "price": 82.86,
             "dist_pct": 2.0,
-            "est_liq_usd": 81961801.0
+            "est_liq_usd": 77125254.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 82.23,
+            "price": 83.07,
             "dist_pct": 2.25,
-            "est_liq_usd": 49712345.0
+            "est_liq_usd": 46778831.0
           },
           {
             "side": "short",
             "leverage": 50,
-            "price": 82.44,
+            "price": 83.28,
             "dist_pct": 2.51,
-            "est_liq_usd": 11092324.0
+            "est_liq_usd": 10437768.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 83.22,
+            "price": 84.06,
             "dist_pct": 3.48,
-            "est_liq_usd": 15529253.0
+            "est_liq_usd": 14612875.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 83.43,
+            "price": 84.28,
             "dist_pct": 3.74,
-            "est_liq_usd": 69597283.0
+            "est_liq_usd": 65490364.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 83.64,
+            "price": 84.49,
             "dist_pct": 4.0,
-            "est_liq_usd": 114746521.0
+            "est_liq_usd": 107975356.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 83.85,
+            "price": 84.7,
             "dist_pct": 4.26,
-            "est_liq_usd": 69597283.0
+            "est_liq_usd": 65490364.0
           },
           {
             "side": "short",
             "leverage": 25,
-            "price": 84.05,
+            "price": 84.91,
             "dist_pct": 4.52,
-            "est_liq_usd": 15529253.0
+            "est_liq_usd": 14612875.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 88.02,
+            "price": 88.91,
             "dist_pct": 9.45,
-            "est_liq_usd": 11092324.0
+            "est_liq_usd": 10437768.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 88.24,
+            "price": 89.14,
             "dist_pct": 9.73,
-            "est_liq_usd": 49712345.0
+            "est_liq_usd": 46778831.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 88.46,
+            "price": 89.36,
             "dist_pct": 10.0,
-            "est_liq_usd": 81961801.0
+            "est_liq_usd": 77125254.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 88.68,
-            "dist_pct": 10.27,
-            "est_liq_usd": 49712345.0
+            "price": 89.58,
+            "dist_pct": 10.28,
+            "est_liq_usd": 46778831.0
           },
           {
             "side": "short",
             "leverage": 10,
-            "price": 88.9,
+            "price": 89.81,
             "dist_pct": 10.55,
-            "est_liq_usd": 11092324.0
+            "est_liq_usd": 10437768.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 96.02,
+            "price": 97.0,
             "dist_pct": 19.4,
-            "est_liq_usd": 6655394.0
+            "est_liq_usd": 6262661.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 96.26,
+            "price": 97.24,
             "dist_pct": 19.7,
-            "est_liq_usd": 29827407.0
+            "est_liq_usd": 28067299.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 96.5,
+            "price": 97.48,
             "dist_pct": 20.0,
-            "est_liq_usd": 49177081.0
+            "est_liq_usd": 46275153.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 96.75,
+            "price": 97.73,
             "dist_pct": 20.3,
-            "est_liq_usd": 29827407.0
+            "est_liq_usd": 28067299.0
           },
           {
             "side": "short",
             "leverage": 5,
-            "price": 96.99,
+            "price": 97.97,
             "dist_pct": 20.6,
-            "est_liq_usd": 6655394.0
+            "est_liq_usd": 6262661.0
           }
         ]
       }
